@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Liste d&#39;ajouts] Tout le reste que j&#39;aurais pu oublier - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">[Liste d&#39;ajouts] Tout le reste que j&#39;aurais pu oublier</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">[Liste d&#39;ajouts] Tout le reste que j&#39;aurais pu oublier</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="liste-dajouts-tout-le-reste-que-jaurais-pu-oublier">[Liste d'ajouts] Tout le reste que j'aurais pu oublier</h1>
+<h2 id="post-by-nimue---january-30-2010-at-1214-pm">Post by Nimue - January 30, 2010 at 12:14 PM</h2>
+<p><a id="post-243081"></a></p>
+<p>Ce post est réservé aux suggestions d'item à ajouter dans le menu de... Tout ce que j'aurais pu oublier à part de ça.</p>
+<p><span style="font-size:150%">Lâchez vous lousse!</span></p>
+<hr>
+<h2 id="post-by-ex-lumina---january-30-2010-at-732-pm">Post by Ex-Lumina - January 30, 2010 at 7:32 PM</h2>
+<p><a id="post-243098"></a></p>
+<p>Juste ne pas oublier que Christian a déjà scripté plusieurs objets qui n'ont pas encore été mis en jeu.</p>
+<p>Mieux vaudrait ne pas les -rescriptés-.</p>
+<hr>
+<h2 id="post-by-nimue---january-30-2010-at-1128-pm">Post by Nimue - January 30, 2010 at 11:28 PM</h2>
+<p><a id="post-243126"></a></p>
+<p>Je vais lui donner accès ici, il pourra nous dire ce qui est déjà fait.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---january-30-2010-at-1144-pm">Post by Théodore de Lagarde, AdM - January 30, 2010 at 11:44 PM</h2>
+<p><a id="post-243130"></a></p>
+<p>Ho! Wow! Merci <img src="/assets/smilies/smile.gif" alt=""><br>
+Je viens de voir ce post et je me demandais c'était quoi...</p>
+<p>Je vais faire le tour de mes scripts et les inscrire dans le bon forum.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---january-31-2010-at-1209-am">Post by Théodore de Lagarde, AdM - January 31, 2010 at 12:09 AM</h2>
+<p><a id="post-243138"></a></p>
+<p>Je ne sais pas si je devrais mettre ça ici, mais je vais mettre le reste de mes scripts ici:</p>
+<p>-Ajout de chevaux et lama de traits rare. Ceux-ci peuvent supporter le double du poids ordinaire d'un animal de trait mais sont plus difficilement tamable.</p>
+<p>-Ajout de trois sortes d'arbres différents (pommier, pêcher, poirier) qui produiront un fruit par heure, avec un maximum bien sur.</p>
+<p>Voici l'image qui illustre tous les objets mentionnés dans les autres posts et qui seront maintenant craftable</p>
+<p><img src="http://img165.imageshack.us/img165/1644/itemscraftbn7.jpg" alt=""></p>
+<p>Ça c'est le script de .décrire que j'avais refais l'année passée..</p>
+<p><strong>Modification du .décrire</strong></p>
+<p>J'ai refait le .décrire de A à Z, alors il ne marche pas exactement comme avant et <u>l'ancienne commande sera retirée</u>:</p>
+<p>Avantages:<br>
+-On peut maintenant le faire sur les contenants (sacs, coffres, etc et les potions) en plus des items d'avant.<br>
+-On peut maintenant avoir trois lignes de descriptions possibles, grâce à 3 commandes appelées .décrire .décrire2 .décrire3<br>
+-Ajout d'un .décrireGM visible pour tous et seulement modifiable par les GMs<br>
+-Le nombre maximal de lettres qu'on peut mettre dans les 3 descriptions additionnées est de 90 maximum, pour éviter de l'abus. (C'est le même nombre que l'Ancien .décrire, mais réparti comme vous le voulez sur 3 lignes). Vosu pouvez mettres les 90 lettres dans une seule ligne si vous voulez.<br>
+-le .décrireGM n'A pas de limite et ne fait pas parti du 90.<br>
+-Les anciens .décrire resteront IG et vous ne les perdrez pas. Ils seront modifiables avec ma commande.<br>
+-Pas besoin de guillemets tannan</p>
+<p>Désavantages:<br>
+-Moi je le trouve meilleur, mais bon, c'est vous qui me direz ce que je pourrais améliorer <img src="/assets/smilies/man_in_love.gif" alt="">.</p>
+<p>Voilà de quoi ça l'air:</p>
+<p><img src="http://img201.imageshack.us/img201/888/dcrirent1.jpg" alt=""></p>
+<p>Marche à suivre:</p>
+<p>-Vous tapez la commande (soit .décrire .décrire2 ou .décrire3)<br>
+-Vous faites ENTER<br>
+-Sélectionnez l'objet à décrire<br>
+-Entrez le texte souhaité<br>
+-Faites ENTER<br>
+-Et voilà! Votre description est là!</p>
+<p>Je crois que c'est tout!</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-1-2010-at-150-am">Post by Seigneur Bélial - February 1, 2010 at 1:50 AM</h2>
+<p><a id="post-243309"></a></p>
+<p>Permettre de teindre les toutous?</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-1-2010-at-322-am">Post by Théodore de Lagarde, AdM - February 1, 2010 at 3:22 AM</h2>
+<p><a id="post-243330"></a></p>
+<p>Je pense que ça se fait déjà avec les bac ordinaires, mais je ne suis plus très sur, ce sera une autre chose à vérifier. Ça fait quand même un an et demi <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-1-2010-at-401-am">Post by Seigneur Bélial - February 1, 2010 at 4:01 AM</h2>
+<p><a id="post-243352"></a></p>
+<p>Il faut vraiment de la magie ou de la nécromancie pour faire un pentagrame en métal? Je ne suis pas convaincu. Parce que si les armures en métal coupe la magie, pourquoi irions-nous faire le réceptacle en  métal?</p>
+<p>Je propose de mettre le pentagrame et l'hôtel sombre en granite qui est de la roche et non directement en métal. Ce qui permettrais d'avoir des couleurs particulière a ces deux items. Je me demande aussi pourquoi il faut absolument avoir de la magie pour en faire? A mon sens ce n'est pas l'hôtel qui est magique mais la personne qui s'en sert. Bref ^_^</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-1-2010-at-404-am">Post by Théodore de Lagarde, AdM - February 1, 2010 at 4:04 AM</h2>
+<p><a id="post-243354"></a></p>
+<p>Bon point, effectivement. De plus, ça prend actuellement 75 de magie pour en faire un, ce qui fait que ça ne se construira jamais, parce que personne n'a de Mage-Charpentier...</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-1-2010-at-429-am">Post by Seigneur Bélial - February 1, 2010 at 4:29 AM</h2>
+<p><a id="post-243365"></a></p>
+<p>Tout comme personne n'a de brico-barde, pour faire les pianos et autres instruments <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-1-2010-at-458-am">Post by Théodore de Lagarde, AdM - February 1, 2010 at 4:58 AM</h2>
+<p><a id="post-243372"></a></p>
+<p>oui, exactement.</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---february-1-2010-at-641-am">Post by Myrddin Emrys, CP - February 1, 2010 at 6:41 AM</h2>
+<p><a id="post-243397"></a></p>
+<p>En fait c'est pas un problème pour les pentagrammes, car il ne demande que 10 de carpenterie environ, donc même sans investir de point, un mage peut en crafter.</p>
+<p>Par conter, certain truc, notamment quelques nouveaux bâton demandent de la nécromancie et de la magie et plus d'un nombre trop élevé de carpenterie ce qui rend impossible leur craftage.</p>
+<p>Dans ma tête pas besoin de magie pour faire un bâton sans aucun pouvoir</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-1-2010-at-659-am">Post by Théodore de Lagarde, AdM - February 1, 2010 at 6:59 AM</h2>
+<p><a id="post-243403"></a></p>
+<p>C'est vrai, va falloir que je revois tout ça et que j'y mette un peu de logique.</p>
+<p>Ça doit pas être si dure que ça gosser un bâton de bois...</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-1-2010-at-1234-pm">Post by Seigneur Bélial - February 1, 2010 at 12:34 PM</h2>
+<p><a id="post-243435"></a></p>
+<p>En effet, je suis de votre avis, pas besoin d'être mage pour poser un globe sur un boute de bois anodin. Ils ont même pas de particularité en résiste, sauf de prendre la couleur du métal qu'on prend. Si tu veux un vrai bâton de mage tu demandes à un enchanteur et voilà lol Donc je suis d'accord avec vous.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-1-2010-at-743-pm">Post by Conteur Centaure - February 1, 2010 at 7:43 PM</h2>
+<p><a id="post-243480"></a></p>
+<p>Euhm, est-ce qu'il n'avait pas été dit, il y a longtemps, que tous les bâtons devenaient du type &quot;on peut caster avec dans les mains sans le perdre&quot;?</p>
+<p>Si oui, dans ce cas, ça pourrait expliquer les besoins en magie du concepteur.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-1-2010-at-1055-pm">Post by Seigneur Bélial - February 1, 2010 at 10:55 PM</h2>
+<p><a id="post-243522"></a></p>
+<p>Dans ce cas il faut expliquer la présence de fer dans la conception du dit bâton, non? Le fer est pas supposer bloquer la magie?</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---february-1-2010-at-1136-pm">Post by Myrddin Emrys, CP - February 1, 2010 at 11:36 PM</h2>
+<p><a id="post-243529"></a></p>
+<p>Le problème, c'est que oui, on peux comprendre pourquoi crafter le bâton demande de la magery,</p>
+<p>mais à cause de ça personne est capable de le crafter</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-1-2010-at-1138-pm">Post by Conteur Centaure - February 1, 2010 at 11:38 PM</h2>
+<p><a id="post-243530"></a></p>
+<p>Ouais bon, en même temps, c'est pas comme si je m'opposais à ce qu'on enlève les besoins en magie pour les crafter ^^</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-2-2010-at-304-am">Post by Théodore de Lagarde, AdM - February 2, 2010 at 3:04 AM</h2>
+<p><a id="post-243555"></a></p>
+<p>J'enlèverai donc le besoin de Magery.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-2-2010-at-619-am">Post by Théodore de Lagarde, AdM - February 2, 2010 at 6:19 AM</h2>
+<p><a id="post-243580"></a></p>
+<p>-Les bâtons de magiciens ne requiert plus de magie et sont plus facile à faire, surtout les premiers</p>
+<p>-Les instruments seront fabriquer à partir de bois et de parties d'instruments (cordes pour certains, cymbales pour d'autres, et bâtons pour le tambour) qui devront être créé par les musiciens (demande 0 en charpenterie, mais demande des skills de Virtuosité)</p>
+<p>-Les toutous étaient déjà teindables, finalement</p>
+<p>-Les pentagrammes et les autels sombres font maintenant parti du menu du maconneur et requiert du granite (10).</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-2-2010-at-628-am">Post by Théodore de Lagarde, AdM - February 2, 2010 at 6:28 AM</h2>
+<p><a id="post-243584"></a></p>
+<p>Je viens de regarder ça, et je me rend compte que je ne pourrai pas scripter les armes d'entrainement, parce que ce sont des artworks custom de Crépuscule.</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---february-2-2010-at-726-am">Post by Myrddin Emrys, CP - February 2, 2010 at 7:26 AM</h2>
+<p><a id="post-243594"></a></p>
+<p>pas grave script les pareils, c'est juste que tu auras pas le bon artworks</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-5-2010-at-224-am">Post by Théodore de Lagarde, AdM - February 5, 2010 at 2:24 AM</h2>
+<p><a id="post-243919"></a></p>
+<p>Au fait, ne serait-ce pas mieux d'incorporer les scripts que nous avons déjà fait avant d'en ajouter d'autres? Ça risque de devenir plus long à s'arranger pour que ça marche sur Crep et plus compliqué. C'est mon avis, qu'en dites-vous?</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-6-2010-at-346-am">Post by Seigneur Bélial - February 6, 2010 at 3:46 AM</h2>
+<p><a id="post-244091"></a></p>
+<p>Plus vite ils seront intégré plus vite on sera heureux <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-6-2010-at-755-pm">Post by Théodore de Lagarde, AdM - February 6, 2010 at 7:55 PM</h2>
+<p><a id="post-244147"></a></p>
+<p>Justement! <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-10-2010-at-548-am">Post by Théodore de Lagarde, AdM - February 10, 2010 at 5:48 AM</h2>
+<p><a id="post-245139"></a></p>
+<p>Juste pour dire que je continu vos idées (sur tous les posts) et que je me suis fait une listes avec celle-ci. Ça ira plus vite quand j'aurai quelques minutes à mettre dessus.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-18-2010-at-312-am">Post by Seigneur Bélial - February 18, 2010 at 3:12 AM</h2>
+<p><a id="post-246157"></a></p>
+<p>J'ai esseyer de teindre un nounours, pas capable, une poupée aussi. Comment as-tu fais?</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-18-2010-at-530-am">Post by Théodore de Lagarde, AdM - February 18, 2010 at 5:30 AM</h2>
+<p><a id="post-246165"></a></p>
+<p>L'a tu fais avec mes script? Ou les toutous déjà présents sur crépuscule?</p>
+<p>Si c'est ceux de Crépuscule, j'y peux rien, car ceux que j'ai fais n'ont rien à voir avec ceux de Crep, je n'avais pas les scripts...</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-18-2010-at-1036-pm">Post by Seigneur Bélial - February 18, 2010 at 10:36 PM</h2>
+<p><a id="post-246215"></a></p>
+<p>J'ai rien dis alors ^_^</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-19-2010-at-106-am">Post by Théodore de Lagarde, AdM - February 19, 2010 at 1:06 AM</h2>
+<p><a id="post-246231"></a></p>
+<p>si j'avais ceux de Crep, je pourrais les arranger, ou même les enlever pour éviter qu'il y ait deux fois le même toutou (ce qui peut arriver, car je ne les connais pas)</p>
+<p>Aucun de mes scripts n'est en jeu, ce qui fait que c'est impossible que ce soit les miens.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-27-2010-at-1020-am">Post by Seigneur Bélial - February 27, 2010 at 10:20 AM</h2>
+<p><a id="post-247099"></a></p>
+<p>Alors, à quand cette maj avec tout ces beaux scriptes? J'ai hâte de voir ça moi !  <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-27-2010-at-631-pm">Post by Théodore de Lagarde, AdM - February 27, 2010 at 6:31 PM</h2>
+<p><a id="post-247111"></a></p>
+<p>Je sais pas, ça fait deux ans qu'on attend... XD</p>
+<hr>
+<h2 id="post-by-lancelot---february-28-2010-at-217-am">Post by Lancelot - February 28, 2010 at 2:17 AM</h2>
+<p><a id="post-247163"></a></p>
+<p>Quelle est l'étape qui manque?</p>
+<p>Ils sont prêts à être mis sur le serveur en tant que mise à jour, ou il faut passer par d'autres façons avant de pouvoir être implanté?</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---february-28-2010-at-815-am">Post by Myrddin Emrys, CP - February 28, 2010 at 8:15 AM</h2>
+<p><a id="post-247190"></a></p>
+<p>Xénon, est à l'étape de corriger les bugs dans mes scripts (dont la majeure partie ne sont pas issu de mon expérience  <img src="/assets/smilies/smile.gif" alt=""> )</p>
+<p>Ensuite il pourra se pencher sur les scripts de Théo</p>
+<hr>
+<h2 id="post-by-lancelot---march-11-2010-at-429-am">Post by Lancelot - March 11, 2010 at 4:29 AM</h2>
+<p><a id="post-248504"></a></p>
+<p>Excellent, vivement que tout ça soit implanté. =)</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---march-11-2010-at-706-am">Post by Théodore de Lagarde, AdM - March 11, 2010 at 7:06 AM</h2>
+<p><a id="post-248511"></a></p>
+<p>J'ai effectivement très hâte aussi. Je pense qu'il y a plusieurs choses là-dedans que les joueurs attendent depuis un bout, et d'autres qu'ils aimeront.</p>
+<hr>
+<h2 id="post-by-nimue---march-11-2010-at-735-am">Post by Nimue - March 11, 2010 at 7:35 AM</h2>
+<p><a id="post-248512"></a></p>
+<p>Ça fera bien des heureux, merci vous deux!</p>
+<hr>
+<h2 id="post-by-lancelot---april-18-2010-at-925-pm">Post by Lancelot - April 18, 2010 at 9:25 PM</h2>
+<p><a id="post-252983"></a></p>
+<p>Xénon, est à l'étape de corriger les bugs dans mes scripts (dont la majeure partie ne sont pas issu de mon expérience  <img src="/assets/smilies/smile.gif" alt=""> )</p>
+<p>Ensuite il pourra se pencher sur les scripts de Théo</p>
+<p>Up.</p>
+<p>Xenon est pas mal occupé. Un autre peut s'en charger?</p>
+<hr>
+<h2 id="post-by-lancelot---may-6-2010-at-146-am">Post by Lancelot - May 6, 2010 at 1:46 AM</h2>
+<p><a id="post-254788"></a></p>
+<p><img src="/assets/smilies/sad.gif" alt=""></p>
+<hr>
+<h2 id="post-by-nimue---may-7-2010-at-451-am">Post by Nimue - May 7, 2010 at 4:51 AM</h2>
+<p><a id="post-254906"></a></p>
+<p>Actuellement Lancelot, ce ne sera plus nécessaire... Nous pourrons ajouter cela via le Système de Kel.</p>
+<p>Remarque, si les scripts sont prêts pour la plupart, on pourrait les faire intégrer à Xenon pour gagner du temps... Vu que ça serait déjà fait.</p>
+<p>Un avis de Kel la dessus?</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

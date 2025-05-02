@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Crep2] Les classes - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">[Crep2] Les classes</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">[Crep2] Les classes</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="crep2-les-classes">[Crep2] Les classes</h1>
+<h2 id="post-by-ex-lumina---january-26-2009-at-445-am">Post by Ex-Lumina - January 26, 2009 at 4:45 AM</h2>
+<p><a id="post-202009"></a></p>
+<p>Bonjour à tous.</p>
+<p>Voici un sujet épineux de ce qui va changer avec crépuscule : les classes. Puisque c'est l'épicentre de tout changement qui aura lieu, j'ai offert à Kel et Heptaeon que nous nous occupions de les choisir et de leur schématiser le système qu'ils auront à coder, ce qu'ils ont accepter.</p>
+<p>Notre tâche est donc de choisir les noms et de préparer le schéma des classes en s'assurant que toutes nos classes actuelles sont casées quelque part (et donc que personne n'y perdra sa classe) et en essayant d'éviter d'interférer avec les titres de rang dans les guildes, dans la mesure du possible.</p>
+<p>Déjà je vous rappelle, pour ceux qui ne l'ont pas encore vu, que désormais nos classes seront évolutives, c'est-à-dire qu'elles auront différents paliers. Faites confiance aux scripteurs pour que tout soit magique après.</p>
+<p>Donc je vous donne ce lien vers Natemia pour que vous ayez une idée des arbres de classe dont il est question : <a href="http://natemia.free.fr/?page=2219">Lien.</a> Je mets ça ici à titre de référence. <strong>Important :</strong> Natemia était complexe et très réaliste, ce qui sera fait ici sera plus simple (et donc plus agréable), Heptaeon tenait à ce que je le spécifie.</p>
+<p>Nous devons donc développer des arbres de classes autour de cinq thèmes :</p>
+<p>-Les guerriers (paladins, archer, moines, chevaliers, rôdeurs samurai etc)<br>
+-Les roublards (voleurs, espions, assassins, barde, ninja, etc)<br>
+-Les magiciens (nécromancien, arcaniste, druide, sorcier, démonologiste, invocateur, démonologue)<br>
+-Les artisans (couturiers, forgerons, menuisiers, tinkers, alchimistes, cuisiniers, etc)<br>
+-Le spirituel (prêtre, enchanteur, télépathe, érudit, sage, etc)</p>
+<p>Je peux vous offrir un premier jet pour montrer de quoi ça peut avoir l'air si c'est confus. Globalement tout le monde retrouvera ses habiletés à quelque part donc il n'y a pas à s'inquiéter.</p>
+<hr>
+<h2 id="post-by-dev-sancoki---january-26-2009-at-1240-pm">Post by Dev Sancoki - January 26, 2009 at 12:40 PM</h2>
+<p><a id="post-202068"></a></p>
+<p>Je précise aussi une chose, on peu facilement mettre des restriction. Par exemple, pas de paladin chaotique ou des choses comme ça.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---january-26-2009-at-1255-pm">Post by Mr Trovénère - January 26, 2009 at 12:55 PM</h2>
+<p><a id="post-202069"></a></p>
+<p>*C'est vrai que cela va jouer avec les alignements plus qu'a autre chose. On pourrait peut être même jouer les classes en rapport avec le niveau atteint dans la guilde. *</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-26-2009-at-419-pm">Post by Ex-Bolero - January 26, 2009 at 4:19 PM</h2>
+<p><a id="post-202075"></a></p>
+<p>Ça non plus, ça restreint vraiment le jeu.</p>
+<p>Je travaille sur une ébauche, je vous la présenterai bientôt.</p>
+<hr>
+<p><strong>Ma conception des classes</strong></p>
+<p>Je me suis un peu raisonné, puisque je n’aimais pas cette proposition au début… Mais bon, je vais essayer d’être constructif.</p>
+<p>Je vais donc exposer une ébauche de classes reliées à leurs aptitudes en tentant aussi de proposer des systèmes pour tout ça.</p>
+<p><strong>Explications</strong></p>
+<p>Il y aurait 5 branches (Guerriers, magiciens, sages, roublards, artisans), chacune composée d’une multitude de classes, pas forcément en nombre égal dans chacune des ramifications de l’arbre. Chacune des branches offrirait un ou deux skills « globaux » à toutes les classes la composant (par exemple, port d'armure serait commun à tous les guerriers). Dans chacun des cas, au niveau 1, le PJ est encore un néophyte: il se concentre sur sa branche et non sur sa classe. Il la choisit donc au niveau 2 après avoir développé ses skills de branche.</p>
+<p>La compétence « Enseignement » serait carrément autre chose, toutefois. J’expliquerai au bas.</p>
+<p>J’ai exclu les notions de compétences primaires et secondaires, puisque je ne vois pas comment ça pourrait marcher dans ce nouveau système… <img src="/assets/smilies/wacko.gif" alt=""> Il y a bien des changements à faire, de plus, car ça ne me semble pas balancé.</p>
+<p>Mettons que ce à quoi je pensais, c’est que chaque classe a un cap en % dans tous les skills au début. Par la suite, selon le niveau, ils ont genre 20 points (moins, sans doute) à placer dans les skills, et un peu sur le modèle de D&amp;D, les skills de classe demandent 1 point pour 1%, tandis que les autres skills demandent un investissement de 2 points pour monter de 1%. Le skill commun monterait automatiquement de genre 8% par niveau.</p>
+<p>Il y aurait évidemment des caps de skills. Ainsi, on ne pourrait pas se ramasser avec des Grandmaster Alchemists au niveau 5 car ils auraient mis tous leurs points là-dedans…</p>
+<p>Forme :<br>
+<span style="font-size:150%">Branche</span><br>
+<u>Classe</u><br>
+<em>Skill</em><br>
+(Système associé)</p>
+<p><span style="font-size:150%">Guerriers</span><br>
+<strong>Skill commun :</strong> <em>Port d'armures</em></p>
+<p><u>Guerrier</u>: <em>Armes de choc, armes de taille, esquive</em> (coups spéciaux en conséquence)<br>
+<u>Paladin</u>: <em>Armes de choc, armes de taille, prêtrise</em> (moins de coups spéciaux que le guerrier, étant donné la présence de chivalry. Il pourrait y avoir des paladins sombres, avec la prêtrise un peu modifiée (mais pas de la nécro) selon l’alignement)<br>
+<u>Moine</u>: <em>Lutte, arts martiaux, esquive</em> (gants servant d’armes, coups spéciaux qui sont vraiment spéciaux, plus grande esquive : comme ce qu’on allait faire, bref)<br>
+<u>Rôdeur</u>: <em>Pistage, tir à l’arc, furtivité</em> (avoir un peu plus d’informations sur ceux qu’on piste selon le niveau)<br>
+<u>Archer</u>: <em>Tir à l’arc, création d’arcs et de flèches, esquive</em> (nouveaux bois pour les arcs, coups spéciaux)<br>
+<u>Barbare</u>: <em>Lutte, armes de taille, armes de choc</em> (rage de barbare, coups spéciaux, cris d’intimidation)<br>
+<u>Voltigeur</u> : <em>Armes d’estoc, esquive, furtivité</em></p>
+<p><span style="font-size:150%">Roublards</span><br>
+<strong>Skill commun</strong> : <em>Furtivité</em></p>
+<p><u>Voleur</u>: <em>Vol à la tire, crochetage, mendicité</em> (créer un vrai système de mendicité, permettre d’insérer des objets dans les sacs, améliorer le crochetage d’une quelconque façon)<br>
+<u>Ninja</u>: <em>Arts martiaux, armes d’estoc, esquive</em> (coups spéciaux en conséquence)<br>
+<u>Assassin</u>: <em>Assassinat, empoisonnement, armes d’estoc</em> (somnifère inclus dans l’empoisonnement sur la base du système d’inconscience)<br>
+<u>Faussaire / trappeur</u>: <em>Bricolage, désamorçage, pose de pièges</em> (système de fausse monnaie enfin implanté, pièges qui marchent vraiment, détection des pièges)<br>
+<u>Barde</u>: <em>Bardisme, érudition, mendicité</em> (je sais pas, plus de chansons?)<br>
+<u>Explorateur</u>: <em>Campement, pistage, pose de pièges</em> (faudrait améliorer le campement avec la possibilité, par exemple, d’établir une tente pour regénérer des points de vie… système de cartographie, également, si on trouve quelqu’un assez brave pour gumper ça)</p>
+<p><span style="font-size:150%">Magiciens</span><br>
+<strong>Skills communs</strong> : <em>Méditation, résistance à la magie</em></p>
+<p><u>Nécromancien</u> : <em>Nécromancie, fabrication de golems, spiritisme</em> (bah les golems forcément… permettre de ranimer des cadavres avec 25% de leurs capacités comme allié pendant X temps?)<br>
+<u>Druide</u> : <em>Magie naturelle, dressage, zoologie</em> (je vois pas)<br>
+<u>Arcaniste</u>: <em>Magie arcanique, érudition, transcription</em> (encore)<br>
+<u>Sorcier</u>: <em>Sorcellerie, érudition, spiritisme</em> (je vois pas non plus)<br>
+<u>Invocateur</u>: <em>Magie astrale, érudition, télépathie</em> (eh bien développer leur système de magie, évidemment)</p>
+<p><span style="font-size:150%">Sages</span><br>
+<strong>Skill commun</strong>: <em>Érudition</em></p>
+<p><u>Télépathe</u>: <em>Spiritisme, télépathie, transcription</em> (améliorer la télépathie, je suppose)<br>
+<u>Scribe</u>: <em>Transcription, magie arcanique, estimation d'objets</em> (je vois pas non plus, à part bien sûr l'amélioration de ItemID)<br>
+<u>Clerc</u>: <em>Prêtrise, armes de choc, médecine</em> (non plus…!)<br>
+<u>Enchanteur</u>: <em>Enchantement, fabrication de golems, transcription</em> (ça se répète mon truc…)<br>
+<u>Médecin</u>: <em>Médecine, autopsie, alchimie</em> (une autopsie digne de ce nom, une vraie refonte de ce skill: permettre de savoir + de choses sur les cadavres)</p>
+<p><span style="font-size:150%">Artisans</span><br>
+<strong>Skills communs</strong>: <em>Estimation d’objets (avec une nette modification), marchandage</em></p>
+<p><u>Charpentier</u>: <em>Charpenterie, bûcheronnage, créations d’arcs et de flèches</em> (voir plus haut)<br>
+<u>Bricoleur</u>: <em>Bricolage, excavation, bûcheronnage</em> (nouveaux bois, disais-je, et ce système d’alliages…)<br>
+<u>Couturier</u>: <em>Tissage/couture, pêche, agriculture</em> (système d’agriculture, évidemment…)<br>
+<u>Forgeron</u>: <em>Ferronnerie, excavation, lutte</em> (cf bricoleur)<br>
+<u>Alchimiste</u>: <em>Alchimie, empoisonnement, souffle de verre</em> (système de souffle de verre, évidemment)<br>
+<u>Cuisinier</u>: <em>Cuisine, pêche, empoisonnement</em> (améliorer la pêche, permettre qu’avec empoisonnement on puisse mettre des potions de boost dans la nourriture pour aider les alliés)<br>
+<u>Agriculteur</u>: <em>Dressage, agriculture, zoologie</em> (un système d’agriculture, évidemment, et d’élevage (produits récoltés en conséquence))</p>
+<hr>
+<p><strong>L’enseignement</strong></p>
+<p>L'enseignement serait un skill global. Ainsi, chaque classe pourrait y investir des points à concurrence de 1 pt = 1% (il monte automatique, ça s'entraîne pas vraiment...). Ils pourraient ensuite enseigner leurs skills de classe à autrui (sans outrepasser les caps) jusqu'à concurrence du niveau atteint en enseignement. Par exemple, un nécro qui décide d'investir en enseignement (disons 70%) et qui a 100% en nécro pourra apprendre à un autre nécro 70% de son savoir, à condition que celui-là ait le cap.</p>
+<p><strong>Le port d’armure</strong></p>
+<p>Le port d’armure est régi par un dernier skill, « Port d’armure ». Selon le % qu’on a dedans, on sait porter X type d’armure. Les boucliers marchent encore à la force. C'est le skill commun des guerriers, qui sont normalement formés au port d'armure, et pour les autres bah il faut le monter à l'ancienne (2 pt = 1%).</p>
+<p>Exemple de barème : Cuir (20%), Anneau (30%), Maille (50%), Plaque (60%), Méga-plaque (80%), Ultra-plaque (100%), et les armures spéciales selon la lourdeur.</p>
+<hr>
+<p><strong>Autres</strong></p>
+<p>Description des classes :</p>
+<p>Guerrier : Combattant aguerri, formé au maniement des armes et au port d’armures, assez « all-around ».<br>
+Paladin : Combattant saint, que ce soit du côté du mal ou du bien, sachant manier quelques sorts accordés par son dieu pour enrichir sa technique de combat.<br>
+Moine : Personnage strict qui utilise ses poings pour rendre justice à son dieu (je ne sais pas si vous le voyez comme ça, mais moi je ne le vois vraiment pas avec des coups de <em>ki</em> ou ces choses-là), qui en connaît beaucoup sur les techniques de combat (sans magie encore une fois).<br>
+Rôdeur : Combattant à distance, furtif, qui vit bien en forêt et sait s’adapter à son environnement.<br>
+Archer : Combattant à distance classique.<br>
+Barbare : Combattant un peu rageur justement, qui fonce dans le tas et qui utilise sa force plutôt que sa technique, formé surtout au maniement des armes comme les haches et les défonceurs.<br>
+Voltigeur : Combattant souple et agile qui utilise les armes d’estoc sans être un assassin delamorkitue.</p>
+<p>Voleur : Personne aux doigts souples qui sait bien dérober les bourses sans qu’on s’en rende compte.<br>
+Ninja : Combattant discret et agile qui se sert également des armes d’estoc, en y mêlant les arts martiaux.<br>
+Faussaire / trappeur : Expert dans l’art de fabriquer des pièges et de les poser, tout en étant capable de fausser de la monnaie.<br>
+Assassin : Un combattant léger qui se sert de ses capacités pour éliminer des gens.<br>
+Barde : Chanteur ou amuseur public qui voyage beaucoup, accumulant légendes et contes ainsi que connaissances diverses, capable de distraire une foule mais tendant vers le chaos.<br>
+Explorateur : Vagabond qui explore les landes, voyageant beaucoup. Adepte de la survie en forêt, il a acquis un excellent sens de l’orientation et sait suivre les traces de toute sorte de créatures.</p>
+<p>Nécromancien : Magicien qui manipule les forces de la Mort pour parvenir à des fins douteuses.<br>
+Druide : Magicien qui manipule les mêmes forces que le Nécromancien, mais du côté de la Vie (ça serait issu de la même place). Enfin, on connaît tous la définition d’un druide.<br>
+Arcaniste : Magicien formé dans le maniement de l’éther du côté défensif et protecteur : les arcanes.<br>
+Sorcier : Magicien formé dans le maniement de l’éther du côté offensif.<br>
+Invocateur : Magicien formé dans l’invocation (pour le bien des êtres planaires, pour le mal des démons, selon l’alignement…)</p>
+<p>Charpentier : Artisan du bois, fabricant meubles et flèches, sachant bûcher.<br>
+Bricoleur : Artisan qui touche un peu à tout, bricolant des babioles et des outils, qui sait miner et bûcher aussi.<br>
+Cuisinier : Artisan de la nourriture, qui sait pêcher pour ses plats et bien assaisonner ses plats. Il n’y a pas grand-chose à dire de plus.<br>
+Couturier : Artisan qui manie les ciseaux et le métier à tisser, capable de filer sa laine et de faire des vêtements et des armures de cuir.<br>
+Forgeron : Artisan qui utilise le métal pour créer les armes et les armures.<br>
+Alchimiste : Grand connaisseur de la forêt et des ingrédients, capable de créer des potions de toutes sortes.<br>
+Agriculteur : Ex-dresseur. Il sait aussi bien retourner la terre et jardiner que s’occuper d’animaux et les dresser.</p>
+<p>Clerc : Qu’il soit axé vers le bien ou le mal (en quel cas on lui donne le même système qu’au paladin noir), il aide les autres croyants et sait se battre dans une moindre mesure. Expert en médecine.<br>
+Télépathe : Mentaliste capable de manipuler l’esprit d’autrui, de communiquer des émotions ou des messages par la pensée et d’accomplir de grandes choses grâce à ses pouvoirs psychiques.<br>
+Scribe : Personne rangée, extrêmement cultivée, capable de recopier d’anciens manuscrits et de fabriquer les cristaux pour les télépathes. A passé sa vie dans les bibliothèques et a beaucoup de connaissances.<br>
+Enchanteur : Utilise sa connaissances des arcanes (moindre que celle des arcanistes, évidemment) pour enchanter des objets à l’aide de sorts durables leur conférant des capacités spéciales.<br>
+Médecin : Expert en soins, capable de fabriquer des potions quand il en a besoin et de soigner les pires plaies. Sait également autopsier les cadavres.</p>
+<p><u>Restrictions pour les classes :</u></p>
+<p>Un alignement pourrait aussi être requis dans chaque cas.</p>
+<p>Guerrier : Tous les alignements.<br>
+Paladin : Loyal (bon ou mauvais, selon le dieu, et aptitudes en conséquence)<br>
+Moine : Loyal ou neutre, peu importe si c’est mauvais, bon ou neutre.<br>
+Rôdeur : Neutre ou chaotique.<br>
+Archer : Tous les alignements.<br>
+Barbare : Neutre ou chaotique.<br>
+Voltigeur : Tous les alignements.</p>
+<p>Voleur : Alignements neutres ou mauvais.<br>
+Ninja : Alignements non-chaotiques.<br>
+Faussaire / trappeur : Alignements neutres ou mauvais.<br>
+Assassin : Alignements mauvais.<br>
+Barde : Alignements chaotiques.<br>
+Explorateur : Alignements chaotiques.</p>
+<p>Nécromancien : Neutre mauvais ou loyal mauvais.<br>
+Druide : Loyal neutre, neutre strict, neutre bon, chaotique bon ou chaotique neutre.<br>
+Arcaniste : Alignements non-chaotiques.<br>
+Sorcier : Alignements non-chaotiques.<br>
+Invocateur : Alignements non-chaotiques.</p>
+<p>Charpentier : Tous les alignements.<br>
+Bricoleur : Tous les alignements.<br>
+Cuisinier : Tous les alignements.<br>
+Couturier : Tous les alignements.<br>
+Forgeron : Tous les alignements.<br>
+Alchimiste : Tous les alignements.<br>
+Agriculteur : Tous les alignements.</p>
+<p>Clerc : Loyal bon ou loyal mauvais.<br>
+Télépathe : Alignements neutres, non chaotiques.<br>
+Scribe : Alignements non chaotiques.<br>
+Enchanteur : Alignements non chaotiques.<br>
+Médecin : Tous les alignements.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-26-2009-at-550-pm">Post by Fondateur Kel - January 26, 2009 at 5:50 PM</h2>
+<p><a id="post-202083"></a></p>
+<p>Comme je t'ai dit, j'aime bien ^^<br>
+Il faudrait rajouter un système de palliers genre le niveau 1 commencerait dans la branche de mages en tant qu'Apprenti, ensuite il pourrait (genre niveau 5) choisir sa branche et évoluer dedans. Ce qui donnerait quelque chose :</p>
+<p>Niveau 1-4: Apprenti Magicien<br>
+Niveau 5-9: Apprenti Sorcier<br>
+Niveau 10-14: Sorcier<br>
+Niveau 15-19: Grand-Maître Sorcier<br>
+Niveau 20-29: Elementaliste<br>
+Niveau 30+ : Canalysateur</p>
+<p>[/list:u:21io66p1]</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-26-2009-at-557-pm">Post by Ex-Bolero - January 26, 2009 at 5:57 PM</h2>
+<p><a id="post-202084"></a></p>
+<p>Donc niveau 1-5 (environ 26 xp je crois?) on se concentre sur les skills de branche (Wolf en voudrait bien 2 par branche je crois), et après on choisit la classe?</p>
+<p>C'est sûr que ça permet un peu de s'orienter. Mais j'ai peur que ça retarde vraiment l'évolution, de sorte que ça fasse évoluer juste les skills de branche et non pas ceux de classe.</p>
+<p>Je sais pas si je suis clair. O_O</p>
+<hr>
+<h2 id="post-by-dev-sancoki---january-26-2009-at-618-pm">Post by Dev Sancoki - January 26, 2009 at 6:18 PM</h2>
+<p><a id="post-202093"></a></p>
+<p>Je suis pour la distribution sur les skills, mais attention il faut alors 1 skill par spécialité. et avoir a peu près le même nombre de spécialité par arbres.</p>
+<p>Un truc au passage, le défaut de Natemia au niveau des classes c'est d'en avoir trop, les joueur s'y perdait.</p>
+<p>Quant on vois les prêtre, il se spécialise suivant leur dieux et peuvent a peu près changer suivant qui il prie. Quant je vois les mage, il ne se spécialise selon ce qu'ils étudient mais eux ils ne peuvent pas changer en cours de route ? pourquoi ?</p>
+<p>Autre chose, quel est l'explication RP/logique de la différence entre Sorcellerie/magie arcanique (la sorcellerie étant faite d'arcanne aussi elle est aussi arcanique non ?)</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-26-2009-at-626-pm">Post by Ex-Bolero - January 26, 2009 at 6:26 PM</h2>
+<p><a id="post-202095"></a></p>
+<p>Crépuscule marche comme ça depuis le début. Le sorcier manipule peut-être les arcanes, mais à des fins offensives: invocation de créatures qui attaquent (les élémentaires, sauf celui de feu, étaient attribués aux arcanistes), sorts offensif (poison, boules de feu, etc.)</p>
+<p>Le prêtre... Je serais extrêmement mitigé si je voyais un prêtre de Thaar se réorienter vers Yaghshul après quelque temps. Un mage dans la technique de jeu est tellement plus fort qu'un prêtre que la comparaison ne tient même pas (heureusement vous êtes là pour rebalancer <img src="/assets/smilies/man_in_love.gif" alt="">).</p>
+<p>Peut-être ai-je inclu trop de classes. Personnellement, en priorité, j'enlèverais ninja, voltigeur et explorateur si ça a à sauter (évidemment c'est mon propre schéma donc je n'exclue pas qu'il y en ait d'autres hein ^^).</p>
+<p>1 skill par spécialité ça ne tient pas la route. On ne peut pas faire une classe basée sur un seul skill, il en faut plusieurs et j'y tiens mordicus. Les classes par arbre, c'est assez difficile à égaliser. On pourrait par exemple bouger le rôdeur dans la roublardise? Et ça nous ferait genre 6/6/5/5/6 (je crois). C'est sûr que 28 classes c'est beaucoup... d'où mon attachement à l'ancien système, même si je crois au schéma que j'ai fait.</p>
+<p>Le changement de classe existe pour les mages qui veulent se réorienter, et ce sera la même procédure pour un prêtre qui voudrait changer radicalement de dieu. Ça a toujours marché comme ça ici (je crois), par BG et évaluation de l'Équipe. Donc tout le monde est libre de changer de classe comme il le désire...</p>
+<p>Il faudrait cependant penser à une manière d'adapter ce système de changements de classe. Par exemple, qu'il faudrait que ça reste dans la même branche ou que dans le cas contraire, il faudrait passer du temps avec un perso avec Enseignement pour inculquer les skills de branche au personnage.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-26-2009-at-746-pm">Post by Ex-Bolero - January 26, 2009 at 7:46 PM</h2>
+<p><a id="post-202114"></a></p>
+<p>Je rajouterais qu'un système de bonus de dmg avec des sneak attacks serait super pour les assassins et les ninja, basé sur les directions des monstres (et les squelettes genre seraient immunisés, parce que bon, ils ont pas de dos vraiment lol).</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-26-2009-at-859-pm">Post by Conteur Wolf - January 26, 2009 at 8:59 PM</h2>
+<p><a id="post-202130"></a></p>
+<blockquote>
+<p><strong>&quot;Conteur Bolero&quot; wrote:</strong>
+Je rajouterais qu'un système de bonus de dmg avec des sneak attacks serait super pour les assassins et les ninja, basé sur les directions des monstres (et les squelettes genre seraient immunisés, parce que bon, ils ont pas de dos vraiment lol).</p>
+<p>Plutôt que de se baser sur la direction des monstres, se qui serait probablement même pas scriptable. Serait plutôt de faire en sorte que le mob ou le joueur qui n'est pas en war contre l'assassin/ninja. reçoit ces dommages supplémentaires d'attaque sournoise qui eux sont à déterminer évidemment.</p>
+<p>L'idée me plait.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-ex-bolero---january-26-2009-at-937-pm">Post by Ex-Bolero - January 26, 2009 at 9:37 PM</h2>
+<p><a id="post-202132"></a></p>
+<p>Bah ça serait scriptable sûrement, de manière à ce que si ta direction est la même que le mob (donc que tu es dans son dos quoi), ça fait + de dégâts.</p>
+<p>Mais bon ouais sinon ta proposition marche aussi ^^</p>
+<p>Je dirais un % de chance de faire une sneak attack selon une valeur X = (Armes d'estoc + Assassinat) / 8 et 5% de cette valeur (Le X avant d'être divisé par <img src="/assets/smilies/spiteful.gif" alt=""> pour les dégâts bonus.</p>
+<p>70% assassinat<br>
+30% armes d'estoc<br>
+X=100%<br>
+Chances de sneak attack=12,5% (énorme...)<br>
+Dommages bonus: 5</p>
+<p>100% assassinat<br>
+100% armes d'estoc<br>
+X=200<br>
+Chances de sneak attack: 25% (énormissime, à balancer)<br>
+Dommages bonus: 10</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-27-2009-at-520-pm">Post by Fondateur Kel - January 27, 2009 at 5:20 PM</h2>
+<p><a id="post-202266"></a></p>
+<p>Et les palliers? ^^</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-27-2009-at-759-pm">Post by Ex-Bolero - January 27, 2009 at 7:59 PM</h2>
+<p><a id="post-202290"></a></p>
+<p>Alors, ce que je propose...</p>
+<p><strong>Donc en gros, les classes et leurs skills...</strong></p>
+<p>Un skill de branche ou de classe coûte 1 point pour 1% de cap.<br>
+Un skill &quot;normal&quot; (selon la table) coûte 2 points pour 1% de cap.<br>
+Un skill hors-classe (déterminés dans une table) coûte 3 points pour 1% de cap.<br>
+Chaque personnage a X (je propose 18, je ne sais pas si ça marche) points à distribuer à chaque niveau.</p>
+<p>Un personnage ne peut pas augmenter ses skills de branche+classe de plus de 6% par niveau.<br>
+La même règle s'applique jusqu'à 4% pour les skills &quot;normaux&quot;<br>
+On tombe à 2% pour les skills hors-classe.</p>
+<p>Chaque branche a 2 skills qui sont &quot;privilégiés&quot; (1 pt = 1% de cap) à toutes les classes qui la composent. Voici ce à quoi j'ai pensé:</p>
+<p><strong>Guerriers</strong>: Concentration de guerre, port d'armures<br>
+<strong>Roublards</strong>: Furtivité, esquive<br>
+<strong>Magiciens</strong>: Méditation, résistance à la magie<br>
+<strong>Sages</strong>: Érudition, enseignement<br>
+<strong>Artisans</strong>: Estimation d'objets, marchandage</p>
+<p><strong>Skill normal (2 pt =1%) global</strong>: Enseignement, sauf dans le cas de la branche sage.</p>
+<p>Côté port d'armures, on n'a qu'à donner des pourcentages de départ à chacune des branches. Tout le monde commence avec 20%. Après, il faut qu'ils investissent. Les guerriers n'auront pas de problème, car c'est un skill privilégié... Mais de cette manière, on ne verra plus les mages se balader en plate. Les roublards, les artisans et les sages auront &quot;port d'armures&quot; dans &quot;skill normal&quot; et donc ça coûtera 2 pt pour 1%.</p>
+<p>Esquive offre une excellente chance d'éviter si on porte une armure faible et agit en tant que réducteur de dégâts dans le cas où on porte une grosse armure.</p>
+<p>Skills de classe, retouchés:</p>
+<p><strong>Guerriers</strong></p>
+<p><u>Guerrier</u>: <em>Armes de choc, armes de taille, esquive</em><br>
+<u>Paladin</u>: <em>Armes de choc, armes de taille, prêtrise</em><br>
+<u>Rôdeur</u>: <em>Pistage, tir à l'arc, furtivité</em><br>
+<u>Archer</u>: <em>Tir à l'arc, création d'arcs et de flèches, bûcheronnage</em><br>
+<u>Barbare:</u> <em>Lutte, armes de taille, armes de choc</em><br>
+<u>Voltigeur</u>: <em>Armes d'estoc, esquive, furtivité</em></p>
+<p><strong>Roublards</strong></p>
+<p><u>Voleur</u>: <em>Vol à la tire, crochetage, mendicité</em><br>
+<u>Moine</u>: <em>Lutte, arts martiaux, médecine</em><br>
+<u>Faussaire</u>: <em>Bricolage, désarmer, pose de pièges</em><br>
+<u>Assassin</u>: <em>Assassinat, empoisonnement, armes d'estoc</em><br>
+<u>Barde</u>: <em>Bardisme, érudition, mendicité</em><br>
+<u>Explorateur</u>: <em>Campement, pistage, pose de pièges</em></p>
+<p><strong>Magiciens</strong></p>
+<p><u>Nécromancien</u>: <em>Nécromancie, fabrication de golems, spiritisme</em><br>
+<u>Druide</u>: <em>Magie naturelle, dressage, zoologie</em><br>
+<u>Arcaniste</u>: <em>Magie arcanique, érudition, transcription</em><br>
+<u>Sorcier</u>: <em>Sorcellerie, évaluation d'intelligence, spiritisme</em><br>
+<u>Invocateur</u>: <em>Magie astrale, érudition, évaluation d'intelligence</em></p>
+<p><strong>Sages</strong></p>
+<p><u>Clerc</u>: <em>Prêtrise, armes de choc, médecine</em><br>
+<u>Télépathe</u>: <em>Télépathie, spiritisme, évaluation d'intelligence</em><br>
+<u>Scribe</u>: <em>Transcription, magie arcanique, estimation d'objets</em><br>
+<u>Enchanteur</u>: <em>Enchantement, fabrication de golems, transcription</em><br>
+<u>Médecin</u>: <em>Médecine, autopsie, alchimie</em></p>
+<p><strong>Artisans</strong></p>
+<p><u>Charpentier</u>: <em>Charpenterie, bûcheronnage, création d'arcs et de flèches</em><br>
+<u>Bricoleur</u>: <em>Bricolage, excavation, bûcheronnage</em><br>
+<u>Cuisinier</u>: <em>Cuisine, pêche, empoisonnement</em><br>
+<u>Couturier</u>: <em>Couture, pêche, agriculture</em><br>
+<u>Forgeron</u>: <em>Ferronnerie, excavation, lutte</em><br>
+<u>Alchimiste</u>: <em>Alchimie, empoisonnement, souffle de verre</em><br>
+<u>Agriculteur</u>: <em>Dressage, agriculture, zoologie</em></p>
+<p>Ébauche de table (j'ai commencé par une seule classe pour vous montrer de quoi ça a l'air: c'est très D&amp;D, je préviens)</p>
+<p>LÉGENDE: Skills privilégiés (branche+classe, 1/1) -&gt; Vert<br>
+Skills normaux (majorité, 2/1) -&gt; Jaune<br>
+Skills hors-classe (rares, 3/1) -&gt; Rouge</p>
+<p><img src="http://img231.imageshack.us/img231/5165/tableauhk8.gif" alt=""></p>
+<p>Niveau 1-4: Le personnage n'a qu'une branche, pas de classe. Son titre est &quot;Apprenti&quot;, suivi de sa branche. Apprenti guerrier, apprenti roublard, etc. (Je ne sais pas quelle est l'utilité de ce titre, mais Kel y tient). Il peut placer ses points dans tous les skills, mais seuls ceux de sa branche possède l'équivalence 1/1. Les autres skills que sa classe lui donneraient normalement à 1/1 deviennent 2/1 jusqu'au niveau 5. Période de familiarisation avec le jeu.</p>
+<p>Niveau 5-9: Le personnage choisit sa classe au niveau 5 parmi celles que sa branche offre. Une fois ce choix fait, la table s'applique et il doit distribuer ses points. Il est alors &quot;{Branche} en devenir&quot;. Par exemple, Roublard en devenir, Guerrier en devenir, etc. Je préfère qu'on n'identifie jamais la classe par ce biais.</p>
+<p>Niveau 10-19: Le personnage porte le nom de &quot;{Branche} expérimenté&quot; (Sage expérimenté, magicien expérimenté, etc.)</p>
+<p>Niveau 20-29: Le personnage porte le titre de (selon la branche) -&gt; Maître de guerre, Adepte des ombres, Grand mage, Grand sage ou Artisan renommé. (Je persiste à croire que ce titre ne sert à rien... Car on va quand même pas afficher &quot;Adepte des ombres&quot; au-dessus de la tête d'un PJ)</p>
+<p>Niveau 30+: Le personnage porte le titre de (selon la classe):</p>
+<p>Guerrier: Vétéran<br>
+Paladin: Homme de foi<br>
+Rôdeur: Coureur des bois<br>
+Archer: Archer d'élite<br>
+Barbare: Brute<br>
+Voltigeur: Voltigeur d'élite</p>
+<p>Voleur: Brigand<br>
+Faussaire: Piégeur<br>
+Barde: Ménestrel<br>
+Moine: Moine discipliné<br>
+Assassin: Spadassin<br>
+Explorateur: Découvreur</p>
+<p>Nécromancien: Maître des morts<br>
+Druide: Chaman<br>
+Arcaniste: Maître des arcanes<br>
+Sorcier: Grand sorcier<br>
+Invocateur: Maître de l'astral</p>
+<p>Clerc: Prêtre<br>
+Télépathe: Maître de l'esprit<br>
+Scribe: Savant<br>
+Enchanteur: Maître des runes<br>
+Médecin: Guérisseur</p>
+<p>Charpentier: Maître menuisier<br>
+Bricoleur: Inventeur<br>
+Cuisinier: Queux (vous chercherez!!)<br>
+Couturier: Tailleur<br>
+Forgeron: Ferronnier<br>
+Alchimiste: Alambiqueur<br>
+Agriculteur: Cultivateur</p>
+<p>Prévoir des bonus pour les classes à ce moment, sur la base des classes de prestige imaginées par Kel.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-28-2009-at-300-am">Post by Conteur Wolf - January 28, 2009 at 3:00 AM</h2>
+<p><a id="post-202373"></a></p>
+<p>Bon tu m'as convaincu en partie.</p>
+<p>Le seul endroit que j'accroche c'est :</p>
+<p>Donc en gros, les classes et leurs skills...</p>
+<p>Un skill de branche ou de classe coûte 1 point pour 1% de cap.<br>
+Un skill &quot;normal&quot; (selon la table) coûte 2 points pour 1% de cap.<br>
+Un skill hors-classe (déterminés dans une table) coûte 3 points pour 1% de cap.<br>
+Chaque personnage a X (je propose 18, je ne sais pas si ça marche) points à distribuer à chaque niveau.</p>
+<p>Un personnage ne peut pas augmenter ses skills de branche+classe de plus de 6% par niveau.<br>
+La même règle s'applique jusqu'à 4% pour les skills &quot;normaux&quot;<br>
+On tombe à 2% pour les skills hors-classe.</p>
+<p>Au final, un personnage aura trop peu de possibilité de skills pouvant monter à 100%. Un personnage rendu niveau 40 aura 720 Pts à dépensé.</p>
+<p>Prenons en exemple un guerrier :</p>
+<p>Guerriers: Concentration de guerre, port d'armures<br>
+Branche : Armes de choc, armes de taille, esquive</p>
+<p>En gros si on compte avec le % cap de départ qui serait a 20%:</p>
+<p>Concentration de Guerre : 80 pts pour 100%<br>
+Port d'armures : 80 pts pts pour 100%<br>
+Armes de choc : 80 pts pour 100%<br>
+Armes de taille : 80 pts pour 100%<br>
+Esquive : 80 pts pour 100%</p>
+<p>Juste là il y a un sommet de 400 sur 720. Ça offre trop peu de choix de skill, et il s'agit d'un niveau 40 quand même.</p>
+<p>Selon moi, les skills de la classe devraient augmenter seul en indépendance des points obtenus par les niveaux. Pour faire un chiffre rond, disons 4% dans les deux skills à chaque niveau. Si nous considérons qu'il y a un cap de base de 20 pour tous les skills, rendu au niveau 20 les deux skills seront à 100%. Et si les joueurs investissent leurs points dans les skills de branches, ils seront a 100 également avec quelques points restant pour du bonbon.</p>
+<p>Le niveau 20 qui est rendu quand même un niveau respectable et qui tourne autour de la moyenne chez les joueurs. Ce qui libère 200 pts quand même au final près à investir dans du bonbon pour personnalisé son personnage avec quelques talents cachés.</p>
+<p>Enfin voilà le reste est génial pour moi ^^, si ce n'est que comme bolero d'avoir une commande pour cacher son titre de classe, &quot;maître roublard&quot; n'est pas très subtile et serait susceptible de créer de l'abus hrp.</p>
+<p>Du très beau travail Bolero ^^</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-28-2009-at-530-am">Post by Ex-Bolero - January 28, 2009 at 5:30 AM</h2>
+<p><a id="post-202401"></a></p>
+<p>Complètement opposé à ce que le cap monte automatiquement, désolé...</p>
+<p>Quitte à trouver une équivalence de points plus profitable (on met plus de points afin d'équilibrer le tout), ça serait mieux.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-28-2009-at-535-am">Post by Fondateur Kel - January 28, 2009 at 5:35 AM</h2>
+<p><a id="post-202405"></a></p>
+<p>Complètement opposé à ce que le cap monte automatiquement, désolé...</p>
+<p>Quitte à trouver une équivalence de points plus profitable (on met plus de points afin d'équilibrer le tout), ça serait mieux.</p>
+<p>+1, suffirait de rajouter le nombre de points à distribuer, ça garderait la flexibilité du système et permettrait de faire des builds custom (un guerrier qui n'as pas tout à 100% au niveau 40). ^^</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---january-28-2009-at-559-am">Post by Conteuse Seshat - January 28, 2009 at 5:59 AM</h2>
+<p><a id="post-202410"></a></p>
+<p><em>Oui, j'aime beaucoup ton système Bolero. L'évolution est probablement trop lente à coups de 1%, mais on peut facilement trouver un compromis dans les ratios qui permettent de garder un équilibre.</em></p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-28-2009-at-627-am">Post by Conteur Wolf - January 28, 2009 at 6:27 AM</h2>
+<p><a id="post-202414"></a></p>
+<p>Alors donnons plus que 18 pts par niveau c'est tout. Comme Seshat je trouvais simplement l'évolution trop lente.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-28-2009-at-639-am">Post by Ex-Bolero - January 28, 2009 at 6:39 AM</h2>
+<p><a id="post-202419"></a></p>
+<p>Alors imaginons ceci:</p>
+<p>Skills classe/branche = 2 pt/1%<br>
+Skills normaux = 3 pt/1%<br>
+Skills hors-classe = 5 pt/1%</p>
+<p>Et on donne 36 pt par niveau.</p>
+<p>Chaud hein? O_o</p>
+<p>Ou on garde les vieilles équivalences et hop, on shoot 24 pt/niveau. Mais ça va PGiser un peu. Faut voir combien ça donne concrètement (prenons niveau 20 si on veut avoir un truc représentatif svp)</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-28-2009-at-1102-am">Post by Conteur Wolf - January 28, 2009 at 11:02 AM</h2>
+<p><a id="post-202485"></a></p>
+<p>Les skills caps de bases de tous les skills seront-ils à 20% au départ?</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-28-2009-at-449-pm">Post by Ex-Bolero - January 28, 2009 at 4:49 PM</h2>
+<p><a id="post-202506"></a></p>
+<p>Euh bah oui dans mon esprit on garde ce principe que j'aimais bien, c'est-à-dire que tu peux un peu te débrouiller dans tous les domaines mais sans plus si tu fais pas les investissements qu'il faut.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-28-2009-at-725-pm">Post by Ex-Bolero - January 28, 2009 at 7:25 PM</h2>
+<p><a id="post-202541"></a></p>
+<p>Donc, Ti-Paul, guerrier niveau 11 (calculs à l'appui). Admettons que Ti-Paul veuille vraiment être un PG: J'ai fait le build le plus fort possible.</p>
+<p>24 pts/niveau.</p>
+<p>Skills privilégiés: Port d'armure, armes de taille, armes de choc, concentration de guerre, esquive. (1 pt = 1% de cap, max 6% de cap par niveau)<br>
+Skills hors-classe: Alchimie, Spiritisme, Magie naturelle, Magie arcanique, Magie astrale, Sorcellerie, Nécromancie, Enchantement, Télépathie. (3 pt = 1% de cap, max 2% de cap par niveau)</p>
+<p>Niveau 1 (sans classe, donc seul Port d'armures et concentration de guerre sont privilégiés): 6 pt Port d'armures (26%), 6 pt concentration de guerre (26%), 8 pt Armes de taille (24%), 4 pt Esquive (22%)</p>
+<p>Niveau 2 (sans classe, etc.): Idem.</p>
+<p>Niveau 3 (sans classe, etc.): Idem. (Récapitulatif: Port d'armures 38%, Concentration de guerre 38%, Armes de taille 32%, Esquive 26%)</p>
+<p>Niveau 4 (il choisit Guerrier: il serait vraiment préférable qu'on fasse le choix de la classe à ce moment car niveaux 1/2/3 sont très limitatifs autrement) 6 dans les 3 principaux + Port d'armures.<br>
+Récapitulatif: Port d'armures 44%, Concentration de guerre 38%, Armes de taille 38%, Esquive 32%, Armes de choc 26%.</p>
+<p>Niveau 5, 6, 7, 8, 9, 10, 11, il fait pareil. Récapitulatif niveau 11:<br>
+Port d'armures 86%<br>
+Concentration de guerre 38%<br>
+Armes de taille 80%<br>
+Armes de choc 68%<br>
+Esquive 74%</p>
+<p>On constate vite que ça n'a pas de bon sens. C'est sûr que Ti-Paul est un exemple de PG, car il n'a pas investi un chouilla dans les compétences non privilégiées, mais quand même, on voit que tu peux atteindre le 100% dès le niveau 13 (branche) et 15 (classe) avec 24 pts/niveau et ces équivalences.</p>
+<p>Donc il faudrait un équilibre là. Prenons la même chose à 20 pt/niveau, un PG total:</p>
+<p><u>Niveau 11</u><br>
+Port d'armures 86%<br>
+Concentration de guerre: 38%<br>
+Armes de taille: 80%<br>
+Esquive: 62%<br>
+Armes de choc: 34%</p>
+<p>J'espère ne pas m'être gourré.</p>
+<p>Donc on a un problème de balance, je crois... À régler soit au niveau des points par niveau, des équivalences Points-% ou de ce qu'on peut investir dans les premiers niveaux, ou encore au niveau du % max qu'on peut gagner par niveau.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-28-2009-at-757-pm">Post by Ex-Bolero - January 28, 2009 at 7:57 PM</h2>
+<p><a id="post-202544"></a></p>
+<p>Bon, je vous invite (si vous possédez Excel) à faire des tests.</p>
+<!-- m --><a class="postlink" href="http://www.fileshost.com/download.php?id=43740F441">http://www.fileshost.com/download.php?id=43740F441</a><!-- m -->   
+<p>Voilà le fichier: C'est un outil pour builder un guerrier jusqu'au niveau 15. Le cap est inscrit à la fin et les formules correspondent aux équivalences 1/1, 2/1 et 3/1.</p>
+<p>La case A1 correspond au nombre de points alloués par niveau (une constante, vous indiquez 24 si vous voulez 24 et c'est tout ^^).</p>
+<p>Les cases vertes = skills privilégiés. Je considère avec cette feuille qu'on choisit la classe au niveau 4, donc les skills de classe guerrier apparaissent en vert à partir du niveau 4.</p>
+<p>Jaunes = 2/1 (normaux).</p>
+<p>Rouges = 3/1 (hors classe).</p>
+<p>En haut de chacune des colonnes se situe un chiffre, il baissera au fur et à mesure que vous placez des points dans le tableau. Je n'ai pas trouvé de moyen d'avertir quand on dépasse, il faut vérifier à l'ancienne ^^. Si vous vous y connaissez un tant soit peu avec Excel, vous devriez être capable de tout modifier à volonté pour trouver de nouvelles solutions (par exemple, plus de points, ou des équivalences différentes (voir formules de cap)).</p>
+<p>Bon allez, c'était surtout pour moi, mais si vous en avez besoin...</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-29-2009-at-704-am">Post by Fondateur Kel - January 29, 2009 at 7:04 AM</h2>
+<p><a id="post-202664"></a></p>
+<p>Faudrait que je vois avec Hepta, il a plus d'expérience en équilibrage ^^ On fera ça après le système de nom/guildes je pense.</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-29-2009-at-708-am">Post by Ex-Lumina - January 29, 2009 at 7:08 AM</h2>
+<p><a id="post-202668"></a></p>
+<p>En arbres ça donne quoi tout ça ? .. ^^</p>
+<p><em><span style="color:#000000"><em>A essayé d'en faire un avec Paint puis a abandonné en blasphémant</em></span></em></p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-29-2009-at-712-am">Post by Fondateur Kel - January 29, 2009 at 7:12 AM</h2>
+<p><a id="post-202671"></a></p>
+<p>En arbres ça donne quoi tout ça ? .. ^^</p>
+<p><em><span style="color:#000000"><em>A essayé d'en faire un avec Paint puis a abandonné en blasphémant</em></span></em></p>
+<p>Avec paint...    <img src="/assets/smilies/mamba.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-29-2009-at-1131-am">Post by Conteur Wolf - January 29, 2009 at 11:31 AM</h2>
+<p><a id="post-202696"></a></p>
+<p>Toi et tes arbres... Tu n'as jamais songé à travailler dans une pépinière ou voter pour le parti vert <img src="/assets/smilies/man_in_love.gif" alt="">?</p>
+<p>Quelqu'un à un lien pour une version altéré d'office? (Microsoft Word,Excel etc..)</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-29-2009-at-506-pm">Post by Ex-Bolero - January 29, 2009 at 5:06 PM</h2>
+<p><a id="post-202721"></a></p>
+<p>Lumina, tu parles des palliers? Si oui, c'est mineur, concentrons-nous sur les classes <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-lumina---january-29-2009-at-551-pm">Post by Ex-Lumina - January 29, 2009 at 5:51 PM</h2>
+<p><a id="post-202740"></a></p>
+<p>Et donc, en arbre :D?</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-29-2009-at-611-pm">Post by Ex-Bolero - January 29, 2009 at 6:11 PM</h2>
+<p><a id="post-202741"></a></p>
+<p>Il n'y a pas d'arbre à faire................. C'est pas compliqué, il y a Branche, et ensuite classe. Sans plus.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-29-2009-at-647-pm">Post by Fondateur Kel - January 29, 2009 at 6:47 PM</h2>
+<p><a id="post-202752"></a></p>
+<p>D'après un ami (qui a fait quasi tous les mmo), l'un des meilleurs systèmes de classe était sur SWG premiere version:<br>
+Les arbres :</p>
+<!-- m --><a class="postlink" href="http://www.bafordham.com/swg/skilltrees.html">http://www.bafordham.com/swg/skilltrees.html</a><!-- m --> 
+<p>Donc en gros ça commence avec Artisan, Brawler, Entertainer, Marksman, Medic, Politician, Scout, &amp;Alliance Starfighter Pilot, &amp;Freelance Pilot, &amp;Imperial Navy Pilot, plusieurs arbres de base. Une fois arrivé et fini l'arbre, les autres peuvent être appris. Donc par exemple on peut vraiment multiclassé et faire un Maitre-Artisan, Apprenti-Guerrier et des professions en plus.</p>
+<p><img src="http://starwarsgalaxies.station.sony.com/images/features/Artisan.jpg" alt=""></p>
+<p><img src="http://starwarsgalaxies.station.sony.com/images/features/Brawler.jpg" alt=""></p>
+<p>Et la la profession avec les pré-requis (ecrit en bas):</p>
+<p><img src="http://www.thalanor.com/swg/skills.JPG" alt=""></p>
+<hr>
+<h2 id="post-by-ex-bolero---january-29-2009-at-656-pm">Post by Ex-Bolero - January 29, 2009 at 6:56 PM</h2>
+<p><a id="post-202756"></a></p>
+<p>J'aimerais comprendre ce qui cloche avec ma proposition <img src="/assets/smilies/sad.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-29-2009-at-726-pm">Post by Fondateur Kel - January 29, 2009 at 7:26 PM</h2>
+<p><a id="post-202759"></a></p>
+<p>Rien rien, juste une autre vision ^^</p>
+<p>Sinon comme on a parlé sur MSN, le multiclassage serait bien et permettrait plus de builds, mais en gardant les pénalité hors-classe (ça t'empecherait faire des trucs illogiques genre guerrier-mage). Mais permettrait de faire des spécialisations et des builds assez spéciaux.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-29-2009-at-749-pm">Post by Ex-Bolero - January 29, 2009 at 7:49 PM</h2>
+<p><a id="post-202764"></a></p>
+<p>Donc on en a reparlé sur MSN et on se disait que le multiclassage permettrait une certaine liberté additionnelle. Le multiclassage nécessiterait un BG et ne pourrait être que dans la même branche (si on ne veut pas de pénalité). Un multiclassage entre deux classes de branches séparées entraînerait X pénalité (les skills hors-classe des deux, je ne sais pas).</p>
+<p>Il serait également impossible de revenir à la classe initiale sauf par un bg de changement de classe traditionnel ou par quelqu'un avec de l'enseignement (je sais pas trop comment on gérerait les changements de classe maintenant...). Par exemple, un guerrier fait 20 niveaux en guerrier, se lasse et décide de devenir forgeron. Son BG est accepté, mais il ne pourra plus monter ses skills de guerrier: il est désormais niveau 20 guerrier, niveau X forgeron.</p>
+<p>Genre. Parce que l'ultraspécialisation par ajout de classe, ça nous fait tomber dans le style Teilia et leurs 135 sous-embranchements du cousin de la mère, comme par exemple &quot;Potard&quot; et &quot;Hermétiste&quot; sous la branche &quot;Alchimie&quot;. -Come on- (pardonnez l'expression), mais des spécialisations comme ça on n'en a vraiment pas besoin.</p>
+<p>Une brute, un barbare et un berseker, c'est pareil dans mon esprit et on ne veut pas que nos persos changent de classe 1 fois par semaine. Voilà ce que je pense quant à l'ajout d'un pallier après les classes.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-29-2009-at-758-pm">Post by Fondateur Kel - January 29, 2009 at 7:58 PM</h2>
+<p><a id="post-202768"></a></p>
+<p>Donc appelons ça du Dual-Class (inspiré de D&amp;D version 2). Je me demande encore s'il faut vraiment un BG pour partir en deuxieme classe, on peut après tout fixer une limite (genre il faut lvl5 en classe X pour pouvoir partir en deuxième classe). Par contre absolument un BG de changement de classe si la personne veut changer complètement. Le tout devrait faire en sorte que les gens changeront des classes moins souvent et je ne vois pas pourquoi dans la plupart des changements de classes un guerrier qui passe alchimiste oublie tous ses capacités de guerrier etc..</p>
+<p>Donc je pense que ça ajouterait une certaine liberté aux builds tout en gardant un réalisme. ^^</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-29-2009-at-803-pm">Post by Conteur Wolf - January 29, 2009 at 8:03 PM</h2>
+<p><a id="post-202769"></a></p>
+<p>Je suis pas chaud à l'idée de multi-classage. Les joueur ont la possibilité de se faire 3 personnages quand même par compte. Le système de Bolero présente la chance de monter quelques points dans une autre branche ou une autre classe au risque que ça coûte plus cher. C'est parfait ainsi.</p>
+<p>Je serais d'avantage pour l'idée de créer les classes de prestige de Kel. Lorsque le classe est à un certain niveau et que sa classe est complète, il pourrait aller chercher certains autres points ou spécialisations uniques.</p>
+<p>Enfin voilà.</p>
+<hr>
+<h2 id="post-by-dev-sancoki---january-30-2009-at-1135-am">Post by Dev Sancoki - January 30, 2009 at 11:35 AM</h2>
+<p><a id="post-202923"></a></p>
+<p>Bien, premièrement mettons certaine choses au point. Généralement, les shard considère un niveau pour devenir « maitre » dans un domaine je prends par exemple zyx c’était 30 ash 40, etc …<br>
+Ce niveau est généralement (100 – (%de départ))/ 2. Exemple sur zyx c’était (100-40)/2. Ici ca semble être 40 car on démarre a 20. En faite la plupart des shards prévoient une évolution de 2% dans les skills majeur par niveau.<br>
+Par contre, on joue souvent sur la vitesse d’acquisition des niveaux, un haut niveau est plus dur a avoir qu’un faible niveau, c’est ce qui fait notre courbe d’apprentissage.<br>
+Quant on build un perso (avec des actions irréversible) c’est toujours un problème. Car certain build mal leur perso et le regrette toute la vie du perso.<br>
+Quel sont les problèmes a ce qu’un joueur apprenne tout les skills ? Et bien c’est HRP car on se dit que personne ne peu tout maitriser. C’est la qu’interviennent les classes ce sont des limites !!!<br>
+Alors j’ai vu pas mal de classe genre<br>
+Archer: Tir à l’arc, création d’arcs et de flèches, esquive (nouveaux bois pour les arcs, coups spéciaux)<br>
+Ou est le problème à ce qu’il puisse monter les 3 skills a fond ? Pourquoi devrais-t-il choisir ou mettre des points ? Pourquoi se prendre la tête avec du build si les classes limite déjà suffisamment le perso ?<br>
+Donc je suis pour la monté automatique des caps et pas de build. De plus s’il y a du build il faudra prendre en compte toute les possibilités…</p>
+<p>Si la plupart des shard font leur build via des aptitudes ce n’est pas pour rien. Mais n’oublier pas si il y a du build, il faut définir comment on fait si le joueur débuild. Avec tout les abus imaginables.</p>
+<p>Donc voici ce que je propose.<br>
+Le joueur au départ choisi entre 3 types de perso. Intellectuel (Mage/sage), agile (artisant/roublart), fort (guerrier). Ce choix définira l’évolution de ses stats suivant sa race. Donc le type de perso et la race sont les éléments déterminant pour les stats.<br>
+Dans le jeu, via des objets (livre ou pierre) il choisira sa spécialité. Les classes définissent le skills cap par niveau. Changer de class =&gt; perte d’expérience. On s’en doute, pas de classe guerrière pour un intellectuel etc. Dans chaque classe des paliers qui apporte certain bonus (classe d’armure, etc).</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-30-2009-at-448-pm">Post by Ex-Bolero - January 30, 2009 at 4:48 PM</h2>
+<p><a id="post-202934"></a></p>
+<p>Quant on build un perso (avec des actions irréversible) c’est toujours un problème. Car certain build mal leur perso et le regrette toute la vie du perso.<br>
+Quel sont les problèmes a ce qu’un joueur apprenne tout les skills ? Et bien c’est HRP car on se dit que personne ne peu tout maitriser. C’est la qu’interviennent les classes ce sont des limites !!!<br>
+Alors j’ai vu pas mal de classe genre<br>
+Archer: Tir à l’arc, création d’arcs et de flèches, esquive (nouveaux bois pour les arcs, coups spéciaux)<br>
+Ou est le problème à ce qu’il puisse monter les 3 skills a fond ? Pourquoi devrais-t-il choisir ou mettre des points ? Pourquoi se prendre la tête avec du build si les classes limite déjà suffisamment le perso ?<br>
+Donc je suis pour la monté automatique des caps et pas de build. De plus s’il y a du build il faudra prendre en compte toute les possibilités…</p>
+<p>Tu me fais rire avec ça. Tu veux que ça monte automatiquement, mais tu te plains de la liberté de perso. C'est la pire façon de créer des stéréotypes, ce que tu proposes: un archer n'aura que ses skills principaux qui montent automatiquement et ne pourra jamais investir dans quoi que ce soit d'autres, donc des persos ultra caractérisés sans aucune liberté. En bref, je n'aime pas le fait que les caps montent automatiquement, c'est bête et sans effort.</p>
+<p>Et on doit faire attention: si un maître doit être niveau 40, Crép vient de tomber, à moins qu'un retouche vraiment notre courbe des niveaux (un niveau 40 a plus de 1000 points d'xp... et même beaucoup plus que ça).</p>
+<p>Le joueur au départ choisi entre 3 types de perso. Intellectuel (Mage/sage), agile (artisant/roublart), fort (guerrier). Ce choix définira l’évolution de ses stats suivant sa race. Donc le type de perso et la race sont les éléments déterminant pour les stats.<br>
+Dans le jeu, via des objets (livre ou pierre) il choisira sa spécialité. Les classes définissent le skills cap par niveau. Changer de class =&gt; perte d’expérience. On s’en doute, pas de classe guerrière pour un intellectuel etc. Dans chaque classe des paliers qui apporte certain bonus (classe d’armure, etc).</p>
+<p>Pitié... Je n'aime pas l'ultraspécialisation, mais je n'aime pas la généralisation excessive (vive le juste milieu). La race, comme me disait Kel sur MSN, doit rester un élément surtout esthétique et ne devrait pas vraiment influer sur les capacités d'un personnage (même si j'en conviens, un barbare serait plus du profil d'un demi-orque que d'une petite-personne... mais on en a déjà vu, des petites-personnes barbares, ouep)</p>
+<p>Je préfère qu'on passe par le biais d'un menu accessible tout le temps que par pierres IG, et le changement de classe ne devrait pas entraîner de perte d'xp. De plus, le choix entre seulement 3 profils me laisse immensément perplexe.</p>
+<p>Donc non, pas chaud du tout.</p>
+<hr>
+<h2 id="post-by-dev-sancoki---january-30-2009-at-617-pm">Post by Dev Sancoki - January 30, 2009 at 6:17 PM</h2>
+<p><a id="post-202950"></a></p>
+<p>Bolero tu montre une fois de plus que tu n'as rien compris... Où tu te complais a la critique inutile... de plus, il y a presque autant de contradiction que de phrase dans ton texte...</p>
+<p>En faite bolero ton système inspirer de ADD à existé sur Toria. Ce fut une catastrophe.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-30-2009-at-621-pm">Post by Ex-Bolero - January 30, 2009 at 6:21 PM</h2>
+<p><a id="post-202951"></a></p>
+<p>Si je n'ai rien compris, alors explique <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-dev-sancoki---january-30-2009-at-634-pm">Post by Dev Sancoki - January 30, 2009 at 6:34 PM</h2>
+<p><a id="post-202952"></a></p>
+<p>premièrement :</p>
+<blockquote>
+<p>Quant on build un perso (avec des actions irréversible) c’est toujours un problème. Car certain build mal leur perso et le regrette toute la vie du perso.</p>
+<p>Si tu comprend ça c'est déjà un bon point</p>
+<p>deuxièmement Si tu comprend que 100 n'est pas un nombre si grand par rapport au nombre de niveau c'est déjà une bonne chose aussi.</p>
+<p>Si pour finir tu comprends qu'un perso bien monter est forcé de mettre ses 2% par niveau dans le bon skill, et que sinon il pourris son build, tu as compris la finalité du truc. Pour la liberté après on travail IG ce qu'on veux.</p>
+<p>Pour finir les choix de départ, un nouveau joueur ne sais pas forcement mieux ce qu'il veux faire a la base, il le découvre ig.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-fondateur-kel---january-30-2009-at-655-pm">Post by Fondateur Kel - January 30, 2009 at 6:55 PM</h2>
+<p><a id="post-202957"></a></p>
+<p>Donc laissez moi expliquer, c'est au fait simple l'idée qu'il propose :</p>
+<p>Je pars d'un exemple :</p>
+<ul>
+<li>Je commence en nouveau joueur et je cherche IG pour me choisir une classe.</li>
+<li>Je rejoint l'ordre du soleil et ils me proposent de devenir paladin, je choisi donc la classe paladin</li>
+<li>A partir de là je commence ma progression niveau par niveau.</li>
+<li>Les caps des skills vont monter un peu automatiquement à chaque niveau, mais en ayant un skillcap global (un peu comme UO de base, sauf que chaque classe définira les skills auxquels on ne pourra pas y accèder, donc pas de guerrier-magiciens et les trucs de genre)</li>
+<li>Vu le skillcap général, certains skills pourront être modifiées par le joueur IG, un peu comme sur UO</li>
+</ul>
+<p>Avantages :</p>
+<ul>
+<li>On peut choisir la classe IG tout en jouant</li>
+<li>On peut ajouter les classes directement IG (suffira de faire un gump correct et une petite gestion)</li>
+<li>Les joueurs ont plus de fléxibilité et ne sont pas dépendants d'un seul build et peuvent évoluer avec le temps</li>
+</ul>
+<hr>
+<h2 id="post-by-ex-bolero---january-30-2009-at-706-pm">Post by Ex-Bolero - January 30, 2009 at 7:06 PM</h2>
+<p><a id="post-202959"></a></p>
+<p>Malgré tous mes efforts pour comprendre, eh bien ça ne vient pas.</p>
+<p>Si personne d'autre ne montre un tant soit peu d'intérêt pour ce damné débat, je me demande pourquoi on le fait.</p>
+<p>Dans le cas où on m'imposait un dilemme entre les propositions d'Heptaeon et de Kel, disons que je choisirais celle de Kel en premier.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-30-2009-at-859-pm">Post by Conteur Wolf - January 30, 2009 at 8:59 PM</h2>
+<p><a id="post-202972"></a></p>
+<p>Honnêtement je trouvais le système de Bolero excellent. Il gardait une petite touche du système actuel de crep. Les joueurs qui désirent monter des skills qui ne sont pas de leur classent peuvent, mais cela leur coûte 2 à 3 fois plus cher en points et il sera presque impossible de maximiser ce skill.</p>
+<p>Pour moi c'était la solution idéale, car si nous cadrons les joueurs uniquement sur leur classe, croyez-moi qu'il y aura des joueurs qui vont râler. La plupart des joueurs actuels ont builder leur personnage de sorte à placer leur bonus dans des skills qui ne sont pas de leur classe.</p>
+<p>Ex : Un Tiefling guerrier qui se donne quelques points en télépathie à des fins logiques et rp dû à sa race. Il n'excellera jamais dans ce skill a 100% mais il y en a suffisamment pour donner une touche unique à son personnage et donner ainsi une nouvelle couleur à son rp.</p>
+<p>Selon ce que je peux comprendre du système que propose Heptaeon, cette possibilité ne sera plus possible?</p>
+<blockquote>
+<p><strong>&quot;Kel&quot; wrote:</strong></p>
+<ul>
+<li>Les caps des skills vont monter un peu automatiquement à chaque niveau, mais en ayant un skillcap global (un peu comme UO de base, sauf que chaque classe définira les skills auxquels on ne pourra pas y accèder, donc pas de guerrier-magiciens et les trucs de genre)</li>
+</ul>
+<p>Je ne crois pas qu'on doit empêcher, mais bien donner de gros désavantages. Ce que le système de Bolero arrivait à remplir comme condition à mon avis. Il doit y avoir une limite entre empêcher totalement le joueur d'investir et qu'il puisse pas apprendre un minimum dans un autre branche sans totalement déstabiliser sa véritable classe. Tout le monde à des talents cachés. Je suis un mécanicien irl, mais ça m'empêche pas de jouer de la guitare dans un groupe...</p>
+<p>Enfin je ne suis pas sûr de bien saisir votre système également.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-dev-sancoki---january-31-2009-at-558-pm">Post by Dev Sancoki - January 31, 2009 at 5:58 PM</h2>
+<p><a id="post-203100"></a></p>
+<p>Tout depend comment on build les classes. On pourrait même faire une classe GrosPGHRP qui permet d'avoir a long terme 100 dan magery et sword et lumberjack et porter une armure de plaque XD.</p>
+<p>Il n'y a pas de différence au niveau <em>possibilité</em> avec le système de Boléro, on en a même plus, car on peu aussi limiter l'évolution des skills. Donc pour les possibilités tout dépend comment on build les classes.</p>
+<p>Les grosses différences :</p>
+<ul>
+<li>
+<p>Pas de &quot;planification&quot; du personnage à coup de click dans un gump, ce qui n'est pas rp, et qui gène les joueurs. D'ailleurs si l'équipe à mis pas plus de 3 reset par perso, c'est bien que certain joueur sont tenté de le faire.</p>
+</li>
+<li>
+<p>Tout est centralisé sur le système de skills. Si les skills montent à la bonne vitesse, pas besoin de les re compenser ou les re limiter.</p>
+</li>
+</ul>
+<p>Pour finir, pour le cas du guerrier télépathique, c'est soit lier a ce qu'il est, et donc tout ceux de sa race devrais pouvoir l'avoir, et donc c'est pas lié a une classe mais a sa race, donc ça devrais être un &quot;avantage de race&quot;. Ou alors c'est un type de jeux lié a la race donc une classe unique pour les tieflings.</p>
+<p>Donc séparons bien 3 choses :</p>
+<p>1 - comment est fait le personnage, sa génétique, sa constitution en gros comment il est fait (A la création de perso, choix entre 3 types)<br>
+2 - Ce qu'il choisi comme mode vie, comme façon de vivre, son métier, sa voie (Classe qu'il choisi IG)<br>
+3 - Dans ce métier sa spécialité, ce qu'il choisi de spécialisé, ce qu'il veux travailler (Les skills qu'il choisi de monter, d'utiliser)</p>
+<p>Les aptitudes serait une sorte d'oracle HRP qui servirais a palier les problème technique de &quot;game balancing&quot;, une sorte de contrat avec un dieux imaginaire de la technique et les script du jeux et qui permet au personnage de faire une chose ou l'autre.</p>
+<p>Imaginons 2 personnages qui ont le même RP choisissent la même voie(classe) l'un monte mal son perso, l'autre le monte bien. Si on leur demande pourquoi l'autre est plus balaise que répondra t'il ? l'oracle imaginaire est cruel ? Je suis fait comme ça alors qu'il ont les même stats ? J'ai mal builder mon perso ? J'ai pas clicker la ou il faut ?</p>
+<p>Sans aptitude, si il est mal monté, c'est qu'il n'a pas monté les bon skill, !!! mais il peu le changer a tout moment !!! Il peu donc dire il s'est entrainé plus que moi, mais je vais redoublé d'effort et le rattraper ! Fini le fatalisme !</p>
+<p>Et ne pensez pas que tout les persos sont équivalent. Si vous monter les mauvais skills, vous ne serez pas polyvalent, mais plutôt bon en RIEN.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-31-2009-at-623-pm">Post by Ex-Bolero - January 31, 2009 at 6:23 PM</h2>
+<p><a id="post-203102"></a></p>
+<p>Tout depend comment on build les classes. On pourrait même faire une classe GrosPGHRP qui permet d'avoir a long terme 100 dan magery et sword et lumberjack et porter une armure de plaque XD.</p>
+<p>Il n'y a pas de différence au niveau <em>possibilité</em> avec le système de Boléro, on en a même plus, car on peu aussi limiter l'évolution des skills. Donc pour les possibilités tout dépend comment on build les classes.</p>
+<p>Les grosses différences :</p>
+<ul>
+<li>Pas de &quot;planification&quot; du personnage à coup de click dans un gump, ce qui n'est pas rp, et qui gène les joueurs. D'ailleurs si l'équipe à mis pas plus de 3 reset par perso, c'est bien que certain joueur sont tenté de le faire.</li>
+</ul>
+<p>Tu es lassant avec ton coup de l'oracle HRP. Ça ne gène aucun joueur de placer les aptitudes, c'est même un moment très attendu généralement, car il permet de customiser son personnage.</p>
+<p>L'étape supplémentaire avec le choix de la constitution générale du perso ne sert strictement à rien. Nous n'avons pas à infantiliser nos joueurs (&quot;Intellectuel&quot;, &quot;Fort&quot;, &quot;Agile&quot;....) et à les prendre pour des cons. Tu ne cesses de ridiculiser mon système et c'est vraiment désagréable.</p>
+<blockquote>
+<p>On pourrait même faire une classe GrosPGHRP qui permet d'avoir a long terme 100 dan magery et sword et lumberjack et porter une armure de plaque XD.</p>
+<p>Ce genre de phrases n'apportent rien.</p>
+<p>Maintenant, prenons ton système.</p>
+<p>Ti-Jack a un skillcap total de 1000% (ce qui est à peu près aussi HRP que le choix des aptitudes, soyons clairs, puisque cela impose une limite d'apprentissage à un perso...) et ses skills de classe montent automatiquement à chaque niveau, de 2-3% (de façon à ce que, évidemment, il n'atteigne le 100% qu'une fois au niveau 30...) sans effort.</p>
+<p>Ton système ne me semble pas offrir autant de possibilités, dans la mesure où il empêche strictement tout investissement dans des skills autres que ceux de la classe en ne donnent <em>aucune</em> liberté au joueur dans la façon dont il veut faire évoluer son personnage. Ce n'est pas tout le monde qui a envie d'avoir un guerrier avec des skills de guerrier boostés à fond. J'ai vu nombre de gens investir un peu moins là-dedans et se mettre du healing, ce qui leur était plus profitable, alors que d'autres prenaient pistage, ce qui leur donnait un avantage pour trouver les monstres, etc. Et c'est une latitude qui a l'air exclue de ton système.</p>
+<ul>
+<li>Tout est centralisé sur le système de skills. Si les skills montent à la bonne vitesse, pas besoin de les re compenser ou les re limiter.</li>
+</ul>
+<p>C'est déjà le cas dans mon système. Les éléments qu'il y a à déterminer pour bien le balancer, ce sont le nombre de points à attribuer à chaque niveau et les équivalences pt/%.</p>
+<p>Imaginons 2 personnages qui ont le même RP choisissent la même voie(classe) l'un monte mal son perso, l'autre le monte bien. Si on leur demande pourquoi l'autre est plus balaise que répondra t'il ? l'oracle imaginaire est cruel ? Je suis fait comme ça alors qu'il ont les même stats ? J'ai mal builder mon perso ? J'ai pas clicker la ou il faut ?</p>
+<p>Sans aptitude, si il est mal monté, c'est qu'il n'a pas monté les bon skill, !!! mais il peu le changer a tout moment !!! Il peu donc dire il s'est entrainé plus que moi, mais je vais redoublé d'effort et le rattraper ! Fini le fatalisme !</p>
+<p>Resets accessibles aux joueurs: problème réglé.</p>
+<p>Et ne pensez pas que tout les persos sont équivalent. Si vous monter les mauvais skills, vous ne serez pas polyvalent, mais plutôt bon en RIEN.</p>
+<p>Faut faire confiance à nos joueurs, personne ne va être assez idiot pour monter Spiritisme chez un guerrier quand ils savent que ça leur sape les points. Et s'ils le font, tant pis, ils assumeront / feront un reset PA, comme des générations de joueurs avant eux.</p>
+<p>La justice, c'est de permettre aux joueurs de choisir, pas de les faire monter automatiquement et de considérer qu'ils sont tous pareils (= au combat à même niveau). Après, qu'ils jouent le roleplay relatif à leurs choix, ce qu'ils ont d'ailleurs <u>toujours fait</u> depuis le début de Crépuscule.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-dev-sancoki---january-31-2009-at-656-pm">Post by Dev Sancoki - January 31, 2009 at 6:56 PM</h2>
+<p><a id="post-203105"></a></p>
+<p>Boléro a toujours rien compris au système et refuse les conversation Msn avec kel pour qu'on lui explique... Donc je ne prendrais pas son avis en compte ^^. Car c'est mathématique, il n'y a pas moins de possibilité mais il s'obstine XD. Total skill cap, avec un prix par skill, ou point a distribuer pour le cap avec un prix, c'est strictement pareil, juste le nom qui change. Mais il s'obstine a tenté de faire croire qu'il y a moins de possibilité...</p>
+<p>Donc je le répète : la différence se résume a un perso qu'on construit en jeux ou qu'on construit a coup de click dans un gump. Et une limite qu'on se garde pour le HRP et facilité le game balancing.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-31-2009-at-707-pm">Post by Ex-Bolero - January 31, 2009 at 7:07 PM</h2>
+<p><a id="post-203106"></a></p>
+<p>Très bien, exposons les faits.</p>
+<p><strong>Heptaeon dit:</strong><br>
+Bon on va tenter de lui expliquer un coups</p>
+<p><strong>Xavier dit:</strong><br>
+Non merci <img src="/assets/smilies/smile.gif" alt=""><br>
+<strong>Heptaeon dit:</strong><br>
+Parce qu'il a toujours rien compris</p>
+<p><strong>Xavier dit:</strong><br>
+Surtout pas avec une introduction pareille.</p>
+<p><strong>Kel dit:</strong><br>
+iop</p>
+<p><strong>Xavier dit:</strong><br>
+Bonne journée.</p>
+<p>C'est à peu près comme ça que ça s'est passé. Je n'aime pas qu'on me prenne pour un idiot. Tu viens encore de prouver, avec ton dernier post, que tu n'as aucun respect.</p>
+<blockquote>
+<p>Boléro a toujours rien compris au système et refuse les conversation Msn avec kel pour qu'on lui explique... Donc je ne prendrais pas son avis en compte ^^. Car c'est mathématique, il n'y a pas moins de possibilité mais il s'obstine XD. Total skill cap, avec un prix par skill, ou point a distribuer pour le cap avec un prix, c'est strictement pareil, juste le nom qui change. Mais il s'obstine a tenté de faire croire qu'il y a moins de possibilité...</p>
+<p>C'est vraiment excellent cette critique. Surtout que de parler de moi avec le &quot;il&quot;, ce qui permet de se dissocier de l'affaire, de me pointer, de me ridiculiser.</p>
+<p>J'aimerais rappeler que selon les modalités de fusion, <u>tu n'as aucun pouvoir décisionnel.</u> Ton rôle est de scripter ce que <u>nous</u> décidons.</p>
+<p>Réglons ça ailleurs, ça pollue le topic et ça ne fait que prouver que tu n'y as pas ta place. En attendant, ça ne donne rien de participer au débat pour moi, puisque je me fais répondre comme si j'étais un chien ou un attardé mental.</p>
+<p>Merci, bonsoir.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-mr-trovnre---january-31-2009-at-716-pm">Post by Mr Trovénère - January 31, 2009 at 7:16 PM</h2>
+<p><a id="post-203107"></a></p>
+<ol>
+<li>Du calme.</li>
+<li>Un peu de respect.</li>
+<li>Nous tournons sur un principe de majorité, si ca pose un soucis, on en discute mais pas de cette manière.</li>
+</ol>
+<p>Bobo, mon msn est ouvert.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-31-2009-at-728-pm">Post by Ex-Bolero - January 31, 2009 at 7:28 PM</h2>
+<p><a id="post-203109"></a></p>
+<p>Note: Si Wolf et moi ne comprenons pas, le problème se situe probablement au niveau de tes explications et pas de notre capacité à comprendre.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-31-2009-at-802-pm">Post by Fondateur Kel - January 31, 2009 at 8:02 PM</h2>
+<p><a id="post-203113"></a></p>
+<p>*J'ai expliqué à Wolf hier je pense ^^ Mais calmez vous un peu sinon on appelle Lumina =P *</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-31-2009-at-828-pm">Post by Ex-Bolero - January 31, 2009 at 8:28 PM</h2>
+<p><a id="post-203116"></a></p>
+<p>Bon Kel m'a fait comprendre.</p>
+<p>Il vaut mieux que ce soit lui qui explique, ça m'a paru plus clair en 5 secondes.</p>
+<p>Je ne suis plus opposé, dans la mesure où on trouve des chiffres équilibrés et qu'on retouche à la courbe des niveaux.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

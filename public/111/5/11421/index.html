@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remarque, Sort Inconito. - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Remarque, Sort Inconito.</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">Remarque, Sort Inconito.</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="remarque-sort-inconito">Remarque, Sort Inconito.</h1>
+<h2 id="post-by-orkah-ad---january-4-2007-at-1043-am">Post by Orkah, Ad - January 4, 2007 at 10:43 AM</h2>
+<p><a id="post-103305"></a></p>
+<p>Apprêt la misse a jour, j’étais plutôt tout existé. J’avais enfin un sort que j'avais toujours voulu avoir, par les presque possibilité infini de rôle play qu'il peut provoquer, le sort Incognito.</p>
+<p>A ma grande stupéfaction, le sort ne dure moins d'une minute, ce qui est plutôt dommage. Comment voulez vous jouer une belle interaction rôle play sous votre masque magique ci celui ci ne dure que 40-60 seconde.</p>
+<p>Une petite modification sur la duré serait sens doute apprécier, un peux comme réactine armor, que la duré soit très longue et quand nous recastont le sort sa le désactive/active.</p>
+<p>Car présentement le sort Polymorphe peux, en plus de multiple transformation animal et de monstre, faire exactement le même résultat que incognito car vous pouvez  vous transformé en homme et en femme. Mais la duré de ce sort est plus longue, environ 2-3 minute.</p>
+<p>Donc pour conclure, rendre le sort incognito identique pour la duré au sort réactine armor. Sinon et bien se sort ne servira absolument a rien, en 1 minute maximum comme temps transformé, appart une très rapide et sens intérêt apparition, on ne peut pas faire grands chose.</p>
+<hr>
+<h2 id="post-by-marie-amelie-aumenia-ind---january-4-2007-at-1134-am">Post by Marie-Amelie Aumenia, Ind - January 4, 2007 at 11:34 AM</h2>
+<p><a id="post-103306"></a></p>
+<p>Euh. Le sort réactive Armor est permanent. Car se sortileges amene sont lots de malus en plus de ses qualitiés. Tout comme protection, mass protection et magic reflection.</p>
+<p>Il est vrai que Incognito devrait durer plus longtemps, mais il ne doit pas etre permanent. Car un player qui reste sous sa cachette d'identité pendant 3 semaines serait comme un peu abuser, surtout que nous avons le .masque IG.</p>
+<hr>
+<h2 id="post-by-songe---january-4-2007-at-517-pm">Post by Songe - January 4, 2007 at 5:17 PM</h2>
+<p><a id="post-103319"></a></p>
+<p>ça dépend aussi de eval intel.</p>
+<hr>
+<h2 id="post-by-evrior-ilandil-ind---january-4-2007-at-605-pm">Post by Evrior Ilandil, IND - January 4, 2007 at 6:05 PM</h2>
+<p><a id="post-103321"></a></p>
+<p>Si c'est comme la magie divine, tout dépend de ton karma... Donc plus ton karma est haut, plus tes sorts seront puissant et dereront longtemps. Prennont Consercrus Arma: Plus j'ai de karma, plus je vais frapper fort et plus le sort va durer longtemps...</p>
+<p>Pour ce qui est des sorts de nécro, j'en en ai aucune idée</p>
+<hr>
+<h2 id="post-by-orkah-ad---january-4-2007-at-1031-pm">Post by Orkah, Ad - January 4, 2007 at 10:31 PM</h2>
+<p><a id="post-103356"></a></p>
+<p>Nécro ? on parle d'arcane ici.</p>
+<p>J'ai bien 100 en invel intel et a peux prèt 90 en magery.</p>
+<p>une duré de 10 minute a 100/100 serait très sufisente a mon avi. Laissent le temps a une intéraction minimal avent que le masque tombe. Mais il fodrait qu'en le recastent nous puission anulé le masque, car 10 minute sa peux être long quand le sort a été activé par érreur <img src="/assets/smilies/smile.gif" alt="">.</p>
+<hr>
+<h2 id="post-by-the-crazy-ragn-wazaa---january-5-2007-at-327-am">Post by The Crazy Ragn, Wazaa - January 5, 2007 at 3:27 AM</h2>
+<p><a id="post-103386"></a></p>
+<p>** Comme sa.. Ce serrat plus long **</p>
+<p>using System;<br>
+using System.Collections;<br>
+using Server;<br>
+using Server.Mobiles;<br>
+using Server.Misc;<br>
+using Server.Items;<br>
+using Server.Gumps;<br>
+using Server.Spells;<br>
+using Server.Spells.Seventh;</p>
+<p>namespace Server.Spells.Fifth<br>
+{
+\tpublic class IncognitoSpell : Spell<br>
+\t{<br>
+\t\tprivate static SpellInfo m_Info = new SpellInfo(<br>
+\t\t\t\t&quot;Incognito&quot;, &quot;Kal In Ex&quot;,<br>
+\t\t\t\tSpellCircle.Fifth,<br>
+\t\t\t\t206,<br>
+\t\t\t\t9002,<br>
+\t\t\t\tReagent.Bloodmoss,<br>
+\t\t\t\tReagent.Garlic,<br>
+\t\t\t\tReagent.Nightshade<br>
+\t\t\t);</p>
+<p>\t\tpublic IncognitoSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override bool CheckCast()<br>
+\t\t{<br>
+\t\t\tif ( !Caster.CanBeginAction( typeof( IncognitoSpell ) ) )<br>
+\t\t\t{<br>
+\t\t\t\tCaster.SendLocalizedMessage( 1005559 ); // This spell is already in effect.<br>
+\t\t\t\treturn false;<br>
+\t\t\t}<br>
+\t\t\telse if ( Caster.BodyMod == 183 || Caster.BodyMod == 184 )<br>
+\t\t\t{<br>
+\t\t\t\tCaster.SendLocalizedMessage( 1042402 ); // You cannot use incognito while wearing body paint<br>
+\t\t\t\treturn false;<br>
+\t\t\t}</p>
+<p>\t\t\treturn true;<br>
+\t\t}</p>
+<p>\t\tpublic override void OnCast()<br>
+\t\t{<br>
+if (Caster is RacePlayerMobile)<br>
+{<br>
+int apt_besoin = 22;<br>
+RacePlayerMobile Casteur = (RacePlayerMobile)Caster;<br>
+if (Casteur.Magie_arcanique &lt; apt_besoin)<br>
+{<br>
+Casteur.SendMessage(&quot;Vos mains tremblent, vous ratez votre sort.&quot;);<br>
+Casteur.SendMessage(&quot;Vous avez besoin de minimum &quot; + apt_besoin + &quot; en magie arcanique.&quot;);<br>
+return;<br>
+}<br>
+}<br>
+\t\t\tif ( !Caster.CanBeginAction( typeof( IncognitoSpell ) ) )<br>
+\t\t\t{<br>
+\t\t\t\tCaster.SendLocalizedMessage( 1005559 ); // This spell is already in effect.<br>
+\t\t\t}<br>
+\t\t\telse if ( Caster.BodyMod == 183 || Caster.BodyMod == 184 )<br>
+\t\t\t{<br>
+\t\t\t\tCaster.SendLocalizedMessage( 1042402 ); // You cannot use incognito while wearing body paint<br>
+\t\t\t}<br>
+\t\t\telse if ( !Caster.CanBeginAction( typeof( PolymorphSpell ) ) || Caster.IsBodyMod )<br>
+\t\t\t{<br>
+\t\t\t\tDoFizzle();<br>
+\t\t\t}<br>
+\t\t\telse if ( CheckSequence() )<br>
+\t\t\t{<br>
+\t\t\t\tif ( Caster.BeginAction( typeof( IncognitoSpell ) ) )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tDisguiseGump.StopTimer( Caster );</p>
+<p>\t\t\t\t\tCaster.BodyMod = Utility.RandomList( 400, 401 );<br>
+\t\t\t\t\tCaster.HueMod = Utility.RandomSkinHue();<br>
+\t\t\t\t\tCaster.NameMod = Caster.Body.IsFemale ? NameList.RandomName( &quot;female&quot; ) :</p>
+<p>NameList.RandomName( &quot;male&quot; );</p>
+<p>\t\t\t\t\tPlayerMobile pm = Caster as PlayerMobile;</p>
+<p>\t\t\t\t\tif ( pm != null )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tif ( pm.Body.IsFemale )<br>
+\t\t\t\t\t\t\tpm.SetHairMods( Utility.RandomList( m_HairIDs ), 0 );<br>
+\t\t\t\t\t\telse<br>
+\t\t\t\t\t\t\tpm.SetHairMods( Utility.RandomList( m_HairIDs ), Utility.RandomList(</p>
+<p>m_BeardIDs ) );</p>
+<p>\t\t\t\t\t\tItem hair = pm.FindItemOnLayer( Layer.Hair );</p>
+<p>\t\t\t\t\t\tif ( hair != null )<br>
+\t\t\t\t\t\t\thair.Hue = Utility.RandomHairHue();</p>
+<p>\t\t\t\t\t\thair = pm.FindItemOnLayer( Layer.FacialHair );</p>
+<p>\t\t\t\t\t\tif ( hair != null )<br>
+\t\t\t\t\t\t\thair.Hue = Utility.RandomHairHue();<br>
+\t\t\t\t\t}</p>
+<p>\t\t\t\t\tCaster.FixedParticles( 0x373A, 10, 15, 5036, EffectLayer.Head );<br>
+\t\t\t\t\tCaster.PlaySound( 0x3BD );</p>
+<p>\t\t\t\t\tBaseArmor.ValidateMobile( Caster );</p>
+<p>\t\t\t\t\tStopTimer( Caster );</p>
+<p>\t\t\t\t\tTimer t = new InternalTimer( Caster );</p>
+<p>\t\t\t\t\tm_Timers = t;</p>
+<p>\t\t\t\t\tt.Start();<br>
+\t\t\t\t}<br>
+\t\t\t\telse<br>
+\t\t\t\t{<br>
+\t\t\t\t\tCaster.SendLocalizedMessage( 1005559 ); // This spell is already in effect.<br>
+\t\t\t\t}<br>
+\t\t\t}</p>
+<p>\t\t\tFinishSequence();<br>
+\t\t}</p>
+<p>\t\tprivate static Hashtable m_Timers = new Hashtable();</p>
+<p>\t\tpublic static bool StopTimer( Mobile m )<br>
+\t\t{<br>
+\t\t\tTimer t = (Timer)m_Timers;</p>
+<p>\t\t\tif ( t != null )<br>
+\t\t\t{<br>
+\t\t\t\tt.Stop();<br>
+\t\t\t\tm_Timers.Remove( m );<br>
+\t\t\t}</p>
+<p>\t\t\treturn ( t != null );<br>
+\t\t}</p>
+<p>\t\tprivate static int[] m_HairIDs = new int[]<br>
+\t\t\t{<br>
+\t\t\t\t0x2044, 0x2045, 0x2046,<br>
+\t\t\t\t0x203C, 0x203B, 0x203D,<br>
+\t\t\t\t0x2047, 0x2048, 0x2049,<br>
+\t\t\t\t0x204A, 0x0000<br>
+\t\t\t};</p>
+<p>\t\tprivate static int[] m_BeardIDs = new int[]<br>
+\t\t\t{<br>
+\t\t\t\t0x203E, 0x203F, 0x2040,<br>
+\t\t\t\t0x2041, 0x204B, 0x204C,<br>
+\t\t\t\t0x204D, 0x0000<br>
+\t\t\t};</p>
+<p>\t\tprivate class InternalTimer : Timer<br>
+\t\t{<br>
+\t\t\tprivate Mobile m_Owner;</p>
+<p>\t\t\tpublic InternalTimer( Mobile owner ) : base( TimeSpan.FromSeconds( 0 ) )<br>
+\t\t\t{<br>
+\t\t\t\tm_Owner = owner;</p>
+<p>\t\t\t\tint val = ((6 * owner.Skills.Magery.Fixed) / 10) + 1;</p>
+<p>\t\t\t\tif ( val &gt; 144 )<br>
+\t\t\t\t\tval = 144;</p>
+<p>\t\t\t\tDelay = TimeSpan.FromSeconds( val );<br>
+\t\t\t\tPriority = TimerPriority.OneSecond;<br>
+\t\t\t}</p>
+<p>\t\t\tprotected override void OnTick()<br>
+\t\t\t{<br>
+\t\t\t\tif ( !m_Owner.CanBeginAction( typeof( IncognitoSpell ) ) )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tif ( m_Owner is PlayerMobile )<br>
+\t\t\t\t\t\t((PlayerMobile)m_Owner).SetHairMods( -1, -1 );</p>
+<p>\t\t\t\t\tm_Owner.BodyMod = 0;<br>
+\t\t\t\t\tm_Owner.HueMod = -1;<br>
+\t\t\t\t\tm_Owner.NameMod = null;<br>
+\t\t\t\t\tm_Owner.EndAction( typeof( IncognitoSpell ) );</p>
+<p>\t\t\t\t\tBaseArmor.ValidateMobile( m_Owner );<br>
+\t\t\t\t}<br>
+\t\t\t}<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<hr>
+<h2 id="post-by-vent-dhiver---january-5-2007-at-403-pm">Post by Vent d'Hiver - January 5, 2007 at 4:03 PM</h2>
+<p><a id="post-103433"></a></p>
+<p>Merci à toi, Ragnamord.</p>
+<p>Mais nous n'avons plus besoin des tes services, en effet depuis le début janvier nous avons de nouveaux scripteurs. Les choses dorénavant vont aller plus vite. ^^</p>
+<hr>
+<h2 id="post-by-conan---january-5-2007-at-423-pm">Post by Conan - January 5, 2007 at 4:23 PM</h2>
+<p><a id="post-103436"></a></p>
+<p>Ne pas oublier non plus que la possibilité de se dissimuler et espionner est un avantage des voleurs/assassins, il serait fortement injuste qu'un mage (qui peut déjà faire beaucoup de trucs avec la magie), puisse d'un simple sort obtenir le même résultat que deux skills durement monter a 100%.</p>
+<p>L'interêt d'incognito (en fait le nom du sort est mal choisi) est purement pvm/pvp, on l'utilise avant tout pour se dérober a la vue d'un ennemi pour pouvoir soit fuir ou passer sous le nez d'un mob' génant, souvent pour fuir d'ailleurs, ou sauver d'une mort certaine un allié sur le point de se faire achever.</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---january-5-2007-at-629-pm">Post by Feydanith, dit la Carpe - January 5, 2007 at 6:29 PM</h2>
+<p><a id="post-103452"></a></p>
+<p>Euh, normallement, y'a un fichier qui influence la durée et la puissance de tous les sorts de mage...</p>
+<p>Suffit de le bidouiller un peu pour allonger :</p>
+<p>Malédictions, Bénédictions, Incognito, Polymorphe et peut-être d'autres sorts que j'oublie...</p>
+<p>( En gros, ajuster la durée en fonction du Eval int du caster, je l'avais déjà fait ailleurs, si je retombe sur le script )</p>
+<hr>
+<h2 id="post-by-orkah-ad---january-5-2007-at-1015-pm">Post by Orkah, Ad - January 5, 2007 at 10:15 PM</h2>
+<p><a id="post-103493"></a></p>
+<p>Pour ce qui est de la remarque voleur et assassin. La commende .masque fait relativement le même travaille et est acèsible a tout le monde, et aucun skill n'est relié a se faire passé pour quelqu’un d'autre a se que je chasse. Et vu la nouvelle misse a jour, un voleur ou assassin pourrait acquérir se sort. Couteux, mais ceci peux être très utile de se faire passé pour le sexe auposé.</p>
+<p>Et la remarque pvp et pvm. Ici on est sur un shard role play, ce qui n'était pas prévu de base sur les script de uo. On doie nésairement faire quelque modification a plusieur chosse, car a la base il on été créé uniquement pour être util en combat, ce que nous recherchon pas vraiment quand nous choisisont la branche arcane, ici.</p>
+<p>Peux importe ces plutôt dommage, j'ai choisit arcane pour le rôle play qu'elle peut donner ... mais a bien i réfléchir Sorcellerie fait la même chose en mieux avec polymorphe, <em>Duré plus longue et en plus il change la couleur de la pos, donc possibilité de se faire passé pour une autre race, ce que Incognito ne fait pas</em>. Ces plutôt dommage.</p>
+<hr>
+<h2 id="post-by-lyllanne-tssera-adm---january-5-2007-at-1024-pm">Post by Lyllanne T'Ssera, AdM - January 5, 2007 at 10:24 PM</h2>
+<p><a id="post-103500"></a></p>
+<p>Je suis d'accord avec Targark, j'ai accès au sort Incognito et c'est plutôt bidon...</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

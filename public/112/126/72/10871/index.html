@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Npc acheteur ou coffre banquier - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Npc acheteur ou coffre banquier</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Npc acheteur ou coffre banquier</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="npc-acheteur-ou-coffre-banquier">Npc acheteur ou coffre banquier</h1>
+<h2 id="post-by-vent-dhiver---december-4-2006-at-203-am">Post by Vent d'Hiver - December 4, 2006 at 2:03 AM</h2>
+<p><a id="post-99819"></a></p>
+<p>Il faut le scripter.</p>
+<p>J'aurais bien une suggestion, celon Umrae c'est assez simple a faire :</p>
+<ul>
+<li>On fait un coffre (vérouillé evidemment), on y met de l'or.</li>
+<li>Puis lorsque l'ont met un objet compris dans une liste d'achat dans le coffre, le coffre transfert automatiquement x pièces d'or (x étant le prix d'achat de l'objet) dans la bourse du pj, quand il n'y a plus assez d'or, l'objet est renvoyé dans la bourse.</li>
+</ul>
+<p>Voila comme demandé Umrae. Sinon je tu as aussi les indications que t'a donné Mélo ^^</p>
+<p>A toi de voir ce que tu préféres faire.</p>
+<hr>
+<h2 id="post-by-vent-dhiver---december-6-2006-at-116-pm">Post by Vent d'Hiver - December 6, 2006 at 1:16 PM</h2>
+<p><a id="post-100270"></a></p>
+<p>using System;<br>
+using System.Collections;<br>
+using Server.Items;</p>
+<p>namespace Server.Mobiles<br>
+{<br>
+\tpublic class SBblackmarket : SBInfo<br>
+\t{<br>
+\t\tprivate ArrayList m_BuyInfo = new InternalBuyInfo();<br>
+\t\tprivate IShopSellInfo m_SellInfo = new InternalSellInfo();</p>
+<p>\t\tpublic SBProvisioner()<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override IShopSellInfo SellInfo { get { return m_SellInfo; } }<br>
+\t\tpublic override ArrayList BuyInfo { get { return m_BuyInfo; } }</p>
+<p>\t\tpublic class InternalBuyInfo : ArrayList<br>
+\t\t{<br>
+\t\t\tpublic InternalBuyInfo()<br>
+\t\t\t{<br>
+\t\t\t\t<br>
+\t\t\t}<br>
+\t\t}</p>
+<p>\t\tpublic class InternalSellInfo : GenericSellInfo<br>
+\t\t{<br>
+\t\t\tpublic InternalSellInfo()<br>
+\t\t\t{<br>
+\t\t\t\tAdd( typeof( PileOfWool ), 20 );<br>
+\t\t\t\tAdd( typeof( Log ), 6 );<br>
+\t\t\t\tAdd( typeof( IronIngot ), 6 );<br>
+\t\t\t\tAdd( typeof( BlackPearl ), 5 );<br>
+\t\t\t\tAdd( typeof( BloodMoss ), 5 );<br>
+\t\t\t\tAdd( typeof( VialofBlood ), 5 );<br>
+\t\t\t\tAdd( typeof( Garlic ), 5 );<br>
+\t\t\t\tAdd( typeof( Ginseng ), 5 );<br>
+\t\t\t\tAdd( typeof( MandrakeRoot ), 5 );<br>
+\t\t\t\tAdd( typeof( Nightshade ), 5 );<br>
+\t\t\t\tAdd( typeof( PigIron ), 5 );<br>
+\t\t\t\tAdd( typeof( SulfurousAsh ), 5 );<br>
+\t\t\t\tAdd( typeof( SpiderSilk ), 5 );<br>
+\t\t\t\tAdd( typeof( SerpentScale ), 5 );<br>
+\t\t\t\tAdd( typeof( VolcanicAsh ), 5 );<br>
+\t\t\t\tAdd( typeof( Diamond ), 30 );<br>
+\t\t\t\tAdd( typeof( StarSapphire ), 30 );<br>
+\t\t\t\tAdd( typeof( Sapphire ), 20 );<br>
+\t\t\t\tAdd( typeof( Emerald ), 20 );<br>
+\t\t\t\tAdd( typeof( Amethyst ), 20 );<br>
+\t\t\t\tAdd( typeof( Tourmaline ), 15 );<br>
+\t\t\t\tAdd( typeof( Ruby ), 15 );<br>
+\t\t\t\tAdd( typeof( Citrine ), 15 );<br>
+\t\t\t\tAdd( typeof( PieceOfAmber ), 15 );<br>
+\t\t\t\tAdd( typeof( Feather ), 1 );<br>
+\t\t\t\tAdd( typeof( CutUpLeather ), 4 );<br>
+\t\t\t\t<br>
+\t\t\t}<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<p>script pour le npc proposé par Morgathys</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-6-2006-at-308-pm">Post by Feydanith, dit la Carpe - December 6, 2006 at 3:08 PM</h2>
+<p><a id="post-100284"></a></p>
+<p>Je m'occupe du reste en rentrant des cours ce soir, promis  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-6-2006-at-1132-pm">Post by Feydanith, dit la Carpe - December 6, 2006 at 11:32 PM</h2>
+<p><a id="post-100374"></a></p>
+<p>Voila, désolé pour le retard, mais j'ai plein de boulot pour la fac :s</p>
+<p>Notre copain le vendeur : BalckMarket.cs ( attention les majuscules ! )</p>
+<p>using System;<br>
+using System.Collections;<br>
+using Server;</p>
+<p>namespace Server.Mobiles<br>
+{<br>
+\tpublic class BlackMarket : BaseVendor<br>
+\t{<br>
+\t\tprivate ArrayList m_SBInfos = new ArrayList();<br>
+\t\tprotected override ArrayList SBInfos{ get { return m_SBInfos; } }</p>
+<p>\t\t[Constructable]<br>
+\t\tpublic BlackMarket() : base( &quot;le vendeur&quot; )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void InitSBInfo()<br>
+\t\t{<br>
+\t\t\tm_SBInfos.Add( new SBBlackMarket() );<br>
+\t\t}</p>
+<p>\t\tpublic BlackMarket( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<p>Et sa petite liste corrigée et commentée : SBBlackMarket.cs</p>
+<p>using System;<br>
+using System.Collections;<br>
+using Server.Items;</p>
+<p>namespace Server.Mobiles<br>
+{<br>
+\tpublic class SBBlackMarket : SBInfo<br>
+\t{<br>
+\t\tprivate ArrayList m_BuyInfo = new InternalBuyInfo();<br>
+\t\tprivate IShopSellInfo m_SellInfo = new InternalSellInfo();</p>
+<pre><code>  \t\tpublic SBBlackMarket&amp;#40;&amp;#41;  
+  \t\t&amp;#123;  
+  \t\t&amp;#125;
+
+  \t\tpublic override IShopSellInfo SellInfo &amp;#123; get &amp;#123; return m_SellInfo; &amp;#125; &amp;#125;  
+  \t\tpublic override ArrayList BuyInfo &amp;#123; get &amp;#123; return m_BuyInfo; &amp;#125; &amp;#125;  
+</code></pre>
+<p>\t\t<br>
+\t\tpublic class InternalBuyInfo : ArrayList<br>
+\t\t{<br>
+\t\t\tpublic InternalBuyInfo()<br>
+\t\t{<br>
+\t\t}<br>
+\t\t}\t</p>
+<pre><code>  \t\tpublic class InternalSellInfo &amp;#58; GenericSellInfo  
+  \t\t&amp;#123;  
+  \t\t\tpublic InternalSellInfo&amp;#40;&amp;#41;  
+     \t\t&amp;#123;  
+        \t\t\t// Gemmes  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Amber &amp;#41;, 15 &amp;#41;; // Ambre  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Amethyst &amp;#41;, 20 &amp;#41;; // Améthyste  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Citrine &amp;#41;, 15 &amp;#41;; // Citrine  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Diamond &amp;#41;, 30 &amp;#41;; // Diamant  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Emerald &amp;#41;, 20 &amp;#41;; // Emeraude  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Ruby &amp;#41;, 15 &amp;#41;; // Rubis  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Sapphire &amp;#41;, 20 &amp;#41;; // Saphir  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; StarSapphire &amp;#41;, 30 &amp;#41;; // Saphir étoilé  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Tourmaline &amp;#41;, 15 &amp;#41;; // Tourmaline  
+        \t\t\t  
+        \t\t\t// Réactifs - Magie  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; BlackPearl &amp;#41;, 5 &amp;#41;; // Perle noire  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Bloodmoss &amp;#41;, 5 &amp;#41;; // Mousse de sang  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Garlic &amp;#41;, 5 &amp;#41;; // Ail  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Ginseng &amp;#41;, 5 &amp;#41;; // Gingsen  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; MandrakeRoot &amp;#41;, 5 &amp;#41;; // Racine de mandragore  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Nightshade &amp;#41;, 5 &amp;#41;; // Belladone  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; SpidersSilk &amp;#41;, 5 &amp;#41;; // Soie d'araignée  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; SulfurousAsh &amp;#41;, 5 &amp;#41;; // Cendre sulfureuse  
+        \t\t\t  
+        \t\t\t// Réactifs - Nécromancie            \t\t\t  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; BatWing &amp;#41;, 5 &amp;#41;; // Aile de chauve-souris  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; DaemonBlood &amp;#41;, 5 &amp;#41;; // Fiole de sang - Sang de démon  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; GraveDust &amp;#41;, 5 &amp;#41;; // Cendre volcanique - Poussière de cimetière  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; PigIron &amp;#41;, 5 &amp;#41;; // Fonte  
+                      \tAdd&amp;#40; typeof&amp;#40; NoxCrystal &amp;#41;, 5 &amp;#41;; // Ecaille de serpent - Crystal de poison  
+        \t\t\t  
+     \t\t\t// Ressources\t  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Feather &amp;#41;, 1 &amp;#41;; // Cuir découpé  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; IronIngot &amp;#41;, 6 &amp;#41;; // Lingot de fer  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Leather &amp;#41;, 4 &amp;#41;; // Plume  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Log &amp;#41;, 6 &amp;#41;; // Bûche  
+        \t\t\tAdd&amp;#40; typeof&amp;#40; Wool &amp;#41;, 20 &amp;#41;; // Laine  
+        \t\t&amp;#125;  
+  \t\t&amp;#125;  
+</code></pre>
+<p>\t}<br>
+}</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-7-2006-at-722-pm">Post by Feydanith, dit la Carpe - December 7, 2006 at 7:22 PM</h2>
+<p><a id="post-100461"></a></p>
+<p>Modification en cours du vendeur, j'ai oublié la limite de 5k/semaine</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-7-2006-at-815-pm">Post by Feydanith, dit la Carpe - December 7, 2006 at 8:15 PM</h2>
+<p><a id="post-100468"></a></p>
+<p>Voili voilou, corrigé et commenté... Ca c'est un &quot;peu&quot; alourdi ^^</p>
+<p>BlackMarket.cs</p>
+<p>using Server.Items;<br>
+using Server.Network;<br>
+using Server;<br>
+using System.Collections;<br>
+using System;</p>
+<p>namespace Server.Mobiles<br>
+{<br>
+\tpublic class BlackMarket : BaseVendor<br>
+\t{<br>
+\t\tprivate ArrayList m_SBInfos = new ArrayList();<br>
+\t\tprotected override ArrayList SBInfos{ get { return m_SBInfos; } }<br>
+\t\t<br>
+\t\tprivate int m_MaxGold = 5000; // L'or max qu'il pourra dépenser sur la période<br>
+\t\tprivate int m_UsedGold = 0; // L'or déjà usé sur la période ( va varier au cours du temps )<br>
+\t\t<br>
+\t\tprivate DateTime m_End; // Prochaine date de &quot;recharge&quot;<br>
+\t\tprivate TimeSpan m_Temps = TimeSpan.FromHours( 168 ); // Détermine la durée de la période<br>
+\t\tprivate Timer m_Timer; // Timer interne pour la période<br>
+\t\t<br>
+\t\t<br>
+\t\t// Accès au maximum d'or utilisable<br>
+\t\t[CommandProperty( AccessLevel.GameMaster )]<br>
+\t\tpublic int MaxGold<br>
+\t\t{<br>
+\t\tget<br>
+\t\t{<br>
+\t\t\treturn m_MaxGold;<br>
+\t\t}<br>
+\t\tset<br>
+\t\t{<br>
+\t\t\tm_MaxGold = value;<br>
+\t\t}<br>
+\t\t}<br>
+\t\t<br>
+\t\t// Accès à l'or déjà utilisé<br>
+\t\t[CommandProperty( AccessLevel.GameMaster )]<br>
+\t\tpublic int UsedGold<br>
+\t\t{<br>
+\t\tget<br>
+\t\t{<br>
+\t\t\treturn m_UsedGold;<br>
+\t\t}<br>
+\t\tset<br>
+\t\t{<br>
+\t\t\tm_UsedGold = value;<br>
+\t\t}<br>
+\t\t}<br>
+\t\t<br>
+\t\t// Accès au temps restant<br>
+\t\t[CommandProperty( AccessLevel.GameMaster )]<br>
+\t\tpublic TimeSpan NextGold<br>
+\t\t{<br>
+\t\tget<br>
+\t\t{<br>
+\t\t\treturn m_End - DateTime.Now;<br>
+\t\t}<br>
+\t\tset<br>
+\t\t{<br>
+\t\t\tDoTimer( value );<br>
+\t\t}<br>
+\t\t}<br>
+\t\t<br>
+\t\t// Accès à la durée de la période<br>
+\t\t[CommandProperty( AccessLevel.GameMaster )]<br>
+\t\tpublic TimeSpan TimeForGold<br>
+\t\t{<br>
+\t\tget<br>
+\t\t{<br>
+\t\t\treturn m_Temps;<br>
+\t\t}<br>
+\t\tset<br>
+\t\t{<br>
+\t\t\tm_Temps = value;<br>
+\t\t}<br>
+\t\t}<br>
+\t\t<br>
+\t\t[Constructable]<br>
+\t\tpublic BlackMarket() : base( &quot;le vendeur&quot; )<br>
+\t\t{\t<br>
+\t\t\tDoTimer(); // Il initialise son timer de &quot;recharge&quot; interne lorsque le pnj est généré<br>
+\t\t}<br>
+\t\t<br>
+\t\tpublic override void InitSBInfo()<br>
+\t\t{<br>
+\t\t\tm_SBInfos.Add( new SBBlackMarket() );<br>
+\t\t}</p>
+<p>\t\tpublic BlackMarket( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t\t<br>
+\t\t////////////////////////<br>
+\t\t//                    //<br>
+\t\t//  Partie &quot;recharge&quot; //<br>
+\t\t//                    //<br>
+\t\t////////////////////////<br>
+\t\t<br>
+\t\t// Création du timer<br>
+\t\tpublic void DoTimer()<br>
+\t\t{<br>
+\t\tDoTimer( m_Temps );<br>
+\t\t}<br>
+\t\t<br>
+\t\t// Surcharge de la méthode précédente où il lance réellement le timer<br>
+\t\tpublic void DoTimer( TimeSpan delay )<br>
+\t\t{<br>
+\t\tm_End = DateTime.Now + delay; // Calcul de la prochaine date de &quot;recharge&quot;</p>
+<pre><code>     \t\tif &amp;#40; m_Timer != null &amp;#41; // Si un timer était déjà en cours, il l'arrête  
+        \t\t\tm_Timer&amp;#46;Stop&amp;#40;&amp;#41;;
+
+     \t\tm_Timer = new InternalTimer&amp;#40; this, delay &amp;#41;; // Crée le nouveau timer  
+     \t\tm_Timer&amp;#46;Start&amp;#40;&amp;#41;; // Lance le nouveau timer  
+  \t\t&amp;#125;  
+  \t\t  
+  \t\t// Définition du timer  
+  \t\tprivate class InternalTimer &amp;#58; Timer  
+  \t\t&amp;#123;  
+  \t\t\tprivate BlackMarket m_BlackMarket;
+
+  \t\t\tpublic InternalTimer&amp;#40; BlackMarket blackmarket, TimeSpan delay &amp;#41; &amp;#58; base&amp;#40; delay &amp;#41;  
+     \t\t&amp;#123;  
+        \t\t\tPriority = TimerPriority&amp;#46;OneSecond;  
+        \t\t\tm_BlackMarket = blackmarket;  
+     \t\t&amp;#125;
+
+     \t\tprotected override void OnTick&amp;#40;&amp;#41; // Ce qu'il doit faire à la fin du timer  
+     \t\t&amp;#123;  
+        \t\t\tif &amp;#40; m_BlackMarket != null &amp;#41; // Si le marchand existe toujours  
+           \t\t\t\tm_BlackMarket&amp;#46;OnTick&amp;#40;&amp;#41;; // Il appelle la méthode OnTick du marchand  
+     \t\t&amp;#125;  
+  \t\t&amp;#125;  
+  \t\t  
+  \t\t// Remise à zéro de l'or utilisé et création d'un nouveau timer  
+  \t\tpublic void OnTick&amp;#40;&amp;#41;  
+  \t\t&amp;#123;  
+</code></pre>
+<p>\t\t\tUsedGold = 0;<br>
+\t\tDoTimer();<br>
+\t\t}<br>
+\t\t<br>
+\t\t////////////////////<br>
+\t\t//                //<br>
+\t\t//  Partie vente  //<br>
+\t\t//                //<br>
+\t\t////////////////////<br>
+\t\t<br>
+\t\t// On réécrit une fonction déjà existante dans le BaseVendor pour la modifié ( overriding )<br>
+\t\t// C'est la partie un peu &quot;bricolage&quot; je l'avoue :s<br>
+\t\tpublic override bool OnSellItems( Mobile seller, ArrayList list )<br>
+\t\t{<br>
+\t\t\tif ( !IsActiveBuyer )<br>
+\t\t\t\treturn false;</p>
+<p>\t\t\tif ( !seller.CheckAlive() )<br>
+\t\t\t\treturn false;</p>
+<p>\t\t\tif ( !CheckVendorAccess( seller ) )<br>
+\t\t\t{<br>
+\t\t\t\tSay( 501522 ); // I shall not treat with scum like thee!<br>
+\t\t\t\treturn false;<br>
+\t\t\t}</p>
+<p>\t\t\tseller.PlaySound( 0x32 );</p>
+<p>\t\t\tIShopSellInfo[] info = GetSellInfo();<br>
+\t\t\tIBuyItemInfo[] buyInfo = this.GetBuyInfo();<br>
+\t\t\tint GiveGold = 0;<br>
+\t\t\tContainer cont;<br>
+\t\t\tArrayList delete = new ArrayList();<br>
+\t\t\tArrayList drop = new ArrayList();</p>
+<p>\t\t\t// Il calcule pour combien on essaye de lui vendre<br>
+\t\t\tforeach ( SellItemResponse resp in list )<br>
+\t\t\t{<br>
+\t\t\t\tif ( resp.Item.RootParent != seller || resp.Amount &lt;= 0 )<br>
+\t\t\t\t\tcontinue;</p>
+<p>\t\t\t\tforeach( IShopSellInfo ssi in info )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tif ( ssi.IsSellable( resp.Item ) )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tint amount = resp.Amount;</p>
+<p>\t\t\t\t\t\tif ( amount &gt; resp.Item.Amount )<br>
+\t\t\t\t\t\t\tamount = resp.Item.Amount;</p>
+<p>\t\t\t\t\t\tGiveGold += ssi.GetSellPriceFor( resp.Item )*amount;<br>
+\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tif ( GiveGold &gt; ( m_MaxGold - m_UsedGold ) ) // Si le montant est supérieur à ce qu'il peut encore dépenser...<br>
+\t\t\t{<br>
+\t\t\t\t// Il envoie poliment chier :)<br>
+\t\t\t\tthis.PublicOverheadMessage( MessageType.Regular, this.SpeechHue, false, &quot;Je n'ai pas assez d'or pour vous acheter cela !&quot; );<br>
+\t\t\t\tGiveGold = 0;<br>
+\t\t\t\treturn false;<br>
+\t\t\t}<br>
+\t\t\telse // Sinon, il recalcule le montant et supprime les objets du sac<br>
+\t\t\t{<br>
+\t\t\t\tGiveGold = 0;<br>
+\t\t\t\tforeach ( SellItemResponse resp in list )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tif ( resp.Item.RootParent != seller || resp.Amount &lt;= 0 )<br>
+\t\t\t\t\t\tcontinue;<br>
+\t<br>
+\t\t\t\t\tforeach( IShopSellInfo ssi in info )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tif ( ssi.IsSellable( resp.Item ) )<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tint amount = resp.Amount;<br>
+\t<br>
+\t\t\t\t\t\t\tif ( amount &gt; resp.Item.Amount )<br>
+\t\t\t\t\t\t\t\tamount = resp.Item.Amount;<br>
+\t<br>
+\t\t\t\t\t\t\tif ( ssi.IsResellable( resp.Item ) )<br>
+\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\tbool found = false;<br>
+\t<br>
+\t\t\t\t\t\t\t\tforeach ( IBuyItemInfo bii in buyInfo )<br>
+\t\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\t\tif ( bii.Restock( resp.Item, amount ) )<br>
+\t\t\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\t\t\tresp.Item.Consume( amount );<br>
+\t\t\t\t\t\t\t\t\t\tfound = true;<br>
+\t<br>
+\t\t\t\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\t\t}<br>
+\t<br>
+\t\t\t\t\t\t\t\tif ( !found )<br>
+\t\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\t\tcont = this.BuyPack;<br>
+\t<br>
+\t\t\t\t\t\t\t\t\tif ( amount &lt; resp.Item.Amount )<br>
+\t\t\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\t\t\tresp.Item.Amount -= amount;<br>
+\t\t\t\t\t\t\t\t\t\tItem item = resp.Item.Dupe( amount );<br>
+\t\t\t\t\t\t\t\t\t\titem.SetLastMoved();<br>
+\t\t\t\t\t\t\t\t\t\tcont.DropItem( item );<br>
+\t\t\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\t\t\telse<br>
+\t\t\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\t\t\tresp.Item.SetLastMoved();<br>
+\t\t\t\t\t\t\t\t\t\tcont.DropItem( resp.Item );<br>
+\t\t\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\telse<br>
+\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\tif ( amount &lt; resp.Item.Amount )<br>
+\t\t\t\t\t\t\t\t\tresp.Item.Amount -= amount;<br>
+\t\t\t\t\t\t\t\telse<br>
+\t\t\t\t\t\t\t\t\tresp.Item.Delete();<br>
+\t\t\t\t\t\t\t}<br>
+\t<br>
+\t\t\t\t\t\t\tGiveGold += ssi.GetSellPriceFor( resp.Item )*amount;<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tif ( GiveGold &gt; 0 ) // Enfin, si le montant d'or est supérieur à 0<br>
+\t\t\t{<br>
+\t\t\t\t// Il comptabilise dans son or utilisé la somme<br>
+\t\t\t\tm_UsedGold += GiveGold;<br>
+\t\t\t\t<br>
+\t\t\t\t// Et crache la thune ^^<br>
+\t\t\t\twhile ( GiveGold &gt; 60000 )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tseller.AddToBackpack( new Gold( 60000 ) );<br>
+\t\t\t\t\tGiveGold -= 60000;<br>
+\t\t\t\t}</p>
+<p>\t\t\t\tseller.AddToBackpack( new Gold( GiveGold ) );</p>
+<p>\t\t\t\tseller.PlaySound( 0x0037 );<br>
+\t\t\t}\t\t<br>
+\t\t\treturn true;<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-6-2007-at-329-pm">Post by Scripteur Artemis - January 6, 2007 at 3:29 PM</h2>
+<p><a id="post-103582"></a></p>
+<p>désolé mais bon, cest seulement moi qui voie labus évident quil y aura avec sa ?</p>
+<p>6 gp par lingot ... on peut facilement faire 200 lingot en quoi ... 10 minutes ? , 1200 gp en 10 minutes?</p>
+<p>et vendre des plumes... franchement... une poule en donne 50, une harpie 100 ... 100 gp par harpie?</p>
+<p>Deja que avec le bug des planche vendable plein de joueur se rende millionaire... avec 2 autres, ont cours a la catastrophe coté économique</p>
+<hr>
+<h2 id="post-by-mr-morgathys---january-6-2007-at-405-pm">Post by Mr. Morgathys - January 6, 2007 at 4:05 PM</h2>
+<p><a id="post-103584"></a></p>
+<p>C'est pour cette raison que le scrypt ce nomme BlackMarket.cs  <img src="/assets/smilies/hysterical.gif" alt=""></p>
+<p>Pour faire simple, le but est justement de donner 5000 écus par semaine avec un certain degré de difficulté. Il faut prendre ceci au même degré qu'un salaire donné par les guildes. Au lieu de faire apparaitre de l'or directement dans un coffre de banque j'ai suggéré cette idée afin de mettre un certain contexte RP au fait de recevoir un salaire.</p>
+<p>L'ODS reçoit les salaires de part l'empire<br>
+L'ADM reçoit les salaires de ses contrats<br>
+L'UDG reçoit les salaires de leur festivité &amp; nourriture<br>
+<em>Ce sont tous des raisons RP &quot;invisible&quot;</em></p>
+<p>Les voleurs reçoit celui du BlackMarket.cs<br>
+<em>Une raison plutôt contextuel</em></p>
+<p>A noté que ce vendeur sera dans une zone controlée et géré par moi même afin de créer un second travail de &quot;récolte&quot; aux autres joueurs.</p>
+<hr>
+<p>Edit: Possibilité de changer ce bout de scrypt:</p>
+<p>{<br>
+// Il envoie poliment chier <img src="/assets/smilies/smile.gif" alt="">             this.PublicOverheadMessage( MessageType.Regular, this.SpeechHue, false, &quot;Je n'ai pas assez d'or pour vous acheter cela !&quot; );<br>
+GiveGold = 0;<br>
+return false;<br>
+}</p>
+<p>Par celui ci ?  <img src="/assets/smilies/icon_cheesygrin.gif" alt=""><br>
+{<br>
+// Il envoie poliment chier <img src="/assets/smilies/smile.gif" alt="">             this.PublicOverheadMessage( MessageType.Regular, this.SpeechHue, false, &quot;Du calme mon geillard ! Aucune transaction précose, j'ai tout ce qu'il me faut ce mois ci.&quot; );<br>
+GiveGold = 0;<br>
+return false;<br>
+}</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-6-2007-at-522-pm">Post by Scripteur Artemis - January 6, 2007 at 5:22 PM</h2>
+<p><a id="post-103591"></a></p>
+<p>ahh je voie... mais a moins que je me trompe , un seul joueur va profiter du salaire non?</p>
+<hr>
+<h2 id="post-by-mr-morgathys---january-6-2007-at-533-pm">Post by Mr. Morgathys - January 6, 2007 at 5:33 PM</h2>
+<p><a id="post-103592"></a></p>
+<p>Écoute, ya un contexte RP en arrière de tout ça...<br>
+Et non je me promènerai pas des heures et des heures dans les bois pour ramasser moi même les ingrédients pour profiter un maximum de ce NPC...<br>
+Comme j'ai déjà fais part par MP au GM qui ont un certain sens de la logique, je vais nommer des superviseurs qui eux aurons des travailleurs qui eux recolteront...<br>
+Donc si tout le monde prend sa petite partie du salaire, il ne reste pas grand chose..</p>
+<p>Et tout ceci est pour, si je ne suis pas capable de vendre directement aux joueurs pour un max d'interaction etc etc etc... Mais ça, c'est toute des choses déjà dites dans le passé..</p>
+<p>Autre chose ?  Car on s'éloigne un peu du sujet..  <img src="/assets/smilies/hysterical.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-7-2007-at-1211-am">Post by Scripteur Artemis - January 7, 2007 at 12:11 AM</h2>
+<p><a id="post-103638"></a></p>
+<p>pas vraiment, le script a lair pret de ce que je voie donc sa peut etre retirer de la liste  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

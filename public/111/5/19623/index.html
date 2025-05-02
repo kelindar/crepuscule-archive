@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meubles - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Meubles</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">Meubles</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="meubles">Meubles</h1>
+<h2 id="post-by-rufus-flaron-ind---february-17-2008-at-804-pm">Post by Rufus Flaron, ind - February 17, 2008 at 8:04 PM</h2>
+<p><a id="post-150623"></a></p>
+<p>Tout d'abord merci beaucoup pour la MàJ avec ses nouvelles armes, la diminution des matériaux nécessaires pour crafter les gros meubles et surtout l'ajout de la liste des métaux dans tinkering et carpentry. ^^</p>
+<p>Mais je me questionne sur les meubles.</p>
+<p>Pourquoi ne pas faire que l'on puisse crafter des commodes (rouge et normale), des meubles à tiroir, des meubles avec un miroir dessus, des bibliothèques avec des livres dedans (par exemple, il faudrait 1 étagère et 10 livres pour la crafter).</p>
+<p>Je ne donne que des idées, mais c'est logique selon moi qu'on puisse construire d'autre chose que 5 chaises et demi et deux caisses ^^<br>
+(J'exagère)</p>
+<p>EDIT: Je chiâle un peu vite, évidemment vous avez rajouté les bâtons, ce qui est aussi une très bonne chose ^^  mais comparé aux choix que les forgerons et couturiers ont, la charpenterie fait un peu pitié disons <img src="/assets/smilies/hysterical.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ascyla-syre-cp---february-17-2008-at-808-pm">Post by Ascyla Syre, CP - February 17, 2008 at 8:08 PM</h2>
+<p><a id="post-150624"></a></p>
+<p>(par exemple, il faudrait 1 étagère et 10 livres pour la crafter).</p>
+<p>Ouain ouain, je me fait encore voler mes idées!  -_-</p>
+<p>Je blague,</p>
+<p>Je trouve également que sa serais une bonne idée, beaucoup de meubles ne sont pas craftable, j'espère que sa seras corriger la prochaine MaJ <img src="/assets/smilies/smile.gif" alt="">.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---february-17-2008-at-816-pm">Post by Mr Trovénère - February 17, 2008 at 8:16 PM</h2>
+<p><a id="post-150625"></a></p>
+<p>Si vous avez des capacité dans le script, cela pourrait être en fait en effet, sinon n'hésitez pas à donner vos idées pour que nous puissions voir ce qu'il est possible d'en faire.</p>
+<p>Savoir se contenter de ce que l'on à sans avoir la volonté d'en demander plus sans savoir le fournir soi même la est aussi une limite. <img src="/assets/smilies/smile.gif" alt=""><br>
+C'était la citation du jour de Mr Trovénère. <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ascyla-syre-cp---february-17-2008-at-820-pm">Post by Ascyla Syre, CP - February 17, 2008 at 8:20 PM</h2>
+<p><a id="post-150627"></a></p>
+<p>Ce n'est qu'une idée de ma part, mais si je peux bien apprendre, je le ferais volontier d'ici ce temps ! ^^</p>
+<hr>
+<h2 id="post-by-rufus-flaron-ind---february-17-2008-at-839-pm">Post by Rufus Flaron, ind - February 17, 2008 at 8:39 PM</h2>
+<p><a id="post-150631"></a></p>
+<p>Niveau script on parle de quelques dizaines de minutes (enfin je pense), y'a qu'à rajouter des items dans le menu craft ^^</p>
+<p>Corrigez-moi si je me trompe, mais ça devrait ressembler à ça:</p>
+<p>\t\t\tAddCraft( typeof( Bibliothèque ), &quot;Contenants&quot;, &quot;Bibliothèque&quot;, 35, 60, typeof( WoodenShelf ), &quot;Étagère en bois&quot;, 1, 1044253 );<br>
+\t\t\tAddRes( index, typeof( Book ), &quot;Livres&quot;, 10, 1044253 );<br>
+\t\t\tSetUseAllRes( index, true );</p>
+<p>Avec les bons noms et les bons chiffres... parce que je m'y connais que dalle.</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---february-17-2008-at-850-pm">Post by Feydanith, dit la Carpe - February 17, 2008 at 8:50 PM</h2>
+<p><a id="post-150633"></a></p>
+<p>Yep, ça ressemblerait à ça, sauf qu'il faut aussi coder l'objet &quot;Bibliothèque&quot; ( idéalement, pas d'accents dans le nom ). M'enfin, ça c'est un copier/coller du script de biblio existant avec un changement d'itemid pour le skin ( ou un appel au constructeur de la biblio classique en spécifiant l'item id dans le constructeur, mais ça buggera au flip <img src="/assets/smilies/smile.gif" alt=""> )</p>
+<hr>
+<h2 id="post-by-rufus-flaron-ind---february-17-2008-at-1024-pm">Post by Rufus Flaron, ind - February 17, 2008 at 10:24 PM</h2>
+<p><a id="post-150665"></a></p>
+<p>Ok je suis pas si stupide (yay) ^^</p>
+<hr>
+<h2 id="post-by-willy-scripteur---february-17-2008-at-1136-pm">Post by Willy, Scripteur - February 17, 2008 at 11:36 PM</h2>
+<p><a id="post-150694"></a></p>
+<p>oui, c'est pas dur a scripter....c'Est simplement long pour une seule personne....si j'ajoute 1 item par personne qui me le demande X10 minutes,...sa donne pas mal de temps....et avec la job j'ai pas toujours le temps!</p>
+<hr>
+<h2 id="post-by-rufus-flaron-ind---february-17-2008-at-1138-pm">Post by Rufus Flaron, ind - February 17, 2008 at 11:38 PM</h2>
+<p><a id="post-150695"></a></p>
+<p><img src="/assets/smilies/sad.gif" alt=""> désolé de vous innonder d'idées ^^</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

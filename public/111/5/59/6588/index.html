@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilisation du formulaire - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Utilisation du formulaire</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <a href="/111/5//" class="nav-item">Suggestion ajouts</a>
+                
+                &rsaquo; <span class="current-page">Utilisation du formulaire</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="utilisation-du-formulaire">Utilisation du formulaire</h1>
+<h2 id="post-by-ex-mlodie---april-23-2006-at-1137-pm">Post by Ex-Mélodie - April 23, 2006 at 11:37 PM</h2>
+<p><a id="post-65729"></a></p>
+<p>Catégorie : Bouton general dans le menu du crafteur, donnant acces a la liste d'objet<br>
+Nom de l’item : Nom de l'objet en question ( nom du bouton donc )<br>
+Skin ( ID ) de l’item : 0x.... toujours suivant inside uo. son code Hexadecimal<br>
+% skill requis : % minimum requis pour faire l'objet<br>
+% skill requis pour 100 % chance faire item : le % requis pour avoir 100 % de chance de faire l'item.<br>
+Damage min/max : Parfaitement évident.<br>
+Vitesse : Vitesse de l'arme.<br>
+Range : Portée de l'arme<br>
+Protection AR : Protection physique<br>
+Protection Feu : Protection Feu<br>
+Protection Eau : Protection Eau<br>
+Protection Electrique : Protection Electrique<br>
+Protection Poison : Protection poison<br>
+Flip possible  ( ID ) : Autre position possible de l'objet. 0x... ( DOIT EXISTER DANS INSIDE UO )<br>
+Composition : 4 feuilles de champignons 0x... &lt;-- ID de l'ingrédient , 2 grains de sel 0x... &lt;-- ID de l'ingrédient .<br>
+Attribue Magique : Bonus magique ( + 2 all skills ) , nightsight<br>
+Effet : poison -12pv/2 seconde, pendant 50 seconde<br>
+Poids : plus l'objet prend de ressource a faire plus il sera lourd.<br>
+Couleur : Son hue le cas echeant<br>
+Layers : Pour les armes, armure. bijoux, vetements.</p>
+<p>Toujours remplir au complet le formulaire. Si une des options n'a pas rapport avec l'objet, mettre N/A dedans.</p>
+<hr>
+<h2 id="post-by-arvendor-vasyr-adc---april-23-2006-at-1157-pm">Post by Arvendor Vasyr, AdC - April 23, 2006 at 11:57 PM</h2>
+<p><a id="post-65734"></a></p>
+<p>Voici un exemple concret :</p>
+<p>Catégorie : Instruments<br>
+Nom de l’item : Tambourine<br>
+Skin ( ID ) de l’item : 0xe9d<br>
+% skill requis : 25<br>
+Damage min/max : n/a<br>
+Vitesse : n/a<br>
+Range : n/a<br>
+Protection AR : n/a<br>
+Protection Feu : n/a<br>
+Protection Eau : n/a<br>
+Protection Electrique : n/a<br>
+Protection Poison : n/a<br>
+Flip possible ( ID ) : n/a<br>
+Composition : 6 planches de bois 0x1bd7, 2 lingot de fer<br>
+Attribue Magique : n/a<br>
+Effet : Permet de jouer de la musique<br>
+Poids : 10<br>
+Couleur : n/a<br>
+Layers : n/a</p>
+<hr>
+<h2 id="post-by-vitalie-firal-adc---april-24-2006-at-152-am">Post by Vitalie Firal, AdC - April 24, 2006 at 1:52 AM</h2>
+<p><a id="post-65747"></a></p>
+<p>Pour ce qui ce porte je supose que l'ont met les ID du Gump (male, femelle) et le Id de l'objet lorsque dans le sac.</p>
+<p>S'il il y a la version Flipable, je la donne aussi ?</p>
+<p>car pour le moment c'est ce que je fait <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-mlodie---april-24-2006-at-153-am">Post by Ex-Mélodie - April 24, 2006 at 1:53 AM</h2>
+<p><a id="post-65748"></a></p>
+<p>Id c'est ce qui va dans le sac, les flip tu donne toujours.</p>
+<p>ce qui apparait sur le corps ca c'est les gumps et ca on touche pas.</p>
+<hr>
+<h2 id="post-by-lidenbrock-adc---april-24-2006-at-208-am">Post by Lidenbrock, AdC - April 24, 2006 at 2:08 AM</h2>
+<p><a id="post-65752"></a></p>
+<p>Si c'est une arme ou une armure il y aura quoi a effet, 'Ca fait mal quand on en recoit un coup' et 'Ca empeche de faire trop mal quand on recoit un coup ?'  <img src="/assets/smilies/buba.gif" alt=""></p>
+<p>J'ai pensé a quelque chose pour les ID, vu la quantité de ID et le temps que ca peut prendre a chercher: Quelqu'un qui en a envie pourrait ouvrir sur son ordi de temps a autre un serveur 'utilitaire': nous pourrions simplement s'y connecter en changeant le login pour pouvoir vérifier les ID avec un account gm prévu a cet effet. Rien de développer que je parle bien sur, simplement pour etre pratique et sauver du temps.</p>
+<hr>
+<h2 id="post-by-ex-mlodie---april-24-2006-at-222-am">Post by Ex-Mélodie - April 24, 2006 at 2:22 AM</h2>
+<p><a id="post-65755"></a></p>
+<p>Ben.. &quot;protege&quot; <img src="/assets/smilies/hysterical.gif" alt=""></p>
+<p>dans le magique ca peut etre autrechose, -5 dex, +5 dex +10 hits.. etc.etc.etc</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

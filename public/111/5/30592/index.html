@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ne pas affiché les erreur de commande - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Ne pas affiché les erreur de commande</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">Ne pas affiché les erreur de commande</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="ne-pas-affich-les-erreur-de-commande">Ne pas affiché les erreur de commande</h1>
+<h2 id="post-by-lamagouille-fdc---august-29-2009-at-1229-pm">Post by Lamagouille, FdC - August 29, 2009 at 12:29 PM</h2>
+<p><a id="post-228632"></a></p>
+<p>Tout est dans le titre</p>
+<p>Par exemple ne pas affiché le .fich ou le .mondsay ou ce genre de chose, premièrement ça brise pas l'ambiance d'une scène.<br>
+Deuxièmement, un télépathe ou autre qui tente une commande sera tout de suite repéré en hrp si il rate, et c'est fort déplaisant .</p>
+<hr>
+<h2 id="post-by-ex-bolero---august-29-2009-at-507-pm">Post by Ex-Bolero - August 29, 2009 at 5:07 PM</h2>
+<p><a id="post-228643"></a></p>
+<p>On ne peut pas ne pas les afficher, si je ne me trompe pas. C'est considéré comme du texte parfaitement normal.</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---august-29-2009-at-508-pm">Post by Phydias Shaytan, CP - August 29, 2009 at 5:08 PM</h2>
+<p><a id="post-228644"></a></p>
+<p>Peut-être avec un handler qui a une priorité inférieure à celui des commandes pour intercepter tout ce qui commence par un &quot;.&quot; ?</p>
+<hr>
+<h2 id="post-by-koenzell-pandora-cp---august-29-2009-at-538-pm">Post by Koenzell Pandora, Cp - August 29, 2009 at 5:38 PM</h2>
+<p><a id="post-228647"></a></p>
+<p>Phydias Shaytan: J'ai déja vi un shard ou tout ce qui commence par un &quot;.&quot; ne parrait pas en jeu même les long texte. (Sa doie ètre la même chose dans d'autre mots loll.</p>
+<hr>
+<h2 id="post-by-khayzane-prs-de-shaelim---august-29-2009-at-559-pm">Post by Khayzane, Près de Shaelim - August 29, 2009 at 5:59 PM</h2>
+<p><a id="post-228650"></a></p>
+<p>La moral de cette histoire!</p>
+<p>Ne vous trompez pas <img src="/assets/smilies/hysterical.gif" alt=""><br>
+Je suis certaine qu'il y a des choses plus utiles et importante à faire.<br>
+Si vous voulez être sur de pas les manquer, mettez les en macro, sa marche toujours:D</p>
+<hr>
+<h2 id="post-by-lamagouille-fdc---august-29-2009-at-606-pm">Post by Lamagouille, FdC - August 29, 2009 at 6:06 PM</h2>
+<p><a id="post-228653"></a></p>
+<p>ou une condition ?</p>
+<p>Si ça commence par un point et n'est pas une des commandes, alors rien ne se passe ?<br>
+Bon ok faudra faire marché le copier/collé pour un switch case long comme le bras mais c'est une des solutions possible .</p>
+<p>Toujours est il que c'est faisable , et il y a sans doute d'autre moyen moins rébarbatif de le faire, car je l'ai déjà vue sur un autre server , quand ce qui était tapé derrière le &quot;.&quot; correspondait a aucune commande c'était tout simplement ignoré.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-29-2009-at-638-pm">Post by Scripteur Xenon - August 29, 2009 at 6:38 PM</h2>
+<p><a id="post-228659"></a></p>
+<p>Oui c'est sur que c'est faisable. En fait, peu de choses ne le sont pas! Mais sans même vérifier, j'ai la quasi-certitude que l'affichage des messages est géré dans le cœur du serveur lui-même. Je ne sais pas si ça vaut réellement la peine de recompiler le serveur pour ça et de redistribuer à tous les codeurs...</p>
+<hr>
+<h2 id="post-by-ex-bolero---august-29-2009-at-645-pm">Post by Ex-Bolero - August 29, 2009 at 6:45 PM</h2>
+<p><a id="post-228662"></a></p>
+<p>Ou alors on s'arrange pour que les commandes joueurs fonctionnent sur la même base que celles des GMs (nous, on ne peut même pas écrire &quot;...&quot; sans se faire dire This is not a valid command).</p>
+<hr>
+<h2 id="post-by-lamagouille-fdc---august-29-2009-at-648-pm">Post by Lamagouille, FdC - August 29, 2009 at 6:48 PM</h2>
+<p><a id="post-228664"></a></p>
+<p>Je crois bolero que c'est aussi dans le coeur, mais l'idée est bien trouvé .</p>
+<p>ça évitera les<br>
+.tel&quot; Je te transformerais en zombie après t'avoir assassiné sur l'autel du prince noire !&quot;<br>
+[Merde ! ]</p>
+<hr>
+<h2 id="post-by-thalkehr-stornaar-adm---august-29-2009-at-701-pm">Post by Thalkehr Stornaar, AdM - August 29, 2009 at 7:01 PM</h2>
+<p><a id="post-228666"></a></p>
+<p>Je me surveillerai près de Lamagouille à présent! <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-29-2009-at-750-pm">Post by Scripteur Xenon - August 29, 2009 at 7:50 PM</h2>
+<p><a id="post-228677"></a></p>
+<p>C'est effectivement probablement dans le coeur aussi ce que tu propose Bolero, mais ça soulève un intérêt. Je vais vérifier.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-29-2009-at-801-pm">Post by Scripteur Xenon - August 29, 2009 at 8:01 PM</h2>
+<p><a id="post-228679"></a></p>
+<p>C'est une ligne à changer dans le code et c'est réglé. Mais je parles bien sûr du code cœur, alors franchement, je ne crois pas que ça vaille la peine. Bientôt cela risque d'être plus facile à distribuer pour l'équipe technique, donc peut-être plus tard? <img src="/assets/smilies/Wink.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

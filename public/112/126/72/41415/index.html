@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug Stealing - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Bug Stealing</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Bug Stealing</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="bug-stealing">Bug Stealing</h1>
+<h2 id="post-by-coordinateur-apoc---march-6-2012-at-946-am">Post by Coordinateur Apoc - March 6, 2012 at 9:46 AM</h2>
+<p><a id="post-303922"></a></p>
+<p>Je ne fais qu'annoncer le bug car personnellement je n'ai aucune idée d'où viendrais le problème mais des joueurs m'ont fait une démonstration. Puis je crois que Misanthrope si connait mieux que moi en Stealing donc...  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Ca sera plus simple à expliquer avec les deux exemple auquel j'ai assisté:</p>
+<p>-Joueur possède 3000 pièces d'or<br>
+-Voleur ouvre le sac avec snooping<br>
+-Voleur vole le tas d'or et se retrouve avec disons 2670 pièces d'or<br>
+-Joueur se retrouve avec un tas d'or sans nombre.<br>
+-Gm fait .get amount sur le tas d'or: -2836</p>
+<p>Résumé: Le voleur recoit un certains nombres de l'item volé tandis que le joueur se retrouve avec un nombre n'égatif de l'item.</p>
+<p>C'est possible avec tout les items stackable, seulement plus visible avec l'or vu que c'est un chiffre plus gros.</p>
+<p>-Joueur a 12 pommes<br>
+-Voleur snoop et vole le tas de pommes<br>
+-Voleur se retrouve avec 6 pommes<br>
+-Joueur se retrouve avec simplement pomme<br>
+-Gm fait .get amount sur la pomme: 0</p>
+<p>Vu que c'est la première fois qu'on en entend parler, je me dis que c'est peut-être relié à la grosse mise à jour et comme je n'en sais rien de ce qui a été fait, je laisse cela entre les mains de notre autre scripteur. Merci!</p>
+<hr>
+<h2 id="post-by-animateur-misanthrope---march-6-2012-at-1136-am">Post by Animateur Misanthrope - March 6, 2012 at 11:36 AM</h2>
+<p><a id="post-303928"></a></p>
+<p>Damned ! Oui, c'est nouveau ça &gt;_&gt;</p>
+<p>Je regarderai en rentrant du boulot.</p>
+<p>EDIT:<br>
+Found:<br>
+stolen = Mobile.LiftItemDupe(toSteal, toSteal.Amount - amount);<br>
+// Bug fix, this part has been moved in core 2.0<br>
+// toSteal.Amount -= amount;</p>
+<p>La partie commentée était également dans le nouveau core, deux coup ça faisait deux fois le &quot;-&quot; <img src="/assets/smilies/smile.gif" alt=""><br>
+Fixé et commité.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

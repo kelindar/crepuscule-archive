@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande d&#39;aide pour corrigée un script - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Demande d&#39;aide pour corrigée un script</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <a href="/111/5//" class="nav-item">Suggestion ajouts</a>
+                
+                &rsaquo; <span class="current-page">Demande d&#39;aide pour corrigée un script</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="demande-daide-pour-corrige-un-script">Demande d'aide pour corrigée un script</h1>
+<h2 id="post-by-sharon-la-vagabonde---november-20-2006-at-736-am">Post by Sharon, la vagabonde - November 20, 2006 at 7:36 AM</h2>
+<p><a id="post-97520"></a></p>
+<p>Bon, j'ai pu testé ces sorts et y'en a qui sont vraiment buger...<br>
+Faut comprendre que la magie druidique est une toute nouvelle magie et non une magie &quot;officiel&quot;, donc pour cela qu'il a quelques bugs.</p>
+<p>Donc si quelqu'un pourrait me donnée un coup de main pour faire quelques petites changements... Surtout s'ils ont un serveur test pour vérifier si tous va bien après la correction...</p>
+<p>Une mise a jour s'en vien bientot, faudrait que se soit corrigée avant cela.</p>
+<p>D'abords, le livre de druide.... Seul la classe druide peut l'ouvrir.<br>
+J'aimerait que n'importe quel classe puisse l'ouvrir [suprimée la ligne est sans danger ?] Ou bien, mettre un minimum de 1 point d'aptitude en magie naturel pour l'ouvrir.</p>
+<p>using System;<br>
+using Server.Mobiles;<br>
+using Server.Network;<br>
+using Server.Gumps;<br>
+using Server.Spells;<br>
+using Server.RaceSystem;</p>
+<p>namespace Server.Items<br>
+{<br>
+public class DruidSpellbook : Spellbook<br>
+{<br>
+public override SpellbookType SpellbookType{ get{ return SpellbookType.Druid; } }<br>
+public override int BookOffset{ get{ return 551; } }<br>
+public override int BookCount{ get{ return 16; } }</p>
+<pre><code>  public override Item Dupe&amp;#40; int amount &amp;#41;  
+  &amp;#123;  
+     Spellbook book = new DruidSpellbook&amp;#40;&amp;#41;;
+
+     book&amp;#46;Content = this&amp;#46;Content;
+
+     return base&amp;#46;Dupe&amp;#40; book, amount &amp;#41;;  
+  &amp;#125;
+
+  &amp;#91;Constructable&amp;#93;  
+  public DruidSpellbook&amp;#40;&amp;#41; &amp;#58; this&amp;#40; &amp;#40;ulong&amp;#41;0 &amp;#41;  
+  &amp;#123;  
+  &amp;#125;
+
+  &amp;#91;Constructable&amp;#93;  
+  public DruidSpellbook&amp;#40; ulong content &amp;#41; &amp;#58; base&amp;#40; content, 0xEFA &amp;#41;  
+  &amp;#123;  
+     Hue = 1415;  
+     Name = &quot;Livre de nature&quot;;  
+  &amp;#125;
+
+  public override void OnDoubleClick&amp;#40; Mobile from &amp;#41;  
+  &amp;#123;  
+</code></pre>
+<p>\t\t  if ( ((RacePlayerMobile)from).Classe == ClasseType.Druide)<br>
+\t\t  {<br>
+\t\t\tif ( from.InRange( GetWorldLocation(), 1 ) )<br>
+\t\t\t{<br>
+\t\t\t\tfrom.CloseGump( typeof( DruidSpellbookGump ) );<br>
+\t\t\t\tfrom.SendGump( new DruidSpellbookGump( from, this ) );<br>
+\t\t\t}<br>
+\t\t  }<br>
+\t\t  else<br>
+\t\t  {<br>
+\t\t\t  from.SendMessage(&quot;Vous ne comprenez rien...&quot;);<br>
+\t\t  }<br>
+}</p>
+<pre><code>  public DruidSpellbook&amp;#40; Serial serial &amp;#41; &amp;#58; base&amp;#40; serial &amp;#41;  
+  &amp;#123;  
+  &amp;#125;
+
+  public override void Serialize&amp;#40; GenericWriter writer &amp;#41;  
+  &amp;#123;  
+     base&amp;#46;Serialize&amp;#40; writer &amp;#41;;
+
+     writer&amp;#46;Write&amp;#40; &amp;#40;int&amp;#41; 0 &amp;#41;; // version  
+  &amp;#125;
+
+  public override void Deserialize&amp;#40; GenericReader reader &amp;#41;  
+  &amp;#123;  
+     base&amp;#46;Deserialize&amp;#40; reader &amp;#41;;
+
+     int version = reader&amp;#46;ReadInt&amp;#40;&amp;#41;;  
+  &amp;#125;  
+</code></pre>
+<p>}<br>
+}</p>
+<p>Le 2e a modifier: Source de vie<br>
+Je vien de voir qu'il a un espèce de timer qui ne limite qu'a 1 heal tous les 20 a 60 secondes... En plus, cela heal tous autour, meme les ennemis/monstres...</p>
+<p>Ce que je voudrais faire:</p>
+<ul>
+<li>Enlevée le timer qui empeche de se soignée plusieurs fois</li>
+<li>Limité les soin a 1 seul personne [comme great heal] et non tous le monde autour</li>
+<li>Si possible, a la place de soignée 1 seul personne, j'aimerait que cela heal tous ceux qui sont dans le party avec le casteur de se sort.</li>
+</ul>
+<p>using System;<br>
+using System.Collections;<br>
+using Server.Network;<br>
+using Server.Items;<br>
+using Server.Mobiles;<br>
+using Server.Targeting;<br>
+using Server.Spells.Druid;</p>
+<p>namespace Server.Spells.Druid<br>
+{<br>
+public class SpringOfLifeSpell : DruidSpell<br>
+{<br>
+private static SpellInfo m_Info = new SpellInfo(<br>
+&quot;Source de vie&quot;, &quot;En Sepa Aete&quot;,<br>
+SpellCircle.Fourth,<br>
+204,<br>
+9061,<br>
+false,<br>
+Reagent.SpringWater<br>
+);</p>
+<pre><code>  public override double CastDelay&amp;#123; get&amp;#123; return 1&amp;#46;0; &amp;#125; &amp;#125;  
+  public override double RequiredSkill&amp;#123; get&amp;#123; return 5&amp;#46;0; &amp;#125; &amp;#125;  
+  public override int RequiredMana&amp;#123; get&amp;#123; return 10; &amp;#125; &amp;#125;
+
+  public SpringOfLifeSpell&amp;#40; Mobile caster, Item scroll &amp;#41; &amp;#58; base&amp;#40; caster, scroll, m_Info &amp;#41;  
+  &amp;#123;  
+  &amp;#125;
+
+  public override void OnCast&amp;#40;&amp;#41;  
+  &amp;#123;  
+       if &amp;#40;Caster is RacePlayerMobile&amp;#41; &amp;#123; int apt_besoin = 8;  
+      RacePlayerMobile Casteur = &amp;#40;RacePlayerMobile&amp;#41;Caster;  
+      if &amp;#40;Casteur&amp;#46;Magie_naturelle &lt; apt_besoin&amp;#41;  
+      &amp;#123;  
+          Casteur&amp;#46;SendMessage&amp;#40;&quot;Vos mains tremblent, vous ratez votre sort&amp;#46;&quot;&amp;#41;;  
+          Casteur&amp;#46;SendMessage&amp;#40;&quot;Vous avez besoin de minimum &quot; + apt_besoin + &quot; en magie naturelle&amp;#46;&quot;&amp;#41;;  
+          return;  
+      &amp;#125;  
+     &amp;#125;Caster&amp;#46;Target = new InternalTarget&amp;#40; this &amp;#41;;  
+  &amp;#125;
+
+  public void Target&amp;#40; IPoint3D p &amp;#41;  
+  &amp;#123;  
+     if &amp;#40; !Caster&amp;#46;CanSee&amp;#40; p &amp;#41; &amp;#41;  
+     &amp;#123;  
+        Caster&amp;#46;SendLocalizedMessage&amp;#40; 500237 &amp;#41;; // Target can not be seen&amp;#46;  
+     &amp;#125;  
+     else if &amp;#40; CheckSequence&amp;#40;&amp;#41; &amp;#41;  
+     &amp;#123;  
+        SpellHelper&amp;#46;Turn&amp;#40; Caster, p &amp;#41;;
+
+        SpellHelper&amp;#46;GetSurfaceTop&amp;#40; ref p &amp;#41;;
+
+        ArrayList targets = new ArrayList&amp;#40;&amp;#41;;
+
+        IPooledEnumerable eable = Caster&amp;#46;Map&amp;#46;GetMobilesInRange&amp;#40; new Point3D&amp;#40; p &amp;#41;, 3 &amp;#41;;
+
+        foreach &amp;#40; Mobile m in eable &amp;#41;  
+        &amp;#123;  
+           if &amp;#40; Caster&amp;#46;CanBeBeneficial&amp;#40; m, false &amp;#41; &amp;#41;  
+              targets&amp;#46;Add&amp;#40; m &amp;#41;;  
+        &amp;#125;
+
+        eable&amp;#46;Free&amp;#40;&amp;#41;;
+
+        Effects&amp;#46;PlaySound&amp;#40; p, Caster&amp;#46;Map, 0x11 &amp;#41;;
+
+        int val = &amp;#40;int&amp;#41;&amp;#40;Caster&amp;#46;Skills&amp;#91;CastSkill&amp;#93;&amp;#46;Value/20&amp;#46;0 + 5&amp;#41;;
+
+        if &amp;#40; targets&amp;#46;Count &gt; 0 &amp;#41;  
+        &amp;#123;  
+           for &amp;#40; int i = 0; i &lt; targets&amp;#46;Count; ++i &amp;#41;  
+           &amp;#123;  
+              Mobile m = &amp;#40;Mobile&amp;#41;targets&amp;#91;i&amp;#93;;
+
+              if &amp;#40; m&amp;#46;BeginAction&amp;#40; typeof&amp;#40; SpringOfLifeSpell &amp;#41; &amp;#41; &amp;#41;  
+              &amp;#123;  
+                 Caster&amp;#46;DoBeneficial&amp;#40; m &amp;#41;;  
+                 m&amp;#46;FixedParticles&amp;#40; 0x375A, 9, 20, 5027, EffectLayer&amp;#46;Head &amp;#41;;
+
+                 int toHeal = &amp;#40;int&amp;#41;&amp;#40;Caster&amp;#46;Skills&amp;#91;DamageSkill&amp;#93;&amp;#46;Value * 0&amp;#46;8&amp;#41;;  
+                 toHeal += Utility&amp;#46;Random&amp;#40; 1, 15 &amp;#41;;
+
+                 m&amp;#46;Heal&amp;#40; toHeal &amp;#41;;
+
+                 new InternalTimer&amp;#40; m, Caster, val &amp;#41;&amp;#46;Start&amp;#40;&amp;#41;;  
+                 m&amp;#46;FixedParticles&amp;#40; 0x375A, 9, 20, 5027, EffectLayer&amp;#46;Waist &amp;#41;;  
+                 m&amp;#46;PlaySound&amp;#40; 0xAF &amp;#41;;  
+              &amp;#125;  
+           &amp;#125;  
+        &amp;#125;  
+     &amp;#125;
+
+     FinishSequence&amp;#40;&amp;#41;;  
+  &amp;#125;
+
+  private class InternalTimer &amp;#58; Timer  
+  &amp;#123;  
+     private Mobile m_Owner;  
+     private int m_Val;
+
+     public InternalTimer&amp;#40; Mobile target, Mobile caster, int val &amp;#41; &amp;#58; base&amp;#40; TimeSpan&amp;#46;FromSeconds&amp;#40; 0 &amp;#41; &amp;#41;  
+     &amp;#123;  
+        double time = caster&amp;#46;Skills&amp;#91;SkillName&amp;#46;AnimalLore&amp;#93;&amp;#46;Value * 1&amp;#46;2;  
+        if &amp;#40; time &gt; 300 &amp;#41;  
+           time = 300;  
+        Delay = TimeSpan&amp;#46;FromSeconds&amp;#40; time &amp;#41;;  
+        Priority = TimerPriority&amp;#46;TwoFiftyMS;
+
+        m_Owner = target;  
+        m_Val = val;  
+     &amp;#125;
+
+     protected override void OnTick&amp;#40;&amp;#41;  
+     &amp;#123;  
+        m_Owner&amp;#46;EndAction&amp;#40; typeof&amp;#40; SpringOfLifeSpell &amp;#41; &amp;#41;;  
+      
+         
+     &amp;#125;  
+  &amp;#125;
+
+  private class InternalTarget &amp;#58; Target  
+  &amp;#123;  
+     private SpringOfLifeSpell m_Owner;
+
+     public InternalTarget&amp;#40; SpringOfLifeSpell owner &amp;#41; &amp;#58; base&amp;#40; 12, true, TargetFlags&amp;#46;None &amp;#41;  
+     &amp;#123;  
+        m_Owner = owner;  
+     &amp;#125;
+
+     protected override void OnTarget&amp;#40; Mobile from, object o &amp;#41;  
+     &amp;#123;  
+        IPoint3D p = o as IPoint3D;
+
+        if &amp;#40; p != null &amp;#41;  
+           m_Owner&amp;#46;Target&amp;#40; p &amp;#41;;  
+     &amp;#125;
+
+     protected override void OnTargetFinish&amp;#40; Mobile from &amp;#41;  
+     &amp;#123;  
+        m_Owner&amp;#46;FinishSequence&amp;#40;&amp;#41;;  
+     &amp;#125;  
+  &amp;#125;  
+</code></pre>
+<p>}<br>
+}</p>
+<p>Et le dernier pour le moment: Eruption<br>
+Eruption est très bon, mais blesse tous le monde autour, y comprit le casteur de sort et les allié... Rendant donc le sort vraiment innutile.</p>
+<p>Ce que j'aimerais faire:</p>
+<ul>
+<li>Limité le sort a 6 x 6 tiles</li>
+<li>Si possible, n'attaque pas ceux qui sont dans le party</li>
+</ul>
+<p>using System;<br>
+using System.Collections;<br>
+using Server.Network;<br>
+using Server.Items;<br>
+using Server.Targeting;<br>
+using Server.Mobiles;</p>
+<p>namespace Server.Spells.Druid<br>
+{<br>
+public class VolcanicEruptionSpell : DruidSpell<br>
+{<br>
+private static SpellInfo m_Info = new SpellInfo(<br>
+&quot;Eruption&quot;, &quot;Vauk Ohm En Tia Crur&quot;,<br>
+SpellCircle.Eighth,<br>
+245,<br>
+9042,<br>
+false,<br>
+Reagent.SulfurousAsh,<br>
+Reagent.DestroyingAngel<br>
+);</p>
+<pre><code>  public override double CastDelay&amp;#123; get&amp;#123; return 2&amp;#46;0; &amp;#125; &amp;#125;  
+  public override double RequiredSkill&amp;#123; get&amp;#123; return 60&amp;#46;0; &amp;#125; &amp;#125;  
+  public override int RequiredMana&amp;#123; get&amp;#123; return 60; &amp;#125; &amp;#125;
+
+  public VolcanicEruptionSpell&amp;#40; Mobile caster, Item scroll &amp;#41; &amp;#58; base&amp;#40; caster, scroll, m_Info &amp;#41;  
+  &amp;#123;  
+  &amp;#125;
+
+  public override void OnCast&amp;#40;&amp;#41;  
+  &amp;#123;  
+       if &amp;#40;Caster is RacePlayerMobile&amp;#41; &amp;#123; int apt_besoin = 37;  
+      RacePlayerMobile Casteur = &amp;#40;RacePlayerMobile&amp;#41;Caster;  
+      if &amp;#40;Casteur&amp;#46;Magie_naturelle &lt; apt_besoin&amp;#41;  
+      &amp;#123;  
+          Casteur&amp;#46;SendMessage&amp;#40;&quot;Vos mains tremblent, vous ratez votre sort&amp;#46;&quot;&amp;#41;;  
+          Casteur&amp;#46;SendMessage&amp;#40;&quot;Vous avez besoin de minimum &quot; + apt_besoin + &quot; en magie naturelle&amp;#46;&quot;&amp;#41;;  
+          return;  
+      &amp;#125;  
+     &amp;#125;Caster&amp;#46;Target = new InternalTarget&amp;#40; this &amp;#41;;  
+  &amp;#125;
+
+  public void Target&amp;#40; IPoint3D p &amp;#41;  
+  &amp;#123;  
+     if &amp;#40; !Caster&amp;#46;CanSee&amp;#40; p &amp;#41; &amp;#41;  
+     &amp;#123;  
+        Caster&amp;#46;SendLocalizedMessage&amp;#40; 500237 &amp;#41;; // Target can not be seen&amp;#46;  
+     &amp;#125;  
+     else if &amp;#40; SpellHelper&amp;#46;CheckTown&amp;#40; p, Caster &amp;#41; &amp;&amp; CheckSequence&amp;#40;&amp;#41; &amp;#41;  
+     &amp;#123;  
+        SpellHelper&amp;#46;Turn&amp;#40; Caster, p &amp;#41;;
+
+        if &amp;#40; p is Item &amp;#41;  
+           p = &amp;#40;&amp;#40;Item&amp;#41;p&amp;#41;&amp;#46;GetWorldLocation&amp;#40;&amp;#41;;
+
+        double damage = Utility&amp;#46;Random&amp;#40; 27, 22 &amp;#41;;
+
+        ArrayList targets = new ArrayList&amp;#40;&amp;#41;;
+
+        IPooledEnumerable eable = Caster&amp;#46;Map&amp;#46;GetMobilesInRange&amp;#40; new Point3D&amp;#40; p &amp;#41;, 1 + &amp;#40;int&amp;#41;&amp;#40;Caster&amp;#46;Skills&amp;#91;DamageSkill&amp;#93;&amp;#46;Value / 10&amp;#46;0&amp;#41; &amp;#41;;
+
+        foreach &amp;#40; Mobile m in eable &amp;#41;  
+        &amp;#123;  
+           if &amp;#40; SpellHelper&amp;#46;ValidIndirectTarget&amp;#40; Caster, m &amp;#41; &amp;&amp; Caster&amp;#46;CanBeHarmful&amp;#40; m, false &amp;#41; &amp;#41;  
+              targets&amp;#46;Add&amp;#40; m &amp;#41;;  
+        &amp;#125;
+
+        eable&amp;#46;Free&amp;#40;&amp;#41;;
+
+        if &amp;#40; targets&amp;#46;Count &gt; 0 &amp;#41;  
+        &amp;#123;  
+           //damage /= targets&amp;#46;Count; // ~ divides damage between targets, kinda sux
+
+           for &amp;#40; int i = 0; i &lt; targets&amp;#46;Count; ++i &amp;#41;  
+           &amp;#123;  
+              Mobile m = &amp;#40;Mobile&amp;#41;targets&amp;#91;i&amp;#93;;
+
+              double toDeal = damage;
+
+              if &amp;#40; CheckResisted&amp;#40; m &amp;#41; &amp;#41;  
+              &amp;#123;  
+                 toDeal *= 0&amp;#46;7;
+
+                 m&amp;#46;SendLocalizedMessage&amp;#40; 501783 &amp;#41;; // You feel yourself resisting magical energy&amp;#46;  
+              &amp;#125;
+
+              Caster&amp;#46;DoHarmful&amp;#40; m &amp;#41;;  
+              SpellHelper&amp;#46;Damage&amp;#40; this, m, toDeal, 50, 100, 0, 0, 0 &amp;#41;;
+
+              m&amp;#46;FixedParticles&amp;#40; 0x3709, 20, 10, 5044, EffectLayer&amp;#46;RightFoot &amp;#41;;  
+              m&amp;#46;PlaySound&amp;#40; 0x21F &amp;#41;;  
+              m&amp;#46;FixedParticles&amp;#40; 0x36BD, 10, 30, 5052, EffectLayer&amp;#46;Head &amp;#41;;  
+              m&amp;#46;PlaySound&amp;#40; 0x208 &amp;#41;;
+
+           &amp;#125;  
+        &amp;#125;  
+     &amp;#125;
+
+     FinishSequence&amp;#40;&amp;#41;;  
+  &amp;#125;
+
+  private class InternalTarget &amp;#58; Target  
+  &amp;#123;  
+     private VolcanicEruptionSpell m_Owner;
+
+     public InternalTarget&amp;#40; VolcanicEruptionSpell owner &amp;#41; &amp;#58; base&amp;#40; 12, true, TargetFlags&amp;#46;None &amp;#41;  
+     &amp;#123;  
+        m_Owner = owner;  
+     &amp;#125;
+
+     protected override void OnTarget&amp;#40; Mobile from, object o &amp;#41;  
+     &amp;#123;  
+        IPoint3D p = o as IPoint3D;
+
+        if &amp;#40; p != null &amp;#41;  
+           m_Owner&amp;#46;Target&amp;#40; p &amp;#41;;  
+     &amp;#125;
+
+     protected override void OnTargetFinish&amp;#40; Mobile from &amp;#41;  
+     &amp;#123;  
+        m_Owner&amp;#46;FinishSequence&amp;#40;&amp;#41;;  
+     &amp;#125;  
+  &amp;#125;  
+</code></pre>
+<p>}<br>
+}</p>
+<hr>
+<h2 id="post-by-orkah-ad---november-20-2006-at-1005-am">Post by Orkah, Ad - November 20, 2006 at 10:05 AM</h2>
+<p><a id="post-97546"></a></p>
+<p>Il serait bien aussi de rectifier ceci. Sertain sort druinique demande de la Magery pour leur efficasité. Ex: Creux et peux être d'autre sort, je ne le sais pas, je n'est pas accets a ceux ci.</p>
+<p>Donc un druide na pas de Magery ce qui est un peux ridicule. Peux être modifié cela pour du spiritisme ? ceci rajouterait un + a la classe en leur permettent de se gérir avec le spiritisme, ou tout simplement se fier au % En Druinisme que le joueur a (Nécromancie).</p>
+<p>Aussi, le sort Invocation d'animal, ces bien joli qu'il soit <em>Ramdom</em> mais pour le role play ces plutot poche. Créé un menu comme le sort de stranformation des mage. Ce qui permeterait de choisir l'animal que l'on peux invoquer, plus notre % en druinique est élevé plus les animal invocable son puissent. Ou un menu très simple comme celui de Nécromancie pour plus de fasilité de scriptage. Le Maxium ne devrait pas dépassé la puissence d'un loup sombre, pour resté raisonable.</p>
+<p>Cinon pour en revenir au sujet principal, je conait rien en script donc je ne pourait pas t'être util pour cela, désolé mais jespère que ces informations vous seront util.</p>
+<hr>
+<h2 id="post-by-mr-morgathys---november-20-2006-at-1017-am">Post by Mr. Morgathys - November 20, 2006 at 10:17 AM</h2>
+<p><a id="post-97547"></a></p>
+<p>Une question me trotte à la tête.<br>
+Est ce vraiment ça place qu'un joueur joue dans les codes, sur les effets des sorts du serveur, affiché sur le forum publique ?</p>
+<p>Je suis peu être dans le champs  <img src="/assets/smilies/blink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-sharon-la-vagabonde---november-20-2006-at-1019-am">Post by Sharon, la vagabonde - November 20, 2006 at 10:19 AM</h2>
+<p><a id="post-97548"></a></p>
+<p>Le bonus pour les druides est Connaissance animal<br>
++2 Connaissance animal  devrait remplacée le +1 soin animal dans la magie naturel</p>
+<hr>
+<h2 id="post-by-conan---november-20-2006-at-540-pm">Post by Conan - November 20, 2006 at 5:40 PM</h2>
+<p><a id="post-97559"></a></p>
+<p>Il y'a un forum exprès pour ce genre de discution, je peut savoir ce que ça fabriquait dans le forum &quot;bugs et problèmes&quot; ?</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---november-20-2006-at-801-pm">Post by Feydanith, dit la Carpe - November 20, 2006 at 8:01 PM</h2>
+<p><a id="post-97577"></a></p>
+<p>Parce qu'ici on ne s'occupe que des artisanats  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-sharon-la-vagabonde---november-20-2006-at-841-pm">Post by Sharon, la vagabonde - November 20, 2006 at 8:41 PM</h2>
+<p><a id="post-97593"></a></p>
+<p>Sa je dissais a Mélodie, mais elle dissait que s'était pas a sa place ici et voulait rien s'avoir... J'avais crée un topic demandant la meme chose ici meme, mais il a été effacée...<br>
+<img src="/assets/smilies/wacko.gif" alt=""></p>
+<p>Donc seul autre endroit je voyais c'est le forum bugs et problème...<br>
+J'iras pas demander correction sur le forum RunUO tous de meme...</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---november-21-2006-at-547-am">Post by Coordinateur Apoc - November 21, 2006 at 5:47 AM</h2>
+<p><a id="post-97722"></a></p>
+<p>Pour le Livre de Druide dans mon script la ligne n'existe pas donc ca ira, les script qu'on ta donné devait dater de longtemps.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-sharon-la-vagabonde---november-21-2006-at-757-am">Post by Sharon, la vagabonde - November 21, 2006 at 7:57 AM</h2>
+<p><a id="post-97746"></a></p>
+<p>Non puisque in-game, faut obligatoirement etre druide pour ouvrir le livre de druide [Test a l'appuis]</p>
+<p>Donc sa doit etre le meme script qui est ici présentement<br>
+Regarde dans: DruidSpellBook.cs</p>
+<p>Mais c'est surtout &quot;Source de vie&quot; que j'aimerait corrigée, meme si on mettrait le meme script que le sort great heal sauf sous un autre nom. Car le heal des druides actuel est plutot innéficase comparrer a Great Heal qui est 1000 fois plus pratique [Faut dire qu'un seul heal aux 1-5 minutes et qu'en plus, heal les ennemis...]</p>
+<hr>
+<h2 id="post-by-sharon-la-vagabonde---november-23-2006-at-309-am">Post by Sharon, la vagabonde - November 23, 2006 at 3:09 AM</h2>
+<p><a id="post-98046"></a></p>
+<p>Quelqu'un sait comment corrigée cela ou si faut que je trouve un scripteur ailleurs ?</p>
+<hr>
+<h2 id="post-by-ex-mlodie---november-23-2006-at-1222-pm">Post by Ex-Mélodie - November 23, 2006 at 12:22 PM</h2>
+<p><a id="post-98079"></a></p>
+<p>Ben.. Apoc t'a repondu que je sache non ?</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deed qui perdent la couleur - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Deed qui perdent la couleur</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Deed qui perdent la couleur</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="deed-qui-perdent-la-couleur">Deed qui perdent la couleur</h1>
+<h2 id="post-by-coordinateur-apoc---march-6-2012-at-526-am">Post by Coordinateur Apoc - March 6, 2012 at 5:26 AM</h2>
+<p><a id="post-303897"></a></p>
+<p>Ca s'adresse surtout à Misanthrope (Ou miraculeusement à Kel s'il passerait.) mais vous pouvez lire, peut-être que vous auriez des détails à rajouter qui m'ont échappés.</p>
+<p>Je viens de passer environ 3h à fouiller dans les scripts et pas moyen de rien y faire.</p>
+<p>Le plus étrange est que si je set le hue manuellement, il reste quand on déplace l'objet. Mais si on place le deed, remet l'objet en deed, soudainement il reperd encore la couleur quand on le déplace.</p>
+<p>Pourtant je vois rien qui pourrait causer la perte du hue quand on le déplace. Techniquement, que le hue soit placé par un script ou par un gm, une fois placé il est identique. Donc il ne devrait pas disparaitre quand on le déplace seulement dans le premier cas.  <img src="/assets/smilies/wacko.gif" alt=""><br>
+Les deed ne prennent pas la ressource utilisé dans le crafting, seulement le hue, ce pourrait être lié? (Malgré que ca n'expliquerait pas ma question précédente.) En fait j'ai testé et si je met manuellement une resource le hue disparait automatiquement et se remet à 0. Donc je crois pas que la resource règlerait le problème mais peut-être que le problème vient donc du CraftRessource qui override le hue toujours à 0? (Sauf quand il vient d'être crafté il garde la couleur même si on le déplace, donc encore là, je vois pas la logique...)</p>
+<p>En fait, il y a eu une modification récente à ce sujet? Car il me semblait que les joueurs pouvaient pager pour faire colorier leur deed car on voyait la ressource utilisé mais je ne la vois plus présentement sur mon serveur test.</p>
+<p>Enfin, c'est vraiment mal chier donc je doute que personne ne comprendra tout ce que je viens d'écrire car même moi je m'arrache les cheveux à comprendre cette merde. HELP?</p>
+<p>EDIT: Ce serait probablement plus clair d'avoir seulement les fait donc:<br>
+-Au craft, le deed prend le hue de la resource utilisé mais la ressource reste à null<br>
+-On peut placer le deed et l'objet prend la couleur sans problème.<br>
+-Une fois l'objet remit en deed, le deed prend le hue de l'objet mais si on déplace le deed ou y fait quoi que ce soit autre qu'un double-clique pour le replacer, il perd le hue.<br>
+-Ensuite, si un gm va dans les props pour changer le hue, le deed garde le hue comme au crafting mais ensuite si on le place et remet en deed, le problème revient.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-6-2012-at-549-am">Post by Coordinateur Apoc - March 6, 2012 at 5:49 AM</h2>
+<p><a id="post-303899"></a></p>
+<p>Finalement, après avoir écrit ca, j'ai penser à tester autres trucs.</p>
+<p>-Les Addon ne prennent pas en compte le CraftResource, si j'en met une, ca se remet à null automatiquement. Mais l'addon garde la couleur sans problème contrairement au deed qui perd sa couleur.<br>
+-Le deed une fois crafté, garde sa couleur tant qu'on ne change pas le hue ou qu'on met une CraftResource ou change directement le hue. Toute autre modification dans les props garde le hue finalement.</p>
+<p>Donc le problème semble venir de CraftResource et donc probablement de CrepManager. So... Kel-Signal!</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-6-2012-at-814-am">Post by Coordinateur Apoc - March 6, 2012 at 8:14 AM</h2>
+<p><a id="post-303904"></a></p>
+<p>Après un gros 5h sur le problème ainsi qu'une aide de Kel (Heureusement car le problème était en bonne partie relié à CrepManager) j'ai finalement réglé le problème.</p>
+<p>Donc tout les nouveaux Deed craftés auront enfin la bonne couleur, même une fois placé et remit en deed. Par contre, tout les anciens seront toujours buggés donc il faudra l'aide d'un GM encore pour ceux-ci. Mais une fois que vous les aurez corrigés ils devraient fonctionner comme les nouveaux.</p>
+<p><u><strong>Une fois que la mise à jour sera faite!</strong></u> Pour corriger les anciens deed, il suffira de mettre la ressource utilisé dans CraftResource.</p>
+<p>Le problème pour ceux déjà créé est qu'on doit se baser sur le hue pour savoir quel Resource ce sera car ce n'est pas affiché. Donc si par exemple une table en roche rouge (ou un deed de table en roche qui est rouge), il faudra faire .props sur (heureusement) seulement un des morceaux de la table (ou sur le deed) et dans CraftResource mettre SanguineGranite. Ensuite quand le joueur voudra remettre sa table en deed, le deed sera bien précisé que c'est en Sanguine. Par contre pour la première fois, le deed n'aura pas le hue, mais une fois placé et remit en deed, ce sera complètement corrigé automatiquement.</p>
+<p>Donc pour les gms, la seule chose à ce souvenir c'est CraftResource, le reste sera fait automatiquement. Donc quand la mise à jour sera faite, si vous voyez des deed ou objets placés et que vous avez le temps, vous pouver y modifier CraftResource pour les corriger, ca nous évitera des pages.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-6-2012-at-817-am">Post by Coordinateur Apoc - March 6, 2012 at 8:17 AM</h2>
+<p><a id="post-303905"></a></p>
+<p>Ah oui, avec ca, j'ai finalement comprit comment le Crafting fonctionne avec CrepManager pour ce qui est des ressources et de la couleur, donc si vous pourriez me nommer tout les items qui ne prennent pas de couleur je peux enfin les corriger aussi. Par exemple, je sais qu'il y avait des bijoux et les ustensils je crois? Pas nécessaire de tout me nommer les items un par un quand ils sont similaires. Merci!</p>
+<hr>
+<h2 id="post-by-conteuse-hermine---march-6-2012-at-902-am">Post by Conteuse Hermine - March 6, 2012 at 9:02 AM</h2>
+<p><a id="post-303911"></a></p>
+<p>Je suis peut-être hors sujet, mais comme je t'aide à Castleville je mérite ton entière respect. ;]</p>
+<p>Est-ce que les items qui tombent lors des loots sont du même problème? Exemple, le masque tribal est bleu dans le sac du monstre, et quand on prend il change de couleur. Les vignes ont un bodyvalue dans le sac et il change quand on le bouge, etc.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-6-2012-at-936-am">Post by Coordinateur Apoc - March 6, 2012 at 9:36 AM</h2>
+<p><a id="post-303918"></a></p>
+<p>Je suis peut-être hors sujet, mais comme je t'aide à Castleville je mérite ton entière respect. ;]</p>
+<p>Est-ce que les items qui tombent lors des loots sont du même problème? Exemple, le masque tribal est bleu dans le sac du monstre, et quand on prend il change de couleur. Les vignes ont un bodyvalue dans le sac et il change quand on le bouge, etc.</p>
+<p>Tss  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Ce problème était relié au crafting mais c'est possible que je puisse faire quelque chose mais je devrai demander à Kel vu que c'est relié à CrepManager encore mais pas la même section.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-10-2012-at-442-am">Post by Seigneur Bélial - March 10, 2012 at 4:42 AM</h2>
+<p><a id="post-304257"></a></p>
+<p>Les pianos on perdu leur hue 3000, donc faudrait voir pour que leur hue ne change pas. Je n'arrive plus a changer leur hue.</p>
+<p>Merci <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-10-2012-at-651-am">Post by Coordinateur Apoc - March 10, 2012 at 6:51 AM</h2>
+<p><a id="post-304259"></a></p>
+<p>Ca devrait être corrigé. Je vais mettre sur le serveur plus tard quand il n'y aura plus personne.<br>
+Il suffira de les remettre en deed et replacer puis ils devraient avoir leur couleur.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-11-2012-at-1204-am">Post by Seigneur Bélial - March 11, 2012 at 12:04 AM</h2>
+<p><a id="post-304322"></a></p>
+<p>Les coffres de métal ne garde pas la couleur dès qu'ont les bouges dans le sac. C'est dommage j'en avais fait un très joli en landoras!  <img src="/assets/smilies/ohmy.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-11-2012-at-1249-am">Post by Coordinateur Apoc - March 11, 2012 at 12:49 AM</h2>
+<p><a id="post-304327"></a></p>
+<blockquote>
+<p><strong>&quot;Conteur Shinigami&quot; wrote:</strong>
+Les coffres de métal ne garde pas la couleur dès qu'ont les bouges dans le sac. C'est dommage j'en avais fait un très joli en landoras!  <img src="/assets/smilies/ohmy.gif" alt=""></p>
+<p>Bizarre, j'ai du modifié quelque chose ensuite. Ils gardent le matériel?</p>
+</blockquote>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-11-2012-at-314-am">Post by Coordinateur Apoc - March 11, 2012 at 3:14 AM</h2>
+<p><a id="post-304339"></a></p>
+<p>J'ai trouvé le problème, ca devrait être réglé ce soir.</p>
+<p>Comme écrit dans l'annonce, aucune facon de prouver le matériel utilisé par contre. En espérant que tu sois la seule l'ayant testé.  <img src="/assets/smilies/sad.gif" alt=""></p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-11-2012-at-1101-am">Post by Seigneur Bélial - March 11, 2012 at 11:01 AM</h2>
+<p><a id="post-304369"></a></p>
+<p>Ça marche, merci ^^</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

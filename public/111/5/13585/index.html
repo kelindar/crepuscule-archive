@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Forensics - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Skill Forensics</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">Skill Forensics</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="skill-forensics">Skill Forensics</h1>
+<h2 id="post-by-yuri-minh-yu-adc---april-21-2007-at-338-pm">Post by Yuri Minh Yu, AdC - April 21, 2007 at 3:38 PM</h2>
+<p><a id="post-116112"></a></p>
+<p>Ce serait bien que ce skill qui se retrouve en fait à suivre des enquêtes sur les morts. (comme un employé de la police qui détermine les causes du décès quoi)</p>
+<p>Bien, ce serait bien que ce skill puisse plutôt dire quel type d'arme a tué une personne, depuis combien de temps cette personne est morte. Que ce soit du poison, une arme. Et avoir des descriptions comme si il est mort à coup de poing que ça dise qu'il a été battu à mort. Un coup de kryss qu'il a été transpercé à plusieurs endroits, etc etc...</p>
+<p>Ainsi on pourra mener nos petites enquêtes, si on trouve le cadavre ^^</p>
+<hr>
+<h2 id="post-by-feu-hanzo-adm---april-21-2007-at-348-pm">Post by Feu Hanzo, AdM - April 21, 2007 at 3:48 PM</h2>
+<p><a id="post-116114"></a></p>
+<p>Tu aurais du participer a l'enquête des experts a systéria. ^^ On a fait exactement cela hier. <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-gabriella-grossmich-ind---april-21-2007-at-520-pm">Post by Gabriella Grossmich, Ind - April 21, 2007 at 5:20 PM</h2>
+<p><a id="post-116128"></a></p>
+<p>Techniquement, je crains que cela ne soit pas possible. Mais enfin, je me trompe peut être. <em>regarde Umrae et Artemis</em></p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---april-21-2007-at-533-pm">Post by Feydanith, dit la Carpe - April 21, 2007 at 5:33 PM</h2>
+<p><a id="post-116134"></a></p>
+<p>Actuellement :</p>
+<ul>
+<li>Sur quelqu'un, détermine s'il appartient à la guilde des voleurs.</li>
+<li>Sur un corps humain, détermine qui l'a tué.</li>
+<li>Sur un corps non-humain, détermine qui l'a looté.</li>
+<li>Sur une serrure, détermine qui l'a ouverte ( via lockpicking ).</li>
+</ul>
+<p>Je regarde un peu comment ça fonctionne.</p>
+<p>EDIT :</p>
+<p>\t\tprivate Mobile\t\tm_Owner;\t\t\t\t// Whos corpse is this?<br>
+\t\tprivate Mobile\t\tm_Killer;\t\t\t\t// Who killed the owner?<br>
+\t\tprivate bool\t\tm_Carved;\t\t\t\t// Has this corpse been carved?</p>
+<p>\t\tprivate ArrayList\tm_Looters;\t\t\t\t// Who's looted this corpse?<br>
+\t\tprivate ArrayList\tm_EquipItems;\t\t\t// List of items equiped when the owner died. Ingame, these items display /on/ the corpse, not just inside<br>
+\t\tprivate ArrayList\tm_Aggressors;\t\t\t// Anyone from this list will be able to loot this corpse; we attacked them, or they attacked us when we were freely attackable</p>
+<p>\t\tprivate string\t\tm_CorpseName;\t\t\t// Value of the CorpseNameAttribute attached to the owner when he died -or- null if the owner had no CorpseNameAttribute; use &quot;the remains of <del>name</del>&quot;<br>
+\t\tprivate bool\t\tm_NoBones;\t\t\t\t// If true, this corpse will not turn into bones</p>
+<p>\t\tprivate bool\t\tm_VisitedByTaxidermist;\t// Has this corpse yet been visited by a taxidermist?<br>
+\t\tprivate bool\t\tm_Channeled;\t\t\t// Has this corpse yet been used to channel spiritual energy? (AOS Spirit Speak)</p>
+<p>\t\t// For notoriety:<br>
+\t\tprivate AccessLevel\tm_AccessLevel;\t\t\t// Which AccessLevel the owner had when he died<br>
+\t\tprivate Guild\t\tm_Guild;\t\t\t\t// Which Guild the owner was in when he died<br>
+\t\tprivate int\t\t\tm_Kills;\t\t\t\t// How many kills the owner had when he died<br>
+\t\tprivate bool\t\tm_Criminal;\t\t\t\t// Was the owner criminal when he died?</p>
+<p>\t\tprivate DateTime\tm_TimeOfDeath;\t\t\t// What time was this corpse created?</p>
+<p>Y'a ça à disposition, je suppose qu'on peut rajouter des attributs sans trop de risque que de détruire les corps déjà présent au sol.</p>
+<hr>
+<h2 id="post-by-astara-nazgaroth-ind---april-21-2007-at-1137-pm">Post by Astara Nazgaroth, InD - April 21, 2007 at 11:37 PM</h2>
+<p><a id="post-116185"></a></p>
+<p><strong><span style="color:indigo">C'est pas un peu trop sa? Tout détecter comme sa et trouver l'assassin élicot? Car, à l'époque médiéval ils étaient pas aussi habitué pour déterminé qui a tuer qui. </span></strong></p>
+<hr>
+<h2 id="post-by-feu-hanzo-adm---april-21-2007-at-1147-pm">Post by Feu Hanzo, AdM - April 21, 2007 at 11:47 PM</h2>
+<p><a id="post-116187"></a></p>
+<p>Se rappelle de brûler les morts qu'il cause. ^^</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

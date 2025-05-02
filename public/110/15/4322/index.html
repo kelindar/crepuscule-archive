@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande .verrou - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Commande .verrou</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/110//" class="nav-item">Général</a>
+                
+                &rsaquo; <span class="current-page">Commande .verrou</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="commande-verrou">Commande .verrou</h1>
+<h2 id="post-by-ex-ariakan---january-10-2006-at-927-am">Post by Ex-Ariakan - January 10, 2006 at 9:27 AM</h2>
+<p><a id="post-43376"></a></p>
+<ul>
+<li>Post repris du forum annonce *</li>
+</ul>
+<p>Note a l'attention des néophytes : un objet laisser en dehors du sac d'un joueur, et qui n'est pas déplacé fini par disparaitre, il s'agit d'un phénomène appeller &quot;Decay&quot; pour empecher la surcharge d'objets mobiles sur le shard. Afin d'éviter le &quot;Decay&quot;, on peut, en étant chez soi, &quot;locker&quot; les objets, de manière a ce qu'il soit &quot;vérouillé&quot; sur place et ne puisse plus ni être bouger, ni Decay tant qu'on ne les &quot;unlock&quot; pas</p>
+<p>.verrou</p>
+<p>Pour vous expliquez a quoi va servir cette commande je vais vous expliquer comment va fonctionner le système de maisons de Crépuscule.</p>
+<p>Dans la cité de Systéria les demeures &quot;carrés&quot; sont rare, aussi le système de pancarte+zone habituellement utilisé sur les shards UO pour définir les propriétés foncières des personnages risquait d'être inadapté.</p>
+<p>Il n'y aura donc pas dans Crépuscule de zone d'habitation, les pancartes des maisons permettront uniquement d'obtenir les clefs des portes, comme dans la vrai vie quoi (pas de barrière invisible quand on s'approche d'une propriété ou autre).<br>
+Hors, si il n'y a pas de Zone d'Habitation, comment aller vous faire pour locker vos objets a l'intérieur de votre logis ?<br>
+C'est là qu'interviens la fonction .Verrou, qui, purement et simplement sert a locker/unlocker des objets, où que vous soyez !</p>
+<p>Vous avez bien lu, vous pourrez locker un objet ou bon vous semble sur la map de Systéria et donc évitez son decay.<br>
+Il sera donc possible pour les joueurs d'aménager n'importe quel batiment a leurs convenance (dans la limite, bien sur, de leur légitimité a pouvoir déposer des trucs leur appartenant a tel ou tel endroit), de planquer des trucs dans la forêt, ect ect..</p>
+<p>Vous l'aurez compris, il est accordé ici une certaine confiance aux joueurs en leur permettant de locker les objets n'importe où, on attend donc de vous de ne pas abuser bètement de cette confiance, si on doit passer notre temps a ramasser des objets inutiles locker par terre sans raison, la commande .verrou sera tout simplement annulé (et les responsable de la pollution iront voir ailleurs si on y est)</p>
+<p>Ensuite, il est important que tout le monde comprenne que si vous avez la possibilité de locker les objets avec .verrou, les autres joueurs pourront les unlocker avec cette même commande, il ne s'agit donc aucunement d'un moyen de mettre vos objets a l'abri des voleurs, vous pourrez cacher par exemple un coffret au beau milieu de la forèt, si un type passe et trouve le coffret, il aura parfaitement le droit de le unlock pour le prendre avec lui, c'était a vous de mieux cacher votre bien, ou de le mettre tout simplement chez vous (les portes de maison n'étant pas crochetable).</p>
+<p>A noter aussi que la commande .verrou ne permet pas de unlocker un objet locké par un gm.</p>
+<p><strong>P.S : Actuellement, un bug du .verrou fait en sorte que si on verrouille un objet qui peut empiler plusieurs items, le .verrou ne se désactivera pas. Exemple :</strong></p>
+<p>je verrouille 100 bûches au sol. Si j'y ajoute ensuite 1 bûche, ça donnera 101 bûches verrouillées, mais le .verrou dans ce cas ne déverrouillera pas les bûches. Il faudra donc un Gm pour venir régler le problème. ( À éviter de faire ceci pour éviter du travail aux Gms s'il vous plait ).</p>
+<hr>
+<h2 id="post-by-erius-vaskel-humain---march-16-2006-at-715-pm">Post by Erius Vaskel, Humain - March 16, 2006 at 7:15 PM</h2>
+<p><a id="post-55525"></a></p>
+<p>Bug Vis-a-vis le .verrou. Si on lock de beau meuble dans notre maison. Et qu'un abruti passe a coté (avec un certain intéligence facile de voir l'intérieur d'une demeure) delock tout nos items pour faire suer... comment regler ce probleme ???</p>
+<hr>
+<h2 id="post-by-sharon-la-vagabonde---march-16-2006-at-752-pm">Post by Sharon, la vagabonde - March 16, 2006 at 7:52 PM</h2>
+<p><a id="post-55529"></a></p>
+<p>Faudrait que le .verrou puisse etre utilisée a seulement 1 tile de l'objet a verrouillée.</p>
+<p>Et un autre dans la liste de boulet  <img src="/assets/smilies/blink.gif" alt=""><br>
+Juste pour nuir aux autres... tssssss<br>
+Y'a des .ban qui se perd</p>
+<hr>
+<h2 id="post-by-lidenbrock-adc---march-16-2006-at-756-pm">Post by Lidenbrock, AdC - March 16, 2006 at 7:56 PM</h2>
+<p><a id="post-55531"></a></p>
+<p>Autre probleme avec le .verrou que j'ai signalé depuis la béta... Quand on lock un objet tres lourd, je ne sais pas a partir de quel poid exactement, on ne peut plus le déverrouillé.</p>
+<hr>
+<h2 id="post-by-anonymous---march-17-2006-at-303-am">Post by Anonymous - March 17, 2006 at 3:03 AM</h2>
+<p><a id="post-55621"></a></p>
+<p>Oui, comme le bois..</p>
+<hr>
+<h2 id="post-by-valerice-adc---march-18-2006-at-1135-pm">Post by Valerice, AdC - March 18, 2006 at 11:35 PM</h2>
+<p><a id="post-56075"></a></p>
+<p>c'est regler le probleme de poid ? pasque moi je vais avoir des stock a verouiller :s</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

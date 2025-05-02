@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.verrou crée des clones (Bug très majeur) - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">.verrou crée des clones (Bug très majeur)</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">.verrou crée des clones (Bug très majeur)</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="verrou-cre-des-clones-bug-trs-majeur">.verrou crée des clones (Bug très majeur)</h1>
+<h2 id="post-by-ex-bolero---october-28-2008-at-327-pm">Post by Ex-Bolero - October 28, 2008 at 3:27 PM</h2>
+<p><a id="post-189145"></a></p>
+<p>Bonjour,</p>
+<p>Ce matin Morvan me bip pour me montrer un bug, et devinez quoi: je n'ai jamais vu rien d'aussi abusé.</p>
+<p>Il avait verrouillé un ka-bar d'armoirie surion sur la chaise à côté de lui au Coin Chaud à l'aide de .verrou : une fois verrouillé, l'objet était déjà dédoublé (il a fallu 2 .delete sur la chaise pour l'enlever)</p>
+<p>À chaque .verrou consécutif, un nouvel objet est créé par-dessus l'original, en copie identique: ce bug marche avec tous les objets, j'ai essayé. C'est vraiment quelque chose de majeur. L'objet original ne se déverouille plus sans l'aide d'un MJ mais il devient une machine à copie.</p>
+<p>Je suis d'avis qu'on ferme le serveur le temps de régler ça et qu'on remonte au save de la MàJ pour éviter les abus qui ont pu être commis.</p>
+<p>Voilà:</p>
+<p><img src="http://img360.imageshack.us/img360/1074/alerterougebugverrounz8.jpg" alt=""></p>
+<p>Kel a réglé le problème rapidement mais nous avons pensé qu'un timewarp de 8 heures était peu approprié: si on constate des abus reliés à ce bug, il faudrait les régler (j'imagine bien Thorgraks dupliquer sa maison...)</p>
+<p>Voilà.</p>
+<hr>
+<h2 id="post-by-anonymous---october-28-2008-at-336-pm">Post by Anonymous - October 28, 2008 at 3:36 PM</h2>
+<p><a id="post-189150"></a></p>
+<p>Un timewarp est à envisager en fait; pour être honnête.</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-28-2008-at-337-pm">Post by Ex-Bolero - October 28, 2008 at 3:37 PM</h2>
+<p><a id="post-189151"></a></p>
+<p>Eh bien il faudrait rapidement se décider pour réduire le temps d'impact...</p>
+<p>S'il ne s'est rien passé de majeur depuis la MàJ, je ne vois pas le problème.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---october-28-2008-at-642-pm">Post by Mr Trovénère - October 28, 2008 at 6:42 PM</h2>
+<p><a id="post-189177"></a></p>
+<p>**Dis le à Kel et faites le. **</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-28-2008-at-701-pm">Post by Ex-Bolero - October 28, 2008 at 7:01 PM</h2>
+<p><a id="post-189181"></a></p>
+<p>Ben lol c'est bien beau mais je peux pas contacter tout le monde en moins de 2 secondes.</p>
+<p>Le warp va englober plus de 16 heures si ça continue... Bien que je ne m'y oppose pas vraiment, vu que j'ai eu un important bug entre temps qui m'a obligé à deler mon perso GM et à en refaire un (c'était lié à un bug persistant avec MindFollow, provoqué par mes manips foireuses)</p>
+<p>Donc à moins qu'il se co d'ici 13h je pourrai pas l'avertir moi-même.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---october-28-2008-at-715-pm">Post by Mr Trovénère - October 28, 2008 at 7:15 PM</h2>
+<p><a id="post-189183"></a></p>
+<p>*Zak si tu vois ceci, connecte toi à distance au pc de Kel et colle le en OFF. Fermeture tant que c'est pas réglé ! *</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-28-2008-at-716-pm">Post by Ex-Bolero - October 28, 2008 at 7:16 PM</h2>
+<p><a id="post-189184"></a></p>
+<p>Oui voilà, le bug a été réglé ce matin mais je parierais ma chemise sur des abus commis hier soir.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---october-28-2008-at-717-pm">Post by Mr Trovénère - October 28, 2008 at 7:17 PM</h2>
+<p><a id="post-189185"></a></p>
+<p>Un time Warp est obligatoire en effet, j'ai laissé un message texte sur le cellulaire de Kel.</p>
+<hr>
+<h2 id="post-by-ex-lumina---october-28-2008-at-719-pm">Post by Ex-Lumina - October 28, 2008 at 7:19 PM</h2>
+<p><a id="post-189186"></a></p>
+<p>Donc quelqu'un s'est battu avec moi pour le mettre down, c'est fait pour l'instant.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---october-28-2008-at-720-pm">Post by Mr Trovénère - October 28, 2008 at 7:20 PM</h2>
+<p><a id="post-189187"></a></p>
+<p>Je vous aime tous... enfin tous ceux qui ont essayé de le mettre down.</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-28-2008-at-720-pm">Post by Ex-Bolero - October 28, 2008 at 7:20 PM</h2>
+<p><a id="post-189188"></a></p>
+<p>Kel est averti et ça devrait être fait bientôt</p>
+<p>Le navire est sauvé les amis ^^</p>
+<hr>
+<h2 id="post-by-fondateur-kel---october-28-2008-at-724-pm">Post by Fondateur Kel - October 28, 2008 at 7:24 PM</h2>
+<p><a id="post-189191"></a></p>
+<p>Timewarp d'environs 12h</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-28-2008-at-725-pm">Post by Ex-Bolero - October 28, 2008 at 7:25 PM</h2>
+<p><a id="post-189192"></a></p>
+<p>Salutations,</p>
+<p>Le serveur a dû être mis hors service suite à la découverte d'un bug majeur permettant des abus importants. Le bug a été corrigé, mais pour plus de sûreté et pour être certains que personne n'en a abusé, nous avons choisi la solution suivante: un important timewarp a été effectué jusqu'à une sauvegarde juste après la mise à jour. Nous espérons que cela ne vous cause pas trop de désagréments.</p>
+<p>Merci de votre compréhension,</p>
+<p>L'Équipe</p>
+<p>Utile ou pas?</p>
+<hr>
+<h2 id="post-by-mr-trovnre---october-28-2008-at-726-pm">Post by Mr Trovénère - October 28, 2008 at 7:26 PM</h2>
+<p><a id="post-189193"></a></p>
+<p>*J'ai déja posté quelque chose mais bien vu. ^^ Je préfère ma formulation moins alarmante. <img src="/assets/smilies/man_in_love.gif" alt=""> *</p>
+<!-- l --><a class="postlink-local" href="http://www.au-crepuscule.com/forum/viewtopic.php?f=15&p=189189#p189189">viewtopic.php?f=15&p=189189#p189189</a><!-- l -->
+<hr>
+<h2 id="post-by-ex-bolero---october-28-2008-at-728-pm">Post by Ex-Bolero - October 28, 2008 at 7:28 PM</h2>
+<p><a id="post-189194"></a></p>
+<p>Ok dans ce cas ça suffira, va juste falloir expliquer qu'y'a eu un timewarp de 14 h <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-mr-trovnre---october-28-2008-at-731-pm">Post by Mr Trovénère - October 28, 2008 at 7:31 PM</h2>
+<p><a id="post-189196"></a></p>
+<p>On leur dira si jamais ils le demandent. Une maintenance engendre toujours quelques bugs, je le leur dirais après la fin de la maintenance.</p>
+<p>Remercie encore la personne qui a trouvé le bug sans l'exploiter. Je donnerais même une petite prime de 1000 po ^^</p>
+<hr>
+<h2 id="post-by-mr-trovnre---october-28-2008-at-754-pm">Post by Mr Trovénère - October 28, 2008 at 7:54 PM</h2>
+<p><a id="post-189208"></a></p>
+<p>*Kel fait moi signe quand c'est timewarpé et up pour que je communique cela aux joueurs. *</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-28-2008-at-755-pm">Post by Ex-Bolero - October 28, 2008 at 7:55 PM</h2>
+<p><a id="post-189209"></a></p>
+<p>C'est timewarpé et up depuis 20 minutes environ.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---october-28-2008-at-756-pm">Post by Mr Trovénère - October 28, 2008 at 7:56 PM</h2>
+<p><a id="post-189210"></a></p>
+<p>*Superbe. Remercie le joueur qui l'a trouvé cela lui fera plaisir et il nous a permis de nous sortir sans trop de bobos ( léros ) *</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-28-2008-at-757-pm">Post by Ex-Bolero - October 28, 2008 at 7:57 PM</h2>
+<p><a id="post-189211"></a></p>
+<p>Ta blague pue mais je lui transmets.</p>
+<p>Sujet clos j'pense ^^</p>
+<p>Edit:</p>
+<p>Bonjour Morvan,</p>
+<p><img src="http://www.msn101.com/content/emoticons/rainbow_FCLBG5.gif" alt=""> <span style="font-size:150%"><strong><span style="color:#FF00FF">F</span><span style="color:#40FF00">é</span><span style="color:#FFFFFF">l</span><span style="color:#FF0000">i</span><span style="color:#4000BF">c</span><span style="color:#FF8000">i</span><span style="color:#FF00FF">t</span><span style="color:#BF4000">a</span><span style="color:#FF0000">t</span><span style="color:#FFFFFF">i</span><span style="color:#FFFF00">o</span><span style="color:#0000FF">n</span>,</strong></span></p>
+<p><u><span style="color:#80FF00">TU AS AIDÉ CRÉPUSCULE!!!</span></u></p>
+<p><img src="http://www.msn101.com/content/emoticons/rainbow_FCLBG5.gif" alt=""></p>
+<p><img src="http://www.yelims.com/IPB/Smiley-IPB-440.gif" alt=""> <img src="http://www.yelims.com/IPB/Smiley-IPB-182.gif" alt=""></p>
+<p>Merci beaucoup pour le signalement du bug, c'était très honnête et ça nous a permis d'éviter tout problème.</p>
+<p>De la part de toute l'Équipe,</p>
+<p>Bolero</p>
+<p>Ok, je sors.</p>
+<hr>
+<h2 id="post-by-anonymous---october-28-2008-at-957-pm">Post by Anonymous - October 28, 2008 at 9:57 PM</h2>
+<p><a id="post-189240"></a></p>
+<p>Tu as volé les smileys que j'avais mis avec amour dans ton message!  <img src="/assets/smilies/sorry.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

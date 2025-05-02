@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vampirisme et test - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Vampirisme et test</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Vampirisme et test</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="vampirisme-et-test">Vampirisme et test</h1>
+<h2 id="post-by-vent-dhiver---february-26-2008-at-309-am">Post by Vent d'Hiver - February 26, 2008 at 3:09 AM</h2>
+<p><a id="post-151880"></a></p>
+<p>Bien que j'ai testé avec mon perso admin le vampirisme aucun test n'a été fait depuis l'avant béta sur ces scripts avec un pj</p>
+<p>Normalement le vampirisme devrait :</p>
+<ol>
+<li>pour tout les lvl</li>
+</ol>
+<ul>
+<li>Oter des points de vie lorsqu'il fait jour et que le pj se trouve dehors.</li>
+<li>Provoquer un malus s'il ne boit pas du sang au bout d'un certain labs de temps.</li>
+</ul>
+<ol start="2">
+<li>1er lvl vampire :</li>
+</ol>
+<ul>
+<li>Pouvoir morsure pour s'alimenter</li>
+<li>Plus de force, plus de résistance.</li>
+</ul>
+<ol start="2">
+<li>2m lvl Master :</li>
+</ol>
+<ul>
+<li>Transformation en rat</li>
+<li>Plus de puissance</li>
+</ul>
+<ol start="3">
+<li>lvl Ancient:</li>
+</ol>
+<ul>
+<li>transformation en chat.</li>
+</ul>
+<p>Après une discussion avec Lumina, j'ai décidé de voir ce que cela donné en pratique. Et comme mon cobay perso est mon propre perso. Durant cette semaine et probablement la semaine prochaine (vu mon tps de connexion hebdomadaire) Cassandre accumulera les tares. Evidemment je ne la jouerai pas comme étant un vampire. Je vais juste voir si les scripts de la soif de sang et du malus au jour fonctionne. Et ce qui se passe si on assouvit pas ses besoins.</p>
+<p>Ensuite quand nous saurons à ce qu'il en découle vraiment, pourquoi pas songer à introduire la race en lui créant un bg et une implication sur le shard.</p>
+<hr>
+<h2 id="post-by-anonymous---february-26-2008-at-331-am">Post by Anonymous - February 26, 2008 at 3:31 AM</h2>
+<p><a id="post-151885"></a></p>
+<p>Aucun problème avec ça.</p>
+<p>J'ai testé le .mordre sur Willy et il vômissait du sang. <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-vent-dhiver---february-26-2008-at-455-am">Post by Vent d'Hiver - February 26, 2008 at 4:55 AM</h2>
+<p><a id="post-151894"></a></p>
+<p>Premier jour de test :</p>
+<p>Apparemment tant qu'on a pas assouvi sa soif de sang on perd de la vie si on est en plein jour.</p>
+<p>En Master et Ancient on peut se tranformer en chat et rat.</p>
+<p>Négatif : toutes les skills sont remis à 0 et malgré les points dans les compétences on ne peut pas les monter au dessus de 20.</p>
+<p>Je vais rester encore un ou deux jours pour tester la soif.</p>
+<hr>
+<h2 id="post-by-anonymous---february-26-2008-at-406-pm">Post by Anonymous - February 26, 2008 at 4:06 PM</h2>
+<p><a id="post-151925"></a></p>
+<p>Dis, comment on fait pour se transformer? C'est une commande?</p>
+<hr>
+<h2 id="post-by-vent-dhiver---february-26-2008-at-520-pm">Post by Vent d'Hiver - February 26, 2008 at 5:20 PM</h2>
+<p><a id="post-151943"></a></p>
+<p>Pour le moment je le fais avec le .props, tu as des commandes (bon j'ai une petite mémoire et là je suis au boulot donc je ne peux pas vérifier en gros ça donne :) .set vampirism true, set vampirburn true et ainsi de suite les commandes sont regroupées donc facile à trouver.  Ensuite tu choisis le niveau de vampirisme.</p>
+<p>Je vais tester avec un joueur conscentant, voir le perso joueur d'un membre du staff si en le mordant souvent outre le fait d'être malade il se tranforme lui aussi au bout d'un certain temps de pratique.</p>
+<p>Toute fois actuellement ça bug totalement les persos donc je préférerais faire le test avec un perso jettable. Car sauf miracle je vais être obligée de deleter cassandre et de la refaire ensuite.  Je doute que mes skills revenues à 0 retrouve leur statut d'avant, à moins que remettre le tout à 0 comme pour un changement de classe soit efficace.</p>
+<p>Il faudra aussi voir si en mordant et donc en contaminant un perso, il se retrouve lui aussi à0 en skills. Je ne sais pas si tu rappeles Zak, la fois ou tu avais rendu mon perso malade il avait perdu ses skills et sa race de tiefling.</p>
+<p>Remarque Cassandre a tellement servit à faire des tests que maintenant même en cochant oui dans les options pour elle la nuit noire n'existe plus -_-</p>
+<hr>
+<h2 id="post-by-anonymous---february-26-2008-at-522-pm">Post by Anonymous - February 26, 2008 at 5:22 PM</h2>
+<p><a id="post-151944"></a></p>
+<p>Lol... Pourtant c'était un mal de tête.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>J'avais testé sur Willy (son GM) avec mon GM. Je l'avais mordu, il s'était mis à vômir du sang et à la fin, ça lui a dit &quot;Vous êtes désormais un vampire&quot; (ou un truc du genre).</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

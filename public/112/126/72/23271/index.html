@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbes des joueurs - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Barbes des joueurs</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Barbes des joueurs</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="barbes-des-joueurs">Barbes des joueurs</h1>
+<h2 id="post-by-ex-lumina---july-24-2008-at-853-pm">Post by Ex-Lumina - July 24, 2008 at 8:53 PM</h2>
+<p><a id="post-175333"></a></p>
+<p>C'est possible de rendre ça modifiable chez les npcs ?</p>
+<p>Voici la liste de ce barbes :</p>
+<p>Longbeard [8254 (0x203E)]<br>
+Mediumlongbeard [8268 (0x204C)]<br>
+Mediumshortbeard [8267 (0x204B)]<br>
+Shortbeard [8255 (0x203F)]<br>
+Mustache [8257 (0x2041)]<br>
+Goatee [8256 (0x2040)]<br>
+Vandyke [8269 (0x204D)]<br>
+Barb_Jeune (Sans nom sur le serveur, ajouté par son numéro d'item seulement) [13969 (0x3691)]<br>
+Barb_Ancestrale (Sans nom sur le serveur, ajouté par son numéro d'item seulement) [13970 (0x3692)]<br>
+Barb_Mince (Sans nom sur le serveur, ajouté par son numéro d'item seulement) [13971 (0x3693)]<br>
+Barb_Tresse (Sans nom sur le serveur, ajouté par son numéro d'item seulement) [13972 (0x3694)]<br>
+Barb_Tresse2 (Sans nom sur le serveur, ajouté par son numéro d'item seulement) [13973 (0x3695)]<br>
+Barb_Mouske (Sans nom sur le serveur, ajouté par son numéro d'item seulement) [13974 (0x3696)]</p>
+<p>J'ignore si c'est complexe à faire ou si c'est très simple. Dans tous les cas, il faut bien sûr que la commande .shavebeard s'applique sur le joueur entre chaque changement de barbe et aussi qu'ils aient la possibilité de se la faire enlever (par le item des ciseaux (Scissors [3999 (0xF9F)]) ou par le barbier).</p>
+<p>Les barbes se portent sur le layer facialhair.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---july-28-2008-at-1228-am">Post by Coordinateur Apoc - July 28, 2008 at 12:28 AM</h2>
+<p><a id="post-175743"></a></p>
+<p>Ca serait surement pas trop compliqué de modifier le truc de cheveux pour en faire un pour la barbe... Mais j'ai pas envie.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Je remonte au moins le sujet si jamais l'envie me prend ou si Kel s'ennui et veut faire un truc facile pour lui.  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---july-28-2008-at-1256-am">Post by Coordinateur Apoc - July 28, 2008 at 12:56 AM</h2>
+<p><a id="post-175753"></a></p>
+<p>Finalement je suis en train de le faire, louangez-moi...  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conteuse-seshat---july-28-2008-at-104-am">Post by Conteuse Seshat - July 28, 2008 at 1:04 AM</h2>
+<p><a id="post-175754"></a></p>
+<p><strong>Se prosterne aux pieds d'Apoc, en guise de louange, en chantant des cantiques</strong></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---july-28-2008-at-129-am">Post by Coordinateur Apoc - July 28, 2008 at 1:29 AM</h2>
+<p><a id="post-175756"></a></p>
+<p>Pour Spawner les nouvelles barbes</p>
+<p>JeuneBarbe<br>
+BarbeAncestrale<br>
+BarbeMince<br>
+BarbeTresse<br>
+BarbeTresse2<br>
+BarbeMouske</p>
+<p>Pour Spawner le Deed</p>
+<p>BeardRestylingDeed</p>
+<p>Me reste à Tester.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-2-2008-at-931-am">Post by Coordinateur Apoc - August 2, 2008 at 9:31 AM</h2>
+<p><a id="post-176262"></a></p>
+<p>Possible de me donner la même chose pour ce que nous avons en gump mais pas scripté coté cheveux? À moins qu'ils soient déjà tous sur le deed?</p>
+<p><strong>Pointe sur ce que Lumina à fait pour les barbes sur le premier message</strong></p>
+<hr>
+<h2 id="post-by-anonymous---august-2-2008-at-732-pm">Post by Anonymous - August 2, 2008 at 7:32 PM</h2>
+<p><a id="post-176309"></a></p>
+<p>Niveau cheveux, les seules choses que nous n'avons pas sont deux crêtes étranges... Dont une ressemblant à deux cornes.</p>
+<p>Donc...Boaf.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

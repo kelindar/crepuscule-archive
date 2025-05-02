@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quelques petites choses. - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Quelques petites choses.</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Quelques petites choses.</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="quelques-petites-choses">Quelques petites choses.</h1>
+<h2 id="post-by-ex-ariel---january-6-2007-at-1114-pm">Post by Ex-Ariel - January 6, 2007 at 11:14 PM</h2>
+<p><a id="post-103635"></a></p>
+<p>Bonjour chers scripteur , j'ai une requête pour vous <img src="/assets/smilies/smile.gif" alt=""></p>
+<p>Il y a quelque chose qui manque dans les sort de nécromancien , soit la bêbête &quot;Death Adder&quot; , un gros serpent meurtrier qu'on peut invoquer comme familier avec le sort &quot;Summon Familiar&quot; . Pour invoquer la bête on a besoin de 80 en nécromancie et 80 en spirit speak (Spiritisme) . Donc voila le message d'erreur : This familiar has not been yet defenied . Donc ca laisse penser qu'il n'est tout simplement pas implanté et pourtant ca venais avec la classe nécromancien de age of shawdow... Pensez vous pouvoir faire quelque chose ?</p>
+<p>Il faut aussi voir pour le système d'assasinat , je sais pas comment vous voullez vous arranger car les assasins attendent.</p>
+<p>Merci beaucoup pour votre boulot. <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-7-2007-at-1214-am">Post by Scripteur Artemis - January 7, 2007 at 12:14 AM</h2>
+<p><a id="post-103639"></a></p>
+<p>oui le death adder en effet n'existe pas, c'est un problème coté runUO vieux comme le monde parcontre, donne moi un nom francais pour ''death adder'' pendant que jécrit sont script et je te le fait. Il sera live quand apoc voudra vous l'ajouter a partir d'une heure d'ici environ  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>A noté : il n'aura pas de poison meme si cest un gros serpent, question de balance <img src="/assets/smilies/smile.gif" alt=""></p>
+<p>pour ton 2e point... le .assassinat personnelement je n'aime pas dutout le système actuelle qui utilise dans skills sans bon sens selon moi, et qui donne un grand avantage au assassin pour plusieurs raison, la première étant que les mobs n'ont meme pas les 3 skill de défense nécessaire. Donc je le laisse a quelqu'un d'autre... sa risque simplement de sapper mon travail de dragons.</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-7-2007-at-1226-am">Post by Scripteur Artemis - January 7, 2007 at 12:26 AM</h2>
+<p><a id="post-103641"></a></p>
+<p>oh donner moi un hue noir-gris asser sombre (jai pas access a vos code de hue pour linstant) , sa va etre jolie , cest presque pret <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lilith---january-7-2007-at-1231-am">Post by Lilith - January 7, 2007 at 12:31 AM</h2>
+<p><a id="post-103644"></a></p>
+<p>de mémoire, hue 1109 c'est le noir assez sombre je pense.</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-7-2007-at-1233-am">Post by Scripteur Artemis - January 7, 2007 at 12:33 AM</h2>
+<p><a id="post-103645"></a></p>
+<p>merci lillith <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-7-2007-at-1236-am">Post by Scripteur Artemis - January 7, 2007 at 12:36 AM</h2>
+<p><a id="post-103646"></a></p>
+<p>tien pour ce qui est du adder... parcontre je doit avouer que les summon vont etre revue avec le patch des bestiaux, donc cest seulement en attendant, le necro vont recevoir des petit bonus je croit de ce coté la... qu'en pensez vous?</p>
+<p>using System;<br>
+using System.Collections;<br>
+using Server;<br>
+using Server.Items;<br>
+using Server.Gumps;<br>
+using Server.Network;</p>
+<p>namespace Server.Mobiles<br>
+{
+\t[CorpseName( &quot;a death adder corpse&quot; )]<br>
+\tpublic class DeathAdderFamiliar : BaseFamiliar<br>
+\t{<br>
+\t\tpublic DeathAdderFamiliar()<br>
+\t\t{<br>
+\t\t\tName = &quot;a Death Adder&quot;;<br>
+\t\t\tBody = 0x15;<br>
+\t\t\tHue = 1109<br>
+\t\t\tBaseSoundID = 1109;</p>
+<p>\t\t\tSetStr( 200 );<br>
+\t\t\tSetDex( 60 );<br>
+\t\t\tSetInt( 100 );</p>
+<p>\t\t\tSetHits( 200 );<br>
+\t\t\tSetStam( 60 );<br>
+\t\t\tSetMana( 0 );</p>
+<p>\t\t\tSetDamage( 4, 8 );</p>
+<p>\t\t\tSetDamageType( ResistanceType.Physical, 50 );<br>
+\t\t\tSetDamageType( ResistanceType.Poison, 50 );</p>
+<p>\t\t\tSetResistance( ResistanceType.Physical, 10, 15 );<br>
+\t\t\tSetResistance( ResistanceType.Fire, 20, 25 );<br>
+\t\t\tSetResistance( ResistanceType.Cold, 0, 5 );<br>
+\t\t\tSetResistance( ResistanceType.Poison, 40, 45 );<br>
+\t\t\tSetResistance( ResistanceType.Energy, 10, 15 );</p>
+<p>\t\t\tSetSkill( SkillName.Wrestling, 75.1, 80.0 );<br>
+\t\t\tSetSkill( SkillName.Tactics, 40.0,45.1 );</p>
+<p>\t\t\tControlSlots = 1;<br>
+\t\t}</p>
+<p>\t\tpublic DeathAdderFamiliar( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 );<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-7-2007-at-1247-am">Post by Scripteur Artemis - January 7, 2007 at 12:47 AM</h2>
+<p><a id="post-103647"></a></p>
+<p>bon jai modifier tout les scripts pour qu'il soit fonctionnel ton serpent  <img src="/assets/smilies/Wink.gif" alt=""> .  Je vais essayer de convaincre apoc de le mettre le plus tot possible avec possiblement un petit ''test'' update pour préparer le terrain pour le 28.</p>
+<p>Donc possibilité live cette semaine :</p>
+<p>Alchemie : potion améliorer, prix de revente ajouté pour les potion de meilleur qualité que lesser. (test pour voir si se sera potable pour tout les crafting d'ajouter tout les items vendable ou non)</p>
+<p>Death adder : version 1.0, qui sera modifier le 28 pour faire face a la nouvelle réalité du gameplay et des monstres</p>
+<p>Armure : test de la base du système sur laquelle moi et morg on fini les détails</p>
+<p>sa sera tout, lèger mais vous pourrez voir pour les armures et l'alchemie si cest une bonne ou mauvaise idée durant la semaine.</p>
+<p>(sa cest si apoc les aprouves biensure   <img src="/assets/smilies/blush2.gif" alt="">  )<br>
+Bonne journée!</p>
+<hr>
+<h2 id="post-by-ex-ariel---january-7-2007-at-232-am">Post by Ex-Ariel - January 7, 2007 at 2:32 AM</h2>
+<p><a id="post-103660"></a></p>
+<p>Hmm bien , malgré que dans uo normal le serpent faisait effectivement du poison et en prenant compte aussi que ca prend 80 en nécromancie et 80 en spirit speak pour le faire <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-7-2007-at-241-am">Post by Scripteur Artemis - January 7, 2007 at 2:41 AM</h2>
+<p><a id="post-103661"></a></p>
+<p>je ne met pas le poison avant d'avoir regler le bug d'agro désolé... le monstres va courrir en rond et mourrir du poison, déja que les archers et tamer en profite asser</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---january-7-2007-at-321-am">Post by Feydanith, dit la Carpe - January 7, 2007 at 3:21 AM</h2>
+<p><a id="post-103662"></a></p>
+<p>Pour l'agro, normallement il est réglé déjà dans une version récente de runuo ?</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-7-2007-at-432-am">Post by Scripteur Artemis - January 7, 2007 at 4:32 AM</h2>
+<p><a id="post-103666"></a></p>
+<p>a vrai dire jai pas encore exploré pour essayer de trouver le probleme umrae, dans les ancienne versions de AoS runUO , cetais corecte ... jignore pourquoi ici cest si mauvais... sa a peut-etre a voir avec les lignes effacer un peu partout... le travail a été bizarement fait dans certain cas, pour ne pas dire mal fait... surtout les scripts de ragn (désolé a ces amis mais bon)</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---january-7-2007-at-435-am">Post by Feydanith, dit la Carpe - January 7, 2007 at 4:35 AM</h2>
+<p><a id="post-103668"></a></p>
+<p>Normallement sur un des serveurs sur mon pc je dois avoir une AI correcte... Faudra que je cherche pendant une de mes pauses.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petits bugs des vendeurs - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Petits bugs des vendeurs</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Petits bugs des vendeurs</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="petits-bugs-des-vendeurs">Petits bugs des vendeurs</h1>
+<h2 id="post-by-conteuse-hermine---february-4-2012-at-1111-pm">Post by Conteuse Hermine - February 4, 2012 at 11:11 PM</h2>
+<p><a id="post-300335"></a></p>
+<p>Je n'ai peut-être pas compris tout à fait, mais si je me base sur les chiffres, quelque chose ne fonctionne pas. ^^</p>
+<p>Vendeur de Lidenbrock [Environ 40 -45k de vente possible, si on cumule ses objets]<br>
+Jours qu'il peut bosser : 309<br>
+Earth day : 25<br>
+Gold dans son account : 1858<br>
+Charge par jour : 6</p>
+<p>Vendeur de Nìmora [8k de vente possible, si on cumule ses objets]<br>
+Jours qu'il peut bosser : 63<br>
+Earth days : 5<br>
+Gold dans son account : 2165<br>
+Charge par jour 34</p>
+<p>Je ne comprends pas pourquoi le vendeur de Nìmora demande plus d'or pour moins de jours de boulot, considérant qu'il a moins d'objets précieux, voire moins d'objets tout court à vendre. Je sais que Nìmora n'est pas facile à vivre, mais... Je doute que ce soit l'explication! ;P</p>
+<hr>
+<h2 id="post-by-animateur-misanthrope---february-4-2012-at-1120-pm">Post by Animateur Misanthrope - February 4, 2012 at 11:20 PM</h2>
+<p><a id="post-300339"></a></p>
+<p>public int ChargePerDay<br>
+\t\t{<br>
+\t\t\tget<br>
+\t\t\t{<br>
+\t\t\t\tint total = 0;<br>
+\t\t\t\tforeach (VendorItem v in m_SellItems.Values)<br>
+\t\t\t\t{<br>
+\t\t\t\t\ttotal += v.Price;<br>
+\t\t\t\t}</p>
+<p>\t\t\t\ttotal -= 500;</p>
+<p>\t\t\t\tif ( total &lt; 0 )<br>
+\t\t\t\t\ttotal = 0;</p>
+<pre><code>            int charge = 20 + (total / 500);  
+            if (this&amp;#46;Owner is RacePlayerMobile &amp;&amp; (this&amp;#46;Owner as RacePlayerMobile)&amp;#46;GuildInfo&amp;#46;PlayerGuild == GuildType&amp;#46;Commercants)  
+            {  
+                charge /= 20;  
+            }
+
+            return charge;  
+</code></pre>
+<p>\t\t\t}<br>
+\t\t}</p>
+<p>Prix divisé par 20 pour les membres AdC <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conteuse-hermine---february-4-2012-at-1125-pm">Post by Conteuse Hermine - February 4, 2012 at 11:25 PM</h2>
+<p><a id="post-300341"></a></p>
+<p>Merci Misanthrope! ^^</p>
+<p>Je vais pouvoir expliquer si d'autres joueurs se questionnent [ce dont je doute, je suis la seule avare du shard]</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

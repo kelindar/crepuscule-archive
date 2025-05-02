@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gros bug urgent... - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Gros bug urgent...</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <span class="current-page">Gros bug urgent...</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="gros-bug-urgent">Gros bug urgent...</h1>
+<h2 id="post-by-conteuse-tornade---january-11-2012-at-744-am">Post by Conteuse Tornade - January 11, 2012 at 7:44 AM</h2>
+<p><a id="post-297584"></a></p>
+<p>Bon, Esmeral était entrain d'espionner Sakamae en télépathie, il était au deuxième étage de la maison et elle au rez-de-chaussé. Il a vu son nom (esmeral) puis il a cliqué dessus.. tout son corps s'est collé à Sakamae en hide, il a parlé pour testé et s'est déhider, mais est resté collé dessus...</p>
+<p>On a tenté de les tuer tous les deux... ça fonctionne quand sakamae est morte, mais aussitôt qu'elle ressuscite, il revient s'accrocher après. Esmeral ne peut pas enlever le contact par son cristal, l'option n'apparaît pas.</p>
+<p>On a amené un autre joueur pour voir s'il pouvait simplement changé de cible, mais il se promène entre les deux cibles.. Puis il a refait la même manœuvre sur le deuxième joueur (Cyriel) et maintenant il est buger entre les deux... Quand une des deux cibles déconnecte, il ne peut plus se loguer.. Donc.. Zig et moi avons essayer plusieurs choses sans succès... maintenant... HELP!</p>
+<p>En attendant, je l'ai hidé, il est donc plus vraiment dans les pattes des joueurs à clignoter à coté d'eux.</p>
+<p>Comptes des joueurs impliqués:<br>
+Sakamae: Hyacano<br>
+Esmeral: castouni<br>
+Cyriel: Sphinx</p>
+<hr>
+<h2 id="post-by-seigneur-blial---january-11-2012-at-934-am">Post by Seigneur Bélial - January 11, 2012 at 9:34 AM</h2>
+<p><a id="post-297603"></a></p>
+<p>C'est fâcheux comme bug. Je sais pas quoi faire pour aider...  <img src="/assets/smilies/blink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-nimue---january-11-2012-at-545-pm">Post by Nimue - January 11, 2012 at 5:45 PM</h2>
+<p><a id="post-297611"></a></p>
+<p>Ça m'est déjà arrivé avec mon perso et je crois que la solution avait carrément été de faire un retour en arrière sur le serveur. Il faudrait confirmer avec Apoc... On avait galéré au moins 1h en vain. Même donner des accès admin à mon personnage ne changeait strictement rien, je ne pouvais plus me décoller.</p>
+<p>C'est super rare que ce bug arrive... C'est que la deuxième fois que je vois ça.</p>
+<hr>
+<h2 id="post-by-zig---january-11-2012-at-606-pm">Post by Zig - January 11, 2012 at 6:06 PM</h2>
+<p><a id="post-297612"></a></p>
+<p>Un retour en arrière ne sera pas nécéssaire,  c'est simplement un follow (la commande qui nous permet de suivre un joueur automatiquement) qui est capricieux. Ça doit se désactiver, mais il faudra scripter et faire une MàJ script. Un backup ne sera pas possible, les dommages seraient importants et je veux leur éviter de refaire leur personnage au complet.</p>
+<p>Phydias pourrait sans doute nous patenter de quoi pour régler ça. Je vois auprès de lui.</p>
+<hr>
+<h2 id="post-by-zig---january-12-2012-at-123-am">Post by Zig - January 12, 2012 at 1:23 AM</h2>
+<p><a id="post-297644"></a></p>
+<p>Trouvé.</p>
+<p>Pour libérer monsieur, il suffit normalement de rebooter le serveur (il reste freeze par contre, un gm devra le libérer)</p>
+<p>Pour empêcher que ça ne se reproduise, il va falloir faire une petite correction. Je veux bien m'en occuper, mais je n'ai pas les moyens de tester.</p>
+<p>La bug est du à un retour prématuré vers le corps. Ce retour peut être causé par la mort du clone ou quand le joueur double-clic sur son clone. C'est reproductible avec le voyage astral.</p>
+<p>Et voilà. J'adore Phydias, toujours une réponse à tout.</p>
+<hr>
+<h2 id="post-by-nimue---january-12-2012-at-258-am">Post by Nimue - January 12, 2012 at 2:58 AM</h2>
+<p><a id="post-297656"></a></p>
+<p>J'ai donc reboot, tout est ok. Le joueur est bien content.</p>
+<p>Excellent...!</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-12-2012-at-300-am">Post by Coordinateur Apoc - January 12, 2012 at 3:00 AM</h2>
+<p><a id="post-297657"></a></p>
+<p>J'allais venir vous proposer un redémarrage du serveur ou bien de refaire son perso vu qu'on à accès à tout ses stats au moins.</p>
+<p>S'il veut corriger ca ne me dérange pas, je pourrais tester (et corriger au besoin) en même temps que tout le reste quand Kel aura corrigé.</p>
+<hr>
+<h2 id="post-by-nimue---january-12-2012-at-310-am">Post by Nimue - January 12, 2012 at 3:10 AM</h2>
+<p><a id="post-297659"></a></p>
+<p>Je ne verrais pas Kel jeudi finalement donc...Faut le harceler.</p>
+<p>Une manifestation sur le forum? :-D</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-12-2012-at-321-am">Post by Coordinateur Apoc - January 12, 2012 at 3:21 AM</h2>
+<p><a id="post-297663"></a></p>
+<p>Je ne verrais pas Kel jeudi finalement donc...Faut le harceler.</p>
+<p>Une manifestation sur le forum? <img src="/assets/smilies/hysterical.gif" alt=""></p>
+<p>Tu insinue que Kel viendrait sur le forum...  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-nimue---january-12-2012-at-325-am">Post by Nimue - January 12, 2012 at 3:25 AM</h2>
+<p><a id="post-297664"></a></p>
+<p>Conversation à plusieurs sur msn...!</p>
+<hr>
+<h2 id="post-by-seigneur-blial---january-12-2012-at-338-am">Post by Seigneur Bélial - January 12, 2012 at 3:38 AM</h2>
+<p><a id="post-297666"></a></p>
+<p><a href="http://www.youtube.com/watch?v=ARvwiypjNCs">http://www.youtube.com/watch?v=ARvwiypjNCs</a></p>
+<p><span style="color:#FFBFBF">Faites vos soirées Msn comme ça s'il-vous-plait. Mon hit de l'heure.</span></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Court tutoriel pour l&#39;ajout des deux propriétés à CrepManage - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Court tutoriel pour l&#39;ajout des deux propriétés à CrepManage</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Court tutoriel pour l&#39;ajout des deux propriétés à CrepManage</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="court-tutoriel-pour-lajout-des-deux-proprits--crepmanage">Court tutoriel pour l'ajout des deux propriétés à CrepManage</h1>
+<h2 id="post-by-coordinateur-apoc---march-22-2012-at-839-am">Post by Coordinateur Apoc - March 22, 2012 at 8:39 AM</h2>
+<p><a id="post-305660"></a></p>
+<p>Dans le .add vous pouvez chercher un item ensuite cliquer sur le parchemin.</p>
+<p>Dans les props de celui-ci, il y a maintenant un <strong>MaxItemID</strong>. Dans la plupart des cas, vous pouvez le laisser à zéro.<br>
+Mais si vous voulez qu'un item puisse avoir plusieurs itemID, vous y placer le dernier ItemID voulu. Évidemment il faut que les ItemID se suivent. Ce pourrait être pratique par exemple s'il y a certains items du même type (Des décorations en général) qui se suivent dans les itemID et que vous voulez que ce soit aléatoire sur le loot d'un monstre sans devoir tout les créer un par un et faire un pack de loot que pour ca.</p>
+<p>Ex: Les vignes ItemID: 3312 MaxItemID: 3314. Les vignes auront donc aléatoirement un des trois itemID: 3312, 3313, 3314<br>
+Vous pouvez faire .add vines pour voir ce que cela donne en pratique.</p>
+<p>Il y a aussi <strong>RandomHue</strong>, si vous le placer à true, l'item en question aura un Hue aléatoire dans les hue accessibles avec le Bac de hue de base. Donc aucun danger d'avoir des hue uniques ou buggés. Évidemment plus utile sur les items qui ne peuvent pas être teind.</p>
+<p>Ex: Le Masque Tribal à RandomHue à True. Donc vous pouvez essayer d'en spawner avec .add savagemask et regardez tout les belles couleurs que cela donne.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-22-2012-at-921-am">Post by Seigneur Bélial - March 22, 2012 at 9:21 AM</h2>
+<p><a id="post-305666"></a></p>
+<p>Est-ce que les animaux et monstre peuvent avec un ramdom hue aussi? Admetons que je veux que le chat est 5 hue spécifique? Est-ce que tu crois qu'il est possible de déterminer 5 hues nous-même? Ça pourrait être intéressent pour les créatures comme les dragons <img src="/assets/smilies/spiteful.gif" alt=""><br>
+Merci Apoc de te donner autant, tu es vraiment un bon GM et je crois qu'on ne te le dis pas assez.  <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-22-2012-at-928-am">Post by Coordinateur Apoc - March 22, 2012 at 9:28 AM</h2>
+<p><a id="post-305667"></a></p>
+<p>Je n'ai pas testé avec les monstres mais normalement c'est possible oui vu qu'ils ont un hue eux aussi.</p>
+<p>Pour les hue, ce serait possible, d'ajouter d'autres hue, par contre il faut voir si ca vaut la peine d'allourdir le système pour le nombre de fois que ce serait utilisé. Puis tenir compte qu'on ne pourrait pas décider lequel serait choisit précisément. Donc si dans un cas précis on veut un dragon noir, il faudrait en créer un seulement noir. Donc peut-être plus simple d'en faire plusieurs et de tous les mettres sur un même spawner qui en choisira un aléatoire.</p>
+<p>(Évidemment cela tient compte de devoir réparer l'ajout de nouveau item/monstre qui est buggé depuis trop longtemps. Je ne suis pas certains de pouvoir régler cela personnellement mais j'essayerai d'en parler avec Kel.)</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-22-2012-at-935-am">Post by Seigneur Bélial - March 22, 2012 at 9:35 AM</h2>
+<p><a id="post-305669"></a></p>
+<p>Kel part pour Seattle sous peu, donc oublie ça, mais merci pour ta réponse ^^</p>
+<p>Tu penses pouvoir faire le ramdom-hue pour du des rondins aussi? Ou on doit faire 6 ou 7 rondins a part eux aussi?</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-22-2012-at-942-am">Post by Coordinateur Apoc - March 22, 2012 at 9:42 AM</h2>
+<p><a id="post-305673"></a></p>
+<p>Kel part pour Seattle sous peu, donc oublie ça, mais merci pour ta réponse ^^</p>
+<p>Tu penses pouvoir faire le ramdom-hue pour du des rondins aussi? Ou on doit faire 6 ou 7 rondins a part eux aussi?</p>
+<p>Je suis pas certains de comprendre...</p>
+<p>Des rondins pour avoir plusieurs couleur de bois? Si c'est le cas, et donc utilisé pour le crafting c'est différent et il faut en créer plusieurs qui hérite du rondin de base. Mais ensuite CrepManager devrait déjà être bien configuré pour permettre aux items en bois de prendre la couleur des rondins comme les items qui prennent les couleurs du lingot.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-22-2012-at-949-am">Post by Coordinateur Apoc - March 22, 2012 at 9:49 AM</h2>
+<p><a id="post-305675"></a></p>
+<p>Puis si jamais on parle de vouloir rendre ce bois trouvable sur des arbres ou quelque chose comme ca, je pensais depuis un moment à modifier mes MineralDeposit et GraniteDeposit en un seul RessourceDeposit qui permettrait de choisir quelle ressource, quel skill requis ainsi que quel outil requis.</p>
+<p>Puis ensuite il suffirait de changer l'itemID pour un arbre par exemple si on veut que ce soit du bois. Un poisson si on voudrait que ce soit un poisson spécial par exemple ou tout ce qui a un itemID. Dans le cas du poisson, je devrais ajouter le range dans les props (s'il n'y est pas déjà) aussi pour permettre de l'utiliser du bord de l'eau et pas devoir le mettre sur la berge.</p>
+<p>Évidemment ca demanderait de devoir en ajouter plusieurs si on veut que quelque chose soit moins rare et je suis pas certains qu'un .dupeinbag x permettrait d'en duper plusieurs sans perdre les propriétés et ne pas devoir tout les reconfigurer un à un.</p>
+<p>Enfin, je dois vérifier comment ca fonctionnes depuis l'ajout de CrepManager mais si tout va bien ce ne devrait pas être trop difficille.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-22-2012-at-952-am">Post by Seigneur Bélial - March 22, 2012 at 9:52 AM</h2>
+<p><a id="post-305677"></a></p>
+<p>Je voulais juste te le souligner pour que tu oublie pas ce superbe projet de bois <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conteuse-hermine---march-22-2012-at-739-pm">Post by Conteuse Hermine - March 22, 2012 at 7:39 PM</h2>
+<p><a id="post-305707"></a></p>
+<p><em>Saigne du Nez</em></p>
+<p>Donc.. Il y a de nouvelles commandes. ...x] Cool! Merci Pocpoc!</p>
+<hr>
+<h2 id="post-by-animateur-misanthrope---march-22-2012-at-833-pm">Post by Animateur Misanthrope - March 22, 2012 at 8:33 PM</h2>
+<p><a id="post-305720"></a></p>
+<p>Han, ça doit être drôlé à scripter ça des nouveaux bois ! Et dans la foulée, on pourrait corriger les cuirs !!!</p>
+<p>(Mais pour corriger les cuirs efficacement, il faudrait faire passer la pilule aux joueurs de perdre les cuirs rares existants et les armures faites en ces cuirs. [A cause de l'affreuse mite mangeuse de cuir!])</p>
+<p>J'ai justement du temps demain soir et possiblement samedi si ma vie sociale ne se réveille pas.</p>
+<hr>
+<h2 id="post-by-conteuse-hermine---march-22-2012-at-849-pm">Post by Conteuse Hermine - March 22, 2012 at 8:49 PM</h2>
+<p><a id="post-305731"></a></p>
+<p><span style="color:#001000">Ou bien on prend sur nous et on leur échange si ils pagent...?</span></p>
+<hr>
+<h2 id="post-by-animateur-misanthrope---march-22-2012-at-903-pm">Post by Animateur Misanthrope - March 22, 2012 at 9:03 PM</h2>
+<p><a id="post-305736"></a></p>
+<p>Quand je dis disparaitre... c'est de la suppression pure et dure au lancement du serveur <img src="/assets/smilies/hysterical.gif" alt=""></p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-22-2012-at-959-pm">Post by Seigneur Bélial - March 22, 2012 at 9:59 PM</h2>
+<p><a id="post-305758"></a></p>
+<p>Ça implique beaucoup... Mais ils s'en remettrons. Si on leur explique ils comprendrons sans doute. L'idéal c'est d'avoir du cuir qui ne bug plus tout en étant plus performant que les 4 cuirs de base. Tu peux nous faire ça et nous en parler avant de l'intégrer? Il faudra prévenir les joueurs avant.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

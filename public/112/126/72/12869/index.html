@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le .possess de PNJ - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Le .possess de PNJ</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Le .possess de PNJ</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="le-possess-de-pnj">Le .possess de PNJ</h1>
+<h2 id="post-by-anonymous---march-23-2007-at-139-am">Post by Anonymous - March 23, 2007 at 1:39 AM</h2>
+<p><a id="post-111959"></a></p>
+<p>Ce problème traîne depuis un bon moment.</p>
+<p>Je n'exige rien sur un plateau, simplement savoir ce qui bug. Pourquoi on arrive à posséder un monstre, n'importe lequel, mais que si on possède un PNJ, peu importe lequel, cela va afficher notre perso GM et quand on fait .unposses, ça change le PNJ pour un autre...</p>
+<p>Car quand j'ai testé, j'ai créé une femme à barbe...  <img src="/assets/smilies/wacko.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-artemis---march-23-2007-at-207-am">Post by Scripteur Artemis - March 23, 2007 at 2:07 AM</h2>
+<p><a id="post-111967"></a></p>
+<p>hmm c'est asser étrange... sans le voir IG c'est un peu difficile a dire le pourquoi, je vais tenter de voir ce qui pourait mal fonctionner avec les pnj humanoid.</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-23-2007-at-208-am">Post by Feydanith, dit la Carpe - March 23, 2007 at 2:08 AM</h2>
+<p><a id="post-111968"></a></p>
+<p>facile...</p>
+<p>Il retient ce que tu as possédé.<br>
+Quand tu unpossess, il fait un new [type du possédé]<br>
+Dans le new des de certains type humanoïde le genre est en random.</p>
+<p>CQFD</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---march-23-2007-at-211-am">Post by Scripteur Artemis - March 23, 2007 at 2:11 AM</h2>
+<p><a id="post-111970"></a></p>
+<p>tu ma sauver 20 minutes, merci <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-23-2007-at-222-am">Post by Feydanith, dit la Carpe - March 23, 2007 at 2:22 AM</h2>
+<p><a id="post-111973"></a></p>
+<p>Je referai ça au propre demain.</p>
+<hr>
+<h2 id="post-by-anonymous---march-24-2007-at-503-pm">Post by Anonymous - March 24, 2007 at 5:03 PM</h2>
+<p><a id="post-112138"></a></p>
+<p>facile...</p>
+<p>Il retient ce que tu as possédé.<br>
+Quand tu unpossess, il fait un new [type du possédé]<br>
+Dans le new des de certains type humanoïde le genre est en random.</p>
+<p>CQFD</p>
+<p>M'oui je m'en étais un peu douté  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<p>Mais euhm, côté random c'est random si je reprends ma femme à barbe.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Vous croyez que ce serait possible de régler ce problème en enlevant le random et en nous permettant de posséder les PNJ? Car bon, pas que je veuille me plaindre mais lorsque je dois faire vite, je dois prendre le hue du PNJ, le hue de ses cheveux via .viewequip, duper ses vêtements... À la longue c'est long.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-24-2007-at-509-pm">Post by Feydanith, dit la Carpe - March 24, 2007 at 5:09 PM</h2>
+<p><a id="post-112139"></a></p>
+<p>Euh, j'ai un peu zappé hier, mais je le fait aujourd'hui, promis  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<p>Je dois avoir déjà tous les morceaux sur mon pc, faut juste que je cherche entre mon polymorphe et les commande getskin/stat que j'avais fait pour un autre shard  <img src="/assets/smilies/Wink.gif" alt=""></p>
+<p>getSkin = copie fringues/apparences complète ( si tu en porte, ça les mets dans ton sac ). Quand je dit copie, attention, c'est avec le .dupe de base. Ce qui veut dire que certains attributs tombent ( faudra que je pense à la rescripter aussi celle-là ).<br>
+getStat = copie stats au complet, jusqu'aux skills</p>
+<p>Bref, je vais voir grand-maman et je vous fait ça.</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-24-2007-at-911-pm">Post by Feydanith, dit la Carpe - March 24, 2007 at 9:11 PM</h2>
+<p><a id="post-112184"></a></p>
+<p>Et voila, mon bijoux !!!</p>
+<p>Alors, le principe est tout con.</p>
+<p>Quand on prend possession d'un bidule :</p>
+<ul>
+<li>Crée un mobile fictif.</li>
+<li>Sur ce mobile fictif, on tappe les fringues qu'on portait + nos attributs ( skin/stat/skill )</li>
+<li>Le bidule est envoyé à perpet garce à une super commande interne de runuo  <img src="/assets/smilies/blush2.gif" alt=""> .</li>
+<li>On choppe ses fringues et ses attributs.</li>
+</ul>
+<p>Pour le côté technique, y'a une gestion des liens des possessions dans une simple arraylist avec un objet type qui contient les fonctions de possession et de dépossession ( simplement ? )</p>
+<p>Sinon, pour le reste ça reste pareil, si on crève, on sort de possession et le mobile revient pour crever ( hahaha ) etc etc...</p>
+<p>La bête...</p>
+<p>UnpossessCommand.cs</p>
+<p>using Server.Mobiles;<br>
+using Server.Targeting;<br>
+using System;<br>
+using System.Collections;</p>
+<p>namespace Server.Mobiles<br>
+{<br>
+\tpublic class PossessCommand<br>
+\t{<br>
+\t<br>
+\t\tpublic static ArrayList PossessList = new ArrayList();<br>
+\t\t<br>
+\t\tpublic static void Initialize()<br>
+\t\t{<br>
+\t\t\tServer.Commands.Register( &quot;Possess&quot;, AccessLevel.GameMaster, new CommandEventHandler( Possess_OnCommand ) );<br>
+\t\t\tServer.Commands.Register( &quot;UnPossess&quot;, AccessLevel.GameMaster, new CommandEventHandler( UnPossess_OnCommand ) );<br>
+\t\t}<br>
+\t\t<br>
+\t\t[Usage( &quot;Possess&quot; )]<br>
+\t\t[Description( &quot;Sélectionnez la créature à possèder.&quot; )]<br>
+\t\tprivate static void Possess_OnCommand( CommandEventArgs e )<br>
+\t\t{<br>
+\t\t\tMobile mobile = (Mobile) e.Mobile;</p>
+<p>\t\t\tmobile.SendMessage( &quot;Sélectionnez la créature à posséder.&quot; );<br>
+\t\t\tmobile.Target = new InternalTarget();<br>
+\t\t}<br>
+\t\t<br>
+\t\t[Usage( &quot;UnPossess&quot; )]<br>
+\t\t[Description( &quot;Vous quittez la possession.&quot; )]<br>
+\t\tprivate static void UnPossess_OnCommand( CommandEventArgs e )<br>
+\t\t{<br>
+\t\t\tMobile from = (Mobile) e.Mobile;<br>
+\t\t\tUnpossess( from );<br>
+\t\t}<br>
+\t\t<br>
+\t\tprivate static void Unpossess( Mobile from )<br>
+\t\t{<br>
+\t\t\tUnpossessDeath( from, true );<br>
+\t\t}<br>
+\t\t<br>
+\t\tpublic static bool UnpossessDeath( Mobile from )<br>
+\t\t{<br>
+\t\t\treturn UnpossessDeath( from, false );<br>
+\t\t}<br>
+\t\t<br>
+\t\tprivate static bool UnpossessDeath( Mobile from, bool alive )<br>
+\t\t{<br>
+\t\t\tbool allReadyPossess = false;<br>
+\t\t\tPossessLink check = null;<br>
+\t\t\t<br>
+\t\t\tfor ( int i = 0; i &lt; PossessList.Count; i++ )<br>
+\t\t\t{<br>
+\t\t\t\tcheck = (PossessLink) PossessList[i];<br>
+\t\t\t\tif ( check.getFrom() == from )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tallReadyPossess = true;<br>
+\t\t\t\t\tbreak;<br>
+\t\t\t\t}<br>
+\t\t\t}\t<br>
+\t\t\t<br>
+\t\t\tif ( allReadyPossess &amp;&amp; check != null )<br>
+\t\t\t{<br>
+\t\t\t\tfrom.SendMessage( &quot;Vous perdez votre emprise sur la créature.&quot; );<br>
+\t\t\t\tcheck.UnPossess( alive );<br>
+\t\t\t\tPossessList.Remove( check );<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\treturn !allReadyPossess;<br>
+\t\t}<br>
+\t\t<br>
+\t\tprivate class InternalTarget : Target<br>
+\t\t{<br>
+\t\t\tpublic InternalTarget() : base( -1, false, TargetFlags.None )<br>
+\t\t\t{<br>
+\t\t\t}</p>
+<p>\t\t\tprotected override void OnTarget( Mobile from, object targeted )<br>
+\t\t\t{<br>
+\t\t\t\tbool allReadyPossess = false;<br>
+\t\t\t\tPossessLink check;<br>
+\t\t\t\t<br>
+\t\t\t\tfor ( int i = 0; i &lt; PossessList.Count; i++ )<br>
+\t\t\t\t{<br>
+\t\t\t \t\tcheck = (PossessLink) PossessList[i];<br>
+\t\t\t \t\tif ( check.getFrom() == from )<br>
+\t\t\t \t\t{<br>
+\t\t\t\t\t\tallReadyPossess = true;<br>
+\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}<br>
+\t\t\t\t\t\t\t<br>
+\t\t\t\tif ( allReadyPossess )<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Vous possédez déjà une créature.&quot; );<br>
+\t\t\t\t\t<br>
+\t\t\t\telse if ( targeted is BaseCreature )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tBaseCreature to = (BaseCreature) targeted;<br>
+\t\t\t\t\tPossessList.Add( new PossessLink( from, to ) );<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Vous prennez possession de la créature.&quot; );<br>
+\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t\telse<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas posséder ceci.&quot; );<br>
+\t\t\t}<br>
+\t\t}<br>
+\t\t<br>
+\t\tprivate class PossessLink<br>
+\t\t{<br>
+\t\t\tprivate BaseCreature m_to;<br>
+\t\t\tprivate Mobile m_from;<br>
+\t\t\tprivate BaseCreature m_save;<br>
+\t\t\tprivate bool m_invul;<br>
+\t\t\t<br>
+\t\t\tprivate static Layer[] m_layer = new Layer[]<br>
+\t\t\t{<br>
+\t\t\t\tLayer.FirstValid,<br>
+\t\t\t\tLayer.TwoHanded,<br>
+\t\t\t\tLayer.Shoes,<br>
+\t\t\t\tLayer.Pants,<br>
+\t\t\t\tLayer.Shirt,<br>
+\t\t\t\tLayer.Helm,<br>
+\t\t\t\tLayer.Gloves,<br>
+\t\t\t\tLayer.Ring,<br>
+\t\t\t\tLayer.Unused_x9,<br>
+\t\t\t\tLayer.Neck,<br>
+\t\t\t\tLayer.Hair,<br>
+\t\t\t\tLayer.Waist,<br>
+\t\t\t\tLayer.InnerTorso,<br>
+\t\t\t\tLayer.Bracelet,<br>
+\t\t\t\tLayer.Unused_xF,<br>
+\t\t\t\tLayer.FacialHair,<br>
+\t\t\t\tLayer.MiddleTorso,<br>
+\t\t\t\tLayer.Earrings,<br>
+\t\t\t\tLayer.Arms,<br>
+\t\t\t\tLayer.Cloak,<br>
+\t\t\t\tLayer.OuterTorso,<br>
+\t\t\t\tLayer.OuterLegs,<br>
+\t\t\t\tLayer.LastUserValid<br>
+\t\t\t};<br>
+\t\t\t<br>
+\t\t\tprivate static SkillName[] m_skillname = new SkillName[]<br>
+\t\t\t{<br>
+\t\t\t\tSkillName.Alchemy,<br>
+\t\t\t\tSkillName.Anatomy,<br>
+\t\t\t\tSkillName.AnimalLore,<br>
+\t\t\t\tSkillName.AnimalTaming,<br>
+\t\t\t\tSkillName.Archery,<br>
+\t\t\t\tSkillName.ArmsLore,<br>
+\t\t\t\tSkillName.Begging,<br>
+\t\t\t\tSkillName.Blacksmith,<br>
+\t\t\t\tSkillName.Bushido,<br>
+\t\t\t\tSkillName.Camping,<br>
+\t\t\t\tSkillName.Carpentry,<br>
+\t\t\t\tSkillName.Cartography,<br>
+\t\t\t\tSkillName.Chivalry,<br>
+\t\t\t\tSkillName.Cooking,<br>
+\t\t\t\tSkillName.DetectHidden,<br>
+\t\t\t\tSkillName.Discordance,<br>
+\t\t\t\tSkillName.EvalInt,<br>
+\t\t\t\tSkillName.Fencing,<br>
+\t\t\t\tSkillName.Fishing,<br>
+\t\t\t\tSkillName.Fletching,<br>
+\t\t\t\tSkillName.Focus,<br>
+\t\t\t\tSkillName.Forensics,<br>
+\t\t\t\tSkillName.Healing,<br>
+\t\t\t\tSkillName.Herding,<br>
+\t\t\t\tSkillName.Hiding,<br>
+\t\t\t\tSkillName.Inscribe,<br>
+\t\t\t\tSkillName.ItemID,<br>
+\t\t\t\tSkillName.Lockpicking,<br>
+\t\t\t\tSkillName.Lumberjacking,<br>
+\t\t\t\tSkillName.Macing,<br>
+\t\t\t\tSkillName.Magery,<br>
+\t\t\t\tSkillName.MagicResist,<br>
+\t\t\t\tSkillName.Meditation,<br>
+\t\t\t\tSkillName.Mining,<br>
+\t\t\t\tSkillName.Musicianship,<br>
+\t\t\t\tSkillName.Necromancy,<br>
+\t\t\t\tSkillName.Ninjitsu,<br>
+\t\t\t\tSkillName.Parry,<br>
+\t\t\t\tSkillName.Peacemaking,<br>
+\t\t\t\tSkillName.Poisoning,<br>
+\t\t\t\tSkillName.Provocation,<br>
+\t\t\t\tSkillName.RemoveTrap,<br>
+\t\t\t\tSkillName.Snooping,<br>
+\t\t\t\tSkillName.SpiritSpeak,<br>
+\t\t\t\tSkillName.Stealing,<br>
+\t\t\t\tSkillName.Stealth,<br>
+\t\t\t\tSkillName.Swords,<br>
+\t\t\t\tSkillName.Tactics,<br>
+\t\t\t\tSkillName.Tailoring,<br>
+\t\t\t\tSkillName.TasteID,<br>
+\t\t\t\tSkillName.Tinkering,<br>
+\t\t\t\tSkillName.Tracking,<br>
+\t\t\t\tSkillName.Veterinary,\t\t\t<br>
+\t\t\t\tSkillName.Wrestling<br>
+\t\t\t};<br>
+\t\t\t<br>
+\t\t\tpublic PossessLink( Mobile from, BaseCreature to )<br>
+\t\t\t{<br>
+\t\t\t\tm_to = to;<br>
+\t\t\t\tm_from = from;<br>
+\t\t\t\tm_invul = to.Blessed;<br>
+\t\t\t\tthis.Initialize();<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tprivate void Initialize()<br>
+\t\t\t{<br>
+\t\t\t\tm_save = new BaseCreature( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 );<br>
+\t\t\t\tm_save.Frozen = true;<br>
+\t\t\t\t<br>
+\t\t\t\tthis.xChange( m_from, m_save );<br>
+\t\t\t\tthis.xChange( m_to, m_from );<br>
+\t\t\t\t<br>
+\t\t\t\tm_from.Map = m_to.Map;<br>
+\t\t\t\tm_from.Location = m_to.Location;<br>
+\t\t\t\t\t\t\t\t<br>
+\t\t\t\tm_to.Blessed = true;<br>
+\t\t\t\tm_to.Internalize();<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tpublic void UnPossess( bool alive )<br>
+\t\t\t{\t\t\t\t<br>
+\t\t\t\tthis.xChange( m_from, m_to );<br>
+\t\t\t\tthis.xChange( m_save, m_from );<br>
+\t\t\t\t<br>
+\t\t\t\tm_save.Delete();<br>
+\t\t\t\t<br>
+\t\t\t\tm_from.Hidden = true;<br>
+\t\t\t\t<br>
+\t\t\t\tm_to.Map = m_from.Map;<br>
+\t\t\t\tm_to.Location = m_from.Location;<br>
+\t\t\t\t<br>
+\t\t\t\tm_to.Blessed = m_invul;<br>
+\t\t\t\t<br>
+\t\t\t\tif ( !alive )<br>
+\t\t\t\t\tm_to.Kill();<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tprivate void xChange( Mobile from, Mobile to )<br>
+\t\t\t{<br>
+\t\t\t\tto.BaseSoundID = from.BaseSoundID;<br>
+\t\t\t\tto.BodyValue = from.BodyValue;<br>
+\t\t\t\tto.Criminal = from.Criminal;<br>
+\t\t\t\tto.Dex = from.Dex;\t<br>
+\t\t\t\tto.Direction = from.Direction;<br>
+\t\t\t\tto.Fame = from.Fame;<br>
+\t\t\t\tto.Female = from.Female;<br>
+\t\t\t\tto.Hidden = from.Hidden;<br>
+\t\t\t\tto.Hits = from.Hits;<br>
+\t\t\t\tto.Hue = from.Hue;<br>
+\t\t\t\tto.Int = from.Int;<br>
+\t\t\t\tto.Karma = from.Karma;<br>
+\t\t\t\tto.Kills = from.Kills;<br>
+\t\t\t\tto.Mana = from.Mana;<br>
+\t\t\t\tto.Name = from.Name;<br>
+\t\t\t\tto.RawDex = from.RawDex;<br>
+\t\t\t\tto.RawInt = from.RawInt;<br>
+\t\t\t\tto.RawStr = from.RawStr;<br>
+\t\t\t\tto.SpeechHue = from.SpeechHue;<br>
+\t\t\t\tto.Stam = from.Stam;<br>
+\t\t\t\tto.Str = from.Str;<br>
+\t\t\t\tto.Title = from.Title;<br>
+\t\t\t\t<br>
+\t\t\t\t<br>
+\t\t\t\tfor ( int i = 0; i &lt; m_layer.Length; i++ )<br>
+\t\t\t\t\txChangeFromLayer( from, to, m_layer[i] );<br>
+\t\t\t\t<br>
+\t\t\t\tfor ( int i = 0; i &lt; m_skillname.Length; i++ )<br>
+\t\t\t\t\tto.Skills[m_skillname[i]].BaseFixedPoint = from.Skills[m_skillname[i]].BaseFixedPoint;<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tprivate void xChangeFromLayer( Mobile from, Mobile to, Layer layer )<br>
+\t\t\t{<br>
+\t\t\t\tif ( from.FindItemOnLayer( layer ) != null )<br>
+\t\t\t\t\tto.AddItem( from.FindItemOnLayer( layer ) );<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tpublic BaseCreature getTo()<br>
+\t\t\t{<br>
+\t\t\t\treturn m_to;<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tpublic Mobile getFrom()<br>
+\t\t\t{<br>
+\t\t\t\treturn m_from;<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tpublic BaseCreature getSave()<br>
+\t\t\t{<br>
+\t\t\t\treturn m_save;<br>
+\t\t\t}<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-24-2007-at-914-pm">Post by Feydanith, dit la Carpe - March 24, 2007 at 9:14 PM</h2>
+<p><a id="post-112185"></a></p>
+<p>Bordel, j viens à peine de poster que j'ai déjà toruvé un bug...</p>
+<p>Si on Possess une créature empoisonnée et qu'elle meurre à perpet, ça va fair eun null pointer exception et crasher le serveur  <img src="/assets/smilies/sorry.gif" alt=""></p>
+<p>Bon, je vais corriger ça...</p>
+<p>EDIT : Corrected</p>
+<p>EDIT II : Merde le bleed et le strangle...</p>
+<p>EDIT III : Je me suis pas foulé, je l'ai tappé invul quand on le possède x)</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

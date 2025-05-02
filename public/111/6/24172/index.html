@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petit problème : Lien avec la Forêt - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Petit problème : Lien avec la Forêt</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">Petit problème : Lien avec la Forêt</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="petit-problme--lien-avec-la-fort">Petit problème : Lien avec la Forêt</h1>
+<h2 id="post-by-garibald-adalard-ad---september-12-2008-at-857-am">Post by Garibald Adalard, Ad - September 12, 2008 at 8:57 AM</h2>
+<p><a id="post-181597"></a></p>
+<p>Allô !</p>
+<p>Voici le petit bug. J'ai toujours cru, de longue date. Que le sort &quot;Lien avec la forêt&quot; n'était pas implanter ou encore était innutilisable. Donc j'en es jamais faite un cas.</p>
+<p>J'ai vu tout juste hier, Domixilia utiliser se dis sort. Alors je me suis informer à elle voir comment elle réussissait à l'utiliser. Elle m'a dit tout simplement qu'elle avait glisser le parchemin dans son grimoire et que tout était bien beau !</p>
+<p>Je me suis dis, tiens sa la été réparer. J'achète le sort (Même à deux reprises à deux vendeurs différents) j'essaye de le rentrer dans mon grimoire de la nature (le grimoire pour druide, le vert). Rien ne se passe le parchemin ne veut pas y entrer. Même en double clickant sur le sort, sa m'indique que le sort ne fonctionne pas.</p>
+<p>Bref ! Je me demande bien comment l'utiliser. Si un gm ou encore un joueur sachant comment règler ceci, sa serais aimable de me l'indiquer.</p>
+<p>Autre chose. Les vendeurs qui vendent les parchemins druidique on un petit problème aussi rien de majeur mais pouvant être fatiguant. À titre d'exemple :</p>
+<p>Je veux acheter le sort &quot;Cercle de Pierre&quot;, je l'achète et se que j'ai dans mon sac c'est le sort &quot;insecte&quot;. En gros sa peu être mélangeant et forcer le joueur à dépenser une bonne somme d'or s'il n'achète pas tout ses parchemins d'un coup. En jouant au jeu du hasard à trouver les parchemins qui lui manquent.</p>
+<p>C'est tout, merci !</p>
+<hr>
+<h2 id="post-by-ex-lumina---september-12-2008-at-906-am">Post by Ex-Lumina - September 12, 2008 at 9:06 AM</h2>
+<p><a id="post-181598"></a></p>
+<p>Donc une joueuse qui avait le même problème pour la présence des sorts dans le livre m'avait dit que les sorts en question n'apparaissait que lorsque le livre druidique était plein.</p>
+<p>Pour le second point.. un scripteur pourrait peut-être en dire plus.</p>
+<hr>
+<h2 id="post-by-anonymous---september-12-2008-at-1029-am">Post by Anonymous - September 12, 2008 at 10:29 AM</h2>
+<p><a id="post-181599"></a></p>
+<p>Hum le sort qui te change en arbre tu parles?.</p>
+<p>Mon livre est plein et je ne l'ai pas.</p>
+<p>Jamais vu Coralie le faire non plus.</p>
+<p>Louche, je vais tester aussi.</p>
+<hr>
+<h2 id="post-by-coralie-fdc---september-12-2008-at-327-pm">Post by Coralie, FdC - September 12, 2008 at 3:27 PM</h2>
+<p><a id="post-181603"></a></p>
+<p>je ne l'ai pas, malgré plusieurs tentative...</p>
+<p>mais je sais que quelqu'un l'a déja eu...</p>
+<p>je sais qu'il y as une commande gms qui permet de remplier le livre de tout le sort. Peut-être c'est ce qu'il faut faire</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-12-2008-at-355-pm">Post by Théodore de Lagarde, AdM - September 12, 2008 at 3:55 PM</h2>
+<p><a id="post-181607"></a></p>
+<blockquote>
+<p><strong>&quot;Garibald Adalard, FdC&quot; wrote:</strong>
+Je veux acheter le sort &quot;Cercle de Pierre&quot;, je l'achète et se que j'ai dans mon sac c'est le sort &quot;insecte&quot;. En gros sa peu être mélangeant et forcer le joueur à dépenser une bonne somme d'or s'il n'achète pas tout ses parchemins d'un coup. En jouant au jeu du hasard à trouver les parchemins qui lui manquent.</p>
+<p>Probablement qu'il faut juste changer le nom du parchemin en ajouter la ligne suivant dans le :</p>
+<p>Name = &quot;Cercle de pierre&quot;;</p>
+<p>Ça devrait écraser l'insecte... heu... L' &quot;Insecte&quot;.</p>
+<p>EDIT:</p>
+<p>faudrait aussi ajouter cette ligne dans le deserialize seulement :</p>
+<p>if (Name != &quot;Cercle de pierre&quot;)
+Name = &quot;Cercle de pierre&quot;;</p>
+<p>Comme ça ça va corriger aussi ceux déjà IG. <img src="/assets/smilies/Wink.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---september-12-2008-at-425-pm">Post by Phydias Shaytan, CP - September 12, 2008 at 4:25 PM</h2>
+<p><a id="post-181612"></a></p>
+<p>A titre indicatif si un gm veut tester de remplir un livre. Il y a normalement un champ avec une valeur numérique. Celle-ci correspond aux différentes configurations des sorts dans le livre.</p>
+<p>Ex. avec 3 sorts :<br>
+0 livre vide<br>
+1 premier sort<br>
+2 deuxième sort<br>
+3 premier et deuxième sort<br>
+4 troisième sort<br>
+5 premier et troisième sort<br>
+6 deuxième et troisième sort<br>
+7 tous les sorts</p>
+<p>Bref, un peu de combinatoire avec un peu de binaire <img src="/assets/smilies/smile.gif" alt=""> En gros, le livre plein devrait correspondre à (2^(nombre de sorts))-1</p>
+<hr>
+<h2 id="post-by-anonymous---september-14-2008-at-136-am">Post by Anonymous - September 14, 2008 at 1:36 AM</h2>
+<p><a id="post-181893"></a></p>
+<p>On pourrait... pour règler le problème temporairement.</p>
+<p>Duper le livre de domi?</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

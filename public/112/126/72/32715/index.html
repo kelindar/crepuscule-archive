@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système de minage (FAIT) - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Système de minage (FAIT)</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Système de minage (FAIT)</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="systme-de-minage-fait">Système de minage (FAIT)</h1>
+<h2 id="post-by-lancelot---february-4-2010-at-200-am">Post by Lancelot - February 4, 2010 at 2:00 AM</h2>
+<p><a id="post-243772"></a></p>
+<p>Salut bien,</p>
+<p>Je post ça ici à l'intention de nos chers scripteurs.</p>
+<p>Croyez-vous être capable de scripter ce système? J'explique:</p>
+<p>Nous voulons faire en sorte que : Lumerca, Onirine, Ombryque, Pyrolithe, Devas, minable dans des zones précises délimitée par les gms.</p>
+<p>Afin qu'ils puissent être minés par un &quot;filon&quot; de minerais que nous pouvons ajouter manuellement à des endroits précis.</p>
+<p>Ainsi, nous pourrions donner accès à l'ombryque, par exemple, dans le fond d'un donjon. Il devra être miné par quelqu'un possédant le skill requis. Il aurait un nombre X de minerais qui puis être acquis. Après tant de coups, le filon se vide et se régénère seulement après tant de temps.</p>
+<p>En attente de vos nouvelles!<br>
+Merci.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-4-2010-at-207-am">Post by Coordinateur Apoc - February 4, 2010 at 2:07 AM</h2>
+<p><a id="post-243773"></a></p>
+<p>Ce qui serait probablement le plus simple serait de scripter des rochers de minerais, ca permettrait de bien délimiter la quantité minable dans un endroit. Ca permettrait aussi aux joueurs de savoir quoi miner au lieu de devoir deviner ce qu'il y a dans le sol, reste à voir si vous voulez leur rendre cela facile ou difficille.</p>
+<p>Si jamais personne ne peut s'occuper de cela et c'est moi qui doit le faire, j'aimerais faire ca ainsi en tout cas.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---february-4-2010-at-312-am">Post by Théodore de Lagarde, AdM - February 4, 2010 at 3:12 AM</h2>
+<p><a id="post-243776"></a></p>
+<p>Je pense que moi et Kertan on serait capable de scripter quelque chose qui puisse faire ça, si vous voulez nous déléguer la tâche, soit avec la zone ou l'idée d'Apoc sur une roche. Le hic, c'est qu'on ne peut pas faire ça avec les scripts qu'on a présentement, vu qu'on a justement aucun de ces métaux <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---february-4-2010-at-729-am">Post by Myrddin Emrys, CP - February 4, 2010 at 7:29 AM</h2>
+<p><a id="post-243813"></a></p>
+<p>je peux m'en occuper à la seule condition qu'on m'envoi le fichier mining.cs (script/engine/harvest)</p>
+<p>parce que le système de mining de crep est pas du tout le même que celui de uo de base</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-4-2010-at-112-pm">Post by Seigneur Bélial - February 4, 2010 at 1:12 PM</h2>
+<p><a id="post-243837"></a></p>
+<p>En faite ce que Lancelot veux dire c'est un gros rocher poser au sol, qu'on tape dessus avec une pioche. Le gros rocher donne soit des minerais, soit des granites. Ce n'est pas un endroit qu'on mine au sol mais un véritable sédiment.</p>
+<p>J'aime beaucoup cette idée, ça permettrait aux guildes d'aller ensemble dans les donjons, ça donnerait aussi l'occasion aux joueurs de se réunir pour une quête personnel. Moi je suis pour.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-9-2010-at-559-am">Post by Coordinateur Apoc - February 9, 2010 at 5:59 AM</h2>
+<p><a id="post-244925"></a></p>
+<p>Environ la moitié du travail est faites. À la prochaine mise à jour je vous met le MineralDeposit vous pourrez tester cela sur green acre le temps que je finisse le reste du travail.</p>
+<p>Vous pouvez choisir la ressource que vous voulez (Ressource), le quantité de minerais minable (Quantity), le nombre d'heures avant qu'un minerais se régénère(Hours) ainsi que le Maximum de minerais possible. (Max).</p>
+<p>Donc un minerais banal peut avoir une regénération à chaque heure et un maximum de 20 tandis qu'un minerais rare pourrait être regénéré seulement après 24 heures et ne pourrais en avoir un maximum de 1.</p>
+<p>Maintenant je dois déchiffrer le script de mining pour voir si je peux facilement ajouter le rocher comme cible minable et espèrer que ce ne sera pas trop complexe.</p>
+<p>Je vais peut-être voir pour utiliser le double-clique sur le MineralDeposit question de ne pas trop jouer avec le script de mining malgré que je devrais ajouter une variable pour le skill requis directement sur le MineralDeposit sinon tout le monde pourrait y miner.</p>
+<p>Les deux situations apportent leur avantages et problèmes...</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-9-2010-at-740-am">Post by Coordinateur Apoc - February 9, 2010 at 7:40 AM</h2>
+<p><a id="post-244969"></a></p>
+<p>Par contre j'allais oublier le granite. Je ferai probablement un GraniteDeposit vu que la quantité de minerais est limité pour ne pas pénaliser ceux pouvant miner le granite mais qui ne voudrait que du minerais.</p>
+<p>Je crois bien que je vais opter pour le double-clique, probablement plus simple côté script pour moi et ca permettrait de refaire un meilleur système de mining plus tard sans problèmes. Même que rien n'empêche d'avoir un autre systême de mining comme celui de base mais incluant tout les minerais en plus de celui que je fais. Le miens permet un nombre de minerais limité mais visible et fixe tandis qu'un autre pourrait être plus aléatoire mais vaste.</p>
+<hr>
+<h2 id="post-by-lancelot---february-9-2010-at-743-am">Post by Lancelot - February 9, 2010 at 7:43 AM</h2>
+<p><a id="post-244972"></a></p>
+<p>Vraiment excellent Apoc!</p>
+<p>Parfait pour le double-clic, ce système nous permettra de contrôler la rareté des minerais en les ajustant les valeurs selon notre volonté pour la calibration.<br>
+On n'aura qu'à ajouter un autre &quot;filon&quot; qui sera du granite, pas loin de celui de minerais. On peut les mettre à coup de deux sans problème.</p>
+<p>Merci beaucoup pour le système!</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-11-2010-at-257-am">Post by Coordinateur Apoc - February 11, 2010 at 2:57 AM</h2>
+<p><a id="post-245282"></a></p>
+<p>Je viens de mettre le MineralDeposit et le GraniteDeposit sur le serveur. Vous pourrez en mettre sur green acre pour tester et voir si tout va bien ce soir ou demain.<br>
+Il manque le double-clique pour miner mais sinon ils devraient être fonctionnels pour ce qui est de ce que j'ai expliqué plus haut.</p>
+<p>Ah et si ce n'était pas clair, Hours détermine le nombre d'heure avant une regénération de UN minerais, pas une regénération totale du Max.</p>
+<p>EDIT: J'ai aussi ajouté la variable Skill qui servira à donner le skill requis en mining pour pouvoir miner sur le dépot. Donc il sera même possible de mettre un skill requis plus un sur un depot facile d'accès et un skill plus bas sur un dans le fond d'un dongeon difficille.</p>
+<p>Ca rend le système pas mal plus souple que celui de base.</p>
+<p>Je voudrais aussi vos suggestions pour des meilleurs ItemID, présentement les deux ont la même apparence et seul le nom est différent.</p>
+<hr>
+<h2 id="post-by-lancelot---february-11-2010-at-831-am">Post by Lancelot - February 11, 2010 at 8:31 AM</h2>
+<p><a id="post-245361"></a></p>
+<p>Voilà c'est déplacé ici, merci Nimue.</p>
+<p>.add mineraldeposit .add granitedeposit sont disponibles en jeu. Je les ai testé, et le tout est très bien, bon boulot Apoc. ^^</p>
+<p>Le système n'est pas encore complété, mais la personnalisation est excellente dans les propriétés. J'ai hâte de voir la suite et de pouvoir l'implanter en jeu!</p>
+<hr>
+<h2 id="post-by-lancelot---february-19-2010-at-1126-am">Post by Lancelot - February 19, 2010 at 11:26 AM</h2>
+<p><a id="post-246269"></a></p>
+<p><span style="color:#000040"><em><strong>Quand tu l'auras terminer fait nous signe, on va l'implanter in game. ^^</strong></em></span></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-20-2010-at-1229-am">Post by Coordinateur Apoc - February 20, 2010 at 12:29 AM</h2>
+<p><a id="post-246309"></a></p>
+<p>Ouais désolé. J'étais très occupé. <em><em>tousse</em> <span style="font-size:65%">Mass Effect 2 + Bioshock 2</span> <em>tousse</em></em></p>
+<p>Je vais essayé de terminer cela ce soir ou au courant de la fin de semaine.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-20-2010-at-429-am">Post by Coordinateur Apoc - February 20, 2010 at 4:29 AM</h2>
+<p><a id="post-246331"></a></p>
+<p>Je crois bien avoir terminé à 90-95%.</p>
+<p>Il ne me reste qu'a ajouter l'animation avec la pioche et en même temps le délais. Présentement avec un maccro on vide le dépot en 2 secondes.</p>
+<p>Finalement j'y suis aller pour la pioche au lieu du double-clique sur le dépot. Ca me permettait de sauter quelques étapes comme vérifier s'il y avait bien une pioche dans les mains et si elle avait encore des charges.</p>
+<p>J'ai pensé à enlever une charge à la pioche par minerais/granite.<br>
+J'ai pensé à vérifier la distance, le joueur doit etre collé sur le dépot.<br>
+J'ai pensé à vérifier la quantité, quand le dépot est vide, un message le fait savoir et on ne recoit rien.<br>
+J'ai pensé à vérifier si le joueur avait bien lu le livre pour le granite.</p>
+<p>J'ai oublié quelque choses vous croyez?</p>
+<p>EDIT: Il me faut toujours un meilleur ItemID pour les dépot. Sinon je vais prendre une roche au hazard pour au moins différencier les deux. Le granite il faudrait quelques choses de gros car le granite est aussi gros que le dépot.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---february-20-2010-at-530-am">Post by Lancelot - February 20, 2010 at 5:30 AM</h2>
+<p><a id="post-246334"></a></p>
+<p>Pour le granite, à mon opinion ça ne dérange pas. En RP, ça montre seulement qu'il y à &quot;présence&quot; de cette ressource dans les environs, et c'est en général que se passe l'extraction et non sur le point fixe.</p>
+<p>Bon boulot Apoc, ça a très bien avancé. ^^</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-21-2010-at-138-am">Post by Coordinateur Apoc - February 21, 2010 at 1:38 AM</h2>
+<p><a id="post-246420"></a></p>
+<p>Vous pouvez .delete les dépot s'ils y en a? Je vais les modifier un peu et sinon le serveur pourrait avoir peur.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Sinon je crois bien avoir terminé, il y a une animation, un son et cela prend environ 6 secondes ramasser un minerais/granite.</p>
+<p>Par contre on peu commencer a creuser, courir un peu plus loin et on ramassera quand même. Je cherches une solution simple au-cas-ou certains abuseurs voudrait commencer à creuser et tourner en rond pour éviter les monstres ou un truc du genre. Par chance il existe une variable InMovement ou un truc du genre qui s'enclenche quand le joueur bouge. Sinon je ne me casserai pas la tête et je vais freezer le personnage pendant ce temps.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Ensuite je change les itemid un peu et je met sur le serveur. Une fois que ce sera fait je vous suggère de trouver un bon mineur et un mineur moyen avec stonemining pour bien tester dans un coin avant de les mettres en jeu.</p>
+<p>PS: Un admin pourrait aussi me déplacer? Car j'arrives plus à me connecter sur mon GM avec crépuscule 2. C'est peut-être les personnages de Zak, ca serait pas une mauvaise idée de les mettre un peu plus loin.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---february-21-2010-at-238-am">Post by Lancelot - February 21, 2010 at 2:38 AM</h2>
+<p><a id="post-246424"></a></p>
+<p>Nimue te fait ça. Et pour les dépôts de minerais j'ai effacé les 2 que j'avais mit pour tester.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-21-2010-at-245-am">Post by Coordinateur Apoc - February 21, 2010 at 2:45 AM</h2>
+<p><a id="post-246426"></a></p>
+<p>Je croyais avoir fini mais non. Le système de minerais de Crépuscule c'est vraiment de la merde.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Disons que mon dépot donne de la sanguine. Quand j'arrives pour faire des lingots, ca tombe en fer...<br>
+Plus ou moins le même problème avec le granite mais vu qu'il n'y a pas de lingot, il les considère tous comme du fer mais donne au moins le bon hue sur l'objet créé.</p>
+<p>Sinon j'ai modifié le dépot de granite pour qu'il soit un peu plus gros mais à peine question de les différencier d'un coup d'oeil.</p>
+<p>J'ai aussi remarqué qu'on pouvait encore miner autant de fois qu'on voulait tant qu'on était à 1 case. Donc je me suis assuré que ce soit seulement un dépot à la fois. Encore possible de miner sur UN dépot de minerais et UN dépot de granite en même temps mais suffit de ne pas les coller et les joueurs ne remarqueront même pas.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-21-2010-at-315-am">Post by Coordinateur Apoc - February 21, 2010 at 3:15 AM</h2>
+<p><a id="post-246428"></a></p>
+<p>Bon là... J'ai testé jusqu'à la création d'armures et de statue sans trouver aucun problèmes. Bons matériaux, bonnes couleurs!<br>
+Je ne vois pas vraiment d'abus possible et tout devrait fonctionner comme prévu.</p>
+<p>Je vais mettre sur le serveur. Une fois que ce sera mit en jeu et que vous serez pret, faites moi signe et j'écrirait le post de mise à jour et de commentaires.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-21-2010-at-341-am">Post by Fondateur Kel - February 21, 2010 at 3:41 AM</h2>
+<p><a id="post-246430"></a></p>
+<p>Quelques trucs:</p>
+<p>Pourrait être bien de tourner directement le personnage à l'objet:</p>
+<pre><code>   public static void Turn(Mobile from, object to)  
+    {  
+        IPoint3D target = to as IPoint3D;
+
+        if (target == null)  
+            return;
+
+        if (target is Item)  
+        {  
+            Item item = (Item)target;
+
+            if (item&amp;#46;RootParent != from)  
+                from&amp;#46;Direction = from&amp;#46;GetDirectionTo(item&amp;#46;GetWorldLocation());  
+        }  
+        else if (from != target)  
+        {  
+            from&amp;#46;Direction = from&amp;#46;GetDirectionTo(target);  
+        }  
+    }  
+</code></pre>
+<p>Pour tes soucis, au lieu de faire dans OnMouvement, fais plutôt des Actions (car c'est une action de personnage):</p>
+<pre><code>        // ça fait un lock sur un type, donc tu peux prendre quelque chose comme&amp;#58;  
+        if (!Caster&amp;#46;CanBeginAction(typeof(MineralDeposit)))  
+        {  
+            Caster&amp;#46;SendLocalizedMessage(501789); // You must wait before trying again&amp;#46;  
+        }  
+        else if (/*Vérifier si tu peux effectuer l'action*/)  
+        {  
+           Turn(from, item);
+
+           // Commencer l'action  
+           Caster&amp;#46;BeginAction(typeof(MindTelekenesis)); 
+
+           // &amp;#46;&amp;#46;&amp;#46; Le reste de ton code
+
+
+           // Lancer le timer, le 'cooldown' de l'action  
+           Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromSeconds(15&amp;#46;0), new TimerStateCallback(EndAction), from);  
+              
+        }
+
+    private static void EndAction(object state)  
+    {  
+        ((Mobile)state)&amp;#46;EndAction(typeof(MineralDeposit));  
+    }  
+</code></pre>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-25-2010-at-956-am">Post by Coordinateur Apoc - February 25, 2010 at 9:56 AM</h2>
+<p><a id="post-246911"></a></p>
+<p><em>tousse</em> Un Admin n'a toujours pas mis sur le serveur?  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---february-26-2010-at-512-am">Post by Lancelot - February 26, 2010 at 5:12 AM</h2>
+<p><a id="post-246976"></a></p>
+<p>Ah excellent!<br>
+Je n'avais pas vu que c'était prêt à être mis sur le serveur. : )</p>
+<p>Je suis certain que Nimue ou Wolf vont pouvoir mettre la mise-à-jour très prochainement.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---february-26-2010-at-938-pm">Post by Conteur Wolf - February 26, 2010 at 9:38 PM</h2>
+<p><a id="post-247008"></a></p>
+<p>Implanté, j'ai testé rapidement et ça semble fonctionner.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-27-2010-at-205-am">Post by Coordinateur Apoc - February 27, 2010 at 2:05 AM</h2>
+<p><a id="post-247027"></a></p>
+<p>Je crois qu'il serait bien de faire deux choses.</p>
+<p>1- Faire une liste du skill requis &quot;normal&quot; pour chaque minerais ainsi que le temps de regénération et la quantité maximale.</p>
+<p>Cela permettrait de ne pas avoir un dépot super facile à un endroit et un super difficille du même minerais mais dans un autre endroit. On pourrait aussi faire une charte. Si le dépot est entouré de monstres, -5% au skill requis, dans le fond d'un dongeon -10%. Quelque chose comme cela.</p>
+<p>Je n'y connais rien aux forces des minerais mais en voici la liste.</p>
+<p>Fer<br>
+Acier<br>
+Erunox<br>
+Fistahte<br>
+Erofith<br>
+Landoras<br>
+Or<br>
+Sylveron<br>
+Sanguine<br>
+Mortine<br>
+Necrolithe<br>
+Devas<br>
+Onirine<br>
+Pyrolithe<br>
+Ombryque<br>
+Lumerca<br>
+Damascus</p>
+<p>2- Faire une liste de chaque dépot placé avec les coordoonées et possiblement mettre aussi les variables utilisés (Skills, max, etc)</p>
+<p>Comme cela on éviterait d'avoir des joueurs abuser d'un dépot trop facile sans qu'on soit au courant. Puis on s'assurerait de ne pas mettre un minerais minable qui ne devrait pas l'être.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-27-2010-at-208-am">Post by Coordinateur Apoc - February 27, 2010 at 2:08 AM</h2>
+<p><a id="post-247028"></a></p>
+<p>Ah et il y a certains minerais qui sont le mélange de deux autres je crois bien? Il serait bien d'ajouter une option sur les minerais ou lingots pour combiner deux minerais/lingots en un lingot de ce nouveau minerais avec un prérequis de skill évidemment. Je ne crois pas que ce serait trop difficille. Il faudrait simplement l'avis d'un expert en minerais pour me dire les possible mix.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conan---march-7-2010-at-549-pm">Post by Conan - March 7, 2010 at 5:49 PM</h2>
+<p><a id="post-248102"></a></p>
+<p>Alors, si je me rappel bien (ben oui, les minerais, c'est bibi qui les a fait, il y'a quelques éons de cela. <img src="/assets/smilies/spiteful.gif" alt="">  )</p>
+<p>Erunox : minerai, courant<br>
+Fistahte : minerai, courant</p>
+<p>Erofith : minerai, moins courant<br>
+Landoras : minerai, moins courant</p>
+<p>Or : minerai, inhabituel<br>
+Sylveron : minerai, inhabituel</p>
+<p>Sanguine : minerai, rare<br>
+Mortine : minerai, rare</p>
+<p>Necrolithe : Alliage, Mortine infusé avec nécromancie, pas encore découvert si je ne m'abuse (anim GdO en vue ?)</p>
+<p>Devas : Minerai, très rare, le gardien a disparu au fait.</p>
+<p>Onirine : Minerai d'origine extra planaire, plan rêve/cauchemar (il est devenu quoi le build pour ce donjon ?)<br>
+Pyrolithe : Minerai d'origine extra planaire, plan du feu</p>
+<p>Ombryque : Métal d'origine démoniaque, obtenable via anim uniquement ?<br>
+Lumerca : Métal d'origine divine, obtenable via anim uniquement ?</p>
+<p>Damascus : Alliage, composition non définie mais le but était que ce soit très très très très long pour en fabriquer (mais c'est un métal très très très très bourrin.), ce serait surement une bonne idée d'attendre le nouveau système de craft pour l'implanter. <img src="/assets/smilies/smile.gif" alt=""></p>
+<p>Donc pas vraiment de mix à proprement parler à part pour le Damascus.</p>
+<p>Par contre on peut tout à fait supposé que les Pourpres puissent découvrir un moyen de synthétiser des métaux extraplanaires en utilisant une base de Devas (métal magique, toussa), genre...<br>
+5 lingots de Devas + trucenfeu = 1 lingot de pyrolithe.<br>
+10 lingots de Devas + boutdedémon = 1 lingot d'Ombryque.<br>
+10 lingots de Devas + couilledroitedepaladin = 1 lingot de Lumerca.</p>
+<p>En revanche, faut pas oublier les implications rp des derniers métaux, l'Ombryque, c'est censé être très démoniaque, le Lumerça, c'est censé être très saint, et aussi très, très rare, surtout sur le plan d'existence &quot;normal&quot;, donc soit les rendre extrêmement difficile à obtenir/créer, soit restreindre leur apparition à des situations controlées par GM.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dressage - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Dressage</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <a href="/111/5//" class="nav-item">Suggestion ajouts</a>
+                
+                &rsaquo; <span class="current-page">Dressage</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="dressage">Dressage</h1>
+<h2 id="post-by-ex-mlodie---april-23-2006-at-1130-pm">Post by Ex-Mélodie - April 23, 2006 at 11:30 PM</h2>
+<p><a id="post-65726"></a></p>
+<p>Ce post sert a ceux qui ont choisit cette branche pour travailler. Le post initial sera mit a jour afin de contenir le materiel final a chaque étape de votre travail.</p>
+<p>Il suffit que vous marquiez d'un <span style="color:red">*</span> chaque chose prette a ce que je regarde ( souvent on en aura discuté aussi ) et si je l'accepte je le passe dans ce poste.</p>
+<blockquote>
+</blockquote>
+<hr>
+<h2 id="post-by-ragnamord-trenor-ind---may-6-2006-at-840-pm">Post by Ragnamord Trenor, Ind - May 6, 2006 at 8:40 PM</h2>
+<p><a id="post-68147"></a></p>
+<p>Je me lance donc.</p>
+<p>Ant Lion.<br>
+using System;<br>
+using System.Collections;<br>
+using Server.Items;<br>
+using Server.Targeting;</p>
+<p>namespace Server.Mobiles<br>
+{
+\t[CorpseName( &quot;an ant lion corpse&quot; )]<br>
+\tpublic class AntLion : BaseCreature<br>
+\t{<br>
+\t\t<br>
+\t\tpublic AntLion() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )<br>
+\t\t{<br>
+\t\t\tName = &quot;an ant lion&quot;;<br>
+\t\t\tBody = 787;<br>
+\t\t\tBaseSoundID = 1006;</p>
+<p>\t\t\tSetStr( 296, 320 );<br>
+\t\t\tSetDex( 81, 105 );<br>
+\t\t\tSetInt( 36, 60 );</p>
+<p>\t\t\tSetHits( 151, 162 );</p>
+<p>\t\t\tSetDamage( 7, 21 );</p>
+<p>\t\t\tSetDamageType( ResistanceType.Physical, 70 );<br>
+\t\t\tSetDamageType( ResistanceType.Poison, 30 );</p>
+<p>\t\t\tSetResistance( ResistanceType.Physical, 45, 60 );<br>
+\t\t\tSetResistance( ResistanceType.Fire, 25, 35 );<br>
+\t\t\tSetResistance( ResistanceType.Cold, 30, 40 );<br>
+\t\t\tSetResistance( ResistanceType.Poison, 40, 50 );<br>
+\t\t\tSetResistance( ResistanceType.Energy, 30, 35 );</p>
+<p>\t\t\tSetSkill( SkillName.MagicResist, 70.0 );<br>
+\t\t\tSetSkill( SkillName.Tactics, 90.0 );<br>
+\t\t\tSetSkill( SkillName.Wrestling, 90.0 );</p>
+<p>\t\t\tFame = 4500;<br>
+\t\t\tKarma = -4500;</p>
+<p>\t\t\tVirtualArmor = 45;</p>
+<p>\t   Tamable = true;<br>
+\t\t\tControlSlots = 2;<br>
+\t\t\tMinTameSkill = 53.1;</p>
+<p>\t\t\tPackGem();<br>
+\t\t\tPackGem();<br>
+\t\t\tPackItem( new Bone() );<br>
+\t\t\tPackGold( 125, 175 );</p>
+<p>\t\t\tint amount = Utility.RandomMinMax( 1, 10 );</p>
+<p>\t\t\tswitch ( Utility.Random( 4 ) )<br>
+\t\t\t{<br>
+\t\t\t\tcase 0: PackItem( new DullCopperOre( amount ) ); break;<br>
+\t\t\t\tcase 1: PackItem( new ShadowIronOre( amount ) ); break;<br>
+\t\t\t\tcase 2: PackItem( new CopperOre( amount ) ); break;<br>
+\t\t\t\tcase 3: PackItem( new BronzeOre( amount ) ); break;<br>
+\t\t\t}</p>
+<p>\t\t\tPackItem( new FertileDirt( Utility.RandomMinMax( 1, 5 ) ) );<br>
+\t\t\t// TODO: skeleton<br>
+\t\t}</p>
+<p>\t\tpublic override int GetAngerSound()<br>
+\t\t{<br>
+\t\t\treturn 0x5A;<br>
+\t\t}</p>
+<p>\t\tpublic override int GetIdleSound()<br>
+\t\t{<br>
+\t\t\treturn 0x5A;<br>
+\t\t}</p>
+<p>\t\tpublic override int GetAttackSound()<br>
+\t\t{<br>
+\t\t\treturn 0x164;<br>
+\t\t}</p>
+<p>\t\tpublic override int GetHurtSound()<br>
+\t\t{<br>
+\t\t\treturn 0x187;<br>
+\t\t}</p>
+<p>\t\tpublic override int GetDeathSound()<br>
+\t\t{<br>
+\t\t\treturn 0x1BA;<br>
+\t\t}</p>
+<p>\t\tpublic AntLion( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );<br>
+\t\t\twriter.Write( (int) 0 );<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );<br>
+\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<p>Dread Spider<br>
+using System;<br>
+using Server;<br>
+using Server.Items;</p>
+<p>namespace Server.Mobiles<br>
+{
+\t[CorpseName( &quot;a dread spider corpse&quot; )]<br>
+\tpublic class DreadSpider : BaseCreature<br>
+\t{<br>
+\t\t<br>
+\t\tpublic DreadSpider () : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )<br>
+\t\t{<br>
+\t\t\tName = &quot;a dread spider&quot;;<br>
+\t\t\tBody = 11;<br>
+\t\t\tBaseSoundID = 1170;</p>
+<p>\t\t\tSetStr( 196, 220 );<br>
+\t\t\tSetDex( 126, 145 );<br>
+\t\t\tSetInt( 286, 310 );</p>
+<p>\t\t\tSetHits( 118, 132 );</p>
+<p>\t\t\tSetDamage( 5, 17 );</p>
+<p>\t\t\tSetDamageType( ResistanceType.Physical, 20 );<br>
+\t\t\tSetDamageType( ResistanceType.Poison, 80 );</p>
+<p>\t\t\tSetResistance( ResistanceType.Physical, 40, 50 );<br>
+\t\t\tSetResistance( ResistanceType.Fire, 20, 30 );<br>
+\t\t\tSetResistance( ResistanceType.Cold, 20, 30 );<br>
+\t\t\tSetResistance( ResistanceType.Poison, 90, 100 );<br>
+\t\t\tSetResistance( ResistanceType.Energy, 20, 30 );</p>
+<p>\t\t\tSetSkill( SkillName.EvalInt, 65.1, 80.0 );<br>
+\t\t\tSetSkill( SkillName.Magery, 65.1, 80.0 );<br>
+\t\t\tSetSkill( SkillName.Meditation, 65.1, 80.0 );<br>
+\t\t\tSetSkill( SkillName.MagicResist, 45.1, 60.0 );<br>
+\t\t\tSetSkill( SkillName.Tactics, 55.1, 70.0 );<br>
+\t\t\tSetSkill( SkillName.Wrestling, 60.1, 75.0 );</p>
+<p>\t\t\tFame = 5000;<br>
+\t\t\tKarma = -5000;</p>
+<p>\t\t\tVirtualArmor = 36;</p>
+<pre><code>    Tamable = true;   
+</code></pre>
+<p>\t\t\tControlSlots = 2;<br>
+\t\t\tMinTameSkill = 73.1;</p>
+<p>\t\t\tPackItem( new SpidersSilk( 8 ) );<br>
+\t\t}</p>
+<p>\t\tpublic override void GenerateLoot()<br>
+\t\t{<br>
+\t\t\tAddLoot( LootPack.FilthyRich );<br>
+\t\t}</p>
+<p>\t\tpublic override Poison PoisonImmune{ get{ return Poison.Lethal; } }<br>
+\t\tpublic override Poison HitPoison{ get{ return Poison.Lethal; } }<br>
+\t\tpublic override int TreasureMapLevel{ get{ return 3; } }</p>
+<p>\t\tpublic DreadSpider( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );<br>
+\t\t\twriter.Write( (int) 0 );<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );<br>
+\t\t\tint version = reader.ReadInt();</p>
+<p>\t\t\tif ( BaseSoundID == 263 )<br>
+\t\t\t\tBaseSoundID = 1170;<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<p>Gazer</p>
+<p>\t\t<br>
+\t\tpublic Gazer () : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )<br>
+\t\t{<br>
+\t\t\tName = &quot;a gazer&quot;;<br>
+\t\t\tBody = 22;<br>
+\t\t\tBaseSoundID = 377;</p>
+<p>\t\t\tSetStr( 96, 125 );<br>
+\t\t\tSetDex( 86, 105 );<br>
+\t\t\tSetInt( 141, 165 );</p>
+<p>\t\t\tSetHits( 58, 75 );</p>
+<p>\t\t\tSetDamage( 5, 10 );</p>
+<p>\t\t\tSetDamageType( ResistanceType.Physical, 100 );</p>
+<p>\t\t\tSetResistance( ResistanceType.Physical, 35, 40 );<br>
+\t\t\tSetResistance( ResistanceType.Fire, 40, 50 );<br>
+\t\t\tSetResistance( ResistanceType.Cold, 20, 30 );<br>
+\t\t\tSetResistance( ResistanceType.Poison, 10, 20 );<br>
+\t\t\tSetResistance( ResistanceType.Energy, 20, 30 );</p>
+<p>\t\t\tSetSkill( SkillName.EvalInt, 50.1, 65.0 );<br>
+\t\t\tSetSkill( SkillName.Magery, 50.1, 65.0 );<br>
+\t\t\tSetSkill( SkillName.MagicResist, 60.1, 75.0 );<br>
+\t\t\tSetSkill( SkillName.Tactics, 50.1, 70.0 );<br>
+\t\t\tSetSkill( SkillName.Wrestling, 50.1, 70.0 );</p>
+<p>\t\t\tFame = 3500;<br>
+\t\t\tKarma = -3500;</p>
+<p>\t\t\tVirtualArmor = 36;</p>
+<pre><code>    Tamable = true;  
+                    ControlSlots = 2;  
+                    MinTameSkill = 63.0;
+</code></pre>
+<p>\t\t\tPackItem( new Nightshade( 4 ) );<br>
+\t\t}</p>
+<p>\t\tpublic override void GenerateLoot()<br>
+\t\t{<br>
+\t\t\tAddLoot( LootPack.Average );<br>
+\t\t\tAddLoot( LootPack.Potions );<br>
+\t\t}</p>
+<p>\t\tpublic override int TreasureMapLevel{ get{ return 1; } }<br>
+\t\tpublic override int Meat{ get{ return 1; } }</p>
+<p>\t\tpublic Gazer( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );<br>
+\t\t\twriter.Write( (int) 0 );<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );<br>
+\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<p>Elder Gazer</p>
+<p>using System;<br>
+using Server;<br>
+using Server.Items;</p>
+<p>namespace Server.Mobiles<br>
+{
+\t[CorpseName( &quot;an elder gazer corpse&quot; )]<br>
+\tpublic class ElderGazer : BaseCreature<br>
+\t{<br>
+\t\t<br>
+\t\tpublic ElderGazer () : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )<br>
+\t\t{<br>
+\t\t\tName = &quot;an elder gazer&quot;;<br>
+\t\t\tBody = 22;<br>
+\t\t\tBaseSoundID = 377;</p>
+<p>\t\t\tSetStr( 296, 325 );<br>
+\t\t\tSetDex( 86, 105 );<br>
+\t\t\tSetInt( 291, 385 );</p>
+<p>\t\t\tSetHits( 178, 195 );</p>
+<p>\t\t\tSetDamage( 8, 19 );</p>
+<p>\t\t\tSetDamageType( ResistanceType.Physical, 50 );<br>
+\t\t\tSetDamageType( ResistanceType.Energy, 50 );</p>
+<p>\t\t\tSetResistance( ResistanceType.Physical, 45, 55 );<br>
+\t\t\tSetResistance( ResistanceType.Fire, 60, 70 );<br>
+\t\t\tSetResistance( ResistanceType.Cold, 40, 50 );<br>
+\t\t\tSetResistance( ResistanceType.Poison, 40, 50 );<br>
+\t\t\tSetResistance( ResistanceType.Energy, 40, 50 );</p>
+<p>\t\t\tSetSkill( SkillName.Anatomy, 62.0, 100.0 );<br>
+\t\t\tSetSkill( SkillName.EvalInt, 90.1, 100.0 );<br>
+\t\t\tSetSkill( SkillName.Magery, 90.1, 100.0 );<br>
+\t\t\tSetSkill( SkillName.MagicResist, 115.1, 130.0 );<br>
+\t\t\tSetSkill( SkillName.Tactics, 80.1, 100.0 );<br>
+\t\t\tSetSkill( SkillName.Wrestling, 80.1, 100.0 );</p>
+<p>\t\t\tFame = 12500;<br>
+\t\t\tKarma = -12500;</p>
+<p>\t\t\tVirtualArmor = 50;</p>
+<pre><code>    Tamable = true;  
+                    ControlSlots = 2;  
+                    MinTameSkill = 82.3;   
+</code></pre>
+<p>\t\t}</p>
+<p>\t\tpublic override int TreasureMapLevel{ get{ return Core.AOS ? 4 : 0; } }</p>
+<p>\t\tpublic override void GenerateLoot()<br>
+\t\t{<br>
+\t\t\tAddLoot( LootPack.FilthyRich );<br>
+\t\t\tAddLoot( LootPack.Rich );<br>
+\t\t}</p>
+<p>\t\tpublic ElderGazer( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );<br>
+\t\t\twriter.Write( (int) 0 );<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );<br>
+\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<p>Skeletal Dragon</p>
+<p>using System;<br>
+using Server;<br>
+using Server.Items;</p>
+<p>namespace Server.Mobiles<br>
+{
+\t[CorpseName( &quot;a skeletal dragon corpse&quot; )]<br>
+\tpublic class SkeletalDragon : BaseCreature<br>
+\t{<br>
+\t\t<br>
+\t\tpublic SkeletalDragon () : base( AIType.AI_Mage, FightMode.Closest, 10, 1, 0.2, 0.4 )<br>
+\t\t{<br>
+\t\t\tName = &quot;a skeletal dragon&quot;;<br>
+\t\t\tBody = 104;<br>
+\t\t\tBaseSoundID = 0x488;</p>
+<p>\t\t\tSetStr( 898, 1030 );<br>
+\t\t\tSetDex( 68, 200 );<br>
+\t\t\tSetInt( 488, 620 );</p>
+<p>\t\t\tSetHits( 558, 599 );</p>
+<p>\t\t\tSetDamage( 29, 35 );</p>
+<p>\t\t\tSetDamageType( ResistanceType.Physical, 75 );<br>
+\t\t\tSetDamageType( ResistanceType.Fire, 25 );</p>
+<p>\t\t\tSetResistance( ResistanceType.Physical, 75, 80 );<br>
+\t\t\tSetResistance( ResistanceType.Fire, 40, 60 );<br>
+\t\t\tSetResistance( ResistanceType.Cold, 40, 60 );<br>
+\t\t\tSetResistance( ResistanceType.Poison, 70, 80 );<br>
+\t\t\tSetResistance( ResistanceType.Energy, 40, 60 );</p>
+<p>\t\t\tSetSkill( SkillName.EvalInt, 80.1, 100.0 );<br>
+\t\t\tSetSkill( SkillName.Magery, 80.1, 100.0 );<br>
+\t\t\tSetSkill( SkillName.MagicResist, 100.3, 130.0 );<br>
+\t\t\tSetSkill( SkillName.Tactics, 97.6, 100.0 );<br>
+\t\t\tSetSkill( SkillName.Wrestling, 97.6, 100.0 );</p>
+<p>\t\t\tFame = 22500;<br>
+\t\t\tKarma = -22500;</p>
+<p>\t\t\tVirtualArmor = 80;</p>
+<pre><code>    Tamable = true;  
+</code></pre>
+<p>\t\t\tControlSlots = 5;<br>
+\t\t\tMinTameSkill = 97.3;<br>
+\t\t}</p>
+<p>\t\tpublic override void GenerateLoot()<br>
+\t\t{<br>
+\t\t\tAddLoot( LootPack.FilthyRich, 4 );<br>
+\t\t\tAddLoot( LootPack.Gems, 5 );<br>
+\t\t}</p>
+<p>\t\tpublic override bool HasBreath{ get{ return true; } } // fire breath enabled<br>
+\t\tpublic override int BreathFireDamage{ get{ return 0; } }<br>
+\t\tpublic override int BreathColdDamage{ get{ return 100; } }<br>
+\t\tpublic override int BreathEffectHue{ get{ return 0x480; } }</p>
+<p>\t\t// TODO: Undead summoning?</p>
+<p>\t\tpublic override bool AutoDispel{ get{ return true; } }<br>
+\t\tpublic override Poison PoisonImmune{ get{ return Poison.Lethal; } }<br>
+\t\tpublic override int Meat{ get{ return 19; } } // where's it hiding these? <img src="/assets/smilies/smile.gif" alt=""> \t\tpublic override int Hides{ get{ return 20; } }<br>
+\t\tpublic override HideType HideType{ get{ return HideType.Barbed; } }</p>
+<p>\t\tpublic SkeletalDragon( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );<br>
+\t\t\twriter.Write( (int) 0 );<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );<br>
+\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<p>Skeletal Mont</p>
+<p>using System;<br>
+using Server.Mobiles;</p>
+<p>namespace Server.Mobiles<br>
+{
+\t[CorpseName( &quot;an undead horse corpse&quot; )]<br>
+\tpublic class SkeletalMount : BaseMount<br>
+\t{<br>
+\t\t<br>
+\t\tpublic SkeletalMount() : this( &quot;a skeletal steed&quot; )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\t<br>
+\t\tpublic SkeletalMount( string name ) : base( name, 793, 0x3EBB, AIType.AI_Animal, FightMode.Agressor, 10, 1, 0.2, 0.4 )<br>
+\t\t{<br>
+\t\t\tSetStr( 91, 100 );<br>
+\t\t\tSetDex( 46, 55 );<br>
+\t\t\tSetInt( 46, 60 );</p>
+<p>\t\t\tSetHits( 41, 50 );</p>
+<p>\t\t\tSetDamage( 5, 12 );</p>
+<p>\t\t\tSetDamageType( ResistanceType.Physical, 50 );<br>
+\t\t\tSetDamageType( ResistanceType.Cold, 50 );</p>
+<p>\t\t\tSetResistance( ResistanceType.Physical, 50, 60 );<br>
+\t\t\tSetResistance( ResistanceType.Cold, 90, 95 );<br>
+\t\t\tSetResistance( ResistanceType.Poison, 100 );<br>
+\t\t\tSetResistance( ResistanceType.Energy, 10, 15 );</p>
+<p>\t\t\tSetSkill( SkillName.MagicResist, 95.1, 100.0 );<br>
+\t\t\tSetSkill( SkillName.Tactics, 50.0 );<br>
+\t\t\tSetSkill( SkillName.Wrestling, 70.1, 80.0 );</p>
+<p>\t\t\tFame = 0;<br>
+\t\t\tKarma = 0;</p>
+<pre><code>         Tamable = true;  
+</code></pre>
+<p>\t\t\tControlSlots = 5;<br>
+\t\t\tMinTameSkill = 93.7;<br>
+\t\t}</p>
+<p>\t\tpublic override Poison PoisonImmune{ get{ return Poison.Lethal; } }</p>
+<p>\t\tpublic SkeletalMount( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();</p>
+<p>\t\t\tName = &quot;a skeletal steed&quot;;<br>
+\t\t\tTamable = false;<br>
+\t\t\tMinTameSkill = 0.0;<br>
+\t\t\tControlSlots = 0;<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<p>LavaSerpent</p>
+<p>using System;<br>
+using Server;<br>
+using Server.Items;<br>
+using Server.Mobiles;</p>
+<p>namespace Server.Mobiles<br>
+{
+\t[CorpseName( &quot;a lava serpent corpse&quot; )]<br>
+\t[TypeAlias( &quot;Server.Mobiles.Lavaserpant&quot; )]<br>
+\tpublic class LavaSerpent : BaseCreature<br>
+\t{<br>
+\t\t<br>
+\t\tpublic LavaSerpent() : base( AIType.AI_Melee, FightMode.Closest, 10, 1, 0.2, 0.4 )<br>
+\t\t{<br>
+\t\t\tName = &quot;a lava serpent&quot;;<br>
+\t\t\tBody = 90;<br>
+\t\t\tBaseSoundID = 219;</p>
+<p>\t\t\tSetStr( 386, 415 );<br>
+\t\t\tSetDex( 56, 80 );<br>
+\t\t\tSetInt( 66, 85 );</p>
+<p>\t\t\tSetHits( 232, 249 );<br>
+\t\t\tSetMana( 0 );</p>
+<p>\t\t\tSetDamage( 10, 22 );</p>
+<p>\t\t\tSetDamageType( ResistanceType.Physical, 20 );<br>
+\t\t\tSetDamageType( ResistanceType.Fire, 80 );</p>
+<p>\t\t\tSetResistance( ResistanceType.Physical, 35, 45 );<br>
+\t\t\tSetResistance( ResistanceType.Fire, 70, 80 );<br>
+\t\t\tSetResistance( ResistanceType.Poison, 30, 40 );<br>
+\t\t\tSetResistance( ResistanceType.Energy, 10, 20 );</p>
+<p>\t\t\tSetSkill( SkillName.MagicResist, 25.3, 70.0 );<br>
+\t\t\tSetSkill( SkillName.Tactics, 65.1, 70.0 );<br>
+\t\t\tSetSkill( SkillName.Wrestling, 60.1, 80.0 );</p>
+<p>\t\t\tFame = 4500;<br>
+\t\t\tKarma = -4500;</p>
+<p>\t\t\tVirtualArmor = 40;</p>
+<pre><code>    Tamable = true;  
+                    ControlSlots = 2;  
+                    MinTameSkill = 69.1; 
+</code></pre>
+<p>\t\t\tPackItem( new SulfurousAsh( 3 ) );<br>
+\t\t\tPackItem( new Bone() );<br>
+\t\t\t// TODO: body parts, armour<br>
+\t\t}</p>
+<p>\t\tpublic override void GenerateLoot()<br>
+\t\t{<br>
+\t\t\tAddLoot( LootPack.Average );<br>
+\t\t}</p>
+<p>\t\tpublic override bool DeathAdderCharmable{ get{ return true; } }</p>
+<p>\t\tpublic override bool HasBreath{ get{ return true; } } // fire breath enabled<br>
+\t\tpublic override int Meat{ get{ return 4; } }<br>
+\t\tpublic override int Hides{ get{ return 15; } }<br>
+\t\tpublic override HideType HideType{ get{ return HideType.Spined; } }</p>
+<p>\t\tpublic LavaSerpent(Serial serial) : base(serial)<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize(GenericWriter writer)<br>
+\t\t{<br>
+\t\t\tbase.Serialize(writer);</p>
+<p>\t\t\twriter.Write((int) 0);<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize(GenericReader reader)<br>
+\t\t{<br>
+\t\t\tbase.Deserialize(reader);</p>
+<p>\t\t\tint version = reader.ReadInt();</p>
+<p>\t\t\tif ( BaseSoundID == -1 )<br>
+\t\t\t\tBaseSoundID = 219;<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<p><span style="color:white"> ¥-¥-¥ Je prend une Petite pause ¥-¥-¥ </span></p>
+<hr>
+<h2 id="post-by-ex-mlodie---may-6-2006-at-945-pm">Post by Ex-Mélodie - May 6, 2006 at 9:45 PM</h2>
+<p><a id="post-68161"></a></p>
+<p>Wow..</p>
+<hr>
+<h2 id="post-by-ragnamord-trenor-ind---may-12-2006-at-759-am">Post by Ragnamord Trenor, Ind - May 12, 2006 at 7:59 AM</h2>
+<p><a id="post-69352"></a></p>
+<p><span style="color:red">* Ajoute un petit ---&gt; * &lt;---- Chaque coter des scripts </span></p>
+<hr>
+<h2 id="post-by-sharon-la-vagabonde---may-12-2006-at-904-am">Post by Sharon, la vagabonde - May 12, 2006 at 9:04 AM</h2>
+<p><a id="post-69369"></a></p>
+<p>Pense tu pouvoir trouvée de quoi pour montée des loups et cerf ?<br>
+J'ai déja entendu parlée d'une patch qui le permettait mais ou le trouvée... Sa je l'ignore, mais je sais qu'elle existe quelque part.</p>
+<hr>
+<h2 id="post-by-ragnamord-trenor-ind---may-12-2006-at-919-am">Post by Ragnamord Trenor, Ind - May 12, 2006 at 9:19 AM</h2>
+<p><a id="post-69370"></a></p>
+<p>Je doit avoir un script a quelque part pour chevaucher des ours polaire..</p>
+<hr>
+<h2 id="post-by-sharon-la-vagabonde---may-12-2006-at-1016-am">Post by Sharon, la vagabonde - May 12, 2006 at 10:16 AM</h2>
+<p><a id="post-69382"></a></p>
+<p>Faudrait je retrouve le site ou on pouvais montée des loup, cerf, dragon [les vrai]...<br>
+Doit faire 3 ans de sa... Sait pas si le site existera toujours mais ma fouillée un peu.</p>
+<p>Le surnom de sharon est louve, alors imaginée si elle monte une louve ^^<br>
+Elle va resemblée un peu a la princesse mononoké mais pas grave ^^</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

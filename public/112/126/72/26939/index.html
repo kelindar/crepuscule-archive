@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Crép2] Etat et avancement - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">[Crép2] Etat et avancement</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">[Crép2] Etat et avancement</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="crp2-etat-et-avancement">[Crép2] Etat et avancement</h1>
+<h2 id="post-by-dev-sancoki---january-27-2009-at-1105-pm">Post by Dev Sancoki - January 27, 2009 at 11:05 PM</h2>
+<p><a id="post-202336"></a></p>
+<p>Voili Voilà, pour garder a l'esprit ce qui avance je vais mettre ici l'état de ce que je fait. (Libre a Kel de faire pareil)</p>
+<p>Fusion Core + Script</p>
+<ul>
+<li>Fusion (<span style="color:#00FF00">100%</span>)</li>
+<li>Optimisation (<span style="color:#FFBF00">10%</span>)</li>
+</ul>
+<p>Sys de stats</p>
+<ul>
+<li>Détachement int/mana, dex/stam, str/hits</li>
+</ul>
+<p>Sys de nom (En express pour le sys de guilde de Kel)</p>
+<ul>
+<li>Mémoire des noms implémenté (<span style="color:#00FF00">100%</span>) A Tester</li>
+<li>Changement pour les corps + la tête si carvé(<span style="color:#00FF00">100%</span>) A Tester</li>
+<li>Changement Journal(<span style="color:#00FF00">100%</span>)</li>
+<li>Changement Nom qui approche(<span style="color:#00FF00">100%</span>)</li>
+<li>Overhead message(<span style="color:#00FF00">100%</span>) A Tester</li>
+<li>Affiche le vrai nom si pas de race (<span style="color:#00FF00">100%</span>)</li>
+<li>Override du nom par le nom de la race au pire (<span style="color:#00FF00">100%</span>)</li>
+<li>Modification du packet réseau pour afficher les vrai nom dans le choix perso (<span style="color:#00FF00">100%</span>) donc plus de fuck de macro</li>
+<li>Nom correct dans la statut bar (<span style="color:#00FF00">100%</span>)</li>
+</ul>
+<p>Sys de Race</p>
+<ul>
+<li>Enlever ancien sys (<span style="color:#00FF00">100%</span>) 176 modifications</li>
+<li>Intégration nouveau système (<span style="color:#00FF00">100%</span>)</li>
+</ul>
+<p>Sys d'évolution</p>
+<ul>
+<li>Intégration de 4 cotes de 1 a 6 (<span style="color:#00FF00">100%</span>)</li>
+<li>Intégration .Cote (<span style="color:#00FF00">100%</span>)</li>
+<li>Integration .Xp (<span style="color:#00FF00">100%</span>)</li>
+<li>Timer (<span style="color:#00FF00">100%</span>)</li>
+<li>Intégration .Tourne (<span style="color:#FF0000">0%</span>)</li>
+<li>Définition des skills (<span style="color:#00FF00">100%</span>)</li>
+<li>Définition des Classes (<span style="color:#FFBF00">05%</span>)</li>
+<li>Intégration Skills (<span style="color:#FF0000">0%</span>) c'est un énorme bout ça.</li>
+</ul>
+<p>Création perso</p>
+<ul>
+<li>Suppression ancien système (<span style="color:#00FF00">100%</span>)</li>
+<li>Nouvelle création de perso (del profession) (<span style="color:#FFBF00">90%</span>) reste mettre vrai position avec la carte</li>
+<li>Pierre de création (<span style="color:#FF0000">0%</span>)</li>
+</ul>
+<p>Divers</p>
+<ul>
+<li>Sys de grabbing (<span style="color:#00FF00">100%</span>)</li>
+<li>Suppression de IAccount (utilisation direct de Account)(<span style="color:#00FF00">100%</span>) optimisation : retirer les cast innutiles</li>
+</ul>
+<hr>
+<h2 id="post-by-fondateur-kel---january-27-2009-at-1119-pm">Post by Fondateur Kel - January 27, 2009 at 11:19 PM</h2>
+<p><a id="post-202337"></a></p>
+<p>Sys de Guildes</p>
+<ul>
+<li>Suppression ancien système de Guildes (<span style="color:#00FF00">100%</span>) 50+ modifs</li>
+<li>Suppression ancien système de Factions (<span style="color:#00FF00">100%</span>) 300+ modifs</li>
+<li>Nouveau système de guildes (<span style="color:#00FF00">100%</span>)</li>
+<li>Intégration des cotations des guildes/sys de Seshat (<span style="color:#00FF00">100%</span>)</li>
+<li>Gump de guilde et integration dans le paperdoll (<span style="color:#00FF00">100%</span>)</li>
+<li>Gumps pour .influence et .rumeurs (<span style="color:#00FF00">100%</span>)</li>
+<li>Suppression des Rank et ajout de la gestion joueur =&gt; GuildTitleStone (<span style="color:#00FF00">100%</span>)</li>
+<li>Pierre de choix de Guilde (<span style="color:#00FF00">100%</span>)</li>
+<li>Intégration de notion de guildes spéciales, secretes, normales et mortes (<span style="color:#00FF00">100%</span>)</li>
+<li>Commandes .guilde, .guildesecrete (<span style="color:#00FF00">100%</span>)</li>
+<li>Les compétences de guilde (<span style="color:#FF0000">5%</span>)</li>
+<li>Integration du sys de criminalité par guilde et empire pour un criminel global en utilisant les gardes (<span style="color:#FF0000">0%</span>)</li>
+<li>Tests (<span style="color:#FF0000">25%</span>)</li>
+</ul>
+<p>Sys de mort</p>
+<ul>
+<li>Inconscience, les items gérés (<span style="color:#00FF00">100%</span>)</li>
+<li>Tuer avec un bladedItem =&gt; PK (<span style="color:#00FF00">100%</span>)</li>
+<li>PK et les infos de dernier pk (<span style="color:#00FF00">100%</span>)</li>
+<li>La commande .PK pour voir la liste des PK en PvP (<span style="color:#00FF00">100%</span>)</li>
+<li>Gestion des PvE et PvE loot (<span style="color:#FF0000">0%</span>)</li>
+<li>Gestion des PvP et PvP loot (<span style="color:#FF0000">0%</span>)</li>
+<li>Modifier l'assassinat (après avoir integré seulement) (<span style="color:#FF0000">0%</span>)</li>
+</ul>
+<p>Sys de AI</p>
+<ul>
+<li>Système des sayings (AI) + objet property  (<span style="color:#00FF00">100%</span>)</li>
+</ul>
+<p>Sys d'économie</p>
+<ul>
+<li>Intégration de système de Trésorerie (<span style="color:#00FF00">100%</span>)</li>
+</ul>
+<p>Sys de noblesse</p>
+<ul>
+<li>Intégration de système de noblesse de Crépuscule 1 (<span style="color:#00FF00">100%</span>)</li>
+</ul>
+<p>Sys d'évolution</p>
+<ul>
+<li>Intégration des fioles d'Exp et .addXP (<span style="color:#00FF00">100%</span>)</li>
+</ul>
+<p>Sys de temps</p>
+<ul>
+<li>Intégration du système existant sur RunUO.com pour RunUO 2.0 RC2 (<span style="color:#00FF00">100%</span>)</li>
+</ul>
+<p>Divers</p>
+<ul>
+<li>Commandes pratiques Crep1: .chut, .clone, .possess, .decrire... (<span style="color:#FF8000">50%</span>)</li>
+<li>Commandes .montrermonstres, .nouveau, .montrernom (<span style="color:#00FF00">100%</span>)</li>
+<li>Toolbar GM .FullToolbar (<span style="color:#00FF00">100%</span>)</li>
+<li>Intégration .password (<span style="color:#00FF00">100%</span>)</li>
+<li>Suppression des Treasures of tokuno(<span style="color:#00FF00">100%</span>)</li>
+<li>Intégration du sys BattleChess (<span style="color:#00FF00">100%</span>)</li>
+<li>Enlevé HearAll  (<span style="color:#00FF00">100%</span>)</li>
+<li>LastAcquiredTime dans Item (<span style="color:#FF8000">30%</span>) (reste à gèrer)</li>
+<li>AutoSave, modification pour les archives et gump de save (<span style="color:#00FF00">100%</span>)</li>
+</ul>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

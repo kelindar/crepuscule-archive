@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffre salaire empire. - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Coffre salaire empire.</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Coffre salaire empire.</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="coffre-salaire-empire">Coffre salaire empire.</h1>
+<h2 id="post-by-conteur-wolf---january-21-2009-at-850-am">Post by Conteur Wolf - January 21, 2009 at 8:50 AM</h2>
+<p><a id="post-201021"></a></p>
+<p>Bon là je suis dans une problématique gênante. Mes coffre de salaire de l'empire se sont transformé comme ceux des guildes avec la venu du script des guildes.</p>
+<p>Je croyais que l'empire resterait comme elle était, maintenant dois-je créer un coffre de trésorerie pour l'empire avec les livres de salaires et tout ça?</p>
+<p>Où est-ce possible d'avoir les anciens coffres? (ce que je préfèrerais pour des raisons rp et technique).</p>
+<p>Merci</p>
+<hr>
+<h2 id="post-by-nimue---january-21-2009-at-1154-am">Post by Nimue - January 21, 2009 at 11:54 AM</h2>
+<p><a id="post-201046"></a></p>
+<p>Pareillement pour Sainte-Élisa.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---january-21-2009-at-1156-am">Post by Mr Trovénère - January 21, 2009 at 11:56 AM</h2>
+<p><a id="post-201048"></a></p>
+<p><em>Je pense que tout dépendra de l'empire.</em></p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-21-2009-at-308-pm">Post by Fondateur Kel - January 21, 2009 at 3:08 PM</h2>
+<p><a id="post-201057"></a></p>
+<p>Quel est le problème?</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---january-21-2009-at-500-pm">Post by Conteuse Seshat - January 21, 2009 at 5:00 PM</h2>
+<p><a id="post-201073"></a></p>
+<p>Grosso modo, à ce que je comprends...</p>
+<p>Les anciens coffres de Trésorerie, dont se servait l'Empire, ne fonctionnent plus, parce que l'Empire n'a pas de points d'influence...</p>
+<p>Faudrait voir à avoir un coffre de trésorerie à l'ancienne, qui ajoute le salaire journalier au coffre. C'est utile aussi pour la SP et la GdO, dont certains joueurs font aussi partie de guildes.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-21-2009-at-507-pm">Post by Fondateur Kel - January 21, 2009 at 5:07 PM</h2>
+<p><a id="post-201076"></a></p>
+<p>Bah si ils devraient fonctionner, suffit de mettre un DailyIncome correct. S'ils ne font pas partie des guildes ayant des stones du système de guildes, ils ne doivent pas être pris en charge pourtant... Y a peut-être un bug pas prévu lol</p>
+<hr>
+<h2 id="post-by-mr-trovnre---january-21-2009-at-508-pm">Post by Mr Trovénère - January 21, 2009 at 5:08 PM</h2>
+<p><a id="post-201077"></a></p>
+<p>*le DailyIncome n'est pas modifiable dans les props. *</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-21-2009-at-511-pm">Post by Ex-Bolero - January 21, 2009 at 5:11 PM</h2>
+<p><a id="post-201078"></a></p>
+<p>C'est ça, j'avais remis mes coffres de salaires AdM (avant, c'était le même principe que l'Empire) à 0 pour les garder comme des coffres persos mais la valeur est revenue.</p>
+<p>Faudrait donc faire des coffres pour l'Empire, Kel, avec un DailyINcome modifiable ^^</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-21-2009-at-718-pm">Post by Fondateur Kel - January 21, 2009 at 7:18 PM</h2>
+<p><a id="post-201107"></a></p>
+<p><em>Ils le sont, mais je vais manuellement mettre une condition pour que l'algo ne modifie pas le DailyIncome de l'empire, gdo et la sp (au cas où y a un bug).</em></p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-21-2009-at-722-pm">Post by Fondateur Kel - January 21, 2009 at 7:22 PM</h2>
+<p><a id="post-201109"></a></p>
+<p>C'est mis.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-21-2009-at-940-pm">Post by Conteur Wolf - January 21, 2009 at 9:40 PM</h2>
+<p><a id="post-201179"></a></p>
+<p>Hmm impossible de modifié le &quot;dailyincome&quot; la flèche n'est plus accessible en gros. Et comme Seshat à dit, je crois que ces nouveaux coffres ne doivent pas puiser dans une trésorerie leurs fonds.</p>
+<p>Créer une trésorerie pour l'empire est selon moi une mauvaise idée. Car c'est jouer sur le budget entier de la nation. Donc si tu pouvais recréer des coffres comme les anciens &quot;indépendant&quot; du système des guildes, qui en gros distribue leur propre salaire journalier avec la variable modifiable à ma guise, je crois que je divorce avec Lumina et je t'épouse.</p>
+<p><img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-21-2009-at-1102-pm">Post by Fondateur Kel - January 21, 2009 at 11:02 PM</h2>
+<p><a id="post-201209"></a></p>
+<p>Ah, j'ai oublié de remettre le setter pour DailyIncome, ça sera mis à la prochaine patch <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-lumina---january-22-2009-at-129-am">Post by Ex-Lumina - January 22, 2009 at 1:29 AM</h2>
+<p><a id="post-201235"></a></p>
+<p><span style="color:#000000"><strong>Donne sa bague de mariage sans la moindre hésitation, ayant probablement été droguée pour se la faire mettre.</strong></span></p>
+<hr>
+<h2 id="post-by-mr-trovnre---january-22-2009-at-1153-am">Post by Mr Trovénère - January 22, 2009 at 11:53 AM</h2>
+<p><a id="post-201340"></a></p>
+<blockquote>
+<p><strong>&quot;Coordinatrice Lumina&quot; wrote:</strong>
+<span style="color:#000000"><strong>Donne sa bague de mariage sans la moindre hésitation, ayant probablement été droguée pour se la faire mettre.</strong></span></p>
+<p>*Tu parles de la bague quand tu dis se la faire mettre ? * <img src="/assets/smilies/jesors.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-nimue---january-22-2009-at-608-pm">Post by Nimue - January 22, 2009 at 6:08 PM</h2>
+<p><a id="post-201366"></a></p>
+<p><img src="/assets/smilies/wacko.gif" alt=""> Trovénère, tu devrais avoir honte. <img src="/assets/smilies/icon_cheesygrin.gif" alt=""></p>
+<hr>
+<h2 id="post-by-mr-trovnre---january-22-2009-at-608-pm">Post by Mr Trovénère - January 22, 2009 at 6:08 PM</h2>
+<p><a id="post-201367"></a></p>
+<p>*ouais, j'avoue un peu. Mais c'est passé vite. <img src="/assets/smilies/hysterical.gif" alt=""> *</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-22-2009-at-649-pm">Post by Fondateur Kel - January 22, 2009 at 6:49 PM</h2>
+<p><a id="post-201369"></a></p>
+<blockquote>
+<p><strong>&quot;Coordinatrice Lumina&quot; wrote:</strong>
+<span style="color:#000000"><strong>Donne sa bague de mariage sans la moindre hésitation, ayant probablement été droguée pour se la faire mettre.</strong></span></p>
+<p>Se la faire mettre? oO&quot;</p>
+<p>Edit: Ah oui, j'ai pas vu que Trov a fait la même blague =D</p>
+</blockquote>
+<hr>
+<h2 id="post-by-mr-trovnre---january-22-2009-at-657-pm">Post by Mr Trovénère - January 22, 2009 at 6:57 PM</h2>
+<p><a id="post-201370"></a></p>
+<p>*je pense qu'on est fait pour s'entendre Kel. *</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-22-2009-at-728-pm">Post by Fondateur Kel - January 22, 2009 at 7:28 PM</h2>
+<p><a id="post-201376"></a></p>
+<blockquote>
+<p><strong>&quot;Coordinateur Mr Trovénère&quot; wrote:</strong>
+*je pense qu'on est fait pour s'entendre Kel. *</p>
+<p>Fou ça ^^</p>
+</blockquote>
+<hr>
+<h2 id="post-by-conteur-wolf---january-22-2009-at-939-pm">Post by Conteur Wolf - January 22, 2009 at 9:39 PM</h2>
+<p><a id="post-201394"></a></p>
+<p>Pauvre Lumina.</p>
+<p>Mais hmm j'ai toujours un problème avec les coffres. Le salaire ne se distribue plus... Dois-je mettre empire comme guilde? Si oui, est-ce que ça prend un coffre de trésorerie?  <img src="/assets/smilies/wacko.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-22-2009-at-1024-pm">Post by Fondateur Kel - January 22, 2009 at 10:24 PM</h2>
+<p><a id="post-201399"></a></p>
+<p>Ouais, tu met empire et il faut tout lier avec aussi ^^</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-23-2009-at-1232-pm">Post by Conteur Wolf - January 23, 2009 at 12:32 PM</h2>
+<p><a id="post-201516"></a></p>
+<p>Les coffres sont placés Kel, Tu peux initialiser pour les tester ^^.</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---january-25-2009-at-513-am">Post by Conteuse Seshat - January 25, 2009 at 5:13 AM</h2>
+<p><a id="post-201813"></a></p>
+<p><em>Faites attention aussi aux salaires ordinaires. J'ai personnellement reçu, avec Laelia, un salaire de 38606 pièces d'or de l'AdC... j'ai bien évidemment réapparu avec Seshat, supprimé le salaire et replacé le montant dans le coffre de l'AdC, mais faudra faire attention à des joueurs qui pourraient avoir eu de telles sommes...</em></p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-25-2009-at-534-am">Post by Fondateur Kel - January 25, 2009 at 5:34 AM</h2>
+<p><a id="post-201815"></a></p>
+<p>C'était un bug corrigé, le montant etait au fait un montant négatif.</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---january-25-2009-at-600-am">Post by Conteuse Seshat - January 25, 2009 at 6:00 AM</h2>
+<p><a id="post-201817"></a></p>
+<p><em>D'acc... j'ai de la misère à comprendre comment un montant négatif a placé 38000 pièces dans ma banque (que j'ai réussi à encaisser), mais bon, je me fie à ta sagesse ^^</em></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

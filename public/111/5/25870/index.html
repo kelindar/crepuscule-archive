@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les cadeaux - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Les cadeaux</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">Les cadeaux</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="les-cadeaux">Les cadeaux</h1>
+<h2 id="post-by-zephir-daramis-fdc---december-8-2008-at-942-am">Post by Zephir Daramis, FdC - December 8, 2008 at 9:42 AM</h2>
+<p><a id="post-194455"></a></p>
+<p>j'ai fabriquer un cadeau avec l'aptitude bricolage mais j'ai été déçu lorsque j'ai constaté que c'est un objet purement décoratif et qu'on ne peut rien mettre dedans.  Ce serait bien si on pouvait s'en servir comme contenant car pour le moment ça me semble assez inutile.  Est-ce que c'est faisable?</p>
+<hr>
+<h2 id="post-by-koenzell-pandora-cp---december-8-2008-at-956-am">Post by Koenzell Pandora, Cp - December 8, 2008 at 9:56 AM</h2>
+<p><a id="post-194459"></a></p>
+<p>Genre tu met des truc mais pour l'ouvrir tu l'éclatte avec un outils comme les coffres avec la hache!!!!!!!!!!!!!!!!</p>
+<p>Moi je suis pour et en plus on aurra plus de raison d'en acher que de les mettre comme déco qui ne fitte pas vraiment  ^^</p>
+<hr>
+<h2 id="post-by-sar-tauramandil-ods---december-8-2008-at-1127-am">Post by Sarä Taur'Amandil, OdS - December 8, 2008 at 11:27 AM</h2>
+<p><a id="post-194463"></a></p>
+<p>Très bonne idée cela. J'ai été déçu la première fois moi aussi en voyant qu'il ne se produisait rien sur la boite.</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-8-2008-at-430-pm">Post by Phydias Shaytan, CP - December 8, 2008 at 4:30 PM</h2>
+<p><a id="post-194475"></a></p>
+<p>J'avais déjà essayé y'a un peu plus d'un an. Il n'y a aucun problème niveau script pour le faire. Ca viendrait du client, comme pour le houblon qu'on ne peut pas désempiler ^^</p>
+<hr>
+<h2 id="post-by-sar-tauramandil-ods---december-8-2008-at-716-pm">Post by Sarä Taur'Amandil, OdS - December 8, 2008 at 7:16 PM</h2>
+<p><a id="post-194483"></a></p>
+<p>C'est impossible heu.. d'attribuer de nouvelles variables à un item... qui le fait devenir plus nécessairement cet item mais qui à ce gump là d'item...? Donc qu'on peut ensuite mystérieusement arranger le tout? C'est dommage un peu que ça ne puisse pas marcher.</p>
+<p>Mais bon, comme on dit.</p>
+<p>Hum je connais rien dans les scripts de Uo et j'ai jamais été forte en programmation au cégep, je crois que ça parait.</p>
+<p><img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-bolero---december-8-2008-at-744-pm">Post by Ex-Bolero - December 8, 2008 at 7:44 PM</h2>
+<p><a id="post-194487"></a></p>
+<p>En tout cas sans script, c'est impossible. Attribuer un itemid custom à un contenant est toujours une mauvaise idée :/</p>
+<p>(Je crois? ^^)</p>
+<hr>
+<h2 id="post-by-thalkehr-stornaar-adm---december-8-2008-at-947-pm">Post by Thalkehr Stornaar, AdM - December 8, 2008 at 9:47 PM</h2>
+<p><a id="post-194493"></a></p>
+<p>Je ne suis pas sur à 100% que ça nécessite un script, mais ça serait mieux tout de même car ça éviterait une intervention GM pour transformer le cadeau décevant en boîte à surprise!</p>
+<p>Sara, tu te sous-estime. Si on veut être puriste, ta solution est fausse car il ne s'agit pas d'attribuer une variable pour y arriver, mais le fondement de ta technique est bonne. C'est à dire : création d'un item de type contenant avec le gump de cadeau</p>
+<hr>
+<h2 id="post-by-anonymous---december-9-2008-at-1214-am">Post by Anonymous - December 9, 2008 at 12:14 AM</h2>
+<p><a id="post-194516"></a></p>
+<p>En tout cas sans script, c'est impossible. Attribuer un itemid custom à un contenant est toujours une mauvaise idée :/</p>
+<p>(Je crois? ^^)</p>
+<p>Tout juste.</p>
+<p>Après un moment, le contenant customisé ne peut plus être ouvert et si l'objet subit une rotation, il perd tout son contenu.</p>
+<p>Exemple :</p>
+<p>Je veux qu'un mur de brique puisse être fouillé comme un coffre...</p>
+<p>J'ajoute le coffre, je lui mets le numéro d'objets du mur de brique. Ça marche. J'ajoute lse trucs.</p>
+<p>Toutefois, deux jours plus tard, le mur ne peut plus être «ouvert» même s'il affiche «X items, X stones», il est devenu un mur normal... Et si je recréé le coffre, je le transforme en mur et que je lui fais une rotation, le mur va redevenir un coffre.</p>
+<p>Donc oubliez l'option &quot;transformer un coffre en cadeau&quot;, ce sera buggué. <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-koenzell-pandora-cp---december-9-2008-at-248-am">Post by Koenzell Pandora, Cp - December 9, 2008 at 2:48 AM</h2>
+<p><a id="post-194534"></a></p>
+<p>Et si on prend sa a l'envert... Si on rend un coffre mais on fait juste modifier le gump de celui ci en coffre ??</p>
+<hr>
+<h2 id="post-by-ex-bolero---december-9-2008-at-253-am">Post by Ex-Bolero - December 9, 2008 at 2:53 AM</h2>
+<p><a id="post-194538"></a></p>
+<p>Euuuh Koenzell, je n'ai pas saisi ce que tu veux dire.</p>
+<p>Mais dans tous les sens, c'est impossible, désolé. :/</p>
+<p>On peut regarder ce qu'on peut faire côté script par contre.</p>
+<hr>
+<h2 id="post-by-koenzell-pandora-cp---december-9-2008-at-302-am">Post by Koenzell Pandora, Cp - December 9, 2008 at 3:02 AM</h2>
+<p><a id="post-194542"></a></p>
+<p>Bien j'ai déjà vue un parchemin(livre peut etre) avec le gump d'une bouteille et sa fonctionnais bien.</p>
+<hr>
+<h2 id="post-by-ex-bolero---december-9-2008-at-304-am">Post by Ex-Bolero - December 9, 2008 at 3:04 AM</h2>
+<p><a id="post-194543"></a></p>
+<p>Parce qu'un livre n'est pas un contenant <img src="/assets/smilies/smile.gif" alt=""><br>
+Pour les objets à description (donc des objets à gump de livre) c'est tout à fait faisable, mais du côté des contenants, le bug décrit par Zak est en vigueur. Voilà.  <img src="/assets/smilies/sorry.gif" alt=""></p>
+<hr>
+<h2 id="post-by-koenzell-pandora-cp---december-9-2008-at-311-am">Post by Koenzell Pandora, Cp - December 9, 2008 at 3:11 AM</h2>
+<p><a id="post-194547"></a></p>
+<p>HAAA je voie mici</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-9-2008-at-323-am">Post by Phydias Shaytan, CP - December 9, 2008 at 3:23 AM</h2>
+<p><a id="post-194548"></a></p>
+<p>J'ai peut-être une idée en relisant la conversation.</p>
+<p>Pour le fait qu'il change de skin quand on le tourne, c'est facilement règlable en script en remplissant simplement correctement le flippable attribute.<br>
+Sinon, pour le fait que le coffre &quot;bloque&quot;, on pourrait p-e override la fonction onDoubleClick() comme suit :</p>
+<ul>
+<li>Créer un temporaire avec l'itemID actuel.</li>
+<li>Changer l'itemID actuel par celui d'un contenant &quot;classique&quot; (genre un coffre ou autre)</li>
+<li>Remettre l'itemID comme il était grace au temporaire.</li>
+<li>Appeller la fonction onDoubleClick de la classe mère.</li>
+</ul>
+<p>Je sais pas si ça marcherait, mais l'idée c'est que : puisque juste après le changement ça fonctionne, ben on lui refait un changement pour qu'il croit u'on vient de changer ^^ !</p>
+<p>Sinon, dans le même ordre d'idée :</p>
+<ul>
+<li>Créer un nouveau contenant classique.</li>
+<li>Transférer le contenu actuel dans le nouveau contenant.</li>
+<li>Mettre le nouveau contenant créé à la place de l'ancien.</li>
+<li>Appeler le onDoubleClick() du nouveau</li>
+<li>Supprimer l'ancien.</li>
+</ul>
+<p>On pourrait jouer sur un timeSpan pour savoir si soit il doit s'ouvrir normalerment, soit se dupliquer et transférer le contenu.</p>
+<p>J'ai malheureusement plus le serveur ni le temps de coder, donc je vous laisse essayer ^^</p>
+<hr>
+<h2 id="post-by-ex-bolero---december-9-2008-at-752-am">Post by Ex-Bolero - December 9, 2008 at 7:52 AM</h2>
+<p><a id="post-194557"></a></p>
+<p>Mais euh, ça implique de toucher aux scripts, non? Alors autant le faire directement ^^</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-9-2008-at-122-pm">Post by Phydias Shaytan, CP - December 9, 2008 at 1:22 PM</h2>
+<p><a id="post-194566"></a></p>
+<p>bah si on le fait dans les scripts, n'importe qui pourra le faire sans avoir un gm à côté de lui. Bon bien sur si ça limite juste dans le cadre d'une anim, il n'y en a pas besoin, mais comme j'ai vu les cadeaux dans le menu du bricoleur... <img src="/assets/smilies/smile.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

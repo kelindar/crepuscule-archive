@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incohérence/bug pour la classe moine - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Incohérence/bug pour la classe moine</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Incohérence/bug pour la classe moine</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="incohrencebug-pour-la-classe-moine">Incohérence/bug pour la classe moine</h1>
+<h2 id="post-by-anonymous---october-2-2005-at-500-pm">Post by Anonymous - October 2, 2005 at 5:00 PM</h2>
+<p><a id="post-24402"></a></p>
+<p><strong>Suite au page de Goethels, account: nox, account sur forum: Glendaelle, UdG</strong></p>
+<p>Le joueur a pagé en disant que sa skill en armes d'estoc était supérieure à celle de Wrestling, ce qui est totalement illogique pour un moine. Il m'a dit qu'il avait choisi ses compétences comme ceci :</p>
+<p>1°. Sélection de la compétence lutte : augmente wrestling et tactics.<br>
+2°. Compétence secondaire : augmente wrestling.<br>
+3°. Compétence bonus : armes de mêlée.</p>
+<p>Et pourtant, il se retrouve avec un skill supérieur en armes de mêlée qu'en wrestling. Il m'a envoyé à l'appui un screenshot :<br>
+<img src="http://althornar.free.fr/Images/Moine.jpg" alt=""></p>
+<hr>
+<h2 id="post-by-ex-concepteur-arthan---october-2-2005-at-555-pm">Post by Ex-Concepteur Arthan - October 2, 2005 at 5:55 PM</h2>
+<p><a id="post-24430"></a></p>
+<p>else if (info.ButtonID == 8)<br>
+\t\t\t{<br>
+\t\t\t\tmobile.Armes_de_Melee ++;<br>
+\t\t\t\tmobile.Skills[SkillName.Swords].Cap += 2.0;<br>
+\t\t\t\tmobile.Skills[SkillName.Macing].Cap += 2.0;<br>
+\t\t\t\tmobile.Skills[SkillName.Tactics].Cap += 2.0;<br>
+mobile.Skills[SkillName.Fencing].Cap += 2.0;<br>
+\t\t\t}</p>
+<p>else if (info.ButtonID == 11)<br>
+\t\t\t{<br>
+\t\t\t\tmobile.Lutte ++;<br>
+\t\t\t\tmobile.Skills[SkillName.Tactics].Cap += 2.0;<br>
+\t\t\t\tmobile.Skills[SkillName.Fencing].Cap += 2.0;<br>
+\t\t\t\tmobile.Skills[SkillName.Wrestling].Cap += 1.0;<br>
+\t\t\t}</p>
+<p>else if (info.ButtonID == 15)<br>
+\t\t\t{<br>
+\t\t\t\tmobile.Endurance_Accrue ++;<br>
+\t\t\t\tmobile.Skills[SkillName.MagicResist].Cap += 1.0;<br>
+\t\t\t\tmobile.Skills[SkillName.Wrestling].Cap += 1.0;<br>
+\t\t\t\tmobile.Skills[SkillName.Focus].Cap += 2.0;<br>
+\t\t\t}</p>
+<p>C'est un peu normal.. Si vous comprennez, il a monté son Armes de Melee a 1 donc Sword + .2  Macing + .2, tactis + .2 et Fencing + .2 dans le skill caps.. .Lutte lui donne .2 en tactics , .2 en fencing et SEULEMENT .1 en wresling... et son endurance accrue ne lui donne que .1 aussi....</p>
+<p>donc tout est normal selon le script... si vous n'etes pas d'accord dites-le mais il faut demander a kel pour changer quoi que ce soit dans ce script.</p>
+<hr>
+<h2 id="post-by-anonymous---october-2-2005-at-600-pm">Post by Anonymous - October 2, 2005 at 6:00 PM</h2>
+<p><a id="post-24434"></a></p>
+<p>Merci d'avoir vérifié. <img src="/assets/smilies/smile.gif" alt=""></p>
+<p>Le joueur voulait juste savoir si cela était normal, puisque selon lui un moine devrait plus être porté sur le wrestling que sur le fencing, mais puisque les scripts sont corrects, il n'y a aucun souci.</p>
+<hr>
+<h2 id="post-by-anonymous---october-2-2005-at-928-pm">Post by Anonymous - October 2, 2005 at 9:28 PM</h2>
+<p><a id="post-24549"></a></p>
+<p>Voici la réponse du joueur à mon PM :</p>
+<ul>
+<li>Endurance Accrue : 3</li>
+</ul>
+<ul>
+<li>Wrestling +1 chaque niveau = +3</li>
+<li>Resisting Spells +1 chaque niveau = +3</li>
+<li>Focus +2 chaque niveau = +6</li>
+</ul>
+<ul>
+<li>Lutte : 3</li>
+</ul>
+<ul>
+<li>Tactics +2 chaque niveau = +6</li>
+<li>Wrestling +2 chaque niveau = +6</li>
+<li>
+<ul>
+<li>1 Chande d'Esquiver par 2 Niveaux</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Armes de Melee : 1</li>
+</ul>
+<ul>
+<li>Swordsmanship +2 chaque niveau</li>
+<li>Mace Fighting +2 chaque niveau</li>
+<li>Fencing + 2 chaque niveau =+2</li>
+<li>Tactics +2 chaque niveau = +2</li>
+</ul>
+<p>=&gt; je ne devrais pas etre à :</p>
+<p>+6+3 = +9 en westling.<br>
++2 en fencing<br>
++8 en tactique</p>
+<p>Je me base sur les infos du site : en lutte il n'y a logiquement pas de fencing mais juste du tactique et du westling..</p>
+<p>C'est quand meme bizarre qu'un moine soit une bete de l'escrime et non aux poings, surtout que les competence de moine : seule Acrobatie donne du fencing, ce que je n'ai pas monté.</p>
+<p>Je devrais etre a 22 en fencing, non 28!</p>
+<p>Lutte d'après le site et le post forum donne bien +2 en westling, c'est endurance qui ne donne qu'un +1.</p>
+<p>Je me fie bien sùr sur les infos du site et forum.</p>
+<p>Il semblerait alors que ce soit les infos sur le site et sur le forum qui soient en cause.</p>
+<hr>
+<h2 id="post-by-ex-concepteur-arthan---october-2-2005-at-931-pm">Post by Ex-Concepteur Arthan - October 2, 2005 at 9:31 PM</h2>
+<p><a id="post-24551"></a></p>
+<p>oui je sais jai fais un post la dessus ^^</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

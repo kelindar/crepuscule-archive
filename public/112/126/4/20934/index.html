@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingrédients à teinture - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Ingrédients à teinture</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Ingrédients à teinture</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="ingrdients--teinture">Ingrédients à teinture</h1>
+<h2 id="post-by-anonymous---april-9-2008-at-322-am">Post by Anonymous - April 9, 2008 at 3:22 AM</h2>
+<p><a id="post-158946"></a></p>
+<p>Bon, il y a comme l'a déjà souligné Lumina, eu un problème avec les ingrédients.</p>
+<p>Pour inciter à la rareté, les spawns avaient plusieurs trucs à spawner, donc par exemple un chien, un chat, puis l'ingrédient.</p>
+<p>Mais étant donné que l'ingrédient decay et qu'ensuite venait un monstre qui lui, ne disparaîssait pas, les ingrédients ne respawnaient donc jamais.</p>
+<p>Pour régler à la situation, j'avais proposé de mettre que des items dans les spawns. Exemple :<br>
+Log<br>
+Log<br>
+Log<br>
+[Ingrédients]<br>
+Log</p>
+<p>Sachant que les logs sont des rondins (et qu'on peut bien sûr mettre d'autre type d'objets), l'ingrédient se spawnera automatiquement puisqu'il ne s'agit là que de spawns d'objets qui décay.</p>
+<p>Voici actuellement la liste d'ingrédients :</p>
+<p>-BalleDeNeige.cs<br>
+-CDeLave.cs (cendre de lave)<br>
+-Cendre.cs<br>
+-Chrysantheme.cs<br>
+-Corail.cs<br>
+-CrystalT.cs<br>
+-FungusP.cs<br>
+-HarpyEgg.cs<br>
+-Iris.cs<br>
+-Lave.cs<br>
+-Lychnis.cs<br>
+-Mousson.cs<br>
+-OeilDeBalron.cs<br>
+-RocheVolcanique.cs<br>
+-Talc.cs<br>
+-Tradescantia.cs</p>
+<p>(Ne pas tenir compte du &quot;.cs&quot;)</p>
+<p>Lumina, tu avais trouvé d'excellents endroits pour les ingrédients, et puisque c'est une énorme tâche de repasser des heures à les refaire, je suggère de te donner un coup de main.</p>
+<hr>
+<h2 id="post-by-ex-lumina---april-9-2008-at-330-am">Post by Ex-Lumina - April 9, 2008 at 3:30 AM</h2>
+<p><a id="post-158949"></a></p>
+<p>Attention Zak, CDeLave.cs ce n'est pas un objet à placer et pas des cendres, mais bien un objet crafté à partir d'un autre objet qui lui se trouve, il n'est donc pas à placer.</p>
+<p>Quand à ceux-là ce sont des loots sur des monstres, ils ne sont donc pas à placer non plus (j'avais déjà rajouté des spawns des monstres qui les donnent et ça, ça a marché) :<br>
+-Corail.cs<br>
+-CrystalT.cs<br>
+-HarpyEgg.cs<br>
+-OeilDeBalron.cs</p>
+<p>La liste des spawn à faire est donc la suivante :</p>
+<p>-BalleDeNeige.cs<br>
+-Cendre.cs<br>
+-Chrysantheme.cs<br>
+-FungusP.cs<br>
+-Iris.cs<br>
+-Lave.cs<br>
+-Lychnis.cs<br>
+-Mousson.cs<br>
+-RocheVolcanique.cs<br>
+-Talc.cs<br>
+-Tradescantia.cs</p>
+<p>Je retarde depuis un moment mais c'est un travail monumental. Je comptais bien utiliser ta suggestion Zak, et dans les cas possibles (comme dans les plaines) augmenter de beaucoup le &quot;range&quot; du spawner pour que les objets soient dans une zone circonscrite, mais pas toujours au même endroit. Je te signifierai en privé les zones où j'avais placé chaque ingrédient si tu veux m'aider.</p>
+<hr>
+<h2 id="post-by-ex-lumina---april-9-2008-at-546-am">Post by Ex-Lumina - April 9, 2008 at 5:46 AM</h2>
+<p><a id="post-158963"></a></p>
+<p>Over and out.</p>
+<p>C'est réglé. Merci de ton assistance Zak !</p>
+<hr>
+<h2 id="post-by-capucine---april-9-2008-at-430-pm">Post by Capucine - April 9, 2008 at 4:30 PM</h2>
+<p><a id="post-159026"></a></p>
+<p>j'ai pas trop suivit et je sais que c'Est rêgler... mais pourquoi pas mettre deux spawns?</p>
+<hr>
+<h2 id="post-by-anonymous---april-10-2008-at-1225-am">Post by Anonymous - April 10, 2008 at 12:25 AM</h2>
+<p><a id="post-159078"></a></p>
+<p>Dans une zone X, il peut y avoir un ingrédient Y. Donc plusieurs spawns de cet ingrédient Y dans une zone, mais ces spawns ont 1/12 (ou parfois plus) de chances que l'ingrédient soit spawné <img src="/assets/smilies/smile.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

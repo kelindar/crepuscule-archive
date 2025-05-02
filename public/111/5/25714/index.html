@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stealth ! - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Stealth !</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">Stealth !</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="stealth-">Stealth !</h1>
+<h2 id="post-by-phydias-shaytan-cp---november-29-2008-at-120-am">Post by Phydias Shaytan, CP - November 29, 2008 at 1:20 AM</h2>
+<p><a id="post-193340"></a></p>
+<p>Votre raleur préféré est là ! ^^</p>
+<p>Une petite suggestion pour stealth, c'est plus pour le gameplay que pour balancer le système. Simplement ajouter un décomtpe des pas restants lorsque l'on marche en stealth. Bien sur, ça spammerait un peu l'écran vu qu'on a en 20 au plus haut niveau, donc il faudrait idéalement tronquer ce décompte un moins de pas. Je propose de manière arbitraire 4 <img src="/assets/smilies/smile.gif" alt=""><br>
+Point de vue code ça donnerait : dans PlayerMobile.cs</p>
+<p>protected override bool OnMove(Server.Direction d)<br>
+{
+if ((this.m_Hidden &amp;&amp; (this.m_AccessLevel == Server.AccessLevel.Player)) &amp;&amp; (((this.m_AllowedStealthSteps-- &lt;= 0) || ((d &amp; Server.Direction.Running) != Server.Direction.North)) || this.Mounted))<br>
+this.RevealingAction();<br>
+// On vérifie qu'on est bien caché, qu'on n'est pas GM et qu'il reste 4 pas ou moins, sinon, vive le spam...<br>
+else if (this.m_Hidden &amp;&amp; this.m_AccessLevel == Server.AccessLevel.Player &amp;&amp; m_AllowedStealthSteps &lt; 5)<br>
+this.SendMessages(&quot;Il vous reste {0} pas furtif(s)&quot;, this.m_AllowedStealthSteps);<br>
+return true;<br>
+}</p>
+<hr>
+<h2 id="post-by-ex-bolero---november-29-2008-at-512-pm">Post by Ex-Bolero - November 29, 2008 at 5:12 PM</h2>
+<p><a id="post-193412"></a></p>
+<p>On en discute de notre bord. Pendant ce temps, n'hésitez pas à déposer vos commentaires et vos suggestions, question d'étoffer le projet <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lenne-vespari-cp---november-29-2008-at-1026-pm">Post by Lenne Vespari, CP - November 29, 2008 at 10:26 PM</h2>
+<p><a id="post-193470"></a></p>
+<p>Je ne pense pas que quelqu'un peut avoir une raison de s'opposer.. ça ne change rien pour personne et ça n'exige même pas de travail puisque le script est déjà là..</p>
+<p>Ça serait difficile de &quot;discuter&quot;.</p>
+<hr>
+<h2 id="post-by-sar-tauramandil-ods---november-29-2008-at-1031-pm">Post by Sarä Taur'Amandil, OdS - November 29, 2008 at 10:31 PM</h2>
+<p><a id="post-193473"></a></p>
+<p>Ben moi la la! Pourquoi ?! Comment? Noonnn! Je suis contre. Tellement contre.</p>
+<p>Hum ha? On parle pas de faire exploser un bâtiment Ods?</p>
+<p>Ça va alors, comme Lenne a dit, ça me semble très bien ça.</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---november-29-2008-at-1101-pm">Post by Phydias Shaytan, CP - November 29, 2008 at 11:01 PM</h2>
+<p><a id="post-193478"></a></p>
+<p>Euh, je crois que Bolero voulait parler de d'autres idées en général concernant le stealth, histoire de tout faire dans la foulée.</p>
+<p>Si vous voulez, j'ai sous la main :</p>
+<ul>
+<li>auto-stealth : quand on est caché et qu'on a un certain niveau en hide/stealth, ça lance stealth automatiquement.</li>
+<li>check armure : plus moyen de stealth avec des armures en métal hihi Une seule pièce en métal suffit ! (adaptable au hide également).</li>
+<li>check mounted : empêche de se cacher sur son cheval.</li>
+<li>plein d'autres bêtises contraignantes du genre <img src="/assets/smilies/hysterical.gif" alt=""></li>
+</ul>
+<hr>
+<h2 id="post-by-ex-bolero---november-29-2008-at-1103-pm">Post by Ex-Bolero - November 29, 2008 at 11:03 PM</h2>
+<p><a id="post-193480"></a></p>
+<p>Merci des suggestions <img src="/assets/smilies/smile.gif" alt=""><br>
+Et comme Phydias dit, concernant mon premier post.</p>
+<hr>
+<h2 id="post-by-galgarad-cp---november-29-2008-at-1158-pm">Post by Galgarad, CP - November 29, 2008 at 11:58 PM</h2>
+<p><a id="post-193488"></a></p>
+<p>Pas de hide avec armure en métal?!</p>
+<p>Haha, j'achète tellement! <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-yriel-asuryan-adm---november-30-2008-at-437-pm">Post by Yriel Asuryan, AdM - November 30, 2008 at 4:37 PM</h2>
+<p><a id="post-193598"></a></p>
+<p>Ok ok... Réaliste tout ça ma foi.</p>
+<p>Mais va falloir penser à des malus de combat pour les armures trop grosses aussi alors, histoire d'être équitable ?  <img src="/assets/smilies/blush2.gif" alt=""><br>
+Limite, histoire de pas faire pleurer tout le monde, je trouve qu'une simple perte d'endurance a la course en fonction des armures serait correcte.</p>
+<hr>
+<h2 id="post-by-gdon-rirac-cp---november-30-2008-at-448-pm">Post by Gédéon Rirac, CP - November 30, 2008 at 4:48 PM</h2>
+<p><a id="post-193599"></a></p>
+<p>Je vais peut être me faire crier dessus mais je vais ajouter mon grain de sable.</p>
+<p>Je trouve pas ca réaliste le décompte des pas. Le gars qui est caché va pas compter le nombre de pas qu'il fait avant d'être découvert.</p>
+<p>C'est plus amusant de pas le savoir, comme ca le voleur peut manquer de discrétion à tout moment  alors que si il se fit à une &quot;jauge&quot;, je trouve que ca casse les risques.</p>
+<p>C'est beaucoup macher le boulot des &quot;stealheurs&quot;, enfin d'après moi.</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---november-30-2008-at-509-pm">Post by Phydias Shaytan, CP - November 30, 2008 at 5:09 PM</h2>
+<p><a id="post-193602"></a></p>
+<p>Le nombre de pas est fixé selon ton niveau, dans tous les cas tu pourras compter. Si tu veux mettre un nombre de pas aléatoire entre deux bornes fixées par ton niveau, ok, mais alors faut activer l'auto-stealth pour rester correct, sinon, tu ne sais pas quand relancer stealth, si ce n'est compter les pas... jusqu'à la nouvelle borne inférieure ;x</p>
+<p>Pour les risques du stealth, on en a déjà suffisament même en pouvant compter les pas. Je rappelle qu'à 100% de stealth, on n'a au final que 80% de chance de réussite, on ne peut pas courir, on ne peut rien bousculer et les joueurs qui nous bousculent par hasard s'amusent à nous tourner autour et crier qu'il y a quelqu'un... tout en impliquant que c'est tres dur de se barrer puisque lui te court autour et te bloque car toi tu ne peux pas le bousculer -_-</p>
+<hr>
+<h2 id="post-by-mr-trovnre---november-30-2008-at-755-pm">Post by Mr Trovénère - November 30, 2008 at 7:55 PM</h2>
+<p><a id="post-193622"></a></p>
+<p>*Merci de l'idée Phydias, on va voir ce que l'on peut faire. Merci les autres d'avoir participé à ce débat.  *</p>
+<hr>
+<h2 id="post-by-mr-trovnre---december-2-2008-at-1237-pm">Post by Mr Trovénère - December 2, 2008 at 12:37 PM</h2>
+<p><a id="post-193901"></a></p>
+<p>*Cette chose sera disponible dès la prochaine mise à jour. <img src="/assets/smilies/Wink.gif" alt=""> *</p>
+<hr>
+<h2 id="post-by-thalkehr-stornaar-adm---december-2-2008-at-525-pm">Post by Thalkehr Stornaar, AdM - December 2, 2008 at 5:25 PM</h2>
+<p><a id="post-193912"></a></p>
+<p>Laquelle? Le compteur de pas?</p>
+<p>Car le auto-stealth et le truc du cheval était aussi superbes. D'ailleurs, je me demande pourquoi ce n'était pas le cas pour le auto-stealth car dans UO, à la base, c'est comme ça à 35% de skill.</p>
+<hr>
+<h2 id="post-by-ex-bolero---december-2-2008-at-536-pm">Post by Ex-Bolero - December 2, 2008 at 5:36 PM</h2>
+<p><a id="post-193913"></a></p>
+<p>Je ne veux pas vous induire en erreur, mais je pense que Kel a aussi pensé au auto-stealth.</p>
+<p>Cependant, la suggestion sur les armures, je ne suis pas sûr. Enfin, je m'informe et on s'en reparle ^^</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-2-2008-at-627-pm">Post by Phydias Shaytan, CP - December 2, 2008 at 6:27 PM</h2>
+<p><a id="post-193921"></a></p>
+<p>Normalement, le script pour les armures est dans le runuo de base v1 (crep est ausis en v1, mais une v1 antérieure en fait ! C'est aussi pour ça qu'on a pas l'auto-stealth).</p>
+<p>Suffit d'aller voir sur le site, télécharger et regarder l'override de onMove() dans PlayerMobile.cs et Stealth.cs</p>
+<hr>
+<h2 id="post-by-garibald-adalard-ad---december-3-2008-at-412-am">Post by Garibald Adalard, Ad - December 3, 2008 at 4:12 AM</h2>
+<p><a id="post-194014"></a></p>
+<p>Je n'es qu'une petite chose à rajouter. En faite, une suggestion.</p>
+<p>Pourquoi ne pas instaurer l'apparition du joueur hider, si jamais un autre individu l'accroche ?(Marche dessus) Il m'en apparait totalement logique.</p>
+<p>Puisque souvent dans le cas présent. Il est presque impossible de dehider une personne usant se skill. Qui plus est, une bonne majorité son assassin, donc dans le pire des cas si tu tournes trop autour d'eux avec le detect hiding à 20% qui ne touche qu'une ou deux cases au tour ? À se que j'ai vu. Ils peuvent te one shotter.</p>
+<p>Bref, presque impossible aux joueurs n'ayant pas un detect hiding élever à révéler un individu, qui dans plusieurs situations fait savoir sa présence. Sa serais un plus à considérer.</p>
+<p>Si la personne marchant dans les ombres n'est pas assez subtile (ou chanceux), qui fait voir sa présence. Sa m'apparais logique qu'il est un moyen pour le dévoiler.</p>
+<p>Voilà !</p>
+<hr>
+<h2 id="post-by-ex-bolero---december-3-2008-at-423-am">Post by Ex-Bolero - December 3, 2008 at 4:23 AM</h2>
+<p><a id="post-194019"></a></p>
+<p>Je vous donne mon avis personnel qui ne représente pas celui de l'Équipe.</p>
+<p>Il est déjà bien assez difficile de marcher dans l'ombre et n'importe quel joueur peut vous foncer dedans, comme l'a dit Phydias, à n'importe quel moment, et il sait alors que se cache là un assassin. La plupart du temps, ça résulte en une série de cris et une fuite.</p>
+<p>M'est donc avis que ça reste comme ça, mais exprimez-vous qu'on voit la tendance générale <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-3-2008-at-514-pm">Post by Phydias Shaytan, CP - December 3, 2008 at 5:14 PM</h2>
+<p><a id="post-194064"></a></p>
+<p>Mon avis va p-e pas te plaire Gariblad, mais les roublards investissent des points là dedans et non ailleurs. Il me semble donc logique que pour contrer cet avantage, d'autres doivent également investir des points, sinon c'est un peu donner aux autres classes le beurre et l'argent du beurre.</p>
+<p>Il faut aussi voir qu'il n'y a pas que les assassin qui ont cette possibilité, mais d'autres classes qui n'ont p-e pas les moyens de eux se défendre (au hasard, la classe voleur ^^).</p>
+<p>Pour ce qui est du one shoot assassin il faudrait p-e faire un autre post ?<br>
+Une piste d'idée : différencier les deux usages.<br>
+Pour un assassinat RP, possibilité du one shoot via une commande différente.<br>
+Pour un combat, dégats de la capacité d'assassin calculé autrement (par exemple max 40% des vies <u>restantes</u> de l'adversaires) et on pourrait réduire le délais pour cet usage uniquement. Ca balançerait le désavantage des assassins face aux guerriers en combat en leur donnant une chance de se réussir un petit boost de dégat au début quoi ^^ Mais si pas de chance, ils restent des bouses au combat corps à corps <img src="/assets/smilies/man_in_love.gif" alt=""> (pour un assassin mal monté bien entendu &gt;_&lt;)</p>
+<hr>
+<h2 id="post-by-la-veuve-noire---december-9-2008-at-142-am">Post by La Veuve Noire - December 9, 2008 at 1:42 AM</h2>
+<p><a id="post-194518"></a></p>
+<p>Je ne comprends pas pourquoi ce débat éternel sur les assassins revient toujours. Chaque classe à ses avantages et ses faiblesses.</p>
+<p>Autant que les assassins sont capable de one shot, que les druides ont un sortilège qui invoque cercle d'arbre qui rend quasiment invisible et redonne le plein de mana en quelques secondes. C'est plutôt drôle que personne en parle de ça par contre.</p>
+<p>La plupart d'entre-vous vous basez sur la force des assassins selon les plus grands et forts du shard. Exemple le fameux ange noir. Je crois qu'il est normal pour un assassin de niveau 30 d'arriver à écorcher un poulet sans problème. D'arriver à mieux se déplacer dans l'ombre sans se faire remarquer par tous.</p>
+<p>Un guerrier qui à judicieusement bien placer c'est PA de même niveau qu'un assassin et même moins à environs 60% de résister à l'attentat. Je ne comprends pas pourquoi tous s'acharnent sur ce cas. D'autant plus que le combattant de profession toujours de même niveau éclate l'assassin en combat singulier.</p>
+<p>Lorsque l'un de ces fameux assassins est dévoilé en plus, il souffre du merveilleux monde de l'abus d'infos hrp. Par exemple s'il manque son jet de stealth de l'autre côté d'un mur. La plupart du temps l'autre joueur va tenter de l'éviter, ou se ruer sur sa position s'il s'agit d'un garde qui le recherche. Je crois que c'est déjà une lourde contrainte à assumer.</p>
+<p>Mais bon s'il y a malus aux armures qui doivent s'ajouter je crois que cela doit s'appliquer à toutes les classes dépendant des skills et talents utilisés.</p>
+<p>Pour revenir sur le sujet officiel, c'est merveilleux ce que tu nous apportes là Phydias.  <img src="/assets/smilies/Wink.gif" alt="">. Navré d'être parti en couille sur ton sujet.</p>
+<hr>
+<h2 id="post-by-garibald-adalard-ad---december-9-2008-at-634-am">Post by Garibald Adalard, Ad - December 9, 2008 at 6:34 AM</h2>
+<p><a id="post-194552"></a></p>
+<p>Dans les faites, se que je souhaite avant tout, c'est d'avoir plus d'une alternative pour réussire à dévoiler un individu étant invisible. Puisque dans l'heure présente peu de classes on accès à un detect hiding, étant bel et bien le seul moyen pour dévoiler quelqu'un de l'ombre.</p>
+<p>Les classes possèdant se fameux skill sont les classes justement qui s'en servent aux détriments d'autruis. (J'ai rien contre le faite qu'on tue les gens ou qu'on pique leurs pièces!)</p>
+<p>Donc, il en devient pratiquement impossible pour qui que se soit, dans le feu de l'action tout particulièrement d'arrêter un délis. (Je suis au courant que le risque à payer est coûteux, néanmoins le temps que l'individu en profite et enrichissant.)</p>
+<p>Par ailleurs, l'idée ne tiens pas qu'aux classes voleurs, assassins ou autres. Mais aussi aux mages. Possèdant un sort d'invisibiliter. Il suffit de  sentire un danger et sa demeure blinder et intouchable même si l'individu à clairement disparu sous ses yeux.</p>
+<p>Se que je souhaitais comme dit si haut c'est d'avoir un rajout dans un skill innutile ou rare parmis les compétences. Ou encore un moyen minime avec un facteur de chance lèger désigner à tous.</p>
+<p>Une commande à titre d'exemple quand un individu sent une présence.</p>
+<p>.méfiance</p>
+<p>Utilisable à tout les 5 minutes offrant un petit pourcentage de chance de dévoiler un individu en hiding, selon plusieurs facteurs dont ses skills pour se cacher.</p>
+<p>Sa rajouterais une touche de réaliste dans le jeu, bêtement. Si la personne Hiding, ne fait pas assez attention.</p>
+<p>Ou peu importe, tant qu'il est un lèger changement.</p>
+<hr>
+<blockquote>
+<p>Autant que les assassins sont capable de one shot, que les druides ont un sortilège qui invoque cercle d'arbre qui rend quasiment invisible et redonne le plein de mana en quelques secondes. C'est plutôt drôle que personne en parle de ça par contre.</p>
+<p>Je prendrai que le temps pour répondre à cette remarque pour y mettre lumière. Avec la dernière mise à jour, se sort demande désormais 43 points d'aptitudes pour pouvoir l'utiliser. Il faut pour commencer un bon niveau pour l'utiliser, puis il ne faut pas oublier qu'il faut faire un sacrifice de 3 points d'aptitude pour bénéficier de se sort. Les 3 points, très utile dans le skill de dressage. Puisque les sorts druidiques sont lié à se skill. Plus tu as haut en taming, plus tes invocations dure longtemps.</p>
+<p>En second lieux, le sort s'applique aux amis comme aux ennemis. Il heal tout le monde sans exeption et remonte le mana. En bref, le sort n'étant pu utilisable en bonus. Seul la classe druide peu l'utiliser, qui n'est pas ou très peu une classe de pvm. Donc, le sort est utile à une masse de personnes faisant du dongeon. Le sort ne donnant que de la vie aux Joueurs et non aux npcs.</p>
+<p>Voilà !</p>
+</blockquote>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-9-2008-at-121-pm">Post by Phydias Shaytan, CP - December 9, 2008 at 1:21 PM</h2>
+<p><a id="post-194565"></a></p>
+<p>J'aime bien l'idée du .mefiance (quoique j'en ai pas besoin vu que j'ai detect ^^). Cependant, j'ajouterais une nuance qui peut s'appliquer également à detect ! Plutôt que de bêtement dévoiler la cible comme ça le fait actuellement, ne serait-il pas plus amusant de jouer sur la VisList ou d'en créer une similaire. Pour ceux qui n'ont pas été GM, la VisList est la liste des mobiles visibles malgrés qu'ils soient cachés, c'est comme ça qu'un GM peut se dévoiler à un joueur via le .vis sans être vu par les autres joueurs ^^ (Je sais aps si cette commande existe ici aussi ?)</p>
+<p>Ca me semble plus interessant dans le sens qu'un compagnon du furtif qui doit l'épauler peut également suivre l'action alors. Autre exemple, un garde peut repérer un malfrat et feinter le jeu de ne pas l'avoir repéré jusqu'à le prendre la main dans le sac ! Bref, cela offre plus de possibilités que de simplement faire un dévoilé. Pour l'arrestation, il y aurait par exemple une autre commande qui vérifie qu'on est à une/deux cases de la cible et que celle-ci est bien dans notre VisList.</p>
+<p>Voila pour mon coup de géni du matin <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-garibald-adalard-ad---december-10-2008-at-305-am">Post by Garibald Adalard, Ad - December 10, 2008 at 3:05 AM</h2>
+<p><a id="post-194622"></a></p>
+<p>J'aime bien l'idée Phydias, moi je suis pour.  <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-la-veuve-noire---december-10-2008-at-401-am">Post by La Veuve Noire - December 10, 2008 at 4:01 AM</h2>
+<p><a id="post-194629"></a></p>
+<p>Je suis plutôt contre l'idée. Les talents qui donnent tracking et détection sont certes offerts aux classes voleurs/assassins. C'est naturel dans un sens après tout. Mais vous avez également le pouvoir de les monter via vos points bonus.</p>
+<p>Chaque classe à ses points faibles tout comme c'est points forts. Si vous êtes paranoïaques à ce point des assassins, faites un changement de classe ou un reset PA qui vous assurera des points en tracking (qui malgré tout peut très bien vous permettre de connaître l'emplacement d'un joueur invisible avec seulement 30 à 40 dans le skill).</p>
+<p>Même si vous ne voyez pas le joueur vous savez qu'il est présent s'il approche ou s'éloigne. Ce qui en revient totalement à la commande proposé si haut.</p>
+<p>Faudrait arrêter de vouloir rendre les classes <u>polyvalentes</u> pour que son personnage soit fort dans tous les aspects et protégé contre tous ce qui peut l'atteindre. À quoi ça sert d'avoir un système de classe si tous le monde peut tout faire?</p>
+<hr>
+<h2 id="post-by-thalkehr-stornaar-adm---december-10-2008-at-423-am">Post by Thalkehr Stornaar, AdM - December 10, 2008 at 4:23 AM</h2>
+<p><a id="post-194632"></a></p>
+<p>Merci, quelqu'un qui résume ma pensée!</p>
+<hr>
+<h2 id="post-by-garibald-adalard-ad---december-10-2008-at-434-am">Post by Garibald Adalard, Ad - December 10, 2008 at 4:34 AM</h2>
+<p><a id="post-194634"></a></p>
+<p>Le système que Shaytan offre, se voit offrire un Pour pour un Contre. Qui offre une balance général dans le jeu. Il m'apparait tout à fait normal qu'il existe un moyen pour dehider un individu, de la manière qu'il soit mélanger d'un hasard. De par ceci, une chance minime néanmoins suffisante pour pouvoir espérer dévoiler un individu hider.</p>
+<p>Comme tu su le dire, il faudrait réellement être paranoïaque pour placer ses bonus en Déplacement Silencieux, seulement pour être certains de ne pas se faire assassiner. (À moins d'avoir des tonnes d'ennemis.  <img src="/assets/smilies/man_in_love.gif" alt=""> )</p>
+<p>Par ailleurs, je poserais dans le quotidien qui date depuis une année à aujourd'hui. Le nombres d'arrestations provoquer à des voleurs ou encore des assassins ou tout autre individu apte à user le hiding confortablement. (Je sais que les contacts et la manière de jouer son personnage peu faire une différence dans se &quot;sondage&quot;, néanmoins il est à considérer)</p>
+<p>Je crois que le chiffre serait suffisament ample pour dire, que ces classes bien jouer, sont d'une grande efficacer pour ne pas dire confortable. Malgrer les actes poser et commis en jeu.</p>
+<p>C'est pour cela ma suggestion, d'offrire un moyen, ne tombant pas dans l'abus pour pouvoir offrire une chance à ceux n'ayant pas se type d'aptitude (Rare parmis les compétences offerts aux différentes classes) d'espérer, peu être, de dévoiler une personne hider, ayant mal jouer son jeu. Puisque, si un individu se promenant dans les ombres et jouant bien son jeu, ne fera jamais sentire sa présence dans les parrages. Donc, l'individu ne sera pas porter à utiliser à titre d'exemple le : .mefiance.</p>
+<p>Voilà !</p>
+<hr>
+<h2 id="post-by-xulzaer-maeldrim-ind---december-10-2008-at-638-pm">Post by Xul'zaer Maeldrim, Ind - December 10, 2008 at 6:38 PM</h2>
+<p><a id="post-194695"></a></p>
+<p>Ça me concerne pas vraiment, mais je vais quand même donner mon avis là-dessus pour avoir déjà joué des personnages qui utilisent ces skills... en fait, mon opinion est pas mal le même que la Veuve Noire.</p>
+<p>Oui c'est vrai côté &quot;réalisme&quot; que n'importe qui dans la vrai vie à des chances de découvrir quelqu'un caché, même le meilleur artiste de la dissimulation, je te le concède Garibald. Mais c'est aussi vrai qu'un grand guerrier légendaire a des chances de se faire tuer par un idiot avec un couteau par <em>badluck</em>. C'est sûrement arrivé très souvent dans l'histoire; un gladiateur expérimenté baisse la garde un moment... oups le newbie vient de lui planter sa dague dans le ventre. Bref, si on permet à un assassin ou à un voleur de se faire contrer même pas chance son stealth, qui est son meilleur skill, il faudra tout aussi également ajouter une commande .killmalchance qui permettra a n'importe qui affrontant un guerrier de profiter d'une badluck et de le tuer one-shot. Dis-toi que n'importe qui a de minces chances de faire à peu près n'importe quoi dans la vie par hasard, selon les circonstances...</p>
+<p>Bref je suis en accord, il existe des moyens de contrer les assassinats et ceux qui prévoient en attirer un sur leur personne doivent prendre les skills en conséquences. N'importe qui (de n'importe quelle classe ou level) peut identifier un assassin à découvert et provoquer sa chute, c'est déjà un assez gros malus je trouve vs. tout ce que ça prend pour réussir un simple assassinat.</p>
+<hr>
+<h2 id="post-by-suyna-elsvileen---december-10-2008-at-656-pm">Post by Suyäna Elsvileen - December 10, 2008 at 6:56 PM</h2>
+<p><a id="post-194696"></a></p>
+<p>Je ne comprend pas a quoi cela servirai un décompte.....  je crois qu'en ce moment même il sagit d'un pas dans l'ombre par tranche de 5 a ton skills Furtiviter ... donc 100 en futiviter a donc 20 pas... si je ne me trompe.....</p>
+<p>Excuse moi, mais je ne vois pas l'utilité.... peut être ais-je simplement mal comprit se que tu voulais apporter .... ''C'est très possible''</p>
+<p>Mais personellement, irl je les comptes moi même... parfois j'oblie le décompte... c'est ce que je trouve pourtant amusant...</p>
+<hr>
+<h2 id="post-by-ascyla-syre-cp---december-10-2008-at-702-pm">Post by Ascyla Syre, CP - December 10, 2008 at 7:02 PM</h2>
+<p><a id="post-194698"></a></p>
+<p>Pour se recacher directement quand on se décache probablement ^^</p>
+<p>Genre te reste un pas, tu prépare ton truc pour te recacher plus rapidement possible et tu l'utillise après ton pas et c'est comme si on t'aurais jamais vue ..</p>
+<hr>
+<h2 id="post-by-ex-bolero---december-10-2008-at-707-pm">Post by Ex-Bolero - December 10, 2008 at 7:07 PM</h2>
+<p><a id="post-194699"></a></p>
+<p>C'est un petit plus qui ne peut pas faire de mal, à mon avis.</p>
+<hr>
+<h2 id="post-by-garibald-adalard-ad---december-12-2008-at-544-am">Post by Garibald Adalard, Ad - December 12, 2008 at 5:44 AM</h2>
+<p><a id="post-194904"></a></p>
+<p>Pour répondre rapidement à ta réplique Xul'zaer.</p>
+<p>Justement, un guerrier haut lvl peu se faire battre par le facteur chance, contre un lvl bien plus inférieure à lui. Tout au tant guerrier.</p>
+<p>Mon personnage étant de base un guerrier assez bourrin. J'ai perdu des combats face à des gens possèdant des personnages lvl 14 et 20. Un exemple parmis d'autres.</p>
+<p>Qui plus est, un archer bien monter et bien jouer. Tout comme un mage dans la même situation pourrait vaincre mon gros bonhomme, avec misère peu être. Mais certainement. En lien avec le facteur chance déjà existant, prenant en compte mes chances de toucher et d'esquiver. Comme dans les cas dit plus haut. Je rattais sans cesse ou je n'esquivais un rien du tout.</p>
+<p>Seulement, les personnages usant l'hiding. N'a pas réellement de contre mesure pour parrer sa venu. Peu importe les raisons qui soient qui le poussent à être hiding. Le seul facteur chance se trouvant dans l'apparition du personnage s'il ratte son skill de marcher dans l'ombre. Mais même là (Corriger moi si je fais erreur) s'il ratte son skill il demeure hiding s'il ne continu pas à marcher. Jusqu'au délais de retenter son skill.</p>
+<p>En bref, un facteur chance comparable aux autres classe n'est même pas existant dans se skill. Ainsi dans se qu'il apporte.</p>
+<p>D'ou le pourquoi que je demande une alternative, non pas abusive. Mais offrant une porte. Pour but d'en venir à pallier quelque peu à tout l'argumentation que j'ai pu fournire dans les postes si haut.</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-12-2008-at-602-am">Post by Phydias Shaytan, CP - December 12, 2008 at 6:02 AM</h2>
+<p><a id="post-194908"></a></p>
+<p>Je viens corriger ! <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Quand on rate stealth, on est révélé. Donc pour retenter un stealth, il faut attendre 10 secondes pour se recacher et encore 10 secondes pour retenter le stealth.</p>
+<p>Si on était pas dévoilé en ratant son stealth, c'est sur que ça serait trop facile ;x Je rappelle également qu'il y a un malus de réussite sur le stealth par rapport à l'armor rating. En gros, si tu ne porte pas que du tissus, tu as moins de 80% de chance de réussite (à 100% stealth)</p>
+<hr>
+<h2 id="post-by-garibald-adalard-ad---december-12-2008-at-608-am">Post by Garibald Adalard, Ad - December 12, 2008 at 6:08 AM</h2>
+<p><a id="post-194910"></a></p>
+<p>J'avais pris un guess pour ceci. En cherchant dans mes souvenirs d'un ancien personnage. <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-xulzaer-maeldrim-ind---december-12-2008-at-1002-pm">Post by Xul'zaer Maeldrim, Ind - December 12, 2008 at 10:02 PM</h2>
+<p><a id="post-194992"></a></p>
+<p>Umm, permet moi de ne pas vraiment être d'accord avec toi sur ta vision de la chose Garibald...</p>
+<p>Dans ce jeu là, tout a son contraire :</p>
+<ul>
+<li>Skills de combats &amp; defense vs. skills de combat &amp; defense (corps à corps)</li>
+<li>Magery vs. Resist Magic (magie)</li>
+<li>Hiding vs. Detect Hiding (dissimulation)</li>
+<li>Assassinat vs. skills anti-assassinat (assassinat)</li>
+<li>Etc...</li>
+</ul>
+<p>Un assassin va être fort en dissimulation et contre-dissimulation mais faible en tout le reste. Un guerrier va être fort contre le corps à corps, mais faible contre tout le reste. Un mage va résister la magie très bien, mais être faible en combat et contre les assassinat. Bref, chaque classe a ses forces et ses faiblesse. Il y a un skill pour résister à tout ce qu'il existe pour te tuer. Pourquoi en rajouter <em>un autre</em> contre le hiding alors qu'elle existe deja ? Il ne suffit qu'à le monter... autrement les assassins sont en droit aussi de demander des commandes .resistmagic et .resistcombat pour gagner des bonus contre les type de combattants dont il ne peuvent se défendre sans investir des points d'aptitudes.</p>
+<p>Bref mon point étant qu'on peut pas donner un autre avantage à tout le monde contre les assassins &amp; voleurs sans ajouter un autre avantage aux classes qui ont besoin de hide pour survivre contre tout le monde. Déjà que l'assassin même cappé comme le disait Phydias, a 20% de chances de rater son jet pour se sauver, et que s'il le rate il va probablement aller en prison et mourir; 20% ça me semble être déjà un très gros malus pour un perso de level avancé...</p>
+<p>Dernier petit point ici, pas besoin d'une commande pour jouer la méfiance en jeu. Si tu suspecte un piège et qu'on cherche à t'assassiner, et que t'as aucun skills contre, va t'en de cette place là au plus vite hehehe !</p>
+<p>Je ne prends pas le côté de personne ici, mais ça me semble des plus logique tout ça.</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-12-2008-at-1120-pm">Post by Phydias Shaytan, CP - December 12, 2008 at 11:20 PM</h2>
+<p><a id="post-194999"></a></p>
+<p>Petite précision, malgré mon lvl 25+, j'ai du investir quasi tous mes bonus pour avoir stealth &amp; hiding au max. Dans cette optique, pourquoi quelqu'un qui voudrait me révéler ne devrait pas investir ses points également ?</p>
+<p>Sinon, l'amélioration sur l'effet du detect me semble rester cohérente : quand la skill réussit un prompt demande si il veut dévoiler la cible. Si oui,ça dehide, si non, ça ajoute à sa visibility list pour une durée déterminée.</p>
+<hr>
+<h2 id="post-by-sar-tauramandil-ods---december-12-2008-at-1126-pm">Post by Sarä Taur'Amandil, OdS - December 12, 2008 at 11:26 PM</h2>
+<p><a id="post-195000"></a></p>
+<p>Petite précision, malgré mon lvl 25+, j'ai du investir quasi tous mes bonus pour avoir stealth &amp; hiding au max. Dans cette optique, pourquoi quelqu'un qui voudrait me révéler ne devrait pas investir ses points également ?</p>
+<p>Je suis totalement de l'avis de Phydias. Tout le monde à la possibilité d'investir ses points de bonus comme il l'entend et de façon qui l'avantagera le plus avec son personnage. C'est vous qui choisissez vos avantages, on ne peut pas tout être et c'est normal d'être vulnérable à certaine chose. Qui plus est... Si vous avez peur de vous faire assassiner, il faudra jouer en conséquence pour vous évitez cela...!</p>
+<hr>
+<h2 id="post-by-garibald-adalard-ad---december-13-2008-at-255-am">Post by Garibald Adalard, Ad - December 13, 2008 at 2:55 AM</h2>
+<p><a id="post-195022"></a></p>
+<p>Dans les faites se qui est évoquer dans ton poste Xul'zaer, les contres mesures ne sont pas comparable.</p>
+<p>Je vais reprendre ton exemple sur l'assassinat puisqu'il est le plus directement relier dans le sujet présent.</p>
+<p>Le contre assassinat c'est très peu dans l'heure actuel des choses. Dans le pire des cas si l'assassin rate il peu blesser son adversaire ou ne rien faire du tout. Ensuite, dépendant de la situation il peu soit sortir les armes ou fuire. Dans tout les cas, la &quot;pénaliter&quot; face à l'échec est très mince. Comparativement aux contres mesures offerts par les autres exemples que tu as démontrer dans ton poste. (Sans oublier qu'un assassin contre une guerrier, l'assassin conserve la plus grande avantage si tous deux sont d'un niveau compétitif).</p>
+<p>La méthode pour dévoiler les individus est trop maigre dans l'heure actuel des choses. Le peu de classe approprier possèdant le skill Detect Hiding en est pour une bonne cause. Les contres mesures pour contrer les classes sont généralement offert à d'autre classe. Mais dans l'optique du jeu présent, la contre mesure pour contrer ceux se déplaçant en hiding sont placer dans les classes se promenant déjà en hiding. Je ne vois pas pourquoi c'est faite ainsi. Sa n'offre qu'un plus gigantesque à ces classes.</p>
+<p>Je suis bien prêt à croire qu'investire des bonus peu être une maigre solution, mais sa demeure un très grand sacrifice de points pour un rien du tout. Vu l'absence du skill dans le jeu.</p>
+<p>Par ailleurs, il n'a rien de plus désagréable que de voir tout justement un individu dans les parrages ou de le savoir qu'il souhaite t'assassiner. Dont ta seul option est de quitter les lieux, faute de quoi que tu ne puisses pas le faire apparaitre.</p>
+<p>Pour conclure il ne faut pas mélanger les cartes. Se que je suggèrais au tout départ, était d'avoir un moyen ajouter sois dans des aptitudes de classes ou par d'autres moyens de pouvoir avoir une chance de contrer justement les gens se promenant en Hiding. D'au lieux de devoir de devenir sois même un voleur ou assassin. Se qui impliquerait pour répondre aux postes précédents par des remises de Pa dans un skill pour en contrer un autre. Comme il existe parmis toutes les autres classes.</p>
+<p>Sinon, l'amélioration sur l'effet du detect me semble rester cohérente : quand la skill réussit un prompt demande si il veut dévoiler la cible. Si oui,ça dehide, si non, ça ajoute à sa visibility list pour une durée déterminée.<br>
+Petite précision, malgré mon lvl 25+, j'ai du investir quasi tous mes bonus pour avoir stealth &amp; hiding au max. Dans cette optique, pourquoi quelqu'un qui voudrait me révéler ne devrait pas investir ses points également ?</p>
+<blockquote>
+<p>Sinon, l'amélioration sur l'effet du detect me semble rester cohérente : quand la skill réussit un prompt demande si il veut dévoiler la cible. Si oui,ça dehide, si non, ça ajoute à sa visibility list pour une durée déterminée.</p>
+<p>L'idée me parrait toujours aussi chouette !</p>
+</blockquote>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-23-2008-at-1207-am">Post by Phydias Shaytan, CP - December 23, 2008 at 12:07 AM</h2>
+<p><a id="post-196452"></a></p>
+<p>A titre indicatif, pour avoir Hiding et Stealth au max, il faut compter au minimum 60 points de compétence... Je pense que ça clos une partie du débat <img src="/assets/smilies/hysterical.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-doku---december-23-2008-at-343-am">Post by Ex-Doku - December 23, 2008 at 3:43 AM</h2>
+<p><a id="post-196499"></a></p>
+<p>Le % de votre chance de réussite sera en fonction d'une compétence et de deux skills :</p>
+<p>-La compétence Assassinat<br>
+-Le skill Anatomy<br>
+-Le skill Fencing</p>
+<p>Le ratio n'est pas de 33% chaque, je vous le dit au départ. Ces trois facteurs constitueront votre base d'Assassinat.</p>
+<p>Pour résister à un assassinat, ce sera le même manège. Une compétence et deux skills.</p>
+<p>-La compétence Agilité_Accrue<br>
+-Le skill Parry<br>
+-Le skill Focus</p>
+<p>Le ratio est le même que pour l'Assassinat.</p>
+<p>Ensuite, la soustraction de ces deux pourcentages est faite à savoir le pourcentage de réussite. Vient s'ajouter à cela les facteurs suivants :</p>
+<p><strong>-La dextérité de l'Assassin VS la dextérité de la victime</strong></p>
+<p>-Si l'Assassin est hidé<br>
+<strong>-Si la victime est sur une monture</strong><br>
+<span style="color:#FF0000"><strong>-Si la victime est en mode war (elle est donc sur ses gardes)</strong></span></p>
+<p>Je crois que y'a déjà une opposition contre l'assassinat, dont un mode de méfiance de base.</p>
+<p>Négligez pas l'agilité accrue, qui en plus vous apporte un double bonus contre l'assassinat (le bonus de parrying et le bonus avec la compétence en elle même). Je reconnais cependant que l'assassin gagne un avantage avec la compétence d'assassinat car il a +1 en anatomie. Cependant, s'il n'arrive pas a se recamouffler, il est à la merci du premier guerrier valable (et je parle même pas face à un paladin). De plus, un assassin encourt de grave conséquence s'il est reconnu.</p>
+<p>Enfin, il est normal qu'un &quot;monsieur tout le monde&quot; soit pas un expert de détection d'assassin, ni ne possède un haut niveau de parade contre l'assassinat.</p>
+<p>Je précise que c'est mon avis et mes remarques.</p>
+<hr>
+<h2 id="post-by-yriel-asuryan-adm---december-25-2008-at-1042-pm">Post by Yriel Asuryan, AdM - December 25, 2008 at 10:42 PM</h2>
+<p><a id="post-196756"></a></p>
+<p>Je pense Garibald que dans ton cas, et je le dis sans animosité aucune sincèrement, ton avis est un peu corrompu par une expérience désagréable d'assassinat en jeu. Ce qui te pousse à vouloir diminuer les compétences de ce genre de classes.</p>
+<p>Comme l'a dit Sarallonde, chacun ses avantages, chacun ses inconvénients, ce n'est pas difficil d'être capable de repérer des individus furtifs, mais il faut faire le sacrifice d'investir des points dans les compétences adéquates. Je pense pas que l'équilibre actuel des classes soit au désavantage de qui que ce soit, tout est une question de gameplay.</p>
+<p>En écrivant ce post, je me rends compte que le débat à totalement dévié. <img src="/assets/smilies/hi.gif" alt=""></p>
+<hr>
+<h2 id="post-by-saevan-al-kazar-adm---december-26-2008-at-1213-am">Post by Saevan Al Kazar, AdM - December 26, 2008 at 12:13 AM</h2>
+<p><a id="post-196760"></a></p>
+<p>Je ne vois rien dans le post d'ex-Doku sur les gorgerins.</p>
+<p>Le fait d'avoir un gorgerin a t'il un impact sur le calcul?</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-26-2008-at-1220-am">Post by Phydias Shaytan, CP - December 26, 2008 at 12:20 AM</h2>
+<p><a id="post-196763"></a></p>
+<p>Autant que d'avoir des tongues.</p>
+<p>Si on part sur ce que porte l'autre personne, on en a pas fini.</p>
+<ul>
+<li>
+<p>Tu as pas pu m'égorger, j'ai un gorgerin !</p>
+</li>
+<li>
+<p>Alors, je te l'ai planté dans l'oeil.</p>
+</li>
+<li>
+<p>J'y avais pas pensé...</p>
+</li>
+<li>
+<p>Tu as pas pu me le planter dans la gorge ni dans l'oeil, car j'ai un casque fermé et un gorgerin !</p>
+</li>
+<li>
+<p>Tu sais, dans le coeur ça marche aussi ?</p>
+</li>
+<li>
+<p>Ah ouais...</p>
+</li>
+</ul>
+<p>Etc, etc...</p>
+<hr>
+<h2 id="post-by-saevan-al-kazar-adm---december-26-2008-at-1225-am">Post by Saevan Al Kazar, AdM - December 26, 2008 at 12:25 AM</h2>
+<p><a id="post-196764"></a></p>
+<p>Merde, je l'avais mis pendant tout ce temps pour rien!  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Bref quand je regarde ça je me rend compte que mon perso est vraiment solide contre les assassinat sans le vouloir oO.</p>
+<hr>
+<h2 id="post-by-garibald-adalard-ad---december-26-2008-at-131-am">Post by Garibald Adalard, Ad - December 26, 2008 at 1:31 AM</h2>
+<p><a id="post-196783"></a></p>
+<p>Karl Franz</p>
+<p>Si mes commentaires et idées devraient être mis de coté, car j'ai eu une expérience de jeu précise Ig. Dont de toute manière j'aurais aborder le même sens sans cette expérience. Je devrais me taire à jamais et me creuser un trou où y rester. Car j'aurais peu être une rancune ? Nah...</p>
+<p>T'es propos sont nullement approprier ou même désirer d'être lu.</p>
+<p>Se que j'apporte est un fondement et une idée que j'ai eu depuis mon arrivé sur crépuscule. (Car oui j'ai déjà eu un personnage avec 100% en hiding et déplacement silencieux à mon arriver.)</p>
+<p>Se que j'apporte ici, est un faite. Que je trouve certainement abuser. Vu le facteur trop faible d'être détecter en hiding. Puisque les classes pouvant détecter une autre classe, en hiding. Sont déjà les classes qualifier dans la rubrique du shard, &quot;plus mauvaise&quot;. En outre de quoi, il en rend impossible de dévoiler un de ces individus. Comparativement aux autres classes, qui ont justement une classe rivale qui est capable avec de grandes chances de &quot;détruire&quot; celle si.</p>
+<p>Se qui n'est pas le cas des classes voleurs et assassins en occurence.</p>
+<p>Venez pas me dire, oui mais si le méchant se fait prendre. Je le sais les conséquences sont très grande. Tout comme pour un type. (Effectivement, j'use de mon expérience dans le domaine.) Qui tente d'arrêter ou de s'épargner un vol ou encore un assassinat ou d'être espionner. D'être dans l'incapaciter de le faire, puisque le type est hiding et impossible à découvrire. D'où alors, il courre de plus grands risques encore de se faire tuer que le &quot;méchant&quot; qui volera une bourse et qui s'en tira avec une tappe sur les doigts se même si il a perpétuer le délis une centaine de fois avant.</p>
+<p>Les risques d'un coter de la balance sont, dont je considère équitable.</p>
+<p>Par ailleurs pour répondre encore à Karl. Si j'aurais désirer faire des pressions avant la perte de de mon ancien personnage. (Dont je désirais voir sincèrement se faire assassiner, car j'étais tanner de le jouer et que je souhaitais récupérer une partie de ses xp depuis longue date avant sa mort). Je l'aurais faite. Mais je  jugeais tout justement qu'il n'était pas approprier d'entrer mon jeu Role Play, dans un soucis de scriptage.</p>
+<p>Se pourquoi, oui j'ai attendu la fin de se personnage pour apporter des démarches. Tout au moins espérer un changement et une remise en balance.</p>
+<p>Donc, j'espère ne plus à avoir me justifier ou faire affront à des propos mal placer.</p>
+<p>Merci.</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-26-2008-at-802-pm">Post by Phydias Shaytan, CP - December 26, 2008 at 8:02 PM</h2>
+<p><a id="post-196828"></a></p>
+<p>Bon, on va faire un petit tour du côté technique de manière approfondie.</p>
+<p>Le niveau minimum nécessaire pour avoir Stealth &amp; Hiding à fond. Ne sont pris en compte que les compétences &quot;furtivité&quot; et &quot;déplacements silencieux&quot;.</p>
+<p>Assassin : lvl 14<br>
+Il ne lui reste aucun primaire à mettre en assassinat.<br>
+Il lui reste 4 points secondaire et 2 points bonus. Autant dire qu'un tel assassin est juste... inutile ?</p>
+<p>Voleur : lvl 23<br>
+Tous ses secondaire et tous ses bonus y passent. En effet, le voleur n'a pas de furtivité en primaire.</p>
+<p>Rodeur : lvl 40<br>
+En effet, il n'a pas furtivité ni en secondaire, ni en primaire. Il doit donc investir 40 bonus en furtivité.</p>
+<p>Toutes les autres classes : lvl 60<br>
+Aucune des autres classes n'a furtivité ou déplacement silencieux en primaire et secondaire. Il faut donc exclusivement mettre des points bonus.</p>
+<p>Idem pour detect à 100%</p>
+<p>Assassin : lvl 16<br>
+Tous les bonus y passent, il reste 3 secondaires.<br>
+<u>Tous les primaires sont libres</u></p>
+<p>Voleur : lvl 16<br>
+Tous les bonus y passent, il reste 3 secondaires.<br>
+<u>Tous les primaires sont libres</u></p>
+<p>Toutes les autres classes : lvl 40</p>
+<p>La moyenne est clairement en faveur de detect hidden.</p>
+<p>Poussons le vice...<br>
+Prenons une personne avec 100% en stealth &amp; hiding (60points)<br>
+double ss = srcSkill + Utility.Random( 21 ) - 10;</p>
+<p>double ts = trg.Skills[SkillName.Hiding].Value + Utility.Random( 21 ) - 10;</p>
+<p>Ca, c'est la jolie formule de runuo. Pour les profanes, ça donne ça</p>
+<p>detect-10+random(0,21) versus hiding-10+random(0,21)</p>
+<p>Celui qui a la plus gross gagne xD</p>
+<p>Donc imaginons le pire cas : le random du &quot;caché&quot; donne 0 et celui du &quot;chercheur&quot; donne 21. Il faut donc 79% en detect hidden pour avoir une chance de le découvrir. Soit 30 points investis, c'est à dire moitié moins !</p>
+<p>Ahah, mais... c'est pas assez !<br>
+Detect hidden prend 1sec de delay, tandis que hiding et stealth en prennent 10. Rajouter un temps de base de 250 milisecondes pour le latence client-serveur-client.</p>
+<p>Alors, pour un bon assassinat, faut pas se faire repérer, donc être à au moins 15 cases de l'adversaire pour pas qu'il nous voit et surtout, réussir ces 15 pas.<br>
+Meilleur cas : 100% partout. Même a 100%, on ne réussi pas toujours stealth.<br>
+Il faut donc se cacher le nombre de fois qu'on ratera stealth +1 fois pour la fois réussi et ajouter 10secondes à chaque fois qu'on rate un stealth.</p>
+<p>On a 80% de réussite de stealth et 100% de hiding, soit une chance sur 5 de rater. Il faut donc en moyenne lancer stealth 1.25 fois pour être sur de le réussir.<br>
+=&gt; 1.25<em>10+0.25</em>10 =&gt; temps moyen 15 secondes</p>
+<p>On généralise la démarche pour trouver la belle formule du temps :<br>
+((100/hiding)*(100/(stealth-20)) + 100/(stealth-20)-1)*10</p>
+<p>Oh, on a oublié le delay... heureusement, la formule est bien construite <img src="/assets/smilies/Wink.gif" alt=""> Il suffit de remplacer 10 par 10.25</p>
+<p>Mais graphiquement, ça donne quoi ?</p>
+<p><img src="http://www.multimania.com/commanderarm/hide.jpg" alt=""></p>
+<p>Ah ouais, il monte vachement vite le temps ! A titre indicatif, à 50% hiding &amp; stealth, il faut en moyenne 92.25 secondes.</p>
+<p>Et encore, notre formule n'a pas pris en compte qu'à 50%, on veut faire 15 pas, mais qu'on en a droit qu'à 10. Vous me direz qu'il suffit de doubler le temps ? Je vous répond non. Car il faut en réussir deux de suite. Et les probas sont ce qu'elles sont, ça fera bien plus que le double. De plus, si on rate, la cible nous voit et se barre. Et oui, pendant le temps qu'on met à réussir notre bête hiding/stealth, il faut pas non plus que la cible bouge ! Je parle même pas des obstacles et des portes...</p>
+<p>Enfonçons le clou, detect hidden demande au plus 40 points à investir. De plus, il a un rayon d'action qui grandit proportionnellement au skill/10. C'est à dire qui couvre ((skill/10)+1)^2 cases. A titre indicatif, 121 cases au maximum.</p>
+<p>Tout ça pour dire qu'il y a la claire nécessité de soit diminuer la difficulté de hiding/stealth soit augmenter celle de detect hidden.</p>
+<p>Je ne parle même pas des mages avec le sort de révélation, invisibilité et recall, qui surclassent largement les 3 skills précitées avec une seule... <img src="/assets/smilies/smile.gif" alt=""><br>
+Avant que ça ne parte en flame war : Ceci est un post à caractère purement ironique, surtout la fin. Cependant, toutes les informations présentes sont vraies. Même si les choses sont déséquilibrées en faveur du detect hidden, ça nous convient. Par nous, j'entends les personne sutilisant la furtivité. Ce post ne vise au final qu'à montrer que si on devait rebalancer ce système, ce serait en faveur de hiding/stealth et non de detect hidden.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---december-27-2008-at-721-am">Post by Conteur Wolf - December 27, 2008 at 7:21 AM</h2>
+<p><a id="post-196873"></a></p>
+<p>Que de chiffres! <em>saigne du museau</em></p>
+<p>Simplement un petit rappel de rester respectueux envers vous, pas de pointe dissimulée. L'équipe étudie toujours les débats. Il n'est pas nécessaire de se camper sur sa position une fois que votre avis fut donnée en revenant à la charge à chaque fois qu'un autre va à l'inverse de votre position.</p>
+<p>Au final c'est l'équipe qui tranchera la décision en mesurant chaque propos constructif apporté, et non l'autre joueur qui pense d'une autre manière. Chacun à droit d'émettre son avis, <u><strong>qui respecte néanmoins le sujet</strong></u>. Mis à part de créer des tensions entre vous, détruire l'avis d'un autre joueur au profit de la vôtre ne sert absolument à rien.</p>
+<p>Votre opinion ne peut pas être partagée de tous et n'est peut-être pas nécessairement la meilleur. Le mieux à faire c'est de la soumettre avec vos arguments, l'équipe fera un beau mixte des idées ressorties, mesurant les pours et les contres puis elle soumettra la décision.</p>
+<p>Pour terminer, je dirais que bien qu'on le souhaiterait, on ne peut pas toujours gagner notre parti. Il faut apprendre à digérer la défaite même si ce n'est parfois pas toujours évident.</p>
+<hr>
+<h2 id="post-by-anar-al-kazar-adm---december-20-2009-at-1057-am">Post by Anar Al Kazar, AdM - December 20, 2009 at 10:57 AM</h2>
+<p><a id="post-238872"></a></p>
+<p>Je me permet de remonter ce topic car j'aimerais réouvrire le débat pour Apoc.</p>
+<p>Cher Apoc (ça commence bien comme intro!)</p>
+<p>J'aimerais attirer ton attention sur un fait, le skill déplacement silencieux. Actuellement, les joueurs qui ont comme moi 100% en cachette d'ombre et furtivité rencontre un problème assez agacent:</p>
+<p>Pour commencer a monter furtivité, il faut un % en cachette, sans quoi on ne peux pas commencer a monter ce skill. Une fois qu'on a le % en cachette pour le monter, on dois se cacher, ce qui rate 5 fois sur 6, jusqu'au 100% en cachette.<br>
+Comme on à pas 100% encore on rate son hide 3, 4, 8 fois avant de réussir a se hide. On essais alors furtivité, oups on le rate. On dois recommencer a se hide, on rate son hide 3, 4, 8 fois avant de réussir a se hide. On essais alors furtivité, oups on le rate ect ect ect.<br>
+On passe donc des jours, semaines, mois à monter ces 2 skills, jusqu'à ce qu'on est 100% dans les deux! Là on est trop content, on a réussi un gros défis!<br>
+Finalement on est décourager, pourquoi? Parce que même à 100% en furtivité, on rate encore 1 fois sur 5, résultat, on a perdu énormément de temps pour rien pour le résultat complètement nul.</p>
+<p>Je me demande si le staff accepterait de rendre furtivité immanquable a 100%? Parce que a ma connaissance, c'est un des rares skill de base à rater son coup aussi souvent. Si je compare aux autres skill très long a monter comme guérison, soin animal, taming et les 3 compétences de bases des bardes, je crois que c'est le seul qui se rate 1 fois sur 5. Par rapport a tout ce temps perdu, je pense qu'on mériterais peut-être de réussire a tout coup rendu a 100%?</p>
+<p>Voilà je voulais juste relancer le débat ^^</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-20-2009-at-1222-pm">Post by Phydias Shaytan, CP - December 20, 2009 at 12:22 PM</h2>
+<p><a id="post-238874"></a></p>
+<p>Juste pour ennuyer Anar : on rate 1/6 en fait xD</p>
+<p>Sinon, c'est vrai que c'est long et chiant à monter. J'appuie donc ^^</p>
+<hr>
+<h2 id="post-by-shigeru-maeda-adm---december-20-2009-at-616-pm">Post by Shigeru Maeda, Adm - December 20, 2009 at 6:16 PM</h2>
+<p><a id="post-238883"></a></p>
+<p>Rendre le skill immanquable je ne suis pas pour, mais le réduire à une chance sur 3 ou sur 2 c'est déjà plus plausible. Mais dans ce cas, il faudrait également, à mon sens, lui mettre un malus, comme par exemple, une incapacité à se cacher en public<br>
+ou quelque chose dans ce gout là... Et remettre en marche le skill &quot;Detection de l'invisible&quot; ?</p>
+<hr>
+<h2 id="post-by-koenzell-pandora-cp---december-20-2009-at-1125-pm">Post by Koenzell Pandora, Cp - December 20, 2009 at 11:25 PM</h2>
+<p><a id="post-238892"></a></p>
+<p>On peu déjà pas se cacher dans un combat ou quand un autre nous attaque et que nous nous sauvons. C'est déjà bien sa non?</p>
+<hr>
+<h2 id="post-by-anar-al-kazar-adm---december-21-2009-at-208-am">Post by Anar Al Kazar, AdM - December 21, 2009 at 2:08 AM</h2>
+<p><a id="post-238905"></a></p>
+<p>Je vois pas pourquoi on ne pourrais pas se cacher en publique, faut pas capoter avec la pop invisible là. La nuit par exemple, c'est très facile de se cacher dans une ruelle, en plein jour je dit pas, c'est très hrp de marcher hide a coter de quelqu'un, mais la nuit, quand il fait aussi noir que dans une caverne? A mon sens, c'est à la personne de décider s'il est rp ou non, et a lui seul incombe d'avoir une bonne ou une vilaine cote. Des abus il y en a partout, que veux-tu y faire? C'est a chacun de nous de savoir s'arrêter quand il le faut. Personnellement moi je me cache que dans les forêts dansent et la nuit, je sais pertinemment que sinon c'est pas rp. C’est pourquoi je propose d’améliorer un peu ce skill parce que je ne comprend pas pourquoi il faudrait rater ce skill archi long a monter. Mais c’est vrai que maintenant avec la commande .cachernom c’est mieux, cette commande est génial vraiment, mais je pense que déplacement silencieux pourrait être un peu moins agaçant arriver à mon nivaux?</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-21-2009-at-230-am">Post by Coordinateur Apoc - December 21, 2009 at 2:30 AM</h2>
+<p><a id="post-238906"></a></p>
+<p>J'ai/avais un personnage qui montait stealth et hiding donc je voulais pas trop y toucher mais si vous le demandez si gentillement.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Je vais regarder les scripts pour voir comment tout fonctionne et ensuite proposer une solution à l'équipe. Hiding et stealth sont probablement les deux skills les plus long à monter, surtout que le deuxième requiert le premier.</p>
+<p>Je ne veux pas toucher au fonctionnement du skill comme tel mais le rendre plus facile ca je peux y voir.</p>
+<p>Rendre le skill immanquable je ne suis pas pour, mais le réduire à une chance sur 3 ou sur 2 c'est déjà plus plausible. Mais dans ce cas, il faudrait également, à mon sens, lui mettre un malus, comme par exemple, une incapacité à se cacher en public<br>
+ou quelque chose dans ce gout là... Et remettre en marche le skill &quot;Detection de l'invisible&quot; ?</p>
+<p>Detect Hiding ne fonctionne pas? Je me souvient l'avoir déjà utilisé dans le passé mais peut-être qu'il y a eu une modification? Il est seulement mauvais ou il ne fonctionne pas tout court?</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---december-21-2009-at-310-am">Post by Phydias Shaytan, CP - December 21, 2009 at 3:10 AM</h2>
+<p><a id="post-238911"></a></p>
+<p>Le détect foonctionnait toujours la dernière fois que je l'ai essayé il me semble...</p>
+<p>J'ai une grande question philosophique, pourquoi pour être RP, stealth doit être réaliste au sens que nous connaissons ? Après tout, nous sommes dans un monde &quot;magique&quot;, on pourrait imaginer que c'est similaire à la cape d'invisibilité de Harry Potter et que quand on est dévoilé, c'est que y'a eu un coup de vent ! (bon, cette partie là est ironique).</p>
+<p>Je pense qu'il faut trouver un juste milieu. Pour exemple, si je devais refaire le GraveDigging, j'allierais ces deux composantes, le réalisme et le magique. Par exemple si on essaye de creuser trop vite, on se blesse (réaliste quoi), par contre, on a de temps en temps une chance de sortir une liche de son sommeil ^^ (ça c'est magiiique !!!).</p>
+<p>Tout ça pour dire qu'il faudrait peut-être dépasser le clicher du stealth caché derrière le rideau.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

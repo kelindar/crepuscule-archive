@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J&#39;aurais besoin d&#39;un service Kel - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">J&#39;aurais besoin d&#39;un service Kel</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">J&#39;aurais besoin d&#39;un service Kel</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="jaurais-besoin-dun-service-kel">J'aurais besoin d'un service Kel</h1>
+<h2 id="post-by-coordinateur-apoc---july-23-2008-at-103-pm">Post by Coordinateur Apoc - July 23, 2008 at 1:03 PM</h2>
+<p><a id="post-175061"></a></p>
+<p>Oh Grand maitre du script, serait-ce possible de m'aider avec un script? Je me débrouille bien pour corriger des trucs mais écrire un script au complet est légèrement hors de mes connaissances présentement.</p>
+<p>Il y a un moment déjà (J'avais légèrement oublié) j'avais écrit un script pour chuchotter mais j'avais eu un problème pour finaliser et je voulais te demander ton aide.</p>
+<p>\Scripts\Commands\Chuchotter.cs</p>
+<p>Si tu pourrais me pointer vers certains truc à corriger et surtout m'aider avec mon problème. Je veux que quand on utilise la commande, tout personnages autour du joueur l'utilisant, est une chance d'entendre ce qu'il dit selon leur detect hiding. Ce qu'il me faudrait surtout est la fonction à utiliser pour scanner autour du joueur à la recherche de personnages dans les environ. Présentement j'avais volé le GetClientsInRange d'un autre script mais j'ai aucune idée si c'est fonctionnel. Peut-être que le script est parfait comme il est mais il me faut un expert pour me le dire.  <img src="/assets/smilies/blush2.gif" alt=""><br>
+J'explique ce que je voulais faire la si ca peut aider. (http://www.au-crepuscule.com/forum/viewtopic.php?f=72&amp;t=19966)</p>
+<p>J'avais tester un peu seul et le script semblait fonctionner mais je n'avais pas tester avec des joueurs encore.</p>
+<p>Ne te gêne pas pour m'en parler sur msn quand tu aura un moment.</p>
+<p>Maintenant je veux savoir pourquoi l'envie de scripter me prend à 5h du matin quand je veux aller me coucher, heureusement que je suis en vacances...  <img src="/assets/smilies/wacko.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---july-23-2008-at-144-pm">Post by Fondateur Kel - July 23, 2008 at 1:44 PM</h2>
+<p><a id="post-175065"></a></p>
+<p>Voilà, comme je t'ai dit sur msn, je laisse juste une trace ici ^^</p>
+<p>IPooledEnumerable clientsInRange = from.GetClientsInRange(from.Location);<br>
+foreach (Server.Network.NetState state in clientsInRange)<br>
+{
+Mobile mobile = state.Mobile;<br>
+if(mobile is RacePlayerMobile)<br>
+{<br>
+RacePlayerMobile rpm = mobile as RacePlayerMobile;<br>
+// ...<br>
+}<br>
+}</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---july-23-2008-at-225-pm">Post by Coordinateur Apoc - July 23, 2008 at 2:25 PM</h2>
+<p><a id="post-175071"></a></p>
+<p>Merci bien, j'ai terminé, il me restera qu'a tester tout ca. Si vous voulez faire exploser le serveur, essayez de faire .chut.  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---july-23-2008-at-510-pm">Post by Fondateur Kel - July 23, 2008 at 5:10 PM</h2>
+<p><a id="post-175092"></a></p>
+<p>Vais aussi tester quand je rentre, je dois déboguer la version actuelle du serveur qui plante sur le save ^^<br>
+Tu l'as commité dans le SVN?</p>
+<hr>
+<h2 id="post-by-fondateur-kel---july-24-2008-at-821-pm">Post by Fondateur Kel - July 24, 2008 at 8:21 PM</h2>
+<p><a id="post-175326"></a></p>
+<p>Apoc? Y a un problème avec .chuchotter, j'ai updaté le SVN en commentant la ligne, regarde ^^<br>
+J'ai pas eu le temps encore de voir, il disait comme quoi il y avait un probleme de cast UnicodeMessage en RacePlayerMobile.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---july-24-2008-at-1019-pm">Post by Coordinateur Apoc - July 24, 2008 at 10:19 PM</h2>
+<p><a id="post-175349"></a></p>
+<p>Oops, j'avais volé ce truc de Télépathie pour que les gms puissent voir les chuchottement comme avec télépathie.  <img src="/assets/smilies/blush2.gif" alt=""><br>
+Je vais corriger et tester dès que je fais exploser mon ordi avec service pack 2 et 3  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---july-24-2008-at-1032-pm">Post by Coordinateur Apoc - July 24, 2008 at 10:32 PM</h2>
+<p><a id="post-175350"></a></p>
+<p>Kel, Si tu as une facon simple de rendre du texte visible seulement aux gms, c'est le but de cette ligne. Sinon je vais la modifier et voir ce que ca donne.</p>
+<p>Car présentement le gm doit quand même être à 5 case de distance pour voir ce message. (S'il fonctionnerait <img src="/assets/smilies/man_in_love.gif" alt="">)</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---july-25-2008-at-942-am">Post by Coordinateur Apoc - July 25, 2008 at 9:42 AM</h2>
+<p><a id="post-175415"></a></p>
+<p>Si tu peux vérifier que rien n'explose, il faudrait mettre à jour sur le serveur pour pouvoir tester en jeu.</p>
+<p>J'ai aussi ajouter la fraternité du chêne dans le playermobile et raceplayermobile à la demande de Lumina.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---july-25-2008-at-1111-am">Post by Fondateur Kel - July 25, 2008 at 11:11 AM</h2>
+<p><a id="post-175426"></a></p>
+<p>Je vais essayer déjà de tester sur mon serveur en local ce soir ^^<br>
+En profiterai pour le corriger pour que tu puisse t'en servir sans problèmes <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---july-25-2008-at-1227-pm">Post by Coordinateur Apoc - July 25, 2008 at 12:27 PM</h2>
+<p><a id="post-175440"></a></p>
+<p>J'ai légèrement modifier mon script de traite de vache, maintenant il faut un pichet vide au lieu d'en avoir un qui apparait par magie.</p>
+<p>Cela dit, j'aurais une question Kel, il n'y a que toi qui peut mettre le serveur à jour à partir du svn ou d'autres aussi? Je veux savoir à qui m'adresser quand j'aurai fait des trucs. Il faut dire que passer directement par toi est plus sûr au cas ou quelque chose tournerais mal. <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---july-25-2008-at-208-pm">Post by Fondateur Kel - July 25, 2008 at 2:08 PM</h2>
+<p><a id="post-175450"></a></p>
+<p>J'ai légèrement modifier mon script de traite de vache, maintenant il faut un pichet vide au lieu d'en avoir un qui apparait par magie.</p>
+<p>Cela dit, j'aurais une question Kel, il n'y a que toi qui peut mettre le serveur à jour à partir du svn ou d'autres aussi? Je veux savoir à qui m'adresser quand j'aurai fait des trucs. Il faut dire que passer directement par toi est plus sûr au cas ou quelque chose tournerais mal. <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Normalement les autres peuvent le faire mais on ne le fait pas pour l'instant, car on garde tout pour Crep2 <img src="/assets/smilies/smile.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

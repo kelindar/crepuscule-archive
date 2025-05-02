@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systemes a faire (Connaissances) - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Systemes a faire (Connaissances)</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Systemes a faire (Connaissances)</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="systemes-a-faire-connaissances">Systemes a faire (Connaissances)</h1>
+<h2 id="post-by-willy-scripteur---april-6-2008-at-120-am">Post by Willy, Scripteur - April 6, 2008 at 1:20 AM</h2>
+<p><a id="post-158560"></a></p>
+<p>Bon ici c'est surtout pour que Kel et moi gardons un lien entre nous afi nde savoir ce qui pourrais etre intégré au systeme de connaissances.</p>
+<p>Systemes que je pourrais faire:</p>
+<h2 id="-bijouterie-fine-nouveaux-bijoux-rares">-Crafts d'onguents<br>
+-Crafts de bandages<br>
+-Création de réactifs<br>
+-Fusion de métaux (on pourais ici enlever les minerais dans les dongeons et les rendre difficilement craftables)<br>
+-Bijouterie Fine (nouveaux bijoux rares)</h2>
+<ul>
+<li></li>
+</ul>
+<p>Des idées? d'autres viendrons!</p>
+<hr>
+<h2 id="post-by-fondateur-kel---april-6-2008-at-124-am">Post by Fondateur Kel - April 6, 2008 at 1:24 AM</h2>
+<p><a id="post-158561"></a></p>
+<p><img src="/assets/smilies/smile.gif" alt=""> <img src="/assets/smilies/smile.gif" alt=""><br>
+J'ai avancé un peu hier Willy, je sais pas si t'a vu ^^ Je bosserai surement demain encore.<br>
+Donc oui, faut ajouter des scripts intéressants dans le système de recherche.</p>
+<p>Création des réactifs ça serait bien que ça rentre dans le domaine d'agriculture. Donc soit pouvoir les planter soit qqchose d'autre.<br>
+Des idées?</p>
+<hr>
+<h2 id="post-by-anonymous---april-6-2008-at-228-am">Post by Anonymous - April 6, 2008 at 2:28 AM</h2>
+<p><a id="post-158572"></a></p>
+<p>Avec une pelle, on peut créer un trou. Si on plante une pomme ou ce genre de fruits, avec un certain % de chance, un arbre peut pousser et donner des fruits.</p>
+<p>Pareil pour les légumes. Il faudrait toutefois une skill.</p>
+<p>Je crois que ça peut entrer dans les réactifs non?</p>
+<hr>
+<h2 id="post-by-fondateur-kel---april-6-2008-at-650-pm">Post by Fondateur Kel - April 6, 2008 at 6:50 PM</h2>
+<p><a id="post-158639"></a></p>
+<p>-&gt; Système d'auction (je ne sais pas si c'est utilisé, mais c'etait implanté et fallait jsute traduire je pense)</p>
+<p>-&gt; Pareil pour le système d'Apiculture (miel)</p>
+<p>Si tu peux checker si tout ça est fonctionnel pr qu'on l'ajoute dans le craft..</p>
+<hr>
+<h2 id="post-by-willy-scripteur---april-6-2008-at-1014-pm">Post by Willy, Scripteur - April 6, 2008 at 10:14 PM</h2>
+<p><a id="post-158676"></a></p>
+<p>Pour auction sa faisun bout que je checkais sa<br>
+mais sa me dit a chaque fois que le systeme d'auction est fermé, il y a une commande pour le commancer mais je ne sait pas c'Est laquelle, ni non plus qu ien a le pouvoir.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---april-8-2008-at-526-pm">Post by Fondateur Kel - April 8, 2008 at 5:26 PM</h2>
+<p><a id="post-158859"></a></p>
+<p>Pour auction sa faisun bout que je checkais sa<br>
+mais sa me dit a chaque fois que le systeme d'auction est fermé, il y a une commande pour le commancer mais je ne sait pas c'Est laquelle, ni non plus qu ien a le pouvoir.</p>
+<p>T'a essayé celles là?</p>
+<p>Server.Commands.Register( &quot;InitAuction&quot;, AccessLevel.Administrator, new CommandEventHandler( OnInitAuction ) );<br>
+\t\t\tServer.Commands.Register( &quot;MyAuction&quot;, AccessLevel.Player, new CommandEventHandler( OnMyAuction ) );<br>
+\t\t\tServer.Commands.Register( &quot;Auction&quot;, AccessLevel.GameMaster, new CommandEventHandler( OnAuction ) );<br>
+\t\t\tServer.Commands.Register( &quot;AuctionAdmin&quot;, AccessLevel.Administrator, new CommandEventHandler( OnAuctionAdmin ) );</p>
+<hr>
+<h2 id="post-by-fondateur-kel---april-8-2008-at-709-pm">Post by Fondateur Kel - April 8, 2008 at 7:09 PM</h2>
+<p><a id="post-158869"></a></p>
+<p>Au fait Will, voici comment (pas encore sûr à 100%) tu va pouvoir définir qu'un Item est dans un projet de recherche.</p>
+<pre><code>public class CryptographicDocuments &amp;#58; CrepusculeItem  
+&amp;#123;  
+    public static void Initialize&amp;#40;&amp;#41;  
+    &amp;#123;   
+        Science&amp;#46;RegisterItem&amp;#40;typeof&amp;#40;CryptographicDocuments&amp;#41;, ScienceDomain&amp;#46;Mathematics, &quot;Cryptographie&quot;, 10010&amp;#41;;  
+    &amp;#125;
+
+    &amp;#46;&amp;#46;&amp;#46;
+</code></pre>
+<p>Où 10010 est un numéro de projet de recherche fondamental (jte montrerai où y a la liste).<br>
+Assez simple non? Juste avec cette ligne de code ça va créer un projet de recherche appliquée ^^</p>
+<hr>
+<h2 id="post-by-fondateur-kel---april-9-2008-at-656-pm">Post by Fondateur Kel - April 9, 2008 at 6:56 PM</h2>
+<p><a id="post-159046"></a></p>
+<p>Au fait,<br>
+Il faut essayer d'équilibrer les clases/guildes. Il faut que chaque classe sert à quelque chose et ne soit pas oubliée.</p>
+<p>Y a t-il des classes qui nécessitent des scripts en plus/correction des scripts actuels?</p>
+<hr>
+<h2 id="post-by-ex-lumina---april-9-2008-at-724-pm">Post by Ex-Lumina - April 9, 2008 at 7:24 PM</h2>
+<p><a id="post-159052"></a></p>
+<p>Hum.. et bien j'imagine que tu parles davantage de corriger les classe, mais je crois qu'il y a le nécrogolem pour les nécromanciens qui n'a jamais été terminé.</p>
+<p>Et ça serait vraiment bien que les Sages aient finalement quelque chose.. avec érudition et télépathie en skills principaux, les deux ne servent à <u>rien </u> lorsque montés.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---april-9-2008-at-1013-pm">Post by Mr Trovénère - April 9, 2008 at 10:13 PM</h2>
+<p><a id="post-159064"></a></p>
+<p>*Les moines aussi. *</p>
+<hr>
+<h2 id="post-by-fondateur-kel---april-30-2008-at-127-am">Post by Fondateur Kel - April 30, 2008 at 1:27 AM</h2>
+<p><a id="post-161962"></a></p>
+<p>Hum.. et bien j'imagine que tu parles davantage de corriger les classe, mais je crois qu'il y a le nécrogolem pour les nécromanciens qui n'a jamais été terminé.</p>
+<p>Et ça serait vraiment bien que les Sages aient finalement quelque chose.. avec érudition et télépathie en skills principaux, les deux ne servent à <u>rien </u> lorsque montés.</p>
+<p>Pour les nécros, je pensait d'abandonner les nécrogolems et mettre plutôt des invocations nécromantique, ça serait plus accessible pour les joueurs.</p>
+<p>Des idées pour la télépathie?<br>
+Et pour les moines?</p>
+<hr>
+<h2 id="post-by-anonymous---april-30-2008-at-206-am">Post by Anonymous - April 30, 2008 at 2:06 AM</h2>
+<p><a id="post-161974"></a></p>
+<p>Les moines, avantager la lutte? Le combat aux poings?</p>
+<p>Tiamat a fait quelques gumps d'armes qui s'installent sur chacune des mains, comme des gants ou ce genre de truc. Peut-être mélanger quelques sorts du paladins avec le combat aux poings...?</p>
+<p>Pour la télépathie, il y avait eu de nombreuses suggestions, dont <a href="http://www.au-crepuscule.com/forum/viewtopic.php?t=19296&amp;start=45">ce topic</a> et j'avais proposé ceci :</p>
+<p>0-10 en télépathie : Peut parler.</p>
+<p>10-20 : Peut savoir qui nous parle (On voit le nom)</p>
+<p>20-30 : Permet de localiser la source télépathique (Comme pistage)</p>
+<p>30 et plus : Permet de voir ce que la personne avec qui tu as pris contact voit, à savoir, tu te fais téléporté invisible derrière la personne et ton personnage la suit case par case automatiquement.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---april-30-2008-at-217-am">Post by Fondateur Kel - April 30, 2008 at 2:17 AM</h2>
+<p><a id="post-161977"></a></p>
+<p>Cool, vais voir le topic. Jviens de penser à:</p>
+<ul>
+<li>Une attaque télépathique qui ferait l'effet d'hallucination à la cible.</li>
+<li>D'autres attaques permettant d'immobiliser ou désarmer le personnage.</li>
+</ul>
+<p>Donc orienté un peu plus la télépathie vers le combat.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

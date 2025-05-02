@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dupe amélioré. - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Dupe amélioré.</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Dupe amélioré.</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="dupe-amlior">Dupe amélioré.</h1>
+<h2 id="post-by-feydanith-dit-la-carpe---may-28-2007-at-552-pm">Post by Feydanith, dit la Carpe - May 28, 2007 at 5:52 PM</h2>
+<p><a id="post-120371"></a></p>
+<p>Comme son nom l'indique, un dupe amélioré pour crépuscule.<br>
+En gros, c'est un Dupe qui ne dupe que directement dans le sac, mais celui-ci permet de copier un conteneur, avec son contenu et si celui-ci contient d'autres conteneurs, le contenu de ceux-ci récursivement.</p>
+<p>.DupeCrep amount</p>
+<p>Pas sorcier à utiliser ^^<br>
+Il est déjà installé et en jeu.</p>
+<p>using System;<br>
+using System.Reflection;<br>
+using Server.Items;<br>
+using Server.Targeting;</p>
+<p>namespace Server.Scripts.Commands<br>
+{<br>
+\tpublic class DupeCrep<br>
+\t{<br>
+\t\tpublic static void Initialize()<br>
+\t\t{<br>
+\t\t\tServer.Commands.Register( &quot;DupeCrep&quot;, AccessLevel.GameMaster, new CommandEventHandler( DupeCrep_OnCommand ) );<br>
+\t\t}</p>
+<p>\t\t[Usage( &quot;DupeCrep [amount]&quot; )]<br>
+\t\t[Description( &quot;Duplique un conteneur et son contenu ou un objet.&quot; )]<br>
+\t\tprivate static void DupeCrep_OnCommand( CommandEventArgs e )<br>
+\t\t{<br>
+\t\t\tint amount = 1;<br>
+\t\t\tif ( e.Length &gt;= 1 )<br>
+\t\t\t\tamount = e.GetInt32( 0 );<br>
+\t\t\te.Mobile.Target = new DupeCrepTarget( amount &gt; 0 ? amount : 1 );<br>
+\t\t\te.Mobile.SendMessage( &quot;Quel conteneur ou objet voulez-vous dupliquer ?&quot; );<br>
+\t\t}</p>
+<p>\t\tprivate class DupeCrepTarget : Target<br>
+\t\t{<br>
+\t\t\tprivate int m_Amount;</p>
+<p>\t\t\tpublic DupeCrepTarget( int amount ) : base( 15, false, TargetFlags.None )<br>
+\t\t\t{<br>
+\t\t\t\tm_Amount = amount;<br>
+\t\t\t}</p>
+<p>\t\t\tprotected override void OnTarget( Mobile from, object targ )<br>
+\t\t\t{\t\t\t\t<br>
+\t\t\t\tContainer pack = from.Backpack;<br>
+\t\t\t\t<br>
+\t\t\t\tif ( !(targ is Container) &amp;&amp; !(targ is Item) )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Vous pouvez uniquement dupliquer des conteneurs ou des objets.&quot; );<br>
+\t\t\t\t\treturn;<br>
+\t\t\t\t}<br>
+\t\t\t\t\t\t\t\t<br>
+\t\t\t\telse if ( targ is Container )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfor(int i = 0; i &lt; m_Amount; ++i)\t\t\t\t\t<br>
+\t\t\t\t\t\tcopyContainer( from, pack, (Container)targ );<br>
+\t\t\t\t}<br>
+\t\t\t\telse<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfor(int i = 0; i &lt; m_Amount; ++i)<br>
+\t\t\t\t\t\tcopyItem( from, pack, (Item)targ );<br>
+\t\t\t\t}<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tprivate static Item copyItem( Mobile from, Container pack, Item toCopy )<br>
+\t\t\t{<br>
+\t\t\t\tType t = toCopy.GetType();<br>
+\t\t\t\tConstructorInfo[] info = t.GetConstructors();<br>
+\t\t\t\t\t\t\t<br>
+\t\t\t\tforeach ( ConstructorInfo c in info )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tParameterInfo[] paramInfo = c.GetParameters();<br>
+\t\t\t\t\tif ( paramInfo.Length == 0 )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tobject[] objParams = new object[0];<br>
+\t\t\t\t\t\ttry<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tobject o = c.Invoke( objParams );<br>
+\t\t\t\t\t\t\tif ( o != null &amp;&amp; o is Item )<br>
+\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\tItem copy = (Item)o;<br>
+\t\t\t\t\t\t\t\ttoCopy.Dupe( copy, toCopy.Amount );<br>
+\t\t\t\t\t\t\t\tPropertyInfo[] props = toCopy.GetType().GetProperties();<br>
+\t\t\t\t\t\t\t\tfor ( int j = 0; j &lt; props.Length; j++ )<br>
+\t\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\t\tif ( props[j].CanRead &amp;&amp; props[j].CanWrite )<br>
+\t\t\t\t\t\t\t\t\t\tprops[j].SetValue( copy, props[j].GetValue( toCopy, null ), null );<br>
+\t\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\t\tif ( pack != null )<br>
+\t\t\t\t\t\t\t\t\tpack.DropItem( copy );<br>
+\t\t\t\t\t\t\t\telse<br>
+\t\t\t\t\t\t\t\t\tcopy.MoveToWorld( from.Location, from.Map );<br>
+\t\t\t\t\t\t\t\treturn copy;<br>
+\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcatch<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tfrom.SendMessage( &quot;Erreur lors de la copie d'un objet !&quot; );<br>
+\t\t\t\t\t\t\treturn null;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}<br>
+\t\t\t\treturn null;<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tprivate static void copyContainer( Mobile from, Container pack, Container toCopy )<br>
+\t\t\t{<br>
+\t\t\t\tContainer copy = (Container)copyItem( from, pack, toCopy );<br>
+\t\t\t\t<br>
+\t\t\t\tif ( copy != null )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tItem[] Content = toCopy.FindItemsByType( typeof( Item ) );<br>
+\t\t\t\t\tcopy.TotalGold = 0;\t\t\t\t\t<br>
+\t\t\t\t\tcopy.TotalItems = 0;<br>
+\t\t\t\t\tcopy.TotalWeight = 0;<br>
+\t\t\t\t\tfor ( int i = 0; i &lt; Content.Length; ++i)<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tif ( Content[i].Parent == toCopy )<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( Content[i] is Container )<br>
+\t\t\t\t\t\t\t\tcopyContainer( from, copy, (Container)Content[i] );<br>
+\t\t\t\t\t\t\telse<br>
+\t\t\t\t\t\t\t\tcopyItem( from, copy, Content[i] );<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}<br>
+\t\t\t}<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<hr>
+<h2 id="post-by-songe---may-28-2007-at-854-pm">Post by Songe - May 28, 2007 at 8:54 PM</h2>
+<p><a id="post-120380"></a></p>
+<p>ça vous sauve la vie quand vous devez refaire le stock d'uniforme mercenaire.</p>
+<hr>
+<h2 id="post-by-anonymous---may-28-2007-at-858-pm">Post by Anonymous - May 28, 2007 at 8:58 PM</h2>
+<p><a id="post-120382"></a></p>
+<p>géniale... tu esun génie Umrae je t'aime ^^</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crep Manager; Je l&#39;ai tout cassé - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Crep Manager; Je l&#39;ai tout cassé</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <span class="current-page">Crep Manager; Je l&#39;ai tout cassé</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="crep-manager-je-lai-tout-cass">Crep Manager; Je l'ai tout cassé</h1>
+<h2 id="post-by-nimue---may-27-2010-at-532-am">Post by Nimue - May 27, 2010 at 5:32 AM</h2>
+<p><a id="post-256303"></a></p>
+<p>*<span style="color:#FF0000">*Kel alarm Kel alarm Kel alarm Kel alarm Kel alarm Kel alarm Kel alarm Kel alarm Kel alarm Kel alarm Kel alarm Kel alarm Kel alarm Kel alarm Kel alarm <em></span></em></p>
+<p>Ce soir, pleine de bonnes intentions, je me suis dit que j'allais ajouter les meubles au menu crafting! Une petite prise de note.. des comparaisons, me voilà prête à ajouter tous ces beaux items là au grand plaisir des fervents de décoration.</p>
+<p>Je me questionne tout d'abord avec ce questionnement... &quot; Est-ce que je suis obligée d'hériter un item pour l'ajouter au craft&quot;. Incertaine je regarde les props de l'item suivant;</p>
+<p>TellElvenBedEastDeed</p>
+<p>Je vois via les props que je peux le rendre craftable! Je me dis donc que non, je ne suis pas obligé d'hériter l'objet. Je clique donc oui pour le rendre craftable, je lui donne des quantités de bois et de tissus, je le mets dans la catégorie carpentry et dans la sous catégorie meuble, tout va pour le mieux! Étrangement par contre je remarque que mon item ne semble pas s'ajouter au crafting...</p>
+<p>Je fais donc ceci;</p>
+<ul>
+<li>.add, gestion administrative, Update script. Ce qui me donne donc un bel update de Script. Juste après je fais un save.</li>
+<li>Ensuite je fais un .admin, administrer, serveur, shutdown and restart.</li>
+</ul>
+<p>À ma grande surprise... à ma reconnexion il manque un nombre considérable d'item dans pas mal tous les menus de crafting.</p>
+<p><span style="font-size:150%">À l'aide! Qu'est-ce que j'ai fais!</span></p>
+<p><img src="/assets/smilies/cray.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---may-27-2010-at-548-am">Post by Coordinateur Apoc - May 27, 2010 at 5:48 AM</h2>
+<p><a id="post-256306"></a></p>
+<p>Ce qui est étrange, c'est qu'il manque certains crafting au complet (Comme mon cuir  <img src="/assets/smilies/bye2.gif" alt=""> ) tandis que d'autres ne manques que certains objets aléatoires. (Un type d'armure à les bras et pantalons disons mais manques le reste.)</p>
+<p>Les items sont encore tous existants au moins. Ansi que les catégories de crafts. Donc dans le pire des cas, ce sera une bonne facon de mettre le crafting à jour!  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+L'important serait de trouver pourquoi c'est arrivé et s'assurer que ca ne le refait pas.  <img src="/assets/smilies/sad.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---may-28-2010-at-656-am">Post by Coordinateur Apoc - May 28, 2010 at 6:56 AM</h2>
+<p><a id="post-256383"></a></p>
+<p>Kel! Les nouveaux cuir et peaux que j'avais créé sont là en item mais pas dans le crafting! Ce sont les anciens cuirs et peaux qui sont revenu dans &quot;Création de Cuirs&quot;  <img src="/assets/smilies/sad.gif" alt=""><br>
+En plus, ils ont perdu leur hue et stats! Donc ils sont identiques comme si je venais de les faire hériter du leather et hides! La seule chose qu'ils ont gardé c'est le nom de script. Même le nom de l'item a disparu.</p>
+<p>Je dois encore une fois tout refaire ca?  <img src="/assets/smilies/cray.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---may-28-2010-at-104-pm">Post by Fondateur Kel - May 28, 2010 at 1:04 PM</h2>
+<p><a id="post-256394"></a></p>
+<p><em>Attends pour l'instant, je vais essayer de reproduire le bug et le corriger d'abord.</em></p>
+<hr>
+<h2 id="post-by-nimue---june-8-2010-at-319-am">Post by Nimue - June 8, 2010 at 3:19 AM</h2>
+<p><a id="post-256901"></a></p>
+<p>Apparemment les armures avancées de la Forge ont également fichu le camp...!</p>
+<p>Mais je suppose que ça reviendra une fois le bug corrigé?</p>
+<hr>
+<h2 id="post-by-conan---june-8-2010-at-322-am">Post by Conan - June 8, 2010 at 3:22 AM</h2>
+<p><a id="post-256902"></a></p>
+<p>Les objets que j'avais rajouter au craft couture ont disparu aussi <img src="/assets/smilies/sad.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---june-23-2010-at-845-pm">Post by Fondateur Kel - June 23, 2010 at 8:45 PM</h2>
+<p><a id="post-258034"></a></p>
+<p>Je viens de tester et essayer de reproduire, mais j'ai pas réussi.<br>
+Quelqu'un pour venir avec moi sur le serveur de test et faire des essais pour reproduire le bug?</p>
+<hr>
+<h2 id="post-by-conteur-wolf---september-1-2010-at-316-am">Post by Conteur Wolf - September 1, 2010 at 3:16 AM</h2>
+<p><a id="post-265174"></a></p>
+<p>J'ai mis à jour les objets ce soir et ca encore bugé. Les listes de vendeur offrent parfois 5000 objets en vente.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

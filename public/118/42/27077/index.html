@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système : Permis - Ressources - et compagnie ! - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Système : Permis - Ressources - et compagnie !</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/118//" class="nav-item">Guilde : Association des Commerçants</a>
+                
+                &rsaquo; <span class="current-page">Système : Permis - Ressources - et compagnie !</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="systme--permis---ressources---et-compagnie-">Système : Permis - Ressources - et compagnie !</h1>
+<h2 id="post-by-phydias-shaytan-cp---february-3-2009-at-249-am">Post by Phydias Shaytan, CP - February 3, 2009 at 2:49 AM</h2>
+<p><a id="post-203508"></a></p>
+<p>Comme le suggère Xul, on continue ici ^^</p>
+<p>Pour le calcul des prix, en fait, j'avais une formule toute bête qui tient compte des ressources nécessaires, de la skill nécessaire et d'une marge bénéficiaire pour l'artisant.</p>
+<p>Comme le skill détermine la réussite, vous verrez facilement où entre le skill en jeud ans le calcul du prix.</p>
+<p>Soit C &gt; 0, le cout de fabrication (somme des prix des ressources nécessaires)<br>
+Soit 100 &gt;= D &gt;= 0 le taux de réussite à 100% dans la skill</p>
+<p>P = (C*100)/D est le coût de fabrication moyen.</p>
+<p>Au cas où on a la poisse et qu'on rate souvent, on va mettre un prix à 2<em>P.<br>
+Après, il faut compter le bénéfice de l'artisant et ensuite celui de l'ADC. L'artisant est en toute logique rémunéré en fonction du prix de l'objet et l'adc pompe 10% en plus dessus.<br>
+On va donc poser que 2</em>P équivaut à 75% du prix final, comme ça l'adc pioche 10% et l'artisant 15%. Simplifions un peu</p>
+<p>Prix final :<br>
+= 2<em>P</em>100/75<br>
+= 200*P/75<br>
+= 20.000C/75D</p>
+<p>En pratique avec des outils pyrotechniques.<br>
+Chance de réussite : 100% (D)<br>
+Coût de fabrication : 15 po (C, 5 lingots de fer à 3 po)<br>
+Prix final : 40 po<br>
+Bénéfice ADC : 4 po<br>
+Bénéfice théorique de l'artisant : 6 po<br>
+Bénéfice réel de l'artisant : 21 po</p>
+<p>Cette règle de prix me semble donc fort adéquate <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Si certains sont un peu stériles aux maths, je veux bien essayer de fair eun petit utilitaire javascript ou exe ou php ou ce que vous voulez pour faciliter ce calcul.</p>
+<hr>
+<h2 id="post-by-farric-adc---february-3-2009-at-306-am">Post by Farric, AdC - February 3, 2009 at 3:06 AM</h2>
+<p><a id="post-203516"></a></p>
+<p>Ça a l'air bien tout ça, mais est-ce que ça va s'appliquer à tous les objets à vendre au complet ou juste les affaires comme le bois, le fer, etc. Parce que si c'est ça, ça va faire un peu HRP... sans compter que ça serait compliqué.</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---february-3-2009-at-313-am">Post by Phydias Shaytan, CP - February 3, 2009 at 3:13 AM</h2>
+<p><a id="post-203518"></a></p>
+<p>Personnellement, je ne trouve pas ça très compliqué. Multiplier le prix des ressources nécessaires par 20.000 et le diviser par 75 puis par le chiffre qui apparait dans ton menu de craft quand tu es au max... C'est tellement simple qu'il suffit d'indexer ça dans une jolie base de donnée et on pourrait générer n'importe quelle prix avec un minimum de variables et en un clic.</p>
+<p>Je ne vois pas où est le HRP à ce qu'un artisant vende ses produits sans pertes. Le coût de fabrication est une variable complètement RP puisque c'est le coût réel de l'artisant pour acquérir le matériel. Le taux de réussite reflète directement la difficultée à réaliser un objet et consiste donc également une variable RP. On doit de toute manière déterminer une manière de fixer les prix, donc si tu as mieux, je suis toute ouïe.</p>
+<hr>
+<h2 id="post-by-farric-adc---february-3-2009-at-316-am">Post by Farric, AdC - February 3, 2009 at 3:16 AM</h2>
+<p><a id="post-203519"></a></p>
+<p>Je disais HRP parce que utiliser nos skills dans un calcul pour un prix RP... je trouve ça bizarre. S'ils nous demandent d'où il vient le prix, on est faite <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+l'idée, je l'aime bien sinon  <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-xulzaer-maeldrim-ind---february-3-2009-at-729-pm">Post by Xul'zaer Maeldrim, Ind - February 3, 2009 at 7:29 PM</h2>
+<p><a id="post-203650"></a></p>
+<p>Je déplace mon poste d'idées ici... et j'en ajoute  <img src="/assets/smilies/smile.gif" alt=""><br>
+Il est évident qu'il ne faut pas accorder des avantages aux indépendants membres d'une autre guilde. Autrement, toutes les guildes vont s'arranger pour se procurer un forgeron ou un menuisier et nous perdrons tout avantage sur le marché que nous avons. Je suggère :</p>
+<ul>
+<li>
+<p>La formule un permis par catégorie de biens de vente comme actuellement resterait, à des prix abordables.</p>
+</li>
+<li>
+<p>Les indépendants ne peuvent donner des rabais à leurs clients et doivent suivre nos prix.</p>
+</li>
+<li>
+<p>Ça je suis pas certain... : abolition de l'obligation de faire des rapports pour les indépendants. À ma connaissance, personne n'en a jamais fait de toute manière. De un, ça prend beaucoup de temps courir après eux à la fin du mois pour les rapports. Et même s'ils étaient obligatoires, on a absolument aucuns moyens de vérifier s'ils nous mentent pas. À la place, on hausse de 5% le prix qu'on va décider tout à l'heure pour compenser le fait que c'est l'AdC qui se tappe la gestion, comme j'ai fait avec Lidenbrock.</p>
+</li>
+<li>
+<p>Malgré l'enlèvement des rapports, ils doivent toujours nous verser compensation de 20% lorsque leur ventes dépassent une certaine somme (15,000). Possible ici aussi qu'ils nous mentent, mais on pourra jamais rien prouver. On compte sur eux pour leur honnêteté; et on augmente les amendes pour leur faire peur. On ajoute une clause au codex comme quoi on peut aller inspecter l'atelier des indépendants si on trouve leur volume de vente trop excessif. Cela ajoute un contrôle physique législatif intéressant pour nous.</p>
+</li>
+<li>
+<p>Pour la surveillance des permis, on crée une entité au sein de l'Association : <em>l'Inquisition Commerciale</em>. Elle pourrait s'occuperait des missions plus directes tout en créant une certaine peur chez les indépendant. Par missions directes, j'entends qu'en plus de superviser les permis, elle pourrait s'occuper des perquisitions immobilières aussi. Un semblant de force armée, mais avec des crayons pour le moment hehe !</p>
+</li>
+</ul>
+<p>Cette idée là entre dans mon idée de restructuration de la guilde; dans le sens ou ya présentement zéro postes RP pour ceux qui veulent s'impliquer autrement que faire la pute de  marchandises. Ça impliquerait que faudrait refaire l'arbre des salaires et des titres de la guildes. Présentement je vois 3 branches désignant les 3 grands secteurs de l'économie : l'Inquisition Commerciale (le genre d'executif qui s'occupe des permis) et les Huissiers (en charge de la gestion de l'immobilier), les Seigneurs Marchands (en charge du commerce pur et dur) et l'Ingénierie (prise en charge des grands projets, autant les coûts que les ressources necessaires). Ça pourrait donner un arbre comme suit :</p>
+<p>Inquisiteur Commercial (1), Huissier (1) dirigeant : une quelconque escouade d'enquête commerciale indéterminée encore.<br>
+Seigneur Marchand (1) dirigeant : Maître Forgeron (1), Maître Menuisier (1), Maître Bricoleur (1) dirigeant des marchands, négociants, colportes divers.<br>
+Ingénieur Impérial (1) en charge des gros projets</p>
+<p>EDIT : Ceci dit, en y pensant on pourrait monter un arbre des postes indépendant de l'arbre de hiérarchie des paies. Par exemple, un négociant pourrait être Ingénieur impérial par exemple s'il est le meilleur, et sans nécessairement avoir pour le moment une paie qui va avec son rang. Bref, diviser rang et tâche.</p>
+<h2 id="ce-sont-des-ides-pour-le-moment-peut-tre-pas-super-bonnes-mais-je-les-sors-quand-mme-assetssmiliesman-in-lovegif">Ce sont des idées pour le moment, peut-être pas super bonnes mais je les sors quand même <img src="/assets/smilies/man_in_love.gif" alt=""></h2>
+<ul>
+<li>Quelqu'un pourrait-il me confirmer si les plantes, dont la Confrérie Pourpre s'occupe de la vente pour les magiciens, entrent dans la composition de biens (linge ?) ou de potions que nous vendons ? C'est malade le profit qu'ils se font avec ces plantes là... des sommes au dessus de 100,000 pièces pour une commande qui n'entrent pas sous notre controle de l'économie ... <img src="/assets/smilies/blink.gif" alt=""></li>
+</ul>
+<hr>
+<ul>
+<li>Ton calcul me semble intéressant Phydias, mais je catch pas qqch... est-ce que les prix seraient variables en fonction de chaque artisan et de son skill% ou bien tous fixés d'avance ? Si c'est en fonction du skill, ça complique les choses pas mal de toujours devoir tout recalculer à tout moment.</li>
+</ul>
+<p>-Umm... tu calcules que l'AdC pompe 10% des profits de ses membres ? Je suis pas très au courant mais c'est nouveau ça ? J'ai toujours cru que l'AdC ne chargeait rien à ses membres, justement pour promouvoir leur recrutement. Si l'artisan perd admettons 750 pièces à l'AdC par mois, il est aussi bien de se payer un permis et rester indépendant. Il a pas plus d'avantages autre que la paie hehe... Mais je peux me tromper !</p>
+<p>Ça avance notre affaire !  <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---february-3-2009-at-1106-pm">Post by Phydias Shaytan, CP - February 3, 2009 at 11:06 PM</h2>
+<p><a id="post-203696"></a></p>
+<p>Le prix est calculé comme si on avait 100% dans la skill. Donc une seule et unique liste des prix.</p>
+<p>Ah, je pensais que l'AdC pompait une partie des bénefs, je me trompais ? oO</p>
+<hr>
+<h2 id="post-by-koenzell-pandora-cp---february-4-2009-at-637-am">Post by Koenzell Pandora, Cp - February 4, 2009 at 6:37 AM</h2>
+<p><a id="post-203763"></a></p>
+<p>Non en effet nous ne recevont rien su ces profit. Nous pourrions leurs vendre un permit et ajuster un contrat affin de garder un cote de genre 2% sur les profits.</p>
+<hr>
+<h2 id="post-by-farric-adc---february-4-2009-at-709-am">Post by Farric, AdC - February 4, 2009 at 7:09 AM</h2>
+<p><a id="post-203783"></a></p>
+<blockquote>
+<p><strong>&quot;Phydias Shaytan, Adc&quot; wrote:</strong>
+Le prix est calculé comme si on avait 100% dans la skill. Donc une seule et unique liste des prix.</p>
+<p>Ha! ok, donc dans le fond, pour tous les artisans capable de faire un tabouret, ça va être le même prix?</p>
+<p>Je pensais que c'était avec le skill sur 100 qu'on a, mais individuellement, et qu'il fallait tout recalculer celui le skill à nous.</p>
+<p>Dans ce cas, faudrait voir de quoi ça aurait l'air avec différents objets.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-xulzaer-maeldrim-ind---february-4-2009-at-735-pm">Post by Xul'zaer Maeldrim, Ind - February 4, 2009 at 7:35 PM</h2>
+<p><a id="post-203840"></a></p>
+<blockquote>
+<p>Le prix est calculé comme si on avait 100% dans la skill. Donc une seule et unique liste des prix.</p>
+<p>Génial, je suis d'accord pour y aller d'une liste exhaustive des produits via ce calcul là ! Tu serais pas mathématicien par hasard Phydias ? lol... Par contre, je suis un peu indécis sur la cote à l'AdC. Je crois que je l'enlèverais du calcul pour le moment. Bref, les faits sont les suivants :</p>
+<ul>
+<li>
+<p>Pour le moment, les indépendants ne payent pas de redevances à l'ADC avant 15,000 de vente. Pourquoi les membres payeraient 2% tout le temps ? Je suis pas certain non plus si vous parlez des indépendants ou des membres. Si c'est le cas des indépendants, ça pourrait être intéressant... quoi qu'il en soit, dans un cas ou dans l'autre, ça va être problématique de véritablement savoir le chiffre de vente réel de tout le monde, et encore plus de courir après l'or de tout le monde. Si c'est le cas des membres, et si l'Association veut se prendre un profit, qu'elle coupe un peu les salaires de base hehe !! Ça fera moins de gestion pour nous ! Mais dans le fond... les profits de l'AdC servent en quelque sorte à verser les salaires... ? Donc ça revient au même ?</p>
+</li>
+<li>
+<p>Le but c'est d'attirer des joueurs dans l'Association, en leur promettant de les enrichir. Bref faut qu'ils aient la possibilité de s'enrichir un max comparativement à un indépendant. Et qu'ils aient des possibilités RP de qualité aussi, faut pas l'oublier.</p>
+</li>
+<li>
+<p>Le second but c'est de faire une gestion de l'économie sans que ça nous oblige à une tonne de gestion plate <em>in game</em>.</p>
+</li>
+</ul>
+<p>Je crois que l'on peut commencer à sortir une liste de prix d'après ce calcul là pour voir qu'est-ce que ça donne. Si tout le monde est d'accord bien entendu !  <img src="/assets/smilies/smile.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-koenzell-pandora-cp---february-5-2009-at-800-am">Post by Koenzell Pandora, Cp - February 5, 2009 at 8:00 AM</h2>
+<p><a id="post-203921"></a></p>
+<p>Mal lue pardon!! Il est hors de question que nous payons pour sa <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Je lisait un poste sur les plantes que la confrérie vend. Leur demander 10% serrais énorme donc je proposait 2% mais bon ce n'es pas en discussion et je lisais un autre poste en même temps. Pardon encore ^^</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modification : Vol - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Modification : Vol</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">Modification : Vol</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="modification--vol">Modification : Vol</h1>
+<h2 id="post-by-phydias-shaytan-cp---june-8-2008-at-1213-am">Post by Phydias Shaytan, CP - June 8, 2008 at 12:13 AM</h2>
+<p><a id="post-168625"></a></p>
+<p>Quelques petites suggestions et corrections pour le vol.</p>
+<p>Corrections :</p>
+<ul>
+<li>Messages aux témoins : vérifie que les témoins voient le voleur.</li>
+<li>Calcul des chances de se faire prendre :</li>
+</ul>
+<ul>
+<li>Intervention de la dextérité (-Dex/10 %)</li>
+<li>Intervention de la skil (-Skill*80/100 %)</li>
+<li>Bonus si caché (-5%)<br>
+Il faut grosso modo 150 de dext, être caché et avoir 100% en Hiding, Stealth et Stealing pour avoir 100% sans se faire prendre. Ca ne garanti pas la réussite du vol. Celle-ci restte inchangée et conditionnée par le poids de l'objet à voler (typiquement, on ne peut aps voler les armures car trop lourdes).</li>
+</ul>
+<p>Modifications :<br>
+Pour les deux modifications apportées (Vol caché et vol d'objet équipé), les paramètres sont en début de fichier avec possibilité de désactiver ou d'activer ces changements ^^</p>
+<ul>
+<li>Vol caché : Sur base d'une moyenne de Stealth et Hiding et sous conditions le voleur reste caché après son méfait !</li>
+</ul>
+<ul>
+<li>Il ne doit pas se faire prendre</li>
+<li>Avoir plus que stayHiddenSkill (50%) en Hiding et Stealth<br>
+Les paramètres stayHiddenMinChance (20%) et satyHiddenMaxChance (90%) permettent respectivement de fixer les chances minimales et maximales de rester cacher.</li>
+</ul>
+<ul>
+<li>Vol d'objet équipé : La personne sur laquelle on veut voler l'objet doit être un joueur. L'objet doit répondre à certains critères :</li>
+</ul>
+<ul>
+<li>être un bijou ou un vêtement</li>
+<li>être sur un des layers suivant : Helm, Neck, Ring, Earrings, Cloack, Bracelet ou Waist<br>
+Commettre ce genre de vol augmente de layerStealIncrease (50%) les chances de se faire prendre ! Les chances de réussite ne sont pas influencées</li>
+</ul>
+<p>Pour le plaisir des scripteurs, j'ai pensé à commenter tout ça. Par contre, j'ai aps pu compiler, donc il devrait y avoir deux trois fautes de frappes peut-être...</p>
+<p>Stealing.cs</p>
+<p>using System;<br>
+using Server;<br>
+using Server.Mobiles;<br>
+using Server.Targeting;<br>
+using Server.Items;<br>
+using Server.Network;</p>
+<p>namespace Server.SkillHandlers<br>
+{<br>
+\tpublic class Stealing<br>
+\t{<br>
+\t  // -------------------------------------------------------------------------<br>
+\t  // Paramètres - Système de vol caché<br>
+\t  // -------------------------------------------------------------------------<br>
+\t  // stayHidden :<br>
+\t  // @Description<br>
+\t  //   Activation du système<br>
+\t  // @Valeur<br>
+\t  // - true = actif<br>
+\t  // - false = inactif<br>
+\t  private bool stayHidden = true;<br>
+\t  // stayHiddenMaxChance :<br>
+\t  // @Description<br>
+\t  //   Chance maximum de rester cacher (Hiding &amp; Stealth à 100%)<br>
+\t  private double stayHiddenMaxChance = 90.0;<br>
+\t  // stayHiddenMinChance :<br>
+\t  // @Description<br>
+\t  //   Chance minimum de rester cacher (Hiding &amp; Stealth à StayHiddenSkill)<br>
+\t  private double stayHiddenMinChance = 20.0;<br>
+\t  // stayHiddenSkill :<br>
+\t  // @Description<br>
+\t  //   Compétence minimum requise pour rester caché lors d'un vol<br>
+\t  private double stayHiddenSkill = 50.0;<br>
+\t  // -------------------------------------------------------------------------<br>
+\t  // Paramètres - Vol d'objet équipé<br>
+\t  // -------------------------------------------------------------------------<br>
+\t  // layerSteal :<br>
+\t  // @Description<br>
+\t  //   Activation du vol d'objet équipé<br>
+\t  // @Valeur<br>
+\t  // - true = actif<br>
+\t  // - false = inactif<br>
+\t  private bool layerSteal = true;<br>
+\t  // layerStealIncrease :<br>
+\t  // @Description<br>
+\t  //   Augmentation en % des chances de se faire prendre lorsque l'on vole un<br>
+\t  //   objet équipé.<br>
+\t  private double layerStealIncrease = 50;<br>
+\t  // -------------------------------------------------------------------------<br>
+\t\tpublic static void Initialize()<br>
+\t\t{<br>
+\t\t\tSkillInfo.Table[33].Callback = new SkillUseCallback( OnUse );<br>
+\t\t}</p>
+<p>\t\tpublic static readonly bool ClassicMode = false;</p>
+<p>\t\tpublic static readonly bool SuspendOnMurder = false;</p>
+<p>\t\tpublic static bool IsInGuild( Mobile m )<br>
+\t\t{<br>
+\t\t\treturn ( m is PlayerMobile &amp;&amp; ((PlayerMobile)m).NpcGuild == NpcGuild.ThievesGuild );<br>
+\t\t}</p>
+<p>\t\tpublic static bool IsInnocentTo( Mobile from, Mobile to )<br>
+\t\t{<br>
+\t\t\treturn ( Notoriety.Compute( from, (Mobile)to ) == Notoriety.Innocent );<br>
+\t\t}</p>
+<p>\t\tprivate class StealingTarget : Target<br>
+\t\t{<br>
+\t\t\tprivate Mobile m_Thief;</p>
+<p>\t\t\tpublic StealingTarget( Mobile thief ) : base ( 1, false, TargetFlags.None )<br>
+\t\t\t{<br>
+\t\t\t\tm_Thief = thief;<br>
+\t\t\t\tAllowNonlocal = true;<br>
+\t\t\t}<br>
+\t\t\tprivate Item TryStealItem( Item toSteal, ref bool caught )<br>
+\t\t\t{<br>
+\t\t\t\tItem stolen = null;</p>
+<p>\t\t\t\t// ---------------------------------------------------------------------<br>
+\t\t\t\t// Paramètres internes supplémentaires<br>
+\t\t\t\t// ---------------------------------------------------------------------<br>
+\t\t\t\t// caughtChance<br>
+\t\t\t\t// @Description<br>
+\t\t\t\t//   Chance de base de se faire attrapper en %<br>
+\t\t\t\tdouble caughChance = 100;<br>
+\t\t\t\t// ---------------------------------------------------------------------</p>
+<p>\t\t\t\tobject root = toSteal.RootParent;</p>
+<p>\t\t\t\tif ( !IsEmptyHanded( m_Thief ) )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tm_Thief.SendLocalizedMessage( 1005584 ); // Both hands must be free to steal.<br>
+\t\t\t\t}</p>
+<p>\t\t\t\telse if ( SuspendOnMurder &amp;&amp; root is Mobile &amp;&amp; ((Mobile)root).Player &amp;&amp; IsInGuild( m_Thief ) &amp;&amp; m_Thief.Kills &gt; 0 )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tm_Thief.SendLocalizedMessage( 502706 ); // You are currently suspended from the thieves guild.<br>
+\t\t\t\t}</p>
+<p>\t\t\t\telse if ( root is BaseVendor &amp;&amp; ((BaseVendor)root).IsInvulnerable )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tm_Thief.SendLocalizedMessage( 1005598 ); // You can't steal from shopkeepers.<br>
+\t\t\t\t}</p>
+<p>\t\t\t\telse if ( root is PlayerVendor )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tm_Thief.SendLocalizedMessage( 502709 ); // You can't steal from vendors.<br>
+\t\t\t\t}</p>
+<p>\t\t\t\telse if ( !m_Thief.CanSee( toSteal ) )</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\tm_Thief.SendLocalizedMessage( 500237 ); // Target can not be seen.</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\telse if ( toSteal.Parent == null || !toSteal.Movable || toSteal.LootType == LootType.Newbied || toSteal.CheckBlessed( root ) )</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\tm_Thief.SendLocalizedMessage( 502710 ); // You can't steal that!</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\telse if ( !m_Thief.InRange( toSteal.GetWorldLocation(), 1 ) )</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\tm_Thief.SendLocalizedMessage( 502703 ); // You must be standing next to an item to steal it.</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\telse if ( toSteal.Parent is Mobile )</p>
+<p>\t\t\t\t{<br>
+\t\t\t\t// ---------------------------------------------------------------------<br>
+\t\t\t\t// Système de vol d'objet équipé<br>
+\t\t\t\t// ---------------------------------------------------------------------<br>
+\t\t\t\t// On vérifie si le système est actif<br>
+\t\t\t\t  if ( layerSteal )<br>
+\t\t\t\t  {<br>
+\t\t\t\t// On vérifie que c'est bien un joueur et non un PNJ<br>
+\t\t\t\t    if ( toSteal.Parent is PlayerMobile )<br>
+\t\t\t\t    {<br>
+\t\t\t\t// On vérifie que l'objet correspond aux critères :<br>
+\t\t\t\t// - Layer = Neck ou Helm ou Earrings ou Cloak ou Waist ou Ring ou Bracelet<br>
+\t\t\t\t// - Est un vêtement ou un bijoux<br>
+\t\t\t\t// Si validé, on augmente les chances de se faire prendre<br>
+\t\t\t\t      if ( ( toSteal is BaseClothing || toSteal is BaseJewel ) &amp;&amp;<br>
+\t\t\t\t           ( toSteal.Layer == Layer.Neck ||<br>
+\t\t\t\t           toSteal.Layer == Layer.Helm ||<br>
+\t\t\t\t           toSteal.Layer == Layer.Earrings ||<br>
+\t\t\t\t           toSteal.Layer == Layer.Cloak ||<br>
+\t\t\t\t           toSteal.Layer == Layer.Waist ||<br>
+\t\t\t\t           toSteal.Layer == Layer.Ring ||<br>
+\t\t\t\t           toSteal.Layer == Layer.Bracelet ) )<br>
+\t\t\t\t        caughtChance += layerStealIncrease;<br>
+\t\t\t\t// Autrement, on notifie le voleur\t<br>
+\t\t\t\t      else<br>
+\t\t\t\t        m_Thief.SendMessage( &quot;C'est trop dangereux de voler cet objet sur cette personne !&quot; );\t\t\t     <br>
+\t\t\t\t    }<br>
+\t\t\t\t// Autrement, on notifie le voleur<br>
+\t\t\t\t    else<br>
+\t\t\t\t      m_Thief.SendMessage( &quot;Cette personne a l'air bien trop vigilante !&quot; );<br>
+\t\t\t\t  }<br>
+\t\t\t\t// Autrement, on empêche le vol et on notifie le voleur<br>
+\t\t\t\t  else</p>
+<p>\t\t\t\t\t  m_Thief.SendLocalizedMessage( 1005585 ); // You cannot steal items which are equiped.<br>
+\t\t\t\t// ---------------------------------------------------------------------</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\telse if ( root == m_Thief )</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\tm_Thief.SendLocalizedMessage( 502704 ); // You catch yourself red-handed.</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\telse if ( root is Mobile &amp;&amp; ((Mobile)root).AccessLevel &gt; AccessLevel.Player )</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\tm_Thief.SendLocalizedMessage( 502710 ); // You can't steal that!</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\telse if ( root is Mobile &amp;&amp; !m_Thief.CanBeHarmful( (Mobile)root ) )</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\telse</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\tdouble w = toSteal.Weight + toSteal.TotalWeight;</p>
+<p>\t\t\t\t\tif ( w &gt; 10 )</p>
+<p>\t\t\t\t\t{</p>
+<p>\t\t\t\t\t\tm_Thief.SendMessage( &quot;That is too heavy to steal.&quot; );</p>
+<p>\t\t\t\t\t}</p>
+<p>\t\t\t\t\telse</p>
+<p>\t\t\t\t\t{</p>
+<p>\t\t\t\t\t\tif ( toSteal.Stackable &amp;&amp; toSteal.Amount &gt; 1 )</p>
+<p>\t\t\t\t\t\t{</p>
+<p>\t\t\t\t\t\t\tint maxAmount = (int)((m_Thief.Skills[SkillName.Stealing].Value / 10.0) / toSteal.Weight);</p>
+<p>\t\t\t\t\t\t\tif ( maxAmount &lt; 1 )</p>
+<p>\t\t\t\t\t\t\t\tmaxAmount = 1;</p>
+<p>\t\t\t\t\t\t\telse if ( maxAmount &gt; toSteal.Amount )</p>
+<p>\t\t\t\t\t\t\t\tmaxAmount = toSteal.Amount;</p>
+<p>\t\t\t\t\t\t\tint amount = Utility.RandomMinMax( 1, maxAmount );</p>
+<p>\t\t\t\t\t\t\tif ( amount &gt;= toSteal.Amount )</p>
+<p>\t\t\t\t\t\t\t{</p>
+<p>\t\t\t\t\t\t\t\tint pileWeight = (int)Math.Ceiling( toSteal.Weight * toSteal.Amount );</p>
+<p>\t\t\t\t\t\t\t\tpileWeight *= 10;</p>
+<p>\t\t\t\t\t\t\t\tif ( m_Thief.CheckTargetSkill( SkillName.Stealing, toSteal, pileWeight - 22.5, pileWeight + 27.5 ) )</p>
+<p>\t\t\t\t\t\t\t\t\tstolen = toSteal;</p>
+<p>\t\t\t\t\t\t\t}</p>
+<p>\t\t\t\t\t\t\telse</p>
+<p>\t\t\t\t\t\t\t{</p>
+<p>\t\t\t\t\t\t\t\tint pileWeight = (int)Math.Ceiling( toSteal.Weight * amount );</p>
+<p>\t\t\t\t\t\t\t\tpileWeight *= 10;</p>
+<p>\t\t\t\t\t\t\t\tif ( m_Thief.CheckTargetSkill( SkillName.Stealing, toSteal, pileWeight - 22.5, pileWeight + 27.5 ) )</p>
+<p>\t\t\t\t\t\t\t\t{</p>
+<p>\t\t\t\t\t\t\t\t\tstolen = toSteal.Dupe( amount );</p>
+<p>\t\t\t\t\t\t\t\t\ttoSteal.Amount -= amount;</p>
+<p>\t\t\t\t\t\t\t\t}</p>
+<p>\t\t\t\t\t\t\t}</p>
+<p>\t\t\t\t\t\t}</p>
+<p>\t\t\t\t\t\telse</p>
+<p>\t\t\t\t\t\t{</p>
+<p>\t\t\t\t\t\t\tint iw = (int)Math.Ceiling( w );</p>
+<p>\t\t\t\t\t\t\tiw *= 10;</p>
+<p>\t\t\t\t\t\t\tif ( m_Thief.CheckTargetSkill( SkillName.Stealing, toSteal, iw - 22.5, iw + 27.5 ) )</p>
+<p>\t\t\t\t\t\t\t\tstolen = toSteal;</p>
+<p>\t\t\t\t\t\t}</p>
+<p>\t\t\t\t\t\tif ( stolen != null )</p>
+<p>\t\t\t\t\t\t\tm_Thief.SendLocalizedMessage( 502724 ); // You succesfully steal the item.</p>
+<p>\t\t\t\t\t\telse</p>
+<p>\t\t\t\t\t\t\tm_Thief.SendLocalizedMessage( 502723 ); // You fail to steal the item.</p>
+<pre><code>        // -----------------------------------------------------------------  
+        // Correction des chances de se faire prendre  
+        // -----------------------------------------------------------------  
+        // Intervention de la dextérité  
+        caughChance -= m_Thief&amp;#46;RawDex/10;  
+        // Intervention de la skill  
+        caughChance -= m_Thief&amp;#46;Skills&amp;#91;SkillName&amp;#46;Hiding&amp;#93;&amp;#46;Value*80/100;  
+        // Bonus si on est caché  
+        if &amp;#40; m_Thief&amp;#46;Hidden &amp;#41;  
+          caughChance -= 5  
+</code></pre>
+<p>\t\t\t\t\t\tcaught = ( caughChance &gt; Utility.Random( 100 ) );<br>
+\t\t\t\t\t\t// -----------------------------------------------------------------</p>
+<p>\t\t\t\t\t}</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\treturn stolen;</p>
+<p>\t\t\t}</p>
+<p>\t\t\tprotected override void OnTarget( Mobile from, object target )</p>
+<p>\t\t\t{</p>
+<p>\t\t\t\tItem stolen = null;</p>
+<p>\t\t\t\tobject root = null;</p>
+<p>\t\t\t\tbool caught = false;</p>
+<p>\t\t\t\tif ( target is Item )</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\troot = ((Item)target).RootParent;</p>
+<p>\t\t\t\t\tstolen = TryStealItem( (Item)target, ref caught );</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\telse if ( target is Mobile )</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\tContainer pack = ((Mobile)target).Backpack;</p>
+<p>\t\t\t\t\tif ( pack != null &amp;&amp; pack.Items.Count &gt; 0 )</p>
+<p>\t\t\t\t\t{</p>
+<p>\t\t\t\t\t\tint randomIndex = Utility.Random( pack.Items.Count );</p>
+<p>\t\t\t\t\t\troot = target;</p>
+<p>\t\t\t\t\t\tstolen = TryStealItem( (Item) pack.Items[randomIndex], ref caught );</p>
+<p>\t\t\t\t\t}</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\telse</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\tm_Thief.SendLocalizedMessage( 502710 ); // You can't steal that!</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\tif ( stolen != null )</p>
+<p>\t\t\t\t\tfrom.AddToBackpack( stolen );<br>
+\t\t\t\t<br>
+\t\t\t\t// ---------------------------------------------------------------------<br>
+\t\t\t\t// Gestion du vol caché<br>
+\t\t\t\t// ---------------------------------------------------------------------<br>
+\t\t\t\t// On vérifie :<br>
+\t\t\t\t// - que le système est actif<br>
+\t\t\t\t// - que le voleur ne s'est pas fait attrappé<br>
+\t\t\t\t// - qu'il a le niveau requis en Hiding et Stealth<br>
+\t\t\t\t// Sinon, on révèle le voleur<br>
+\t\t\t\tif ( !stayHidden || caught ||<br>
+\t\t\t\t     m_Thief.Skills[SkillName.Hiding].Value &lt; stayHiddenSkill ||<br>
+\t\t\t\t     m_Thief.Skills[SkillName.Stealth].Value &lt; stayHiddenSkill )<br>
+\t\t\t\t  from.RevealingAction();<br>
+\t\t\t\t// Autrement on calcule ses chances de passer inaperçu<br>
+\t\t\t\telse<br>
+\t\t\t\t{<br>
+\t\t\t\t// On calcule ses chances de rester cacher en fonction de :<br>
+\t\t\t\t// - Son niveau en Hiding<br>
+\t\t\t\t// - Son niveau en Stealth<br>
+\t\t\t\t// - stayHiddenMinChance<br>
+\t\t\t\t// - stayHiddenMaxChance<br>
+\t\t\t\t// - stayHiddenSkill<br>
+\t\t\t\t  double hSkill =  ((m_Thief.Skills[SkillName.Hiding].Value<br>
+\t\t\t\t                   +m_Thief.Skills[SkillName.Hiding].Value)/2<br>
+\t\t\t\t                   -stayHiddenSkill)/(100-stayHiddenSkill)<br>
+\t\t\t\t                   *(stayHiddenMaxChance-stayHiddenMinChance)<br>
+\t\t\t\t                   +stayHiddenMinChance;<br>
+\t\t\t\t// Si ses chances sont inférieur à un chiffre au hasard entre 0 et 100<br>
+\t\t\t\t// Alors il est révélé, autrement on ne fait rien<br>
+\t\t\t\t  if ( hSkill &lt; Utility.Random( 100 ) )<br>
+\t\t\t\t    from.RevealingAction();<br>
+\t\t\t\t}<br>
+\t\t\t\t// ---------------------------------------------------------------------</p>
+<p>\t\t\t\tif ( caught )</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\tif ( root == null )</p>
+<p>\t\t\t\t\t{</p>
+<p>\t\t\t\t\t\tm_Thief.CriminalAction( false );</p>
+<p>\t\t\t\t\t}</p>
+<p>\t\t\t\t\telse if ( root is Corpse &amp;&amp; ((Corpse)root).IsCriminalAction( m_Thief ) )</p>
+<p>\t\t\t\t\t{</p>
+<p>\t\t\t\t\t\tm_Thief.CriminalAction( false );</p>
+<p>\t\t\t\t\t}</p>
+<p>\t\t\t\t\telse if ( root is Mobile )</p>
+<p>\t\t\t\t\t{</p>
+<p>\t\t\t\t\t\tMobile mobRoot = (Mobile)root;</p>
+<p>\t\t\t\t\t\tif ( !IsInGuild( mobRoot ) &amp;&amp; IsInnocentTo( m_Thief, mobRoot ) )</p>
+<p>\t\t\t\t\t\t\tm_Thief.CriminalAction( false );</p>
+<pre><code>        // -----------------------------------------------------------------  
+        // Correction du message aux témoins  
+        // -----------------------------------------------------------------  
+        // Traduction du message en français
+</code></pre>
+<p>\t\t\t\t\t\tstring message = String.Format( &quot;Vous remarquez {0} en train d'essayer de voler {1}.&quot;, m_Thief.Name, mobRoot.Name );</p>
+<p>\t\t\t\t\t\tforeach ( NetState ns in m_Thief.GetClientsInRange( 8 ) )</p>
+<p>\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t// On vérifie en plus que le témoin voit vraiment le voleur</p>
+<p>\t\t\t\t\t\t\tif ( ns != m_Thief.NetState &amp;&amp; ns.Mobile.CanSee( m_Thief ) )</p>
+<p>\t\t\t\t\t\t\t\tns.Mobile.SendMessage( message );</p>
+<p>\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t// -----------------------------------------------------------------</p>
+<p>\t\t\t\t\t}</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\telse if ( root is Corpse &amp;&amp; ((Corpse)root).IsCriminalAction( m_Thief ) )</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\tm_Thief.CriminalAction( false );</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t\tif ( root is Mobile &amp;&amp; ((Mobile)root).Player &amp;&amp; m_Thief is PlayerMobile &amp;&amp; IsInnocentTo( m_Thief, (Mobile)root ) &amp;&amp; !IsInGuild( (Mobile)root ) )</p>
+<p>\t\t\t\t{</p>
+<p>\t\t\t\t\tPlayerMobile pm = (PlayerMobile)m_Thief;</p>
+<p>\t\t\t\t\tpm.PermaFlags.Add( (Mobile)root );</p>
+<p>\t\t\t\t\tpm.Delta( MobileDelta.Noto );</p>
+<p>\t\t\t\t}</p>
+<p>\t\t\t}</p>
+<p>\t\t}</p>
+<p>\t\tpublic static bool IsEmptyHanded( Mobile from )</p>
+<p>\t\t{</p>
+<p>\t\t\tif ( from.FindItemOnLayer( Layer.OneHanded ) != null )</p>
+<p>\t\t\t\treturn false;</p>
+<p>\t\t\tif ( from.FindItemOnLayer( Layer.TwoHanded ) != null )</p>
+<p>\t\t\t\treturn false;</p>
+<p>\t\t\treturn true;</p>
+<p>\t\t}</p>
+<p>\t\tpublic static TimeSpan OnUse( Mobile m )</p>
+<p>\t\t{</p>
+<p>\t\t\tif ( !IsEmptyHanded( m ) )</p>
+<p>\t\t\t{</p>
+<p>\t\t\t\tm.SendLocalizedMessage( 1005584 ); // Both hands must be free to steal.</p>
+<p>\t\t\t}</p>
+<p>\t\t\telse</p>
+<p>\t\t\t{</p>
+<p>\t\t\t\tm.Target = new Stealing.StealingTarget( m );</p>
+<p>\t\t\t\tm.RevealingAction();</p>
+<p>\t\t\t\tm.SendLocalizedMessage( 502698 ); // Which item do you want to steal?</p>
+<p>\t\t\t}</p>
+<p>\t\t\treturn TimeSpan.FromSeconds( 10.0 );</p>
+<p>\t\t}</p>
+<p>\t}</p>
+<p>}</p>
+<hr>
+<h2 id="post-by-wilhelm-vonbrochert-cp---june-8-2008-at-1221-am">Post by Wilhelm VonBrochert, CP - June 8, 2008 at 12:21 AM</h2>
+<p><a id="post-168626"></a></p>
+<p>Il est evident que le stealing doit être revu.<br>
+Ce que tu as fait me parrait bien.</p>
+<hr>
+<h2 id="post-by-yriel-asuryan---june-8-2008-at-1252-am">Post by Yriel Asuryan - June 8, 2008 at 12:52 AM</h2>
+<p><a id="post-168632"></a></p>
+<p><span style="font-size:200%">GNIAH</span>  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Ho oui ho oui.<br>
+Il était temps.</p>
+<hr>
+<h2 id="post-by-lidenbrock-adc---june-8-2008-at-1257-am">Post by Lidenbrock, AdC - June 8, 2008 at 12:57 AM</h2>
+<p><a id="post-168635"></a></p>
+<p>À quand le loot sur les joueurs à nouveau possible ?<br>
+Ben quoi, on peut toujours revé  <img src="/assets/smilies/bye2.gif" alt=""></p>
+<p>Sinon, c'est une bonne idée je crois et je me demande quand on va voir ca  <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-giancarlo-adc---june-8-2008-at-110-am">Post by Giancarlo, AdC - June 8, 2008 at 1:10 AM</h2>
+<p><a id="post-168636"></a></p>
+<p>Il faudrait aussi revoir le loot dans les maisons, ya certaine maison tu as juste à regarder s'il n'y a pas de Gm et tu peux volé tous ce qui t'intéresse et repartir, ni vue ni connue.</p>
+<hr>
+<h2 id="post-by-yriel-asuryan---june-8-2008-at-117-am">Post by Yriel Asuryan - June 8, 2008 at 1:17 AM</h2>
+<p><a id="post-168638"></a></p>
+<blockquote>
+<p><strong>&quot;Zarthax, Emp&quot; wrote:</strong>
+Il faudrait aussi revoir le loot dans les maisons, ya certaine maison tu as juste à regarder s'il n'y a pas de Gm et tu peux volé tous ce qui t'intéresse et repartir, ni vue ni connue.</p>
+<p>Ben c'est une grosse avert si tu te fais choper ça...</p>
+</blockquote>
+<hr>
+<h2 id="post-by-giancarlo-adc---june-8-2008-at-121-am">Post by Giancarlo, AdC - June 8, 2008 at 1:21 AM</h2>
+<p><a id="post-168639"></a></p>
+<p>Pourtant, ya un petit mec se matin qui a volé des pièces d'armures de spined que je venais juste d'acheter, il y a à peine quelques heures.</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---june-9-2008-at-319-am">Post by Phydias Shaytan, CP - June 9, 2008 at 3:19 AM</h2>
+<p><a id="post-168848"></a></p>
+<p>Le staff a-t-il déjà débattu d'un avis sur la question ?</p>
+<p>Des retouches à faire ?</p>
+<hr>
+<h2 id="post-by-yriel-asuryan---june-9-2008-at-328-am">Post by Yriel Asuryan - June 9, 2008 at 3:28 AM</h2>
+<p><a id="post-168849"></a></p>
+<p>Tu t'étais pas déja fait ouned sur le forum parce que tu étais pas scripteur faisant partie du staff ? Ou alors c'était un autre ?<br>
+Rien de méchant dans ce que je dis, je serais très heureux que ton système soit accepté et j'attends cette modification depuis longtemps.<br>
+Pour ce qui est de la régularité j'en touche pas une en script mais la réponse du staff risque d'être la même que pour le dernier scripteur sauvage de bonne foi qui à proposé un script.</p>
+<p><img src="/assets/smilies/mamba.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fanro-ind---june-9-2008-at-333-am">Post by Fëanáro, Ind - June 9, 2008 at 3:33 AM</h2>
+<p><a id="post-168850"></a></p>
+<p>C'étais moi et sincèrement il est meilleur que moi^^</p>
+<hr>
+<h2 id="post-by-anonymous---june-9-2008-at-451-am">Post by Anonymous - June 9, 2008 at 4:51 AM</h2>
+<p><a id="post-168863"></a></p>
+<p>Vos suggestions sont toujours lues et écoutés. Ne vous inquiétez pas.  <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-dante---june-9-2008-at-108-pm">Post by Dante - June 9, 2008 at 1:08 PM</h2>
+<p><a id="post-168923"></a></p>
+<ul>
+<li>vole une bague alors que je porte des gants par dessus *</li>
+</ul>
+<p><em>Vole carrément un torse ou une chemise que je porte</em></p>
+<p>éventuellement modifier également un chouillat la formule ? Un voleur ne vole pas un garde aussi facilement qu'un autre voleur ?</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---june-9-2008-at-354-pm">Post by Phydias Shaytan, CP - June 9, 2008 at 3:54 PM</h2>
+<p><a id="post-168941"></a></p>
+<p>Pour cibler la bague, il faudra cliquer dessus. C'est déjà chaud de le faire quand elle est portée, mais si en plus y'a un gants (donc on ne la voit), ça me semble impossible. De toute façon, je pense que dans ce cas, c'est plus un intervention GM vis-à-vis du RP dont nous aurons besoin.</p>
+<p>Pour les torses : ils ne font pas parti des layers autorisés pour le vol.</p>
+<p>Les PNJ ne seront pas volable (justement pour éviter les abus).</p>
+<p>En gros, pour le vol sur layer, j'ai mis que les objets pouvant s'arracher à la tire et avec un contact très rapproché (les bijoux).</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---june-11-2008-at-404-am">Post by Phydias Shaytan, CP - June 11, 2008 at 4:04 AM</h2>
+<p><a id="post-169156"></a></p>
+<p>Quelques corrections :<br>
+Celles coté script trouvées avec Kel.<br>
+Une erreur de conception : j'ai mal géré le vol sur layer, il ne fait qu'afficher des messages <img src="/assets/smilies/man_in_love.gif" alt=""> Donc j'ai corrigé :x</p>
+<p>J'en ai profité pour tout remettre à un format élégant.</p>
+<p>using System;<br>
+using Server;<br>
+using Server.Mobiles;<br>
+using Server.Targeting;<br>
+using Server.Items;<br>
+using Server.Network;</p>
+<p>namespace Server.SkillHandlers<br>
+{<br>
+public class Stealing<br>
+{<br>
+// ---------------------------------------------------------------------------<br>
+// Paramètres - Système de vol caché<br>
+// -------------------------------------------------------------------------<br>
+// stayHidden :<br>
+// @Description<br>
+//   Activation du système<br>
+// @Valeur<br>
+// - true = actif<br>
+// - false = inactif<br>
+private static bool stayHidden = true;<br>
+// stayHiddenMaxChance :<br>
+// @Description<br>
+//   Chance maximum de rester cacher (Hiding &amp; Stealth à 100%)<br>
+private static double stayHiddenMaxChance = 90.0;<br>
+// stayHiddenMinChance :<br>
+// @Description<br>
+//   Chance minimum de rester cacher (Hiding &amp; Stealth à StayHiddenSkill)<br>
+private static double stayHiddenMinChance = 20.0;<br>
+// stayHiddenSkill :<br>
+// @Description<br>
+//   Compétence minimum requise pour rester caché lors d'un vol<br>
+private static double stayHiddenSkill = 50.0;<br>
+// -------------------------------------------------------------------------<br>
+// Paramètres - Vol d'objet équipé<br>
+// -------------------------------------------------------------------------<br>
+// layerSteal :<br>
+// @Description<br>
+//   Activation du vol d'objet équipé<br>
+// @Valeur<br>
+// - true = actif<br>
+// - false = inactif<br>
+private static bool layerSteal = true;<br>
+// layerStealIncrease :<br>
+// @Description<br>
+//   Augmentation en % des chances de se faire prendre lorsque l'on vole un<br>
+//   objet équipé.<br>
+private static double layerStealIncrease = 50;<br>
+// -------------------------------------------------------------------------</p>
+<pre><code>public static void Initialize&amp;#40;&amp;#41;  
+&amp;#123;  
+  SkillInfo&amp;#46;Table&amp;#91;33&amp;#93;&amp;#46;Callback = new SkillUseCallback&amp;#40;OnUse&amp;#41;;  
+&amp;#125;
+
+public static readonly bool ClassicMode = false;
+
+public static readonly bool SuspendOnMurder = false;
+
+public static bool IsInGuild&amp;#40;Mobile m&amp;#41;  
+&amp;#123;  
+  return &amp;#40;m is PlayerMobile &amp;&amp; &amp;#40;&amp;#40;PlayerMobile&amp;#41;m&amp;#41;&amp;#46;NpcGuild == NpcGuild&amp;#46;ThievesGuild&amp;#41;;  
+&amp;#125;
+
+public static bool IsInnocentTo&amp;#40;Mobile from, Mobile to&amp;#41;  
+&amp;#123;  
+  return &amp;#40;Notoriety&amp;#46;Compute&amp;#40;from, &amp;#40;Mobile&amp;#41;to&amp;#41; == Notoriety&amp;#46;Innocent&amp;#41;;  
+&amp;#125;
+
+private class StealingTarget &amp;#58; Target  
+&amp;#123;  
+  private Mobile m_Thief;
+
+  public StealingTarget&amp;#40;Mobile thief&amp;#41; &amp;#58; base&amp;#40;1, false, TargetFlags&amp;#46;None&amp;#41;  
+  &amp;#123;  
+    m_Thief = thief;  
+    AllowNonlocal = true;  
+  &amp;#125;  
+    
+  private Item TryStealItem&amp;#40;Item toSteal, ref bool caught&amp;#41;  
+  &amp;#123;  
+    Item stolen = null;  
+    // ---------------------------------------------------------------------  
+    // Paramètres internes supplémentaires  
+    // ---------------------------------------------------------------------  
+    // caughtChance  
+    // @Description  
+    //   Chance de base de se faire attrapper en %  
+    double caughtChance = 100;  
+    // ---------------------------------------------------------------------  
+    object root = toSteal&amp;#46;RootParent;
+
+    if &amp;#40; !IsEmptyHanded&amp;#40; m_Thief &amp;#41; &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendLocalizedMessage&amp;#40; 1005584 &amp;#41;; // Both hands must be free to steal&amp;#46;  
+    &amp;#125;  
+    else if &amp;#40; SuspendOnMurder &amp;&amp; root is Mobile &amp;&amp; &amp;#40;&amp;#40;Mobile&amp;#41;root&amp;#41;&amp;#46;Player &amp;&amp; IsInGuild&amp;#40; m_Thief &amp;#41; &amp;&amp; m_Thief&amp;#46;Kills &gt; 0 &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendLocalizedMessage&amp;#40; 502706 &amp;#41;; // You are currently suspended from the thieves guild&amp;#46;  
+    &amp;#125;  
+    else if &amp;#40; root is BaseVendor &amp;&amp; &amp;#40;&amp;#40;BaseVendor&amp;#41;root&amp;#41;&amp;#46;IsInvulnerable &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendLocalizedMessage&amp;#40; 1005598 &amp;#41;; // You can't steal from shopkeepers&amp;#46;  
+    &amp;#125;  
+    else if &amp;#40; root is PlayerVendor &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendLocalizedMessage&amp;#40; 502709 &amp;#41;; // You can't steal from vendors&amp;#46;  
+    &amp;#125;  
+    else if &amp;#40; !m_Thief&amp;#46;CanSee&amp;#40; toSteal &amp;#41; &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendLocalizedMessage&amp;#40; 500237 &amp;#41;; // Target can not be seen&amp;#46;  
+    &amp;#125;  
+    else if &amp;#40; toSteal&amp;#46;Parent == null || !toSteal&amp;#46;Movable || toSteal&amp;#46;LootType == LootType&amp;#46;Newbied || toSteal&amp;#46;CheckBlessed&amp;#40; root &amp;#41; &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendLocalizedMessage&amp;#40; 502710 &amp;#41;; // You can't steal that!  
+    &amp;#125;  
+    else if &amp;#40; !m_Thief&amp;#46;InRange&amp;#40; toSteal&amp;#46;GetWorldLocation&amp;#40;&amp;#41;, 1 &amp;#41; &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendLocalizedMessage&amp;#40; 502703 &amp;#41;; // You must be standing next to an item to steal it&amp;#46;  
+    &amp;#125;    
+    // ---------------------------------------------------------------------  
+    // Système de vol d'objet équipé  
+    // ---------------------------------------------------------------------  
+    // Système inactif  
+    else if &amp;#40; toSteal&amp;#46;Parent is Mobile &amp;&amp; !layerSteal &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendMessage&amp;#40; &quot;Vous ne pouvez aps voler les objets qui sont équipés&quot; &amp;#41;;  
+    &amp;#125;  
+    // La cible est un PNJ  
+    else if &amp;#40; toSteal&amp;#46;Parent is Mobile &amp;&amp;   
+              !&amp;#40;toSteal&amp;#46;Parent is PlayerMobile&amp;#41; &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendMessage&amp;#40; &quot;Cette personne a l'air bien trop vigilante&amp;#46;&quot; &amp;#41;;  
+    &amp;#125;  
+    // L'objet à voler ne répond pas aux critères &amp;#58;  
+    // - Être un bijoux ou un vêtement  
+    // - Être porté sur un des layers suivants &amp;#58; Neck, Helm, Earrings,  
+    //   Cloak, Waist, Ring, Bracelet  
+    else if &amp;#40; toSteal&amp;#46;Parent is PlayerMobile &amp;&amp; &amp;#40;   
+              !&amp;#40;toSteal is BaseClothing&amp;#41; ||   
+              !&amp;#40;toSteal is BaseJewel &amp;#41; ||   
+              toSteal&amp;#46;Layer != Layer&amp;#46;Neck ||  
+              toSteal&amp;#46;Layer != Layer&amp;#46;Helm ||  
+              toSteal&amp;#46;Layer != Layer&amp;#46;Earrings ||  
+              toSteal&amp;#46;Layer != Layer&amp;#46;Cloak ||  
+              toSteal&amp;#46;Layer != Layer&amp;#46;Waist ||  
+              toSteal&amp;#46;Layer != Layer&amp;#46;Ring ||  
+              toSteal&amp;#46;Layer != Layer&amp;#46;Bracelet &amp;#41; &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendMessage&amp;#40; &quot;C'est trop dangereux de voler cet objet sur cette personne !&quot; &amp;#41;;  
+    &amp;#125;  
+    // ---------------------------------------------------------------------  
+    else if &amp;#40; root == m_Thief &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendLocalizedMessage&amp;#40; 502704 &amp;#41;; // You catch yourself red-handed&amp;#46;  
+    &amp;#125;  
+    else if &amp;#40; root is Mobile &amp;&amp; &amp;#40;&amp;#40;Mobile&amp;#41;root&amp;#41;&amp;#46;AccessLevel &gt; AccessLevel&amp;#46;Player &amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;SendLocalizedMessage&amp;#40; 502710 &amp;#41;; // You can't steal that!  
+    &amp;#125;  
+    else if &amp;#40; root is Mobile &amp;&amp; !m_Thief&amp;#46;CanBeHarmful&amp;#40; &amp;#40;Mobile&amp;#41;root &amp;#41; &amp;#41;  
+    &amp;#123;  
+    &amp;#125;  
+    else  
+    &amp;#123;  
+      // -------------------------------------------------------------------  
+      // Système de vol d'objet  
+      // -------------------------------------------------------------------  
+      // Prise de risque du vol d'un objet équipé  
+      if &amp;#40; toSteal&amp;#46;Parent is PlayerMobile &amp;#41;  
+        caughtChance += layerStealIncrease;  
+      // -----------------------------------------------------------------                  
+      double w = toSteal&amp;#46;Weight + toSteal&amp;#46;TotalWeight;
+
+      if &amp;#40; w &gt; 10 &amp;#41;  
+      &amp;#123;  
+        m_Thief&amp;#46;SendMessage&amp;#40; &quot;That is too heavy to steal&amp;#46;&quot; &amp;#41;;  
+      &amp;#125;  
+      else  
+      &amp;#123;  
+        if &amp;#40; toSteal&amp;#46;Stackable &amp;&amp; toSteal&amp;#46;Amount &gt; 1 &amp;#41;  
+        &amp;#123;  
+          int maxAmount = &amp;#40;int&amp;#41;&amp;#40;&amp;#40;m_Thief&amp;#46;Skills&amp;#91;SkillName&amp;#46;Stealing&amp;#93;&amp;#46;Value / 10&amp;#46;0&amp;#41; / toSteal&amp;#46;Weight&amp;#41;;  
+            
+          if &amp;#40; maxAmount &lt; 1 &amp;#41;  
+            maxAmount = 1;  
+          else if &amp;#40; maxAmount &gt; toSteal&amp;#46;Amount &amp;#41;  
+            maxAmount = toSteal&amp;#46;Amount;  
+            
+          int amount = Utility&amp;#46;RandomMinMax&amp;#40; 1, maxAmount &amp;#41;;
+
+          if &amp;#40; amount &gt;= toSteal&amp;#46;Amount &amp;#41;  
+          &amp;#123;  
+            int pileWeight = &amp;#40;int&amp;#41;Math&amp;#46;Ceiling&amp;#40; toSteal&amp;#46;Weight * toSteal&amp;#46;Amount &amp;#41;;  
+            pileWeight *= 10;
+
+            if &amp;#40; m_Thief&amp;#46;CheckTargetSkill&amp;#40; SkillName&amp;#46;Stealing, toSteal, pileWeight - 22&amp;#46;5, pileWeight + 27&amp;#46;5 &amp;#41; &amp;#41;  
+              stolen = toSteal;  
+          &amp;#125;  
+          else  
+          &amp;#123;  
+            int pileWeight = &amp;#40;int&amp;#41;Math&amp;#46;Ceiling&amp;#40; toSteal&amp;#46;Weight * amount &amp;#41;;  
+            pileWeight *= 10;
+
+            if &amp;#40; m_Thief&amp;#46;CheckTargetSkill&amp;#40; SkillName&amp;#46;Stealing, toSteal, pileWeight - 22&amp;#46;5, pileWeight + 27&amp;#46;5 &amp;#41; &amp;#41;  
+            &amp;#123;  
+              stolen = toSteal&amp;#46;Dupe&amp;#40; amount &amp;#41;;  
+              toSteal&amp;#46;Amount -= amount;  
+            &amp;#125;  
+          &amp;#125;  
+        &amp;#125;  
+        else  
+        &amp;#123;  
+          int iw = &amp;#40;int&amp;#41;Math&amp;#46;Ceiling&amp;#40; w &amp;#41;;  
+          iw *= 10;
+
+          if &amp;#40; m_Thief&amp;#46;CheckTargetSkill&amp;#40; SkillName&amp;#46;Stealing, toSteal, iw - 22&amp;#46;5, iw + 27&amp;#46;5 &amp;#41; &amp;#41;  
+            stolen = toSteal;  
+        &amp;#125;
+
+        if &amp;#40; stolen != null &amp;#41;  
+          m_Thief&amp;#46;SendLocalizedMessage&amp;#40; 502724 &amp;#41;; // You succesfully steal the item&amp;#46;  
+        else  
+          m_Thief&amp;#46;SendLocalizedMessage&amp;#40; 502723 &amp;#41;; // You fail to steal the item&amp;#46;  
+        // -----------------------------------------------------------------  
+        // Correction des chances de se faire prendre  
+        // -----------------------------------------------------------------  
+        // Intervention de la dextérité  
+        caughChance -= m_Thief&amp;#46;RawDex/10;  
+        // Intervention de la skill  
+        caughChance -= m_Thief&amp;#46;Skills&amp;#91;SkillName&amp;#46;Hiding&amp;#93;&amp;#46;Value*80/100;  
+        // Bonus si on est caché  
+        if &amp;#40;m_Thief&amp;#46;Hidden&amp;#41;  
+            caughChance -= 5;  
+        caught = &amp;#40; caughChance &gt; Utility&amp;#46;Random&amp;#40; 100 &amp;#41; &amp;#41;;  
+        // -----------------------------------------------------------------  
+      &amp;#125;  
+    &amp;#125;  
+    return stolen;  
+  &amp;#125;
+
+  protected override void OnTarget&amp;#40;Mobile from, object target&amp;#41;  
+  &amp;#123;  
+    Item stolen = null;  
+    object root = null;  
+    bool caught = false;
+
+    if &amp;#40;target is Item&amp;#41;  
+    &amp;#123;  
+      root = &amp;#40;&amp;#40;Item&amp;#41;target&amp;#41;&amp;#46;RootParent;  
+      stolen = TryStealItem&amp;#40;&amp;#40;Item&amp;#41;target, ref caught&amp;#41;;  
+    &amp;#125;  
+    else if &amp;#40;target is Mobile&amp;#41;  
+    &amp;#123;  
+      Container pack = &amp;#40;&amp;#40;Mobile&amp;#41;target&amp;#41;&amp;#46;Backpack;
+
+      if &amp;#40;pack != null &amp;&amp; pack&amp;#46;Items&amp;#46;Count &gt; 0&amp;#41;  
+      &amp;#123;  
+        int randomIndex = Utility&amp;#46;Random&amp;#40;pack&amp;#46;Items&amp;#46;Count&amp;#41;;  
+        root = target;  
+        stolen = TryStealItem&amp;#40;&amp;#40;Item&amp;#41;pack&amp;#46;Items&amp;#91;randomIndex&amp;#93;, ref caught&amp;#41;;  
+      &amp;#125;  
+    &amp;#125;  
+    else  
+    &amp;#123;  
+      m_Thief&amp;#46;SendLocalizedMessage&amp;#40;502710&amp;#41;; // You can't steal that!  
+    &amp;#125;
+
+    if &amp;#40;stolen != null&amp;#41;  
+      from&amp;#46;AddToBackpack&amp;#40;stolen&amp;#41;;  
+    // ---------------------------------------------------------------------  
+    // Gestion du vol caché  
+    // ---------------------------------------------------------------------  
+    // On vérifie &amp;#58;  
+    // - que le système est actif  
+    // - que le voleur ne s'est pas fait attrappé  
+    // - qu'il a le niveau requis en Hiding et Stealth  
+    // Sinon, on révèle le voleur  
+    if &amp;#40;!stayHidden || caught ||  
+      m_Thief&amp;#46;Skills&amp;#91;SkillName&amp;#46;Hiding&amp;#93;&amp;#46;Value &lt; stayHiddenSkill ||  
+      m_Thief&amp;#46;Skills&amp;#91;SkillName&amp;#46;Stealth&amp;#93;&amp;#46;Value &lt; stayHiddenSkill&amp;#41;  
+    from&amp;#46;RevealingAction&amp;#40;&amp;#41;;  
+    // Autrement on calcule ses chances de passer inaperçu  
+    else  
+    &amp;#123;  
+    // On calcule ses chances de rester cacher en fonction de &amp;#58;  
+    // - Son niveau en Hiding  
+    // - Son niveau en Stealth  
+    // - stayHiddenMinChance  
+    // - stayHiddenMaxChance  
+    // - stayHiddenSkill  
+      double hSkill = &amp;#40;&amp;#40;m_Thief&amp;#46;Skills&amp;#91;SkillName&amp;#46;Hiding&amp;#93;&amp;#46;Value  
+                      + m_Thief&amp;#46;Skills&amp;#91;SkillName&amp;#46;Hiding&amp;#93;&amp;#46;Value&amp;#41; / 2  
+                      - stayHiddenSkill&amp;#41; / &amp;#40;100 - stayHiddenSkill&amp;#41;  
+                      * &amp;#40;stayHiddenMaxChance - stayHiddenMinChance&amp;#41;  
+                      + stayHiddenMinChance;  
+    // Si ses chances sont inférieur à un chiffre au hasard entre 0 et 100  
+    // Alors il est révélé, autrement on ne fait rien  
+      if &amp;#40;hSkill &lt; Utility&amp;#46;Random&amp;#40;100&amp;#41;&amp;#41;  
+        from&amp;#46;RevealingAction&amp;#40;&amp;#41;;  
+    &amp;#125;  
+    // ---------------------------------------------------------------------  
+    if &amp;#40;caught&amp;#41;  
+    &amp;#123;  
+      if &amp;#40;root == null&amp;#41;  
+      &amp;#123;  
+        m_Thief&amp;#46;CriminalAction&amp;#40;false&amp;#41;;  
+      &amp;#125;  
+      else if &amp;#40;root is Corpse &amp;&amp; &amp;#40;&amp;#40;Corpse&amp;#41;root&amp;#41;&amp;#46;IsCriminalAction&amp;#40;m_Thief&amp;#41;&amp;#41;  
+      &amp;#123;  
+        m_Thief&amp;#46;CriminalAction&amp;#40;false&amp;#41;;  
+      &amp;#125;  
+      else if &amp;#40;root is Mobile&amp;#41;  
+      &amp;#123;  
+        Mobile mobRoot = &amp;#40;Mobile&amp;#41;root;
+
+        if &amp;#40;!IsInGuild&amp;#40;mobRoot&amp;#41; &amp;&amp; IsInnocentTo&amp;#40;m_Thief, mobRoot&amp;#41;&amp;#41;  
+          m_Thief&amp;#46;CriminalAction&amp;#40;false&amp;#41;;  
+    // ---------------------------------------------------------------------  
+    // Correction du message aux témoins  
+    // -----------------------------------------------------------------  
+    // Vérification que le témoin voit le voleur  
+        string message = String&amp;#46;Format&amp;#40;&quot;Vous remarquez &amp;#123;0&amp;#125; en train d'essayer de voler &amp;#123;1&amp;#125;&amp;#46;&quot;, m_Thief&amp;#46;Name, mobRoot&amp;#46;Name&amp;#41;;  
+        foreach &amp;#40;NetState ns in m_Thief&amp;#46;GetClientsInRange&amp;#40;8&amp;#41;&amp;#41;  
+        &amp;#123;  
+        if &amp;#40;ns != m_Thief&amp;#46;NetState &amp;&amp; ns&amp;#46;Mobile&amp;#46;CanSee&amp;#40;m_Thief&amp;#41;&amp;#41;  
+          ns&amp;#46;Mobile&amp;#46;SendMessage&amp;#40;message&amp;#41;;  
+        &amp;#125;  
+      &amp;#125;  
+    &amp;#125;  
+    // -----------------------------------------------------------------  
+    else if &amp;#40;root is Corpse &amp;&amp; &amp;#40;&amp;#40;Corpse&amp;#41;root&amp;#41;&amp;#46;IsCriminalAction&amp;#40;m_Thief&amp;#41;&amp;#41;  
+    &amp;#123;  
+      m_Thief&amp;#46;CriminalAction&amp;#40;false&amp;#41;;  
+    &amp;#125;  
+      
+    if &amp;#40;root is Mobile &amp;&amp; &amp;#40;&amp;#40;Mobile&amp;#41;root&amp;#41;&amp;#46;Player &amp;&amp; m_Thief is PlayerMobile &amp;&amp; IsInnocentTo&amp;#40;m_Thief, &amp;#40;Mobile&amp;#41;root&amp;#41; &amp;&amp; !IsInGuild&amp;#40;&amp;#40;Mobile&amp;#41;root&amp;#41;&amp;#41;  
+    &amp;#123;  
+      PlayerMobile pm = &amp;#40;PlayerMobile&amp;#41;m_Thief;  
+      pm&amp;#46;PermaFlags&amp;#46;Add&amp;#40;&amp;#40;Mobile&amp;#41;root&amp;#41;;  
+      pm&amp;#46;Delta&amp;#40;MobileDelta&amp;#46;Noto&amp;#41;;  
+    &amp;#125;  
+  &amp;#125;  
+&amp;#125;
+
+public static bool IsEmptyHanded&amp;#40;Mobile from&amp;#41;  
+&amp;#123;  
+  if &amp;#40;from&amp;#46;FindItemOnLayer&amp;#40;Layer&amp;#46;OneHanded&amp;#41; != null&amp;#41;  
+    return false;  
+  if &amp;#40;from&amp;#46;FindItemOnLayer&amp;#40;Layer&amp;#46;TwoHanded&amp;#41; != null&amp;#41;  
+    return false;      return true;  
+&amp;#125;
+
+public static TimeSpan OnUse&amp;#40;Mobile m&amp;#41;  
+&amp;#123;  
+  if &amp;#40;!IsEmptyHanded&amp;#40;m&amp;#41;&amp;#41;  
+    m&amp;#46;SendLocalizedMessage&amp;#40;1005584&amp;#41;; // Both hands must be free to steal&amp;#46;  
+  else  
+  &amp;#123;  
+    m&amp;#46;Target = new Stealing&amp;#46;StealingTarget&amp;#40;m&amp;#41;;  
+    m&amp;#46;SendLocalizedMessage&amp;#40;502698&amp;#41;; // Which item do you want to steal?  
+  &amp;#125;  
+  return TimeSpan&amp;#46;FromSeconds&amp;#40;10&amp;#46;0&amp;#41;;  
+&amp;#125;  
+</code></pre>
+<p>}<br>
+}</p>
+<hr>
+<h2 id="post-by-gannd-auralis--ods---june-11-2008-at-656-am">Post by Gannd Auréalis , OdS - June 11, 2008 at 6:56 AM</h2>
+<p><a id="post-169162"></a></p>
+<p>J'espère que celui qui se fait voler aura au moin la chance de ''détecter', que ont le vol....J'ai 100% dans tout les skills de combat et je ne touche pas a tout les coups.....Sa devrai être semblable pour le vol non?</p>
+<hr>
+<h2 id="post-by-wilhelm-vonbrochert-cp---june-11-2008-at-952-am">Post by Wilhelm VonBrochert, CP - June 11, 2008 at 9:52 AM</h2>
+<p><a id="post-169168"></a></p>
+<p>Non, parce que dans un skill de combat, quand tu foire, tu tappe 3secondes apres.<br>
+Dans le vol, quand tu foire, t'es mort.</p>
+<hr>
+<h2 id="post-by-chien-mchant---june-11-2008-at-1234-pm">Post by Chien Méchant - June 11, 2008 at 12:34 PM</h2>
+<p><a id="post-169177"></a></p>
+<p>non quand tu rates , tu cours !</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---june-11-2008-at-413-pm">Post by Phydias Shaytan, CP - June 11, 2008 at 4:13 PM</h2>
+<p><a id="post-169188"></a></p>
+<p>Il faut 100% en stealing, 150 de dext et être caché pour avoir 100% de chance de ne pas se faire prendre (mass msg aux gens présents).</p>
+<p>Derrière il y a encore les chances d'être déhide qu'il est impossible d'avoir à 100%</p>
+<p>Je ne parle même pas du vol sur layer ou le maximum de chance de ne pas se faire repérer est 50% et à bas niveau à plus de 100%.</p>
+<p>Voler est et reste dangereux. C'est juste plus &quot;fair&quot; que les 33% de chance de se faire repérer au maximum qui sont descendue aux alentour de 10%.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

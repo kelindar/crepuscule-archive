@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveau Gump et débogage - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Nouveau Gump et débogage</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Nouveau Gump et débogage</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="nouveau-gump-et-dbogage">Nouveau Gump et débogage</h1>
+<h2 id="post-by-axel-aerigson-adc---february-18-2011-at-220-am">Post by Axel Aerigson, AdC - February 18, 2011 at 2:20 AM</h2>
+<p><a id="post-278509"></a></p>
+<p>Coucou les amis.</p>
+<p>Comme plusieurs d'entre-vous le sait déjà, j'arrive a débugger les gumps qui ne marche pas/ ne se porte pas/ ou donne quelque chose d'étrange.</p>
+<p>Pour le moment, j'ai fais la petite liste que les joueurs avaient dans bug technique. Se forum semble en avoir quelques uns aussi. Je vais fouiller demain sans doute pour voir ce que je peux faire.</p>
+<p>Pour le moment je vous laisse une liste de ce qui est compléter.</p>
+<p>NB: Je suis la seule à voir que c'Est debugger étant donner que l'échange à été fait seulement dans mon client. Une fois que tous le travaille sera fait, mes fichiers seront envoyer à Kel pour qu'il les distribuent comme un père-noël à Noël!</p>
+<p>ok-Robe Longue 0x3607(13831) - Les femmes peuvent maintenant les porter!</p>
+<p>ok-Barbe jeune 0x3691(13969) - Elle ne fait plus un kilt sur l'anim</p>
+<p>ok-Toge Elfique 0x301A(12314) - Elle fait maintenant l'anim de toge affreuse à capuche</p>
+<p>ok-Chemise elfique blanche0x301D(12317) - Anim de chemise<br>
+ok-chemise elfique beige 0x301C(12316) - Anim de chemise - Les femmes peuvent les porter</p>
+<p>ok-Faux 0x26BA(9914)(9924) - Maintenant Portable avec le bon anim<br>
+ok-scerpe 0x26BB(9915)(9925) - Maintenant Portable avec le bon anim<br>
+ok-sceptre 0x26BC(9916)(9926) - Maintenant Portable avec le bon anim<br>
+ok-Lance 0x26BD(9917)(9927) - Maintenant Portable avec le bon anim<br>
+ok-Pike 0x26BE(9918)(9928) - Maintenant Portable avec le bon anim<br>
+ok-Double Lame 0x96BF(9919)(9929) - Maintenant Portable avec le bon anim<br>
+ok-Lance 0x26C0(9920)(9930) - Maintenant Portable avec le bon anim<br>
+ok-Lame double 0x26C1(9921)(9931) - Maintenant Portable avec le bon anim<br>
+ok-Arc Composite 0x26C2(9922)(9932) - Maintenant Portable avec le bon anim<br>
+ok-Arbalète à répétition 0x26C3(9923)(9933) - Maintenant Portable avec le bon anim<br>
+ok-Épée de Paladin 0x26CC(9934)(9935) - Maintenant Portable avec le bon anim</p>
+<p>ok-pratice sword 0x236E(9070) - Les femmes peuvent maintenant les mettre<br>
+ok-pratice staff 0x236F(9071) - Les femmes peuvent maintenant les mettre<br>
+ok-pratice dagger 0x2370(9072) - Les femmes peuvent maintenant les mettre<br>
+ok-pratice mace 0x2371(9073) - Les femmes peuvent maintenant les mettre<br>
+ok-pratice lance 0x2372(9074) - Les femmes peuvent maintenant les mettre</p>
+<p>NB: Pour les armes, le fait qu'elle soit portable ne leur donne pas les propriétés des armes. Sa sera changeable à l'aide des bidules de Kel sans doute!</p>
+<p>ok-Gorgerin de plaque avec le doré - Le gump des femmes est ok<br>
+ok- Vêtements aqual - Anim modifié<br>
+ok- Quelques (http://www.picpaste.com/pics/chx-7XPyHMvy.1299183322.bmp) du poste d'idée ajouté<br>
+ok- Les capuches ont leur bonne animation en jeu à présent.</p>
+<p>07-03-11</p>
+<p>-Ajout meuble non-vernis (item 0X32B2 à 0x32C3)<br>
+-Ajout (http://i1201.photobucket.com/albums/bb349/Merrick_444/Garnitures.png) à étagère (item 0X32F9 à 0x332E)</p>
+<p>13-03-11</p>
+<p>-Ajout 8 types de (http://i1201.photobucket.com/albums/bb349/Merrick_444/bois.png)<br>
+Érable 12978-12995<br>
+Amarante 13003-13018<br>
+Makoré 13019-13039<br>
+Ipé 13103-13120<br>
+Chataigner 13138-13155<br>
+Pin sylvestre 13156-13173<br>
+Bois rond 13174-13179<br>
+Hêtre 13180-13197</p>
+<p>17-03-11</p>
+<p>Divers (http://i1201.photobucket.com/albums/bb349/Merrick_444/Lits.png) 13198-13229<br>
+Environnement <a href="http://i1201.photobucket.com/albums/bb349/Merrick_444/cuisine.png">Cuisine et autre</a><br>
+<a href="http://i1201.photobucket.com/albums/bb349/Merrick_444/Salledebain.png">Salle de bain</a> 13247-13254<br>
+(http://i1201.photobucket.com/albums/bb349/Merrick_444/divers.png) 13238-13316</p>
+<p>Hésiter pas à me faire une liste des vêtements tsen ou elfique que vous voudriez voir en jeu, ou d'autre bug.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-18-2011-at-1006-pm">Post by Seigneur Bélial - February 18, 2011 at 10:06 PM</h2>
+<p><a id="post-278566"></a></p>
+<p>I love you baby!!!!</p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---february-21-2011-at-839-pm">Post by Axel Aerigson, AdC - February 21, 2011 at 8:39 PM</h2>
+<p><a id="post-278796"></a></p>
+<p>2 choses à ne pas oublier</p>
+<p>1- les layers ne sont pas indéfinitif (compte rendu de l'autre poste!)</p>
+<p>2- Les emplacements disponibles pous de nouveau Gump sont limité, donc il faudra bien choisir ceux qu'ont garde, et ceux que l'ont va remplacer (plusieurs gumps de SE entre autre.</p>
+<p>Troisièmement, j'aimerais vous confier un travail, vous équipe gm que j'aime tant! (et Sara...) Je m'adonnerai sans doute a l'Activité moi-même.</p>
+<p>Tous sans doute on soit : Inside Uo ou Uo fiddler. Hors dans ses deux programmes, il y a un onglet Gump. On y voit tous les gumps disponible présentement dans uo. Il faudrait faire un rapide coup d'oeil de la liste et définir ceux que je dois intégrer et qui ne le sont pas encore. On pourrait également faire une seconde liste de ce qui est intégrer déjèa, mais qui gagnerais èa être légèerement modifier (comme la jupe courte qui est croche....)<br>
+En travaillant tous ensemble, ce sera facile de recoupé et de choisir!</p>
+<hr>
+<h2 id="post-by-sar-tauramandil-ods---february-21-2011-at-903-pm">Post by Sarä Taur'Amandil, OdS - February 21, 2011 at 9:03 PM</h2>
+<p><a id="post-278800"></a></p>
+<p>Cette semaine je n'aurai pas le temps avant vendredi de faire un check de la liste, mais ce weekend sans faute j'en ferai un.</p>
+<p>Je t'aime aussi Axel.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-27-2011-at-400-am">Post by Seigneur Bélial - February 27, 2011 at 4:00 AM</h2>
+<p><a id="post-279073"></a></p>
+<p>Allo Axel,</p>
+<p>J'ai repéré un bug de gumps, c'est le gorgerin d'apparat (hérité de plaque renforcée).<br>
+Sur l'homme il n'y à aucun problème mais encore une fois, quand la femme le porte il y a un prob de gumps: il se change en brassard vert.</p>
+<p>MplateGorget et FencyPlateNeck<br>
+ItemId 13817<br>
+Serial 0x400187F9</p>
+<p>Merci ^^</p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---february-28-2011-at-710-pm">Post by Axel Aerigson, AdC - February 28, 2011 at 7:10 PM</h2>
+<p><a id="post-279334"></a></p>
+<p>Tu parle du gump dans le paperdoll? parce que je vois rien qui dérange dans les fichiers.</p>
+<p>Ou bien tu parle du art en jeu???</p>
+<hr>
+<h2 id="post-by-nimue---february-28-2011-at-722-pm">Post by Nimue - February 28, 2011 at 7:22 PM</h2>
+<p><a id="post-279335"></a></p>
+<p>À ce que je lis, un truc &quot;hérité&quot; provient du système de craft de Kel. Donc ce n'est peut-être pas un problème de gump.</p>
+<p>Car sinon ce gorgerin, sans qu'il ne soit &quot;hérité&quot; est-ce qu'il fonctionne?</p>
+<hr>
+<h2 id="post-by-seigneur-blial---february-28-2011-at-810-pm">Post by Seigneur Bélial - February 28, 2011 at 8:10 PM</h2>
+<p><a id="post-279344"></a></p>
+<p>Non ce gorgerin est buguer dans le gump, comme pour les armes d'entrainement et les robes, c'est la même chose. Ce gorgerin a été hérité du MplateGorget et tout les deux ont le même problème forcément. Encore cette histoire de femme qui a pas le même gump que l'homme. Tu penses pouvoir regarder ca ig? Je te montrerai.</p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---february-28-2011-at-910-pm">Post by Axel Aerigson, AdC - February 28, 2011 at 9:10 PM</h2>
+<p><a id="post-279357"></a></p>
+<p>Fait</p>
+<hr>
+<h2 id="post-by-nimue---february-28-2011-at-924-pm">Post by Nimue - February 28, 2011 at 9:24 PM</h2>
+<p><a id="post-279361"></a></p>
+<p><span style="color:#FFBFBF">Excellent merci.</span></p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-2-2011-at-812-pm">Post by Axel Aerigson, AdC - March 2, 2011 at 8:12 PM</h2>
+<p><a id="post-279657"></a></p>
+<p>SUper! J'Ai trouvé la vrai animation de la capuche, je vais tâcher de la mettre pour tester demain!</p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-3-2011-at-156-am">Post by Axel Aerigson, AdC - March 3, 2011 at 1:56 AM</h2>
+<p><a id="post-279697"></a></p>
+<p>MAJ</p>
+<p>(je rajoute les maj dans le premier poste)</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-3-2011-at-945-pm">Post by Seigneur Bélial - March 3, 2011 at 9:45 PM</h2>
+<p><a id="post-279777"></a></p>
+<p>Pour un de mes donjon, peux-tu regarder ca?</p>
+<!-- m --><a class="postlink" href="http://www.uo-pixel.de/anim/vertigo_rhinobeetle/">http://www.uo-pixel.de/anim/vertigo_rhinobeetle/</a><!-- m --> <!-- m --><a class="postlink" href="http://www.uo-pixel.de/anim/sol_andariel/">http://www.uo-pixel.de/anim/sol_andariel/</a><!-- m --> <!-- m --><a class="postlink" href="http://www.uo-pixel.de/anim/Vertigo_crawler/">http://www.uo-pixel.de/anim/Vertigo_crawler/</a><!-- m --> <!-- m --><a class="postlink" href="http://www.uo-pixel.de/anim/Kalamarr_goatmangoblin_truppe/">http://www.uo-pixel.de/anim/Kalamarr_go ... in_truppe/</a><!-- m --> <!-- m --><a class="postlink" href="http://www.uo-pixel.de/anim/Kalamarr_goblinreiter/">http://www.uo-pixel.de/anim/Kalamarr_goblinreiter/</a><!-- m --> <!-- m --><a class="postlink" href="http://www.uo-pixel.de/anim/Dvir_Kalamarr_ignus/">http://www.uo-pixel.de/anim/Dvir_Kalamarr_ignus/</a><!-- m --> 
+<p>Et si possible une fois le ménage fait: <!-- m --><a class="postlink" href="http://www.uo-pixel.de/grafiken/eri_regal_aufsaetze/"><a href="http://www.uo-pixel.de/grafiken/eri_regal_aufsaetze/">http://www.uo-pixel.de/grafiken/eri_regal_aufsaetze/</a></a><!-- m --></p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-4-2011-at-1216-am">Post by Axel Aerigson, AdC - March 4, 2011 at 12:16 AM</h2>
+<p><a id="post-279786"></a></p>
+<p>Voila pour les curieux. Les couleurs donne très bien <img src="/assets/smilies/smile.gif" alt=""><br>
+<a href="http://www.picpaste.com/pics/chx-7XPyHMvy.1299183322.bmp">http://www.picpaste.com/pics/chx-7XPyHMvy.1299183322.bmp</a></p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-4-2011-at-1222-am">Post by Axel Aerigson, AdC - March 4, 2011 at 12:22 AM</h2>
+<p><a id="post-279787"></a></p>
+<p>Woua non mais!!! pour les étagère, c'Est clair que je vais trouver de la place!!!</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-4-2011-at-929-pm">Post by Seigneur Bélial - March 4, 2011 at 9:29 PM</h2>
+<p><a id="post-279870"></a></p>
+<p>J'avais prévu de le faire moi aussi pour les étagères mais quand j'ai vu qu'il les avait fait alors je te les est passé. Mais je vois que les livres sont que d'un coter, c'est pas grave ou va les tourner <img src="/assets/smilies/smile.gif" alt=""><br>
+Les coiffures sont génial.  <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-4-2011-at-942-pm">Post by Axel Aerigson, AdC - March 4, 2011 at 9:42 PM</h2>
+<p><a id="post-279873"></a></p>
+<p>Les deux côté sont dans le fichier.<br>
+EN regardant dans les meubles y'a une tonne de chose intéressante, comme les tites étagères qui ont que deux étage.</p>
+<p>J'ai télécharger pas mal de rar, je vais regarder et faire un tri, et vous montrer ce qui pourrait être intéressant. Pour les arts ont a quand même pas mal de place, et on peu en faire bcp aussi.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-5-2011-at-308-am">Post by Seigneur Bélial - March 5, 2011 at 3:08 AM</h2>
+<p><a id="post-279895"></a></p>
+<p>On seras bientôt fixer sur le nombre de place possible et a ce moment là on va s'amuser.  <img src="/assets/smilies/orc.gif" alt=""></p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-7-2011-at-835-pm">Post by Axel Aerigson, AdC - March 7, 2011 at 8:35 PM</h2>
+<p><a id="post-280061"></a></p>
+<p>Bon voilà, je me suis mis a regarder les arts sur le site en question, et j'ai trouvé pas mal de meuble intéressant, j'ai commencer à en ajouter.</p>
+<p><a href="http://www.picpaste.com/pics/Meuble_n-vernis-ImRcqspy.1299515636.png">http://www.picpaste.com/pics/Meuble_n-vernis-ImRcqspy.1299515636.png</a></p>
+<p>Comme ses meubles sont ceux censé être non-vernis, je propose de définir les hues pour les teintures de meubles, et que sa soit qu'eux qui peuvent être teinds. Les autres meubles pourraient être associer à différentes essence de bois.<br>
+Je me débrouille pas mal en hue, alors je pourrais vous sortir une gamme de teinture intéressante.</p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-7-2011-at-931-pm">Post by Axel Aerigson, AdC - March 7, 2011 at 9:31 PM</h2>
+<p><a id="post-280068"></a></p>
+<p>Maj</p>
+<p>Les garnitures pour les étagères sont trop trop bien! Il faudra voir nv script si c'est possible de faire une commande du genre .remplir  et modifier la garniture par apport avec ce qu'on a dans notre sac : pour les livres, prérequis : avoir 6 livres dans son sac... ect.</p>
+<p>Pour ce qui est des arts, la place n'est pas limité, mais inutile de trop en rajouter pour rien, le travaille est fastidieux.</p>
+<p>Donc je vous demande : Est-ce nécessaire d'avoir les arts de chaque petit tiroir de bureau, ou d'Avoir celui de l'armoire ouverte/fermer ect... vous voyez le genre? en plus de m'enlever du travaille à moi, sa en enlève aussi à nos cher scripteurs.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---march-8-2011-at-855-am">Post by Fondateur Kel - March 8, 2011 at 8:55 AM</h2>
+<p><a id="post-280154"></a></p>
+<p><em>Des screens? ^^</em></p>
+<hr>
+<h2 id="post-by-nimue---march-8-2011-at-903-am">Post by Nimue - March 8, 2011 at 9:03 AM</h2>
+<p><a id="post-280155"></a></p>
+<p>C'est vraiment super ce que tu fais Axel! Merci merci merci!</p>
+<p>J'espère pouvoir t'aider un peu plus durant ma relâche, c'est bientôt.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-8-2011-at-918-am">Post by Coordinateur Apoc - March 8, 2011 at 9:18 AM</h2>
+<p><a id="post-280157"></a></p>
+<p>Au lieu de se casser la tête avec une commande, simplement faire plusieurs types de biblio craftable, celle avec des livres prendra des livres pour les faire, etc.</p>
+<p>Pour les trucs ouvert j'ai jamais trop compris l'intérêt d'avoir une armoire ouverte, surtout qu'elle ne se ferme pas automatiquement quand tu fermes le gump et il faut donc re-double-cliquer pour la fermer.</p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-8-2011-at-525-pm">Post by Axel Aerigson, AdC - March 8, 2011 at 5:25 PM</h2>
+<p><a id="post-280164"></a></p>
+<p>En faite Apoc, c'est que si on fait comme ça, sa prend plus d'art à intégrer, soit deux par garniture de bibliothèque et par type de bibliothèque.<br>
+Pour réduire la quantité, nous(en faite, je sais pas c'est qui nous...) avons décider d'intégrer seulement les garnitures, qui s'ajoute par dessus une bibliothèque vide, ce qui réduit environ de 8x2x23 pour (8x2)+23.<br>
+L'intérêts de la commande est également de ne pas avoir à dire : je te commanderais une armoire avec des chaussures dedans s'il vous plait....<br>
+Perso, quand je vais au magasin, j'achète pas le set up, mais seulement l'étagère, et je change ce que j'y met dedans au gré de mes humeurs.</p>
+<p>En faite, faudrait qu'on se voit sur msn.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-9-2011-at-422-am">Post by Seigneur Bélial - March 9, 2011 at 4:22 AM</h2>
+<p><a id="post-280202"></a></p>
+<blockquote>
+<p><strong>&quot;Axel Aerigson, AD&quot; wrote:</strong>
+nous(en faite, je sais pas c'est qui nous...) avons décider d'intégrer seulement les garnitures</p>
+<p>Toi et moi <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-seigneur-blial---march-9-2011-at-841-am">Post by Seigneur Bélial - March 9, 2011 at 8:41 AM</h2>
+<p><a id="post-280276"></a></p>
+<p>Voilà honey</p>
+<p><img src="http://i13.photobucket.com/albums/a251/drowle/Gumps%20Crepuscule/Comode2.jpg" alt=""><br>
+<img src="http://i13.photobucket.com/albums/a251/drowle/Gumps%20Crepuscule/Comode1.jpg" alt=""></p>
+<p>N'hésites pas à me demander d'autre retouches <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-nimue---march-9-2011-at-845-am">Post by Nimue - March 9, 2011 at 8:45 AM</h2>
+<p><a id="post-280278"></a></p>
+<p><span style="color:#FFBFBF">Ce meuble est trop cool!</span></p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-14-2011-at-718-am">Post by Axel Aerigson, AdC - March 14, 2011 at 7:18 AM</h2>
+<p><a id="post-280646"></a></p>
+<p>Maj</p>
+<p>Ajout de différent type de bois.<br>
+<img src="http://i1201.photobucket.com/albums/bb349/Merrick_444/bois.png" alt=""></p>
+<hr>
+<h2 id="post-by-nimue---march-14-2011-at-722-am">Post by Nimue - March 14, 2011 at 7:22 AM</h2>
+<p><a id="post-280647"></a></p>
+<p>Ça vraiment cool! J'ai tellement hâte de les voir disponibles aux joueurs.</p>
+<p>Mille merci!</p>
+<hr>
+<h2 id="post-by-ex-lumina---march-14-2011-at-735-am">Post by Ex-Lumina - March 14, 2011 at 7:35 AM</h2>
+<p><a id="post-280649"></a></p>
+<p>MA HÉRO!!</p>
+<hr>
+<h2 id="post-by-conteuse-hermine---march-14-2011-at-755-am">Post by Conteuse Hermine - March 14, 2011 at 7:55 AM</h2>
+<p><a id="post-280650"></a></p>
+<p>C'est cro beau!</p>
+<p><em>Assimile le parlé des d'jeunz</em></p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-14-2011-at-509-pm">Post by Axel Aerigson, AdC - March 14, 2011 at 5:09 PM</h2>
+<p><a id="post-280661"></a></p>
+<p>Les différentes garnitures disponible. Il y en aura bientôt pour les bureaux, et deux ou trois pour les petites étagères si je me rappelle bien.</p>
+<p><img src="http://i1201.photobucket.com/albums/bb349/Merrick_444/Garnitures.png" alt=""></p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-14-2011-at-631-pm">Post by Seigneur Bélial - March 14, 2011 at 6:31 PM</h2>
+<p><a id="post-280664"></a></p>
+<p>Je te ferai ça très bientôt, promis <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---march-15-2011-at-227-am">Post by Lancelot - March 15, 2011 at 2:27 AM</h2>
+<p><a id="post-280690"></a></p>
+<p>Vraiment solide pour les nouvelles sortes de bois. Nice job! ^^</p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-17-2011-at-910-pm">Post by Axel Aerigson, AdC - March 17, 2011 at 9:10 PM</h2>
+<p><a id="post-280935"></a></p>
+<p>Plein de nouveau truc</p>
+<p>Cuisine<br>
+<img src="http://i1201.photobucket.com/albums/bb349/Merrick_444/cuisine.png" alt=""></p>
+<p>Salle de bain<br>
+<img src="http://i1201.photobucket.com/albums/bb349/Merrick_444/Salledebain.png" alt=""></p>
+<p>Lits<br>
+<img src="http://i1201.photobucket.com/albums/bb349/Merrick_444/Lits.png" alt=""></p>
+<p>Divers<br>
+<img src="http://i1201.photobucket.com/albums/bb349/Merrick_444/divers.png" alt=""></p>
+<hr>
+<h2 id="post-by-cerise---march-17-2011-at-928-pm">Post by Cerise - March 17, 2011 at 9:28 PM</h2>
+<p><a id="post-280937"></a></p>
+<p><em>Beau !</em></p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---march-22-2011-at-528-pm">Post by Axel Aerigson, AdC - March 22, 2011 at 5:28 PM</h2>
+<p><a id="post-281305"></a></p>
+<p>Bon j'ai regarder un peu les anims que tu m'as demander de rajouter Shini, voila ce qui est en sort :</p>
+<p>J'ai ajouter :<br>
+<a href="http://www.uo-pixel.de/anim/vertigo_rhinobeetle/">Scarabée Rhinocéros</a><br>
+<a href="http://www.uo-pixel.de/anim/sol_andariel/">Octopus version féminine</a><br>
+<a href="http://www.uo-pixel.de/anim/Vertigo_crawler/">Gros mille-pattes dégueux</a><br>
+<a href="http://www.uo-pixel.de/anim/Dvir_Kalamarr_ignus/">Le surfer d'or, sans surf</a></p>
+<p>Pour ce qui est :<br>
+<a href="http://www.uo-pixel.de/anim/Kalamarr_goatmangoblin_truppe/">Trop mignon Goblins</a><br>
+<a href="http://www.uo-pixel.de/anim/Kalamarr_goblinreiter/">Goblin sur loup</a><br>
+<a href="http://www.uo-pixel.de/anim/Socrarr_pferdesattel/">Cheval porteur montable</a><br>
+<a href="http://www.uo-pixel.de/anim/krazy_zacks_drake_bear/">Ours et Dragon</a></p>
+<p>Ils ont des fichier UOP qui semble demander un verdata, donc, je galère. Je vais essayer de faire des recherches afin de comprendre comment les ajouter sans verdata.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-22-2011-at-541-pm">Post by Seigneur Bélial - March 22, 2011 at 5:41 PM</h2>
+<p><a id="post-281307"></a></p>
+<p>Si c'est trop long et ardu laisse faire c'est pas grave. Le but nm'est pas de te faire arracher les cheveux. L'ours et le dragon sont des montures il me semble, rien d'importent <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---august-27-2011-at-151-am">Post by Axel Aerigson, AdC - August 27, 2011 at 1:51 AM</h2>
+<p><a id="post-289222"></a></p>
+<p>Histoire e faire du flood. Tiens c'est ce poste que je parlais dans l'autre poste &quot;Conseiller Mystète&quot;</p>
+<hr>
+<h2 id="post-by-zig---august-27-2011-at-238-am">Post by Zig - August 27, 2011 at 2:38 AM</h2>
+<p><a id="post-289225"></a></p>
+<p>Wow, post très intéressant. Qu'est-ce qui en est?</p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---august-27-2011-at-253-am">Post by Axel Aerigson, AdC - August 27, 2011 at 2:53 AM</h2>
+<p><a id="post-289227"></a></p>
+<p>La patch est entre les mains de  Kel. Il ne nois reste plus qu'à attendre et prier! !</p>
+<p>Edit : Non mais quel avatar affreux Zig! !!!</p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---september-8-2011-at-921-pm">Post by Axel Aerigson, AdC - September 8, 2011 at 9:21 PM</h2>
+<p><a id="post-290041"></a></p>
+<p>Et bien.<br>
+Comme je m'ennuyais, et que j'étais tanner de voir plein de cuir, de balle de neige et autre qui ne s'empile pas, j'ai fouiller pour trouver comment, et c'est une réussite sur toute la ligne  !<br>
+Donc, ça va me prendre une liste parce que je n'arrive pas à savoir tout ce que je dois rendre stackable.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-8-2011-at-1031-pm">Post by Coordinateur Apoc - September 8, 2011 at 10:31 PM</h2>
+<p><a id="post-290042"></a></p>
+<p>Les items non stackable avaient simplement été mal scripté et n'étaient pas considérés crepusculeitem. Le problème c'est que si on veut les rendre crepusculeitem, ils faut tout les convertir ou le serveur va détecter tout les anciens comme items inconnus et les effacer. C'est pour ca que les cuirs ne fonctionnent plus aussi.</p>
+<p>En plus de quelques bugs avec CrepManager qui causent des problème avec certains items perdant leur propriétés ou truc du genre.</p>
+<hr>
+<h2 id="post-by-axel-aerigson-adc---september-9-2011-at-209-am">Post by Axel Aerigson, AdC - September 9, 2011 at 2:09 AM</h2>
+<p><a id="post-290051"></a></p>
+<p>Ne vous inquiétez pas cher ami. Crépuscule n'implosera pas grace à mon intervention divine,  je laisse se travail a Nimue! !<br>
+Apres avoir discutez avec Kel et Apoc et en voyant que tout fonctionne a merveille chez moi,  n' hesitez pas a me donner la liste de tout vos reves les plus.fou en ce qui concerce le stackable ( empilable pour les noob!  )</p>
+<p>Pour le moment jai fais les regs de teintures et les cuirs.</p>
+<p>Ax</p>
+<hr>
+<h2 id="post-by-animateur-mystre---september-9-2011-at-220-am">Post by Animateur Mystère - September 9, 2011 at 2:20 AM</h2>
+<p><a id="post-290052"></a></p>
+<blockquote>
+<p><strong>&quot;Axel Aerigson, AD.&quot; wrote:</strong>
+Histoire e faire du flood. Tiens c'est ce poste que je parlais dans l'autre poste &quot;Conseiller Mystète&quot;</p>
+<p>J'ai pas tout suivi  <img src="/assets/smilies/jesors.gif" alt="">  tu me rafraichis la mémoire Axel ?  <img src="/assets/smilies/blush2.gif" alt=""></p>
+</blockquote>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

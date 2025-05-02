@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug des druides - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Bug des druides</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Bug des druides</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="bug-des-druides">Bug des druides</h1>
+<h2 id="post-by-ex-bolero---october-5-2008-at-529-pm">Post by Ex-Bolero - October 5, 2008 at 5:29 PM</h2>
+<p><a id="post-185268"></a></p>
+<p>Salut,</p>
+<p>Ce matin, on a été bien embêtés avec Bonaparte pour aider Grunt avec ses spells de druide.</p>
+<p>J'ai noté la liste des bugs.</p>
+<p>Quand on achète les spells au marchand, voici la liste des objets qui spawnent selon le choix (gauche = le nom dans le menu du marchand, droite = l'objet spawné):</p>
+<p>Eruption = Eruption<br>
+Ami d’arbres = Ami d’arbres<br>
+Insectes = Insectes<br>
+Source de vie = Source de vie<br>
+Protection terrestre = Protection terrestre<br>
+Sol Fortifiant = Sol Fortifiant<br>
+<strong>Portail naturel = Passage naturel</strong><br>
+Animaux sauvages = Animaux sauvages<br>
+<strong>Cercle de pierre = passage naturel</strong><br>
+<strong>Pierre attirante = Cercle de pierre</strong><br>
+Creux = Creux<br>
+Racines = Racines<br>
+Lucioles = invoquer la luciole<br>
+Pierre enchantée = pierre enchantée<br>
+Lien avec la forêt = Lien avec la forêt -&gt; S’ajoute pas au spellbook</p>
+<p>Y'a donc un problème avec &quot;Cercle de Pierre&quot; et &quot;Pierre attirante&quot; et &quot;Portail Naturel&quot; dans le menu du vendeur. Pierre attirante n'est carrément pas trouvable, pareil pour &quot;Portail Naturel&quot; (du moins pas dans le menu que j'ai vu). On a dû lui donner via le .add LureStoneSpell (ou LureStoneScroll, je ne sais pas).</p>
+<p>Le livre plein de spells du Hall des GM est indiqué à 41 sorts alors qu'il devrait en compter 16, et dans le gump, 4 ou 5 spells sont un par dessus l'autre.</p>
+<p>Willy, tu pourrais nous regarder ça, s'il-te-plaît?</p>
+<p>Merci!</p>
+<p>Edit: La seconde fois que je l'ai ouvert, il ne buggait plus... Allez, je vous screene ça.</p>
+<p><img src="http://img384.imageshack.us/img384/275/druidefullspellbookus2.jpg" alt=""></p>
+<p>Essayez de comprendre ça, moi j'abandonne ^^</p>
+<hr>
+<h2 id="post-by-ex-lumina---october-5-2008-at-641-pm">Post by Ex-Lumina - October 5, 2008 at 6:41 PM</h2>
+<p><a id="post-185278"></a></p>
+<p>Le livre doit être plein pour qu'ils apparaissent tous.</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-5-2008-at-646-pm">Post by Ex-Bolero - October 5, 2008 at 6:46 PM</h2>
+<p><a id="post-185280"></a></p>
+<p>Ouais, mais il faudrait régler le bug de l'achat. À moins que ça ne soit que le marchand que j'aie visité qui ne vende pas tous les sorts...?</p>
+<p>Le livre était plein au Hall des GM: La première fois que je l'ai ouvert, je voyais 4 spells &quot;superposés&quot; (leurs textes étaient un par-dessus l'autre, le point bleu aussi). Cependant la seconde fois, c'était redevenu normal. Ensuite, il indique 41 spells alors qu'il n'y en a que 16 (bug mineur).</p>
+<p>Et étant donné que &quot;Lien avec la nature&quot; ne peut pas s'ajouter aux livres, les joueurs sont donc dans l'incapacité de l'utiliser autrement que par les parchemins ^^&quot;</p>
+<hr>
+<h2 id="post-by-willy-scripteur---october-5-2008-at-1007-pm">Post by Willy, Scripteur - October 5, 2008 at 10:07 PM</h2>
+<p><a id="post-185324"></a></p>
+<p>J,ai regardé le script du vendeur, selon le script tout est correct et tout me semble fonctionnel....tout m'a l'air de concorder...</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-5-2008-at-1009-pm">Post by Ex-Bolero - October 5, 2008 at 10:09 PM</h2>
+<p><a id="post-185326"></a></p>
+<p>C'est d'une étrangeté... O_O</p>
+<p>Faudrait en refaire un pour voir si ça fait la même chose. Ou essayer de comprendre d'où vient le bug d'affichage, parce que ça doit être chiant pour nos copains les druides. :S</p>
+<hr>
+<h2 id="post-by-anonymous---october-5-2008-at-1029-pm">Post by Anonymous - October 5, 2008 at 10:29 PM</h2>
+<p><a id="post-185332"></a></p>
+<p>Le livre et le nom des spells peut-être, à vérifier?</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---october-6-2008-at-104-am">Post by Coordinateur Apoc - October 6, 2008 at 1:04 AM</h2>
+<p><a id="post-185345"></a></p>
+<p>Le livre semble beau pourtant, la seule chose que je vois serait le texte trop long en francais...</p>
+<p>En regardant ca j'ai vu un truc intéressant, pour caster les sorts, il suffit de se faire des maccro ou d'écrire .druide1 à .druide16. J'ai pas testé mais ca devrait fonctionner... À non, je crois que ca fonctionnait qu'avec l'ancien livre de magie. (Celui tout-en-un) Faidrait tester, ca serait une alternative pour le problème des sorts qu'il n'apparaissent pas peut-être. Si sa ne fonctionne pas je peux probablement regarder pour modifier sans trop de problèmes. (Peut-être que rajouter quelques  lettres <img src="/assets/smilies/man_in_love.gif" alt="">)</p>
+<p>Ensuite j'ai trouvé un problème avec le scroll de &quot;Lien avec le(?) foret&quot; qui ne donnait pas le bon sort, pas un sort de druide donc ne fonctionnait probablement pas avec le livre de druide. Corrigé le sort et le texte aussi.</p>
+<p>Votre vendeur n'avait que 15 sorts et quelques erreurs aussi. J'ai corrigé et j'ai même mis les sort dans l'ordre qu'ils apparaissent dans le livre.</p>
+<p>Donc prochaine mise à jour faudra me dire ce qui fonctionne et ce qui fonctionne pas. Le problème du livre il faudrait faire des tests et me dire exactement ce qui arrive avec chaque sorts.  <img src="/assets/smilies/hi.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-bolero---october-6-2008-at-114-am">Post by Ex-Bolero - October 6, 2008 at 1:14 AM</h2>
+<p><a id="post-185347"></a></p>
+<p>J'ai testé les .druideX, ça marche bien.</p>
+<p>Au fait c'était pas &quot;Lien avec la forêt&quot; qui donnait pas le bon sort, c'est ceux en gras dans mon premier post ^^&quot;</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---october-6-2008-at-120-am">Post by Coordinateur Apoc - October 6, 2008 at 1:20 AM</h2>
+<p><a id="post-185348"></a></p>
+<p>J'ai testé les .druideX, ça marche bien.</p>
+<p>Au fait c'était pas &quot;Lien avec la forêt&quot; qui donnait pas le bon sort, c'est ceux en gras dans mon premier post ^^&quot;</p>
+<p>Tant mieux pour les druideX. Ceux en gras je sais, c'était un problème chez le vendeur. Mais le scroll dont je parles ne devrait même pas fonctionner. Les valeur des sorts de druide vont de 551 à 567 (ou dans ce coin la) et le scroll de &quot;lien avec le forêt&quot; donnait le sort de valeur 506, j'ai modifié pour 556 comme il aurait du être.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---october-8-2008-at-215-am">Post by Conteur Wolf - October 8, 2008 at 2:15 AM</h2>
+<p><a id="post-185729"></a></p>
+<p>Tant qu'à être dans le livre de druide, il y a un sort qui me chicote pour lequel tous les joueurs prennent le livre de druide. Il rend presque invulnérable et redonne le plein de mana en une seconde ou deux... C'est un sort de mass qui plus est, je crois que cela devrait être revu à la baisse honnêtement. C'est totalement abusé.</p>
+<p>Il s'agit du sort &quot;Pierre enchantée&quot;.</p>
+<hr>
+<h2 id="post-by-tiamat---october-8-2008-at-531-pm">Post by Tiamat - October 8, 2008 at 5:31 PM</h2>
+<p><a id="post-185811"></a></p>
+<p>Moi je trouve ça bien, dans la mesure que nous avons que 2 ou 3 druides qui se co presque jamais. Je crois pas que ça change quelque chose qu'on le laisse comme il est. Par contre moi j'ai des suggestion de sort. Comme un sort capable de nous changer en un animal au hasard aussi longtemps qu'on veux, un peu comme les sorts de nécro. Ca ce serait hot ^^</p>
+<p>P.s: pierre attirante ne marche pas</p>
+<hr>
+<h2 id="post-by-anonymous---october-8-2008-at-623-pm">Post by Anonymous - October 8, 2008 at 6:23 PM</h2>
+<p><a id="post-185820"></a></p>
+<p>Moi je trouve ça bien, dans la mesure que nous avons que 2 ou 3 druides qui se co presque jamais. Je crois pas que ça change quelque chose qu'on le laisse comme il est. Par contre moi j'ai des suggestion de sort. Comme un sort capable de nous changer en un animal au hasard aussi longtemps qu'on veux, un peu comme les sorts de nécro. Ca ce serait hot ^^</p>
+<p>P.s: pierre attirante ne marche pas</p>
+<p>Je me joins à l'avis de Wolf cependant. Avant de penser à ajouter des sorts, on devrait commencer par régler ceux qui bug. La classe druide est vraiment trop boosté; il faut la revoir.</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-8-2008-at-651-pm">Post by Ex-Bolero - October 8, 2008 at 6:51 PM</h2>
+<p><a id="post-185832"></a></p>
+<p>Zak, toutes les classes sont à revoir...  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<blockquote>
+<p>P.s: pierre attirante ne marche pas</p>
+<p>Faux, j'ai fait des tests avec Grunt Taktu. Au bout d'un moment, les créatures autour se mettent à tourner autour de la pierre. Pas très utile, mais si ça marche avec les monstres, ça peut devenir vachement pratique pour détourner l'attention.</p>
+<p>Sinon je penche aussi du côté de Wolf.</p>
+<p>J'ai l'air d'un chieur inexpérimenté mais il faudrait se lancer dans un énième débat de rebalancement ^^</p>
+</blockquote>
+<hr>
+<h2 id="post-by-conteuse-seshat---october-9-2008-at-1215-am">Post by Conteuse Seshat - October 9, 2008 at 12:15 AM</h2>
+<p><a id="post-185870"></a></p>
+<p>Désolé Tia... mais un sort qui permet à un druide de se faire seul un unique, c'est trop débalancé pour moi. Il faudrait simplement diminuer sa puissance... Permettre une regénération, par exemple, de 1 par x secondes où x est défini par la puissance du druide (vous comprendrez qu'il s'agit d'une fonction inverse du style 30/(x/2+1). Ainsi, un druide à 0 guérirait de 1 par 30 secondes, et un druide à 100%... de 1 à chaque 0,59 secondes... soit 102 par minute. C'est quand même pas mal, mais à tout le moins graduel et pas toujours d'un coup. Ça pourrait se comparer à l'efficacité des sorts de guérison des autres, sans avoir besoin de le relancer éternellement.</p>
+<p>Par contre, je serais pour un sort de métamorphisme. Ça égayerait la classe. Mais bon, c'est si le temps existe pour ça.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---october-9-2008-at-351-am">Post by Conteur Wolf - October 9, 2008 at 3:51 AM</h2>
+<p><a id="post-185901"></a></p>
+<p>Sur un autre serveur j'avais rencontrer le même bug avec le même sort. Nous avions diminué le délais entre chaque regain. Genre 15 hits et points de mana au 10 secondes. Pour un max de 200 points totaux sur une durée de 30 secondes.</p>
+<p>Même à cela les joueurs trouvaient le moyen de caster 2 fois le sorts ou les chevaucher pour faire perdurer les effets en plus des accumulés... Un timer de la durée du sort pourrait être appliqué et réglerait cet éventuel problème.</p>
+<hr>
+<h2 id="post-by-tiamat---october-9-2008-at-754-pm">Post by Tiamat - October 9, 2008 at 7:54 PM</h2>
+<p><a id="post-186030"></a></p>
+<p>Non mais je proposais ce sort comme ça, Willy veux des idées de scripte je lui en donne ^^</p>
+<hr>
+<h2 id="post-by-tiamat---october-14-2008-at-957-pm">Post by Tiamat - October 14, 2008 at 9:57 PM</h2>
+<p><a id="post-186557"></a></p>
+<p>Actuellement je suis en Astria et je teste Creux, ce sort est vraiment inutile si vous voulez mon avis. Il donne juste +1 dans dex, force ou intel et ca dure que 5 seconde. C'est tellement inutile que je suis tenter a dire de le supprimer pour un sort un peu plus utile.</p>
+<hr>
+<h2 id="post-by-anonymous---october-14-2008-at-1007-pm">Post by Anonymous - October 14, 2008 at 10:07 PM</h2>
+<p><a id="post-186559"></a></p>
+<p>Plutôt que de le supprimer et d'en commencer un nouveau tout neuf, je proposerais plutôt de tenter de l'améliorer.</p>
+<hr>
+<h2 id="post-by-tiamat---october-15-2008-at-929-pm">Post by Tiamat - October 15, 2008 at 9:29 PM</h2>
+<p><a id="post-186742"></a></p>
+<p>Mais il est inutile pour le druide vu les faible bonus qu’il donne et le court temps où on les a. Le seul truc bien avec ce sort c’est qu'il demande presque une infime partie de mana et pour caper son skill c’est cool. Alors voilà à quoi il sert se sort, caper son skill et c’est tout. Pour un sort intéressent mais pas trop abus je dirais au moins +5 dans les trois stats pendant 2 minutes. Ou alors plus le druide est haut lvl plus les bonus serons intéressent. A mon avis c’est un bon compromis ^^</p>
+<hr>
+<h2 id="post-by-anonymous---october-15-2008-at-933-pm">Post by Anonymous - October 15, 2008 at 9:33 PM</h2>
+<p><a id="post-186743"></a></p>
+<blockquote>
+<p><strong>&quot;Conceptrice Tiamat&quot; wrote:</strong>
+Mais il est inutile pour le druide [...]</p>
+<p>Voilà pourquoi je propose de l'améliorer.</p>
+</blockquote>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

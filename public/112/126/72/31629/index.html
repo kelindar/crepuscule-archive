@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Identification - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Item Identification</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Item Identification</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="item-identification">Item Identification</h1>
+<h2 id="post-by-scripteur-xenon---november-25-2009-at-956-pm">Post by Scripteur Xenon - November 25, 2009 at 9:56 PM</h2>
+<p><a id="post-236795"></a></p>
+<p><strong><u>Système d’identification</u></strong></p>
+<p><strong>Réussite de l’identification :</strong><br>
+Comme avant, directement lié au skill. L’objet doit être dans le sac.</p>
+<p><strong>Affichage de l’identification :</strong><br>
+La description de l’objet est conservée (.decrire). Pour le reste, l’image parle d’elle-même !</p>
+<p><img src="http://membres.lycos.fr/commanderarm/itemid.PNG" alt=""></p>
+<p><strong>Processus d’identification :</strong><br>
+Chaque caractéristique de l’objet est testée.<br>
+Si cette caractéristique est non-nulle, on effectue un jet en fonction de la skill (min 30% pour réussir le jet, max 90%). La caractéristique sera affichée uniquement si le jet est réussi. On peut donc avoir un affichage partiel des propriétés. La valeur attribuée est choisie dans une échelle et peut subir une erreur. C'est-à-dire que par exemple une caractéristique normalement « forte » peut être évaluée à « très forte » ou « moyenne » si celui qui identifie a moins de 80% dans la skill. La probabilité d’erreur est bien sur pondérée par la skill et limitée dans un certain rayon de valeurs proches.</p>
+<p><strong>Caractéristiques non reprises :</strong><br>
+Les caractéristique non reprises se rapportent surtout à arms lore, je n’ai donc pas toruvé pertinent de les reprendre.<br>
+-\tUse remaining<br>
+-\tPoison<br>
+-\tRésistance<br>
+-\tArtefact rarity<br>
+-\tLower stat requirement<br>
+-\tType de dommage des armes<br>
+-\tDurabilité<br>
+-\tSkill d’usage (fencing, sword, …)<br>
+-\tRayon d’attaque (le range des arc quoi)</p>
+<p><strong>Caractéristiques reprises et leur nom :</strong><br>
+Certains noms sont pas géniaux, je le conçois xD<br>
+HitFireArea  : Aura Flamboyante<br>
+HitEnergyArea : Aura Foudroyante<br>
+HitColdArea : Aura Glaciale<br>
+HitPhysicalArea :  Aura Tellurique<br>
+HitPoisonArea : Aura Toxique<br>
+SelfRepair : Réparation<br>
+MageWeapon : Maniement Magique<br>
+UseBestSkill : Maniement Universel<br>
+HitLowerDefend : Touché Amollissant<br>
+HitLeechStam : Touché Enduvore<br>
+HitLowerAttack : Touché Entravant<br>
+HitFireball : Touché Flamboyant <br>
+HitLightning : Touché Foudroyant<br>
+HitHarm : Touché Glacial<br>
+HitMagicArrow : Touché Magique<br>
+HitLeechMana : Touché Manavore<br>
+HitDispel : Touché Révoquant<br>
+HitLeechHits : Touché Vampirique<br>
+MageArmor : Armure De Mage<br>
+BonusDex : Agilité Accrue <br>
+Luck : Chance Accrue<br>
+DefendChance : Défense Accrue<br>
+WeaponDamage : Dommages Accrus            <br>
+LowerManaCost : Effort Magique<br>
+BonusStam : Endurance Accrue<br>
+BonusMana : Energie Accrue<br>
+BonusStr : Force Accrue<br>
+BonusInt : Intelligence Accrue<br>
+LowerRegCost : Perméabilité Magique Accrue<br>
+SpellChanneling : Port Magique<br>
+AttackChance : Précision Accrue<br>
+SpellDamage : Puissance Magique Accrue<br>
+RegenStam : Récupération Accrue<br>
+CastRecovery : Récupération Magique Accrue<br>
+RegenHits : Régénération Accrue<br>
+ReflectPhysical : Réflection<br>
+RegenMana : Régénération Magique Accrue<br>
+EnhancePotions : Sensibilité  Alchimique Accrue<br>
+BonusHits : Vitalité Accrue<br>
+WeaponSpeed : Vitesse<br>
+CastSpeed : Vitesse Magique Accrue</p>
+<p><strong>Echelles :</strong><br>
+Chaque échelle est caractérisée par ses dénominations, leur quantité, la marge entre ses paliers et son erreur admise.<br>
+Step = marge entre les paliers<br>
+Vmax = nombre max de paliers de différence à l’identification<br>
+(int value, double skill, double step, int vmax, int smax)</p>
+<p>LuckScale<br>
+Uniquement pour la chance qui admet des valeurs plus grandes<br>
+Step = 20<br>
+Vmax = 2<br>
+case 0  : return &quot;Nulle&quot;;<br>
+case 1  : return &quot;Très Faible&quot;;<br>
+case 2  : return &quot;Faible&quot;;<br>
+case 3  : return &quot;Moyenne&quot;;<br>
+case 4  : return &quot;Forte&quot;;<br>
+case 5  : return &quot;Très Forte&quot;;<br>
+case 6  : return &quot;Exceptionnelle&quot;;<br>
+default : return &quot;Divine&quot;;</p>
+<p>MagicScale<br>
+Pour le CastRecovery et le CastSpeed qui ne prennent normalment que des valeurs entre 1 et 3<br>
+Step = 1<br>
+Vmax = 1<br>
+case 0  : return (type ? &quot;Nul&quot;: &quot;Nulle&quot;);<br>
+case 1  : return &quot;Faible&quot;;<br>
+case 2  : return (type ? &quot;Moyen&quot; : &quot;Moyenne&quot;);<br>
+case 3  : return (type ? &quot;Fort&quot; : &quot;Forte&quot;);<br>
+default : return (type ? &quot;Divin&quot; : &quot;Divine&quot;);</p>
+<p>BonusScale<br>
+Tous les types de bonus qui sont en % en général<br>
+Step = 10<br>
+Vmax = 2<br>
+case 0  : return (type ? &quot;Nul&quot; : &quot;Nulle&quot;);<br>
+case 1  : return &quot;Très Faible&quot;;<br>
+case 2  : return &quot;Faible&quot;;<br>
+case 3  : return (type ? &quot;Moyen&quot; : &quot;Moyenne&quot;);<br>
+case 4  : return (type ? &quot;Fort&quot; : &quot;Forte&quot;);<br>
+case 5  : return (type ? &quot;Très Fort&quot; : &quot;Très Forte&quot;);<br>
+case 6  : return (type ? &quot;Exceptionnel&quot; : &quot;Exceptionnelle&quot;);<br>
+default : return (type ? &quot;Divin&quot; : &quot;Divine&quot;);</p>
+<p>StatScale<br>
+Pour tout ce qui est bonus stat (str,in,dex,stam,mana,life,…)<br>
+Step = 2<br>
+Vmax = 1<br>
+case 0  : return (type ? &quot;Nul&quot; : &quot;Nulle&quot;);<br>
+case 1  : return &quot;Faible&quot;;<br>
+case 2  : return (type ? &quot;Moyen&quot; : &quot;Moyenne&quot;);<br>
+case 3  : return (type ? &quot;Fort&quot; : &quot;Forte&quot;);<br>
+case 4  : return (type ? &quot;Très Fort&quot; : &quot;Très Forte&quot;);<br>
+case 5  : return (type ? &quot;Exceptionnel&quot; : &quot;Exceptionnelle&quot;);<br>
+default : return (type ? &quot;Divin&quot; : &quot;Divine&quot;);</p>
+<p>AuraScale(int value,double skill)<br>
+Juste pour les effets de zone. Je trouvait ça plus classe <img src="/assets/smilies/Wink.gif" alt=""> Step = 10<br>
+Vmax = 2<br>
+case 0  : return &quot;Nulle&quot;;<br>
+case 1  : return &quot;Imperceptible&quot;;<br>
+case 2  : return &quot;Négligeable&quot;;<br>
+case 3  : return &quot;Considérable&quot;;<br>
+case 4  : return &quot;Présente&quot;;<br>
+case 5  : return &quot;Palpable&quot;;<br>
+default : return &quot;Oppressante&quot;;</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---november-25-2009-at-957-pm">Post by Scripteur Xenon - November 25, 2009 at 9:57 PM</h2>
+<p><a id="post-236796"></a></p>
+<p>Il y a des bouts de code, je ferai le ménage bientôt!</p>
+<p>Remerciez Phydias.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---november-25-2009-at-958-pm">Post by Scripteur Xenon - November 25, 2009 at 9:58 PM</h2>
+<p><a id="post-236797"></a></p>
+<p>Oh et, il attend votre feu vert pour soumettre sur le serveur.</p>
+<hr>
+<h2 id="post-by-ex-lumina---november-25-2009-at-1001-pm">Post by Ex-Lumina - November 25, 2009 at 10:01 PM</h2>
+<p><a id="post-236798"></a></p>
+<p>Malade!</p>
+<hr>
+<h2 id="post-by-conteur-wolf---november-25-2009-at-1018-pm">Post by Conteur Wolf - November 25, 2009 at 10:18 PM</h2>
+<p><a id="post-236799"></a></p>
+<p>Vous êtes des machines messieurs. Great job.</p>
+<hr>
+<h2 id="post-by-lancelot---november-25-2009-at-1036-pm">Post by Lancelot - November 25, 2009 at 10:36 PM</h2>
+<p><a id="post-236800"></a></p>
+<p>Vraiment excellent!</p>
+<hr>
+<h2 id="post-by-conteur-centaure---november-26-2009-at-1224-am">Post by Conteur Centaure - November 26, 2009 at 12:24 AM</h2>
+<p><a id="post-236808"></a></p>
+<p>Tabarnak!!!</p>
+<p>(imaginez vous que ça sort de la bouche d'un Saguenéen, ça passe tout seul!)</p>
+<hr>
+<h2 id="post-by-ex-bolero---november-26-2009-at-157-am">Post by Ex-Bolero - November 26, 2009 at 1:57 AM</h2>
+<p><a id="post-236827"></a></p>
+<p>Ahahah <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Good job!!</p>
+<hr>
+<h2 id="post-by-ex-animateur-korgue---november-27-2009-at-433-pm">Post by Ex-Animateur Korgue - November 27, 2009 at 4:33 PM</h2>
+<p><a id="post-236959"></a></p>
+<p>Vraiment pas mal sérieux!</p>
+<hr>
+<h2 id="post-by-lancelot---november-27-2009-at-856-pm">Post by Lancelot - November 27, 2009 at 8:56 PM</h2>
+<p><a id="post-236962"></a></p>
+<blockquote>
+<p><strong>&quot;Scripteur Xenon&quot; wrote:</strong>
+Oh et, il attend votre feu vert pour soumettre sur le serveur.</p>
+<p>Donc on est tous d'accord, go?</p>
+</blockquote>
+<hr>
+<h2 id="post-by-conteur-centaure---november-27-2009-at-1016-pm">Post by Conteur Centaure - November 27, 2009 at 10:16 PM</h2>
+<p><a id="post-236967"></a></p>
+<p>Je suis d'accord.</p>
+<hr>
+<h2 id="post-by-ex-animateur-korgue---november-28-2009-at-236-am">Post by Ex-Animateur Korgue - November 28, 2009 at 2:36 AM</h2>
+<p><a id="post-236984"></a></p>
+<p>Bien sûr</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---december-1-2009-at-250-am">Post by Scripteur Xenon - December 1, 2009 at 2:50 AM</h2>
+<p><a id="post-237136"></a></p>
+<p>Message transmis.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---december-1-2009-at-703-pm">Post by Conteur Centaure - December 1, 2009 at 7:03 PM</h2>
+<p><a id="post-237219"></a></p>
+<p>Message transmis, donc c'est implanté?</p>
+<p>Et une question technique : Est-ce qu'on va pouvoir réévaluer des objets qui auront déjà été évalués?</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---december-2-2009-at-331-am">Post by Scripteur Xenon - December 2, 2009 at 3:31 AM</h2>
+<p><a id="post-237261"></a></p>
+<p>Update souhaitée, chers Coords.</p>
+<p>Réponse Centaure : Oui. Illimitée.</p>
+<hr>
+<h2 id="post-by-lancelot---december-2-2009-at-451-am">Post by Lancelot - December 2, 2009 at 4:51 AM</h2>
+<p><a id="post-237269"></a></p>
+<p>Merci beaucoup à Phydias et toi.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---december-2-2009-at-715-pm">Post by Conteur Centaure - December 2, 2009 at 7:15 PM</h2>
+<p><a id="post-237295"></a></p>
+<p>Je me joins à l'autre gars qui a des points la dedans!</p>
+<p>Merci beaucoup!</p>
+<hr>
+<h2 id="post-by-lancelot---december-8-2009-at-646-am">Post by Lancelot - December 8, 2009 at 6:46 AM</h2>
+<p><a id="post-237780"></a></p>
+<p>Intégré.</p>
+<p>Ne restera plus qu'à faire l'annonce.</p>
+<hr>
+<h2 id="post-by-lancelot---may-30-2010-at-804-am">Post by Lancelot - May 30, 2010 at 8:04 AM</h2>
+<p><a id="post-256477"></a></p>
+<p>Il y à un bug, il ne fonctionne plus depuis le CrepManager, je crois.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---july-9-2010-at-310-am">Post by Coordinateur Apoc - July 9, 2010 at 3:10 AM</h2>
+<p><a id="post-259598"></a></p>
+<p>Ca tien toujours? Kel avait corrigé? Possible de donner plus de détails si ca ne fonctionnes pas?</p>
+<hr>
+<h2 id="post-by-lancelot---july-9-2010-at-649-am">Post by Lancelot - July 9, 2010 at 6:49 AM</h2>
+<p><a id="post-259631"></a></p>
+<p>Ça ne fonctionne toujours pas.</p>
+<p>Quand on utilise itemID sur un objet en jeu, même s'il est magique, ça n'affiche plus rien.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---july-9-2010-at-731-am">Post by Coordinateur Apoc - July 9, 2010 at 7:31 AM</h2>
+<p><a id="post-259635"></a></p>
+<p>Hmm, il y a une facon de spawner un objet magique pour tester?</p>
+<hr>
+<h2 id="post-by-conan---july-9-2010-at-128-pm">Post by Conan - July 9, 2010 at 1:28 PM</h2>
+<p><a id="post-259658"></a></p>
+<p>Je me rappel distinctement avoir identifier des objets magiques bien après la maj du crepmanager.</p>
+<p>Pour spawn des objets magiques, suffit de spawn un truc genre dragon et le .kill <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---july-9-2010-at-926-pm">Post by Lancelot - July 9, 2010 at 9:26 PM</h2>
+<p><a id="post-259696"></a></p>
+<p>Via .props - attributes et weapon attributes.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

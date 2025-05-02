@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problème avec item id? - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Problème avec item id?</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Problème avec item id?</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="problme-avec-item-id">Problème avec item id?</h1>
+<h2 id="post-by-anonymous---january-17-2007-at-614-pm">Post by Anonymous - January 17, 2007 at 6:14 PM</h2>
+<p><a id="post-104932"></a></p>
+<p>Bon et bien après avoir capper mon item id à 100 hier et après avoir essayer de voir ce que certain item magique fesait, je me suis rendue compte que sa ne marchait pas du tout.</p>
+<p>Quand je clique sur u objet sa n'écrit rien quand c'Est réussis et sa l'écrit : vous êtes indécise, quand je rate....</p>
+<p>Est-ce que c'Est qqch qui pourrait être vérifier. Skills très utile sur crépuscule pour les items magique.. mais totallement inutile dans son état actuelle!</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-17-2007-at-936-pm">Post by Scripteur Artemis - January 17, 2007 at 9:36 PM</h2>
+<p><a id="post-104938"></a></p>
+<p>cest du au script incroyablement mal fait (désolé prédécesseurs)... beaucoup de variable ont été effacer pour des raisons qu'on ne s'explique pas présentement. Donc oui c'est normal, le skill est totalement inutile puisque les facultés magique ont été effacer pour les cachées des joueurs plutot que simplement les mettres en someil...</p>
+<p>pour la question est-ce réparable, oui sa serait possible mais bon... il y a tout un cassage de tete a voir les possibilités de remise de scripts de base sur le serveur, beaucoup de script sont présentement non-viable et cause des erreurs si ils sont utilisés a cause des nombreuses lignes manquantes...</p>
+<hr>
+<h2 id="post-by-rflexions---january-17-2007-at-956-pm">Post by Réflexions - January 17, 2007 at 9:56 PM</h2>
+<p><a id="post-104941"></a></p>
+<p>Même chose pour le taste id?</p>
+<hr>
+<h2 id="post-by-mr-morgathys---january-18-2007-at-257-am">Post by Mr. Morgathys - January 18, 2007 at 2:57 AM</h2>
+<p><a id="post-104966"></a></p>
+<p>J'ai trouvé une solution, à savoir si possibilité d'intégration dans les scrypt de Crepuscule... à voir</p>
+<p><a href="http://www.runuo.com/forums/showthread.php?t=41906&amp;highlight=ML+Item">http://www.runuo.com/forums/showthread.php?t=41906&amp;highlight=ML+Item</a></p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-18-2007-at-1011-am">Post by Scripteur Artemis - January 18, 2007 at 10:11 AM</h2>
+<p><a id="post-104989"></a></p>
+<p>jai lu quelque scripts et sa pourait etre potable dapres moi... possiblement regler le probleme quon a avec le lootpack.cs dayeur.</p>
+<p>Sa serait bien a tester en clone-serveur</p>
+<hr>
+<h2 id="post-by-mr-morgathys---january-18-2007-at-1021-am">Post by Mr. Morgathys - January 18, 2007 at 10:21 AM</h2>
+<p><a id="post-104990"></a></p>
+<p>J'ai toujours se problème de IArmor dans le CrepusculeItem.cs qui m'empêche de rouler Crépuscule en parallèle...  <img src="/assets/smilies/Wink.gif" alt=""></p>
+<p>Sans ça, j'ai un portable qui traine sous linux qui pourra amplement faire le serveur.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-19-2007-at-155-am">Post by Coordinateur Apoc - January 19, 2007 at 1:55 AM</h2>
+<p><a id="post-105026"></a></p>
+<p>J'ai toujours se problème de IArmor dans le CrepusculeItem.cs qui m'empêche de rouler Crépuscule en parallèle...  <img src="/assets/smilies/Wink.gif" alt=""><br>
+Sans ça, j'ai un portable qui traine sous linux qui pourra amplement faire le serveur.</p>
+<p>Erm, je t'enverrai les scripts complet.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---january-19-2007-at-435-pm">Post by Feydanith, dit la Carpe - January 19, 2007 at 4:35 PM</h2>
+<p><a id="post-105089"></a></p>
+<p>J'ai eu une idée, somme toute un peu conne, mais qui peut fonctionner.</p>
+<p>Lorsque l'on passe sa souris sur un objet, on ne voit aucune propriétés, ok ?</p>
+<p>Le principe est simple :</p>
+<ol>
+<li>Si l'accès &gt;= GM, il voit les propriétés ( celles de base runuo dans le slistes apr défaut )</li>
+<li>Autrement :</li>
+</ol>
+<ul>
+<li>Le joueur a moins de 20% en item ident : il ne voit rien.</li>
+<li>On échellonne les caractéristiques visibles de 20 à 100% avec chaque palier donne accès à voir les propriétés d'un objet en mettant sa souris dessus. On mettrait pas exemple entre 20 et 40 les trucs triviaux genre les resists et ainsi de suite.</li>
+</ul>
+<p>Voila, c'est juste une idée qui pourrait rendre la skill utile.<br>
+Il va de soit que les textes affichés serait personnalisés pour le shard.<br>
+Exemple :</p>
+<p>Life leech =&gt; Absorption de vie<br>
+Faster Cast =&gt; Incantation rapide<br>
+...</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---january-19-2007-at-723-pm">Post by Scripteur Artemis - January 19, 2007 at 7:23 PM</h2>
+<p><a id="post-105111"></a></p>
+<p>personellement j'aime bien le script que morg a montré de runUO... l'ancient systeme (pre-aos) était magnifique pour les objets magique. Pour les besoin de la cause, on peut modifier quelque peut les scripts pour faire en sorte que certain % de bonus sont lisible seulement avec certain % d'item ID. Donc pour des trucs du genre artéfactes ou autre qui sont a venir, il faudrait très élevé en skill.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

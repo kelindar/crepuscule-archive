@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le crash - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Le crash</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Le crash</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="le-crash">Le crash</h1>
+<h2 id="post-by-rdacteur-eru---september-15-2006-at-1053-pm">Post by Rédacteur Eru - September 15, 2006 at 10:53 PM</h2>
+<p><a id="post-85985"></a></p>
+<!-- m --><a class="postlink" href="http://kirofus.no-ip.com/crepuscule.gif">http://kirofus.no-ip.com/crepuscule.gif</a><!-- m -->
+<p>C'est un screen filé par Kirofus.</p>
+<p>A ce moment j'étais IG en train de classer des clés dans un coffre à l'aide seule de ma souris. Je ne vois pas en quoi j'ai pu me faire crasher. Il va tenter d'analyser les saves.</p>
+<p>Vincent a dit :<br>
+Bonjour, je me suis permit de t'ajouter sur msn car j'ai un plvl admin sur crépuscule et je me suis dit que si tu en avais besoin d'un pour bidouiller un truc sur le shard, je serais là <br>
+Et aussi pour signaler que le shard a crashé et qu'il est impossible de se connecter</p>
+<p>(...)</p>
+<p>Kirofus dit :<br>
+je vous fais un screen</p>
+<p>Vincent dit :<br>
+je sais que j'étais en train de reclasser des clés dans un coffre avec mon gm. Je pense pas que ce soit qui ai fait bugguer<br>
+Je suis très nul en technique, donc je crois pas y comprendre quelque chose  Mais je transmettrais<br>
+en gros ça veut dire quoi ? cest mon compte KopattGM qui a fait planté le shard ?</p>
+<p>Kirofus dit :<br>
+Je sais pas, j'essaye de voir là</p>
+<p>Vincent dit :<br>
+je vais essayer de me co avec et de faire une save pour voir si tu veux</p>
+<p>Kirofus dit :<br>
+Jpense qu'il va falloir attendre un peu le temps que j'analyse les saves<br>
+ya de quoi qui a fait foiré le shard</p>
+<p>Vincent dit :<br>
+ok</p>
+<p>Kirofus dit :<br>
+sa se rends meme plus la</p>
+<p>Vincent dit :<br>
+rofl comment je comprends rien à tout ce baragouin<br>
+je sais aussi que juste avant la save, un pj avait pagé. peut être avait-il trouvé quelque chose de spécial ?</p>
+<p>Kirofus dit :<br>
+bah, sa a l'air d'etre le core qui a foirée au complet</p>
+<p>Vincent dit :<br>
+le core ? c'est quoi ?<br>
+(sinon je vois qu'il y avait un autre gm au moment du crash.)</p>
+<p>Kirofus dit :<br>
+bah, le moteur<br>
+a ce que je fvois</p>
+<p>Vincent dit :<br>
+et il a une raison de foirer ?</p>
+<p>Kirofus dit :<br>
+c'est lors du save, le serveur a essayé de sauvegarder un NPC ou un Perso qui existe pas<br>
+bref, que sa référence de pointeur == NULL</p>
+<p>Vincent dit :<br>
+et ça risque de le refaire ?</p>
+<p>Kirofus dit :<br>
+je sais vraiment pas, vous etes les premier a avoir fait ce genre d'Erreur, je vais restauré un vieux saves, en esperant que sa aide</p>
+<p>Vincent dit :<br>
+ok merci. Il y aura un warp ?</p>
+<p>Kirofus dit :<br>
+ouais, un petit<br>
+2h max</p>
+<p>Vincent dit :<br>
+ok<br>
+Merci de t'embêter pour nous en tout cas ^^</p>
+<p>Kirofus dit :<br>
+fait plaisir<br>
+mais je sens que sa va etre plus long que prévue<br>
+les 3 backup ne fonctionne pas<br>
+va falloir je cherche le probleme</p>
+<p>Vincent dit :<br>
+Oh c'est mauvais signe ça, j'aime pas</p>
+<hr>
+<h2 id="post-by-rdacteur-eru---september-16-2006-at-1213-am">Post by Rédacteur Eru - September 16, 2006 at 12:13 AM</h2>
+<p><a id="post-86016"></a></p>
+<p>En fait c'est à cause d'Argyle. (<em>le met sur le bûcher</em>).<br>
+En fait il avait possess un pnj et a pas réussi à le delete alors il l'a fait manuellement c'est ce qui a provoqué l'erreur dans la save.<br>
+Kirofus a pensé ça et ensuite Ragna l'a confirmé à Maharet.<br>
+Kirofus s'occupe de régler le pb après être sortit du boulot, à 16h30 qc.<br>
+Rencontre HS/OdS annulée.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-16-2006-at-359-am">Post by Coordinateur Apoc - September 16, 2006 at 3:59 AM</h2>
+<p><a id="post-86083"></a></p>
+<p>Pour ceux qui ne le savent pas encore, le possess est buggé, ne l'utilisez pas!  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

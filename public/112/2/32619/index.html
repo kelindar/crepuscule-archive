@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dossier: Système d&#39;Evolution - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Dossier: Système d&#39;Evolution</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <span class="current-page">Dossier: Système d&#39;Evolution</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="dossier-systme-devolution">Dossier: Système d'Evolution</h1>
+<h2 id="post-by-fondateur-kel---january-31-2010-at-416-am">Post by Fondateur Kel - January 31, 2010 at 4:16 AM</h2>
+<p><a id="post-243169"></a></p>
+<p>Bonjour,</p>
+<p>Nous avons dévéloppé un concept pour améliorer/changer le système d'évolution actuel. Ce draft est issu et une compilation de plusieurs conversation, idées de differentes personnes.</p>
+<p><u>Quelques points présents ici:</u><br>
+**1. **Changement de la courbe d'expérience/niveau<br>
+<strong>2.</strong> Proposition de système des classes<br>
+<strong>2.1</strong>  Distribution des points d'aptitudes<br>
+<strong>2.2</strong>  Classes actuelles, que faire?<br>
+<strong>2.3</strong>  Classes IG, comment?<br>
+<strong>3.</strong> Liste d'aptitudes, propositions<br>
+<strong>4.</strong> Skills, comment le calcul est fait?</p>
+<p><span style="font-size:150%">1. Changement de la courbe d'expérience/niveau</span></p>
+<p>Le réequilibrage de la courbe d'expérience suivant ce tableau:</p>
+<p><img src="http://www.au-crepuscule.com/images/evo1.png" alt=""></p>
+<p><img src="http://www.au-crepuscule.com/images/evo2.png" alt=""></p>
+<p>Donc en résumé, un joueur normal évolue jusqu'au niveau 42. A partir de niveau 42 le jeu passe alors en mode &quot;haut niveau&quot; et la fonction change en fonction linéaire, démandant 85 xp pour monter de niveau. La partie haut niveau permet aussi d'augmenter le cap</p>
+<p><span style="font-size:150%">2. Proposition de système des classes</span></p>
+<p>Les classes seront réparties en 5 branches, le joueur commence à jouer et choisit une branche, et uniquement une branche. Le changement de classe dans la branche (ex: un paladin qui devient chevalier) se fait IG et totalement automatisé. Un changement de branche est possible, mais sera fait par soumission de background de changement de branche.</p>
+<p>Les branches proposées:<br>
+-Les guerriers (paladins, archer, moines, chevaliers, rôdeurs samurai etc)<br>
+-Les roublards (voleurs, espions, assassins, barde, ninja, etc)<br>
+-Les magiciens (nécromancien, arcaniste, druide, sorcier, démonologiste, invocateur, démonologue)<br>
+-Les artisans (couturiers, forgerons, menuisiers, tinkers, alchimistes, cuisiniers, etc)<br>
+-Le spirituel (prêtre, enchanteur, télépathe, érudit, sage, etc)</p>
+<p><span style="font-size:150%">2.1 Distribution des points d'aptitudes</span></p>
+<p>A chaque niveau, le joueur gagne un certain nombre de points. On peut voir ces points comme de l'argent, lequel on peut investir pour &quot;acheter&quot; les points d'aptitude.<br>
+Les points d'aptitudes sont reparties en 4 catégories</p>
+<ul>
+<li>Les aptitudes de prédilection</li>
+<li>Les aptitudes normales</li>
+<li>Les aptitudes hors-classe</li>
+<li>Les aptitudes interdites</li>
+</ul>
+<p>Les couts d'investissement sont:</p>
+<ul>
+<li>Les aptitudes de prédilection :  1 point / point</li>
+<li>Les aptitudes normales : 2 points / point</li>
+<li>Les aptitudes hors-classe : 3 point / point</li>
+<li>Les aptitudes interdites : impossible de dévélopper l'aptitude</li>
+</ul>
+<p>En résumé, cette méthode permet de customiser le personnage sans avoir de bloquage et dépasser les limites de certaines classes.</p>
+<p><span style="font-size:150%">2.2  Classes actuelles, que faire?</span></p>
+<p>Les classes actuelles seront refaites tels qu'elles sont et mises IG via les items. Les joueurs ayant une classe X actuellement, auront la nouvelle classe Y correspondant à la classe X actuelle.</p>
+<p><span style="font-size:150%">2.3  Classes IG, comment?</span></p>
+<p>Les classes ne seront plus choisis via un gump, mais plutôt trouvés IG et fait via les items (à coup de .props). Par exemple, un joueur qui veut devenir nécromancien, devra aller dans un donjon spécial pour y trouver à la fin le livre de nécromanciens, lui permettant de changer la classe.<br>
+Il y aurait également possibilité de créer ainsi une panoplée de classes, classes de préstige, classes rares, via anims ou projets de joueurs (fortement contrôlé)...</p>
+<p><span style="font-size:150%">3. Liste d'aptitudes, propositions</span></p>
+<p>S'il faut réadapter les aptitudes, c'est le moment!</p>
+<p><span style="font-size:150%">4. Skills, comment le calcul est fait?</span></p>
+<p>Les caps des skills sont calculés en tenant compte de plusieurs paramètres:</p>
+<ol>
+<li>Le skillcap maximal, qui est en fonction de l'aptitude X, son type correspondant à la classe.</li>
+<li>Les points investi en fonction de l'aptitude.</li>
+</ol>
+<p>Donc par exemple un joueur ne pourra pas investir plus de points dans la cachette d'ombres que ce qui est permis par le skill cap à son niveau (dans les tableaux).</p>
+<hr>
+<h2 id="post-by-nimue---january-31-2010-at-525-am">Post by Nimue - January 31, 2010 at 5:25 AM</h2>
+<p><a id="post-243172"></a></p>
+<p>Prenez le temps de bien lire et de posez des questions.</p>
+<p>Nous en avons discuté une bonne partie de l'après-midi, je suis vraiment favorable à ce changement qui pourrait faire du bien à Crépuscule.</p>
+<hr>
+<h2 id="post-by-phooka---january-31-2010-at-138-pm">Post by Phooka - January 31, 2010 at 1:38 PM</h2>
+<p><a id="post-243213"></a></p>
+<p>Je trouve l'idée des 5 branches de départ très bien pensée et permettraient aux joueurs de s'orienter petit à petit afin de leur éviter dès le départ de se planter de classe (ainsi les demandes au gm pour changer de classes se feraient plus rare).</p>
+<p>Pour le ré-équilibrage de la courbe d'expérience, je ne sais pas comment était celle d'avant, on mettait plus de temps pour atteindre le niveau 42 non?</p>
+<p>Par contre je ne comprend pas ce point-ci:</p>
+<p>2.3 Classes IG, comment?</p>
+<p>Les classes ne seront plus choisis via un gump, mais plutôt trouvés IG et fait via les items (à coup de .props). Par exemple, un joueur qui veut devenir nécromancien, devra aller dans un donjon spécial pour y trouver à la fin le livre de nécromanciens, lui permettant de changer la classe.<br>
+Il y aurait également possibilité de créer ainsi une panoplée de classes, classes de préstige, classes rares, via anims ou projets de joueurs (fortement contrôlé)..</p>
+<p>Je comprend pas le truc dès le départ, le fait de choisir sa classe via un gump. Si tu pouvais éclairer ma lanterne là-dessus je t'en serais reconnaissante.</p>
+<p>Voilà voilà!  <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-31-2010-at-616-pm">Post by Fondateur Kel - January 31, 2010 at 6:16 PM</h2>
+<p><a id="post-243227"></a></p>
+<p>Justement, tu ne choisis pas la classe au départ (à la création du personnage). Tu choisis juste une des 5 branches, ensuite pour te choisir la classe, il faut chercher un livre de classe qui se trouve dans le jeu.</p>
+<p>Ex: Tu crées un nouveau personnage, tu choisis qu'il sera dans la branche des guerriers. Il est du coui guerrier sans classe.<br>
+En allant dans le temple OdS, tu trouves un livre à la portée de tous, en cliquant dessus, ça te permet de devenir Paladin. Ton personnage prend la classe Paladin.</p>
+<hr>
+<h2 id="post-by-phooka---january-31-2010-at-659-pm">Post by Phooka - January 31, 2010 at 6:59 PM</h2>
+<p><a id="post-243230"></a></p>
+<p>D'accord je comprend mieux!!! Ca fait comme un système de base uo amélioré. Quand on allait voir des pnj pour qu'ils nous apprennent notre future skill en échange d'or. Mais sous forme de lieux je trouve ça beaucoup mieux! C'est super comme moyen ça. Par contre du coup, comment juger une classe plus rare qu'une autre?</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-31-2010-at-738-pm">Post by Fondateur Kel - January 31, 2010 at 7:38 PM</h2>
+<p><a id="post-243240"></a></p>
+<blockquote>
+<p><strong>&quot;Conseillère Phooka&quot; wrote:</strong>
+D'accord je comprend mieux!!! Ca fait comme un système de base uo amélioré. Quand on allait voir des pnj pour qu'ils nous apprennent notre future skill en échange d'or. Mais sous forme de lieux je trouve ça beaucoup mieux! C'est super comme moyen ça. Par contre du coup, comment juger une classe plus rare qu'une autre?</p>
+<p><em>Il n'y a pas de fonction d'évaluation simple qu'on pourrais faire, disons qu'une classe rare serait une combinaison d'aptitudes de prédilection/normaux/hors-classe particuliere. Une autre possibilité de classe rare est peut être qu'elle a plus d'aptitudes de prédilection que les autres classes.</em></p>
+</blockquote>
+<hr>
+<h2 id="post-by-lancelot---january-31-2010-at-832-pm">Post by Lancelot - January 31, 2010 at 8:32 PM</h2>
+<p><a id="post-243248"></a></p>
+<p>N'hésitez pas à poser des questions.</p>
+<p>Personnellement je trouve ça vraiment intéressant de pouvoir personnaliser encore davantage les personnages. Ce nouveau système apporterait un vent de fraîcheur qui ferait du bien aux nouveaux comme aux plus anciens. : )</p>
+<hr>
+<h2 id="post-by-conteur-centaure---january-31-2010-at-1132-pm">Post by Conteur Centaure - January 31, 2010 at 11:32 PM</h2>
+<p><a id="post-243277"></a></p>
+<p>Selon ce que je vois des classes proposées, ce changement sera fait pour Crep2?</p>
+<p>Sinon, ça me va. Mais je suis contre une application directe, en un bloc, de ces changements. J'ai vu plusieurs shards bien établis couler suite à une mise à jour trop intense des systèmes..</p>
+<hr>
+<h2 id="post-by-phooka---february-1-2010-at-1213-am">Post by Phooka - February 1, 2010 at 12:13 AM</h2>
+<p><a id="post-243284"></a></p>
+<p>Je suis d'accord avec Centaure sur ce point auquel je n'avais pas pensé, mais oui, mettre petit à petit afin que tout le monde s'adapte. Mais je suis totalement pour cette mise à jour.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-1-2010-at-1223-am">Post by Fondateur Kel - February 1, 2010 at 12:23 AM</h2>
+<p><a id="post-243287"></a></p>
+<p>La transition entre les deux doit être assez simple, donc honettement, je ne pense pas que ça va poser trop de problèmes. On ne fait pas de reset de personnages, mais plutôt une migration des anciens vers le nouveau système, qui sont 'compatibles' dans une certaine mesure.<br>
+Puis c'est vrai que pour les listes d'aptitudes et remaniement de ceux là, ça peut être fait par après sans problèmes.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-1-2010-at-340-am">Post by Coordinateur Apoc - February 1, 2010 at 3:40 AM</h2>
+<p><a id="post-243339"></a></p>
+<p>Tout me semble beau sauf une chose.</p>
+<p>Présentement le système de points d'aptitudes permet une liberté total de son évolution avec les points bonus. Mais si j'ai bien comprit le nouveau système, certaines classes ne pourraient pas investir dans certaines aptitudes.</p>
+<p>D'un côté cela apporte un peu plus de logique en limitant un peu les classes. De l'autre côté, ca enlèverait quand même un gros morceaux de l'évolution technique des joueurs et de leur liberté.</p>
+<p>Moi ca me fait ni chaud ni froid mais cela pourrait causer problème avec certains joueurs qui ont présentement des mélanges qui seraient interdit.</p>
+<p>Peut-être que les aptitudes interdites sont très rares et c'est par exemple Nécromancie pour un Paladin ou simplement des trucs logique comme ca et je m'en fais donc pour rien.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---february-1-2010-at-356-am">Post by Lancelot - February 1, 2010 at 3:56 AM</h2>
+<p><a id="post-243348"></a></p>
+<blockquote>
+<p><strong>&quot;Apoc&quot; wrote:</strong>
+De l'autre côté, ca enlèverait quand même un gros morceaux de l'évolution technique des joueurs et de leur liberté.</p>
+<p>En même temps, si un guerrier veut avoir de la magie arcanique, peut-être que 5/7 des options d'avancements en tant que guerrier le bloqueront, mais il n'a qu'à choisir en conséquent pour s'adapter à ce qu'il désire.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-conteur-centaure---february-1-2010-at-738-pm">Post by Conteur Centaure - February 1, 2010 at 7:38 PM</h2>
+<p><a id="post-243478"></a></p>
+<p>Pour les &quot;coûts&quot; en point, selon que c'est une aptitude principale ou farfelue, j'aime bien!</p>
+<p>Et ma question du post précédent était à propos des classes que tu as mentionnées, Kel. Des trucs comme &quot;Démonologue&quot;, ça existe déjà où c'est prévu pour Crep 2?</p>
+<p>Et tant mieux si la transition ne sera pas douloureuse!</p>
+<hr>
+<h2 id="post-by-conteur-wolf---february-1-2010-at-842-pm">Post by Conteur Wolf - February 1, 2010 at 8:42 PM</h2>
+<p><a id="post-243495"></a></p>
+<p>En fait c'est l'équipe qui pourra construire les classes en modifiant simplement les props du livre de classe. Les props étant les PA prédilection de la classe et le nom. Ainsi il serait possible de limiter ou créer des classes uniques spéciales également dont les secrets pourront se trouver dans le fond d'un donjon, lors d'une anim, ou encore même chez des guildes.</p>
+<p>Ce sera possible de leur donner le nom que l'on désire etc. Il y aura une commande pour connaître les classes qu'il y a actuellement, mais bien entendu avant de créer une nouvelle classe, il faudra que cela passe sous l'aval de toute l'équipe. Ainsi comme disait Apoc plus tôt, cela ne sera pas si restreint en fait.</p>
+<p>Cela évitera également les trop gros déséquilibre de guerrier tank mage, etc.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-3-2010-at-1228-am">Post by Fondateur Kel - February 3, 2010 at 12:28 AM</h2>
+<p><a id="post-243664"></a></p>
+<p><em>Voilà, pour les classes c'est comme Wolf le dit. On valide alors? Les chiffres vous semblent bons?</em></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-3-2010-at-114-am">Post by Coordinateur Apoc - February 3, 2010 at 1:14 AM</h2>
+<p><a id="post-243672"></a></p>
+<p>Parfait Chef!  <img src="/assets/smilies/drinks.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-3-2010-at-143-am">Post by Coordinateur Apoc - February 3, 2010 at 1:43 AM</h2>
+<p><a id="post-243676"></a></p>
+<p>Ah et au lieu de faire un autre sujet...</p>
+<p>Est-ce qu'il y a toujours des plans pour refaire le système de magie pour Crépuscule 2? Je suis en train de retoucher aux sorts de druide et je me demande si je fais finalement ca pour rien.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-3-2010-at-218-am">Post by Conteur Centaure - February 3, 2010 at 2:18 AM</h2>
+<p><a id="post-243678"></a></p>
+<p>Go adhead, Kel.</p>
+<p>Et c'est une question très pertinente, Apoc ^^</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-3-2010-at-231-am">Post by Fondateur Kel - February 3, 2010 at 2:31 AM</h2>
+<p><a id="post-243680"></a></p>
+<p>Ah et au lieu de faire un autre sujet...</p>
+<p>Est-ce qu'il y a toujours des plans pour refaire le système de magie pour Crépuscule 2? Je suis en train de retoucher aux sorts de druide et je me demande si je fais finalement ca pour rien.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p><em>Pas pour l'instant, non ^^ J'ai fait une petite retouche à la magie ceci dit (pour la prononciation de mantra).</em></p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-3-2010-at-732-pm">Post by Conteur Centaure - February 3, 2010 at 7:32 PM</h2>
+<p><a id="post-243732"></a></p>
+<p>Tellement cool!</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-6-2010-at-448-am">Post by Fondateur Kel - February 6, 2010 at 4:48 AM</h2>
+<p><a id="post-244098"></a></p>
+<p><img src="http://www.au-crepuscule.com/images/test1.png" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---february-6-2010-at-457-am">Post by Lancelot - February 6, 2010 at 4:57 AM</h2>
+<p><a id="post-244099"></a></p>
+<p>En feu!</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-6-2010-at-524-am">Post by Fondateur Kel - February 6, 2010 at 5:24 AM</h2>
+<p><a id="post-244101"></a></p>
+<p>C'est presque fini, il ne me reste plus qu'à faire la .fiche et tester ça.<br>
+Aussi, il faut récréer les classes actuelles automatiquement. On fait ça comment? Les actuellement primaires = prédilection, secondaires = normales et tout le reste = hors classe?</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-6-2010-at-550-am">Post by Fondateur Kel - February 6, 2010 at 5:50 AM</h2>
+<p><a id="post-244102"></a></p>
+<p><img src="http://www.au-crepuscule.com/images/test2.png" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-6-2010-at-746-am">Post by Fondateur Kel - February 6, 2010 at 7:46 AM</h2>
+<p><a id="post-244105"></a></p>
+<p><img src="http://www.au-crepuscule.com/images/test3.png" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---february-6-2010-at-753-am">Post by Lancelot - February 6, 2010 at 7:53 AM</h2>
+<p><a id="post-244110"></a></p>
+<p>J'en suis vraiment abasourdit, en si peu de temps!</p>
+<p>Vraiment magnifique Kel. Merci beaucoup. ^^</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-6-2010-at-808-am">Post by Fondateur Kel - February 6, 2010 at 8:08 AM</h2>
+<p><a id="post-244113"></a></p>
+<p>Voilà, c'est presque fini, il ne reste plus rien, des finitions et des tests.</p>
+<p><u>Bon, les questions à répondre encore:</u></p>
+<ul>
+<li>Il faut récréer les classes actuelles automatiquement. On fait ça comment? Les actuellement primaires = prédilection, secondaires = normales et tout le reste = hors classe?</li>
+<li>Est-ce qu'on ajoute de nouvelles aptitudes? Faut-il apporter les corréctions aux existantes?</li>
+</ul>
+<p>Ce qui reste:</p>
+<ul>
+<li>Pouvoir voir ce qu'une aptitude donne (c'est visible côté GM en .props, mais pas en joueur encore).</li>
+<li>Finir le script de migration</li>
+<li>Tests</li>
+</ul>
+<hr>
+<h2 id="post-by-phooka---february-6-2010-at-713-pm">Post by Phooka - February 6, 2010 at 7:13 PM</h2>
+<p><a id="post-244140"></a></p>
+<p>J'ai regardé un peu les aptitudes qui existaient déjà, et voilà ce qui pourrait être potentiellement modifié voir changé:</p>
+<p>accrobatie<br>
+agilité accrue<br>
+J'ai l'impression qu'il manque un truc à ces deux aptitudes pour qu'elles soient complètes mais je ne sais pas quoi?</p>
+<p>crochetage<br>
+pose de piège ces deux aptitudes ont exactement les même distributions de skill à l'exception de crochetage qui en a moins que l'autre. Du coup je proposerai soit d'enlever crochetage et de rajouetr un +1 en lopicking pour pose de piège ou alors qu'on modifie l'une des deux aptitudes?</p>
+<p>Ensuite finalement après relecture je vois pas ce qui pourrait être modifié, c'est assez délicat et compliqué je pense, même au niveau des classes de faire des modifications.<br>
+Voilà pour ma part!</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-6-2010-at-753-pm">Post by Fondateur Kel - February 6, 2010 at 7:53 PM</h2>
+<p><a id="post-244146"></a></p>
+<p>Accrobatie et Endurance Accrue (nouvellement 'Entrainement'), ils ajoutent aux StatCap, ce qui est quand même un avantage assez important.<br>
+Bien vu pour crochetage et pose de pièges, je les ai fusionnés là.  Ajouté aussi 'Magie Sanguine', ce qui est une aptitude disponible uniqument aux tieflings, donnant en sorcellerie et nécro.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-6-2010-at-1001-pm">Post by Conteur Centaure - February 6, 2010 at 10:01 PM</h2>
+<p><a id="post-244174"></a></p>
+<p>Si on doit refaire quelques classes, comment sera-t-il possible de faire le transfert automatiquement? On ne serait pas mieux de le faire manuel?</p>
+<p>edit : T'es vraiment une fu***ng machine, Kel ^^</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-6-2010-at-1011-pm">Post by Conteur Centaure - February 6, 2010 at 10:11 PM</h2>
+<p><a id="post-244178"></a></p>
+<p>Et, pendant que j'y pense, je me porte volontaire pour faire un tutoriel pour le site web/forum. Je pense qu'on n'aura pas le choix d'en avoir un! J'ai hâte d'essayer ça!</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-6-2010-at-1113-pm">Post by Fondateur Kel - February 6, 2010 at 11:13 PM</h2>
+<p><a id="post-244186"></a></p>
+<blockquote>
+<p><strong>&quot;Animateur Centaure&quot; wrote:</strong>
+Et, pendant que j'y pense, je me porte volontaire pour faire un tutoriel pour le site web/forum. Je pense qu'on n'aura pas le choix d'en avoir un! J'ai hâte d'essayer ça!</p>
+<p><em>Alors tu es résponsable pour nous faire ça ^^</em></p>
+</blockquote>
+<hr>
+<h2 id="post-by-lancelot---february-6-2010-at-1156-pm">Post by Lancelot - February 6, 2010 at 11:56 PM</h2>
+<p><a id="post-244189"></a></p>
+<p>C'est le temps que je soulève un petit problème sur la classe de Clerc et Paladin:</p>
+<p>Clerc, au niveau 27, perd le reste de ses aptitudes primaires. Car avec 30 magie divine et 17 médecine ça donne: 100 en guérison, et 100 en prêtrise.<br>
+Paladin c'est la même chose au niveau 27. Avec 40 arme de mêlée et 14 médecine en primaire, et 40 magie divine en secondaire, il à 100 en guérison, et mettre davantage en arme de melee ou guérison en primaire ne lui sert à rien.</p>
+<p>Même si avec le nouveau système, il va pouvoir investir ses points ailleurs, il perd quand même 13 niveau de points (pour le clerc) de &quot;prédilection&quot; et devra payer X2 plus tôt car ses primaires seront déjà inutiles.</p>
+<p>Je suggère de déplacer guérison en secondaire, pour ces deux classes.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-7-2010-at-1243-am">Post by Fondateur Kel - February 7, 2010 at 12:43 AM</h2>
+<p><a id="post-244196"></a></p>
+<p>Yep, ce genre de chose peuvent être faits par l'équipe directement maintenant.<br>
+De mon côté, tout est prèt à être installé! :)</p>
+<hr>
+<h2 id="post-by-lancelot---february-7-2010-at-231-am">Post by Lancelot - February 7, 2010 at 2:31 AM</h2>
+<p><a id="post-244204"></a></p>
+<p>Kel ça serait possible de retirer le pop-up à chaque fois qu'on veut placer un aptitude avec le nouveau système? Ou la possibilité d'activer/désactiver ces pop-up. Ou de laisser ces descriptions dans une page similaire, pour voir la description des aptitudes, sans toutefois que ça te donne +1 à cette aptitude.</p>
+<p>Car présentement placer ses points quand on est haut niveau c'est une torture. ^^</p>
+<p>Merci beaucoup!</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-7-2010-at-555-am">Post by Fondateur Kel - February 7, 2010 at 5:55 AM</h2>
+<p><a id="post-244266"></a></p>
+<p>Fait. Ce qu'on peut mettre c'est au lieu d'avoir un skill cap/level, plutôt avoir un PA cap, genre au lvl 5 on pourra pas investir plus que 10 en sorcellerie.<br>
+Vous en pensez quoi?</p>
+<hr>
+<h2 id="post-by-nimue---february-7-2010-at-610-am">Post by Nimue - February 7, 2010 at 6:10 AM</h2>
+<p><a id="post-244278"></a></p>
+<p>Ça serait peut-être mieux et plus clair pour tout le monde, hsite pas à éditer mon annonce également, je ne suis peut-être pas claire dans tous les points.</p>
+<hr>
+<h2 id="post-by-lancelot---february-7-2010-at-651-am">Post by Lancelot - February 7, 2010 at 6:51 AM</h2>
+<p><a id="post-244296"></a></p>
+<p>Ça serait mieux pour un PA/cap par level. Selon moi.</p>
+<p>Ça reviendrait au même? Exemple 40% au niveau 10, si je met 10 apt en mêlée = 40% tout de même.</p>
+<hr>
+<h2 id="post-by-nimue---february-7-2010-at-651-am">Post by Nimue - February 7, 2010 at 6:51 AM</h2>
+<p><a id="post-244297"></a></p>
+<p>Je me questionne...</p>
+<p>Est-ce que la modification ne rend pas le jeu trop difficile pour les nouveaux joueurs? Je ne voudrais pas non plus les voir trop en difficulté dans les débuts. À lire les commentaire, ça semble actuellement le cas.</p>
+<hr>
+<h2 id="post-by-lancelot---february-7-2010-at-709-am">Post by Lancelot - February 7, 2010 at 7:09 AM</h2>
+<p><a id="post-244311"></a></p>
+<p>On doit ajuster en conséquence. Surtout pour les monstres / crafts.</p>
+<p>Par exemple : Un forgeron de niveau 18 va avoir 56% en forge. Il faudrait qu'avec son 56%, il puisse faire les armures qui nécessite niveau 18 et moins pour porter.</p>
+<p>On va devoir vérifier des petits trucs comme ça pour les ajustements. ^^</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-7-2010-at-730-am">Post by Fondateur Kel - February 7, 2010 at 7:30 AM</h2>
+<p><a id="post-244326"></a></p>
+<p>Vous en pensez quoi d'un système permettant de calibrer les monstres IG ?<br>
+De façon dont on calibre les classes. Comme ça vous n'auriez plus besoin de scripteurs pour ces choses là :)</p>
+<hr>
+<h2 id="post-by-nimue---february-7-2010-at-734-am">Post by Nimue - February 7, 2010 at 7:34 AM</h2>
+<p><a id="post-244330"></a></p>
+<p>Ça serait tout un ajout.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-7-2010-at-741-am">Post by Fondateur Kel - February 7, 2010 at 7:41 AM</h2>
+<p><a id="post-244336"></a></p>
+<blockquote>
+<p><strong>&quot;Coordinatrice Nimue&quot; wrote:</strong>
+Ça serait tout un ajout.</p>
+<p>Je crois que j'ai cappé mon skill RunUO là. Et je suis haut lvl. Je vais me faire une commande .commanderPizza aussi, qui fait une requete web pour me commander/payer et livrer le pizza à la maison.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-lancelot---february-7-2010-at-758-am">Post by Lancelot - February 7, 2010 at 7:58 AM</h2>
+<p><a id="post-244348"></a></p>
+<p>Vous en pensez quoi d'un système permettant de calibrer les monstres IG ?<br>
+De façon dont on calibre les classes. Comme ça vous n'auriez plus besoin de scripteurs pour ces choses là <img src="/assets/smilies/smile.gif" alt=""></p>
+<p>0_o</p>
+<p>Ça serait tout simplement merveilleux!</p>
+<hr>
+<h2 id="post-by-phooka---february-7-2010-at-339-pm">Post by Phooka - February 7, 2010 at 3:39 PM</h2>
+<p><a id="post-244430"></a></p>
+<p>Je sais pas si pour les nouveaux ce serait plus difficile, ça ne fait même pas une journée que ça a été mis en place.</p>
+<p>Mais oui le calibrage des monstres serait peut être nécessaire, quoi qu'un guerrier reste tout de même relativement fort s'il allie son maniement des armes avec médecine, à chaque niveau son type de monstre je dirai, et si un guerrier qui a un petit niveau veut aller faire des donjons un peu plus corsé, il peut toujours y aller avec des guerriers plus expérimentés que lui, c'est aussi ça le principe des donjons, d'y aller en groupe et pas de soloter, ce serait trop facile sinon. Donc calibrage oui, mais pas trop non plus et pas sur n'importe quel type de monstre, la difficulté c'est ce qui rend un donjon &quot;excitant&quot;.  <img src="/assets/smilies/smile.gif" alt=""><br>
+Pour l'idée de ton exemple sur le forgeron, je ne sais pas quel est le système actuellement, mais si cela durcit le jeu, on va avoir encore une ribambelle de joueurs artisans qui vont râler. En tout cas il faut faire quelque chose pour les artisans, car ce serait eux les plus touchés par le nouveau système si j'ai bien lu toutes les questions depuis cette nuit.<br>
+Je sais qu'il y a eu une demande pour la skill poisonning, je suis pour ne rien changer, le système des acides mis en place fonctionne très bien pour monter cette skill (quoi que Kel, je n'ai pas trouvé le problème par rapport aux fioles d'acides, ça me met toujours comme si j'avais une fiole de poison.)</p>
+<hr>
+<h2 id="post-by-lancelot---february-7-2010-at-1005-pm">Post by Lancelot - February 7, 2010 at 10:05 PM</h2>
+<p><a id="post-244490"></a></p>
+<p>La suggestion est de le rendre plus fluide et plus accessible pour les bas niveaux, Phooka.</p>
+<p>De faire des zones, avec des morts-vivants de force mineure, par exemple. Pour que ceux-là, quand ils forment un groupe de bas niveaux, puissent s'y rendre et s'amuser. Car présentement, la majorité des places est très hostile.</p>
+<p>Une idée que j'ai eu comme ça: dans un donjon, rendu à telle place, les chemins pourraient se séparer en &quot;Y&quot; et une voie contiendrait des monstres plus haut pour un défi de taille, alors que l'autre chemin serait moins difficile.</p>
+<p>Pour la section difficile, nous pourrions nous servir du système de PNJ de notre-ville, pour passer un message quand les joueurs approchent.<br>
+Par exemple: Un esprit semi-éthéré (et invulnérable) pourrait être mis en place, et lorsque les joueurs s'approchent il pourrait dire un truc du genre:</p>
+<p>&lt;&lt;Fuyez pendant qu'il est encore temps, pauvres fous. Seuls les combattants les plus aguerrit pourront espérer revoir la lumière...&gt;&gt;</p>
+<blockquote>
+<p>Pour l'idée de ton exemple sur le forgeron, je ne sais pas quel est le système actuellement, mais si cela durcit le jeu, on va avoir encore une ribambelle de joueurs artisans qui vont râler. En tout cas il faut faire quelque chose pour les artisans, car ce serait eux les plus touchés par le nouveau système si j'ai bien lu toutes les questions depuis cette nuit.</p>
+<p>Ma suggestion sur l'exemple des forgerons, c'est qu'il n'aille plus besoin de 100% en mining/ 100% en forge pour être efficace, mais qu'il soit en mesure d'extraire les minerais de bas niveau avec un bas %, et qu'il soit capable de créer les armures de son niveau avec son % en forge.</p>
+<p>Nimue à déjà d'excellentes idées afin de remédier à la situation des créations de teintures, d'en rajouter certaines pour les bas niveaux, car présentement il faut 100% pour les faire.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-7-2010-at-1013-pm">Post by Coordinateur Apoc - February 7, 2010 at 10:13 PM</h2>
+<p><a id="post-244497"></a></p>
+<p>Bonjour,</p>
+<p>Il a été dit dans plusieur post du forum , le nouveau systeme sera sujet a un requalibrage et ajustement, je crois qu'avoir des retours joueurs pour aider l'équipe en leur donnant nos impressions est donc pas superflux .</p>
+<p>Ce que j'ai noté en discutant avec plusieurs et en faisant quelques test IG est le &quot;choc&quot; du Skill Cap qui selon moi  bien trop grand, le faussé est bien trop visible, entre les 30-35 et 35-40+ .<br>
+Quand je parle de faussé bien trop visible c'est qu'on peut pas voir de difference entre un duel 30vs35 et un 15vs35 (sous réserve d'être bien monté) la difference de lvl  fait que le combat se termine aussi vite et d'une maniere vraiment similaire .<br>
+(le bas lvl rate tout ses coups, s'en prend plein la tete, en 2secondes c'est plié)</p>
+<p>D'autre part, les bas lvl passent parfois de 95-100% a 40-50% bref c'est un choc tant sur le Gameplay qu'au morale .</p>
+<p>du coup je me demandais ce que vous pensiez si une évolution des skills cap plus douce ne serait pas plus approprié .</p>
+<p>A savoir un requalibrage jusqu'au lvl 30 pour avoir un skills a 100% et monté traquillement de 1% entre le lvl 30 et 50 pour arrivé au 120% proposé par la MAJ ce qui ne modifie donc en rien les but que voulait atteindre les scripteurs tout en gardant un confort de jeux en limitant les &quot;faussés&quot;.</p>
+<p>Edit : je m'étais donné un peut plus de temps avant d'envoyé un retour mais là c'est un &quot;gap&quot; de performance qui est vraiment trop énorme .</p>
+<p>Il marque un point. Il faudrait que les skills caps arrive à 100% un peu plus rapide et ensuite lentement pour le 120%. Un peu comme une classe de prestige de 100% à 120%.</p>
+<p>Même que le 120% pourraient être accessible seulement pour des classes de prestiges et seulement un nombre limité de skills pouvant être augmenté à 120%. Comme ca le cuisinier pourrait monter sa cuisine à 120% mais pas sa menuiserie même si celle-ci pourrait monter à 100%. Ou comme meilleure exemple. Un guerrier pourrait avoir une classe de prestige qui lui permet d'avoir fencing à 120% mais sword et mace seulement à 100%.</p>
+<p>Mais cela dépend surtout de la flexibilité des scripts et si Kel veut modifier.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-8-2010-at-1024-am">Post by Coordinateur Apoc - February 8, 2010 at 10:24 AM</h2>
+<p><a id="post-244688"></a></p>
+<p>Peut-être prévoir une classe de «base», genre &quot;Voyageur&quot;, qui nous permettrait d'être polyvalent (sous certaines restrictions) jusqu'à une certaine limite (assez basse tout de même), juste assez pour:<br>
+1- Avoir un aperçu des classes<br>
+2- Avoir le strict nécéssaire pour trouver les livres dans les donjons sans être une motte facilement écartable.</p>
+<p>De ce que j'ai lu, il faut choisir une branche à la création. Donc on ne peut pas vraiment avoir une classe de base à tout faire. Malgré que ce serait pratique de ne pas avoir de branche avant de choisir sa première classe.</p>
+<p>Sinon Il faudrait au moins faire une classe de base pour chaque branches à la création de personnages. Sans aptitudes de prédilections pour donner une raison de chercher les autres classes dans sa branche.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-8-2010-at-732-pm">Post by Conteur Centaure - February 8, 2010 at 7:32 PM</h2>
+<p><a id="post-244720"></a></p>
+<p>Question ici, je l'ai vue posé dans le post à cet effet dans Discussion générale, mais j'ai pas vu la réponse.</p>
+<p>Dans l'équation qui détermine le skillcap, Lancelot, tu a mis ceci :</p>
+<p>Aptitude de prédilection :<br>
+20 + (lvl-1 * 2)</p>
+<p>Pourquoi y a-t-il un -1??</p>
+<p>Et j'y vais de quelques questions pour moi, si je dois faire le tutoriel.</p>
+<p>Comme le système est fait, on a beaucoup plus de points à placer dans diverses compétences pour un niveau équivalent? Parce que pour l'heure, j'ai replacé mes points, et je suis à 50 dans 3 aptitudes, et il me reste genre 24 points à placer encore!</p>
+<p>Ce qui amène la question : Est-ce que le systême ne permet pas un peu trop de pouvoir aux joueurs?</p>
+<p>Et une dernière pour les suggestions : Même si je crois que la suggestion a déjà été faite, est-ce qu'on ne devrait pas étaler les crafts sur une échelle plus grande, de manière à débloquer beaucoup de craft possible à bas niveau, mais à en laisser tout de même plusieurs pour les hauts niveaux?</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-8-2010-at-754-pm">Post by Fondateur Kel - February 8, 2010 at 7:54 PM</h2>
+<p><a id="post-244728"></a></p>
+<p>Question ici, je l'ai vue posé dans le post à cet effet dans Discussion générale, mais j'ai pas vu la réponse.</p>
+<p>Dans l'équation qui détermine le skillcap, Lancelot, tu a mis ceci :</p>
+<p>Aptitude de prédilection :<br>
+20 + (lvl-1 * 2)</p>
+<p>Pourquoi y a-t-il un -1??</p>
+<p>Et j'y vais de quelques questions pour moi, si je dois faire le tutoriel.</p>
+<p>Comme le système est fait, on a beaucoup plus de points à placer dans diverses compétences pour un niveau équivalent? Parce que pour l'heure, j'ai replacé mes points, et je suis à 50 dans 3 aptitudes, et il me reste genre 24 points à placer encore!</p>
+<p>Ce qui amène la question : Est-ce que le systême ne permet pas un peu trop de pouvoir aux joueurs?</p>
+<p>Et une dernière pour les suggestions : Même si je crois que la suggestion a déjà été faite, est-ce qu'on ne devrait pas étaler les crafts sur une échelle plus grande, de manière à débloquer beaucoup de craft possible à bas niveau, mais à en laisser tout de même plusieurs pour les hauts niveaux?</p>
+<p>Au fait, pour la prédilection. On va modifier le skill initial de 20 à 30, de manière que les joueurs puissent caper leur aptitude de prédilection au niveau 36 au lieu de 41.<br>
+Le -1 c'est simple, parceque tu ne dois pas compter le niveau 1 (il est à 20), niveau 2 à 22 ... Donc au niveau à 20 + (1-1 * 2) = 20</p>
+<p>Oui, je pense aussi qu'il faut modifier ça, je vais peut-être remettre les aptitudes à 8 par niveau et à 4 par haut niveau, car là y en a bien trop.</p>
+<p>Pour les crafts, on va les faire ouais ^^</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-8-2010-at-815-pm">Post by Conteur Centaure - February 8, 2010 at 8:15 PM</h2>
+<p><a id="post-244733"></a></p>
+<p>Parfait, merci Kel.</p>
+<p>Si ça ne vous dérange pas, je vais attendre une version un peu plus &quot;finale&quot; avant de faire un tutoriel ^^</p>
+<hr>
+<h2 id="post-by-nimue---february-10-2010-at-604-am">Post by Nimue - February 10, 2010 at 6:04 AM</h2>
+<p><a id="post-245144"></a></p>
+<p>Les livres sont-il a considérer comme un item RP ou pas...?</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-10-2010-at-624-am">Post by Fondateur Kel - February 10, 2010 at 6:24 AM</h2>
+<p><a id="post-245150"></a></p>
+<blockquote>
+<p><strong>&quot;Coordinatrice Nimue&quot; wrote:</strong>
+Les livres sont-il a considérer comme un item RP ou pas...?</p>
+<p><em>Comme vous voulez ^^</em></p>
+</blockquote>
+<hr>
+<h2 id="post-by-lancelot---february-10-2010-at-650-am">Post by Lancelot - February 10, 2010 at 6:50 AM</h2>
+<p><a id="post-245158"></a></p>
+<p>Je ne vois pas ça d'une manière RP, et ça serait mieux ainsi selon moi. Ça éviterait les &quot;chasses&quot; aux livres de classes illégales.</p>
+<p>Les livres de classes sont placés dans les domaines. Je vois plutôt ça, le gars qui lit le livre de nécromancien dans le cimetière, ne lit pas un livre et &quot;magie! je suis nécromancien&quot;. Mais il se familiarise à l'aura/énergie des lieux et apprend à développer ce côté.</p>
+<hr>
+<h2 id="post-by-phooka---february-10-2010-at-1221-pm">Post by Phooka - February 10, 2010 at 12:21 PM</h2>
+<p><a id="post-245190"></a></p>
+<p>Oui ou par exemple, pour les livres de classes qui se situent au havre des marchands, on peut très bien interprêter en disant que le joueur se renseigne auprès du pnj. Les livres de classes au temple, par l'acquisition d'une foi inébranlable au fur et à mesure, par la venue régulière pour aller faire la prière.<br>
+J'vois pas vraiment non plus les livres de classes comme un outil rp non, mais bien un outil permettant de changer de classe, après, à eux de voir ig comment ils s'organisent pour montrer ce changement?</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-10-2010-at-713-pm">Post by Conteur Centaure - February 10, 2010 at 7:13 PM</h2>
+<p><a id="post-245219"></a></p>
+<p>C'est un peu comme ça que je le vois aussi.</p>
+<p>Donc à mon sens, oui, on considère le livre en RP. De la même manière que les pierres de Guildes.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-15-2010-at-755-pm">Post by Conteur Centaure - February 15, 2010 at 7:55 PM</h2>
+<p><a id="post-245819"></a></p>
+<p>Je vais commencer le tutoriel.</p>
+<p>Est-ce que je pourrais avoir les différentes équations, svp?</p>
+<p>Tout ce qui touche le skillcap, par exemple.</p>
+<ul>
+<li>Prédilection</li>
+<li>Normales</li>
+<li>Hors-classe, etc.</li>
+</ul>
+<hr>
+<h2 id="post-by-fondateur-kel---february-15-2010-at-803-pm">Post by Fondateur Kel - February 15, 2010 at 8:03 PM</h2>
+<p><a id="post-245820"></a></p>
+<p>Viens me voir sur msn.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-15-2010-at-930-pm">Post by Conteur Centaure - February 15, 2010 at 9:30 PM</h2>
+<p><a id="post-245833"></a></p>
+<p>Je suis au travail. Mais voici mon msn : <!-- e --><a href="mailto:grosphill@hotmail.com"><a href="mailto:grosphill@hotmail.com">grosphill@hotmail.com</a></a><!-- e -->.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-22-2010-at-603-am">Post by Conteur Centaure - February 22, 2010 at 6:03 AM</h2>
+<p><a id="post-246564"></a></p>
+<p>Est-ce qu'il serait possible d'avoir le tableau des skills débloqués par chaque aptitude, a part les aptitudes spéciales (comme magie sanguine), svp? Je voudrais le mettre dans le tutoriel.</p>
+<p>Marssi!</p>
+<hr>
+<h2 id="post-by-lancelot---february-22-2010-at-718-am">Post by Lancelot - February 22, 2010 at 7:18 AM</h2>
+<p><a id="post-246580"></a></p>
+<p>Tient Centaure : <!-- m --><a class="postlink" href="http://hilawen.freeheberg.com/build.html"><a href="http://hilawen.freeheberg.com/build.html">http://hilawen.freeheberg.com/build.html</a></a><!-- m --><br>
+Tu vas pouvoir tout avoir ici, en ajoutant +1 à une aptitude pour voir exactement ce que ça donne. ^^</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-22-2010-at-700-pm">Post by Conteur Centaure - February 22, 2010 at 7:00 PM</h2>
+<p><a id="post-246614"></a></p>
+<p>J'avais déjà pensé à ça, mais jme suis dit que si quelqu'un avait le tableau déjà tout fait.. <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Je vais tirer les infos ce soir, alors.</p>
+<hr>
+<h2 id="post-by-lancelot---february-22-2010-at-830-pm">Post by Lancelot - February 22, 2010 at 8:30 PM</h2>
+<p><a id="post-246617"></a></p>
+<!-- m --><a class="postlink" href="http://www.au-crepuscule.com/wiki/index.php?title=Aptitudes">http://www.au-crepuscule.com/wiki/index ... =Aptitudes</a><!-- m -->   
+<p>Tient, il n'y à pas magie sanguine, mais la majorité est là.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-23-2010-at-105-am">Post by Conteur Centaure - February 23, 2010 at 1:05 AM</h2>
+<p><a id="post-246645"></a></p>
+<p>Merci.</p>
+<p>Faudra toutefois revoir les aptitudes qui ont été modifiées (comme entrainement).</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-23-2010-at-115-am">Post by Conteur Centaure - February 23, 2010 at 1:15 AM</h2>
+<p><a id="post-246646"></a></p>
+<p>Premier jet. Il reste à incorporer les print screen pour illustrer tout ça.</p>
+<p>Un petit point d'interrogation, encore. Il a été discuté de mettre un PA cap par level. C'est fait? Parce que pour l'heure, je n'en ai pas parlé.</p>
+<p>Enfin, voila ce que ça donne.</p>
+<p>Système d’évolution</p>
+<p>Le système d’évolution de Crépuscule en est un relativement simple. Il est basé sur une accumulation de points d’expérience (XP) qui sont attribués automatiquement aux joueurs à intervalles réguliers. La longueur de la période entre l’obtention de deux points d’expérience est déterminée par une moyenne des quatre dernières cotes RP, qui vous sont attribuées par les maîtres de jeu. Plus votre jeu sera relevé, plus la période d’attente entre deux points d’expérience sera courte. Pour connaître le nombre de points d’expérience que vous possédez, vous pouvez utiliser la commande « .xp » en jeu.</p>
+<p>Afin de changer de niveau, vous devrez récolter un certain nombre de points d’expérience. Le nombre de points requis pour changer de niveau augmente à chaque niveau, jusqu’au niveau 41, après quoi il devient constant. À chaque niveau gagné, un certain nombre de points que vous pourrez dépenser pour « acheter » des points d’aptitudes vous sera alloué. Ce nombre sera de 9 points avant le niveau 41, et de 4 points passé le niveau 41. Pour voir et investir ces points, vous pouvez utiliser la commande « .fiche ». Cette commande ouvrira la fenêtre suivante en jeu.</p>
+<p>Selon la classe que vous aurez choisie à l’aide des livres de classes trouvés en jeu, les aptitudes seront séparées en quatre catégories, que vous reconnaîtrez par une couleur de texte spécifique, dans la fenêtre du « .fiche ».  Les nombres de points requis pour « acheter » des points d’aptitudes selon leur catégorie sont les suivants :<br>
+-\tAptitudes de Prédilection (écrites en vert) : 1 point par point<br>
+-\tAptitudes Normales (écrites en jaune) : 2 points par point<br>
+-\tAptitudes Hors-Classe (écrites en rouge) : 3 points par point<br>
+-\tAptitudes Interdites (écrites en gris) : Impossibilité « d’investir » dans ces aptitudes.<br>
+L’ « achat » des points se fait en cliquant sur la petite gemme bleue à gauche de chaque aptitude. Une bulle d’information vous apprendra que l’investissement des points est irréversible, et ce, à chaque point « acheté ». Pour désactiver la bulle d’information, tapez la commande « .niveau » en jeu.</p>
+<p>Chaque point d’aptitude « acheté » permet d’augmenter la limite de compétence (ou skillcap) d’un certain pourcentage. Pour connaître les compétences associées à chaque aptitude, vous pouvez vous référer au wiki de Crépuscule, à l’adresse suivante : <!-- m --><a class="postlink" href="http://www.au-crepuscule.com/wiki/index.php?title=Aptitudes"><a href="http://www.au-crepuscule.com/wiki/index">http://www.au-crepuscule.com/wiki/index</a> ... =Aptitudes</a><!-- m --> . Certaines aptitudes étant réservées à des classes spéciales, les compétences qui y sont associées n’y seront pas dévoilées.</p>
+<p>L’une des particularités de ce système d’évolution est que la limite de compétence est également régie par le niveau du personnage. Il est à noter que le niveau du joueur prime sur le nombre de points d’aptitudes « achetés » pour déterminer la limite de compétence. La limite est d’ailleurs régie par les équations suivantes :<br>
+-\tAptitude de prédilection<br>
+o\t30 + ( ( Niveau du joueur – 1) x 2 )<br>
+o\tBloque à 100 jusqu’au niveau 41, après quoi il gagne 1% par niveau jusqu’à concurrence de 120.<br>
+-\tAptitude Normale<br>
+o\t10 + ( ( Niveau du joueur – 1) x 2 ) , jusqu’à concurrence de 100.<br>
+-\tAptitude Hors-Classe<br>
+o\t( Niveau du joueur – 1 ) x 2 , jusqu’à concurrence de 80.<br>
+Ainsi, un joueur de niveau 4 ayant investi 10 points dans l’aptitude « Magie Arcannique » aura une limite de compétence de 36% de « Magery », plutôt que de 50%.</p>
+<hr>
+<h2 id="post-by-lancelot---february-23-2010-at-206-am">Post by Lancelot - February 23, 2010 at 2:06 AM</h2>
+<p><a id="post-246650"></a></p>
+<p>Super boulot Centaure. ^^</p>
+<hr>
+<h2 id="post-by-conteur-centaure---march-2-2010-at-809-pm">Post by Conteur Centaure - March 2, 2010 at 8:09 PM</h2>
+<p><a id="post-247558"></a></p>
+<p>Bien, c'est (enfin) terminé.</p>
+<p>À qui j'envoie le pdf?</p>
+<hr>
+<h2 id="post-by-conteur-centaure---march-4-2010-at-1120-pm">Post by Conteur Centaure - March 4, 2010 at 11:20 PM</h2>
+<p><a id="post-247820"></a></p>
+<p>Sooo?</p>
+<hr>
+<h2 id="post-by-fondateur-kel---march-5-2010-at-1239-am">Post by Fondateur Kel - March 5, 2010 at 12:39 AM</h2>
+<p><a id="post-247830"></a></p>
+<p>Envoi le à moi ^^</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-9-2010-at-1150-pm">Post by Coordinateur Apoc - March 9, 2010 at 11:50 PM</h2>
+<p><a id="post-248360"></a></p>
+<p>Ah maintenant je peux voir d'ou vient le chialage avec le nouveau système d'évolution!  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Je me suis connecté avec mon personnage Assassin niveau 12 que je rpait rodeur. Je ne peux plus bûcher convenablement ou fabriquer mes arcs. J'en ai pour un bon 10-15 niveaux à retourner au niveau ou j'étais de ce côté. Par contre, de mon côté assassinat, j'en suis probablement un bon 10 niveau plus loin que j'était vu que les skills principaux commencent à 30 au lieu de 20.</p>
+<p>Enfin, je ne vois pas pourquoi certains en ont fait tout un drame.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---march-10-2010-at-1218-am">Post by Lancelot - March 10, 2010 at 12:18 AM</h2>
+<p><a id="post-248365"></a></p>
+<p>On a vérifié une partie des crafts et les % ont du sens dans ce que j'ai vu.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-10-2010-at-1244-am">Post by Coordinateur Apoc - March 10, 2010 at 12:44 AM</h2>
+<p><a id="post-248366"></a></p>
+<p>Côté classes crafteurs ou ceux avec un skill de craft en principal ca devrait être parfait oui. Mais pour les autres il faut mieux oublier ca en bas de niveau 20.</p>
+<p>Si j'ai bien comprit le système... Je peux faire un reset de PA en relisant le livre Assassin et en replacant mes PAs, mes skills vont remonter avec mon skill caps jusqu'au niveau qu'ils étaient? Car je vais laisser tomber le crafting d'arc et focuser sur le combat. J'avais aussi environ 15 points en assassinat je crois mais avec le nouveau système, ca ne me sert à rien d'en avoir plus que 11 car je suis niveau 12.</p>
+<p>Et en parlant de Combat, le balancement de monstres c'est vraiment bien. J'arrives à tuer un monstre seul sans perdre 3/4 de mes vies maintenant!  <img src="/assets/smilies/assassin.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---march-10-2010-at-138-am">Post by Lancelot - March 10, 2010 at 1:38 AM</h2>
+<p><a id="post-248378"></a></p>
+<p>Si tu avais 10 en maitrise d'armes par exemple, qui te donne une limite de 50%.</p>
+<p>Une fois que tu fais le reset, si tu remet 10 points, tu vas garder ton 50%.</p>
+<p>(Exemple fictif: Par contre, si tu avais 10 en &quot;nécromancie&quot; avec un cap de 50%, et que tu met seulement 5 points cette fois-là, ton skill va tomber à 40%.)</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-10-2010-at-203-am">Post by Coordinateur Apoc - March 10, 2010 at 2:03 AM</h2>
+<p><a id="post-248380"></a></p>
+<p>Si tu avais 10 en maitrise d'armes par exemple, qui te donne une limite de 50%.</p>
+<p>Une fois que tu fais le reset, si tu remet 10 points, tu vas garder ton 50%.</p>
+<p>(Exemple fictif: Par contre, si tu avais 10 en &quot;nécromancie&quot; avec un cap de 50%, et que tu met seulement 5 points cette fois-là, ton skill va tomber à 40%.)</p>
+<p>Parfait, c'est ce que j'avais compris.</p>
+<p>Donc je vais faire un reset dès que je trouves un livre d'assassin hors de la GdO, probablement base ville j'ai vu un de voleur je crois.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---august-14-2010-at-704-am">Post by Lancelot - August 14, 2010 at 7:04 AM</h2>
+<p><a id="post-263713"></a></p>
+<p>Est-ce que c'est posté quelque part sur le forum le texte de Centaure?</p>
+<hr>
+<h2 id="post-by-conteur-centaure---august-16-2010-at-435-am">Post by Conteur Centaure - August 16, 2010 at 4:35 AM</h2>
+<p><a id="post-263850"></a></p>
+<p>C'est dans le site web, sous Scripts (ou systèmes, pas sur). À la même place que l'enchantement.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---august-16-2010-at-549-pm">Post by Fondateur Kel - August 16, 2010 at 5:49 PM</h2>
+<p><a id="post-263895"></a></p>
+<p>Et sur le nouveau:</p>
+<!-- m --><a class="postlink" href="http://www.au-crepuscule.com/dev/evolution/">http://www.au-crepuscule.com/dev/evolution/</a><!-- m -->
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

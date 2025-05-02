@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temps - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Temps</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Temps</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="temps">Temps</h1>
+<h2 id="post-by-fondateur-kel---january-15-2009-at-1259-pm">Post by Fondateur Kel - January 15, 2009 at 12:59 PM</h2>
+<p><a id="post-199696"></a></p>
+<p>J'avais rien à faire ce matin, j'ai ajouté 2-3 petits trucs venant de la communauté runuo.</p>
+<p>1er: le système de temps, modifiable par les commandes IG (commandes TS pour les admins) et j'ai fait les nuits un peu plus noires, mais ça aussi c'est maintenant modifiable directement IG<br>
+2eme: Il est possible d'ajouter un nouveau item: Sleeper, qui controle quand un NPC ira dormir et où, il est maintenant donc possible de faire que les vendeurs partent dormir la nuit, et se reveillent le matin.</p>
+<p>Edit: Ajout également dans toutes les créatures/npc (BaseCreature) de plusieurs propriétés, commençant par Saying...  et d'un NPC &quot;Drunk&quot; (faites .add drunk IG) pour illustrer le système des phrases aléatoires.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-15-2009-at-348-pm">Post by Ex-Bolero - January 15, 2009 at 3:48 PM</h2>
+<p><a id="post-199701"></a></p>
+<p>C'est pas mal du tout, même si j'ai toujours défendu l'absence de Nuits Noires <em>sifflotte</em></p>
+<p>En parlant de ça, je lance l'idée: Devrait-on faire un système qui indique la date et l'heure selon le système de systéria? Exemple: en faisant .date, on verrait:</p>
+<p>&quot;Il est présentement 18h32. Nous sommes le 14 Feuil de l'An de Grâce 49 de la Troisième Ère.&quot;</p>
+<p>Sachant que le script des clock régit déjà l'heure en jeu, on pourrait sans doute penser à quelque chose qui l'adapte... Mais faut voir si ça devient trop contraignant.</p>
+<p>Et même, peut-être est-ce possible de jouer avec les effets météo: Pluie en automne et en été, neige au printemps et en hiver seulement.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---january-15-2009-at-355-pm">Post by Mr Trovénère - January 15, 2009 at 3:55 PM</h2>
+<p><a id="post-199703"></a></p>
+<p>*Ta premiere proposition est déja en jeu. J'ai mis un ivrogne en jeu dans la ville aussi ^^ *</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-15-2009-at-357-pm">Post by Ex-Bolero - January 15, 2009 at 3:57 PM</h2>
+<p><a id="post-199704"></a></p>
+<p>Je rajoute sur mon système de temps qu'il faudrait que ça fit avec notre conception: 1 mois = 1 an. Donc soit réduire le nombre de jours par mois en se fiant au temps d'UO, soit modifier le temps d'UO (si le projet vous intéresse).</p>
+<p>Faudrait voir aussi si les downs fuckeraient tout :S</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-15-2009-at-429-pm">Post by Fondateur Kel - January 15, 2009 at 4:29 PM</h2>
+<p><a id="post-199708"></a></p>
+<p>Je rajoute sur mon système de temps qu'il faudrait que ça fit avec notre conception: 1 mois = 1 an. Donc soit réduire le nombre de jours par mois en se fiant au temps d'UO, soit modifier le temps d'UO (si le projet vous intéresse).</p>
+<p>Faudrait voir aussi si les downs fuckeraient tout :S</p>
+<p><em>Ben justement, le système de temps est maintenant modifiable à volonté IG, c'est juste quelques commandes pour calibrer. Donc on peut changer ça facilement et il va interpoler la timeline.</em></p>
+<hr>
+<h2 id="post-by-ex-bolero---january-15-2009-at-430-pm">Post by Ex-Bolero - January 15, 2009 at 4:30 PM</h2>
+<p><a id="post-199709"></a></p>
+<p>ok génial! ^^</p>
+<p>Edit:</p>
+<p>Alors nous avons 30 minutes IG pour 1 minute IRL, donc 48 minutes IRL pour 1 jour IG, ce qui fait que 30 jours IG s'écoulent à l'intérieur de 24h de la vraie vie.</p>
+<p>Peut-être serait-il possible de modifier le script de temps simplement pour une meilleure concordance, de manière à ce que l'année dure 360 jours.</p>
+<p>Chaque mois du jeu doit ainsi comporter 30 jours. À chaque minute IRL, si on veut que 1 jour IRL = 12 jours IG, il doit s'écouler 12 minutes en jeu. C'est donc 1 minute IG à chaques 5 secondes.</p>
+<p>Je crois que c'est faisable, et ça règle le problème des équivalences <img src="/assets/smilies/Wink.gif" alt=""><br>
+Donc avec ça on aurait:</p>
+<p>5 sec = 1 min IG<br>
+1 min = 12 min IG<br>
+5 min = 1 heure IG<br>
+2 heures = 1 jour IG<br>
+1 jour = 12 jours IG<br>
+1 semaine = 84 jours IG<br>
+1 mois = 1 an IG</p>
+<p>Tout ça environ, vu que IRL nous avons ... 11 mois de plus de 28 jours <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-lumina---january-15-2009-at-735-pm">Post by Ex-Lumina - January 15, 2009 at 7:35 PM</h2>
+<p><a id="post-199724"></a></p>
+<p>Je suis extrêmement récalcitrante à ce que nous indiquions l'année actuelle aux joueurs !</p>
+<p>Ça revient à ce débat où la communauté (autant chez les maîtres de jeu que chez les joueurs) était très opposé à ce que leur personnage soit forcé de vieillir, aussi un tel concept impose en quelque sorte une telle obligation.</p>
+<p>Pour les NPCs qui dorment la nuit, oui c'est plus logique, mais c'est détesté sur les serveurs où c'est présent. Est-ce systématique ?</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-15-2009-at-752-pm">Post by Ex-Bolero - January 15, 2009 at 7:52 PM</h2>
+<p><a id="post-199727"></a></p>
+<p>Non, c'est un objet (Sleeper) que tu peux lier à des NPC.</p>
+<p>Ça peut être pratique ne serait-ce que pour faire en sorte qu'une porte se barre à telle ou telle heure. Donc non, les NPC ne vont pas dormir automatiquement, il faut tout seter à la main <img src="/assets/smilies/Wink.gif" alt=""> Ce qui fait qu'on s'en sert juste quand on en a besoin.</p>
+<p>J'avoue qu'il ne faudrait pas imposer le vieillissement, mais il faut quand même que le temps avance un peu non?</p>
+<hr>
+<h2 id="post-by-mr-trovnre---january-15-2009-at-803-pm">Post by Mr Trovénère - January 15, 2009 at 8:03 PM</h2>
+<p><a id="post-199729"></a></p>
+<p>*Disons que l'on peut en tenir compte uniquement pour servir de base aux écrits. Je pense que le temps ne devrait pas être joué en jeu, mais ce n'est que mon avis de joueur et de gm... Quoi que je ne suis pas vraiment touché par le temps qui passe <img src="/assets/smilies/man_in_love.gif" alt=""> *</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-15-2009-at-805-pm">Post by Ex-Bolero - January 15, 2009 at 8:05 PM</h2>
+<p><a id="post-199730"></a></p>
+<p>Ouais, c'est ce que je trouve le plus utile pour le temps. Pour dater les écrits et se situer dans les saisons. &quot;Tiens, il fait très chaud! <em>Se ballade nu pied</em>&quot; alors qu'on est au milieu de Neigis...</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---january-15-2009-at-811-pm">Post by Conteuse Seshat - January 15, 2009 at 8:11 PM</h2>
+<p><a id="post-199734"></a></p>
+<p>Le vieillissement, je le laisserais libre de choix. La majorité commencent de toute façon leurs personnages à 20-30 ans, donc ils peuvent jouer 6 ans sur Crépuscule sans devenir vieillard...</p>
+<p>Sinon... le reste est génial ^^</p>
+<hr>
+<h2 id="post-by-anonymous---january-15-2009-at-908-pm">Post by Anonymous - January 15, 2009 at 9:08 PM</h2>
+<p><a id="post-199758"></a></p>
+<p>Je suis de l'avis de Lumina quant au fait d'exposer l'année.</p>
+<p>L'heure et la saison je ne m'y oppose pas, mais n'imposons pas des années...</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-15-2009-at-941-pm">Post by Ex-Bolero - January 15, 2009 at 9:41 PM</h2>
+<p><a id="post-199774"></a></p>
+<p>Ok, t'as raison Zak. Enlevons l'année et ça permet quand même de se situer dans l'espace-temps <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-lumina---january-16-2009-at-326-am">Post by Ex-Lumina - January 16, 2009 at 3:26 AM</h2>
+<p><a id="post-199853"></a></p>
+<p>Chouette nous sommes d'accords ^^</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-16-2009-at-445-am">Post by Ex-Bolero - January 16, 2009 at 4:45 AM</h2>
+<p><a id="post-199868"></a></p>
+<p>Dont Kel <em>lève son doigt tout-puissant et se heurte au talon du Divin</em></p>
+<p>Enlever l'année quand t'as le temps! ^^</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-16-2009-at-912-am">Post by Conteur Wolf - January 16, 2009 at 9:12 AM</h2>
+<p><a id="post-199922"></a></p>
+<p>Merveilleux, même avis que les autres pour les années au fait!</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-16-2009-at-1049-am">Post by Fondateur Kel - January 16, 2009 at 10:49 AM</h2>
+<p><a id="post-199932"></a></p>
+<p>Modifié, IG dès la prochaine maj</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-16-2009-at-416-pm">Post by Ex-Bolero - January 16, 2009 at 4:16 PM</h2>
+<p><a id="post-199956"></a></p>
+<p>Yaaahouuu! ^^</p>
+<hr>
+<h2 id="post-by-ex-bolero---september-13-2009-at-554-pm">Post by Ex-Bolero - September 13, 2009 at 5:54 PM</h2>
+<p><a id="post-230601"></a></p>
+<p>Si je me rappelle bien... Il faut Shutdown &amp; Restart (with save) le serveur pour que le système de temps revienne correct automatiquement?</p>
+<p>C'est toujours Lumina qui doit régler les prob. de nuits noires et j'aimerais savoir la marche à suivre <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+(Rien ne semble déréglé dans le .ts)</p>
+<hr>
+<h2 id="post-by-ex-lumina---september-13-2009-at-602-pm">Post by Ex-Lumina - September 13, 2009 at 6:02 PM</h2>
+<p><a id="post-230605"></a></p>
+<p>Oui j'ai arrangé le TS (merci de l'avoir exploré Bolero).</p>
+<p>Je vais faire un reboot du serveur ça devrait régler le tout.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

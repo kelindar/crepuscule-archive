@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Métier] Serrurier - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">[Métier] Serrurier</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">[Métier] Serrurier</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="mtier-serrurier">[Métier] Serrurier</h1>
+<h2 id="post-by-phydias-shaytan-cp---december-22-2008-at-907-pm">Post by Phydias Shaytan, CP - December 22, 2008 at 9:07 PM</h2>
+<p><a id="post-196433"></a></p>
+<p><strong>Compétence principale :</strong> Crochetage<br>
+<strong>Compétence secondaire :</strong> Bricolage</p>
+<p><strong><u>Fabrication de clés</u></strong></p>
+<p>Comme vous le savez, il existe 4 types de clés &quot;classique&quot; : copper, silver, gold &amp; rusty.<br>
+Les clés ainsi fabriquées seraient &quot;blanches&quot;, c'est à dire avec le keyvalue à 0.<br>
+La fabrication se ferait directement à partir de lingots.</p>
+<p>Dans la foulée, on pourrait rajouter le fameux porte-clé dans le menu de craft.</p>
+<p>Ces ajouts se feraient au niveau du menu des bricoleurs</p>
+<p><u><strong>Copie de clés</u></strong></p>
+<p>C'est là que ça devient intéressant. Plutôt que de toujours devoir passer par un GM pour les copies de clés, un serrurier en serait capable à partir de la clé originale, et d'une clé blanche. L'opération consisterait simplement en une copie du keyvalue et de la description.</p>
+<p>Pour éviter la copie de clés abusive (c'est-à-dire en dehors des limites du règlement : copie de clés de maison, etc, etc, ...), à chaque fois qu'une clé est copiée, un emote apparait au-dessus de la tête du serrurier (<em>Copie une clé</em> par exemple). Ainsi il ne pourra pas faire un double en plus d'un clé pour lui, sous le nez de son propriétaire. Ce quie st complètement illogique et absurde.</p>
+<p>Cette partie est facultative et ne dois pas représenter un obstacle à l'idée principale.</p>
+<p><u><strong>Récupération de clé</strong></u></p>
+<p>Le serrurier pourrait à partir d'un container fabriquer la clé correspondante.</p>
+<ul>
+<li>Le container doit être ouvert</li>
+<li>Lecontainer doit avoir un locklevel inférieur ou égal au lockpicking du serrurier</li>
+<li>Le serrurier doit avoir une clef blanche sur lui</li>
+</ul>
+<p>Niveau pratique, le serrurier double-clic sur la clef blanche, puis sur le coffre ouvert. La clé prend le keyvalue du coffre.</p>
+<p><u><strong>Niveau d'une serrure</strong></u></p>
+<p>Le serrurier pourrait changer le niveau d'une serrure de container.</p>
+<ul>
+<li>Le container doit être ouvert</li>
+<li>Le container doit avoir un locklevel inférieur ou égal au lockpicking du serrurier</li>
+<li>Le nouveau locklevel doit être inférieur ou égal à celui du serrurier.</li>
+</ul>
+<p>Point de vue pratique cela se ferait via une commande :<br>
+.ChangelockLevel [int:le nouveau niveau de la serrure]<br>
+Le container est fermé : &quot;Vous ne pouvez pas accéder au mécanisme de la serrure.&quot; -&gt; Rien<br>
+Niveau du serrurier inférieur au niveau du container : &quot;Vous ne comprennez rien à cette serrure et ne voyez pas comment la modifier&quot; -&gt; Rien<br>
+Nouveau niveau du container supérieur à celui du serrurier : &quot;Vous n'avez pas un tel niveau, vous faites au mieux...&quot; -&gt; Le nouveau niveau du coffre = niveau du serrurier<br>
+Toutes les conditions sont remplies : &quot;Vous modifiez la serrure avec succès.&quot; -&gt; Le locklevel du coffre passe comme indiqué.</p>
+<p>Voila pour un premier jet. A part la copie de clés, ce n'est aucunement pour les portes pour éviter tout abus. Aucune nouvelle keyvalue n'est générée de sorte qu'on ne puisse tomber au hasard sur une déjà existente. Niveau pratique, il suffit d'ajouter des objets déjà existant au menu de tinkering, de modifier le onDoubleClick() dans scripts/items/misc/key.cs et enfin une commande avec un bête jeu de elseif.</p>
+<p>Le débat est ouvert <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-morvan-hrembourg-prs-de-thaar---january-2-2009-at-343-pm">Post by Morvan Hérembourg, près de Thaar - January 2, 2009 at 3:43 PM</h2>
+<p><a id="post-197497"></a></p>
+<p>Une idée très intéressante je trouve.</p>
+<p>Il est vrai que le skill lockpicking est jusqu'à maintenant restez dans les oubliettes.</p>
+<hr>
+<h2 id="post-by-magnar---january-2-2009-at-513-pm">Post by Magnar - January 2, 2009 at 5:13 PM</h2>
+<p><a id="post-197502"></a></p>
+<p>Voler une clé en 5 étapes<br>
+Faire une copie de la clé devant le propriétaire<br>
+Donner une autre mauvaise clé (volontairement)<br>
+Le proprio revient râler car sa copie ne fonctionne pas (mais elle marche pas la clé)<br>
+Répondre : Aie, j'ai du confondre et j'ai tout jeté depuis<br>
+Refaire une copie de clé et la donner<br>
+Garder la première copie, bien au chaud pour son troisième métier, voleur <img src="/assets/smilies/Wink.gif" alt=""></p>
+<p>Dans l'idée sinon je trouve ça très bien <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---january-2-2009-at-727-pm">Post by Phydias Shaytan, CP - January 2, 2009 at 7:27 PM</h2>
+<p><a id="post-197515"></a></p>
+<p>Mais se faire prendre = ban direct.</p>
+<hr>
+<h2 id="post-by-magnar---january-3-2009-at-421-pm">Post by Magnar - January 3, 2009 at 4:21 PM</h2>
+<p><a id="post-197564"></a></p>
+<p>Ba c'est pas de l'abus du bug, c'est du bon RP qui va bien <img src="/assets/smilies/smile.gif" alt=""><br>
+Dans la vie le serrurier ne se fait pas ban quand il te choure une clé <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-gdon-rirac-cp---january-3-2009-at-428-pm">Post by Gédéon Rirac, CP - January 3, 2009 at 4:28 PM</h2>
+<p><a id="post-197565"></a></p>
+<p>Il y a beaucoup plus simple.</p>
+<p>Faire 2 copies de la dite clef dont une pour soit.<br>
+Puis, au cours de la nuit ou autre, cambrioler en toute impunité.<br>
+Sachant que bon, des coffres (souvent ouvert) contre un bon serrurier, je vote pour le serrurier.</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---january-3-2009-at-441-pm">Post by Phydias Shaytan, CP - January 3, 2009 at 4:41 PM</h2>
+<p><a id="post-197566"></a></p>
+<p>Beh en même temps...</p>
+<p>Les clés de maison ne sont pas automatiques. Il faut demander à un GM pour en avoir. Si on a eu l'intelligence de demander les clés de maison à un GM, on aura l'intelligence de ne pas demander des doubles à un joueur, mais bien à un autre GM.</p>
+<p>Ce n'est pas pire que stealing qui permet déjà le vol de clé. La sanction est juste tellement lourde que personne ne le fait.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-3-2009-at-444-pm">Post by Ex-Bolero - January 3, 2009 at 4:44 PM</h2>
+<p><a id="post-197567"></a></p>
+<p>Stealing permet le vol de clés, mais qu'on ne vous y prenne pas: c'est absolument inadmissible. Les seules clés que vous pouvez voler sont celles qui donnent accès à des bâtiments publics ou de guilde. Toutes les clés personnelles (maison, coffres personnels, etc.) ne peuvent pas être dérobées sous peine de sanctions.</p>
+<p>Concernant la classe &quot;Serrurier&quot; proposée ici, nous allons également en discuter.</p>
+<hr>
+<h2 id="post-by-lyllanne-tssera-adm---may-5-2009-at-256-pm">Post by Lyllanne T'Ssera, AdM - May 5, 2009 at 2:56 PM</h2>
+<p><a id="post-212995"></a></p>
+<p>L'ajout d'Une nouvelle classe serait quant à moi inutile, celles présentement sont moyennements balancées deja.... Je pense qu'il faudrait plutôt donner l'opportunité aux voleurs/bricoleurs de classe d'utiliser se système... eux qui devraient savoir fabriquer quelques outils pour se débrouiller.</p>
+<p>PS : Désolé de dépoussièrer un vieux sujet, je sentais le besoin de m'exprimer là dessus et tant qu'a ouvrir un nouveau topic... <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---may-5-2009-at-329-pm">Post by Phydias Shaytan, CP - May 5, 2009 at 3:29 PM</h2>
+<p><a id="post-212996"></a></p>
+<p>Je tiens à préciser que ce n'est pas l'ajout d'une classe, mais celle d'un métier. Donc on ne touche pas au système actuel de classe, on ajoute uniquement la possibilités à ceux qui ont crochetage d'avoir une plus grande utilité pour leur skill sous condition de monter bricolage également.</p>
+<hr>
+<h2 id="post-by-lyllanne-tssera-adm---may-5-2009-at-331-pm">Post by Lyllanne T'Ssera, AdM - May 5, 2009 at 3:31 PM</h2>
+<p><a id="post-212997"></a></p>
+<p>+1 Alors.</p>
+<hr>
+<h2 id="post-by-thomas-bolton-emp---may-5-2009-at-614-pm">Post by Thomas Bolton, Emp - May 5, 2009 at 6:14 PM</h2>
+<p><a id="post-213007"></a></p>
+<p><em><span style="color:#000000">C'est intéressant. Ça sera utile aux bricoleurs, surtout.</span></em></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

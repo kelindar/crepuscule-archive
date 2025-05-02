@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Potions. - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Les Potions.</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">Les Potions.</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="les-potions">Les Potions.</h1>
+<h2 id="post-by-elrohrzarhockind---april-30-2008-at-658-pm">Post by Elrohïr/Zarhock,ind - April 30, 2008 at 6:58 PM</h2>
+<p><a id="post-162067"></a></p>
+<p>Bonjour a tous,je vais tenté de faire un post bien constructif sur mon idée.</p>
+<p>Les Alchimistes nous fournissent en potion.Le problème est que,si on a une commande de,par exemple 20 potions de soin,10 d'explosion,5 de poison,30 de cure...dans le sac,on ne s'y retrouve plus et sa prend énormément de temps de tout classé potions par potion,force de potion par force de potion ...</p>
+<p>Donc mon idée,pourquoi ne pas faire comme les potions vide,c'est à dire on a 10 potions,elle seront ensemble au lieux d'être éparpillé dans le sac.Et donc on pourra mieux les rangés,utilisé.Je pense que sa pourrait être bénéfique pour tous,autemps les alchimistes que les utilisateurs de potions.</p>
+<p>Se que vous en pensez ? <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-anonymous---april-30-2008-at-701-pm">Post by Anonymous - April 30, 2008 at 7:01 PM</h2>
+<p><a id="post-162069"></a></p>
+<p>C'est possible selon moi si les scripteur s'y mettent un peu.</p>
+<p>Je crois qu'en modifiant les hues des bouteilles vides et en leur donnant les effets des potions normales, avec un incrément négatif on pourrait s'en sortir.</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---april-30-2008-at-702-pm">Post by Phydias Shaytan, CP - April 30, 2008 at 7:02 PM</h2>
+<p><a id="post-162070"></a></p>
+<p>Il suffit de changer l'attribut stackable en 1.</p>
+<p>Le problème, c'est que la petite barre pour séparer les items est gérée par le client. Sauf que le client ne gère justement pas les popos autre que vides. Donc tu pourras les empiler, mais pas les désempiler.</p>
+<p>Solution possible : changer le skin de toutes les popos en popo vide dont la hue a été changée.</p>
+<hr>
+<h2 id="post-by-elrog-minh-yu---mort-----april-30-2008-at-702-pm">Post by Elrog Minh Yu - Mort - - April 30, 2008 at 7:02 PM</h2>
+<p><a id="post-162071"></a></p>
+<p>*C'est vrai que c'est une bonne idée. *</p>
+<hr>
+<h2 id="post-by-koenzell-pandora-cp---april-30-2008-at-757-pm">Post by Koenzell Pandora, Cp - April 30, 2008 at 7:57 PM</h2>
+<p><a id="post-162075"></a></p>
+<p>Moi j'aime bien avoir mon sac pleinde potion <img src="/assets/smilies/smile.gif" alt=""></p>
+<p>Ces sur que sa aiderais, mais en tant qu'alchiniste ce peu dire que le rangement des potions ce long, mais, peut etre plus réaliste en tuka je reste neutre...</p>
+<hr>
+<h2 id="post-by-yriel-asuryan---april-30-2008-at-800-pm">Post by Yriel Asuryan - April 30, 2008 at 8:00 PM</h2>
+<p><a id="post-162078"></a></p>
+<p><em>Edit car il s'est trompé de sujet. A rêvé un sujet ou il était question du poids dans le sac et ne le retrouve plus. Se demande si il devient fou.</em></p>
+<hr>
+<h2 id="post-by-elrohrzarhockind---april-30-2008-at-841-pm">Post by Elrohïr/Zarhock,ind - April 30, 2008 at 8:41 PM</h2>
+<p><a id="post-162091"></a></p>
+<p>Je parle de regroupé les potions comme les buches sont regroupés,comme les minerais/Lingos sont regroupé.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---april-30-2008-at-852-pm">Post by Coordinateur Apoc - April 30, 2008 at 8:52 PM</h2>
+<p><a id="post-162094"></a></p>
+<p>Ca serait un peu plus compliqué car le stack de potions ne serait plus le même item que la potion seule, donc on double clique et rien ne se passerait. Il faudrait scripter un stack pour chaque type de potion et on en n'a quand même pas mal. Pas très difficille mais assez long pour le petit avantage que ca donnerait.</p>
+<hr>
+<h2 id="post-by-anonymous---april-30-2008-at-854-pm">Post by Anonymous - April 30, 2008 at 8:54 PM</h2>
+<p><a id="post-162095"></a></p>
+<p>Le pire c'est que sous RunUo 2.0 (selon les scripteurs) Les potions sont toutes stackables de base.</p>
+<p>J'ignore si l'on peu extraire simplement le code de RunUo 2 et l'implanter ici?</p>
+<hr>
+<h2 id="post-by-willy-scripteur---may-1-2008-at-449-am">Post by Willy, Scripteur - May 1, 2008 at 4:49 AM</h2>
+<p><a id="post-162165"></a></p>
+<p>Non on ne peut pas, c'est completeent différent....sa serasi un reve de devenir en 2.0, mais sa ne se fera pas car on a déja trop de script customisé...et faudrais les revoir un a un...ce qui est infesable!</p>
+<p>Désolé a tous!</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---may-1-2008-at-524-am">Post by Phydias Shaytan, CP - May 1, 2008 at 5:24 AM</h2>
+<p><a id="post-162168"></a></p>
+<p>J'aime bien faire mon chieur, mais voila, ça me fait un peu rire quand vous dites des grosses modifs... Je l'ai déjà fait pour un autre shard et voici donc un exemple du résultat.</p>
+<p>Le fichier original de Crépuscule : NightSight.cs :</p>
+<p>using System;<br>
+using Server;</p>
+<p>namespace Server.Items<br>
+{<br>
+\tpublic class NightSightPotion : BasePotion<br>
+\t{<br>
+\t\t[Constructable]<br>
+\t\tpublic NightSightPotion() : base( 0xF06, PotionEffect.Nightsight )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic NightSightPotion( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();<br>
+\t\t}</p>
+<p>\t\tpublic override void Drink( Mobile from )<br>
+\t\t{<br>
+\t\t\tif ( from.BeginAction( typeof( LightCycle ) ) )<br>
+\t\t\t{<br>
+\t\t\t\tnew LightCycle.NightSightTimer( from ).Start();<br>
+\t\t\t\tfrom.LightLevel = Math.Abs( LightCycle.DungeonLevel / 2 );</p>
+<p>\t\t\t\tfrom.FixedParticles( 0x376A, 9, 32, 5007, EffectLayer.Waist );<br>
+\t\t\t\tfrom.PlaySound( 0x1E3 );</p>
+<p>\t\t\t\tBasePotion.PlayDrinkEffect( from );</p>
+<p>\t\t\t\tthis.Delete();<br>
+\t\t\t}<br>
+\t\t\telse<br>
+\t\t\t{<br>
+\t\t\t\tfrom.SendMessage( &quot;You already have nightsight.&quot; );<br>
+\t\t\t}<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<p>La version Modifiée :</p>
+<p>using System;<br>
+using Server;</p>
+<p>namespace Server.Items<br>
+{<br>
+\tpublic class NightSightPotion : BasePotion<br>
+\t{<br>
+\t\t[Constructable]<br>
+\t\tpublic NightSightPotion() : this( 1 )<br>
+\t\t{<br>
+\t\t}<br>
+\t\t<br>
+\t\t[Constructable]<br>
+\t\tpublic NightSightPotion(int amount ) : base( 0xF0E, PotionEffect.Nightsight )<br>
+\t\t{<br>
+\t\t\tName = &quot;Potion de vision nocturne&quot;;<br>
+\t\t\tHue = 1169;<br>
+\t\t\tAmount = amount;<br>
+\t\t}<br>
+\t\t<br>
+\t\tpublic override Item Dupe( int amount )<br>
+\t\t{<br>
+\t\t\treturn base.Dupe( new NightSightPotion( amount ), amount );<br>
+\t\t}</p>
+<p>\t\tpublic NightSightPotion( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();<br>
+\t\t}</p>
+<p>\t\tpublic override void Drink( Mobile from )<br>
+\t\t{<br>
+\t\t\tif ( from.BeginAction( typeof( LightCycle ) ) )<br>
+\t\t\t{<br>
+\t\t\t\tnew LightCycle.NightSightTimer( from ).Start();<br>
+\t\t\t\tfrom.LightLevel = LightCycle.DungeonLevel / 2;</p>
+<p>\t\t\t\tfrom.FixedParticles( 0x376A, 9, 32, 5007, EffectLayer.Waist );<br>
+\t\t\t\tfrom.PlaySound( 0x1E3 );</p>
+<p>\t\t\t\tBasePotion.PlayDrinkEffect( from );</p>
+<p>\t\t\t\tConsume();<br>
+\t\t\t}<br>
+\t\t\telse<br>
+\t\t\t{<br>
+\t\t\t\tfrom.SendMessage( &quot;You already have nightsight.&quot; );<br>
+\t\t\t}<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<p>Et pour les derniers chicaneurs, la modification à apporter dans le BasePotion.cs</p>
+<p>\t\tpublic BasePotion( int itemID, PotionEffect effect ) : base( itemID )<br>
+\t\t{<br>
+\t\t\tm_PotionEffect = effect;</p>
+<p>\t\t\tStackable = false;<br>
+\t\t\tWeight = 1.0;<br>
+\t\t}</p>
+<p>Devient :</p>
+<p>\t\tpublic BasePotion( int itemID, PotionEffect effect ) : this( itemID, effect, 1 )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic BasePotion( int itemID, PotionEffect effect, int amount ) : base( itemID )<br>
+\t\t{<br>
+\t\t\tm_PotionEffect = effect;</p>
+<p>\t\t\tStackable = true;<br>
+\t\t\tWeight = 1.0;<br>
+\t\t\tAmount = amount;<br>
+\t\t}</p>
+<p>En somme :<br>
+§ Pour chaque potion</p>
+<ul>
+<li>Rajouter un constructeur et modifier le constructeur existant de chaque potion : changer l'itemID, mettre le nom, un variable amount et la hue</li>
+<li>Rajouter une fonction Dupe</li>
+<li>Dans le drink, remplacer le delete par consume<br>
+§ Une seule fois : BasePotion</li>
+<li>Modifier le constructeur et rajouter un nouveau constructeur : introduction de amount et mise de stackable à true</li>
+</ul>
+<hr>
+<h2 id="post-by-elrohrzarhockind---may-1-2008-at-535-am">Post by Elrohïr/Zarhock,ind - May 1, 2008 at 5:35 AM</h2>
+<p><a id="post-162171"></a></p>
+<p>wouaw ... je suis bouche bée...</p>
+<hr>
+<h2 id="post-by-willy-scripteur---may-1-2008-at-549-am">Post by Willy, Scripteur - May 1, 2008 at 5:49 AM</h2>
+<p><a id="post-162173"></a></p>
+<p>tu l'as essayé sur 1.0 avec les scripts customisés de crepuscule?</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---may-1-2008-at-649-am">Post by Phydias Shaytan, CP - May 1, 2008 at 6:49 AM</h2>
+<p><a id="post-162177"></a></p>
+<p>Essaye, tu verras que ça tourne.</p>
+<p>Le fichier modifié est en Runuo1.0. Quand tu essaye, laisse un constructeur adéquat aux potions non-modifées dans BasePotion.</p>
+<p>Et le Serialize est ton ami pour pas te retrouver à supprimer toutes les anciennes potions !</p>
+<hr>
+<h2 id="post-by-elrohrzarhockind---may-2-2008-at-408-pm">Post by Elrohïr/Zarhock,ind - May 2, 2008 at 4:08 PM</h2>
+<p><a id="post-162393"></a></p>
+<p>Ou alors pouvoir utilisé les potions directement dans le tonneau de potion(si il est IG)Style je veux boire une potion,double clik sur le tonneau et paf je bois la potion,si je veux l'ouvrir,un clik dessus,la commande apparait et je clik dessu,non?</p>
+<hr>
+<h2 id="post-by-ophelie-demildor---may-3-2008-at-235-am">Post by Ophelie Demildor - May 3, 2008 at 2:35 AM</h2>
+<p><a id="post-162448"></a></p>
+<p>c,est pas ce qui est deja possible de faire avec le tonneau ? ou presque, il me semble que quand tu double click une bouteille sort et tu peux l'utiliser. Imagine si on double clickait dessus et c'etais du poison? comment utiliser le skill empoisonnement ?</p>
+<hr>
+<h2 id="post-by-elrohrzarhockind---may-3-2008-at-440-am">Post by Elrohïr/Zarhock,ind - May 3, 2008 at 4:40 AM</h2>
+<p><a id="post-162456"></a></p>
+<blockquote>
+<p><strong>&quot;Crystelle, AdC&quot; wrote:</strong>
+c,est pas ce qui est deja possible de faire avec le tonneau ? ou presque, il me semble que quand tu double click une bouteille sort et tu peux l'utiliser. Imagine si on double clickait dessus et c'etais du poison? comment utiliser le skill empoisonnement ?</p>
+<p>Dans un baril ou on met que du poison,on utilise poisoning + clik sur le baril ... c'est tout ...</p>
+</blockquote>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---may-5-2008-at-123-am">Post by Phydias Shaytan, CP - May 5, 2008 at 1:23 AM</h2>
+<p><a id="post-162869"></a></p>
+<p>Tu as essayé de glisser la bouteille sur le baril ou de double-cliquer sur le baril avec des bouteilles vides dans le sac ? Je sais plus comment, mais c'est possible de récupérer le contenu d'un baril dans des fioles.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

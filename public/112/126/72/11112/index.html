@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paquets Cadeaux donnant des cadeaux - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Paquets Cadeaux donnant des cadeaux</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Paquets Cadeaux donnant des cadeaux</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="paquets-cadeaux-donnant-des-cadeaux">Paquets Cadeaux donnant des cadeaux</h1>
+<h2 id="post-by-vent-dhiver---december-14-2006-at-159-am">Post by Vent d'Hiver - December 14, 2006 at 1:59 AM</h2>
+<p><a id="post-101434"></a></p>
+<p>Voila je voulais offrir aux joueurs la possibilité d'acquérir des paquets cadeaux dans lesquels ils pourraient ranger un item ou plus pour offrir.<br>
+Morgathys m'a fait le script.</p>
+<p>Je sais Apoc tu as beaucoup de travail, une vie irl et plein d'autre chose. Mais pourrais-tu jeter un coup d'oeil et s'il marche le mettre en route ? Afin qu'on puisse en profiter avant noël ?</p>
+<p>// A foutre a la suite de Container.cs<br>
+// Sur de rien lol, a tester ^^<br>
+// Serieux doute sur le ====&gt; get{ return new Rectangle2D[ 44, 35, 165, 75 ); }\t</p>
+<p>\t[Flipable( 0x2CF0, 0x2CF1 )]<br>
+public class Cadeau : TrapableContainer<br>
+\t{<br>
+\t\tpublic override int DefaultGumpID{ get{ return 0x102; } }<br>
+\t\tpublic override int DefaultDropSound{ get{ return 0x501; } }</p>
+<p>\t\tpublic override Rectangle2D Bounds<br>
+\t\t{<br>
+\t\t\tget{ return new Rectangle2D( 44, 35, 165, 75 ); }<br>
+\t\t}</p>
+<p>\t\t<br>
+\t\tpublic SimpleFloorTile() : base( 0x2CF0 )<br>
+\t\t{<br>
+\t\t\tWeight = 1.0;<br>
+\t\t}</p>
+<p>\t\tpublic SimpleFloorTile( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}</p>
+<p>\t<br>
+\t[Flipable( 0x2CF5, 0x2CF4 )]<br>
+public class Cadeau : TrapableContainer<br>
+\t{<br>
+\t\tpublic override int DefaultGumpID{ get{ return 0x102; } }<br>
+\t\tpublic override int DefaultDropSound{ get{ return 0x501; } }</p>
+<p>\t\tpublic override Rectangle2D Bounds<br>
+\t\t{<br>
+\t\t\tget{ return new Rectangle2D( 44, 35, 165, 75 ); }<br>
+\t\t}</p>
+<p>\t\t<br>
+\t\tpublic SimpleFloorTile() : base( 0x2CF5 )<br>
+\t\t{<br>
+\t\t\tWeight = 1.0;<br>
+\t\t}</p>
+<p>\t\tpublic SimpleFloorTile( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}</p>
+<p>\t<br>
+\t[Flipable( 0x2CF9, 0x2CFA )]<br>
+public class Cadeau : TrapableContainer<br>
+\t{<br>
+\t\tpublic override int DefaultGumpID{ get{ return 0x102; } }<br>
+\t\tpublic override int DefaultDropSound{ get{ return 0x501; } }</p>
+<p>\t\tpublic override Rectangle2D Bounds<br>
+\t\t{<br>
+\t\t\tget{ return new Rectangle2D( 44, 35, 165, 75 ); }<br>
+\t\t}</p>
+<p>\t\t<br>
+\t\tpublic SimpleFloorTile() : base( 0x2CF9 )<br>
+\t\t{<br>
+\t\t\tWeight = 1.0;<br>
+\t\t}</p>
+<p>\t\tpublic SimpleFloorTile( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}</p>
+<p>\t<br>
+\t[Flipable( 0x2CFC, 0x2CFB )]<br>
+public class Cadeau : TrapableContainer<br>
+\t{<br>
+\t\tpublic override int DefaultGumpID{ get{ return 0x102; } }<br>
+\t\tpublic override int DefaultDropSound{ get{ return 0x501; } }</p>
+<p>\t\tpublic override Rectangle2D Bounds<br>
+\t\t{<br>
+\t\t\tget{ return new Rectangle2D( 44, 35, 165, 75 ); }<br>
+\t\t}</p>
+<p>\t\t<br>
+\t\tpublic SimpleFloorTile() : base( 0x2CFC )<br>
+\t\t{<br>
+\t\t\tWeight = 1.0;<br>
+\t\t}</p>
+<p>\t\tpublic SimpleFloorTile( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}</p>
+<p>\t<br>
+\t[Flipable( 0x2D03, 0x2D04 )]<br>
+public class Cadeau : TrapableContainer<br>
+\t{<br>
+\t\tpublic override int DefaultGumpID{ get{ return 0x102; } }<br>
+\t\tpublic override int DefaultDropSound{ get{ return 0x501; } }</p>
+<p>\t\tpublic override Rectangle2D Bounds<br>
+\t\t{<br>
+\t\t\tget{ return new Rectangle2D( 44, 35, 165, 75 ); }<br>
+\t\t}</p>
+<p>\t\t<br>
+\t\tpublic SimpleFloorTile() : base( 0x2D03 )<br>
+\t\t{<br>
+\t\t\tWeight = 1.0;<br>
+\t\t}</p>
+<p>\t\tpublic SimpleFloorTile( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-14-2006-at-525-pm">Post by Feydanith, dit la Carpe - December 14, 2006 at 5:25 PM</h2>
+<p><a id="post-101518"></a></p>
+<p>Roh, il les a mis piégeable ^^</p>
+<p>Schtroumpf farceur repéré <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-vent-dhiver---december-14-2006-at-748-pm">Post by Vent d'Hiver - December 14, 2006 at 7:48 PM</h2>
+<p><a id="post-101526"></a></p>
+<p>Si on intégre le script il faut faire un nouveau patch ?</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-14-2006-at-859-pm">Post by Feydanith, dit la Carpe - December 14, 2006 at 8:59 PM</h2>
+<p><a id="post-101542"></a></p>
+<p>Ben normalement non, juste le mettre sur le serveur et il devrait être actif au prochain reboot. Sauf si il a ajouté des gumps ou autres.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-15-2006-at-150-am">Post by Coordinateur Apoc - December 15, 2006 at 1:50 AM</h2>
+<p><a id="post-101573"></a></p>
+<p>Les scripts sont toujours internes dont rien à télécharger pour les joueurs. Reste à voir si le script va être compatible avec Crépuscule.</p>
+<p>J'ai été malade toute la semaine, je vais essayer de faire cela en fin de semaine et de ne pas trop retardé la mise à jour encore.</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-20-2006-at-1135-pm">Post by Feydanith, dit la Carpe - December 20, 2006 at 11:35 PM</h2>
+<p><a id="post-102128"></a></p>
+<p>corrigé :</p>
+<p>// A foutre a la suite de Container.cs<br>
+// Sur de rien lol, a tester ^^<br>
+// Serieux doute sur le ====&gt; get{ return new Rectangle2D[ 44, 35, 165, 75 ); }</p>
+<p>using System;<br>
+using System.Collections;<br>
+using Server.Multis;<br>
+using Server.Mobiles;<br>
+using Server.Network;</p>
+<p>namespace Server.Items<br>
+{<br>
+\t[Flipable( 0x2CF0, 0x2CF1 )]<br>
+\tpublic class CadeauA : TrapableContainer<br>
+\t{<br>
+\t\tpublic override int DefaultGumpID{ get{ return 0x102; } }<br>
+\t\tpublic override int DefaultDropSound{ get{ return 0x501; } }<br>
+\t<br>
+\t\tpublic override Rectangle2D Bounds<br>
+\t\t{<br>
+\t\t\tget{ return new Rectangle2D( 44, 35, 165, 75 ); }<br>
+\t\t}</p>
+<p>\t\t[Constructable]<br>
+\t\tpublic CadeauA() : base( 0x2CF0 )<br>
+\t\t{<br>
+\t\t\tWeight = 1.0;<br>
+\t\t}</p>
+<p>\t\tpublic CadeauA( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}<br>
+\t<br>
+\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );<br>
+\t<br>
+\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}</p>
+<p>\t[Flipable( 0x2CF5, 0x2CF4 )]<br>
+\tpublic class CadeauB : TrapableContainer<br>
+\t{<br>
+\t\tpublic override int DefaultGumpID{ get{ return 0x102; } }<br>
+\t\tpublic override int DefaultDropSound{ get{ return 0x501; } }</p>
+<p>\t\tpublic override Rectangle2D Bounds<br>
+\t\t{<br>
+\t\t\tget{ return new Rectangle2D( 44, 35, 165, 75 ); }<br>
+\t\t}</p>
+<p>\t\t[Constructable]<br>
+\t\tpublic CadeauB() : base( 0x2CF5 )<br>
+\t\t{<br>
+\t\t\tWeight = 1.0;<br>
+\t\t}</p>
+<p>\t\tpublic CadeauB( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );<br>
+\t<br>
+\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}<br>
+\t<br>
+\t[Flipable( 0x2CF9, 0x2CFA )]<br>
+\tpublic class CadeauC : TrapableContainer<br>
+\t{<br>
+\t\tpublic override int DefaultGumpID{ get{ return 0x102; } }<br>
+\t\tpublic override int DefaultDropSound{ get{ return 0x501; } }<br>
+\t<br>
+\t\tpublic override Rectangle2D Bounds<br>
+\t\t{<br>
+\t\t\tget{ return new Rectangle2D( 44, 35, 165, 75 ); }<br>
+\t\t}<br>
+\t<br>
+\t\t[Constructable]<br>
+\t\tpublic CadeauC() : base( 0x2CF9 )<br>
+\t\t{<br>
+\t\t\tWeight = 1.0;<br>
+\t\t}<br>
+\t<br>
+\t\tpublic CadeauC( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );<br>
+\t<br>
+\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );<br>
+\t<br>
+\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}</p>
+<p>\t[Flipable( 0x2CFC, 0x2CFB )]<br>
+\tpublic class CadeauD : TrapableContainer<br>
+\t{<br>
+\t\tpublic override int DefaultGumpID{ get{ return 0x102; } }<br>
+\t\tpublic override int DefaultDropSound{ get{ return 0x501; } }</p>
+<p>\t\tpublic override Rectangle2D Bounds<br>
+\t\t{<br>
+\t\t\tget{ return new Rectangle2D( 44, 35, 165, 75 ); }<br>
+\t\t}<br>
+\t<br>
+\t\t[Constructable]<br>
+\t\tpublic CadeauD() : base( 0x2CFC )<br>
+\t\t{<br>
+\t\t\tWeight = 1.0;<br>
+\t\t}</p>
+<p>\t\tpublic CadeauD( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}</p>
+<p>\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );</p>
+<p>\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );</p>
+<p>\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}</p>
+<p>\t[Flipable( 0x2D03, 0x2D04 )]<br>
+\tpublic class CadeauE : TrapableContainer<br>
+\t{<br>
+\t\tpublic override int DefaultGumpID{ get{ return 0x102; } }<br>
+\t\tpublic override int DefaultDropSound{ get{ return 0x501; } }</p>
+<p>\t\tpublic override Rectangle2D Bounds<br>
+\t\t{<br>
+\t\t\tget{ return new Rectangle2D( 44, 35, 165, 75 ); }<br>
+\t\t}<br>
+\t<br>
+\t\t[Constructable]<br>
+\t\tpublic CadeauE() : base( 0x2D03 )<br>
+\t\t{<br>
+\t\t\tWeight = 1.0;<br>
+\t\t}<br>
+\t<br>
+\t\tpublic CadeauE( Serial serial ) : base( serial )<br>
+\t\t{<br>
+\t\t}<br>
+\t<br>
+\t\tpublic override void Serialize( GenericWriter writer )<br>
+\t\t{<br>
+\t\t\tbase.Serialize( writer );<br>
+\t<br>
+\t\t\twriter.Write( (int) 0 ); // version<br>
+\t\t}</p>
+<p>\t\tpublic override void Deserialize( GenericReader reader )<br>
+\t\t{<br>
+\t\t\tbase.Deserialize( reader );<br>
+\t<br>
+\t\t\tint version = reader.ReadInt();<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<hr>
+<h2 id="post-by-ex-ariel---december-21-2006-at-202-am">Post by Ex-Ariel - December 21, 2006 at 2:02 AM</h2>
+<p><a id="post-102141"></a></p>
+<p>Faudrait les intégrer maintenant puisque c'est dans le cadre de Nowel <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-21-2006-at-323-am">Post by Feydanith, dit la Carpe - December 21, 2006 at 3:23 AM</h2>
+<p><a id="post-102157"></a></p>
+<p>Si je puis suggérer au prochain reboot du serveur d'essayer .add cadeauA ( cadeaub, cadeauc, cadeaud ou cadeaue ). Oui, je sais, pas très original pour renomer...</p>
+<p>J'ai pas pu tout tester en local puisque j'arrive pas à me conecter avec le client crépuscule en local étrangement  <img src="/assets/smilies/sorry.gif" alt="">  Donc je n'ai pas pu voir le rendu autrement que via insideuo.</p>
+<hr>
+<h2 id="post-by-vent-dhiver---december-21-2006-at-541-am">Post by Vent d'Hiver - December 21, 2006 at 5:41 AM</h2>
+<p><a id="post-102166"></a></p>
+<p>J'aimerais bien aidé mais bon .. tout le monde connait mon talent dans ce domaine -_-</p>
+<hr>
+<h2 id="post-by-ex-ariel---december-30-2006-at-206-am">Post by Ex-Ariel - December 30, 2006 at 2:06 AM</h2>
+<p><a id="post-102828"></a></p>
+<p>Confirmation que la commande .add cadeauA , b , c , d et E ne fonctione pas.</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-30-2006-at-208-am">Post by Feydanith, dit la Carpe - December 30, 2006 at 2:08 AM</h2>
+<p><a id="post-102830"></a></p>
+<p>Il y a un quelconque message d'erreur ?</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-30-2006-at-229-am">Post by Coordinateur Apoc - December 30, 2006 at 2:29 AM</h2>
+<p><a id="post-102831"></a></p>
+<blockquote>
+<p><strong>&quot;Animateur Ariel&quot; wrote:</strong>
+Confirmation que la commande .add cadeauA , b , c , d et E ne fonctione pas.</p>
+<p>Normal le script n'est pas en jeu</p>
+</blockquote>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-30-2006-at-332-am">Post by Feydanith, dit la Carpe - December 30, 2006 at 3:32 AM</h2>
+<p><a id="post-102839"></a></p>
+<p>Il est pourtant sur le serveur, sauf si le serveur n'a pas reboot depuis une semaine ;s</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---january-1-2007-at-653-am">Post by Feydanith, dit la Carpe - January 1, 2007 at 6:53 AM</h2>
+<p><a id="post-102949"></a></p>
+<p>Il y a un problème : les paquets ne veulent pas s'ouvrir  <img src="/assets/smilies/wacko.gif" alt=""></p>
+<p>Après un certain nombre de test avec différents clients et serveur, j'en suis arrivé à la déduction, que ça ne marchais pas que avec le client de crépuscule... mais pourquoi ? Ca reste à déterminer x)</p>
+<p>Précision, pour le giftbox, pour les autres kins, je n'ai pas réussi à faire tourner le verdata sur un client qui veille bien se connecter en local.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-1-2007-at-703-am">Post by Coordinateur Apoc - January 1, 2007 at 7:03 AM</h2>
+<p><a id="post-102950"></a></p>
+<p>Mais qui a mis le Script sur le serveur? Je suis le seul y ayant acces...</p>
+<p>Il manque probablement un gump ou quelque chose. Peut-être un conflit avec le script des Containers.</p>
+<hr>
+<h2 id="post-by-vent-dhiver---january-1-2007-at-500-pm">Post by Vent d'Hiver - January 1, 2007 at 5:00 PM</h2>
+<p><a id="post-102975"></a></p>
+<p>Moi j'ai reboot le serveur. Sinon je n'ai pas mis le script je n'ai aucune idée de comment on fait.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-2-2007-at-345-am">Post by Coordinateur Apoc - January 2, 2007 at 3:45 AM</h2>
+<p><a id="post-103053"></a></p>
+<p>J'ai testé en privé et puis il n'ouvre vraiment pas... Je crois que le problème vient du Gump car le script est identique à celui d'un sac.  <img src="/assets/smilies/wacko.gif" alt=""></p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---january-2-2007-at-504-am">Post by Feydanith, dit la Carpe - January 2, 2007 at 5:04 AM</h2>
+<p><a id="post-103064"></a></p>
+<p>En fait, pour mes test, j'ai utilisé un coffre ( metal chest ) avec gumpid et soundid changé.</p>
+<p>Il fonctionnait parfaitement ( donc ça ne vient ni du gump, ni du son ).<br>
+Ensuite, pour vérifier si il prennait bien le handle &quot;OnDoubleClic&quot; j'ai fait un petit override de ce dernier en ajoutant un from.SendMessage(&quot;double-clic&quot;), quand mettait double-clic au bas de moné cran que je le faisais.</p>
+<p>Etape suivante, in-game, je change l'itemid pour mettre celui d'un cadeau. Et là, magie ça marche ! Sauf que... on déplace le cadeau et ça marche plus  <img src="/assets/smilies/sad.gif" alt=""> par contre le &quot;double-clic&quot; s'affichait toujours au bas de l'écran... C'est donc le static qui passe pas   <img src="/assets/smilies/dwarf.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

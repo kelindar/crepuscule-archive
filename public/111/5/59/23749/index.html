@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Commande</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <a href="/111/5//" class="nav-item">Suggestion ajouts</a>
+                
+                &rsaquo; <span class="current-page">Commande</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="commande">Commande</h1>
+<h2 id="post-by-thodore-de-lagarde-adm---august-22-2008-at-818-pm">Post by Théodore de Lagarde, AdM - August 22, 2008 at 8:18 PM</h2>
+<p><a id="post-178438"></a></p>
+<p>Bon après 3 jours d'essai (à à peu près 2 heures par jours), la commande que je voulais marche pas pantoute et je suis tanné <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Le but c'était que quand je tappes [tournage ça fait qu'un bool devienne true et que ça me fasse cibler quelque chose. Si je sélectionne un des objets qui faut, ça prend le bool de la commande et le transfère à l'objet. Donc il détecterait ça et là ça ferait flipper le lit.</p>
+<p>Donc en gros, ça me permettrait de faire en sorte que les gros items commes les lits, soient flippable avec une commande à la place de sur le double-clic. Ce serait bien mieux, et ça libèrerait le double-clic pour autre chose.</p>
+<p>Ça me permettrait de faire en sorte que le craftage de chose comme cercueil possible: on le flipperait par la commande, et on l'ouvrirait en double-cliquant.</p>
+<p>Donc le seul problème c'est que je sais plus quoi faire pour la commande. Si quelqu'un sait quelque chose qui m'aiderais et que ça lui tente de m'aider, ce serait très apprécié. Ou si vus connaissez une façon plus simple de le faire.</p>
+<p>le problème c'est surtout le transfère de bool. j'ai cette erreur là et je sais pas pantoute ce que ça veut dire: &quot; Gnangnangan est inaccessible en raison de son niveau de protection&quot;</p>
+<p>même en retirant le protected pour public ça change rien.</p>
+<p>alors... Merci d'avance!</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-22-2008-at-920-pm">Post by Coordinateur Apoc - August 22, 2008 at 9:20 PM</h2>
+<p><a id="post-178448"></a></p>
+<p>Il y a certaines variables qui sont protégées dans le CORE et qu'on ne peut pas modifier directement. Il faut passer par une autre variable ou une autre facon.</p>
+<p>Quelle variable te fais ce problème?</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-22-2008-at-1009-pm">Post by Théodore de Lagarde, AdM - August 22, 2008 at 10:09 PM</h2>
+<p><a id="post-178454"></a></p>
+<p>Je me suis basé sur Dupe pour faira ma commande.</p>
+<p>La variable (le bool) que j'essaye de faire transféré, je l'ai ajouté. Elle existait pas avant.</p>
+<pre><code>            public virtual bool m_tournage { get { return true; }   
+</code></pre>
+<p>Je dois avoué que je sais pas trop qu'est-ce que le &quot;virtual&quot; veut dire, mais ça en prend un on dirait.</p>
+<p>après ça, j'essaye de faire en sorte que dans le script du petit lit, il prenne le valeur du bool, avec ça:</p>
+<pre><code>        public virtual bool tournage { get { return TournageCommandHandlers&amp;#46;m_tournage; } }  
+</code></pre>
+<p>et une fois que je sélectionne l'objet en question :</p>
+<pre><code>    public void OnTarget(Mobile from)  
+    {  
+        if ( tournage == true)  
+        {  
+            from&amp;#46;SendMessage(&quot;Test pour voir si ça marche&quot;);  
+        }  
+    }
+</code></pre>
+<p>Cette dernière partie fait partie du fichier du petit lit que j'ai ajouté. Je sais pas si le &quot;OnTarget&quot; est correcte.</p>
+<p>Merci de ton aide Apoc. Un jour ça va marcher!</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-22-2008-at-1030-pm">Post by Coordinateur Apoc - August 22, 2008 at 10:30 PM</h2>
+<p><a id="post-178464"></a></p>
+<p>J'avais eu ton problème mais j'arrives plus à me souvenir quand et pourquoi.  <img src="/assets/smilies/wacko.gif" alt=""><br>
+Je te reviens dès que possible.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-22-2008-at-1040-pm">Post by Théodore de Lagarde, AdM - August 22, 2008 at 10:40 PM</h2>
+<p><a id="post-178467"></a></p>
+<p>Ho! D'accord! Merci beaucoup!</p>
+<p>parce que vraiment, là je comprend pas. J'ai beau rechercher sur Internet, c'est du chinois.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-305-am">Post by Théodore de Lagarde, AdM - August 23, 2008 at 3:05 AM</h2>
+<p><a id="post-178487"></a></p>
+<p>Voici les 2 scripts dont j'essaye de faire transférer le bool. J'ai essayer ben des affaires, alors je sais plus quoi faire:</p>
+<p>La commande:</p>
+<p>using System;<br>
+using Server;<br>
+using System.Reflection;<br>
+using Server.Targeting;</p>
+<p>namespace Server.Items<br>
+{
+\tpublic class TournageCommandHandlers<br>
+\t{</p>
+<p>\t\tpublic static void Initialize()<br>
+\t\t{<br>
+\t\t\tServer.Commands.Register( &quot;Tournage&quot;, AccessLevel.Player, new CommandEventHandler( Tournage_OnCommand ) );<br>
+\t\t}</p>
+<p>\t\t[Usage( &quot;Tournage&quot; )]<br>
+\t\t[Description( &quot;Tourne un addon.&quot; )]<br>
+\t\tpublic static void Tournage_OnCommand( CommandEventArgs e )<br>
+\t\t{<br>
+\t\t\te.Mobile.Target = new TournageTarget();<br>
+\t\t}</p>
+<p>\t\tpublic class TournageTarget : Target<br>
+\t\t{</p>
+<p>\t\t\tpublic TournageTarget() : base( -1, false, TargetFlags.None )<br>
+\t\t\t{<br>
+\t\t\t}</p>
+<pre><code>        public bool m_tournage = true;
+</code></pre>
+<p>\t\t\tprotected override void OnTarget( Mobile from, object targeted )<br>
+\t\t\t{<br>
+\t\t\t\tif ( targeted is AddonComponent2 )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tAddonComponent2 addoncomponent2 = (AddonComponent2)targeted;<br>
+}
+}<br>
+}
+}<br>
+}
+}</p>
+<p>Un Addon pour l'essayer, celui dont je suis supposé recevoir la variable:</p>
+<p>using System;<br>
+using System.Collections;<br>
+using Server;<br>
+using Server.Network;</p>
+<p>namespace Server.Items<br>
+{
+public class SmallBedSouthAddon2 : BaseAddon2<br>
+{<br>
+AddonComponent2 ac;<br>
+AddonComponent2 ac2;</p>
+<pre><code>    public bool tournage { get { return TournageCommandHandlers&amp;#46;TournageTarget&amp;#46;m_tournage; } set { m_tournage = value; } }
+
+    //public virtual bool tournage { get { return TournageCommandHandlers&amp;#46;TournageTarget&amp;#46;m_tournage; } }
+
+    &amp;#91;Constructable&amp;#93;  
+    public SmallBedSouthAddon2()  
+    {
+
+        AddonComponent2 ac;  
+        ac = new AddonComponent2(0xa63);  
+        ac&amp;#46;Movable = true;  
+        ac&amp;#46;Name = &quot;Petit lit&quot;;  
+        AddComponent2(ac, 0, 0, 0);
+
+
+        AddonComponent2 ac2;  
+        ac2 = new AddonComponent2(0xA5C);  
+        ac2&amp;#46;Movable = true;  
+        ac2&amp;#46;Name = &quot;Petit lit&quot;;  
+        AddComponent2(ac2, 0, 1, 0);
+
+    }
+
+    public void OnTarget(Mobile from)  
+    {  
+        if ( tournage == true)  
+        {  
+            from&amp;#46;SendMessage(&quot;vous êtes trop loin pour tourner le lit&quot;);  
+           // tournage = false;  
+        }  
+    }  
+    public override void OnDoubleClick(Mobile from)  
+    {
+
+        if (!from&amp;#46;InRange(GetWorldLocation(), 2))  
+        {  
+            from&amp;#46;SendMessage(&quot;vous êtes trop loin pour tourner le lit&quot;);  
+        }  
+        else  
+        {  
+            from&amp;#46;SendMessage(&quot;Vous tournez le lit&quot;);  
+            Item item = new SmallBedEastAddon2();  
+            item&amp;#46;MoveToWorld(this&amp;#46;Location, this&amp;#46;Map);  
+            this&amp;#46;Delete();
+
+        }  
+    }
+
+    public SmallBedSouthAddon2(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }
+
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);
+
+        writer&amp;#46;Write((int)0); // version  
+    }
+
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);
+
+        int version = reader&amp;#46;ReadInt();  
+    }  
+}  
+</code></pre>
+<p>}</p>
+<p>Et ça marche pas</p>
+<p>En passant, personne va pouvoir l'essayer chez lui, vu que y'a juste moi qui a mes Addon2. Va me falloir vos avis ^^.</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-23-2008-at-402-am">Post by Myrddin Emrys, CP - August 23, 2008 at 4:02 AM</h2>
+<p><a id="post-178490"></a></p>
+<p>bha, pourquoi tu reprends pas ton script qui marchait simplement avec un double click?</p>
+<p>tu fais juste qu'au lieux de flipper tout de suite le double click fasse apparaitre un écran qui dit &quot;Voulez vous oui ou non flipper cet addon&quot; avec deux boutons le oui qui fait le flip et le non qui fais juste fermer l'écran</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-412-am">Post by Théodore de Lagarde, AdM - August 23, 2008 at 4:12 AM</h2>
+<p><a id="post-178491"></a></p>
+<p>et tu sais comment faire cette écran là toi? Si oui ça ferait l'affaire.</p>
+<p>En plus ça me permettrait d'ajouter un piton &quot;ouvrir&quot; pour les cercueil que je veux ajouter.</p>
+<p>Je crois que si Kertan me dit comment faire, c'est ce que je vais faire.</p>
+<p>À moins que je ne réussisse à faire marcher la commande, ce qui serait encore mieux.</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-23-2008-at-414-am">Post by Myrddin Emrys, CP - August 23, 2008 at 4:14 AM</h2>
+<p><a id="post-178492"></a></p>
+<p>je pourrais de la faire si tu veux je te fais ça a soir et je te l'envoie</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-415-am">Post by Théodore de Lagarde, AdM - August 23, 2008 at 4:15 AM</h2>
+<p><a id="post-178493"></a></p>
+<p>non</p>
+<p>fais moi juste me le montrer sinon j'apprendrai pas.</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-23-2008-at-420-am">Post by Myrddin Emrys, CP - August 23, 2008 at 4:20 AM</h2>
+<p><a id="post-178494"></a></p>
+<p>bha pour le gumps, prend celui de ressurect et fait juste changer le texte</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-424-am">Post by Théodore de Lagarde, AdM - August 23, 2008 at 4:24 AM</h2>
+<p><a id="post-178495"></a></p>
+<p>tu parle du menu du genre celui des chevaux ou celui des croix?</p>
+<p>J'y avais déjà pensé, mais je ne pense pas que c'est faisable. J'ai vu quelque part sur Internet que on pouvait pas mettre des mots &quot;custom&quot; qui sont dans le menu.</p>
+<p>À moins que je me trompe...</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-23-2008-at-427-am">Post by Myrddin Emrys, CP - August 23, 2008 at 4:27 AM</h2>
+<p><a id="post-178496"></a></p>
+<p>tu te trompe parce que ça se change facilement (je l'ai fait pour un script)</p>
+<p>par exemple</p>
+<p>AddPage( 1 );<br>
+\t\t\t<br>
+\t\t\tAddHtml( 260, 234, 300, 140, ((Mobile)m_Killers[m_Idx]).Name, false, false ); // Player's Name<br>
+\t\t\tAddHtmlLocalized( 260, 254, 300, 140, 1049066, false, false ); // Would you like to report...</p>
+<p>\t\t\tAddButton( 260, 300, 0xFA5, 0xFA7, 1, GumpButtonType.Reply, 0 );<br>
+\t\t\tAddHtmlLocalized( 300, 300, 300, 50, 1046362, false, false ); // Yes<br>
+\t\t\t      \t<br>
+\t\t\tAddButton( 360, 300, 0xFA5, 0xFA7, 2, GumpButtonType.Reply, 0 );<br>
+\t\t\tAddHtmlLocalized( 400, 300, 300, 50, 1046363, false, false ); //No</p>
+<p>tu le transforme en:</p>
+<p>AddPage( 1 );<br>
+\t\t\t<br>
+\t\t\t<br>
+\t\t\tAddHtmlLocalized( 260, 254, 300, 140, &quot;Voulez vous vraiment tourner cet addon?&quot;, false, false );</p>
+<p>\t\t\tAddButton( 260, 300, 0xFA5, 0xFA7, 1, GumpButtonType.Reply, 0 );<br>
+\t\t\tAddHtmlLocalized( 300, 300, 300, 50, &quot;Oui&quot;, false, false );<br>
+\t\t\t      \t<br>
+\t\t\tAddButton( 360, 300, 0xFA5, 0xFA7, 2, GumpButtonType.Reply, 0 );<br>
+\t\t\tAddHtmlLocalized( 400, 300, 300, 50, &quot;Non&quot;, false, false );</p>
+<p>ça devrais marcher</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-430-am">Post by Théodore de Lagarde, AdM - August 23, 2008 at 4:30 AM</h2>
+<p><a id="post-178497"></a></p>
+<p>Missive Pantoute! c'est un exemple!</p>
+<p>Tu me copie maintenant! <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+J'ai rien compris à ton charabia. C'est quoi tous ces chiffres? et les false, false,</p>
+<p>et comment je fais pour que ça agisse quand c'est &quot;oui&quot;?</p>
+<p>et j'ajoute ça où...? au OnDoubleClick?</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-23-2008-at-436-am">Post by Myrddin Emrys, CP - August 23, 2008 at 4:36 AM</h2>
+<p><a id="post-178498"></a></p>
+<p>1 les chiffres c'est la position du boutons et son id, le dernier chiffre c'est le numero du bouton (voir plus bas)</p>
+<p>2 tu nomme le gump &quot;flipgump&quot; et du mets dans ton script on double clik open &quot;flipgump&quot; (enfin tu comprends)</p>
+<ol start="3">
+<li>ça il faut que tu le mets directement dans le script du gump</li>
+</ol>
+<p>4 pour faire que ça fait ça sur en pesant sur oui</p>
+<p>tu rajoute en bas une phrases du genre</p>
+<p>public override void onresponse ()<br>
+[
+if  info.ButtonID == 1 &amp;&amp; info.Switches.Length &gt; 0 ) // le un c'est le numéro du bouton</p>
+<p>et içi tu copie ton ancienne commande pour flipper</p>
+<p>et ensuite tu fait la même chose pour le bouton deux mais au lieux de mettre le script de flip tu fait fermer le gump.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-442-am">Post by Théodore de Lagarde, AdM - August 23, 2008 at 4:42 AM</h2>
+<p><a id="post-178499"></a></p>
+<ol>
+<li>
+<p>D'accord, ça va.</p>
+</li>
+<li>
+<p>Dans le script de chaque item ou dans un autre à part? (je pense que ce serait mieux dans chaque item, pour ceux qui ont un menu différent)</p>
+</li>
+<li>
+<p>quel script de gump?</p>
+</li>
+<li>
+<p>La réponse est dans le fichier de l'objet à flipper, ou dans le script du menu (à moins que ce soit déjà dans le même &quot;class&quot; déjà en partant).</p>
+</li>
+</ol>
+<p>ça devrait aller pour la commande &quot;ouvrir&quot; si je peux faire marcher le flippage. C'est le même principe.</p>
+<p>Désolé d'avoir l'air aussi noob, mais ça c'est quelque chose que je sais rien pantoute.</p>
+<p>Ça va mieux aller quand vous allez voir la batch de meubles  <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-23-2008-at-446-am">Post by Myrddin Emrys, CP - August 23, 2008 at 4:46 AM</h2>
+<p><a id="post-178500"></a></p>
+<ol>
+<li>rien à ajouter</li>
+</ol>
+<p>2 dans celui de chaque items ou à la limite de celui de addons 2</p>
+<p>3 le script du gump de flip (celui que je t'ai montrer en gros)</p>
+<ol start="4">
+<li>le trucs que je t'ai expliquer c'est à ajotuer à la fin du script du menus</li>
+</ol>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-450-am">Post by Théodore de Lagarde, AdM - August 23, 2008 at 4:50 AM</h2>
+<p><a id="post-178501"></a></p>
+<p>pour le script de gump, j'ai pas de script de gump. Oui je sais, celui que tu m'as montrer, mais je dois le mettre à la suite d'un script de mnu ou simplement dans un fichier à part et que je sais pas où mettre?</p>
+<p>Tu peux me dire sur quoi tu t'es basé pour me faire cet exemple? Ça aiderais beaucoup.</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-23-2008-at-453-am">Post by Myrddin Emrys, CP - August 23, 2008 at 4:53 AM</h2>
+<p><a id="post-178502"></a></p>
+<ol>
+<li>
+<p>Un fichier différent</p>
+</li>
+<li>
+<p>&quot;ReportMurdererGump&quot;</p>
+</li>
+</ol>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-458-am">Post by Théodore de Lagarde, AdM - August 23, 2008 at 4:58 AM</h2>
+<p><a id="post-178503"></a></p>
+<p>Merci beaucoup, je vais essayer tout ça bientôt. Tu m'as beaucoup aider.</p>
+<p>P.S. Tu as essayer tout ça? Ou c'est juste une idée, supposition.</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-23-2008-at-504-am">Post by Myrddin Emrys, CP - August 23, 2008 at 5:04 AM</h2>
+<p><a id="post-178504"></a></p>
+<p>pour essayer tout ça faudrait que je me bidouille un script et ça me tente pas, mais bon ça devrais marcher</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-506-am">Post by Théodore de Lagarde, AdM - August 23, 2008 at 5:06 AM</h2>
+<p><a id="post-178505"></a></p>
+<p>je vais le faire demain, c'ets pas grave. Merci beaucoup Kertan. Je t'en redonne des nouvelles.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-405-pm">Post by Théodore de Lagarde, AdM - August 23, 2008 at 4:05 PM</h2>
+<p><a id="post-178518"></a></p>
+<p>J'ai fais ton affaire et ça marche pas plu. Je reviens au même problème parce que j'ai pas le choix de faire le OnResponse dans le fichier du gump. Pour chaque objet, la méthode pour flipper l'objet est propre à chaque objet, alors j'ai pas le choix de laisser ça de même. Mais il faut que je transfère un bool pour savoir si je clique sur oui ou non. Je dois encore essayer de transféré un bool...</p>
+<p>à moin que tu connaisse une autre méthode?</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-23-2008-at-637-pm">Post by Myrddin Emrys, CP - August 23, 2008 at 6:37 PM</h2>
+<p><a id="post-178527"></a></p>
+<p>si j'ai bien compris le problème c'est que tu delete l'objet et que t'en mets un autre?</p>
+<p>tu peux toujours essayer de mettre un if</p>
+<p>la en langage simple:</p>
+<p>if item id = 1345<br>
+add item id 1346</p>
+<p>else if itemid = 2355<br>
+add item id 1346</p>
+<p>et à la fin sans if ou else if, un trucs qui dit que ça delete l'item</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-822-pm">Post by Théodore de Lagarde, AdM - August 23, 2008 at 8:22 PM</h2>
+<p><a id="post-178532"></a></p>
+<p>non, si je fais ça, je vais devoir le faire pour chaque objet. ET il n'y a pas juste un item Id. Regarde à quoi ça ressemble pour un seul objet &quot;flippable&quot; (avec le deed):</p>
+<p>Il manque juste les lignes du début et quelques affaires comme ça {</p>
+<pre><code>public class LargeBedSouthAddon2 &amp;#58; BaseAddon2  
+{  
+    AddonComponent2 ac;  
+    AddonComponent2 ac2;  
+    AddonComponent2 ac3;  
+    AddonComponent2 ac4;
+
+    &amp;#91;Constructable&amp;#93;  
+    public LargeBedSouthAddon2()  
+    {  
+        AddonComponent2 ac;  
+        ac = new AddonComponent2(0xA83);  
+        ac&amp;#46;Movable = true;  
+        ac&amp;#46;Name = &quot;Grand lit&quot;;  
+        AddComponent2(ac, 0, 0, 0);
+
+        AddonComponent2 ac2;  
+        ac2 = new AddonComponent2(0xA7F);  
+        ac2&amp;#46;Movable = true;  
+        ac2&amp;#46;Name = &quot;Grand lit&quot;;  
+        AddComponent2(ac2, 0, 1, 0);
+
+        AddonComponent2 ac3;  
+        ac3 = new AddonComponent2(0xA82);  
+        ac3&amp;#46;Movable = true;  
+        ac3&amp;#46;Name = &quot;Grand lit&quot;;  
+        AddComponent2(ac3, 1, 0, 0);
+
+        AddonComponent2 ac4;  
+        ac4 = new AddonComponent2(0xA7E);  
+        ac4&amp;#46;Movable = true;  
+        ac4&amp;#46;Name = &quot;Grand lit&quot;;  
+        AddComponent2(ac4, 1, 1, 0);  
+    }
+
+    public override void OnDoubleClick(Mobile from)  
+    {
+
+        if (!from&amp;#46;InRange(GetWorldLocation(), 2))  
+        {  
+            from&amp;#46;SendMessage(&quot;vous êtes trop loin pour tourner le lit&quot;);  
+        }  
+        else  
+        {  
+            from&amp;#46;SendMessage(&quot;Vous tournez le lit&quot;);  
+            Item item = new LargeBedEastAddon2();  
+            item&amp;#46;MoveToWorld(this&amp;#46;Location, this&amp;#46;Map);  
+            this&amp;#46;Delete();
+
+        }  
+    }
+
+    public LargeBedSouthAddon2(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }
+
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);
+
+        writer&amp;#46;Write((int)0); // version  
+    }
+
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);
+
+        int version = reader&amp;#46;ReadInt();  
+    }  
+}
+
+public class LargeBedDeed &amp;#58; BaseAddonDeed2  
+{  
+    public override BaseAddon2 Addon2 { get { return new LargeBedSouthAddon2(); } }  
+    public override int LabelNumber { get { return 1044323; } } // large bed (south)
+
+    &amp;#91;Constructable&amp;#93;  
+    public LargeBedDeed()  
+    {  
+        Name = &quot;Grand lit&quot;;  
+    }
+
+    public LargeBedDeed(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }
+
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);
+
+        writer&amp;#46;Write((int)0); // version  
+    }
+
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);
+
+        int version = reader&amp;#46;ReadInt();  
+    }  
+}
+
+public class LargeBedEastAddon2 &amp;#58; BaseAddon2  
+{  
+    AddonComponent2 ac;  
+    AddonComponent2 ac2;  
+    AddonComponent2 ac3;  
+    AddonComponent2 ac4;
+
+    &amp;#91;Constructable&amp;#93;  
+    public LargeBedEastAddon2()  
+    {  
+        AddonComponent2 ac;  
+        ac = new AddonComponent2(0xA7D);  
+        ac&amp;#46;Movable = true;  
+        ac&amp;#46;Name = &quot;Grand lit&quot;;  
+        AddComponent2(ac, 0, 0, 0);
+
+        AddonComponent2 ac2;  
+        ac2 = new AddonComponent2(0xA7C);  
+        ac2&amp;#46;Movable = true;  
+        ac2&amp;#46;Name = &quot;Grand lit&quot;;  
+        AddComponent2(ac2, 0, 1, 0);
+
+        AddonComponent2 ac3;  
+        ac3 = new AddonComponent2(0xA79);  
+        ac3&amp;#46;Movable = true;  
+        ac3&amp;#46;Name = &quot;Grand lit&quot;;  
+        AddComponent2(ac3, 1, 0, 0);
+
+        AddonComponent2 ac4;  
+        ac4 = new AddonComponent2(0xA78);  
+        ac4&amp;#46;Movable = true;  
+        ac4&amp;#46;Name = &quot;Grand lit&quot;;  
+        AddComponent2(ac4, 1, 1, 0);
+
+
+    }
+
+    public override void OnDoubleClick(Mobile from)  
+    {
+
+        if (!from&amp;#46;InRange(GetWorldLocation(), 2))  
+        {  
+            from&amp;#46;SendMessage(&quot;vous êtes trop loin pour tourner le lit&quot;);  
+        }  
+        else  
+        {  
+            from&amp;#46;SendMessage(&quot;Vous tournez le lit&quot;);  
+            Item item = new LargeBedSouthAddon2();  
+            item&amp;#46;MoveToWorld(this&amp;#46;Location, this&amp;#46;Map);  
+            this&amp;#46;Delete();
+
+        }  
+    }
+
+    public LargeBedEastAddon2(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }
+
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);
+
+        writer&amp;#46;Write((int)0); // version  
+    }
+
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);
+
+        int version = reader&amp;#46;ReadInt();  
+    }  
+}
+</code></pre>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-23-2008-at-920-pm">Post by Coordinateur Apoc - August 23, 2008 at 9:20 PM</h2>
+<p><a id="post-178542"></a></p>
+<p>Bon j'ai bien regardé les script au début et le problème vient de la facon dont tu utilise la commande.</p>
+<p>Tu utilise une variable avec la commande et tu essais de la lire avec l'objet. Il faudrait que cette commande modifie directement une variable sur ton objet et ensuite ton objet utilise cette variable sans utiliser la commande.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-23-2008-at-1040-pm">Post by Théodore de Lagarde, AdM - August 23, 2008 at 10:40 PM</h2>
+<p><a id="post-178547"></a></p>
+<p>Merci, ça devrait m'aider. J'avais jamais songer à faire le contraire. Je vais l'essayer et je redonne des nouvelles.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-24-2008-at-1228-am">Post by Théodore de Lagarde, AdM - August 24, 2008 at 12:28 AM</h2>
+<p><a id="post-178568"></a></p>
+<p>Bon j'ai réussi à faire en sorte que l'objet que je double clic se transfère à mon gump de bouton avec des variable, etc.</p>
+<p>J'ai donc décidé de faire tout ce que je dois faire dans le fichier du Gump. Mais là, ça me donne des erreurs et me dit que il n'Y a pas de défénition pour Location, Map, Delete ,etc.</p>
+<p>C'Est possible de transféré aussi ces données? si oui, je sais pas comment...</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-25-2008-at-503-am">Post by Théodore de Lagarde, AdM - August 25, 2008 at 5:03 AM</h2>
+<p><a id="post-178649"></a></p>
+<p>.emote woohoo! Grâce à de l'aide de RunUo.com, j'ai réussi à faire en sorte que quand je double click dessus, ça amène un menu et je peux choisir ce que je peux faire après et ça marche!</p>
+<p>Me reste qu'à faire ça pour tout les addon2 et ajouter les cercueil!</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-25-2008-at-419-pm">Post by Théodore de Lagarde, AdM - August 25, 2008 at 4:19 PM</h2>
+<p><a id="post-178668"></a></p>
+<p>Kertan, j'ai réglé ton problème. J'ai fait en sorte que le hue reste quand on flip. Te reste qu'à &quot;mettre&quot; le hue quand tu fait l'objet</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-25-2008-at-724-pm">Post by Myrddin Emrys, CP - August 25, 2008 at 7:24 PM</h2>
+<p><a id="post-178687"></a></p>
+<p>tu peux m'expliquer comment t'as fait, probablement que ça marcherais pour mon trucs aussi</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-27-2008-at-1141-pm">Post by Théodore de Lagarde, AdM - August 27, 2008 at 11:41 PM</h2>
+<p><a id="post-178955"></a></p>
+<p>Bon, je peaufine la fenêtre qui va s'ouvrir, mais ça va surement être tout croche sur Crep, malheureusement dû au fait que je voit pas les gumps de Crep. Ça me sort des gumps bidons qui ont aucun rapport avec celui que j'ai choisit.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

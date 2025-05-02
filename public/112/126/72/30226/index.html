@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kel ou Xenon. - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Kel ou Xenon.</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Kel ou Xenon.</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="kel-ou-xenon">Kel ou Xenon.</h1>
+<h2 id="post-by-coordinateur-apoc---august-11-2009-at-834-am">Post by Coordinateur Apoc - August 11, 2009 at 8:34 AM</h2>
+<p><a id="post-226114"></a></p>
+<p>Vous pouvez me dire pourquoi mon serveur test crash si j'essais de faire n'importe quelle commande? (.tele, .props, etc...)</p>
+<h1 id="server-crash-report">Il est tard donc j'ai pas trop le temps de chercher une solution moi même. Si jamais c'est un truc banal... <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Server Crash Report</h1>
+<p>Operating System: Microsoft Windows NT 6.0.6001 Service Pack 1<br>
+.NET Framework: 2.0.50727.3074<br>
+Time: 2009-08-11 00:26:39<br>
+Mobiles: 1<br>
+Items: 15<br>
+Clients:</p>
+<ul>
+<li>Count: 1</li>
+</ul>
+<ul>
+<li>192.168.1.15: (account = Oli) (mobile = 0x1 'Inconnu')</li>
+</ul>
+<p>Exception:<br>
+System.OverflowException: Arithmetic operation resulted in an overflow.<br>
+at Server.Gumps.Gump.GetTypeID(Type type)<br>
+at Server.Gumps.Gump..ctor(Int32 x, Int32 y)<br>
+at Server.Gumps.APropertiesGump..ctor(Mobile mobile, Object o)<br>
+at Server.AProperties.PropsTarget.OnTarget(Mobile from, Object o)<br>
+at Server.Targeting.Target.Invoke(Mobile from, Object targeted)<br>
+at Server.Network.PacketHandlers.TargetResponse(NetState state, PacketReader pvSrc)<br>
+at Server.Network.MessagePump.HandleReceive(NetState ns)<br>
+at Server.Network.MessagePump.Slice()<br>
+at Server.Core.Main(String[] args)</p>
+<hr>
+<h2 id="post-by-ex-bolero---august-11-2009-at-448-pm">Post by Ex-Bolero - August 11, 2009 at 4:48 PM</h2>
+<p><a id="post-226167"></a></p>
+<p>Ça doit être les moutons!!!!!</p>
+<hr>
+<h2 id="post-by-conteur-centaure---august-11-2009-at-643-pm">Post by Conteur Centaure - August 11, 2009 at 6:43 PM</h2>
+<p><a id="post-226186"></a></p>
+<p>LOL!!!</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-12-2009-at-118-am">Post by Scripteur Xenon - August 12, 2009 at 1:18 AM</h2>
+<p><a id="post-226258"></a></p>
+<p>J'ai eut ce bug! Solution? Aucune connue, la lâcheté a pris le dessus et changer de poste a réglé la situation dans mon cas.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-12-2009-at-243-am">Post by Coordinateur Apoc - August 12, 2009 at 2:43 AM</h2>
+<p><a id="post-226265"></a></p>
+<p>Ca semble être un problème avec Vista comme Host. (Je suis presque surpris...)</p>
+<p>J'espère bien trouver une solution sinon je vais devoir utiliser mon vieux pc pour scripter.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-12-2009-at-700-am">Post by Coordinateur Apoc - August 12, 2009 at 7:00 AM</h2>
+<p><a id="post-226293"></a></p>
+<p>Le problème vient peut-être de là...</p>
+<p>Operating System: Microsoft Windows NT 6.0.6001 Service Pack 1<br>
+.NET Framework: 2.0.50727.3074</p>
+<p>J'ai Vista et framework 3.5, je veux savoir comment il en déduis tout ca.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-15-2009-at-1252-am">Post by Scripteur Xenon - August 15, 2009 at 12:52 AM</h2>
+<p><a id="post-226755"></a></p>
+<p>2.0 est-il installé pareil? Ton système est 64bits?</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-17-2009-at-1232-am">Post by Coordinateur Apoc - August 17, 2009 at 12:32 AM</h2>
+<p><a id="post-227038"></a></p>
+<blockquote>
+<p><strong>&quot;Scripteur Xenon&quot; wrote:</strong>
+2.0 est-il installé pareil? Ton système est 64bits?</p>
+<p>Oui je suis sur 64bits. Quand j'ai voulu installé 2.0, ca me disait qu'il me fallait une version 64 bits mais j'ai pas cherché.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-18-2009-at-920-pm">Post by Scripteur Xenon - August 18, 2009 at 9:20 PM</h2>
+<p><a id="post-227315"></a></p>
+<p>Je pense que c'est la source de notre problème. C'était également sur un 64 bits mon problème et je suis quasi-certain que RunUO nécessite 2.0.</p>
+<p>-- Je viens de vérifier. Il faut le Framework 1.0 pour x64. Essai de trouver ça, parait que c'est pas facile à trouver!</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---october-20-2009-at-148-am">Post by Coordinateur Apoc - October 20, 2009 at 1:48 AM</h2>
+<p><a id="post-233691"></a></p>
+<p>Bon, je veux scripter mais Vista essait toujours de m'en empêcher. Après 1h a encore essayer de faire fonctionner mon serveur, toujours sans succès.</p>
+<p>Par contre, j'ai réussi a faire rouler RunUo 2.0! Mais sans réussir a me connecter...<br>
+Vista: 2478653<br>
+Apoc: 1</p>
+<p>Donc ma meilleure chance(Je doutes que ce soit possible) serait d'arriver à faire faire rouler Crépu sur RunUo 2.0 mais toujours sans succès et j'en ai assez pour aujourd'hui.  <img src="/assets/smilies/lazy2.gif" alt=""><br>
+Je vais regarder si je peux partager mon dossier et utiliser mon vieux PC sans devoir toujours tout transférer d'un à l'autre...</p>
+<p><img src="/assets/smilies/ok.gif" alt=""> Microsoft</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---october-20-2009-at-154-am">Post by Coordinateur Apoc - October 20, 2009 at 1:54 AM</h2>
+<p><a id="post-233692"></a></p>
+<p>Ah et pour en revenir sur Framework, le problème n'est pas la. 2.0 est inclus avec Vista puis j'ai installé 1.1 ainsi que 3.0(ou 3.5, je sais plus) comme indiqué sur les forums de RunUO.</p>
+<p>Quelqu'un avait exactement le même problème que moi sur le forum mais malheureusement il n'a jamais été résolu.</p>
+<p>RunUo 2.0 est compatible avec Vista 32 comme 64 mais vu que Crépuscule roule sous une vieille version modifié de 1.0, ce n'est pas inclus. J'ai lu une possible solution mais cela demande de recompiler le Core, chose que je ne sais pas trop comment faire et je ne sais pas si j'ai tout ce qu'il faut.</p>
+<p>Je suis trop lâche pour réouvrir mon vieux PC lent et j'ai pas le coeur de scripter dessus. J'aimes mieux me faire chier à essayer de trouver une solution qui n'existe peut-être pas sous notre situation spéciale custom core Crépu. <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conteur-centaure---october-20-2009-at-632-pm">Post by Conteur Centaure - October 20, 2009 at 6:32 PM</h2>
+<p><a id="post-233727"></a></p>
+<p>Bon euhm, eh bien bonne chance!</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---october-21-2009-at-508-am">Post by Scripteur Xenon - October 21, 2009 at 5:08 AM</h2>
+<p><a id="post-233770"></a></p>
+<blockquote>
+<p><strong>&quot;Apoc&quot; wrote:</strong>
+Donc ma meilleure chance(Je doutes que ce soit possible) serait d'arriver à faire faire rouler Crépu sur RunUo 2.0 mais toujours sans succès et j'en ai assez pour aujourd'hui.  :lazy</p>
+<p>Ce serait tout aussi productif pour Crépuscule de te suicider. Tu n'y arriveras pas cette année, si tu te lance là-dedans.</p>
+<p>J'ai lu une possible solution mais cela demande de recompiler le Core, chose que je ne sais pas trop comment faire et je ne sais pas si j'ai tout ce qu'il faut.</p>
+<p>Si tu as Visual Studio et le code source (ce qui normalement est le cas puisque je l'ai, moi) alors tu as tout ce qu'il faut! Tu n'as qu'à rouler un build.</p>
+<p>Bonne chance!</p>
+</blockquote>
+<hr>
+<h2 id="post-by-coordinateur-apoc---october-21-2009-at-634-am">Post by Coordinateur Apoc - October 21, 2009 at 6:34 AM</h2>
+<p><a id="post-233772"></a></p>
+<p><img src="/assets/smilies/drinks.gif" alt="">  Enfin! Si jamais mon problème n'est pas régler, au moins j'ai fait du progres. J'ai réussi à recompiler un RunUo et il suffisait de de le compiler en 32 Bits dans les options du projet. J'ai réussi à me connecter puis à ouvrir un gump. (le .go et .add par exemple.) sans que tout explose.</p>
+<p>J'ai pas oser tester plus loin pour ce soir. Je pourrai peut-être enfin recommencer à scripter. Maintenant il ne me manque que du talent ou des vrais connaissances en C# pour faire quelque chose d'utile. Mais heureusement, depuis quelques temps, on a un scripteur qui s'y connait pour faire des trucs intéressants.</p>
+<p>Merci de l'aide Xenon, ca ne m'aura prit que 2 mois.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Donc si tout va bien, <a href="http://www.au-crepuscule.com/forum/viewtopic.php?p=226278#p226278">cette vieille mise à jour minuscule</a> que j'avais préparé pourras être mise en jeu cette semaine. Ensuite je me tournerai sur ce qu'on avait discuté sur polymoprh ainsi que le système de d'addiction pour les potions qui demandait un ajustement je crois. Puis regarder pourquoi CoderLivre ne fonctionne plus et d'autres trucs sur le forum qui me faudra retrouver. Vu le peu d'activité sur cette section forum, ca devrait pas être trop dur.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---october-21-2009-at-1150-pm">Post by Scripteur Xenon - October 21, 2009 at 11:50 PM</h2>
+<p><a id="post-233814"></a></p>
+<p>Si tes gumps fonctionnent, je ne vois pas ce qui pourrait péter encore. C'est bons signe.</p>
+<p>Si jamais t'as des soucis, n'hésite pas!</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

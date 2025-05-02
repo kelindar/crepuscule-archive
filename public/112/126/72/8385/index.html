@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Système de Niveau/Exp - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Le Système de Niveau/Exp</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Le Système de Niveau/Exp</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="le-systme-de-niveauexp">Le Système de Niveau/Exp</h1>
+<h2 id="post-by-coordinateur-apoc---august-11-2006-at-326-am">Post by Coordinateur Apoc - August 11, 2006 at 3:26 AM</h2>
+<p><a id="post-81096"></a></p>
+<p>Bon j'étais en train d'écrire tout ca depuis une trentaine de minutes(Si ce n'est pas plus...) et j'ai tout perdu, je vous épargne les détails...</p>
+<p>Donc je vais être court car j'ai pas envie de tout réécrire et je risque d'en oublier.</p>
+<p>Présentement le système fonctionne comme ceci si j'ai bien compris le script et si je ne me trompes pas dans mes calculs.  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<h2 id="niveau-x--exprequisx-1--2x-1">Niveau x = ExpRequis(x-1) + (2*(x-1))</h2>
+<p>Niveau 1 = 0(N'utilise pas la forumule)<br>
+Niveau 2 = 2(N'utilise pas la forumule)<br>
+Niveau 3 = 6<br>
+Niveau 4 = 12<br>
+Niveau 5 = 20<br>
+Niveau 6 = 30<br>
+Niveau 7 = 42</p>
+<p>Quelqu'un peut confirmer ces nombres? Sinon donnez moi le plus de nombres possibles pour que je vérifie.</p>
+<p>Mais que ceci soit bon ou mauvais, je veux votre avis sur le nouveau système. Par contre, si jamais on le change, il faudra remettre les niveaux des joueurs à Zéro encore (Cela va aussi changer leur skills evidemment. Possiblement aussi leur stats?)</p>
+<p>Vous voulez simplement enlever la multiplication dans la deuxième partie pour rendre cela plus rapide? Par contre vous pouvez voir que cela ferait un changement radical, un perso Niveau 10 passerais pratiquement Niveau 20 avec ca.</p>
+<h2 id="niveau-x--exprequisx-1--x-1">Niveau x = ExpRequis(x-1) + (x-1)</h2>
+<p>Niveau 1 = 0(N'utilise pas la forumule)<br>
+Niveau 2 = 2(N'utilise pas la forumule)<br>
+Niveau 3 = 4<br>
+Niveau 4 = 7<br>
+Niveau 5 = 11<br>
+Niveau 6 = 16<br>
+Niveau 7 = 22</p>
+<p>Donc il faut en discuter, voir si vous voulez vraiment changer le système et si oui de quelle facon.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lyi---august-12-2006-at-221-pm">Post by Lyi - August 12, 2006 at 2:21 PM</h2>
+<p><a id="post-81150"></a></p>
+<p>C'est moi qui sait pas calculer ou y a un probleme avec la première formule? Pour ce qui est de changer le système mais je suis pour par contre pas autant que ce que tu nous a montré la, faudrait un juste milieu</p>
+<hr>
+<h2 id="post-by-picotine---august-12-2006-at-516-pm">Post by Picotine - August 12, 2006 at 5:16 PM</h2>
+<p><a id="post-81164"></a></p>
+<p><img src="/assets/smilies/wacko.gif" alt="">   Selon le premier exemple quand je calcule le niveau 4, j'arrive  à 10<br>
+tandis que dans le deuxième exemple, j'arrive à 6...</p>
+<p><img src="/assets/smilies/blush2.gif" alt="">  <img src="/assets/smilies/sorry.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lyi---august-12-2006-at-538-pm">Post by Lyi - August 12, 2006 at 5:38 PM</h2>
+<p><a id="post-81168"></a></p>
+<p>moi pareil, donc je suis pas la seule <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-12-2006-at-816-pm">Post by Coordinateur Apoc - August 12, 2006 at 8:16 PM</h2>
+<p><a id="post-81180"></a></p>
+<p>Ce n'est peut-être pas très clair... Mais c'est sans importance, ce que je veux savoir c'est si vous voulez changer le système.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Ensuite on pourra regarder comment l'arranger.</p>
+<p>Voici le Niveau 4 sous les deux formules, j'espère que ca sera plus clair comme ca...  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Niveau 4 = ExpRequis(4-1) + (2*(4-1)) = 6 + (2*3) = 12</p>
+<p>Niveau 4 = ExpRequis(4-1) + (4-1) = 4 + 3 = 7</p>
+<hr>
+<h2 id="post-by-lyi---august-12-2006-at-834-pm">Post by Lyi - August 12, 2006 at 8:34 PM</h2>
+<p><a id="post-81181"></a></p>
+<p>Bah avec les parenthèses la on est d'accord. Pour couper la poire en deux on pourrait pas mettre 1,5?</p>
+<hr>
+<h2 id="post-by-ragnamord-trenor-ind---september-19-2006-at-934-pm">Post by Ragnamord Trenor, Ind - September 19, 2006 at 9:34 PM</h2>
+<p><a id="post-86766"></a></p>
+<p>Voila la liste des Exp et Aptitudes par lvl.. Si sa peux vous aider a y voir plus clair.</p>
+<p><img src="http://img169.imageshack.us/img169/6551/xp0vrfg5.jpg" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

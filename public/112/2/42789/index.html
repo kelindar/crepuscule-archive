@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un bug? - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Un bug?</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <span class="current-page">Un bug?</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="un-bug">Un bug?</h1>
+<h2 id="post-by-conseiller-grincheux---september-13-2012-at-539-am">Post by Conseiller Grincheux - September 13, 2012 at 5:39 AM</h2>
+<p><a id="post-314118"></a></p>
+<p>Bonjour!</p>
+<p>J'ai parlé avec un gm déjà (avec mon compte joueur). C'est arrivé a ma blonde avec un coffre de de granite bon... une &quot;bad luck&quot; cela faisait quelques minutes ( 2 ou 3 ) qu'elle ne l'avais pas verrouillé. Sur le coup je lui ai dit c'est un risque.</p>
+<p>Cependant, ce coup ci cela m'es arrivé. Avec mon joueur, (okum) j'ai débuté un projet de faire une armure en onirine. J'ai verrouillé mes lingots sur une table. Tout le monde sait que quand on verrou un tas on ne peu pas ajouté d'item sur le tas. Alors je déverrou mes lingots et ajoute mes 8 nouveaux. Un save surviens au même instant.</p>
+<p>...</p>
+<p>Plus de lingots, les 39 évaporés. Bon je page, rien a faire on ne me redonne pas mes lingots. Ok, mais faut trouver un moyen d'empêcher cela. Je dit pas si c'est un oubli, mais dans mon cas c'est un 2 secondes.</p>
+<p>Y a t'il moyen d'arranger cela ou de prévenir cela?</p>
+<p>Voila!</p>
+<p>ps: je ne veux pas ravoir mes lingots, même si c'est énormément de travail, mais bien une façon de régler ceci.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---september-13-2012-at-601-am">Post by Seigneur Bélial - September 13, 2012 at 6:01 AM</h2>
+<p><a id="post-314119"></a></p>
+<p>Allo</p>
+<p>C'est moi qui t'ai répondu. Et je suis désolé du refus que j'ai du te faire. Parce que comme tu sais nos règles a ce sujet son stricte. cependant pour éviter que ça t'arrive de nouveau je peux mettre un RegoinControl qui fera en sorte de ne plus faire decay tes items. Tu pourras laisser n'importe quoi au sol sans que ça se supprime. Le hic c'est que généralement j'associe cette fonction a un dôme Pourpre. Si les contacter pour en avoir un ne te gêne pas alors tu peux être assurer que je te le ferai de cette façon.</p>
+<p><img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conseiller-grincheux---september-13-2012-at-622-am">Post by Conseiller Grincheux - September 13, 2012 at 6:22 AM</h2>
+<p><a id="post-314120"></a></p>
+<p>C'est pas tellement que pour moi, mais je trouve le 2 secondes de non verrou abusif pour un décay..</p>
+<p>si cela arrive a moi imaginé quelqu'un qui décore et pose un objet unique par terre.. boof save et oups decay</p>
+<p>ce serais encore pire que mes 39 onirines.</p>
+<p>mais bon si tu dis qu'il n'a rien d'autre a faire...</p>
+<hr>
+<h2 id="post-by-seigneur-blial---september-13-2012-at-723-am">Post by Seigneur Bélial - September 13, 2012 at 7:23 AM</h2>
+<p><a id="post-314121"></a></p>
+<p>Le seul qui décide si un item est rendu ou pas c'est Apoc. Si Apoc veux tu pourras le ravoir. Pour ce qui est du decay je sais pas pourquoi ça t'es arrivé et je sais pas s'il pourra arranger ça dans les scriptes.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-13-2012-at-1150-pm">Post by Coordinateur Apoc - September 13, 2012 at 11:50 PM</h2>
+<p><a id="post-314132"></a></p>
+<p>C'est qu'une hypothèse mais je dirais que: Un objet décay quand il est au sol un certains lapse de temps sans être déplacé et les saves effaces les objets si leur compteur de decay est à 0. Le .verrou met le decay à false et le remet à true ensuite. Mais le compteur lui continue peut-être de compter même si le decay est à false. Donc en enlevant le verrou le decay est tombé à true au moment du save.</p>
+<p>Étrange par contre que d'ajouter quelque chose dans un stack ne remet pas le compteur à zéro. Le decay est pas mal profond dans la base de UO donc c'est pas un bonne idée de trop jouer avec ca.</p>
+<p>Il faudrait faire des tests mais voir si essayer de déplacer un objet .verrou remet le compteur à zéro même si l'objet ne peut pas bouger, ca pourrait être une bonne solution qui ne demande pas de jouer dans les scripts. Sinon, les saves sont annoncés un peu avant d'arriver donc faire attention de ne pas rien déverrouiller à ce moment.</p>
+<hr>
+<p>Pour ce qui est de remettre les objets... C'est malheureusement quelque chose qu'on ne peut pas faire vu qu'on ne peut pas prouver ce qui est arrivé.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---september-14-2012-at-104-am">Post by Seigneur Bélial - September 14, 2012 at 1:04 AM</h2>
+<p><a id="post-314138"></a></p>
+<p>Cependant chez Okum il y a véritablement une armure complète en onirine donc j'aurais tendance à le croire, puis c'est un GM, s'amuser à nous mentir c'est con <img src="/assets/smilies/man_in_love.gif" alt=""> On peux pas faire de favoritisme de ce coter. Puis le decay est importent pour allégé le shard. Donc comme je te proposais, il reste l'option du dôme pourpre pour te protégé la prochaine fois.</p>
+<hr>
+<h2 id="post-by-conseiller-grincheux---september-14-2012-at-310-am">Post by Conseiller Grincheux - September 14, 2012 at 3:10 AM</h2>
+<p><a id="post-314141"></a></p>
+<p>Maintenant que je le sais je vais faire attention au &quot;avertissement de save&quot; . Mais ce serais peut-être intéressant de le mentionné a tout le monde d'y faire attention.</p>
+<p>Sinon pour les objets, pas de problème je comprend qu'on ne peu faire de favoritisme.</p>
+<p>Merci des infos Apoc</p>
+<p>ps: il ne me manque que les jambières pour ma complète, j'étais a 39 lingots il m'en manquait plus qu'un c'est plus pour cela que j'étais &quot;fâché&quot; ^^ va me falloir attendre encore un peu pour faire mes jambières a 40lingots ^^</p>
+<hr>
+<h2 id="post-by-conseiller-grincheux---september-14-2012-at-559-am">Post by Conseiller Grincheux - September 14, 2012 at 5:59 AM</h2>
+<p><a id="post-314145"></a></p>
+<p>Sur un autre ordre d'idée,</p>
+<p>Les ajouts de Shini on surement été débattu, mais je me questionne.</p>
+<p>Le Perce-Coeurs, la Faux, l’arbalète, et possiblement l'arc de fer sont extrêmement fort.</p>
+<p>Perce-Coeur : 110-248 dmg, vitesse correcte, 2 mains, aucun skills.<br>
+Faux: 110-180 dmg, vitesse correcte, une main, Paralyse fonctionne.<br>
+L'arbalète de fer : 85-125 dmg, aucun skills, vitesse corrrecte<br>
+Arc de fer: non testé.</p>
+<p>J'ai testé les armes avec Okum (faux et perce-coeur) ; personnellement je les trouves très puissante. Avant cela, la plus haute en dmg était l'épée bâtarde et le défonceur, mais là on a une coche au dessus.</p>
+<p>Est-ce voulu? Mettre des ingrédient plus rare?</p>
+<p>Alors voila !</p>
+<hr>
+<h2 id="post-by-seigneur-blial---september-14-2012-at-612-am">Post by Seigneur Bélial - September 14, 2012 at 6:12 AM</h2>
+<p><a id="post-314148"></a></p>
+<p>Moi mes testes me semblait bon, si tes armes sont si forte ce doit être parce que ton perso a des bonus, mais oui je vais voir ça.</p>
+<hr>
+<h2 id="post-by-conseiller-grincheux---september-14-2012-at-324-pm">Post by Conseiller Grincheux - September 14, 2012 at 3:24 PM</h2>
+<p><a id="post-314153"></a></p>
+<p>Je ne pourrais dire pour le côté bonus.</p>
+<p>Mais je sais qu'avec mes sorts de paladin le Seigneur du massacre n'a pas fait long feu devant mon perce-coeur<br>
+(5-6 coups).</p>
+<hr>
+<h2 id="post-by-seigneur-blial---september-14-2012-at-944-pm">Post by Seigneur Bélial - September 14, 2012 at 9:44 PM</h2>
+<p><a id="post-314164"></a></p>
+<p>Je suis pas familière avec la création d'arme donc je me suis tromper. Mais j'ai corriger et ça doit être bon là.</p>
+<hr>
+<h2 id="post-by-conseiller-grincheux---september-16-2012-at-258-am">Post by Conseiller Grincheux - September 16, 2012 at 2:58 AM</h2>
+<p><a id="post-314193"></a></p>
+<p>Parfait, les armes semble mieux balancer (côté forge)</p>
+<p>Par contre, le perce-coeur est identique a l'empaleur. Je sais pas si tu voulais y mettre une variante?(même dégât même vitesse)</p>
+<p>Sinon beau boulot! les artisans vont adoré! et les clients en ont plus a ce mettre sous la dent XD</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

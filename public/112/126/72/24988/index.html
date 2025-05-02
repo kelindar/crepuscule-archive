@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrepareCraft - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">PrepareCraft</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">PrepareCraft</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="preparecraft">PrepareCraft</h1>
+<h2 id="post-by-fondateur-kel---october-21-2008-at-355-pm">Post by Fondateur Kel - October 21, 2008 at 3:55 PM</h2>
+<p><a id="post-187759"></a></p>
+<p>Io,</p>
+<p>J'ai ajouté une fonction PrepareCraft() dans le CraftSystem.</p>
+<p>Ce qui permet d'ajouter le craft sans devoir à éditer le ficier qui contient tous les crafts (Parfois peut être utile). Ca change rien à priori, vous pouvez faire ça :</p>
+<p>public class GraveDiggersShovel : CrepusculeItem<br>
+{
+...</p>
+<pre><code>    public static void Initialize()  
+    {   
+        // Ajoute dans le craft (c'est juste une alternative pour faciliter la tâche)  
+        CraftSystem&amp;#46;PrepareCraft(typeof(DefTinkering), typeof(GraveDiggersShovel), &quot;Autres&quot;,  
+            &quot;Pelle des voleurs de tombes&quot;, 25&amp;#46;0, 55&amp;#46;0, typeof(IronIngot), &quot;Lingot de fer&quot;, 15, &quot;Vous n'avez pas assez de lingots&quot;);  
+    }
+</code></pre>
+<p>}</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Kel] To-do list - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">[Kel] To-do list</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">[Kel] To-do list</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="kel-to-do-list">[Kel] To-do list</h1>
+<h2 id="post-by-ex-lumina---january-19-2009-at-922-am">Post by Ex-Lumina - January 19, 2009 at 9:22 AM</h2>
+<p><a id="post-200527"></a></p>
+<p>Grande divinité qui veille sur ce serveur, voici ce qui fut soulevé et qui doit être corrigé pour cet ingénieux système :</p>
+<p>-Envoyer le chapelet dans un menu de craft de carpentry plutôt que tailoring.</p>
+<p>-S'arranger pour que les nouvelles potions d'alchimie puissent être mise dans les tonnelets à potion, comme les autres.</p>
+<ul>
+<li>
+<p>voleurs, permettre d'inserer les items dans le sac</p>
+</li>
+<li>
+<p>les maladies (copie du sys d'addictions) et les potions ou méthodes de guérison de celles ci. chance d'attraper une maladie (1 par heure genre, très petite chance sur tous les joueurs connectés)</p>
+</li>
+<li>
+<p>outils de diagnostique, permettre d'examiner un malade</p>
+</li>
+<li>
+<p>rage de barbare (cf document par bolero)</p>
+</li>
+<li>
+<p>guerrier: immunité aux addictions des potions de force et dexterité (pour contrebalancer le paladin)</p>
+</li>
+</ul>
+<p>j'ai vu un petit bug sur un enchantement, celui d'auto réparation.</p>
+<p>Et bien... j'ai enchanté un bouclier avec ledit enchantement...</p>
+<p>mais il ne ce répare manifestement pas (arms lore)... donc.. soit il faut l'activer d'une manière que j'ignore, soit c'est bugé.</p>
+<p>J'ajouterai selon les feedbacks.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-19-2009-at-412-pm">Post by Ex-Bolero - January 19, 2009 at 4:12 PM</h2>
+<p><a id="post-200585"></a></p>
+<p>8 ) Régler le bug qui fait qu'on crash (sans raison apparente) en passant près des PNJ (j'ai le problème avec les GuildTownfolk)</p>
+<p>9 ) Copier le layer des vêtements avec copyequip et clone pour ne pas se ramasser avec des conflits de layer (chemise et cocarde, par exemple, qui sont toutes deux à middletorso)</p>
+<p>Merci :)</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-19-2009-at-648-pm">Post by Fondateur Kel - January 19, 2009 at 6:48 PM</h2>
+<p><a id="post-200608"></a></p>
+<p>Todo de balancement des classes:</p>
+<ul>
+<li>voleurs, permettre d'inserer les items dans le sac</li>
+<li>les maladies (copie du sys d'addictions) et les potions ou méthodes de guérison de celles ci. chance d'attraper une maladie (1 par heure genre, très petite chance sur tous les joueurs connectés)</li>
+<li>outils de diagnostique, permettre d'examiner un malade</li>
+<li>rage de barbare (cf document par bolero)</li>
+<li>guerrier: immunité aux addictions des potions de force et dexterité (pour contrebalancer le paladin)</li>
+</ul>
+<hr>
+<h2 id="post-by-fondateur-kel---january-19-2009-at-737-pm">Post by Fondateur Kel - January 19, 2009 at 7:37 PM</h2>
+<p><a id="post-200615"></a></p>
+<p>Fait en 1h:</p>
+<ul>
+<li>Archers: ont un bonus de dégats avec les arcs</li>
+<li>Moines: combat à main nu donne un bonus aux dégats si le PJ en fonction d'armure. Le moine a maintenant un enorme bonus en esquive (anti-proportionnel au niveau d'armure qu'il porte).</li>
+<li>Restreint la commande .rumeurs seulement aux joueurs de la guilde Empire.</li>
+</ul>
+<p>et : 6) Cacher le flood bleu de la ré-attribution des NPCs à chaque guilde à chaque fois qu'on cote une guilde (et non pas l'alarme rouge). (ex : 1 npc adm 1 npc adm 1 npc adc 1 npc adm [...], etc).</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-19-2009-at-921-pm">Post by Fondateur Kel - January 19, 2009 at 9:21 PM</h2>
+<p><a id="post-200631"></a></p>
+<p>Chez les rodeurs j'ai aussi remplacé la pose de pieges par furtivité (en secondaire)</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-20-2009-at-1111-am">Post by Ex-Lumina - January 20, 2009 at 11:11 AM</h2>
+<p><a id="post-200806"></a></p>
+<p>Corrections :</p>
+<p>-Arranger les messages afficher lors de l'usage de la commande .montrernom (actuellement c'est : <span style="color:#FF4080">&quot;Votre tag de nom <u>ne</u> sera affiché aux joueurs qui s'approchent de vous.&quot;</span> et : <span style="color:#BFFF40">&quot;Votre tag de nom sera <u>pas</u> affiché aux joueurs qui s'approchent de vous.&quot;</span></p>
+<p>-Envoyer le chapelet dans un menu de craft de carpentry plutôt que tailoring.</p>
+<p>-Activer l'affichage des noms des vendeurs en général (c'est surtout les guilddiplomat, guildtownfolk et guildguard dont on veut éviter l'affichage .. ^^, mais la nouvelle commande qui résulte de cette confusion fera le bonheur de tout le monde).</p>
+<p>Note : Tu préfères que je mette à jour le premier post ?</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-20-2009-at-441-pm">Post by Fondateur Kel - January 20, 2009 at 4:41 PM</h2>
+<p><a id="post-200823"></a></p>
+<p>Yep, c'est mieux quand tout est ensemble. J'ai pas compri le truc de PNJ en général, mettre juste ça et pas les mobs? Car je ne peux pas faire ça par commande.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-21-2009-at-1216-am">Post by Fondateur Kel - January 21, 2009 at 12:16 AM</h2>
+<p><a id="post-200890"></a></p>
+<p>Corrigé (mais faut tester encore):</p>
+<p>-Arranger les messages afficher lors de l'usage de la commande .montrernom (actuellement c'est : <span style="color:#FF4080">&quot;Votre tag de nom <u>ne</u> sera affiché aux joueurs qui s'approchent de vous.&quot;</span> et : <span style="color:#BFFF40">&quot;Votre tag de nom sera <u>pas</u> affiché aux joueurs qui s'approchent de vous.&quot;</span></p>
+<p>-Activer l'affichage des noms des vendeurs en général (c'est surtout les guilddiplomat, guildtownfolk et guildguard dont on veut éviter l'affichage .. ^^, mais la nouvelle commande qui résulte de cette confusion fera le bonheur de tout le monde).</p>
+<ul>
+<li>
+<p>.MontrerMonstres</p>
+</li>
+<li>
+<p>.Nouveau</p>
+</li>
+<li>
+<ol start="7">
+<li>Si possible, mais ça me semble un point primordial, faire que les noms des guildguard, guilddiplomat et guildtownfolk n'apparaissent pas dans le journal dès qu'on les croise. Ils floodent et dérangent donc un peu, sinon ..</li>
+</ol>
+</li>
+<li>
+<p>Une liste avec les sayings ajoutée dans les stones de guilde (modifiable par les gm)</p>
+</li>
+<li>
+<p>bug dans l'attribution des modèles trouvé et corrigé ! Il faut ABSOLUMENT réassigner les NPC dans les stones</p>
+</li>
+</ul>
+<p>-3) Auto-détermination du sexe (homme ou femme) et association du nom en fonction du sexe (comme le fait UO lorsqu'on génère un NPC, je crois)</p>
+<p>OU (et c'est préférable mais je réalise que c'est probablement impossible)</p>
+<p>Permettre à ce que pour chacun des NPCs de chaque guilde sur sa pierre de contrôle on puisse enregistrer un modèle masculin et un modèle féminin.  (2ieme option implementée)</p>
+<ul>
+<li>
+<p>8 ) Régler le bug qui fait qu'on crash (sans raison apparente) en passant près des PNJ (j'ai le problème avec les GuildTownfolk)</p>
+</li>
+<li>
+<p>9 ) Copier le layer des vêtements avec copyequip et clone pour ne pas se ramasser avec des conflits de layer (chemise et cocarde, par exemple, qui sont toutes deux à middletorso)</p>
+</li>
+<li>
+<p>autogénération du sexe automatique et random</p>
+</li>
+<li>
+<ol>
+<li>Auto-génération des cheveux (hairtype) et de la couleur (hue) des cheveux des NPCs, afin qu'ils soient un peu différents.</li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>Auto-génération des barbes et de leur couleur, uniquement si le personnage créé est un homme.</li>
+</ol>
+</li>
+</ul>
+<p>Lulu, tu mettra à jour la todo? ^^</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-21-2009-at-202-am">Post by Ex-Lumina - January 21, 2009 at 2:02 AM</h2>
+<p><a id="post-200910"></a></p>
+<p>Liste mise à jour.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-21-2009-at-447-am">Post by Ex-Bolero - January 21, 2009 at 4:47 AM</h2>
+<p><a id="post-200948"></a></p>
+<!-- l --><a class="postlink-local" href="http://www.au-crepuscule.com/forum/viewforum.php?f=138">viewforum.php?f=138</a><!-- l -->   
+<p>On le voit, on voit qu'il y a des topics dedans, mais une fois qu'on clique apparemment y'a rien. O-o</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-21-2009-at-524-am">Post by Fondateur Kel - January 21, 2009 at 5:24 AM</h2>
+<p><a id="post-200957"></a></p>
+<p>J'ai éffacé oui</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-21-2009-at-623-am">Post by Ex-Bolero - January 21, 2009 at 6:23 AM</h2>
+<p><a id="post-200975"></a></p>
+<p>Je crashe encore moi en tout cas, en ajoutant des spawners guildtownfolks! ^^</p>
+<p>Régler ça + faire en sorte qu'on puisse voir les noms des PNJ en passant le curseur dessus, car ça ne le fait plus depuis le .nouveau.</p>
+<p>Modifs très peu urgentes mais pouvant être utiles pour les GM:</p>
+<p>-Modifiers sur flip<br>
+-Modifiers sur .say<br>
+-Modifiers sur .itemsay<br>
+-Commande .linkwaypoint pour lier un waypoint avec un PNJ sans passer par les props</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-23-2009-at-306-am">Post by Fondateur Kel - January 23, 2009 at 3:06 AM</h2>
+<p><a id="post-201439"></a></p>
+<ul>
+<li>Modifiers sur .say  (qui font le .sayitem aussi)</li>
+<li>déboguage de la distribution des salaires (montants négatifs)</li>
+<li>ajout de GoldGen, les coffres qui générent de l'or tous les jours automatiquement.</li>
+</ul>
+<hr>
+<h2 id="post-by-anonymous---january-23-2009-at-310-am">Post by Anonymous - January 23, 2009 at 3:10 AM</h2>
+<p><a id="post-201441"></a></p>
+<ul>
+<li>Modifiers sur .say  (qui font le .sayitem aussi)</li>
+</ul>
+<p>Utile mais problématique à la fois.</p>
+<p>Si je fais un .say, que j'écris ma phrase et que je veux cliquer un PNJ mais pour une raison inconnue j'accroche un item non-static, cela pourrait entraîner certaines incohérances.</p>
+<p>Je suggèrerais plutôt ceci : Laisser .say et .itemsay, mais si le target n'est pas valide pour la commande, ne pas n'annuler.<br>
+Je m'explique :</p>
+<p>Si je fais .say et que je clique sur le sol involontairement, ça va dire &quot;Invalid target&quot; et la commande va s'annuler, nous poussant donc à la réécrire et c'est un peu désaggréable.</p>
+<p>Ce serait donc bien, si il y a un &quot;Invalid Target&quot;, de ne pas annuler la commande mais de remettre la cible pour qu'on clique comme il faut ^^</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-23-2009-at-322-am">Post by Coordinateur Apoc - January 23, 2009 at 3:22 AM</h2>
+<p><a id="post-201448"></a></p>
+<p>Alt-Q (Ou Ctrl-Q?) permet de réécrire la dernière phrase ou commande.  <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-bolero---january-23-2009-at-427-am">Post by Ex-Bolero - January 23, 2009 at 4:27 AM</h2>
+<p><a id="post-201462"></a></p>
+<p>Ah ouais comme Zak perso je préférais quand itemsay et say étaient bel et bien séparés.</p>
+<p>Je parlais juste de la possibilité de faire .m moi <img src="/assets/smilies/smile.gif" alt=""> ou .area</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-23-2009-at-428-am">Post by Ex-Lumina - January 23, 2009 at 4:28 AM</h2>
+<p><a id="post-201463"></a></p>
+<p>Ça prend un mobile quand même. Dans les zones freeze il n'y a pas de danger. Autrement.. apprenez à viser, lol.</p>
+<p>Moi ça m'avantage, même si je n'ai rien à voir avec la raison pour laquelle ça a changé.. je me trompais toujours entre les deux :-P.</p>
+<hr>
+<h2 id="post-by-anonymous---january-23-2009-at-448-am">Post by Anonymous - January 23, 2009 at 4:48 AM</h2>
+<p><a id="post-201469"></a></p>
+<p>.multisay : Permet les mobiles et les statics.</p>
+<p>À ça, pas d'annulation de la commande si on vise mal.</p>
+<p>Ça va satisfaire tout le monde comme ça.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-23-2009-at-507-am">Post by Ex-Bolero - January 23, 2009 at 5:07 AM</h2>
+<p><a id="post-201472"></a></p>
+<p>Ou juste .m say  et .m itemsay avec la vieille commande <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+faire de longues commandes de parole empêche de mettre beaucoup de texte...</p>
+<p>Autre modification mineure: Faire en sorte que le Cantwalk adopte la propriété du Frozen aussi. C'est tanant de voir les gardes regarder le mur...!</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-23-2009-at-1127-am">Post by Fondateur Kel - January 23, 2009 at 11:27 AM</h2>
+<p><a id="post-201509"></a></p>
+<p>Pourquoi vous discutez dans ma todo? =P</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-24-2009-at-513-am">Post by Ex-Bolero - January 24, 2009 at 5:13 AM</h2>
+<p><a id="post-201633"></a></p>
+<p>J'ai encore l'impression qu'il y a des problèmes avec le copyequip.</p>
+<p>Je vois plusieurs diplomates, civils et gardes avec des morceaux de leur ancien costume qui traînent... Des chapeaux, des pantalons, etc.</p>
+<p>De plus, il semble y avoir un bug avec les sayings.</p>
+<p>J'ai mis quelques phrases sur mes PNJ de l'Armée (non pas des PNJ de guilde gérés par le système) avec un delay de 300 secondes, et j'ai enablé les sayings... Mais ils ne disent jamais rien... :S</p>
+<p>Ce sont des &quot;Healers&quot; pour info.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

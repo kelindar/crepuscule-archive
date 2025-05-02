@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sauvegarder son journal - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Sauvegarder son journal</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/110//" class="nav-item">Général</a>
+                
+                &rsaquo; <span class="current-page">Sauvegarder son journal</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="sauvegarder-son-journal">Sauvegarder son journal</h1>
+<h2 id="post-by-thodore-de-lagarde-adm---november-7-2007-at-255-am">Post by Théodore de Lagarde, AdM - November 7, 2007 at 2:55 AM</h2>
+<p><a id="post-138199"></a></p>
+<p>Personellement j'ai déja essayer de faire sauvegarder le journal en activant l'option dans les options de Crépuscule, et ça ne marchait pas. J'ai alors trouvé une méthode sur internet qui a régler mon problème. C'est pas très compliqué, mais je le met au cas où quelqu'un d'autre voudrait savoir comment faire ça:</p>
+<p><strong>1.</strong> Aller dans le dossier où vous avez installer Ultima Online et ensuite aller dans :</p>
+<p>Desktop \ [nom d'account] \ Crepuscule \ [race de votre perso] \ [et ensuite ouvrez UO.cfg avec Bloc-notes ou de quoi du genre]</p>
+<p><strong>2.</strong> Ensuite trouvez la ligne écrite</p>
+<p>SaveJournal=off</p>
+<p>et remplacez le &quot;off&quot; par &quot;on&quot; (sans guillemets)</p>
+<p><strong>3.</strong> Après trouvez la ligne écrite</p>
+<p>JournalSaveUnicode=off</p>
+<p>et remplacez le &quot;off&quot; par &quot;on&quot; encore une fois (sans guillemets)</p>
+<p>cette ligne vous permettra de sauver votre journal avec les acccents et autres choses du genre.</p>
+<p>L'inconvénient est qu'il y a des espaces entre les lettres. Genre &quot;étant&quot; devient &quot;é t a n t&quot;.</p>
+<p>Mais si vous ne l'activiez pas &quot;étant&quot; deviendrait &quot;tant&quot;. Ce qui est tanant car il ne met pas les accents.</p>
+<p><strong>4.</strong> Montez en haut du fichier, et entre les lignes comme ça --------- et &quot;Player name = [votre race]&quot; ajoutez la ligne suivante:</p>
+<p>JournalSaveFile=C:\Program Files\UOjournal\UOjournal.txt</p>
+<p>Vous pouvez indiquez un autre chemin si ça vous tente bien sur, moi même je ne l'ai pas mis là <img src="/assets/smilies/man_in_love.gif" alt=""> . Bon alors le fichier va s'enregistrer à l'endroit indiqué, et vous pourrez l'ouvrir avec bloc notes.</p>
+<p>Bien sur enregistrez le tout ensuite  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Si il y a quelque chose qui n'est pas correcte, dites moi-le</p>
+<hr>
+<h2 id="post-by-elrohrzarhockind---november-7-2007-at-302-am">Post by Elrohïr/Zarhock,ind - November 7, 2007 at 3:02 AM</h2>
+<p><a id="post-138202"></a></p>
+<p>excelent</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---november-9-2007-at-947-am">Post by Coordinateur Apoc - November 9, 2007 at 9:47 AM</h2>
+<p><a id="post-138626"></a></p>
+<p>Ca peut être très pratique, je vais mettre en post-it.  <img src="/assets/smilies/spiteful.gif" alt=""></p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---november-10-2007-at-134-am">Post by Théodore de Lagarde, AdM - November 10, 2007 at 1:34 AM</h2>
+<p><a id="post-138706"></a></p>
+<p>Merci <img src="/assets/smilies/smile.gif" alt=""><br>
+Tant mieux si ça peut aider quelqu'un</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

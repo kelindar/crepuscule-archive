@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Séparer les clefs de guilde/clef de maison - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Séparer les clefs de guilde/clef de maison</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Séparer les clefs de guilde/clef de maison</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="sparer-les-clefs-de-guildeclef-de-maison">Séparer les clefs de guilde/clef de maison</h1>
+<h2 id="post-by-ex-lumina---june-10-2009-at-752-am">Post by Ex-Lumina - June 10, 2009 at 7:52 AM</h2>
+<p><a id="post-216786"></a></p>
+<p><a href="http://www.au-crepuscule.com/forum/viewtopic.php?f=1&amp;t=28772">Lien du sujet</a></p>
+<p>Je pense qu'ils ont de bons points.</p>
+<p>Identifier les trousseaux semble complexe, il y a moyen que les scripts nous aident là-dessus, Xenon, Apoc ?</p>
+<p>Sinon quelqu'un a une idée ?</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---june-10-2009-at-815-am">Post by Coordinateur Apoc - June 10, 2009 at 8:15 AM</h2>
+<p><a id="post-216791"></a></p>
+<p>Possible de modifier oui, mais il faudrait modifier les clés déja existante à la main. Suffirait de rajouter une variable sur les clés et porte-clés Guilde True/False pour séparer les deux types de clés. Puis ta modifier le script des porte-clés pour qu'il s'assure que les clés ne se mélanges pas. Il vous suffira de donner un porte-clé de guilde avec vos clés.</p>
+<p>À moins que Xenon est une meilleure idée. Sinon je promet rien mais peut-être aurais-je un peu de temps cette fin de semaine.</p>
+<hr>
+<h2 id="post-by-ex-bolero---june-10-2009-at-425-pm">Post by Ex-Bolero - June 10, 2009 at 4:25 PM</h2>
+<p><a id="post-216816"></a></p>
+<p>Peut-être y aurait-il moyen de créer un type de clés spécialement fait pour les guildes (.add key guild, un peu comme on peut faire .add key iron) et qui, elles, ne pourraient pas être mises sur un trousseau. Maintenant, je ne sais pas si c'est faisable. Et ça demanderait un certain travail pour les distribuer. ^^</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---june-11-2009-at-1255-am">Post by Coordinateur Apoc - June 11, 2009 at 12:55 AM</h2>
+<p><a id="post-216908"></a></p>
+<p>C'est possible oui, je n'ai donné que la version la plus simple et rapide pour moi. Si vous voulez cela rapidement.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Si l'on fait un nouvel type de clé, il y aurait probablement des modifications à faire dans les scripts de portes, contenant et autres.</p>
+<p>Par contre, avec mon système, rien n'empêche ensuite de créer une commande qui pourrait spawner X clés portant X valeur.<br>
+Ex: .GuildKey 20 3786 - 20 Clés portant la valeur 3786 et Guild True serait spawner dans un contenant au choix.<br>
+Malgré que le .dupe pourrait normalement faire cela je crois, à moins qu'il soit toujours semi-fonctionnel.</p>
+<p>Avoir un trousseau pour ses clés personnelles et un autre trousseau pour les clés de guilde ca me semble plus logique. Je doutes que ce soit très pratique d'avoir des grosses clés en fer comme ca éparpillé un peu partout dans ses poches.</p>
+<p>Mais suffit de voir ce que vous préférez, si vous ne voulez simplement pas pouvoir mettre les clés de guildes sur un trousseau, ca simplifie encore plus la tâche. Mais je crois que les trousseaux avait été mis car les joueurs se plaignait d'avoir trop de clés dans leur sacs.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-xenon---june-11-2009-at-530-am">Post by Scripteur Xenon - June 11, 2009 at 5:30 AM</h2>
+<p><a id="post-216957"></a></p>
+<p>En fait, si la nouvelle clé hérite de l'ancienne, je ne serais pas surpris que ça fonctionne sans altérer les portes. Ça éviterait de modifier les clés personnelles de tous les joueurs, ça éviterait d'avoir une variable qui traîne inutilement sur les clés personnelles, ça éviterait aussi de coder une nouvelle commande <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-xenon---july-16-2009-at-306-am">Post by Scripteur Xenon - July 16, 2009 at 3:06 AM</h2>
+<p><a id="post-221110"></a></p>
+<p>Fait, en passant.</p>
+<hr>
+<h2 id="post-by-ex-lumina---july-16-2009-at-330-am">Post by Ex-Lumina - July 16, 2009 at 3:30 AM</h2>
+<p><a id="post-221117"></a></p>
+<p>Mon héros.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

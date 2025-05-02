@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Télépathie - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Télépathie</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Télépathie</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="tlpathie">Télépathie</h1>
+<h2 id="post-by-fondateur-kel---october-24-2008-at-419-am">Post by Fondateur Kel - October 24, 2008 at 4:19 AM</h2>
+<p><a id="post-188312"></a></p>
+<p>Les coordinateurs qui ont pu tester le système ce soir, mettez les remarques/suggestions concernant le système ici ^^</p>
+<p>J'ai ajouté un système de craft de cristaux de concentration qui déclenchent les skills (dans le cas d'utilisation de la commande, il faut quand même avoir le cristal dans le sac).<br>
+Le MindFollow monté à 50, et j'ai corrigé des bugs en plus.</p>
+<p>Resumé ici:</p>
+<p>En <span style="color:#BF0000">rouge </span>ce qu'il reste à scripter:</p>
+<ul>
+<li>0, permet d’utiliser la capacité « Retour d’Esprit », permettant de retourner l’esprit à son corps dans le cas d’un voyage astral ou vision mentale</li>
+</ul>
+<p><span style="color:#004000">- 1 – 22, en télépathie, Le télépathe peut faire ressentir des émotions dans une liste. ( Tristesse, Joie, Colère, Jalousie... etc) <!-- m --><a class="postlink" href="http://fr.wikipedia.org/wiki/%C3%89motion"><a href="http://fr.wikipedia.org/wiki/%C3%89motion">http://fr.wikipedia.org/wiki/%C3%89motion</a></a><!-- m --> </span></p>
+<ul>
+<li>
+<p>9, On peut utiliser la capacité de télékinésie (similaire au sort de la magie arcanique)</p>
+</li>
+<li>
+<p>11 – 15, des impressions. ( Danger, prudence, vitesse, sécurité, confort, malaise...etc )<br>
+=&gt; pouvez développer s'il vous plait? (une liste)</p>
+</li>
+<li>
+<p>21, des phrases complètes qu'on écrit soit même.</p>
+</li>
+<li>
+<p>22 , permet d'effectuer une attaque télépathique (un peu comme un sort. Chaque point en télépathie en revanche diminuait les dégâts probables et permettrait de bloquer les attaques de ce type). Il y a un délais de 30 secondes entre chaque attaque possible</p>
+</li>
+<li>
+<p>29, Permet d’utiliser la capacité « Sommeil », plaçant la cible dans un profond sommeil</p>
+</li>
+<li>
+<p>35, permet d’utiliser la capacité « Voyage Astral », permettant de voyager dans le monde des morts.</p>
+</li>
+<li>
+<p>45, Permet d'avoir une chance au personnage de faire dire quelque chose à un autre personnage (le contact visuel est requis, donc une commande du genre: .dire &quot;texte&quot; -&gt; cible)<br>
+(Je vais enlever ceci pour l'instant, on verra d'abord comment le système fonctionne sans cette capacité, vu que ça peut etre assimilé à une emote forcée)</p>
+</li>
+</ul>
+<p><span style="color:#004000">- 50, Permet de voir ce que la personne avec qui tu as pris contact voit, à savoir, tu te fais téléporté invisible derrière la personne et ton personnage la suit case par case automatiquement. (plus on a de points, plus de chance de voir)</span></p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-10-2009-at-202-am">Post by Conteur Wolf - January 10, 2009 at 2:02 AM</h2>
+<p><a id="post-198591"></a></p>
+<p>Après discussion avec Thomas, je crains que la classe connaisse quelques inconvénients dans un avenir proche. À savoir que l'usage de la Télépathie sera probablement proscrite au sein de l'empire pour des raisons logiques évidentes que je ne peux pas vraiment refuser vous en conviendrez.</p>
+<p>La raison première est la sécurité nationale. Tout comme les hackeurs irl, le gouvernement doit se protéger contre les sources qui peuvent voler des informations importantes et particulièrement les secrets d'état.</p>
+<p>Actuellement il n'y a aucune, sinon presque pas de protection existantes pouvant protéger contre les pouvoirs psychiques (détrompez-moi si ce n'est pas le cas). Hors, je crois que justement cela devra en arriver là un jour ou l'autre dépendant des initiatives des joueurs et il faudrait s'y préparer techniquement probablement tout en veillant à ne pas trop pénaliser la classe.</p>
+<p>Selon moi, les lieux édifices de guildes devraient bénéficier d'une zone de protection via les region control. Un peu comme pour interdire la téléportation dans l'espace ciblé.</p>
+<p>Je ne suis cependant pas en faveur de pouvoir rendre cela accessible à des fins personnels pour les joueurs. Genre amulette de protection,(un peu comme le casque de magneto dans les X-men). Bien que logiquement possible, je crois que ça pénaliserais trop la classe de sage qui arrive à peine à trouver de nouveaux pouvoirs. Si cela deviendrait accessible, il faudrait que ce soit excessivement rare et couteux.</p>
+<p>Mais j'estime qu'il est primordiale que les guildes et l'empire soient protégées contre ces phénomènes. Actuellement il y a peu de telepathe et ils sont joués par des bons joueurs. Cependant, les joueurs y viennent de plus en plus intéressé et si nous nous retrouvons avec une armada, ce sera d'avantage plus difficile de faire le contrôle des informations qui circulent, entre ce qui est hrp et rp... Car il y aura certainement des joueurs moins bien intentionnés qui arriveront.</p>
+<p>J'ignore même cependant s'il est possible de scripter une telle chose. J'aurais besoin d'avis d'expert sur le sujet, et bien entendu celle de tout l'équipe afin de savoir ce dont vous en pensez?</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-10-2009-at-357-am">Post by Fondateur Kel - January 10, 2009 at 3:57 AM</h2>
+<p><a id="post-198596"></a></p>
+<p>Ok oui, pas de souci.<br>
+Rappelez le moi par contre quand j'aurais le temps pour scripter ^^</p>
+<hr>
+<h2 id="post-by-anonymous---january-10-2009-at-358-am">Post by Anonymous - January 10, 2009 at 3:58 AM</h2>
+<p><a id="post-198597"></a></p>
+<p>Je suis d'accord pour protéger les lieux de guilde...</p>
+<p>J'allais proposer de réserver le domaine de la télépathie à la classe Sage, mais de</p>
+<ol>
+<li>ce serait absurde</li>
+<li>Ça brîme un peu de liberté</li>
+</ol>
+<p>Mais en même temps ça du sens, ça nous permettrait de contrôler ceux qui ont beaucoup de télépathie et ceux qui le prennent seulement pour le technique.</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-10-2009-at-636-am">Post by Ex-Lumina - January 10, 2009 at 6:36 AM</h2>
+<p><a id="post-198615"></a></p>
+<p>Je ne vais pas en débattre ; je suis la principale concernée de l'heure.</p>
+<p>Donc qu'importe les lois, les joueurs font bien ce qu'ils veulent à ce niveau, mais une restriction technique sur les guildes c'est détruire toute utilisation utile de ce pourquoi j'ai attendu si longtemps. M'enfin. Je n'y vois pas vraiment non plus d'explication roleplay.. ou s'il devait y en avoir une ce serait un moyen venant de la Confrérie et je peux vous jurer que je mettrai toutes mes énergies à le gâcher :-).</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-10-2009-at-638-am">Post by Fondateur Kel - January 10, 2009 at 6:38 AM</h2>
+<p><a id="post-198616"></a></p>
+<p>Bon, décidez vous ^^</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-10-2009-at-648-am">Post by Ex-Bolero - January 10, 2009 at 6:48 AM</h2>
+<p><a id="post-198619"></a></p>
+<p>J'appuie Lumina.</p>
+<p>J'ai essayé de débattre avec toi, Wolf, et avec Vincent sur MSN, mais je ne suis pas capable dans le débat présent de formuler le pourquoi de la chose... Je dois donc me rabattre aux arguments de Lumina.</p>
+<p>Mais je suis contre, ça enlève vraiment le pouvoir roleplay de la chose.</p>
+<hr>
+<h2 id="post-by-anonymous---january-10-2009-at-649-am">Post by Anonymous - January 10, 2009 at 6:49 AM</h2>
+<p><a id="post-198621"></a></p>
+<p>Il faut être niveau combien, disons qu'on a une classe autre que Sage, pour avoir assez de bonus pour faire Mindfollow?</p>
+<p>Je crois que la réponse à cette question retirerait une bonne partie des inquiétudes.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-10-2009-at-653-am">Post by Ex-Bolero - January 10, 2009 at 6:53 AM</h2>
+<p><a id="post-198625"></a></p>
+<p>Cornelius est niveau 16 (ou 18... je ne sais pas), et avec tous mes points secondaires / bonus en télépathie, je n'ai que 35, je pense. Et encore, c'est la classe Enchanteur, la 2e la plus propice à chopper des points de telepath.</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-10-2009-at-658-am">Post by Ex-Lumina - January 10, 2009 at 6:58 AM</h2>
+<p><a id="post-198626"></a></p>
+<p>Mindvision, le skill maximal, demande 50 points en télépathie :</p>
+<p>En bonus uniquement il faudrait être niveau 50 (qui n'a jamais été atteint par personne).</p>
+<p>La classe qui l'a en aptitude principale (sage) c'est niveau 25.</p>
+<p>La classe qui l'a en aptitude principale (sage) et qui y investit tous ses points bonus c'est niveau 17</p>
+<p>Les classes qui l'ont en aptitude secondaire (enchanteur et nécromancien uniquement) c'est niveau 33.</p>
+<p>Les classes qui l'ont en secondaire (enchanteur et nécromancien uniquement) et qui y investissent aussi tous leur bonus c'est niveau 20.</p>
+<p>PS : Je n'insisterai jamais assez sur la faiblesse dans tous les domaines des sages, qui n'ont que ça.</p>
+<hr>
+<h2 id="post-by-anonymous---january-10-2009-at-701-am">Post by Anonymous - January 10, 2009 at 7:01 AM</h2>
+<p><a id="post-198627"></a></p>
+<p>Les classes qui l'ont en aptitude secondaire (enchanteur et nécromancien uniquement) c'est niveau 33.</p>
+<p>Les classes qui l'ont en secondaire (enchanteur et nécromancien uniquement) et qui y investissent aussi tous leur bonus c'est niveau 20.</p>
+<p>Voilà, c'est ça qui m'inquiète. Un joueur s'envoie Nécro et niveau 20, ce qui se gagne assez rapidement quand même (façon de parler) et il peut faire ça.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-10-2009-at-708-am">Post by Ex-Bolero - January 10, 2009 at 7:08 AM</h2>
+<p><a id="post-198630"></a></p>
+<p>C'est tout ce qui t'inquiète?</p>
+<p>On a quoi, 2 nécros? Et ils n'investiront pas en télépathie :O</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-10-2009-at-710-am">Post by Ex-Lumina - January 10, 2009 at 7:10 AM</h2>
+<p><a id="post-198631"></a></p>
+<p>Prenons le cas du nécromancien :</p>
+<p><u><strong>Aptitudes principales</strong></u><br>
+Nécromancie<br>
+Érudition<br>
+<u><strong>Aptitudes secondaires</strong></u><br>
+Alchimie<br>
+Sorcellerie<br>
+Furtivité<br>
+Érudition<br>
+Télépathie</p>
+<p>Forcément il mettra ses points principaux en nécromancie (sinon franchement s'il préfère érudition je ne le comprends pas). Va-t-il vraiment tout mettre en télépathie plutôt qu'en sorcellerie ? Il lui faut une couverture après tout, sa vie est constamment à risque. Et s'il le fait, y investir ses points, c'est tout ce qu'il aura d'utilisable, alors, pourquoi pas.</p>
+<p>Nous n'avons pas encore eu de cas problématique avec télépathie. Nous pouvons au moins attendre ça pour penser à le limiter ?</p>
+<p>Les abuseurs chroniques n'ont rien à faire du roleplay et ils ne verront aucun intérêt à télépathie de toutes façons...</p>
+<hr>
+<h2 id="post-by-anonymous---january-10-2009-at-735-am">Post by Anonymous - January 10, 2009 at 7:35 AM</h2>
+<p><a id="post-198640"></a></p>
+<p>Non, mais nous avons des joueurs comme Thorgrak qui peut très bien se démarrer un Sage/Nécromancien pour ça justement.</p>
+<p>Car, compare et cherche l'erreur pour Mindvision :</p>
+<blockquote>
+<p>La classe qui l'a en aptitude principale (sage) c'est niveau <strong><u>25</u></strong>.</p>
+<p>Les classes qui l'ont en secondaire (enchanteur et nécromancien uniquement) et qui y investissent aussi tous leur bonus c'est niveau <strong><u>20</u></strong>.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-ex-lumina---january-10-2009-at-736-am">Post by Ex-Lumina - January 10, 2009 at 7:36 AM</h2>
+<p><a id="post-198641"></a></p>
+<blockquote>
+<p><strong>&quot;Coordinatrice Lumina&quot; wrote:</strong>
+Les abuseurs chroniques n'ont rien à faire du roleplay et ils ne verront aucun intérêt à télépathie de toutes façons...</p>
+<p>Advenant ce cas hautement hypothétique et improbable que tu exposes.. qu'en ferait-il vraiment qui pourrait être dérangeant, franchement ?</p>
+<p>Je suis certaine qu'une discussion avec quelqu'un d'autre que lui-même l'emmerderait..</p>
+<p>PS : Tu ne compares pas les bonnes choses, si le bonus est investie par une classe qui l'a en principale elle l'a au niveau 17, qui reste mieux que ceux qui l'ont juste en secondaire. Je conviens de tout cœur, cependant, que c'est bas.</p>
+<p>Kel avait une ébauche de système de classes supérieures qui retirerait mindvision du grand public et le laisserait accessible seulement aux sages &quot;transcendant&quot;.. ça règlerait le problème (qui n'a pas encore eu lieu d'ailleurs).</p>
+</blockquote>
+<hr>
+<h2 id="post-by-fondateur-kel---january-10-2009-at-747-am">Post by Fondateur Kel - January 10, 2009 at 7:47 AM</h2>
+<p><a id="post-198644"></a></p>
+<blockquote>
+<p><strong>&quot;Coordinatrice Lumina&quot; wrote:</strong>
+Kel avait une ébauche de système de classes supérieures qui retirerait mindvision du grand public et le laisserait accessible seulement aux sages &quot;transcendant&quot;.. ça règlerait le problème (qui n'a pas encore eu lieu d'ailleurs).</p>
+<p>En effet, ça regèlerait le souci</p>
+</blockquote>
+<hr>
+<h2 id="post-by-conteur-wolf---january-10-2009-at-756-am">Post by Conteur Wolf - January 10, 2009 at 7:56 AM</h2>
+<p><a id="post-198646"></a></p>
+<p>Ce n'est pas contre toi Lumina au sujet de Lenne que j'ai des inquiétudes, d'ailleurs elle en a rien à cirer de tout ça, du moins je crois. Mais vous ne serez plus éventuellement les seuls à pouvoir le faire. Même si nous disons que oui sa prend un investissent complet de tous les principaux et bonus au niveau 20 pour avoir accès. C'est pourtant peu pour quelques chose d'extrêmement puissant.</p>
+<p>Laissons le côté technique un peu pour plus ce concentré sur le côté rp. Oui vous êtes les premiers à avoir les pouvoirs, non vous n'abuserez pas. Mais combien seront aussi &quot;honnête&quot; dans l'avenir. Comment distinguerons nous qui sait quoi vraiment par hrp ou rp?</p>
+<p>Par exemple :Thomas qui justement songe à changer de classe juste car il appris la connaissance de ces pouvoirs possibles. Un tel pouvoir dans les mains d'un personnage au même poste que lui, qui peut influencer pratiquement tout dans l'empire est presque inconcevable. Il peut avoir le contrôle total des informations circulant dans l'empire et peut donc influencer ses choix. S'il ne peut pas atteindre ses objectifs officiellement il peut le faire officieusement qui eux peuvent avoir des retomber sur toute la ville.</p>
+<p>Ce qui est moins grave, pour ceux qui sont bon côté il faut toujours des preuves pour agir selon la justice. Exemple, ce serait impossible de faire tomber un personnage avec des paroles que le témoin télépathe a entendu. Mais c'est très facile cependant de trouver des preuves, ex : lieux de repaire etc...</p>
+<p>Du côté des méchants à présent, c'est autrement vous le savez. Il n'y a pas de code d'honneur. Suffit d'imaginer qu'il y aille un telepathe à la Gdo, maintenant c'est facile de savoir qui sait quoi sur l'organisme et de liquider tous les danger potentiels ou de désigner n'importe quel cible. S'emparer de secret d'état ou de guilde de manière un peu trop facile pour agir par la suite...</p>
+<p>Vous dites que cela brime le rp de votre classe, mais combien peuvent être brimé par la vôtre? Là je te prends en exemple Lenne, tu écoutais notre conversation au coin chaud puis soudainement tu arrive de nul part et t'adresse à Naerys par télépathie. Je me fais répondre sur msn 3 ou 4 &quot;wtf&quot; et soudainement plus personne a envi de parler en jeu de peur de dire quelque chose qu'il ne faut pas.</p>
+<p>Oui généralement si vous ne vous présentez pas de suite après on ne sait même pas que nous avons été écouté, d'ailleurs il n'y a aucun moyen de le détecter. Ce qui est un certain autre avantage.</p>
+<p>Avec ces pouvoirs la vous pouvez déjà violer a 100% l'intimité des joueurs sans la moindre difficulté excepté avoir le niveaux requis. Je crois que restreindre quelques endroits alors que toutes les raisons sont logiquement légitimes ce n'est pas la fin du monde.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-10-2009-at-756-am-1">Post by Conteur Wolf - January 10, 2009 at 7:56 AM</h2>
+<p><a id="post-198647"></a></p>
+<blockquote>
+<p><strong>&quot;Fondateur Kel&quot; wrote:</strong>
+Kel avait une ébauche de système de classes supérieures qui retirerait mindvision du grand public et le laisserait accessible seulement aux sages &quot;transcendant&quot;.. ça règlerait le problème (qui n'a pas encore eu lieu d'ailleurs).</p>
+<p>En effet, ça regèlerait le souci</p>
+<p>Va pour moi alors. C'est préférable ainsi.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-ex-bolero---january-10-2009-at-439-pm">Post by Ex-Bolero - January 10, 2009 at 4:39 PM</h2>
+<p><a id="post-198684"></a></p>
+<p>g&gt; Par exemple :Thomas qui justement songe à changer de classe juste car il appris la connaissance de ces pouvoirs possibles. Un tel pouvoir dans les mains d'un personnage au même poste que lui, qui peut influencer pratiquement tout dans l'empire est presque inconcevable. Il peut avoir le contrôle total des informations circulant dans l'empire et peut donc influencer ses choix. S'il ne peut pas atteindre ses objectifs officiellement il peut le faire officieusement qui eux peuvent avoir des retomber sur toute la ville.</p>
+<p>La paranoïa est omniprésente dans le problème actuel.</p>
+<p>La télépathie permet quelque chose qui présente un <u>risque</u> pour l'Empire, et sous ce prétexte, tu désires le <u>limiter techniquement</u>. C'est ça que je ne comprends pas, qui m'ennuie.</p>
+<p>D'autres classes ont des pouvoirs puissants, MindVision est celui des télépathes. Ça ne sert vraiment à rien de regarder les joueurs faire du cybersexe ou se parler du prix d'une armure de pyrolithe, justement: le vrai pouvoir RP du MindVision, c'est de pouvoir épier des conversations importantes.</p>
+<p>Les voleurs peuvent se cacher pour espionner, ça arrive. On ne les limite pas.</p>
+<p>Les sages ont été une classe de merde (excusez l'expression) pendant 3 ans, et aussitôt qu'arrivent des mesures intéressantes, il faut <strong>encore</strong> limiter, toujours limiter davantage les possibilités qu'offrent les scripts.</p>
+<p>Je ne suis pas plus en faveur d'une restriction via les niveaux. L'ébauche de Kel, de ce que je me rappelle, prévoyait une accession aux &quot;classes de prestige&quot; à partir <u>du niveau 35</u>. Il faut vivre dans le monde réaliste aussi: qui a dépassé le niveau 35?</p>
+<p>Kalidor et Lolindir, deux RPeurs plutôt moyens qui jouaient comme des défoncés et ce, pendant plus de 2 ans et demi.</p>
+<p>Je conçois que Sinriia s'en approche également, et je ne te reproche pas de trop jouer, mais il faut admettre que c'est extrêmement rare... Encore plus chez des persos de classe comme &quot;Sage&quot;.</p>
+<p>Alors permettre ce pouvoir à UN perso qui un jour dépassera le cap du niveau 35, je trouve ça franchement insultant. Comme de quoi on se donne bonne conscience en laissant MindVision, mais qu'on le rend inaccessible en toute pratique.</p>
+<p>Je suis pour que le système reste comme il est, absolument. La seule restriction que je serais prêt à appuyer concernerait la méthode pour pouvoir suivre une personne: présentement, on a une liste avec tous les .renoms, ce qui me paraît franchement abusé. Admettons que j'ai vu Yriel une fois dans ma vie et que je veux l'espionner 9 mois plus tard, je n'ai qu'à cliquer sur son nom et hop, je vois ce qu'il manigance.</p>
+<p>J'opterais plutôt pour qu'on ne puisse espionner qu'une personne avec qui on possède un lien télépathique (.mindtalkadd, je crois). Ou une solution dans la même veine... Car vos histoires de restrictions sur le niveau et les lieux me révoltent carrément.</p>
+<hr>
+<h2 id="post-by-anonymous---january-10-2009-at-932-pm">Post by Anonymous - January 10, 2009 at 9:32 PM</h2>
+<p><a id="post-198701"></a></p>
+<p>La seule restriction que je serais prêt à appuyer concernerait la méthode pour pouvoir suivre une personne: présentement, on a une liste avec tous les .renoms, ce qui me paraît franchement abusé. Admettons que j'ai vu Yriel une fois dans ma vie et que je veux l'espionner 9 mois plus tard, je n'ai qu'à cliquer sur son nom et hop, je vois ce qu'il manigance.</p>
+<p>J'opterais plutôt pour qu'on ne puisse espionner qu'une personne avec qui on possède un lien télépathique (.mindtalkadd, je crois). Ou une solution dans la même veine... Car vos histoires de restrictions sur le niveau et les lieux me révoltent carrément.</p>
+<p>+1</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-10-2009-at-1158-pm">Post by Conteur Wolf - January 10, 2009 at 11:58 PM</h2>
+<p><a id="post-198727"></a></p>
+<p>C'est un autre compromis intéressant... Ou que la liste se vide après X temps que le contact n'a pas été &quot;utilisé&quot;?</p>
+<p>Edit : Par utilisé je veux dire, que le lien à été réussi, pas seulement cliqué sur le nom.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-12-2009-at-726-pm">Post by Conteur Wolf - January 12, 2009 at 7:26 PM</h2>
+<p><a id="post-199019"></a></p>
+<p>Après avoir relut tout ça, pourquoi ne pas faire une liste entre-deux pour le mindvision?</p>
+<p>Par exemple :</p>
+<ul>
+<li>
+<p>2 Contacts permanent que le Telepath décide et peu remplacer à sa guise. Une liaison permanente demande beaucoup de concentration et normalement le Telepath doit penser continuellement à ses cibles pour préserver les liens logiquement parlant. Impossible de penser à 50 personnes en même temps on s'entend je crois...</p>
+</li>
+<li>
+<p>Puis disons huit contact provisoire qui s'effacent d'eux-même après une semaine irl si le lien n'a pas été rétabli avec la personne depuis...</p>
+</li>
+</ul>
+<p>Sans nécessairement ajouter d'autre contrainte pour le pouvoir, je crois que c'est un juste milieu qui devrait peut-être satisfaire tous les partis?</p>
+<hr>
+<h2 id="post-by-anonymous---january-12-2009-at-751-pm">Post by Anonymous - January 12, 2009 at 7:51 PM</h2>
+<p><a id="post-199042"></a></p>
+<p>Je m'oppose en fait au contacte permanant... Je peux bien croire que Télépathie sert à ça, mais comme un Assassin doit trouver sa cible, ce serait bien que télépathie doive la retrouver aussi à chaque fois.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-12-2009-at-756-pm">Post by Ex-Bolero - January 12, 2009 at 7:56 PM</h2>
+<p><a id="post-199046"></a></p>
+<p>Elle devient alors inutile.</p>
+<p>J'appuie l'idée de Wolf, moi.</p>
+<hr>
+<h2 id="post-by-anonymous---january-12-2009-at-828-pm">Post by Anonymous - January 12, 2009 at 8:28 PM</h2>
+<p><a id="post-199050"></a></p>
+<p>Je crois qu'un contacte qui dure une semaine est bien assez sans rendre la classe désuette.</p>
+<p>On s'entend, la classe avec un contact sur la bonne personne et l'utilisation d'un des skills au bon moment et c'est fini du perso', surtout qu'il n'existe <strong>aucun moyen de résister ou de se protéger</strong>.</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-12-2009-at-1050-pm">Post by Ex-Lumina - January 12, 2009 at 10:50 PM</h2>
+<p><a id="post-199089"></a></p>
+<p>Pas d'accord avec Zak.</p>
+<p>Il existe un moyen : quelques points en télépathie pour avoir une alerte.</p>
+<hr>
+<h2 id="post-by-anonymous---january-12-2009-at-1052-pm">Post by Anonymous - January 12, 2009 at 10:52 PM</h2>
+<p><a id="post-199090"></a></p>
+<p>Tu entends quoi par &quot;alerte&quot;?</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-13-2009-at-1226-am">Post by Conteur Wolf - January 13, 2009 at 12:26 AM</h2>
+<p><a id="post-199111"></a></p>
+<p>Bah ça doit être un truc du genre qui s'affiche : &quot;Quelqu'un tente de s'infiltrer dans votre esprit.&quot;</p>
+<p>Rendu a un certain niveau il me semble qu'il est possible de savoir le nom de l'agresseur, et encore un niveau supérieur de bloquer complètement le lien. Possible d'avoir les variables de pa nécessaire en télépathie pour savoir le niveau nécessaire, du moins pour l'alerte svp?</p>
+<p>Ceci-dit... c'est n'est pas vraiment une grosse &quot;protection&quot;, lorsque les gens discutent à plusieurs, suffit de choisir l'autre personne a côté qui elle n'a aucun points investis dans sa liste actuellement permanente...</p>
+<hr>
+<h2 id="post-by-nimue---january-13-2009-at-1228-am">Post by Nimue - January 13, 2009 at 12:28 AM</h2>
+<p><a id="post-199112"></a></p>
+<p>&quot;Une personne tente de....&quot;</p>
+<p>Quelqu'un qui a des points en télépathie donc aura la possibilité de ressentir qu'un autre s'essaie, à le sentiment qu'il se fait observe d'une manière pas trop catholique</p>
+<p>Remarque je crois que ça le fait déjà. Il m'est arrivé avec mon personnage de contrer une attaque mentale donc de ressentir que quelqu'un s'en prenait à ma caboche. Je ne sais pas par contre si c'est applicable avec la vision.</p>
+<p>C'est comme pour l'assassinat... si tu veux t'en protéger, investit en conséquence. Si tu veux te protéger des attaques psychiques possibles, investit tes points dans ce domaine.</p>
+<p>Edit: Wolf ajoute là un bon point concernant les personnages qui eux à côtés mais en même temps, la chance qu'un sage tombe sur quelque chose de vraiment importants et tout en jeu, est quand même minime, faut avoir de la chance!</p>
+<hr>
+<h2 id="post-by-anonymous---january-13-2009-at-1235-am">Post by Anonymous - January 13, 2009 at 12:35 AM</h2>
+<p><a id="post-199115"></a></p>
+<blockquote>
+<p>C'est comme pour l'assassinat... si tu veux t'en protéger, investit en conséquence. Si tu veux te protéger des attaques psychiques possibles, investit tes points dans ce domaine.</p>
+<p>Oui sauf qu'un assassin qui veut tuer sa victime doit à chaque fois la retrouver.</p>
+<p>Ici, on suggère que le télépathe ait un contacte <u>permanant</u> et je ne suis pas d'accord à l'idée.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-nimue---january-13-2009-at-1239-am">Post by Nimue - January 13, 2009 at 12:39 AM</h2>
+<p><a id="post-199116"></a></p>
+<p>Et je suis de ton avis. Après un temps le contact devrait se perdre comme tu le mentionnes.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-13-2009-at-1251-am">Post by Conteur Wolf - January 13, 2009 at 12:51 AM</h2>
+<p><a id="post-199119"></a></p>
+<p>Je suis également de cet avis mais je n'ai pas vraiment d'inconvénient de laisser un contacte permanent ou deux. Genre un époux ou peu importe qui attire toujours une certaine pensé pour le telepathe.</p>
+<p>Sinon sans ajouter de limite de lien permanent... L'idée de devoir écrire un Bg pour établir un lien permanent ou préserver un contacte + de X temps m'est venu à l'esprit. Cela permettrait à l'équipe de contrôler un peu plus les raisons et les informations qui doivent être volées. Un peu comme pour les assassinats. Le contacte permanent pourrait être activé par un membre de l'équipe peut-être?</p>
+<p>Désolé j'essaye de trouver des solutions pouvant satisfaire tout le monde.</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-13-2009-at-100-am">Post by Ex-Lumina - January 13, 2009 at 1:00 AM</h2>
+<p><a id="post-199121"></a></p>
+<p>Non pour l'intervention de l'Équipe obligatoire .. allons comparer télépathie à assassinat c'est fou, c'est n'est pas les mêmes impacts !</p>
+<p>On peut toujours demander un bg aux télépathes si vous voulez vraiment les trier..</p>
+<hr>
+<h2 id="post-by-anonymous---january-13-2009-at-342-am">Post by Anonymous - January 13, 2009 at 3:42 AM</h2>
+<p><a id="post-199160"></a></p>
+<p>Non pour l'intervention de l'Équipe obligatoire .. allons comparer télépathie à assassinat c'est fou, c'est n'est pas les mêmes impacts !</p>
+<p>Si je compare télépathie à assassinat, c'est pour une raison.</p>
+<ul>
+<li>
+<p>Assassinat, ça te tue d'un coup. Pas réel moyen de résister autre que de mettre des points dans certaines catégories d'Aptitudes qui ne sont pas nécéssairement primaires/secondaires à une classe.</p>
+</li>
+<li>
+<p>Télépathie, contacte permanant, ça te permet de voir ce que la victime voit d'un coup, de lui faire des choses d'un coup, sans réel moyen de résister autre que de mettre des points dans télépathie.</p>
+</li>
+</ul>
+<p>Ce sont deux classes qui ont tout deux une skill &quot;ultime&quot;. Puissante d'un coup. Une tire sa puissance techniquement, l'autre un peu Roleplayment, mais les deux au final peuvent avoir le même impacte si utilisé au bon moment.</p>
+<p>Je reste d'avis que des contactes permanants c'est trop. Mais je n'irais pas jusqu'à restreindre manuellement par l'équipe. Je crois que le fait que le contacte reste une semaine IRL est bien assez.</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-13-2009-at-619-am">Post by Ex-Lumina - January 13, 2009 at 6:19 AM</h2>
+<p><a id="post-199194"></a></p>
+<p>Je pense que nous en sommes arrivés à nous cramper sur nos positions. J'admets (avec objectivité) qu'il y a une correction à faire pour qu'il y ait équité, je vous offre donc de voter l'une des solutions suivante élaborées avec ce qui a été soulevé ici et ailleurs, porté à ma connaissance. Choisissez la/les lettre/s que vous préférez  :</p>
+<p><strong>A)</strong> Exiger un BG approuvé par les maîtres de jeu (un peu comme avec les enfants ou les tierfling) afin de trier les éventuels utilisateurs du skill.</p>
+<p><strong>B)</strong> Permettre le skill mindvision uniquement à la classe de prestige, comme Kel l'avait prévu dans son système.</p>
+<p><strong>C)</strong> Modifier la liste de contacts pour que le télépathe ait à se lier à la personne qu'il veut pouvoir suivre en mindvision, avec une durée maximale d'une semaine (chiffre sujet à changement si décision majoritaire) pour tous les contact.</p>
+<p><strong>D)</strong> Modifier la liste de contacts pour que le télépathe ait à se lier à la personne qu'il veut pouvoir suivre en mindvision, avec un maximum de deux contacts permanents et cinq contacts éphémères qui disparaîtront après un moment (chiffres sujets à changement si décision majoritaire).</p>
+<p><strong>E)</strong> Modifier la liste de contacts pour que le télépathe ait à se lier à la personne qu'il veut pouvoir suivre en mindvision, liaison qui se rompra si elle n'est pas utilisée pendant un certain temps (chiffre à déterminer).</p>
+<p><strong>F)</strong> Effacer la liste de contacts actuelle et exiger un texte jugé par l'Équipe pour l'ajout de chaque contact. L'Équipe procèdera alors manuellement à l'ajout du contact si le tout est accepté. Le lien sera alors permanent.</p>
+<p><strong>G)</strong> Effacer la liste de contacts actuelle et exiger un texte jugé par l'Équipe pour l'ajout de chaque contact. L'Équipe procèdera alors manuellement à l'ajout du contact si le tout est accepté. Le lien aura alors une durée d'une semaine (chiffre si à changement si décision majoritaire.</p>
+<p><strong>H)</strong> Rien ne change.</p>
+<p>À vos votes.</p>
+<p>Les miens :</p>
+<p>A et D<br>
+<u>ou</u><br>
+A et B</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-13-2009-at-633-am">Post by Ex-Bolero - January 13, 2009 at 6:33 AM</h2>
+<p><a id="post-199199"></a></p>
+<p>H/D</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-13-2009-at-650-am">Post by Conteur Wolf - January 13, 2009 at 6:50 AM</h2>
+<p><a id="post-199203"></a></p>
+<p>A et D</p>
+<p>Ou</p>
+<p>A et B</p>
+<hr>
+<h2 id="post-by-nimue---january-13-2009-at-757-am">Post by Nimue - January 13, 2009 at 7:57 AM</h2>
+<p><a id="post-199208"></a></p>
+<p>A et D pour ma part.</p>
+<hr>
+<h2 id="post-by-anonymous---january-13-2009-at-903-am">Post by Anonymous - January 13, 2009 at 9:03 AM</h2>
+<p><a id="post-199218"></a></p>
+<p>C et E.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---january-13-2009-at-146-pm">Post by Mr Trovénère - January 13, 2009 at 1:46 PM</h2>
+<p><a id="post-199255"></a></p>
+<p>*A &amp; B *</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-13-2009-at-356-pm">Post by Ex-Bolero - January 13, 2009 at 3:56 PM</h2>
+<p><a id="post-199270"></a></p>
+<p>J'invite sérieusement à ne pas voter pour le B, pour des raisons évoquées plus tôt... Ces classes ne sont même pas encore scriptées et je suis vraiment dubitatif quand à leur implantation...</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---january-13-2009-at-532-pm">Post by Conteuse Seshat - January 13, 2009 at 5:32 PM</h2>
+<p><a id="post-199287"></a></p>
+<p>D, visiblement...</p>
+<p>A me laisse perplexe. Mais ça peut se faire.</p>
+<p>Edit : A me laisse perplexe : ça nous donne du boulot pour finalement pas grand chose... et puis, nous avons toujours loisir de sévir contre ceux qui abusent de télépathie, comme avant, et il faudra constamment vérifier qui a des points de télépathie.</p>
+<hr>
+<h2 id="post-by-nimue---january-13-2009-at-543-pm">Post by Nimue - January 13, 2009 at 5:43 PM</h2>
+<p><a id="post-199291"></a></p>
+<p>Après mures réflexions, et aussi pour l'avis évoqué par Seshat, je crois que nous devrions peut-être éviter de demander des Bgs supplémentaires. Il est souvent évoqué dans les cas de suggestions qui nécessitent un Bg que ce n'est pas tout le monde qui sont des rédacteurs hors pair qui désirent écrire et je respecte ça.</p>
+<p>Le C n'est pas si mal.</p>
+<p>Je maintients le D.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-13-2009-at-656-pm">Post by Fondateur Kel - January 13, 2009 at 6:56 PM</h2>
+<p><a id="post-199297"></a></p>
+<p>A (en option, pour toutes les classes de prestige)<br>
+et B</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-13-2009-at-833-pm">Post by Ex-Lumina - January 13, 2009 at 8:33 PM</h2>
+<p><a id="post-199305"></a></p>
+<p>Je retire aussi mon A, concernant le D du moins, me ralliant à Seshat.</p>
+<p><u>Résultats : </u></p>
+<p>**A et D **: 1<br>
+<strong>A et B</strong> : 4<br>
+<strong>B</strong> : 1<br>
+<strong>C et E</strong> : 1<br>
+<strong>D</strong> : 4<br>
+<strong>H</strong> : 1</p>
+<p>Le B prédomine il semble bien.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-14-2009-at-503-am">Post by Ex-Bolero - January 14, 2009 at 5:03 AM</h2>
+<p><a id="post-199375"></a></p>
+<p>Woh, D a autant que B.</p>
+<p>Je demande à ce qu'on rediscute sérieusement des classes de prestige avant d'accepter une telle solution.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-14-2009-at-543-am">Post by Conteur Wolf - January 14, 2009 at 5:43 AM</h2>
+<p><a id="post-199383"></a></p>
+<p>Je n'ai rien contre.</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-14-2009-at-607-am">Post by Ex-Lumina - January 14, 2009 at 6:07 AM</h2>
+<p><a id="post-199392"></a></p>
+<p>Excusez-moi .. j'ai recompilé les résultats et je réalise que j'étais vraiment dans l'erreur.</p>
+<p>Voici donc ce qu'on aurait dû lire si je n'étais pas sous l'effet d'alcool et de stupéfiants à longueur de journée :</p>
+<p><u>Résultats : </u></p>
+<p>**A et D **: 2<br>
+<strong>A et B</strong> : 4<br>
+<strong>C et E</strong> : 1<br>
+<strong>D</strong> : 3<br>
+<strong>H</strong> : 1</p>
+<p>C'est donc D qui est majoritaire [5 x D suivit de près par 4 x B ].</p>
+<hr>
+<h2 id="post-by-anonymous---february-22-2009-at-1222-am">Post by Anonymous - February 22, 2009 at 12:22 AM</h2>
+<p><a id="post-205987"></a></p>
+<p>...Une suite à ce sujet?</p>
+<p>Je crois que ce serait bon de régler ça si possible ^^&quot;</p>
+<hr>
+<h2 id="post-by-conteur-wolf---may-13-2009-at-1219-am">Post by Conteur Wolf - May 13, 2009 at 12:19 AM</h2>
+<p><a id="post-213590"></a></p>
+<p>Détection de bug en se qui concerne les voyages astraux et mind vision. Il est possible de détecter la présence via tracking.</p>
+<p>De base tracking nous pouvons considérer ce skill davantage comme une sorte d'instinct pour ressentir quelconque présence autour de soit. Plutôt que du pistage, car entre vous et moi, du pistage sur des rues pavée.. Bonne chance.</p>
+<p>Cependant comme après en avoir discuté brièvement avec Nimue. Le fait de détecter cela par ce skill n'est pas très logique, puisque la présence du télépathe n'est pas là de corps, mais bien uniquement d'esprit.</p>
+<p>Il faudrait que nos scripteurs se penche sur cela, bien que je crois que c'est impossible de corriger cela. Le tracking a pour but de détecter les mobiles. Et le joueur en mind vision ou voyage astral est téléporté hidé derrière sa cible, donc il est également toujours considéré comme mobile.</p>
+<p>J'ignore comment on peut remédier à cela honnêtement. Entre-temps puisque Kel est occupé, il faudrait trouver un moyen de détourner ce bug, ou bien on laisse comme ça... Et simplement avertir els joueurs de pas considérer se bug dans leur rp? Mais honnêtement? Qui aura le goût de poursuivre son rp une fois qu'il sait qu'il est espionné?</p>
+<p>Enfin, les décisions que nous avions également prise au sujet des télépathe ne sont pas réglés techniquement. Le système devra être rééquilibré avec tous ces bugs.</p>
+<hr>
+<h2 id="post-by-nimue---may-13-2009-at-1228-am">Post by Nimue - May 13, 2009 at 12:28 AM</h2>
+<p><a id="post-213591"></a></p>
+<p>Beaucoup de gens se servent de tracking tu crois? Sans doute pas tant que cela.</p>
+<p>Personnellement comme je t'ai dis, je ne prendrais pas en compte le tracking pour détecter un télépathe, car justement, il est la d'esprit seulement après tout. Les seules personnes qui peuvent ressentir cette &quot;présence&quot; sont les télépathes qui parviennent à avoir suffisamment de points (et d'intel je crois) pour le ressentir, dans ce temps là ça t'indique admettons..</p>
+<p>&quot;Vous ressentez que quelqu'un tente de percer votre barrière mentale humain(Morvan)&quot;</p>
+<p>Desfois je reçois le même message mais avec &quot;Inconnu&quot; à la place alors je suppose que Kel à fait 2 types de &quot;bloquage&quot;, donc un moins &quot;hot&quot; qui ne me permet pas de déterminé qui viole mon esprit. Personnellement même quand j'ai le nom de la personne, je le joues comme une impression plutôt qu'une certitude, après tous les méandres de l'esprit sont compliqués!</p>
+<p>Bref, non le tracking ne devrait pas permettre de découvrir la présence du télépathe.</p>
+<hr>
+<h2 id="post-by-ex-lumina---may-13-2009-at-1230-am">Post by Ex-Lumina - May 13, 2009 at 12:30 AM</h2>
+<p><a id="post-213592"></a></p>
+<p>Oui mais pour le moment nous ne pouvons pas y changer grand chose de toutes façons.</p>
+<p>Je n'en parlerais pas aux joueurs ; de plans pour qu'ils apprennent le bug et l'utilisent plutôt qu'ils évitent de le faire.</p>
+<hr>
+<h2 id="post-by-nimue---may-13-2009-at-1239-am">Post by Nimue - May 13, 2009 at 12:39 AM</h2>
+<p><a id="post-213593"></a></p>
+<p>J'appuie Lumina, on est aussi bien de rien dire.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---may-13-2009-at-206-am">Post by Conteur Wolf - May 13, 2009 at 2:06 AM</h2>
+<p><a id="post-213605"></a></p>
+<p>Bien on dit rien, mais bon on pourra pas grand chose s'il y a de l'abus de se bug. Mais comme Nimue dit, les utilisateurs de tracking sont peu nombreux.</p>
+<hr>
+<h2 id="post-by-ex-bolero---may-13-2009-at-321-am">Post by Ex-Bolero - May 13, 2009 at 3:21 AM</h2>
+<p><a id="post-213623"></a></p>
+<p>S'ils détectent quelqu'un dans le coin, ça sera sous forme de &quot;Humain&quot; ou &quot;Humaine&quot;. Et le premier à s'en rendre compte, à moins d'être sacrément intelligent, pensera à un étrange bug ou à un voleur hidé plutôt qu'à un vil télépathe.</p>
+<p>Je dis donc qu'on ne dis rien, simplement.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---may-13-2009-at-352-am">Post by Conteur Wolf - May 13, 2009 at 3:52 AM</h2>
+<p><a id="post-213626"></a></p>
+<p>Ce sera sous forme humain oui mais le gump qui se trouve dans la liste d'individu n'est pas celui d'un mob c'est un petit rond jaune avec un x dedans.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---june-18-2009-at-222-am">Post by Scripteur Xenon - June 18, 2009 at 2:22 AM</h2>
+<p><a id="post-218029"></a></p>
+<p>Si j'ai bien compris, la partie qui me concerne est celle-ci :</p>
+<blockquote>
+<p>D) Modifier la liste de contacts pour que le télépathe ait à se lier à la personne qu'il veut pouvoir suivre en mindvision, avec un maximum de deux contacts permanents et cinq contacts éphémères qui disparaîtront après un moment (chiffres sujets à changement si décision majoritaire).</p>
+<p>Sinon, j'expose mon avis sur ce sujet, déjà chaud, j'en conviens. Je compare beaucoup ce type de talent à celui d'un voleur. Si un newb voleur vient fouiller dans le sac d'un autre perso, peu importe son level, il s'en apercevra. Si un newb télépath vient fouiller dans mon cerveau, je ne devrais pas avoir besoin d'investir des points pour pouvoir m'en apercevoir. J'aurai des &quot;signes&quot; qu'il tente de s'emparer de mon esprit. C'est pas grand chose, mais ça sécurise contre les newbs ou les points bonus en télépathie sur des joueurs malintentionnés.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-scripteur-xenon---june-23-2009-at-724-am">Post by Scripteur Xenon - June 23, 2009 at 7:24 AM</h2>
+<p><a id="post-218416"></a></p>
+<p>À la lumière de ce que j'ai lu, voici ce que je compte vous coder:</p>
+<ul>
+<li>
+<p>Limite de 2 mind follow permanents</p>
+</li>
+<li>
+<p>Limite de 5 mind follow temporaires ( 7 - 14 jours selon une échelle de PA, un seul timer qui vérifiera régulièrement )</p>
+</li>
+<li>
+<p>Nécessité de voir la cible pour ajouter un mind follow</p>
+</li>
+<li>
+<p>Gump pour accompagner le tout</p>
+</li>
+<li>
+<p>Maintient des autres limites pour les autres Mind something</p>
+</li>
+<li>
+<p>Correction du bug de Mind Sleep sur les BaseCreature<br>
+Voici quelques autres recommandations que j'aimerais vous voir appuyer ou réfuter:</p>
+</li>
+<li>
+<p>Variation du temps de mind selep selon le niveau PA</p>
+</li>
+<li>
+<p>Possibilité de résister au mind sleep avec une formule équivalente à celle de l'assassinat (Magic resist, Intel, Endurance Accrue vs Meditation, Intel, Télépatie)</p>
+</li>
+<li>
+<p>Tout raté de Mind Something donne une indice à l'adversaire que quelqu'un a tenté et raté quelque chose.</p>
+</li>
+</ul>
+<hr>
+<h2 id="post-by-conteur-wolf---june-23-2009-at-915-am">Post by Conteur Wolf - June 23, 2009 at 9:15 AM</h2>
+<p><a id="post-218421"></a></p>
+<blockquote>
+<ul>
+<li>Tout raté de Mind Something donne une indice à l'adversaire que quelqu'un a tenté et raté quelque chose.</li>
+</ul>
+<p>Je ne crois pas qu'il y a des chances de rater justement? Peut-être à ajouter? Vous en pensez quoi? Sans nécessairement diminuer le pouvoir simplement ajouter des chances de se faire découvrir un peu comme un jet de hiding raté me semble être un bon compromis.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-ex-lumina---june-23-2009-at-939-am">Post by Ex-Lumina - June 23, 2009 at 9:39 AM</h2>
+<p><a id="post-218422"></a></p>
+<p>Je suis d'accord avec ce que tu proposes, Xenon.</p>
+<p>Hiding à 100% n'échoue pas lorsqu'il est lancé.</p>
+<hr>
+<h2 id="post-by-nimue---june-23-2009-at-1004-am">Post by Nimue - June 23, 2009 at 10:04 AM</h2>
+<p><a id="post-218424"></a></p>
+<p>Je suis d'accord aussi.</p>
+<hr>
+<h2 id="post-by-ex-bolero---june-23-2009-at-404-pm">Post by Ex-Bolero - June 23, 2009 at 4:04 PM</h2>
+<p><a id="post-218430"></a></p>
+<p><em>Plussoie</em></p>
+<hr>
+<h2 id="post-by-ex-animateur-korgue---june-23-2009-at-406-pm">Post by Ex-Animateur Korgue - June 23, 2009 at 4:06 PM</h2>
+<p><a id="post-218431"></a></p>
+<p>J'ai rien à redire sur ça, je suis daccord.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---june-23-2009-at-523-pm">Post by Conteur Centaure - June 23, 2009 at 5:23 PM</h2>
+<p><a id="post-218438"></a></p>
+<p>Plussoie! LOL!</p>
+<p>Enfin, sinon, j'approuve aussi. Mais pour revenir au point de Lumi, non, hiding ne rate pas à 100%. Mais même les plus grands assassins ont une chance de rater. La formule est là pour ça. Je suggère qu'on fasse la même chose avec le mind follow (si c'est bien ça le nom). Disons que plus le joueur est intelligent, plus difficile sera la réussite. Je rajouterait le resist magic et eval int dans la formule, puisque ce sont des skills directement liés à l'intellect. Mais toutes ces variables seraient fonction des points en télépathie. Plus t'as de points, plus tu résistes. Donc un joueur ne pourra résister qu'à un certain point sans placer de points en télépathie. Woila ^^</p>
+<hr>
+<h2 id="post-by-conteur-wolf---june-23-2009-at-659-pm">Post by Conteur Wolf - June 23, 2009 at 6:59 PM</h2>
+<p><a id="post-218444"></a></p>
+<p>Hiding non mais stealth on manque 1 sur 4 même avec 100 pratiquement. (je me suis trompé de nom désolé)</p>
+<p>Seshat avait déjà jadis proposé pour le Mind Follow d'augmenter le nombre de chance de ce faire remarquer en répétant le pouvoir sur la même cible durant une certaine période. Rpment ça s'explique bien en disant que le Télépathe se concentre trop sur sa cible et elle peut donc le remarquer.</p>
+<p>Donc un genre de table comme ça (chiffres toujours sujet à changer bien sûr) :</p>
+<p>Dans une période de 15 min :</p>
+<p>1re tentative = 95 % de réussir<br>
+2e tentative = 75 %<br>
+3e tentative = 55 %<br>
+4e tentative = 35 %</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---june-24-2009-at-203-am">Post by Scripteur Xenon - June 24, 2009 at 2:03 AM</h2>
+<p><a id="post-218481"></a></p>
+<p>Bon, je prends pour acquis que toutes mes suggestions sotnacceptées et je les mets sur code pendant que le débat se poursuit si nécessaire.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---july-20-2009-at-614-pm">Post by Conteur Centaure - July 20, 2009 at 6:14 PM</h2>
+<p><a id="post-221765"></a></p>
+<p>Pour savoir parce que j'en jasais avec quelqu'un hier..</p>
+<p>La suggestion de Wolf concernant les chances de plus en plus élevées de rater le mindfollow.. ça a été accepté?</p>
+<p>Parce qu'il me semble qu'on assiste à une panoplie de gensses qui ne font que du mindfollow et bousillent les secrets d'état en presque HRP..</p>
+<hr>
+<h2 id="post-by-conteur-wolf---july-20-2009-at-717-pm">Post by Conteur Wolf - July 20, 2009 at 7:17 PM</h2>
+<p><a id="post-221773"></a></p>
+<p>Le véritable problème c'est juste si les pouvoirs se retrouvent entre les mains d'un joueur moyen pas très fairplay qui ira dire tout se qu'il voit en hrp sur msn. Je parle ici d'Ivallias par exemple.</p>
+<p>Nous avions parlé de la possibilité de restreindre le dernier pouvoir à la classe de prestige, mais celles-ci ne sont pas encore faites et j'imagine que Kel préfèrerait s'en charger. En somme c'est davantage trouver une solution d'empêcher les mauvais joueurs de faire usage du mindvision.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---july-21-2009-at-324-am">Post by Scripteur Xenon - July 21, 2009 at 3:24 AM</h2>
+<p><a id="post-221846"></a></p>
+<p>La seule modification que je verrais encore nécessaire pour ramener cette classe sur terre serait un délai entre les mind something. Après, si les boulets abusent, on ne peut rien faire sauf les prendre sur le fait.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---july-21-2009-at-439-am">Post by Conteur Wolf - July 21, 2009 at 4:39 AM</h2>
+<p><a id="post-221859"></a></p>
+<p>Remplacer ce pouvoir par un autre tant qu'à ça? J'aurais pensé à un autre sort d'attaque, style poison(dommage répétitif), une genre de torture mentale. Ou on peut trouver un autre chose si on s'y met tous en coeur?</p>
+<p>Car j'ai bien peur que tout se que nous essayerons pour le rééquilibrer, cela ne fera pas le poids face au manque de faire play de certains joueurs.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---july-21-2009-at-652-pm">Post by Conteur Centaure - July 21, 2009 at 6:52 PM</h2>
+<p><a id="post-221957"></a></p>
+<p>Oui, peut-être une attaque de torture mentale. Ça serait puissant! Je mettrais par contre une limite, genre un freeze pour le joueur qui le fait et le joueur qui se le fait faire. Les deux sont paralysés, mais l'un est vraiment mal ^^</p>
+<p>Aussi, les délais entre les mindkkch font du sens. Tant pis pour les boulet!</p>
+<hr>
+<h2 id="post-by-conteur-wolf---july-21-2009-at-908-pm">Post by Conteur Wolf - July 21, 2009 at 9:08 PM</h2>
+<p><a id="post-221995"></a></p>
+<p>C'est plutôt navrant pour les bons joueurs qui en font bon usage de se système.. Ce sont toujours les bons joueurs qui payent pour les âneries des mauvais -_-'.</p>
+<p>Attendons de seconds avis sur le sujet avant d'aller plus loin.</p>
+<hr>
+<h2 id="post-by-ex-bolero---july-21-2009-at-925-pm">Post by Ex-Bolero - July 21, 2009 at 9:25 PM</h2>
+<p><a id="post-221998"></a></p>
+<p>Euh bah y'a ce qu'on avait suggéré avant.</p>
+<p>Restriction de la télépathie aux gens en faisant la demande par BG... Il n'y aurait qu'à ajouter une propriété comme &quot;CanUseTelepathy&quot; sur les PJ afin que n'importe quel comique ne puisse pas investir ses bonus là-dedans.</p>
+<p>Cependant, ça aurait le désavantage de rendre certaines classes non-attrayantes. Personne ne voudrait plus être enchanteur, sachant que le seul PA secondaire intéressant est Télépathie (à mon souvenir).</p>
+<hr>
+<h2 id="post-by-conteur-wolf---july-22-2009-at-312-am">Post by Conteur Wolf - July 22, 2009 at 3:12 AM</h2>
+<p><a id="post-222064"></a></p>
+<p>Enchanteur au contraire à le potentiel de faire une bombe de mage à haut niveau. Mais bon, je crois sincèrement que notre problème actuel est lié autour d'un seul pouvoir qui rend en quelque sorte désuet le voyage astral.</p>
+<p>Voyage astral à mon sens est plus logique et fair play pour espionner. Au moins l'individu est dans les environs et il est possible de le cibler.</p>
+<hr>
+<h2 id="post-by-nimue---july-23-2009-at-821-pm">Post by Nimue - July 23, 2009 at 8:21 PM</h2>
+<p><a id="post-222215"></a></p>
+<p>Le voyage astral dure combien de temps? Ce me semblerai une option viable si le temps avec beaucoup de point n'est pas ridiculement rire.</p>
+<p>Je veux dire quelqu'un qui investit 60 points en télépathie pour finalement avoir qu'une minute de voyage astral, ça craint un peu quand même... ^^</p>
+<hr>
+<h2 id="post-by-ex-bolero---july-23-2009-at-1046-pm">Post by Ex-Bolero - July 23, 2009 at 10:46 PM</h2>
+<p><a id="post-222279"></a></p>
+<p>Monte spirit speak.</p>
+<hr>
+<h2 id="post-by-nimue---july-24-2009-at-338-am">Post by Nimue - July 24, 2009 at 3:38 AM</h2>
+<p><a id="post-222360"></a></p>
+<p>Je n'ai même pas encore fait le voyage Astral... <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+C'était pour savoir un peu comment elle marchait cette habilité à la base.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---july-25-2009-at-102-am">Post by Scripteur Xenon - July 25, 2009 at 1:02 AM</h2>
+<p><a id="post-222597"></a></p>
+<p>Temps = Spirit Speak / 2.</p>
+<p>Autre option : Distance maximale pour le voyage astral? Je ne sais pas là, je dis que ce pouvoir est intéressant, mais ne devrait pas être pratiquable par n'importe quel boulet.</p>
+<hr>
+<h2 id="post-by-ex-bolero---july-25-2009-at-645-am">Post by Ex-Bolero - July 25, 2009 at 6:45 AM</h2>
+<p><a id="post-222659"></a></p>
+<p>Ce sort me semble balancé. Sérieusement. Pas de distance maximale... on n'a que 50 secondes pour espionner dans le meilleur des cas, alors...</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---july-25-2009-at-707-am">Post by Scripteur Xenon - July 25, 2009 at 7:07 AM</h2>
+<p><a id="post-222674"></a></p>
+<p>Oui, ça semble balancé, pour des joueurs comme Lenne ou Sara... ce l'est un peu moins pour la trollée de newbs qui débarquent, enfin, c'est mon opinion et jusqu'à preuve du contraire, je suis ici pour scripter ce que vous décidez est la voie à suivre!</p>
+<hr>
+<h2 id="post-by-ex-bolero---july-25-2009-at-344-pm">Post by Ex-Bolero - July 25, 2009 at 3:44 PM</h2>
+<p><a id="post-222729"></a></p>
+<p>Un noob qui débarque n'aura jamais 100% en spirit speak avant un long moment. Et même s'il atteint ce niveau, 50 secondes ne lui permettront pas d'apprendre le secret le mieux gardé de l'État. Mettons même que c'est une bête et qu'il prend le chemin le plus court en courant pour allez au bureau de Bolton (il s'est posté à l'entrée du palais, disons). Ça prend environ 15 secondes à mon avis, ce qui lui laise genre 35 secondes pour observer. Il a tellement peu de chances de tomber sur quelque chose d'intéressant que c'en est ridicule. Évidemment il peut encore y retourner, mais bon... il va se souler de toujours faire le trajet ^^</p>
+<hr>
+<h2 id="post-by-nimue---july-25-2009-at-411-pm">Post by Nimue - July 25, 2009 at 4:11 PM</h2>
+<p><a id="post-222734"></a></p>
+<p>Personnellement de la manière expliquer par Bolero, j'aurais pratiquement tendance à dire que le temps du sort n'est justement pas assez long, mais ça reste de mon point de vu de personne qui n'en abusera pas. Je peux comprendre les réticences mais d'un autre coté, je cache pas que je trouve un tout petit peu plate que les joueurs corrects s'en voit pénaliser parce que ceux qui ne le sont pas utilise à mauvaise escient les pouvoirs télépathes.</p>
+<p>J'allongerais le temps du voyage Astral un peu (on je ferait entrer le nombre de point de telepathie en compte dans le calcul) et je pense que le mindfollow avec les modifications suivantes;</p>
+<p>Seshat avait déjà jadis proposé pour le Mind Follow d'augmenter le nombre de chance de ce faire remarquer en répétant le pouvoir sur la même cible durant une certaine période. Rpment ça s'explique bien en disant que le Télépathe se concentre trop sur sa cible et elle peut donc le remarquer.</p>
+<p>Donc un genre de table comme ça (chiffres toujours sujet à changer bien sûr) :</p>
+<p>Dans une période de 15 min :</p>
+<p>1re tentative = 95 % de réussir<br>
+2e tentative = 75 %<br>
+3e tentative = 55 %<br>
+4e tentative = 35 %</p>
+<ul>
+<li>Contact permanent et éphémère.</li>
+</ul>
+<p>Déjà là le niveau de difficulté est plus élevé quand même.</p>
+<p>Mais je comprends toutes les réticences... Comme vous le dite, les personnes qui abusent pas payent toujours pour celles qui le font.</p>
+<hr>
+<h2 id="post-by-ex-bolero---july-25-2009-at-435-pm">Post by Ex-Bolero - July 25, 2009 at 4:35 PM</h2>
+<p><a id="post-222736"></a></p>
+<p>Pas bête d'ajouter les PA de Télépathie dans le calcul.</p>
+<hr>
+<h2 id="post-by-rouge-ind---july-25-2009-at-703-pm">Post by Rouge, Ind - July 25, 2009 at 7:03 PM</h2>
+<p><a id="post-222740"></a></p>
+<p><span style="color:#0040FF">D'accord avec Nimue.</span></p>
+<hr>
+<h2 id="post-by-nimue---august-5-2009-at-1227-am">Post by Nimue - August 5, 2009 at 12:27 AM</h2>
+<p><a id="post-224879"></a></p>
+<p>Qu'advient-il de tout ceci?</p>
+<hr>
+<h2 id="post-by-ex-lumina---august-5-2009-at-1229-am">Post by Ex-Lumina - August 5, 2009 at 12:29 AM</h2>
+<p><a id="post-224880"></a></p>
+<p>On peut pas updater, Nimue.</p>
+<hr>
+<h2 id="post-by-nimue---august-5-2009-at-1237-am">Post by Nimue - August 5, 2009 at 12:37 AM</h2>
+<p><a id="post-224883"></a></p>
+<p>Ha oui ça je sais, je parlais plutôt de l'autre discussion a l'entour de cela dans les reply précédant.</p>
+<p>Mais comme on ne peut pas updater, ça peut attendre en effet.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-7-2009-at-1237-am">Post by Scripteur Xenon - August 7, 2009 at 12:37 AM</h2>
+<p><a id="post-225343"></a></p>
+<p>Rien ne vous empeche de discuter, je rattraperai.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---august-16-2009-at-740-pm">Post by Conteur Wolf - August 16, 2009 at 7:40 PM</h2>
+<p><a id="post-226987"></a></p>
+<p>Je viens de réaliser parmi les nouveau, une majorité adopte la classe sage/necro/enchanteur pour investir leurs points en télépathie sur leur perso secondaire. J'ai bien peur que ce soit un moyen d'obtenir les infos sur les autres joueurs de manière hrp. Je crois sérieusement qu'il faudrait restreindre les classes ou du moins trouver un moyen de restreindre le PA que pour les bons rôlistes.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---august-17-2009-at-623-pm">Post by Conteur Centaure - August 17, 2009 at 6:23 PM</h2>
+<p><a id="post-227125"></a></p>
+<p>On en a discuté dans un autre sujet, mais pourquoi ne pas mettre la classe de sage seulement accessible aux joueurs ayant une cote minimale de 5? En plus de demander un BG de fou?</p>
+<hr>
+<h2 id="post-by-ex-lumina---august-17-2009-at-950-pm">Post by Ex-Lumina - August 17, 2009 at 9:50 PM</h2>
+<p><a id="post-227148"></a></p>
+<p>Moi ça ne me dérange pas.</p>
+<p>En même temps, Morvan avait bien 5 de cote, et aurait probablement pu pondre un BG correct ; ça n'aurait rien arrêté.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---august-17-2009-at-1008-pm">Post by Conteur Centaure - August 17, 2009 at 10:08 PM</h2>
+<p><a id="post-227151"></a></p>
+<p>Ouais, sauf que le cas Morvan me semble un peu particulier.</p>
+<p>Les fanatiques d'HRP ne seraient pour la plupart pas capable d'être accepté. Donc ça limite déjà de beaucoup les fuites HRP, selon moi.</p>
+<p>Et au besoin, on demande une cote de 6 <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conteur-wolf---august-18-2009-at-337-am">Post by Conteur Wolf - August 18, 2009 at 3:37 AM</h2>
+<p><a id="post-227210"></a></p>
+<p>Sinon une idée comme ca? Xenon c'est possible de scripter une props qui désactive l'usage des pouvoirs de télépathie qui requiert 30 PA et plus? Comme cela il serait possible de désactiver chez les joueurs qui n'ont pas la cote nécessaire ou encore pas de Bg si on en demande un. Ce qui nous rendrait la tâche du filtrage beaucoup plus simple sans restreindre nécessairement une classe. Car le Pa peut se retrouver sur tous les personnages après tout grâce au point bonus...?</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-18-2009-at-922-pm">Post by Scripteur Xenon - August 18, 2009 at 9:22 PM</h2>
+<p><a id="post-227316"></a></p>
+<p>Je ne suis pas certain d'avoir compris ta question. Tu veux une propriété sur chaque joueur, booléenne (true/false) permettant d'utiliser ou non les pouvoirs télépathiques avancés (30 pa +)? Si cette valeur est à false, le joueur doit avoir un bg? Mais comment contrôle-tu les cibles autorisés ou pas?</p>
+<hr>
+<h2 id="post-by-conteur-wolf---august-18-2009-at-1022-pm">Post by Conteur Wolf - August 18, 2009 at 10:22 PM</h2>
+<p><a id="post-227328"></a></p>
+<p>En somme tout ce qui est false ne peut avoir accès aux pouvoirs télépathie de 30 PA et plus. False par défaut à la création du personnage, ce sont les gm qui peuvent le changer via la commande ou le menu des props, selon la moyenne des cotes du joueur et si le bg l'autorise.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-19-2009-at-652-am">Post by Scripteur Xenon - August 19, 2009 at 6:52 AM</h2>
+<p><a id="post-227413"></a></p>
+<p>Ok, les autres en pensent quoi?</p>
+<hr>
+<h2 id="post-by-conteur-centaure---august-19-2009-at-758-pm">Post by Conteur Centaure - August 19, 2009 at 7:58 PM</h2>
+<p><a id="post-227469"></a></p>
+<p>J'aime le technique.</p>
+<p>Mais je nous vois mal retirer le droit de pratiquer aux gens qui sont déjà télépathe. Enfin, j'imagine que l'argument du HRP se défends assez bien.</p>
+<p>Vendu.</p>
+<hr>
+<h2 id="post-by-rouge-ind---august-20-2009-at-716-am">Post by Rouge, Ind - August 20, 2009 at 7:16 AM</h2>
+<p><a id="post-227548"></a></p>
+<p><span style="color:#0040FF">Ça me va.</span></p>
+<hr>
+<h2 id="post-by-ex-animateur-korgue---august-21-2009-at-121-am">Post by Ex-Animateur Korgue - August 21, 2009 at 1:21 AM</h2>
+<p><a id="post-227637"></a></p>
+<p>Oui ça me va aussi.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---august-21-2009-at-213-am">Post by Conteur Wolf - August 21, 2009 at 2:13 AM</h2>
+<p><a id="post-227641"></a></p>
+<p>Les télépathes actuels qui peuvent en faire usage ont déjà une cote moyenne de 5 et + de toute manière.</p>
+<hr>
+<h2 id="post-by-ex-lumina---august-21-2009-at-223-am">Post by Ex-Lumina - August 21, 2009 at 2:23 AM</h2>
+<p><a id="post-227646"></a></p>
+<p>Thomas Lenne et Sarä sont des 6, on tourne en rond, oui...</p>
+<hr>
+<h2 id="post-by-ex-bolero---august-21-2009-at-231-am">Post by Ex-Bolero - August 21, 2009 at 2:31 AM</h2>
+<p><a id="post-227648"></a></p>
+<p>ok ok.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---august-22-2009-at-734-am">Post by Conteur Centaure - August 22, 2009 at 7:34 AM</h2>
+<p><a id="post-227790"></a></p>
+<p>On tourne en rond maintenant, mais on se prépare pour la venue des boulets avec des points de telepath récupérés de morts..</p>
+<p>Je pense que ca vaut la peine d'être instauré.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---august-22-2009-at-911-am">Post by Conteur Wolf - August 22, 2009 at 9:11 AM</h2>
+<p><a id="post-227792"></a></p>
+<p>Ouep, Xenon tu as le feu vert pour que ce soit applicable dès que Kel aura le temps de régler le trouble d'écrasement de fichiers.</p>
+<hr>
+<h2 id="post-by-nimue---august-22-2009-at-949-am">Post by Nimue - August 22, 2009 at 9:49 AM</h2>
+<p><a id="post-227794"></a></p>
+<p>Ça me va aussi.</p>
+<hr>
+<h2 id="post-by-ex-lumina---august-22-2009-at-1124-am">Post by Ex-Lumina - August 22, 2009 at 11:24 AM</h2>
+<p><a id="post-227803"></a></p>
+<p>Moi je trouve ça inutile, mais si ça vous rassure tant que ça</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-22-2009-at-735-pm">Post by Scripteur Xenon - August 22, 2009 at 7:35 PM</h2>
+<p><a id="post-227825"></a></p>
+<p>Message reçu.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---august-23-2009-at-1221-am">Post by Conteur Wolf - August 23, 2009 at 12:21 AM</h2>
+<p><a id="post-227860"></a></p>
+<p>Inutile ou pas, c'est les joueurs que ça va rassurer... Savoir un joueur comme thorgraks ou Eramil pouvant avoir accès à de la télépathie de haut niveau pouvant détruire le rp de tout le monde, ca en inquiète une majorité, pas uniquement moi. Maintenant si un joueur de bonne cote décide de se la jouer tel que Morvan, au moins nous saurons qu'il y a un minimum de logique derrière ça. Bien que ça détruira encore l'intrigue et le guildes secrètes, si c'est se que tu voulais dire par inutile..?</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-24-2009-at-1127-pm">Post by Scripteur Xenon - August 24, 2009 at 11:27 PM</h2>
+<p><a id="post-228032"></a></p>
+<p>Fait.</p>
+<p>Si l'aptitude (télépathie) nécessaire est supérieure ou égale à 30 ET que la cote moyenne du joueur est inférieur à 5.</p>
+<p>Vous êtes déstabilisé, vous n'arrivez pas à utiliser la capacité.<br>
+Vous devez avoir une cote plus élevée.</p>
+<hr>
+<h2 id="post-by-ex-bolero---august-25-2009-at-402-pm">Post by Ex-Bolero - August 25, 2009 at 4:02 PM</h2>
+<p><a id="post-228073"></a></p>
+<p>Lol mon dieu............................. La 2e phrase est-elle réellement utile? <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-25-2009-at-548-pm">Post by Scripteur Xenon - August 25, 2009 at 5:48 PM</h2>
+<p><a id="post-228077"></a></p>
+<p>Si je l'ai posté ici, c'est pour pouvoir la remettre en question. Gâtez-vous, haha.</p>
+<hr>
+<h2 id="post-by-ex-lumina---august-25-2009-at-716-pm">Post by Ex-Lumina - August 25, 2009 at 7:16 PM</h2>
+<p><a id="post-228085"></a></p>
+<p>Je la remplacerais par &quot;Vous êtes un pas-bon, jetez-vous en bas du pont.&quot;</p>
+<p>Ça rime en plus.</p>
+<hr>
+<h2 id="post-by-nimue---august-25-2009-at-718-pm">Post by Nimue - August 25, 2009 at 7:18 PM</h2>
+<p><a id="post-228087"></a></p>
+<p>&quot; Ta cote craint tu es qu'un bon à rien.&quot;</p>
+<hr>
+<h2 id="post-by-conteur-wolf---august-25-2009-at-742-pm">Post by Conteur Wolf - August 25, 2009 at 7:42 PM</h2>
+<p><a id="post-228093"></a></p>
+<p>&quot;Chienne truie!!&quot;</p>
+<p>Non en fait on aime pas parler de la cote aux joueurs, peut-être seulement laisser un message comme quoi ils n'ont pas la concentration nécessaire, c'est tout. Et nous aviserons par forum qu'il faut un Bg en plus d'un bon rp...</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---august-25-2009-at-1117-pm">Post by Scripteur Xenon - August 25, 2009 at 11:17 PM</h2>
+<p><a id="post-228124"></a></p>
+<p>Ouais, parfait.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-26-2009-at-1236-am">Post by Coordinateur Apoc - August 26, 2009 at 12:36 AM</h2>
+<p><a id="post-228134"></a></p>
+<p>Un faudrait un combo du genre...</p>
+<p>Vous êtes un pas-bon, jetez-vous en bas du pont.<br>
+Ta cote craint, tu es qu'un bon à rien.<br>
+Mange un coup de baton, Puis un autre bon dans le front.<br>
+C'est avec plein de chagrin, Rate ton machin.</p>
+<hr>
+<h2 id="post-by-lancelot---september-12-2009-at-756-am">Post by Lancelot - September 12, 2009 at 7:56 AM</h2>
+<p><a id="post-230443"></a></p>
+<p>Pourquoi pas: &quot;Ma grand-mère RP mieux que toi?&quot;.</p>
+<hr>
+<h2 id="post-by-ex-bolero---september-17-2009-at-336-pm">Post by Ex-Bolero - September 17, 2009 at 3:36 PM</h2>
+<p><a id="post-231103"></a></p>
+<p>Filuna a pagé pour savoir pourquoi elle ne pouvait pas utiliser son skill.</p>
+<p>Cote moyenne: 4<br>
+J'ai mis à 5<br>
+Elle pouvait. J'ai remis à 4, et puis non.</p>
+<p>J'en déduis que c'est implanté. Comment je lui explique ça, moi? Je ne lui ai rien dit, mais elle demandait des explications.</p>
+<hr>
+<h2 id="post-by-nimue---september-17-2009-at-650-pm">Post by Nimue - September 17, 2009 at 6:50 PM</h2>
+<p><a id="post-231122"></a></p>
+<p>Ha j'aurais cru que ce jouer avait 5.</p>
+<p>Hum faisons une annonce pour expliquer les quelques mises à jours, du coup ça expliquera pour tout le monde. Mais j'avoue que c'est un peu embêtant à expliquer.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---september-17-2009-at-654-pm">Post by Conteur Wolf - September 17, 2009 at 6:54 PM</h2>
+<p><a id="post-231123"></a></p>
+<p>Bah elle se tient a 4,5 car souvent elle est co 10h par jour. Sa qualité Rp diminue parfois, et ça c'est sans compter les fois qu'elle fait trop de party en jeu. J'ai déjà .tip à ce sujet à plusieurs reprises.</p>
+<p>Mais bon oui un post pour expliquer l'update serait utile.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---september-17-2009-at-723-pm">Post by Conteur Centaure - September 17, 2009 at 7:23 PM</h2>
+<p><a id="post-231129"></a></p>
+<p>+1 pour le post.</p>
+<p>Mais j'avoue que j'aurais cru aussi qu'elle se situait toujours dans le 5. Quoique l'explication de woulfie tiens la route.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---september-17-2009-at-726-pm">Post by Scripteur Xenon - September 17, 2009 at 7:26 PM</h2>
+<p><a id="post-231131"></a></p>
+<p>C'est moi qui doit l'écrire? étant donné que c'est un peu un sujet fragile je me pose la question...</p>
+<hr>
+<h2 id="post-by-conteur-centaure---september-17-2009-at-728-pm">Post by Conteur Centaure - September 17, 2009 at 7:28 PM</h2>
+<p><a id="post-231135"></a></p>
+<p>Moi je dit oui; tu prends le blâme, on passe pour des gentils et le tour est joué!</p>
+<p>Team :  <img src="/assets/smilies/angel.gif" alt=""> Xenon (un gaz toxique, soit-dit en passant) :  <img src="/assets/smilies/diablo.gif" alt=""></p>
+<hr>
+<h2 id="post-by-nimue---september-17-2009-at-833-pm">Post by Nimue - September 17, 2009 at 8:33 PM</h2>
+<p><a id="post-231142"></a></p>
+<p>Je trouve ça quasiment chien à présent... ;p</p>
+<p>Déjà avec la modification de la prise de contact... Je me questionne maintenant s'il est vraiment nécessaire de mettre une limitation de cote? J'ai vu un peu ce genre de Système ailleurs et en y repensant... Franchement ce n'était pas super.</p>
+<p><em>Il n'y a que les fous qui changent pas d'idée...</em></p>
+<hr>
+<h2 id="post-by-ex-bolero---september-18-2009-at-1234-am">Post by Ex-Bolero - September 18, 2009 at 12:34 AM</h2>
+<p><a id="post-231151"></a></p>
+<p>Je suis prêt à revenir en arrière s'il le faut... À moins que ce soit compliqué à changer. Car j'ai un peu changé de face quand elle m'a demandé pourquoi elle ne pouvait pas l'utiliser.</p>
+<hr>
+<h2 id="post-by-ex-lumina---september-18-2009-at-1253-am">Post by Ex-Lumina - September 18, 2009 at 12:53 AM</h2>
+<p><a id="post-231153"></a></p>
+<p>Je suis ok avec le recul si c'est ce que vous voulez</p>
+<hr>
+<h2 id="post-by-lancelot---september-18-2009-at-1259-am">Post by Lancelot - September 18, 2009 at 12:59 AM</h2>
+<p><a id="post-231155"></a></p>
+<p>J'en conviens que ça peut être décourageant pour certains joueurs. Que les joueurs ne peuvent s'en servir à cause de leur cote, ça peut amener pas mal de négatif.</p>
+<p>Là d'où je viens, la cote RP affectait pleins de systèmes, et elle était visible en plus. Si vous saviez le nombre de pleurs que j'ai recueillis sur mon MSN là-bas, par d'autres joueurs découragés car ils venaient de baisser de cote et ne pourraient plus avoir leur prochain niveau de classe, ou un autre truc similaire.</p>
+<p>Suggestions:</p>
+<ul>
+<li>
+<p>Cote nécessaire de 4 à 6. Et ceux en abusant ( Sans motif, autre que je suis le roi d'une grande organisation d'espionnage. ) à la Morvan n'auront qu'à être cotés 3.</p>
+</li>
+<li>
+<p>Ou bien plus aucune restriction de cote, étant donné que désormais avec le nouveau système, on peut sentir/résister à la télépathie.</p>
+</li>
+</ul>
+<hr>
+<h2 id="post-by-nimue---september-18-2009-at-100-am">Post by Nimue - September 18, 2009 at 1:00 AM</h2>
+<p><a id="post-231156"></a></p>
+<p>Personnellement je reviendrais en arrière sur cette décision, justement à cause que les autres modifications sont déjà plus limitatives.</p>
+<p>Il faut pas exagéré non plus... ^^ C'est un jeu.</p>
+<hr>
+<h2 id="post-by-ex-animateur-korgue---september-18-2009-at-116-am">Post by Ex-Animateur Korgue - September 18, 2009 at 1:16 AM</h2>
+<p><a id="post-231158"></a></p>
+<p>Oui je suis d'accord aussi qu'on y a peut-être été fort un peu...<br>
+Mais on revient on point de départ à se demander qu'est-ce qu'on fait avec ça.</p>
+<hr>
+<h2 id="post-by-nimue---september-18-2009-at-119-am">Post by Nimue - September 18, 2009 at 1:19 AM</h2>
+<p><a id="post-231159"></a></p>
+<p>En fait non, nous avons déjà fait quelque chose, soit la modification du Systeme.</p>
+<p>Avant le télépathe avait une liste de malade mental pour faire son follow.</p>
+<p>Maintenant, il n'a droit qu'à 2 contacts permanant et 3 Ephères, et ses personnes là on la chance de se rendre compte qu'un lien a été fait ou tentera d'être fait.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---september-18-2009-at-229-am">Post by Scripteur Xenon - September 18, 2009 at 2:29 AM</h2>
+<p><a id="post-231165"></a></p>
+<p>5 éphémères en fait.</p>
+<p>Le retour en arriére est trés simple techniquement.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---september-18-2009-at-425-am">Post by Conteur Centaure - September 18, 2009 at 4:25 AM</h2>
+<p><a id="post-231173"></a></p>
+<p>Go back then.</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---september-18-2009-at-544-am">Post by Scripteur Xenon - September 18, 2009 at 5:44 AM</h2>
+<p><a id="post-231182"></a></p>
+<p>Done. Ce sera inclus dans ma prochaine soumission.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---september-18-2009-at-816-am">Post by Conteur Wolf - September 18, 2009 at 8:16 AM</h2>
+<p><a id="post-231195"></a></p>
+<p>Je propose que le props soit là mais manuellement. Comme ça si nous avons un Thor et Miguel Télépathe... nous règlerons cela cas par cas. J'aurais envi de dire la même chose pour les personnages secondaires, plusieurs se créer des sages comme perso secondaire. C'est un bon moyen d'obtenir de l'info. Mais c'est déjà limité par les nouveaux changements en effet donc peu importe pour moi.</p>
+<hr>
+<h2 id="post-by-ex-bolero---september-18-2009-at-348-pm">Post by Ex-Bolero - September 18, 2009 at 3:48 PM</h2>
+<p><a id="post-231211"></a></p>
+<p>Ça aurait du sens Wolf, +1.</p>
+<hr>
+<h2 id="post-by-ex-lumina---september-18-2009-at-457-pm">Post by Ex-Lumina - September 18, 2009 at 4:57 PM</h2>
+<p><a id="post-231216"></a></p>
+<p>Ça fait un peu discrimination entre les joueurs selon ceux que nous aimons et ceux que nous n'aimons pas.</p>
+<p>Je trouve ça moins adéquat que l'histoire des cotes.</p>
+<p>Tant qu'à reculer faisons-le au complet.</p>
+<hr>
+<h2 id="post-by-nimue---september-18-2009-at-600-pm">Post by Nimue - September 18, 2009 at 6:00 PM</h2>
+<p><a id="post-231222"></a></p>
+<p>J'aime mieux avertir le joueur et qu'il est une cote basse que lui bloquer un pouvoir totalement finalement.</p>
+<p>Je suis donc pour juste revenir en arrière la dessus, pas de limitation avec la cote.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---september-18-2009-at-734-pm">Post by Conteur Wolf - September 18, 2009 at 7:34 PM</h2>
+<p><a id="post-231228"></a></p>
+<p>Je préfère entendre un joueur de mauvaise cote râler qu'il ne peut avoir accès au dernier pouvoir que de voir excellent rôliste perdre tout son jeu de manière hrp. Un joueur comme Eramil, se qu'il voit en jeu sur un personnage avec mindvision, il ne le répètera pas juste en jeu, mais sur msn également. Ce n'est pas une question de favoritisme, c'est du contrôle comme on accorde pas le droit de jouer tiefling à n'importe qui... Je n'ai rien a retirer la limite de cote, mais nous connaissons quel joueur est susceptible d'abuser et ce sera bon d'en avoir un contrôle.</p>
+<p>Je serais pas contre également à trouver en échange quelques nouveaux pouvoirs utiles aux télépathes qui se gagnent en plus bas niveaux...</p>
+<hr>
+<h2 id="post-by-ex-bolero---september-22-2009-at-256-pm">Post by Ex-Bolero - September 22, 2009 at 2:56 PM</h2>
+<p><a id="post-231569"></a></p>
+<p>Commençons par reculer. J'ai dit à Filuna qu'elle aurait une réponse d'ici mardi ou mercredi. Dois-je lui parler de la restriction actuelle des cotes?</p>
+<hr>
+<h2 id="post-by-conteur-wolf---september-22-2009-at-551-pm">Post by Conteur Wolf - September 22, 2009 at 5:51 PM</h2>
+<p><a id="post-231577"></a></p>
+<p>Reculons comme j'ai dit et nous réglerons au cas par cas les prochains?</p>
+<hr>
+<h2 id="post-by-ex-lumina---september-22-2009-at-640-pm">Post by Ex-Lumina - September 22, 2009 at 6:40 PM</h2>
+<p><a id="post-231592"></a></p>
+<p>Je n'aime pas le cas par cas pour cette situation-là. C'est vraiment laissé à la subjectivité de l'équipe à savoir si l'utilisation d'une personne ou d'une autre ennuie l'équipe.</p>
+<p>Ça donne trop place à un jugement qui varie selon la dangerosité de quelqu'un.</p>
+<hr>
+<h2 id="post-by-nimue---september-22-2009-at-723-pm">Post by Nimue - September 22, 2009 at 7:23 PM</h2>
+<p><a id="post-231602"></a></p>
+<p>Revenons en arrière la dessus. Je suis de l'avis de Lumina pour le cas part cas... Je ne suis pas pour.</p>
+<hr>
+<h2 id="post-by-lancelot---september-22-2009-at-1139-pm">Post by Lancelot - September 22, 2009 at 11:39 PM</h2>
+<p><a id="post-231639"></a></p>
+<p>De toute manière, il n'y aura plus de problème désormais que le système est équilibré par ses chances de résistance/sentir lorsque c'est utilisé sur nous.</p>
+<p>Que la restriction de cote soit enlevée, et que ce dossier soit fermé. ^^</p>
+<hr>
+<h2 id="post-by-conteur-wolf---september-23-2009-at-158-am">Post by Conteur Wolf - September 23, 2009 at 1:58 AM</h2>
+<p><a id="post-231667"></a></p>
+<p>C'est en effet une question de dangerosité niveau Fair play que je crains mais bon peu importe si le reste de l'équipe préfère ne rien y faire, ce qui arrivera arrivera et on sanctionnera si mal il y a pour le peu de chance que ça arrive avec les nouvelles restreintes...</p>
+<hr>
+<h2 id="post-by-ex-bolero---september-23-2009-at-228-am">Post by Ex-Bolero - September 23, 2009 at 2:28 AM</h2>
+<p><a id="post-231675"></a></p>
+<p>Voilà, je crois que les risques ont été minimisés.</p>
+<p>Xénon? <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-xenon---september-23-2009-at-522-am">Post by Scripteur Xenon - September 23, 2009 at 5:22 AM</h2>
+<p><a id="post-231695"></a></p>
+<p>Augmentés! Parce que la restriction sur la cote est retirée, normalement.</p>
+<hr>
+<h2 id="post-by-nimue---september-23-2009-at-535-am">Post by Nimue - September 23, 2009 at 5:35 AM</h2>
+<p><a id="post-231701"></a></p>
+<p>Augmenter... On dit update en bon français espèce de scripteur inculte...!</p>
+<hr>
+<h2 id="post-by-lancelot---september-23-2009-at-618-am">Post by Lancelot - September 23, 2009 at 6:18 AM</h2>
+<p><a id="post-231709"></a></p>
+<p>Kss faut toujours la surveiller, elle. Il parlait des risques!</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---september-23-2009-at-709-am">Post by Scripteur Xenon - September 23, 2009 at 7:09 AM</h2>
+<p><a id="post-231717"></a></p>
+<p>+1 Lancelot <img src="/assets/smilies/smile.gif" alt=""><br>
+Si je voulais absolument franciser update, j'aurais dis mise-à-jour.</p>
+<hr>
+<h2 id="post-by-nimue---september-23-2009-at-711-am">Post by Nimue - September 23, 2009 at 7:11 AM</h2>
+<p><a id="post-231718"></a></p>
+<p>J'ai eu une grosse journée... :- P</p>
+<hr>
+<h2 id="post-by-scripteur-xenon---september-23-2009-at-712-am">Post by Scripteur Xenon - September 23, 2009 at 7:12 AM</h2>
+<p><a id="post-231719"></a></p>
+<p>Je sais ce que c'est, je t'ai dis que j'allais me coucher y'a de cela 90 min!</p>
+<hr>
+<h2 id="post-by-conteur-wolf---september-23-2009-at-1113-am">Post by Conteur Wolf - September 23, 2009 at 11:13 AM</h2>
+<p><a id="post-231736"></a></p>
+<p><em>Se met un sac de papier Brun sur la tête et fait comme si Nimue n'était pas passée</em></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problèmes avec les objets vendue au port... - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Problèmes avec les objets vendue au port...</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">Problèmes avec les objets vendue au port...</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="problmes-avec-les-objets-vendue-au-port">Problèmes avec les objets vendue au port...</h1>
+<h2 id="post-by-ascyla-syre-cp---february-4-2008-at-810-pm">Post by Ascyla Syre, CP - February 4, 2008 at 8:10 PM</h2>
+<p><a id="post-148684"></a></p>
+<p>Bon voilà, hier ce n'était pas si grave, je n'avais que perdu une étagère à nourriture, mais là, une blibliothèque et une grande fiole de potion s'ajoute à ma liste.</p>
+<p>Je m'explique,<br>
+Quand nous utillisons .decomove sur un objet vendue au port, sois il disparaît, sois il prend une autre forme.<br>
+J'ai deux étagère que j'ai payé au total 3 000 écus, quand j'ai tenté de les tourné avec .decomove, elles sont tout les deux devenue des étagères simples, pour ce qui est de ma fiole, elle as complètement disparue..<br>
+Enfin je doute que les Gm rembourse se genre de chose..Faudrais simplement faire en sorte que sa n'arrive plus.. :S</p>
+<p>Voilà,</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---february-4-2008-at-825-pm">Post by Feydanith, dit la Carpe - February 4, 2008 at 8:25 PM</h2>
+<p><a id="post-148687"></a></p>
+<p>Amusant, j'avais pas prévu ce bug.</p>
+<p>C'est parce que les objets du port sont fabriqués à partir d'autres items dont on change l'item ID ( l'apparence quoi ). Cependant, d'un point de vu fonctionnel, dans le serveur, ça reste une entité &quot;étagère de base&quot; et quand tu la tournes, ben ça se raccroche à la fonction pour tourner de l'étagère de base, donc ça met le skin de l'étage de base tournée ^^</p>
+<p>Pour résoudre ça, il faudrait coder toutes les étagères avec les différents items id ou trouver une astuce avec le flip' attribute pour qu'il aille lire un tableau de correspondance.</p>
+<p>Conclusion : Ne faites surtout pas tourner vos objets du port sans la présence d'un gm pour récupérer le coup <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ascyla-syre-cp---february-4-2008-at-837-pm">Post by Ascyla Syre, CP - February 4, 2008 at 8:37 PM</h2>
+<p><a id="post-148691"></a></p>
+<p>Je crois que je retiendrais la Leçon, j'espère pour les autres qu'ils ne seront pas confronté à ce bug, faite bien attention ^^</p>
+<p>Merci Umrae, c'était une réponce très détailler et elle me convient parfaitement.</p>
+<hr>
+<h2 id="post-by-yriel-asuryan---february-4-2008-at-900-pm">Post by Yriel Asuryan - February 4, 2008 at 9:00 PM</h2>
+<p><a id="post-148695"></a></p>
+<p>Prévenez les ventes au pooort !<br>
+Je les loupe tout le temps</p>
+<hr>
+<h2 id="post-by-ascyla-syre-cp---february-4-2008-at-938-pm">Post by Ascyla Syre, CP - February 4, 2008 at 9:38 PM</h2>
+<p><a id="post-148701"></a></p>
+<h2 id="1-globe-teresse">Je reconte maintenant de nouveaux problèmes..<br>
+J'ai perdu plusieurs choses qui était vérouiller avant que je déco, maintenant ils ne sont plus là..<br>
+Je parle ici:<br>
+1 coffre bourré de vêtement<br>
+1 Étagère avec des truc d'alchimies dedans<br>
+1 panier à fruits,<br>
+1 chandellier<br>
+2 grand vase<br>
+1 globe-teresse</h2>
+<p>Si quelqu'un vois ça en jeu à un endroit que ce n'est pas sensé d'être..Faite moi signe.</p>
+<p>Ça m'est déja arrivé, mais par chance j'avais retrouvé mes deux objets à quelque pas de chez moi, et vérouiller...</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

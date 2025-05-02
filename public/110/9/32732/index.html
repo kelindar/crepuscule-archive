@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petit problème avec mon UO et crep - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Petit problème avec mon UO et crep</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/110//" class="nav-item">Général</a>
+                
+                &rsaquo; <span class="current-page">Petit problème avec mon UO et crep</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="petit-problme-avec-mon-uo-et-crep">Petit problème avec mon UO et crep</h1>
+<h2 id="post-by-malik-croumicou-fdc---february-4-2010-at-1011-pm">Post by Malik Croumicou, Fdc - February 4, 2010 at 10:11 PM</h2>
+<p><a id="post-243875"></a></p>
+<p>Salut ! bon je vien de réinstaller tout, UOML et crepuscle au complet, parce que j'avais quelques bogue anciennement...</p>
+<p>J'ai eu beaucoup de difficulté à refaire marcher le tout, mais maintenant ça marche sauf que il y a un message d'erreur qui apparait lorsque je démare Crepuscule update, voici une immage;</p>
+<p><img src="http://i979.photobucket.com/albums/ae277/John33-09/trouble.jpg" alt=""></p>
+<p>En suite, il y a un autre message d'erreur quand je clique sur le petit parchemain pour les mises à jours, voici également une immage;</p>
+<p><img src="http://i979.photobucket.com/albums/ae277/John33-09/trouble2.jpg" alt=""></p>
+<p>Pouvez-vous m'informer sur ces deux erreurs svp, merci !!!</p>
+<hr>
+<h2 id="post-by-koenzell-pandora-cp---february-4-2010-at-1032-pm">Post by Koenzell Pandora, Cp - February 4, 2010 at 10:32 PM</h2>
+<p><a id="post-243877"></a></p>
+<p>Moi aussi j'ai le second, mais pas le premier.</p>
+<hr>
+<h2 id="post-by-dwarmothadc---february-5-2010-at-446-am">Post by Dwarmoth,AdC - February 5, 2010 at 4:46 AM</h2>
+<p><a id="post-243953"></a></p>
+<p>La solution est pourtant simple...</p>
+<p><img src="/assets/smilies/orc.gif" alt="">       <img src="/assets/smilies/dwarf.gif" alt=""><br>
+DESTRUCTION!!!</p>
+<p>à moin que tu voulait une solution moin chère...! là je sais pas...</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-5-2010-at-543-am">Post by Fondateur Kel - February 5, 2010 at 5:43 AM</h2>
+<p><a id="post-243968"></a></p>
+<p><em>Tu peux cliquer sur 'détail' et me dire quelle est l'erreur?</em></p>
+<hr>
+<h2 id="post-by-malik-croumicou-fdc---february-8-2010-at-322-am">Post by Malik Croumicou, Fdc - February 8, 2010 at 3:22 AM</h2>
+<p><a id="post-244610"></a></p>
+<p>Ouais yen a vraiment long alors je te lai copié plutot que de faire un print screen  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Consultez la fin de ce message pour plus de détails sur l'appel du débogage<br>
+juste-à-temps (JIT) à la place de cette boîte de dialogue.</p>
+<p>************** Texte de l'exception **************<br>
+System.Net.WebException: Une exception s'est produite lors d'une demande WebClient. ---&gt; System.UnauthorizedAccessException: L'accès au chemin d'accès 'C:\Program Files (x86)\EA Games\Ultima Online Mondain's Legacy\Patch.xml' est refusé.<br>
+à System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)<br>
+à System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy)<br>
+à System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)<br>
+à System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access)<br>
+à System.Net.WebClient.DownloadFile(Uri address, String fileName)<br>
+--- Fin de la trace de la pile d'exception interne ---<br>
+à System.Net.WebClient.DownloadFile(Uri address, String fileName)<br>
+à Crepuscule.Update.Updater.GetPatchInfo()<br>
+à Crepuscule.Update.Updater.CheckUpdates()<br>
+à Crepuscule.Update.LauncherForm.DoUpdate()<br>
+à System.Windows.Forms.Control.OnClick(EventArgs e)<br>
+à System.Windows.Forms.Control.WmMouseUp(Message&amp; m, MouseButtons button, Int32 clicks)<br>
+à System.Windows.Forms.Control.WndProc(Message&amp; m)<br>
+à System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message&amp; m)<br>
+à System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)</p>
+<h2 id="codebase-filecwindowsmicrosoftnetframework64v2050727mscorlibdll">************** Assemblys chargés **************<br>
+mscorlib<br>
+Version de l'assembly : 2.0.0.0<br>
+Version Win32 : 2.0.50727.4200 (NetFxQFE.050727-4200)<br>
+CodeBase : file:///C:/Windows/Microsoft.NET/Framework64/v2.0.50727/mscorlib.dll</h2>
+<h2 id="codebase-filecprogram20files20x86ea20gamesultima20online20mondains20legacycrepusculeupdateexe">Crepuscule.Update<br>
+Version de l'assembly : 1.7.0.0<br>
+Version Win32 : 1.7.0.0<br>
+CodeBase : file:///C:/Program%20Files%20(x86)/EA%20Games/Ultima%20Online%20Mondain's%20Legacy/Crepuscule.Update.exe</h2>
+<h2 id="codebase-filecwindowsassemblygac-msilsystemwindowsforms2000--b77a5c561934e089systemwindowsformsdll">System.Windows.Forms<br>
+Version de l'assembly : 2.0.0.0<br>
+Version Win32 : 2.0.50727.4016 (NetFxQFE.050727-4000)<br>
+CodeBase : file:///C:/Windows/assembly/GAC_MSIL/System.Windows.Forms/2.0.0.0__b77a5c561934e089/System.Windows.Forms.dll</h2>
+<h2 id="codebase-filecwindowsassemblygac-msilsystem2000--b77a5c561934e089systemdll">System<br>
+Version de l'assembly : 2.0.0.0<br>
+Version Win32 : 2.0.50727.4016 (NetFxQFE.050727-4000)<br>
+CodeBase : file:///C:/Windows/assembly/GAC_MSIL/System/2.0.0.0__b77a5c561934e089/System.dll</h2>
+<h2 id="codebase-filecwindowsassemblygac-msilsystemdrawing2000--b03f5f7f11d50a3asystemdrawingdll">System.Drawing<br>
+Version de l'assembly : 2.0.0.0<br>
+Version Win32 : 2.0.50727.4016 (NetFxQFE.050727-4000)<br>
+CodeBase : file:///C:/Windows/assembly/GAC_MSIL/System.Drawing/2.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll</h2>
+<h2 id="codebase-filecwindowsassemblygac-msilsystemxml2000--b77a5c561934e089systemxmldll">System.Xml<br>
+Version de l'assembly : 2.0.0.0<br>
+Version Win32 : 2.0.50727.4016 (NetFxQFE.050727-4000)<br>
+CodeBase : file:///C:/Windows/assembly/GAC_MSIL/System.Xml/2.0.0.0__b77a5c561934e089/System.Xml.dll</h2>
+<h2 id="codebase-filecwindowsmicrosoftnetframework64v2050727mscorlibdll-1">mscorlib.resources<br>
+Version de l'assembly : 2.0.0.0<br>
+Version Win32 : 2.0.50727.4200 (NetFxQFE.050727-4200)<br>
+CodeBase : file:///C:/Windows/Microsoft.NET/Framework64/v2.0.50727/mscorlib.dll</h2>
+<h2 id="codebase-filecwindowsassemblygac-msilsystemconfiguration2000--b03f5f7f11d50a3asystemconfigurationdll">System.Configuration<br>
+Version de l'assembly : 2.0.0.0<br>
+Version Win32 : 2.0.50727.4016 (NetFxQFE.050727-4000)<br>
+CodeBase : file:///C:/Windows/assembly/GAC_MSIL/System.Configuration/2.0.0.0__b03f5f7f11d50a3a/System.Configuration.dll</h2>
+<h2 id="codebase-filecwindowsassemblygac-msilsystemresources2000-fr-b77a5c561934e089systemresourcesdll">System.resources<br>
+Version de l'assembly : 2.0.0.0<br>
+Version Win32 : 2.0.50727.4016 (NetFxQFE.050727-4000)<br>
+CodeBase : file:///C:/Windows/assembly/GAC_MSIL/System.resources/2.0.0.0_fr_b77a5c561934e089/System.resources.dll</h2>
+<h2 id="codebase-filecwindowsassemblygac-msilaccessibility2000--b03f5f7f11d50a3aaccessibilitydll">Accessibility<br>
+Version de l'assembly : 2.0.0.0<br>
+Version Win32 : 2.0.50727.4016 (NetFxQFE.050727-4000)<br>
+CodeBase : file:///C:/Windows/assembly/GAC_MSIL/Accessibility/2.0.0.0__b03f5f7f11d50a3a/Accessibility.dll</h2>
+<h2 id="codebase-filecwindowsassemblygac-msilsystemwindowsformsresources2000-fr-b77a5c561934e089systemwindowsformsresourcesdll">System.Windows.Forms.resources<br>
+Version de l'assembly : 2.0.0.0<br>
+Version Win32 : 2.0.50727.4016 (NetFxQFE.050727-4000)<br>
+CodeBase : file:///C:/Windows/assembly/GAC_MSIL/System.Windows.Forms.resources/2.0.0.0_fr_b77a5c561934e089/System.Windows.Forms.resources.dll</h2>
+<h2 id="codebase-filecwindowsassemblygacmicrosoftmshtml7033000--b03f5f7f11d50a3amicrosoftmshtmldll">Microsoft.mshtml<br>
+Version de l'assembly : 7.0.3300.0<br>
+Version Win32 : 7.0.3300.0<br>
+CodeBase : file:///C:/Windows/assembly/GAC/Microsoft.mshtml/7.0.3300.0__b03f5f7f11d50a3a/Microsoft.mshtml.dll</h2>
+<p>************** Débogage JIT **************<br>
+Pour activer le débogage juste-à-temps (JIT), le fichier de configuration pour cette<br>
+application ou cet ordinateur (machine.config) doit avoir la valeur<br>
+jitDebugging définie dans la section system.windows.forms.<br>
+L'application doit également être compilée avec le débogage<br>
+activé.</p>
+<p>Par exemple :</p>
+<configuration>  
+    <system.windows.forms jitDebugging="true" />  
+</configuration>
+<p>Lorsque le débogage juste-à-temps est activé, les exceptions non gérées<br>
+seront envoyées au débogueur JIT inscrit sur l'ordinateur<br>
+plutôt que d'être gérées par cette boîte de dialogue.</p>
+<hr>
+<h2 id="post-by-claudius-corvus-cp---february-8-2010-at-338-am">Post by Claudius Corvus, CP - February 8, 2010 at 3:38 AM</h2>
+<p><a id="post-244626"></a></p>
+<p>download AlembikUoFixer installe le, clique oui a toute les insulte que le programme te dit.... apres ca si tu a le meme probleme ke jai eu(ca ressemble bcp), tu vas devoir deleter uo et crepu, et le réinstaller<br>
+la tu n'auras pas besoin de réinstaller AlembikUoFixer, linstalle de uo et crepu devrait pouvoir te permettre de faire la patch et de jouer sans probleme..... J'espere que ca va t'aider</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-8-2010-at-420-am">Post by Fondateur Kel - February 8, 2010 at 4:20 AM</h2>
+<p><a id="post-244632"></a></p>
+<p><em>Il me semble que ton compte n'as pas de droit d'admin, ou n'as pas de droit d'écriture sur le repertoire UO.</em></p>
+<hr>
+<h2 id="post-by-malik-croumicou-fdc---february-8-2010-at-452-am">Post by Malik Croumicou, Fdc - February 8, 2010 at 4:52 AM</h2>
+<p><a id="post-244639"></a></p>
+<p>Ah ! j'ai règlé le problème ! ouais c'était un truc d'admin.... Le problème ne venait pas de UO mais bien de l'update, j'ai simplement été dna sles proprièté et cocher, éxécuter ce programme en tant qu'administrateur !<br>
+Merci !!!</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

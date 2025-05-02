@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DecoMove - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">DecoMove</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">DecoMove</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="decomove">DecoMove</h1>
+<h2 id="post-by-feydanith-dit-la-carpe---april-9-2007-at-903-pm">Post by Feydanith, dit la Carpe - April 9, 2007 at 9:03 PM</h2>
+<p><a id="post-114275"></a></p>
+<p>Je laisse le script ici pour en avoir une trace...</p>
+<p>Le script est compatible normallement avec toutes les versions de RunUo, crépuscule ou non  <img src="/assets/smilies/spiteful.gif" alt=""></p>
+<p>Pour le gump, j'ai repris celui que Maharet m'a conseillé, sauf modif mineur.</p>
+<p>Pour les déplacements :<br>
+Haut/Bas : Check si l'objet peut être monter ou descendre<br>
+Flip : Ajouté sur le boutton du milieu !<br>
+Direction : Check si y'a un mur ou non, donc impossible de faire passer des items à travers les murs  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<p>Donc, voici le monstre :</p>
+<p>/*****************************************************</p>
+<ul>
+<li>ce script a été crée par Namorcen.</li>
+<li></li>
+<li>Merci de laisser ce copyright si vous l'utilisez.</li>
+<li></li>
+<li>pour tout renseignement:</li>
+<li>commandercore@hotmail.com<br>
+*****************************************************/</li>
+</ul>
+<p>using System;<br>
+using Server.Gumps;<br>
+using Server.Items;<br>
+using Server.Network;<br>
+using Server.Targeting;</p>
+<p>namespace Server.Scripts.Commands<br>
+{<br>
+\tpublic class DecoMove<br>
+\t{<br>
+\t\tpublic static void Initialize()<br>
+\t\t{<br>
+\t\t\tServer.Commands.Register( &quot;DecoMove&quot;, AccessLevel.Player, new CommandEventHandler( DecoMove_OnCommand ) );<br>
+\t\t}</p>
+<p>\t\t[Usage( &quot;DecoMove&quot; )]<br>
+\t\t[Description( &quot;Déplace un objet adjacent sous conditions.&quot; )]<br>
+\t\tprivate static void DecoMove_OnCommand( CommandEventArgs e )<br>
+\t\t{<br>
+\t\t\te.Mobile.Target = new DecoMoveTarget();<br>
+\t\t\te.Mobile.SendMessage( &quot;Quel objet voulez-vous déplacer ?&quot; );<br>
+\t\t}</p>
+<p>\t\tprivate class DecoMoveTarget : Target<br>
+\t\t{<br>
+\t\t\tpublic DecoMoveTarget() : base( -1, false, TargetFlags.None )<br>
+\t\t\t{<br>
+\t\t\t}</p>
+<p>\t\t\tprotected override void OnTarget( Mobile from, object target )<br>
+\t\t\t{<br>
+\t\t\t\tif ( !(target is Item) )<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas déplacer ceci.&quot; );<br>
+\t\t\t\telse<br>
+\t\t\t\t{<br>
+\t\t\t\t\tItem targ = (Item) target;</p>
+<p>\t\t\t\t\tif ( targ.TotalWeight + targ.PileWeight &gt; 100 )<br>
+\t\t\t\t\t\tfrom.SendMessage( &quot;C'est trop lourd pour que vous puissiez le déplacer.&quot; );</p>
+<p>\t\t\t\t\telse if ( !from.InRange( targ.GetWorldLocation(), 1 ) )<br>
+\t\t\t\t\t\tfrom.SendMessage( &quot;C'est hors de portée.&quot; );<br>
+\t              <br>
+\t\t\t\t\telse if ( !targ.Movable &amp;&amp; !targ.IsLockedDown )<br>
+\t\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas bouger ceci.&quot; );<br>
+\t\t\t\t\telse<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tfrom.CloseGump( typeof( DecoMoveGump ) );<br>
+\t\t\t\t\t\tfrom.SendGump( new DecoMoveGump( targ ) );<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}<br>
+\t\t\t}</p>
+<p>\t\t\tprivate class DecoMoveGump : Gump<br>
+\t\t\t{<br>
+\t\t\t\tprivate Item m_targ;<br>
+\t<br>
+\t\t\t\tpublic DecoMoveGump( Item targ ) : base( 200, 150 )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tm_targ = targ;<br>
+\t\t\t\t\tthis.Closable=true;<br>
+\t\t\t\t\tthis.Disposable=true;<br>
+\t\t\t\t\tthis.Dragable=true;<br>
+\t\t\t\t\tthis.Resizable=false;<br>
+\t\t\t\t\tthis.AddPage(0);<br>
+\t\t\t\t\tthis.AddImage(174, 125, 5010);<br>
+\t\t\t\t\tthis.AddButton(283, 167, 4501, 4501, 1, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(279, 233, 4503, 4503, 2, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(217, 233, 4505, 4505, 3, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(217, 167, 4507, 4507, 4, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(250, 154, 4500, 4500, 5, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(295, 199, 4502, 4502, 6, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(250, 245, 4504, 4504, 7, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(204, 199, 4506, 4506, 8, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(143, 168, 4500, 4500, 9, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(143, 228, 4504, 4504, 10, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(350, 227, 4504, 4504, 11, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(349, 168, 4500, 4500, 12, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddButton(244, 194, 5582, 5582, 13, GumpButtonType.Reply, 0);<br>
+\t\t\t\t\tthis.AddLabel(156, 147, 132, @&quot;1 Haut&quot;);<br>
+\t\t\t\t\tthis.AddLabel(147, 276, 132, @&quot;1 Bas&quot;);<br>
+\t\t\t\t\tthis.AddLabel(358, 148, 132, @&quot;5 Haut&quot;);<br>
+\t\t\t\t\tthis.AddLabel(354, 277, 132, @&quot;5 Bas&quot;);<br>
+\t\t\t\t}<br>
+\t<br>
+\t\t\t\tpublic void sendDecoMoveGump( Mobile from, Item targ )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfrom.CloseGump( typeof( DecoMoveGump ) );<br>
+\t\t\t\t\tfrom.SendGump( new DecoMoveGump( targ ) );<br>
+\t\t\t\t}</p>
+<p>\t\t\t\tpublic bool checkMoveAccess( Mobile from, Item targ )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tif ( targ.TotalWeight + targ.PileWeight &gt; 100 )<br>
+\t\t\t\t\t\tfrom.SendMessage( &quot;C'est trop lourd pour que vous puissiez le déplacer.&quot; );<br>
+\t\t              <br>
+\t\t\t\t\telse if ( !from.InRange( targ.GetWorldLocation(), 1 ) )<br>
+\t\t\t\t\t\tfrom.SendMessage( &quot;C'est hors de portée.&quot; );<br>
+\t\t              <br>
+\t\t\t\t\telse if ( !targ.Movable &amp;&amp; !targ.IsLockedDown )<br>
+\t\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas bouger ceci.&quot; );<br>
+\t\t\t\t\telse<br>
+\t\t\t\t\t\treturn true;<br>
+\t                 <br>
+\t\t\t\t\treturn false;<br>
+\t\t\t\t}</p>
+<p>\t\t\t\tprivate int GetFloorZ( Item item )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tMap map = item.Map;<br>
+\t\t<br>
+\t\t\t\t\tif ( map == null )<br>
+\t\t\t\t\t\treturn int.MinValue;<br>
+\t\t<br>
+\t\t\t\t\tTile[] tiles = map.Tiles.GetStaticTiles( item.X, item.Y, true );</p>
+<p>\t\t\t\t\tint z = int.MinValue;<br>
+\t<br>
+\t\t\t\t\tfor ( int i = 0; i &lt; tiles.Length; ++i )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tTile tile = tiles[i];<br>
+\t\t\t\t\t\tItemData id = TileData.ItemTable[tile.ID &amp; 0x3FFF];<br>
+\t\t\t\t<br>
+\t\t\t\t\t\tint top = tile.Z; // Confirmed : no height checks here<br>
+\t\t<br>
+\t\t\t\t\t\tif ( id.Surface &amp;&amp; !id.Impassable &amp;&amp; top &gt; z &amp;&amp; top &lt;= item.Z )<br>
+\t\t\t\t\t\t\tz = top;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t\treturn z;<br>
+\t\t\t\t}</p>
+<p>\t\t\t\tprivate bool Up( Item item, Mobile from )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tint floorZ = GetFloorZ( item );<br>
+\t\t<br>
+\t\t\t\t\tif ( floorZ &gt; int.MinValue &amp;&amp; item.Z &lt; (floorZ + 15) )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\titem.Location = new Point3D( item.Location, item.Z + 1 );<br>
+\t\t\t\t\t\treturn true;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t\telse<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas monter cet objet plus haut.&quot; );<br>
+\t\t\t\t\t\treturn false;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}</p>
+<p>\t\t\t\tprivate bool Down( Item item, Mobile from )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tint floorZ = GetFloorZ( item );<br>
+\t\t<br>
+\t\t\t\t\tif ( floorZ &gt; int.MinValue &amp;&amp; item.Z &gt; GetFloorZ( item ) )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\titem.Location = new Point3D( item.Location, item.Z - 1 );<br>
+\t\t\t\t\t\treturn true;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t\telse<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas descendre cet objet plus bas.&quot; );<br>
+\t\t\t\t\t\treturn false;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}</p>
+<p>\t\t\t\tprivate static void Turn( Item item, Mobile from )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tFlipableAttribute[] attributes = (FlipableAttribute[])item.GetType().GetCustomAttributes( typeof( FlipableAttribute ), false );<br>
+\t\t<br>
+\t\t\t\t\tif( attributes.Length &gt; 0 )<br>
+\t\t\t\t\t\tattributes[0].Flip( item );<br>
+\t\t\t\t\telse<br>
+\t\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas tourner cet objet.&quot; );<br>
+\t\t\t\t}</p>
+<p>\t\t\t\tpublic override void OnResponse( NetState state, RelayInfo info )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tMobile from = state.Mobile;<br>
+\t\t\t\t\t<br>
+\t\t\t\t\tswitch ( info.ButtonID )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tcase 0:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 1:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t\tm_targ.DropToWorld( from, new Point3D( m_targ.X, m_targ.Y - 1, m_targ.Z ) );<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 2:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t\tm_targ.DropToWorld( from, new Point3D( m_targ.X + 1, m_targ.Y, m_targ.Z ) );<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 3:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t\tm_targ.DropToWorld( from, new Point3D( m_targ.X, m_targ.Y + 1, m_targ.Z ) );<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 4:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t\tm_targ.DropToWorld( from, new Point3D( m_targ.X - 1, m_targ.Y, m_targ.Z ) );<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 5:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t\tm_targ.DropToWorld( from, new Point3D( m_targ.X - 1, m_targ.Y - 1, m_targ.Z ) );<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 6:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t\tm_targ.DropToWorld( from, new Point3D( m_targ.X + 1, m_targ.Y - 1, m_targ.Z ) );<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 7:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t\tm_targ.DropToWorld( from, new Point3D( m_targ.X + 1, m_targ.Y + 1, m_targ.Z ) );<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 8:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t\tm_targ.DropToWorld( from, new Point3D( m_targ.X - 1, m_targ.Y + 1, m_targ.Z ) );<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 9:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t\tUp( m_targ, from );<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 10:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t\tDown( m_targ, from );<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 11:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\tfor ( int i = 0; i &lt; 5; ++i )<br>
+\t\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\t\tif ( !Down( m_targ, from ) )<br>
+\t\t\t\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 12:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\tfor ( int i = 0; i &lt; 5; ++i )<br>
+\t\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\t\tif ( !Up( m_targ, from ) )<br>
+\t\t\t\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\tcase 13:<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tif ( checkMoveAccess( from, m_targ ) )<br>
+\t\t\t\t\t\t\t\tTurn( m_targ, from );<br>
+\t\t\t\t\t\t\tsendDecoMoveGump( from, m_targ );<br>
+\t\t\t\t\t\t\tbreak;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}<br>
+\t\t\t}<br>
+\t\t}<br>
+\t}<br>
+}</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

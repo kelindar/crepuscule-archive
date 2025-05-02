@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveaux Meubles par Christian - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Nouveaux Meubles par Christian</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <a href="/111/5//" class="nav-item">Suggestion ajouts</a>
+                
+                &rsaquo; <span class="current-page">Nouveaux Meubles par Christian</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="nouveaux-meubles-par-christian">Nouveaux Meubles par Christian</h1>
+<h2 id="post-by-coordinateur-apoc---august-2-2008-at-1102-am">Post by Coordinateur Apoc - August 2, 2008 at 11:02 AM</h2>
+<p><a id="post-176268"></a></p>
+<p>Comme pour Kertan il te suffira de répondre avec ta version à jour au besoin. L'Équipe peut donner son avis et je vois avec Kel pour voir comment on fonctionne pour le reste.</p>
+<p>Bonjour,</p>
+<p>Je me suis mis à regarder sur RunUo et à essayer quelques choses, et j'en suis venu à penser que ce serait intéressant d'augmenter le nombre d'objets craftable. Après 2 ou 3 heures de travaille, j'ai réussi à faire sans problème quelques objets qui sont normalement non-craftable, craftable. La plupart sont pour la menuiserie, mais j'ai penser à d'autres choses pour les autres classes de craft aussi.</p>
+<p>Pour l'instant, tout ce que vous voyez sur le screenshot en bas est craftable dans mon script, sauf la terre <img src="/assets/smilies/man_in_love.gif" alt="">.</p>
+<p><img src="http://img369.imageshack.us/img369/7354/craftablewf0.png" alt=""></p>
+<p>Ce qu'il y a de particulier avec les tables, c'ets que chaque partie (chaque carreau) se craft indépendamment. Par exemple, vous crafter 6 morceaux de tables et vous les mettez sur 6 cases adjacentes. Bien sur, pour l'instant les 6 morceaux sont identiques, par emple le coin qui pointe vers le nord. Vous n'avez donc qu'à flipper la partie de table pour obtenir la bonne partie et qui va avec le reste. en plus, vous pourrez bouger la table comme vous le désirez plus tard, sans avoir besoin de l'aide d'un Gm. Et on peut choisir la taille de la table voulue.</p>
+<p>C'est la même chose pour les bancs et les comptoirs.</p>
+<p>j'ai également fait en sorte qu'on puisse crafter les sacs et les coffres en métal, et ce dernier peut-être verrouillable.</p>
+<p>Je me demandais si vous seriez intéressé par ça, sinon je continurai pas plus. Je voulais juste aider à contribuer au Shard. Je ne suis pas bon en script, mais pour ce genre de petites choses, ça va bien.</p>
+<p>J'ai également d'autres idée:</p>
+<p>-des ustensiles qu'on peut flipper<br>
+-piquets à cheveaux (mais je sais pas c'ets quoi le nom en anglais et si c'est sur RunUo de base)<br>
+-clôtures, murs et portes. (Mais je pense que ce serait de l'abus alors je le ferai surement pas, à moins que vous soyez favorable)<br>
+-Faire en sorte que les nouveaux objets en bois soit détruisable par une hache. (J'ai pas vérifier, mais peut-être qu'ils le sont déjà.<br>
+-etc</p>
+<p>Bref, j'aimerais savoir ce que vous en pensez.</p>
+<p>Cordialement,</p>
+<p>Christian</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-2-2008-at-658-pm">Post by Théodore de Lagarde, AdM - August 2, 2008 at 6:58 PM</h2>
+<p><a id="post-176300"></a></p>
+<p>Voici la nouvelle version, avec tout ce qu'il y a d'ajouté:</p>
+<p><img src="http://img411.imageshack.us/img411/217/craftable2af7.png" alt=""></p>
+<p>Je met les nouveaux ajouts par classe:</p>
+<p>Bricolage (Tinkering)</p>
+<p>-Panier<br>
+-Torche (allumable)<br>
+-Ustensiles flippable<br>
+-Statues en métal 1 et 2 (celles près du milieu de l'image)<br>
+-Panier de pique-nique</p>
+<p>*J'ai aucune idée de ce que ça va faire avec les scripts ajoutés de Willy, comme pour qu'on puisse prendre n'importe quel métal pour faire du tinkering. J'ai pas les scripts de Crep, évidemment. Je sais pas comment je vais vérifier tout ça.</p>
+<p>Charpenterie (Carpentry)</p>
+<p>-armoire (rouge) (verrouillable avec une clef)<br>
+-armoire (beige) (verrouillable avec une clef)<br>
+-commode<br>
+-commode (verrouillable avec une clef)<br>
+-commode élégante<br>
+-commode élégante (verrouillable avec une clef)<br>
+-Cible d'entrainement (pour archer)<br>
+-Les 5 types de comptoirs illustrés (dont ceux à bar)<br>
+-Les 2 types de bancs illustrés<br>
+-Les 3 tables larges et les 2 grosses tables<br>
+-Un gros tonneau ordinaire, plus gros que le tonnelet, mais ne supprime pas les objets comme la poubelle.<br>
+-Coffre en métal<br>
+-Boite en métal<br>
+-Étagère pleine (encore des bugs et j'ignore ce que ça va faire sur crep)<br>
+-Bureau à miroir (construisable en deux parties et verrouillable)<br>
+-Le trône vert<br>
+-Le trône en os<br>
+-Un tonneau verrouillable (celui avec le couvert dessus)</p>
+<p>Couture (Tailoring)</p>
+<p>-Poche (petit sac)<br>
+-Sac<br>
+-Sac à dos<br>
+-Des toutous! Oui! Tous ceux dans le coin  haut à gauche de l'image. En plus on peut les teindre avec un bac ordinaire.<br>
+-Un paravent<br>
+-Une sorte de cadeau (encore buggée pour le moment)</p>
+<p>En bonus</p>
+<p>-Un cheval et un lama de traits rare. Ils peuvent porter le double du poids ordinaire d'un cheval ou lama de trait ordinaire et sont un peu plus fort. Mon idée était de faire qu'ils ne soient pas achetable chez les npc, d'en mettre peu sur la map, et de demander un haut skill en tamage.</p>
+<p>Bref</p>
+<p>Que pensez-vous de tout ça? Il y a des choses inutiles? Des idées? Ou autres? C'est le bienvenue!</p>
+<p>Évidemment, tout ça sera surement pas tout accepté à mettre dans le jeu, mais j'aimerais savoir ce qui vous plait et ce que je devrais enlever.</p>
+<p>Je dois aussi faire les skills et ressources nécéssaires pour chaque objet et vous les montrer? La plupart sont déjà fait, mais je voulait savoir si je dois vos les montrer.</p>
+<p>Évidemment, moi j'ai scripté tout ça sur RunUo 1.0 . Donc je ne sais pas ce que ça fera sur Crep. Il y a une solution pour remédier à ça? Sinon il peut y avoir des bugs qui apparaissent. <img src="/assets/smilies/wacko.gif" alt="">  Comme pour le script qui nous sert à ouvrir un contenant barré, je sais pas si ça va bien marcher avec mes nouveaux contenant barrés.</p>
+<p>Bon c'est ça!</p>
+<p>J'attends vos réponses!^^</p>
+<p>EDIT:</p>
+<p>J'ai ajouté couture que j'avais oublier^^</p>
+<hr>
+<h2 id="post-by-ex-lumina---august-2-2008-at-714-pm">Post by Ex-Lumina - August 2, 2008 at 7:14 PM</h2>
+<p><a id="post-176302"></a></p>
+<p>Tes chaises se tournent dans toutes les directions ?</p>
+<p>Je ne peux pas t'aider pour le côté &quot;technique&quot; de tes questions, mais je peux te dire que c'est bien tout ça.</p>
+<p>Tu peux lister le pourcentage de tes objets ça sera bien si on veut t'aider à équilibrer tout ça, des fois que tu aurais fait un oubli ou que tu n'aurais pas vu quelque chose.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-2-2008-at-743-pm">Post by Théodore de Lagarde, AdM - August 2, 2008 at 7:43 PM</h2>
+<p><a id="post-176311"></a></p>
+<p>Mes chaises, trônes, meubles, étagères, tables, etc se tournent dans toutes les directions, il n'y a pas de problème^^</p>
+<p>Pour ce qui est des tables, C'est un peu différent, genre quand on flippe, ça nous amène un autre des morceaux de la table et non simplement son inverse. Ça simplifie le menu et le craftage. Si jamais le joueur se trompe, il peut juste faire une emote du genre <em>ajoute une patte à sa table</em> etc.</p>
+<p>Pour les pourcentages, je l'afficherai plus tard, j'ai pas le temps pour le moment.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-3-2008-at-637-pm">Post by Théodore de Lagarde, AdM - August 3, 2008 at 6:37 PM</h2>
+<p><a id="post-176380"></a></p>
+<p>Voici la liste des pourcentage que j'ai faites. Les items sont déjà scriptés pour ces chiffres, mais c'est pas compliqué à changer s'il le faut.<br>
+Si vous avez des questions hésitez pas:)</p>
+<p>Le premier chiffre est le skill minimum, et le deuxième celui qu'il faut pour avoir jusqu'à 100% de chance de réussir la création de l'objet en particulier.</p>
+<p>Couture</p>
+<p>Poche (espèce de petit sac) = 21, 46, Cuir = 5, Tas de laine = 2<br>
+Sac = 30, 55, Cuir = 10, Tas de laine = 2<br>
+Sac à dos = 35, 60, Cuir = 15, Tas de laine = 2<br>
+Cheval (toutou) = 50, 80, tissus = 10, Tas de laine = 2<br>
+Génie (toutou) = 50, 80, tissus = 10, Tas de laine = 2<br>
+Chien (toutou) = 50, 80, tissus = 10, Tas de laine = 2<br>
+gorille (toutou) = 50, 80, tissus = 10, Tas de laine = 2<br>
+Pantère (toutou) = 50, 80, tissus = 10, Tas de laine = 2<br>
+Licorne (toutou) = 50, 80, tissus = 10, Tas de laine = 2<br>
+Loup (toutou) = 50, 80, tissus = 10, Tas de laine = 2<br>
+Ours (toutou) = 50, 80, tissus = 10, Tas de laine = 2<br>
+Paravent = 75, 95, tissus = 40, rondins = 10</p>
+<p>Bricolage</p>
+<p>Panier = 15, 30, petit bois = 15<br>
+Torche = 0, 10, rondins = 2<br>
+Fourchette* = 0, 50, lingot = 1**<br>
+Cuillère* = 0, 50, lingot = 1**<br>
+Couteau* = 0, 50, lingot = 1**<br>
+Statue en métal 1 = 75, 100, lingot = 60** + de 35 à 60 en forgeron.<br>
+Statue en métal 2 = 75, 100, lingot = 60** + de 35 à 60 en forgeron.<br>
+Panier de pique-nique = 15, 30, petit bois = 20<br>
+Cadeaux 3** (blancs) = 65, 80, rondins = 10</p>
+<p>*Comme dans les scripts de base, c'est de 0 à 50... bizarre. Mais ils sont flippables ceux là! <img src="/assets/smilies/smile.gif" alt=""> **dans le script de base c'est juste du fer. Mais avec le script de Willy qui fait qu'on peut prendre n'importe quel métal, je sais pas ce que ça va faire.<br>
+***Je savais que Willy en avait déjà fait 2 avant. Donc je l'ai appeler 3.</p>
+<p>Charpenterie</p>
+<p>Armoire (rouge) (verrouillable) = 84.2, 109.2, Rondins = 35<br>
+Armoire (beige) (verrouillable) = ???, ???, Rondins = 35<br>
+Commode (verrouillable) = 45, 60, Rondins = 35<br>
+Commode élégante = 85, 105, Rondins = 35<br>
+Cible d'entrainement (tirer des flèches) = 80, 100, Rondins = 85<br>
+Comptoir 1 = 50, 75, Rondins = 22<br>
+Comptoir 2 (nappe) = 55, 80, Rondins = 22 + Couture 30 à 55 + tissus = 10<br>
+Comptoir 3 (nappe) = 60, 85, Rondins = 22 + Couture 35 à 60 + tissus = 10<br>
+Comptoir à bar (coins) = 70, 90, Rondins = 30 + Bricolage 50 à 85<br>
+Comptoir à bar (droits) = 70, 90, Rondins = 30 + Bricolage 50 à 85<br>
+Banc 1 = 55, 80, Rondins = 15<br>
+Banc 2 = 60, 85, Rondins = 20<br>
+Table large 1 = 65, 90, Rondins = 25<br>
+Table large 2 = 70, 95, Rondins = 25<br>
+Table large 3 = 60, 80, Rondins = 25<br>
+Grosse table 1 = 85, 105, Rondins = 25<br>
+Grosse table 2 = 80, 100, Rondins = 25<br>
+Gros tonneau = 24, 34, Douves de tonneau = 5<br>
+Coffre en métal = 85, 110, Lingots de fer = 35 + forgeron 25 à 45<br>
+Boite en métal = 75, 100, Lingots de fer = 25 + forgeron 10 à 30<br>
+Bureau à miroir (verrouillable)* = 65, 85, Rondins = 30<br>
+Trône vert = 75, 100, Rondins = 20<br>
+Trône d'os = 80, 105, Os = 20<br>
+Gros tonneau (verrouillable) = 30, 40, Douves de tonneau = 5 + 1 couvercle de tonneau</p>
+<p>???Ça me prend les chiffres de crep, combien de min et max pour cette armoire sur crep. Pour pas que ça diffère.<br>
+*Construisable en 2 parties. On obtient la deuxième en flippant.</p>
+<p>Les deux pack animals</p>
+<p>Pour les deux, ça prend 54,1 pour skill minimum de tamage.</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-3-2008-at-655-pm">Post by Myrddin Emrys, CP - August 3, 2008 at 6:55 PM</h2>
+<p><a id="post-176384"></a></p>
+<p>pour ce qui est du métal différent, ça devrait le faire automatiquement</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-3-2008-at-1133-pm">Post by Théodore de Lagarde, AdM - August 3, 2008 at 11:33 PM</h2>
+<p><a id="post-176418"></a></p>
+<p>J'ai aussi pensé de faire un outil pour pouvoir changer les barbes. Je voulais me baser sur celui des cheveux, mais je me suis rendu compte que celui sur mon RunUo est pas pareille à celui sur Crep... Ça marcherais pareille si j'essayais quelque chose?</p>
+<p>D'ailleurs j'ai une question, à chaque fois qu'un scripteur créer un script, vous seulement l'installer sur crep pour voir que ça marche et arranger les bug après ou autre chose? Ça doit être tannan.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-3-2008-at-1149-pm">Post by Coordinateur Apoc - August 3, 2008 at 11:49 PM</h2>
+<p><a id="post-176422"></a></p>
+<blockquote>
+<p><strong>&quot;Christian, OdS&quot; wrote:</strong>
+J'ai aussi pensé de faire un outil pour pouvoir changer les barbes. Je voulais me baser sur celui des cheveux, mais je me suis rendu compte que celui sur mon RunUo est pas pareille à celui sur Crep... Ça marcherais pareille si j'essayais quelque chose?</p>
+<p>Chut... mais j'ai déjà fait cela, ca viendra avec une future grosse patch de Crépu.  <img src="/assets/smilies/Wink.gif" alt="">
+<strong>&quot;Christian, OdS&quot; wrote:</strong>
+D'ailleurs j'ai une question, à chaque fois qu'un scripteur créer un script, vous seulement l'installer sur crep pour voir que ça marche et arranger les bug après ou autre chose? Ça doit être tannan.</p>
+<p>Kel et moi possédons tout les scripts et donc je peux tester en privé. Mais on ne veux pas que nos scripts se retrouvent partout, surtout avec certains problèmes causés par nos anciens scripteurs.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-4-2008-at-1259-am">Post by Théodore de Lagarde, AdM - August 4, 2008 at 12:59 AM</h2>
+<p><a id="post-176435"></a></p>
+<p>Merci des réponses.^^</p>
+<p>J'avais penser faire en sorte qu'on puisse crafter des piquets à chevaux, mais c'est pas sur RuoUo de base? (je connais pas le nom anglais alors je suis pas sur). Je vais laisser faire et me concentrer sur autre chose.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-9-2008-at-804-pm">Post by Théodore de Lagarde, AdM - August 9, 2008 at 8:04 PM</h2>
+<p><a id="post-177055"></a></p>
+<p>J'ai fait des nouvelles versions des lits actuels. Ils sont maintenant flippable et bougeable. Les anciens sont intactes. Il faut double cliquer sur les nouveaux pour les flipper. Aussi, j'ai réduit le nombre de ressources qu'il faut pour les crafter, sinon c'est impossible de les faire car le nombre est trop haut.</p>
+<p>Nommez moi d'autre objets du genre qui ont ce genre de problème et je verrai ce que je peux faire.</p>
+<p>Pour l'instant j'ai rien de fait encore sur l'espèce de système de blé que j'avais pensé. Mais si tout va bien ça devrait bien allé. En plus que j'ai trouver le moyen de rendre les &quot;addons&quot; flippables, ça va aider.</p>
+<hr>
+<h2 id="post-by-ex-lumina---august-9-2008-at-908-pm">Post by Ex-Lumina - August 9, 2008 at 9:08 PM</h2>
+<p><a id="post-177060"></a></p>
+<p>Hum.. je ne pense pas qu'il faut réduire le nombre de ressource, mais plutôt trouver un moyen de pouvoir utiliser par exemple des ressources au sol devant le personnage ou quelque chose du genre.</p>
+<p>Pour le moment les joueurs pagent pour qu'on les aide à les porter.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-9-2008-at-1005-pm">Post by Théodore de Lagarde, AdM - August 9, 2008 at 10:05 PM</h2>
+<p><a id="post-177071"></a></p>
+<p>Faut pager pour faire un lit? C'est embêtant... D'après moi c'est compliqué pour rien.</p>
+<p>Et j'ai aucune idée comment faire pour pouvoir prendre des ressources de par terre pour construire quelques chose. Il faudrait surement refaire une bonne partie du script de craftage. Il y a donc trois solutions je crois:</p>
+<p>-réduire le nombre de ressources qu'il faut pour faire les lits.</p>
+<p>-réduire le poids du bois. (le remettre à deux au lieu de trois comme dans RunUo de base)</p>
+<p>-refaire le script de craft pour trouver un moyen de sélectionner des ressources avec une target. (J'ai aucune idée de comment faire ça <img src="/assets/smilies/blink.gif" alt=""> )</p>
+<p>-Il y a d'autres solutions?</p>
+<p>Bon... C'est ce que je vois comme solution, mais de toute façon je pense pas que faire un petit lit serait supposé demandé autant de bois que de faire 3 armoires rouges.</p>
+<p>Qu'en pensez-vous? et les autres?</p>
+<p>IMPORTANT EDIT:</p>
+<p>Peut-être s'arranger pour que le lit soit construisable en étape? Je m'explique:</p>
+<p>il faudrait construire disons les pattes à part, ensuite le châssi, puis l'intérieur, etc. (Tout ça en pièces séparées, comme l'horloge) Et en dernier on assemble toute les pièces pour faire le lit. On s'arrangerait pour que ça coute le même nombre de bois que présentement ça coute.</p>
+<p>il y a un gros problèmes par contre: les gumps. Je sais pas si il y a quelque chose du genre qui pourrait de rapprocher de ça.</p>
+<p>Tien tant qu'à y être, on pourrait refaire le sytème de constuisance (si c'est un mot) de meuble! Genre il y a les pattes qui pourront servir pour divers meubles, autres que les lits. WOA! J'aime l'idée! Et ce serait plus RP peut-être? que pouf le meuble apparait.</p>
+<p>Chaque meuble aurait à se faire construire par étapes. En plus ça permettrait la constuctions des objets qui coutent chers en ressources sans avoir besin d'un GM, vu que ça serait bout par bout!</p>
+<p>Qu'en pensez-vous! Je suis sur qu'il y a des gumps que je pourrais prendre dans Inside UO!</p>
+<p>EDIT 2:Je créérais un nouvel outil qui servirait uniquement à construire les pièces pour les meubles. Un peu comme la trousse avancée de Willy, mais différemment. LEs outils ordinaires servirait désormais seulement à &quot;assembler&quot; les pièces.</p>
+<p>Bien sur, je pourrais seulement le faire avec mes objets que j'ai créé et les objets de base. Ceux de crep je pourrai pas, vu que je les ai pas. Ils devront rester comme ça.</p>
+<p>Sérieusement, ça devrait pas être dur à implémenter, c'est rien de bien différent de ce que j'Ai fait jusqu'à date. Les scripteur vont comprendre. Dans le fond c'est juste ajouter de nouveaux objets, changer ce qu'il faut pour chaque objet à construire, etc.</p>
+<p>Voulez-vous que je fasse un nouveau post pour mieux expliquer mon idée et la soumettre?</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-16-2008-at-833-pm">Post by Théodore de Lagarde, AdM - August 16, 2008 at 8:33 PM</h2>
+<p><a id="post-177772"></a></p>
+<p>J'ai continuer à faire craftable plusieurs items, et je me posais quelques questions:</p>
+<p>-Comment je fais pour que mes affaires pourraient être éventuellement ajoutées sur Crep?</p>
+<p>-Vous allez piquer quelques items dans la grosse batch que j'ai faites, tous les prendre ou seulement retirer les inutiles?</p>
+<p>-Vous pensez quoi de tout ce que je fais à date?</p>
+<p>-C'est moi qui décide les skills requis ou c'est vous qui allez scruter tout ça à la loupe pour s'assurer que c'est équilibré?</p>
+<p>-J'ai pensé à ça, et disons que y'a pas mal beaucoup d'ajouts que je fais. Je sais pas si ils vont tous être ajoutés, mais je me disais que faire un autre &quot;catégorie&quot; pour mettre tous ces items dans le menu de craftage serait absurde. Juste avec la charpenterie j'ai près de 4 pages d'items dans mon menu custom. De plus, sur Crep, il y a 2 menus appelés &quot;autre&quot; et un autre &quot;autre ajout&quot;. Je me suis alors demandé si je pourrais avoir la permission de reclasser au complet les menus pour le bricolage, la couture, et la charpenterie. J'y classerais les miens aussi. Mais pour ça il me faudrait aussi les items ajoutés sur Crep (comme le linge, la poubelle, etc) dans ces trois menus pour que je puisse faire le &quot;ménage&quot;. Une autre raison, est que j'ai fait des items comme la fancyarmoire, mais barrable. Je retirerais donc l'ancienne du menu Craft, car ce serait inutile dans avoir 2. Ne vous inquiétez pas, j'ai tout pensé l'armorie en question ne remplace aucunement l'ancienne. Je l'ai appeler FancyArmoire2. Rien de tout ce que j'ai créé ne remplace quoi que ce soit pour éviter les bugs. Je sais que je suis nouveau et que vous avez déjà eu des problèmes avec des scripteurs auparavent et que je comprendrais votre réticence à donner ces scripts. Je veux simplement aider, mais c'est comme vous voulez. Sachez-aussi que j'ai un perso artisan et que c'est tannant parfois avoir 2 ou 3 menus appeler &quot;autre&quot;. Bref que pensez-vous de ça?</p>
+<p>Merci à vous!</p>
+<hr>
+<h2 id="post-by-ex-lumina---august-16-2008-at-914-pm">Post by Ex-Lumina - August 16, 2008 at 9:14 PM</h2>
+<p><a id="post-177778"></a></p>
+<p>Je laisse Kel/Apoc te répondre pour les trucs techniques. Pour l'ajustement des skills ou des objets puisque tu nous les liste ici, techniquement on peut tous intervenir pour les ajuster dès maintenant donc (sauf avis contraire) il semble que tout sera ajouté comme ça, à moins qu'on intervienne pour demander un changement.</p>
+<p>Je voudrais te signifier de jeter un coup d'œil à ce qui peut être créé à partir de la scie en jeu, il y a déjà plusieurs &quot;toutous&quot;, dont le cheval que tu proposes je pense.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-16-2008-at-922-pm">Post by Coordinateur Apoc - August 16, 2008 at 9:22 PM</h2>
+<p><a id="post-177780"></a></p>
+<p>Je crois pas que personne ne fera changer tes chiffres, déjà de la chance si quelqu'un d'autre que Lumina et moi viennent ici.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Pour ce qui est de l'ajout de tes trucs sur Crépu je vais y penser. Le plus simple serait peut-être de faire des nouveaux items de craft pour ce que tu fais et comme ca suffit de les ajouter chez un vendeur et voila.</p>
+<p>Pour ce qui est de crafté à partir de quelque chose à terre, ca causerait trop de problèmes et d'abus possible pour rien je crois. Le plus simple serait de modifier les items qui causent problème. (À moins qu'il y en est des dizaines et dizaines.)</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-17-2008-at-624-pm">Post by Théodore de Lagarde, AdM - August 17, 2008 at 6:24 PM</h2>
+<p><a id="post-177869"></a></p>
+<p>Merci pour vos réponses</p>
+<blockquote>
+<p><strong>&quot;Coordinatrice Lumina&quot; wrote:</strong>
+Je voudrais te signifier de jeter un coup d'œil à ce qui peut être créé à partir de la scie en jeu, il y a déjà plusieurs &quot;toutous&quot;, dont le cheval que tu proposes je pense.</p>
+<p>Je viens d'aller voir... et je le savais pas du tout. Le seul qui ressemble le plus à un de mes toutous, c'est le cheval, mais il est pas tout à fait pareille, donc pas de problème. Les miens sont pas pour la charpenterie, mais bien pour la couture et sont rembourrés avec des tas de laine et des tissus. Donc selon moi y'a pas de problème, à par que je crois que les toutous de la scie devraient être avec les autres items de charpenterie, sinon la plupart du monde sont pas au courant que ça existe.</p>
+<p><strong>&quot;Apoc&quot; wrote:</strong>
+Je crois pas que personne ne fera changer tes chiffres, déjà de la chance si quelqu'un d'autre que Lumina et moi viennent ici. <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Ouais.. j'avais remarqué que personne d'autre vient ici. C,est dommage je trouve. J'essaye d'aider au serveur et personne semble au courant de ce que je fais. Mais je remercie vous deux pour l'appuie que vous me donnez <img src="/assets/smilies/smile.gif" alt="">
+<strong>&quot;Apoc&quot; wrote:</strong>
+Pour ce qui est de l'ajout de tes trucs sur Crépu je vais y penser. Le plus simple serait peut-être de faire des nouveaux items de craft pour ce que tu fais et comme ca suffit de les ajouter chez un vendeur et voila.</p>
+<p>Je comprend que vous voulez pas me donner les scripts.</p>
+<p>Mais je sais pas comment faire un nouvel item de craft. Et tant qu'à moi, j'ai mieux tout avoir à la même place, dans le même objet (j'ai un charpentier). C'est moins tannan, au lieu de chercher dans trop d'outils différents. Et si on enlevait 2 des 3 &quot;autres&quot; pour les mettre dans l'autre, ça libèrerait de la place pour d'autre menus, dont les toutous de la scie, et mes items.</p>
+<p>Mais même là, pour les joueurs, voir que le même item est craftable 2 fois (armoire normale, et armoire verrouillable) ça risque de porter à confusion. De plus, j'ai aranger les tables de yew (donc il y en aura 2), les miennes sont en 2 morceaux et y'aura pas le bug tannan de marcher au travers (quoi que j'ai quand même gardé l'Artwork, pour ceux qui le veulent).</p>
+<p>Les lits aussi il y a aura 2 (3 en réalité, avec les 2 anciens non flippables, et les miens flippables, mais en un objet)</p>
+<p>C'est mon avis, mais selon moi un ménage serait nécéssaire pour retirer du craftage les objets que j'ai &quot;améliorer&quot;. Ces anciens objets déjà en jeu n'auraient pas de bug ou quoi que ce soit vu qu'ils existeraient toujours.</p>
+<p>EDIT: en plus, j'ai besoin des chiffres des skills nécéssaires pour certains meubles de base qui ont été modifiés sur crépuscule. Ce serait absurde que ça change.</p>
+<p><strong>&quot;Apoc&quot; wrote:</strong>
+Pour ce qui est de crafté à partir de quelque chose à terre, ca causerait trop de problèmes et d'abus possible pour rien je crois. Le plus simple serait de modifier les items qui causent problème. (À moins qu'il y en est des dizaines et dizaines.)</p>
+<p>Je suis d'accord. Et je pense que il y a seulement les lits, fours, forge, etc. Faudrait juste les diminuer un peu.</p>
+<p>Avec tout ça, personne a répondu à mes questions de mon autre post <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>GROS EDIT:</p>
+<p>Voici la liste de mes items à date. Quelques-unes sont simplement des &quot;doubles&quot; de ceux déjà en jeu, mais flippable et bougeable. Les items avec des  *** signifie que j'aurais besoin des vraies chiffres de % de skills qui sont utilisés sur Crep pour éviter tout problème, s'il vous plait.</p>
+<p>Voici seulement la charpenterie pour le moment.</p>
+<pre><code>        ***AddCraft(typeof(FancyArmoire2), &quot;Christian&quot;, &quot;Armoire (rouge) (verrouillable)&quot;, 84&amp;#46;2, 109&amp;#46;2, typeof(Log), &quot;Planches ou rondins&quot;, 35, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***AddCraft(typeof(Armoire2), &quot;Christian&quot;, &quot;Armoire (beige) (verrouillable)&quot;, 84&amp;#46;2, 109&amp;#46;2, typeof(Log), &quot;Planches ou rondins&quot;, 35, &quot;Vous n'avez pas assez de matériel&quot;);\t
+
+        AddCraft(typeof(Drawer2), &quot;Christian&quot;, &quot;Commode (verrouillable)&quot;, 45, 60, typeof(Log), &quot;Planches ou rondins&quot;, 35, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(FancyDrawer2), &quot;Christian&quot;, &quot;Commode élégante (verrouillable)&quot;, 85, 105, typeof(Log), &quot;Planches ou rondins&quot;, 35, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(ArcheryButteDeed2), &quot;Christian&quot;, &quot;Cible d'entraînement&quot;, 80, 100, typeof(Log), &quot;Planches ou rondins&quot;, 85, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(Comptoire), &quot;Christian&quot;, &quot;Comptoir 1&quot;, 50, 75, typeof(Log), &quot;Planches ou rondins&quot;, 22, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        index = AddCraft(typeof(Comptoire2), &quot;Christian&quot;, &quot;Comptoir 2 (nappe)&quot;, 55, 80, typeof(Log), &quot;Planches ou rondins&quot;, 22, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddSkill(index, SkillName&amp;#46;Tailoring, 30, 55);
+        AddRes(index, typeof(Cloth), &quot;Tissus&quot;, 10, &quot;Vous n'avez pas assez de tissus&quot;);
+
+        index = AddCraft(typeof(Comptoire3), &quot;Christian&quot;, &quot;Comptoir 3 (nappe)&quot;, 60, 85, typeof(Log), &quot;Planches ou rondins&quot;, 22, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddSkill(index, SkillName&amp;#46;Tailoring, 35, 60);
+        AddRes(index, typeof(Cloth), &quot;Tissus&quot;, 10, &quot;Vous n'avez pas assez de tissus&quot;);
+        index = AddCraft(typeof(Comptoire4), &quot;Christian&quot;, &quot;Comptoir à bar (coins)&quot;, 70, 90, typeof(Log), &quot;Planches ou rondins&quot;, 30, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddSkill(index, SkillName&amp;#46;Tinkering, 50, 85);
+
+        index = AddCraft(typeof(Comptoire5), &quot;Christian&quot;, &quot;Comptoir à bar (droits)&quot;, 70, 90, typeof(Log), &quot;Planches ou rondins&quot;, 30, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddSkill(index, SkillName&amp;#46;Tinkering, 50, 85);
+
+        AddCraft(typeof(Banc), &quot;Christian&quot;, &quot;Banc 1&quot;, 55, 80, typeof(Log), &quot;Planches ou rondins&quot;, 15, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(Banc2), &quot;Christian&quot;, &quot;Banc 2&quot;, 60, 85, typeof(Log), &quot;Planches ou rondins&quot;, 20, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(Table1), &quot;Christian&quot;, &quot;Table large 1&quot;, 65, 90, typeof(Log), &quot;Planches ou rondins&quot;, 25, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(Table2), &quot;Christian&quot;, &quot;Table large 2&quot;, 70, 95, typeof(Log), &quot;Planches ou rondins&quot;, 25, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(Table4), &quot;Christian&quot;, &quot;Table large 3&quot;, 60, 80, typeof(Log), &quot;Planches ou rondins&quot;, 25, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(Table3), &quot;Christian&quot;, &quot;Grosse table 1&quot;, 85, 105, typeof(Log), &quot;Planches ou rondins&quot;, 25, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(Table5), &quot;Christian&quot;, &quot;Grosse table 2&quot;, 80, 100, typeof(Log), &quot;Planches ou rondins&quot;, 25, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(Barrel), &quot;Christian&quot;, &quot;Gros tonneau&quot;, 24, 34, typeof(BarrelStaves), &quot;Douves de tonneau&quot;, 5, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        index = AddCraft(typeof(MetalChest), &quot;Christian&quot;, &quot;Coffre en métal&quot;, 85, 110, typeof(IronIngot), &quot;Lingots de fer&quot;, 50, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddSkill(index, SkillName&amp;#46;Blacksmith, 35, 55);
+
+        index = AddCraft(typeof(MetalBox), &quot;Christian&quot;, &quot;Boite en métal&quot;, 75, 100, typeof(IronIngot), &quot;Lingots de fer&quot;, 35, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddSkill(index, SkillName&amp;#46;Blacksmith, 20, 40);
+
+        AddCraft(typeof(Dresser), &quot;Christian&quot;, &quot;Bureau à miroir (verrouillable)&quot;, 65, 85, typeof(Log), &quot;Planches ou rondins&quot;, 30, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(TroneVert), &quot;Christian&quot;, &quot;Trône vert&quot;, 75, 100, typeof(Log), &quot;Planches ou rondins&quot;, 20, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(TroneRouge), &quot;Christian&quot;, &quot;Trône rouge&quot;, 80, 105, typeof(Log), &quot;Planches ou rondins&quot;, 20, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        index = AddCraft(typeof(Tonneau2), &quot;Christian&quot;, &quot;Gros tonneau (verrouillable)&quot;, 30, 40, typeof(BarrelStaves), &quot;Douves de tonneau&quot;, 5, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddRes(index, typeof(BarrelLid), &quot;Couvercle de tonneau&quot;, 1, &quot;Vous n'avez pas de couvercle&quot;);
+
+        index = AddCraft(typeof(SmallBedDeed), &quot;Christian&quot;, &quot;Petit lit&quot;, 60&amp;#46;7, 75&amp;#46;7, typeof(Log), &quot;Planches ou rondins&quot;, 65, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddRes(index, typeof(Cloth), &quot;Tissus&quot;, 50, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        index = AddCraft(typeof(LargeBedDeed), &quot;Christian&quot;, &quot;Grand lit&quot;, 94&amp;#46;7, 109&amp;#46;7, typeof(Log), &quot;Planches ou rondins&quot;, 100, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddRes(index, typeof(Cloth), &quot;Tissus&quot;, 75, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(AtelierDeed), &quot;Christian&quot;, &quot;Atelier de menuiserie&quot;, 62, 82, typeof(Log), &quot;Planches ou rondins&quot;, 90, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(AtelierTonnelierDeed), &quot;Christian&quot;, &quot;Atelier de tonnelier&quot;, 52, 72, typeof(Log), &quot;Planches ou rondins&quot;, 50, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(DivanDosDeed), &quot;Christian&quot;, &quot;Divan d'os&quot;, 55, 65, typeof(Bone), &quot;Os&quot;, 40, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        index = AddCraft(typeof(LitPiqueDeed), &quot;Christian&quot;, &quot;Lit de piques&quot;, 40, 55, typeof(Log), &quot;Planches ou rondins&quot;, 20, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddRes(index, typeof(IronIngot), &quot;Lingots de métal&quot;, 50, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddSkill(index, SkillName&amp;#46;Tinkering, 65, 85);
+
+        index = AddCraft(typeof(RedBedDeed), &quot;Christian&quot;, &quot;Grand lit (rouge)&quot;, 97, 112, typeof(Log), &quot;Planches ou rondins&quot;, 110, &quot;Vous n'avez pas assez de matériel&quot;);
+        AddRes(index, typeof(Cloth), &quot;Tissus&quot;, 85, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(EtagerePleine), &quot;Christian&quot;, &quot;Étagère pleine&quot;, 38&amp;#46;1, 64&amp;#46;1, typeof(Log), &quot;Planches ou rondins&quot;, 25, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(GrandeTable2), &quot;Christian&quot;, &quot;Grande table&quot;, 38&amp;#46;1, 64&amp;#46;1, typeof(Log), &quot;Planches ou rondins&quot;, 25, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(TableDeYew2), &quot;Christian&quot;, &quot;Table de yew&quot;, 38&amp;#46;1, 64&amp;#46;1, typeof(Log), &quot;Planches ou rondins&quot;, 25, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(TroneDos), &quot;Christian&quot;, &quot;Trône d'os&quot;, 80, 100, typeof(Bone), &quot;Os&quot;, 20, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(BoneStool), &quot;Christian&quot;, &quot;Repose-pied d'os&quot;, 60, 80, typeof(Bone), &quot;Planches ou rondins&quot;, 15, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(BancBambou), &quot;Christian&quot;, &quot;Banc en bambou&quot;, 0, 12, typeof(Log), &quot;Planches ou rondins&quot;, 9, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        AddCraft(typeof(Keg), &quot;Christian&quot;, &quot;Tonnelet&quot;, 15, 25, typeof(BarrelStaves), &quot;Douves de tonneau&quot;, 3, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***index = AddCraft(typeof(PentagramDeed2), &quot;Christian&quot;, &quot;Pentagramme&quot;, 100&amp;#46;0, 125&amp;#46;0, typeof(Log), &quot;Planches ou rondins&quot;, 100, &quot;Vous n'avez pas assez de matériel&quot;); 
+        ***AddSkill(index, SkillName&amp;#46;Magery, 75&amp;#46;0, 80&amp;#46;0);
+        ***AddRes(index, typeof(IronIngot), &quot;Lingots de métal&quot;, 40, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***index = AddCraft(typeof(AbbatoirDeed2), &quot;Christian&quot;, &quot;Autel sombre&quot;, 100&amp;#46;0, 125&amp;#46;0, typeof(Log), &quot;Planches ou rondins&quot;, 100, &quot;Vous n'avez pas assez de matériel&quot;);
+        ***AddSkill(index, SkillName&amp;#46;Magery, 50&amp;#46;0, 55&amp;#46;0);
+        ***AddRes(index, typeof(IronIngot), &quot;Lingots de métal&quot;, 40, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***index = AddCraft(typeof(SmallForgeDeed2), &quot;Christian&quot;, &quot;Petite forge&quot;, 73&amp;#46;6, 98&amp;#46;6, typeof(Log), &quot;Planches ou rondins&quot;, 5, &quot;Vous n'avez pas assez de matériel&quot;);
+        ***AddSkill(index, SkillName&amp;#46;Blacksmith, 75&amp;#46;0, 80&amp;#46;0);
+        ***AddRes(index, typeof(IronIngot), &quot;Lingots de métal&quot;, 75, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***index = AddCraft(typeof(LargeForgeDeed), &quot;Christian&quot;, &quot;Grande forge&quot;, 78&amp;#46;9, 103&amp;#46;9, typeof(Log), &quot;Planches ou rondins&quot;, 5, &quot;Vous n'avez pas assez de matériel&quot;);
+        ***AddSkill(index, SkillName&amp;#46;Blacksmith, 80&amp;#46;0, 85&amp;#46;0);
+        ***AddRes(index, typeof(IronIngot), &quot;Lingots de métal&quot;, 100, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***index = AddCraft(typeof(Anvil2), &quot;Christian&quot;, &quot;Enclume&quot;, 73&amp;#46;6, 98&amp;#46;6, typeof(Log), &quot;Planches ou rondins&quot;, 5, &quot;Vous n'avez pas assez de matériel&quot;);
+        ***AddSkill(index, SkillName&amp;#46;Blacksmith, 75&amp;#46;0, 80&amp;#46;0);
+        ***AddRes(index, typeof(IronIngot), &quot;Lingots de métal&quot;, 150, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***index = AddCraft(typeof(TrainingDummy2), &quot;Christian&quot;, &quot;Mannequin d'entrainement&quot;, 68&amp;#46;4, 93&amp;#46;4, typeof(Log), &quot;Planches ou rondins&quot;, 55, &quot;Vous n'avez pas assez de matériel&quot;);
+        ***AddSkill(index, SkillName&amp;#46;Tailoring, 50&amp;#46;0, 55&amp;#46;0);
+        ***AddRes(index, typeof(Cloth), &quot;Tissus&quot;, 60, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***index = AddCraft(typeof(PickpocketDip2), &quot;Christian&quot;, &quot;Manequin de roublard&quot;, 73&amp;#46;6, 98&amp;#46;6, typeof(Log), &quot;Planches ou rondins&quot;, 65, &quot;Vous n'avez pas assez de matériel&quot;); 
+        ***AddSkill(index, SkillName&amp;#46;Tailoring, 50&amp;#46;0, 55&amp;#46;0);
+        ***AddRes(index, typeof(Cloth), &quot;Tissus&quot;, 60, &quot;Vous n'avez pas assez de matériel&quot;);
+</code></pre>
+<p>Il me reste encore à faire, mais ça c'est le plus gros. Merci de votre aide!</p>
+</blockquote>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-18-2008-at-927-pm">Post by Théodore de Lagarde, AdM - August 18, 2008 at 9:27 PM</h2>
+<p><a id="post-178078"></a></p>
+<p>Voici le dernier bout de la liste de la charpenterie. Comme l'autre post, les items avec des *** signifie que j'aurais besoin des vraies chiffres de % de skills qui sont utilisés sur Crep pour éviter tout problème, s'il vous plait. Je les modifierai après pour diminuer ceux trop hauts.</p>
+<p>Tant qu'à moi, le jaune sur le vert... c'est pas le fun à lire ben ben... ça fait presque mal aux yeux.</p>
+<p>J'ai édité mon post dans haut pour que ça soit plus lisable. Ce qui est grouper ensemble, ça fait parti du même objet.</p>
+<pre><code>        ***index = AddCraft(typeof(SpinningwheelDeed), &quot;Christian&quot;, &quot;Rouet&quot;, 73&amp;#46;6, 98&amp;#46;6, typeof(Log), &quot;Planches ou rondins&quot;, 75, &quot;Vous n'avez pas assez de matériel&quot;);  
+        ***AddSkill(index, SkillName&amp;#46;Tailoring, 65&amp;#46;0, 70&amp;#46;0);  
+        ***AddRes(index, typeof(Cloth), &quot;Tissus&quot;, 25, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***index = AddCraft(typeof(LoomDeed), &quot;Christian&quot;, &quot;Métier à tisser&quot;, 84&amp;#46;2, 109&amp;#46;2, typeof(Log), &quot;Planches ou rondins&quot;, 85, &quot;Vous n'avez pas assez de matériel&quot;);  
+        ***AddSkill(index, SkillName&amp;#46;Tailoring, 65&amp;#46;0, 70&amp;#46;0);  
+        ***AddRes(index, typeof(Cloth), &quot;Tissus&quot;, 25, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***index = AddCraft(typeof(StoneOvenDeed), &quot;Christian&quot;, &quot;Four en pierre&quot;, 68&amp;#46;4, 93&amp;#46;4, typeof(Log), &quot;Planches ou rondins&quot;, 85, &quot;Vous n'avez pas assez de matériel&quot;);  
+        ***AddSkill(index, SkillName&amp;#46;Tinkering, 50&amp;#46;0, 55&amp;#46;0);  
+        ***AddRes(index, typeof(IronIngot), &quot;Lingots de métal&quot;, 125, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***index = AddCraft(typeof(FlourMillEastDeed), &quot;Christian&quot;, &quot;Moulin à blé&quot;, 94&amp;#46;7, 119&amp;#46;7, typeof(Log), &quot;Planches ou rondins&quot;, 100, &quot;Vous n'avez pas assez de matériel&quot;);  
+        ***AddSkill(index, SkillName&amp;#46;Tinkering, 50&amp;#46;0, 55&amp;#46;0);  
+        ***AddRes(index, typeof(IronIngot), &quot;Lingots de métal&quot;, 50, &quot;Vous n'avez pas assez de matériel&quot;);
+
+        ***AddCraft(typeof(WaterTroughDeed), &quot;Christian&quot;, &quot;Abreuvoir à chevaux&quot;, 94&amp;#46;7, 119&amp;#46;7, typeof(Log), &quot;Planches ou rondins&quot;, 150, &quot;Vous n'avez pas assez de matériel&quot;);
+</code></pre>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-20-2008-at-1012-pm">Post by Myrddin Emrys, CP - August 20, 2008 at 10:12 PM</h2>
+<p><a id="post-178281"></a></p>
+<p>tu peux pas les trouver en jeu les chiffres?</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-20-2008-at-1014-pm">Post by Théodore de Lagarde, AdM - August 20, 2008 at 10:14 PM</h2>
+<p><a id="post-178282"></a></p>
+<p>Non je peux pas. Je peux seulement voir le premier chiffre, le chiffre minimum.</p>
+<p>Le chiffre maximum est pas affiché. C'est ça le problème, sinon ça ferait longtemps que ça serait fait.</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-20-2008-at-1022-pm">Post by Myrddin Emrys, CP - August 20, 2008 at 10:22 PM</h2>
+<p><a id="post-178283"></a></p>
+<p>ah...</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-28-2008-at-201-am">Post by Théodore de Lagarde, AdM - August 28, 2008 at 2:01 AM</h2>
+<p><a id="post-178972"></a></p>
+<p>J'ai terminé le script pour le flippage.</p>
+<p>Il me manque simplement les chiffres de Crépuscule pour que je mette les miens semblables, ou arranger selon le besoin.</p>
+<p>À part ça, préférez-vous un autre outil indépendant (dont je sais même pas comment faire, et dont ça fera des items similaires pour rien et les joueurs vont trouver ça bizzarre) ou bien simplement que je réarrange les fichier de carpentry, tinkering, tailoring et masonry (celui de la scie qui fait les &quot;toutous&quot; aussi). Ceux de crep je parle. Pas besoin de m'envoyer autre chose à part ça, je m'arrangerai. (Même si j'ai pas les objets genre la poubelle de Willy, je trouverai un moyen de faire marcher ça chez moi).</p>
+<p>C'est ça, alors j'attends vos réponses... encore.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-28-2008-at-517-am">Post by Théodore de Lagarde, AdM - August 28, 2008 at 5:17 AM</h2>
+<p><a id="post-178992"></a></p>
+<p>Tien, pour mieux montrer tout ce que j'ai fait à date et vous aider à répondre à mes questions:</p>
+<p>Ça illustre tout ce que j'ai ajouter à crafter et ceux que j'ai modifié, mais en &quot;doublant le scripte de l'objet de ceux déjà existant. Ceux déjà IG dans l'image je l'ai ai modifié à quelque part.</p>
+<p><img src="http://img165.imageshack.us/img165/1644/itemscraftbn7.jpg" alt=""></p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-28-2008-at-544-am">Post by Myrddin Emrys, CP - August 28, 2008 at 5:44 AM</h2>
+<p><a id="post-178997"></a></p>
+<p>un seul commentaire----]) waaaaa</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---august-28-2008-at-821-am">Post by Coordinateur Apoc - August 28, 2008 at 8:21 AM</h2>
+<p><a id="post-179022"></a></p>
+<p>Je peux déjà voir les comptes en banques se vider et les artisants s'enrichir.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-lumina---august-28-2008-at-1016-am">Post by Ex-Lumina - August 28, 2008 at 10:16 AM</h2>
+<p><a id="post-179038"></a></p>
+<p>Bon boulot Christian :-).</p>
+<p>Pour le pentagramme et l'abattoir (les trucs de magie au sol), ils sont déjà dans le menu non ?</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---august-29-2008-at-123-am">Post by Myrddin Emrys, CP - August 29, 2008 at 1:23 AM</h2>
+<p><a id="post-179111"></a></p>
+<blockquote>
+<p><strong>&quot;Apoc&quot; wrote:</strong>
+Je peux déjà voir les comptes en banques se vider et les artisants s'enrichir.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>surtout si on combine ça avec mes trucs de bois  <img src="/assets/smilies/smile.gif" alt="">
+mais bon, me reste juste un petit trucs à faire <img src="/assets/smilies/sad.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-29-2008-at-246-am">Post by Théodore de Lagarde, AdM - August 29, 2008 at 2:46 AM</h2>
+<p><a id="post-179127"></a></p>
+<blockquote>
+<p><strong>&quot;Apoc&quot; wrote:</strong>
+Je peux déjà voir les comptes en banques se vider et les artisants s'enrichir. <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>C'est pas comme si j'avais un artisan Ig... <em>siffle</em></p>
+<p><strong>&quot;Coordinatrice Lumina&quot; wrote:</strong>
+Pour le pentagramme et l'abattoir (les trucs de magie au sol), ils sont déjà dans le menu non ?</p>
+<p>Oui ils le sont déjà, mais comme je l'ai dans mes post précédent, ceux que je montre et qui sont déjà IG, c'est que je leur ai fait des modifications. Comme ceux là, ils sont maintenant parfaitement bougeable comme n'importe quel autre item IG. Ils ne l'étaient pas à se que je sache IG avant.</p>
+<p><strong>&quot;Christian, OdS&quot; wrote:</strong>
+Il me manque simplement les chiffres de Crépuscule pour que je mette les miens semblables, ou arranger selon le besoin.</p>
+<p>Oui Christian, effectivement tu as raison. Il va me falloir ces chiffres si jamais quelqu'un d'autre que moi veut bien profiter de ces meubles.</p>
+<p><strong>&quot;Kertan Andilix, OdS&quot; wrote:</strong>
+surtout si on combine ça avec mes trucs de bois <img src="/assets/smilies/smile.gif" alt=""></p>
+<p>Fait pas les lits changer de hue avec le bois, vu que c'est juste la couleur du tissu qui change et pas le bois. Regarde les autres addons aussi.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---august-29-2008-at-1113-pm">Post by Théodore de Lagarde, AdM - August 29, 2008 at 11:13 PM</h2>
+<p><a id="post-179223"></a></p>
+<p>Ajoutez à la liste des chiffres de skills que j'ai besoin, les bulletinboard.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-1-2008-at-506-am">Post by Coordinateur Apoc - September 1, 2008 at 5:06 AM</h2>
+<p><a id="post-179537"></a></p>
+<p>J'ai envoyé les scripts de crafting a Kertan, il ma dit pouvoir te donner ca.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-1-2008-at-511-am">Post by Théodore de Lagarde, AdM - September 1, 2008 at 5:11 AM</h2>
+<p><a id="post-179543"></a></p>
+<p>Merci beaucoup Apoc! Je vais regarder ça quand je les aurai!</p>
+<p>Je sais pas combien de temps ça peut prendre par contre.</p>
+<p>Si on est chanceux, j'aurai peut-être du temps à passer dessus demain.</p>
+<p>Sinon, je dois dire que je suis assez occuper la semaine avec mon Cégep. Ça pourrait étirer jusqu'à la fin de semaine prochaine, désolé...</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---september-1-2008-at-524-am">Post by Myrddin Emrys, CP - September 1, 2008 at 5:24 AM</h2>
+<p><a id="post-179552"></a></p>
+<p>tu m'enverras tes scripts quand tu auras finis pour que je puisse rajouter mes trucs dessus</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-1-2008-at-528-am">Post by Théodore de Lagarde, AdM - September 1, 2008 at 5:28 AM</h2>
+<p><a id="post-179557"></a></p>
+<p>Finallement tu fait les addons teindable?</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---september-1-2008-at-531-am">Post by Myrddin Emrys, CP - September 1, 2008 at 5:31 AM</h2>
+<p><a id="post-179560"></a></p>
+<p>nan j'me suis rendu compte que finalement je fais ça pour à peut prêt trois addon...</p>
+<p>les lits c'est les draps qui change alors non...</p>
+<p>donc il reste l'abreuvoir, le rouet et le métier à tisser, mais on s'entend qu'on s'en fou un peu d'eau (d'ailleurs l'eau change de couleurs dans l'abreuvoir)</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-2-2008-at-351-am">Post by Théodore de Lagarde, AdM - September 2, 2008 at 3:51 AM</h2>
+<p><a id="post-179790"></a></p>
+<p>J'ai envoyé mes scripts à Kertan pour qu'il y ajoute les siens.</p>
+<p>Je me demandais aussi, comment vous alliez annoncer tout ça, avec tout les ajouts qu'on a fait</p>
+<p>À moins qu'il faut qu'on se fasse nous même un post pour annoncer les nouveauté?</p>
+<p>En passant j'Ai pas inclu les arbes à fruits vu qu'ils bugs pour l'instant. Mais je les mettrai quand ils seront débuggés!</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-4-2008-at-339-am">Post by Théodore de Lagarde, AdM - September 4, 2008 at 3:39 AM</h2>
+<p><a id="post-180132"></a></p>
+<p>Tu as mis tes scripts Kertan? J'ai hâte de voir tout ça en jeu!!!!!!!!!!!</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-4-2008-at-750-am">Post by Coordinateur Apoc - September 4, 2008 at 7:50 AM</h2>
+<p><a id="post-180166"></a></p>
+<blockquote>
+<p><strong>&quot;Christian, OdS&quot; wrote:</strong>
+Tu as mis tes scripts Kertan? J'ai hâte de voir tout ça en jeu!!!!!!!!!!!</p>
+<p>Malheureusement ce que vous avez fait, comme ce que j'ai fais dans les derniers mois ne sera peut-être pas en jeu avant un moment. Ca dépendra de Kel et quand il sera prêt à faire la grosse mise à jour complète.</p>
+<p>Pour ce qui est de l'annonce, à vous de voir, si vous voulez préparer un texte ou si je m'en occupes. Il vous suffira de le mettre dans cette section et je le copierai le moment venu.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-ex-lumina---september-4-2008-at-1014-am">Post by Ex-Lumina - September 4, 2008 at 10:14 AM</h2>
+<p><a id="post-180194"></a></p>
+<p>Apoc, fais moi signe quand leurs scripts seront testés et &quot;ajoutés à la prochaine mise à jour&quot;.</p>
+<p>Je tenterai d'utiliser mes charmes virtuels sur Kel !!</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-4-2008-at-1022-am">Post by Coordinateur Apoc - September 4, 2008 at 10:22 AM</h2>
+<p><a id="post-180199"></a></p>
+<p>Apoc, fais moi signe quand leurs scripts seront testés et &quot;ajoutés à la prochaine mise à jour&quot;.</p>
+<p>Je tenterai d'utiliser mes charmes virtuels sur Kel !!</p>
+<p>Oui chef!  <img src="/assets/smilies/paladin.gif" alt=""></p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-5-2008-at-601-pm">Post by Théodore de Lagarde, AdM - September 5, 2008 at 6:01 PM</h2>
+<p><a id="post-180445"></a></p>
+<p>Apoc, je viens de penser à un problème majeur...</p>
+<p>je pense pas que le .verrou marche sur les addons, vrai? moi je peux pas le tester en tout cas.</p>
+<p>Mais si c'est le cas, les addons vont de décay car ils sont movable maintenant (les nouveaux, pas ceux déjà IG)</p>
+<p>Mais si le .verrou marche, il va falloir que les joueurs le fasse sur chaque partie de l'Addon, sinon l'addon va se supprimer...</p>
+<p>aussi, quand on &quot;flippe&quot; ben... le verrou disparait. Mais ça c'est pas aussi grave. Ça ce relock (en admettant qu'on trouve une solution au problèmes ci-haut)</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---september-6-2008-at-1236-am">Post by Myrddin Emrys, CP - September 6, 2008 at 12:36 AM</h2>
+<p><a id="post-180500"></a></p>
+<p>4 chose importante pour toi apoc.</p>
+<p>1- Il faudrait que tu balances les arbres de combat (désolé chez moi peut importe ce que je fais ça attaque pareil.</p>
+<p>2 Idem mais pour les arc (dans oreinfo)</p>
+<ol start="3">
+<li>
+<p>Faire les gants craftables</p>
+</li>
+<li>
+<p>Ce n'est pas un bug si les planches aqualiens demandent d'être prêt d'un source de chaleur. Comme c'est un bois aquatique il faut le faire séché avant de le couper.</p>
+</li>
+</ol>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-11-2008-at-419-am">Post by Théodore de Lagarde, AdM - September 11, 2008 at 4:19 AM</h2>
+<p><a id="post-181454"></a></p>
+<p>Tu as trouvé quelque chose pour nos bus/problèmes apoc?</p>
+<p>Surtout celui du verrou, parce que c'est un problème MAJEUR qui pourrait ruiner tout mon travaille...</p>
+<p>probablement qu'il faudrait modifier quelque chose du genre</p>
+<p>if ( Target = Item)</p>
+<p>Target.movable = false;</p>
+<p>par</p>
+<p>LE 2 DE ADDON2 EST TRÈS IMPORTANT<br>
+if (Target = Item || Target = Addon2)</p>
+<p>Target.movable = false;</p>
+<p>mais je sais que le script est plus complexe</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-11-2008-at-728-am">Post by Coordinateur Apoc - September 11, 2008 at 7:28 AM</h2>
+<p><a id="post-181480"></a></p>
+<p>Désolé je suis un peu occupé présentement.</p>
+<p>Par contre si en plus vous me demandez de faire tout plein de modifications, sa prendra plus de temps.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Pour le .verrou je sais pas ce que je pourrai faire avec les addon... J'ai déjà eu pas mal de problème avec ce script(le bug des stacks par exemple) mais je verrai.</p>
+<p>Les addons sont considéré comme un item ou plusieurs items? Car je sais qu'ils sont en plusieurs morceaux. Il faudrait voir ce que sa donne avec le .verrou car le flip pourrait faire un bug avec les addon comme avec les stacks avant.</p>
+<p>Le .verrou n'est pas simplement un movable=false/true sinon les joueurs pourraient même bouger les truc placés par les GMs.  <img src="/assets/smilies/diablo.gif" alt=""></p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-11-2008-at-317-pm">Post by Théodore de Lagarde, AdM - September 11, 2008 at 3:17 PM</h2>
+<p><a id="post-181499"></a></p>
+<blockquote>
+<p><strong>&quot;Apoc&quot; wrote:</strong>
+Désolé je suis un peu occupé présentement.</p>
+<p>Moi aussi <img src="/assets/smilies/man_in_love.gif" alt="">
+<strong>&quot;Apoc&quot; wrote:</strong>
+Par contre si en plus vous me demandez de faire tout plein de modifications, sa prendra plus de temps. <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Si on te les demande, c'est parce que on a aucun moyen de le faire chez nous. À moins que je me tappe un nouveau script de .verrou <img src="/assets/smilies/man_in_love.gif" alt=""> Chose que je ferai pas.</p>
+<p>Les addons sont considéré comme un item ou plusieurs items? Car je sais qu'ils sont en plusieurs morceaux. Il faudrait voir ce que sa donne avec le .verrou car le flip pourrait faire un bug avec les addon comme avec les stacks avant.</p>
+<p>Un Addon c'est comme un objet appeler Item, mais ça s'appelle Addon. Donc ça ne reconnaitra pas Item si tu fais des choses avec etc.
+Il faut verrouiller chaque pièce du meuble, un à la fois, sinon il decay. Mais ça c'est pas si grave si on peut au moin les verrouiller.</p>
+<p>Fais attention, les addons à faire verrouillable c'est les Addon2 seulement.</p>
+<p>Et je pense pas que ça peut bugger avec le flippage, vu que quand on le &quot;flippe&quot; l'item original se delete pour le remplacer par un nouveau de l'autre bord.</p>
+<p><strong>&quot;Apoc&quot; wrote:</strong>
+Le .verrou n'est pas simplement un movable=false/true sinon les joueurs pourraient même bouger les truc placés par les GMs. <img src="/assets/smilies/diablo.gif" alt=""></p>
+<p>Je m'en doutais bien, mais peut-être qu'il y avait des bouts qui ressemblait à ça.</p>
+<p>À part ça, tu as regarder nos scripts en gros?</p>
+</blockquote>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---september-12-2008-at-603-am">Post by Myrddin Emrys, CP - September 12, 2008 at 6:03 AM</h2>
+<p><a id="post-181594"></a></p>
+<p>pourquoi aurai-on besoin de verrouiller chaque partie? quand tu change de hue, tout change de hue.  ça devrais être la même chose non? Sinon on se ramasserais avec des 3/4 d'adons</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-12-2008-at-345-pm">Post by Théodore de Lagarde, AdM - September 12, 2008 at 3:45 PM</h2>
+<p><a id="post-181606"></a></p>
+<p>non kertan. Crois moi je l'Ai essayer et ça marche pas. C'est pas pour rien que je dis que c'est nécéssaire.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-12-2008-at-408-pm">Post by Théodore de Lagarde, AdM - September 12, 2008 at 4:08 PM</h2>
+<p><a id="post-181611"></a></p>
+<p>Apoc, ce serait possible de juste avoir le script du capuchon?</p>
+<p>Je pourrais le rendre craftable et teindable. C'est seulement une question de minutes. Comme ça on pourra l'ajouter à la maj.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-15-2008-at-315-am">Post by Théodore de Lagarde, AdM - September 15, 2008 at 3:15 AM</h2>
+<p><a id="post-182037"></a></p>
+<p>J'aurais vraiment besoin du script si on veut espérer le rendre craftable et teindable.</p>
+<p>Tien, je pense à ça là: les portes-clefs ne sont pas craftable il me semble? Je pourrais avoir le script aussi?</p>
+<p>Je sais, ça te tanne, mais ça ferait très bien si tu pouvais me les fournir... [Par Pm si tu veux ou sinon sur courriels seulement]</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-15-2008-at-641-am">Post by Coordinateur Apoc - September 15, 2008 at 6:41 AM</h2>
+<p><a id="post-182060"></a></p>
+<p>J'ai pas réussi à trouver aucun script qui s'appelle capuchon ou un synonyme.  <img src="/assets/smilies/blush2.gif" alt=""><br>
+On a plus de 2000 scripts d'items, j.arrives même pas à trouver le putain de Keyring.  <img src="/assets/smilies/wacko.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-lumina---september-15-2008-at-709-am">Post by Ex-Lumina - September 15, 2008 at 7:09 AM</h2>
+<p><a id="post-182069"></a></p>
+<p><u>Capuche :</u><br>
+Nom :<br>
+ItemID : 12334 (0x302E)<br>
+<em>Note : Ce n'est pas un objet scripté/craftable en ce moment.</em></p>
+<p><u>Keyring :</u><br>
+Nom : DwsKeyRing<br>
+ItemID : 4113 (0x1011)</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---september-15-2008-at-714-am">Post by Myrddin Emrys, CP - September 15, 2008 at 7:14 AM</h2>
+<p><a id="post-182071"></a></p>
+<p>normalement si on peux le porter c'est qu'il est scripter <img src="/assets/smilies/smile.gif" alt=""><br>
+enfin...</p>
+<p>je crois</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-15-2008-at-715-am">Post by Coordinateur Apoc - September 15, 2008 at 7:15 AM</h2>
+<p><a id="post-182072"></a></p>
+<p>Ah ouais, le Keyring traine dans un autre dossier pas rapport. Évidemment Windows me la pas donné quand j'ai fait une recherche... Enfin, je crois que c'est suffisant pour ce que tu veux faire.</p>
+<p>Ah et j'aurais cherché la capuche longtemps vu qu'elle n'est même pas scripté.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-15-2008-at-717-am">Post by Coordinateur Apoc - September 15, 2008 at 7:17 AM</h2>
+<p><a id="post-182073"></a></p>
+<p>normalement si on peux le porter c'est qu'il est scripter <img src="/assets/smilies/smile.gif" alt=""><br>
+enfin...</p>
+<p>je crois</p>
+<p>Nah pas nécessairement, suffit de prendre un item qu'on peut deja porter et de changer le itemid. Sa change seulement le gump mais l'item garde toute les propriétés d'avant, dont le fait de pouvoir être porté.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-15-2008-at-404-pm">Post by Théodore de Lagarde, AdM - September 15, 2008 at 4:04 PM</h2>
+<p><a id="post-182101"></a></p>
+<p>Bon pour le capuchon, je crois pouvoir le scripter sans problème, alors. Merci pour le ID Lumina :)</p>
+<p>ItemId : 12334 (0x302E)<br>
+Animation ID : 889 (0x379)<br>
+Gump ID : 50889 (0xc6c9)</p>
+<p>et pour le keyring, j'avais simplement besoin du nom. Je vais l'ajouter aux bricoleur, merci.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-16-2008-at-421-am">Post by Théodore de Lagarde, AdM - September 16, 2008 at 4:21 AM</h2>
+<p><a id="post-182170"></a></p>
+<p>Pour le keyring, Apoc, tu peux ajouter la ligne suivante dans la catégorie misc du fichier DefTinkering que Kertan t'a envoyé. Il sera maintenant craftable!</p>
+<pre><code>            AddCraft(typeof(DwsKeyRing), 1044050, &quot;Porte-clefs&quot;, 15, 30, typeof(IronIngot), &quot;Lingots de métal&quot;, 2, &quot;Vous n'avez pas assez de matériel&quot;);  
+</code></pre>
+<p>Et pour le capuchon, je suis désolé mais je pourrai rien faire. Je n'ai pas les artworks, animations et les gumps de Crép pour mes tests et mon serveur test. Je ne peux donc pas lié le gump du capuchon, l'animation et l'artwork. Désolé...</p>
+<p>Je pourrai pas tester<br>
+si ça marche<br>
+ou ça crash</p>
+<p>Sinon... Apoc, tu pourrais toujours essayer ça chez toi, vu que moi je peux pas ( je sais que c'ets tannan, mais sinon je peux rien faire, je suis assez limité)</p>
+<p>using System;</p>
+<p>namespace Server.Items<br>
+{
+public class Capuchon : BaseHat</p>
+<pre><code>{  
+    public override int BasePhysicalResistance { get { return 0; } }  
+    public override int BaseFireResistance { get { return 0; } }  
+    public override int BaseColdResistance { get { return 0; } }  
+    public override int BasePoisonResistance { get { return 0; } }  
+    public override int BaseEnergyResistance { get { return 0; } }
+
+    &amp;#91;Constructable&amp;#93;  
+    public Capuchon()  
+        &amp;#58; this(0)  
+    {  
+    }
+
+    &amp;#91;Constructable&amp;#93;  
+    public Capuchon(int hue)  
+        &amp;#58; base(0x302E, hue)  
+    {  
+        Weight = 1&amp;#46;0;  
+    }
+
+    public Capuchon(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }
+
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);
+
+        writer&amp;#46;Write((int)0); // version  
+    }
+
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);
+
+        int version = reader&amp;#46;ReadInt();  
+    }  
+}  
+</code></pre>
+<p>}</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-17-2008-at-1000-pm">Post by Théodore de Lagarde, AdM - September 17, 2008 at 10:00 PM</h2>
+<p><a id="post-182508"></a></p>
+<p>Tu as eu le temps de voir à ci-haut à date?</p>
+<p>et nos scripts? <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-17-2008-at-1033-pm">Post by Coordinateur Apoc - September 17, 2008 at 10:33 PM</h2>
+<p><a id="post-182512"></a></p>
+<p>Nah, dès que j'ai le temps de m'assoir devant mon écran je vous le fait savoir.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Je crois pas avoir du temps libre avant Samedi ou Dimanche.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-17-2008-at-1036-pm">Post by Théodore de Lagarde, AdM - September 17, 2008 at 10:36 PM</h2>
+<p><a id="post-182513"></a></p>
+<p>D'accord merci.</p>
+<p>De toute façon j'ai des problèmes avec mon script de description...</p>
+<p>Il veut pas afficher le nom ET la description lorsque je donne un nom &quot;personalisé&quot; à un Item...</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-17-2008-at-1038-pm">Post by Coordinateur Apoc - September 17, 2008 at 10:38 PM</h2>
+<p><a id="post-182514"></a></p>
+<p>D'accord merci.</p>
+<p>De toute façon j'ai des problèmes avec mon script de description...</p>
+<p>Il veut pas afficher le nom ET la description lorsque je donne un nom &quot;personalisé&quot; à un Item...</p>
+<p>C'est comme ca aussi pour certains items, j'ai jamais vraiment su ou regardé pourquoi. La description devient le nom de l'item, en fait c'est comme ca pour plusieurs items je crois. Peut-être que c'est ainsi pour les items qui ne sont pas CrepusculeItem...</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-17-2008-at-1054-pm">Post by Théodore de Lagarde, AdM - September 17, 2008 at 10:54 PM</h2>
+<p><a id="post-182516"></a></p>
+<p>En réalité, le nom reste le nom:</p>
+<p>si tu regarde dans les propriétés, le nom est toujours le nom, et pas la description. Le nom fait juste &quot;disparaitre&quot; de l'affaire qui se montre quand on met notre souris dessus. J'ai aucune idée pourquoi non plus... ça semble illogique... tout ce qui reste c'est la description qui prend la forme et la couleur du nom pour je ne sais quelle raison.</p>
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-28-2008-at-802-pm">Post by Théodore de Lagarde, AdM - September 28, 2008 at 8:02 PM</h2>
+<p><a id="post-184269"></a></p>
+<p>Willy et Apoc, si jamais vous faites des tests, attendez avant de regarder les Addons2. J'ai fait quelques modifications à cause de mon script de description.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

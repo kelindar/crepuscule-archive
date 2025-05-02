@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changement de Layer - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Changement de Layer</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Changement de Layer</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="changement-de-layer">Changement de Layer</h1>
+<h2 id="post-by-feydanith-dit-la-carpe---march-9-2007-at-211-am">Post by Feydanith, dit la Carpe - March 9, 2007 at 2:11 AM</h2>
+<p><a id="post-110481"></a></p>
+<p>Egalement proposé sur Teilia par moi, mais autant en faire profiter Crep hein !</p>
+<p>Sauf qu'eux ils ont pas encore le script <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p><u><strong>Changement de layer</u></strong></p>
+<p><strong>Accès :</strong> Joueurs<br>
+<strong>Commande :</strong> .ChangeLayer<br>
+<strong>Effet :</strong> Change le layer d’un objet* parmis un groupe**.<br>
+<strong>Usage :</strong> Tapez la commande, puis sélectionnez l’objet*.</p>
+<ul>
+<li>Conditions de l’objet décrites dans le fonctionnement.<br>
+** Les différents groupes sont définis dans le fonctionnement.</li>
+</ul>
+<p><strong>Fonctionnement :</strong></p>
+<p>Une fois l’objet sélectionné, le script fait les vérifications suivantes :</p>
+<ul>
+<li>L’objet est un <u>vêtement ( BaseClothing )</u>, le cas contraire il renvoie un message d’erreur à l’utilisateur.</li>
+</ul>
+<p>« Vous ne pouvez pas changer le layer de cela. »</p>
+<ul>
+<li>L’objet se trouve dans le sac de l’utilisateur de la commande, sinon il renvoie un message d’erreur à l’utilisateur.</li>
+</ul>
+<p>« Cela doit être dans votre sac pour changer le layer. »</p>
+<ul>
+<li>Le layer de l’objet, si c’est un vêtement, appartient à un des trois groupes ci-dessous, autrement il renvoie un message d’erreur à l’utilisateur.</li>
+</ul>
+<p>« Vous ne pouvez pas changer le layer de ce vêtement. »</p>
+<p>Les trois groupes sont les suivants :</p>
+<p>Le groupe dit « tête ».</p>
+<ul>
+<li>Helm : Tout ce qui est chapeau, casque, turban, ce layer passe au-dessus des cheveux.</li>
+<li>Neck : Ce qui se rapporte au cou, ce layer passe en dessous des cheveux.</li>
+<li>Earrings : Tout ce qui est boucle d’oreilles ( et actuellement en jeu les foulards sauf le col ), ce layer passe au dessus des cheveux.</li>
+</ul>
+<p><img src="http://www.europe2tv.info/hilawen/ChangeLayer_Head.JPG" alt=""></p>
+<p>Le groupe dit « jambes ».</p>
+<ul>
+<li>Pants : Le pantalon, niveau le plus bas sur les jambes ( sauf erreur de ma part ).</li>
+<li>OuterLegs : Les jupes qui vont par-dessus le pantalon.</li>
+</ul>
+<p><em>A noter que le niveau InnerLegs n’a pas été repris car il semble inutilisable. Le cas contraire, la structure du script permet de facilement le rajouter.</em></p>
+<p><img src="http://www.europe2tv.info/hilawen/ChangeLayer_Legs.JPG" alt=""></p>
+<p>Le groupe dit « torse ».</p>
+<ul>
+<li>Shirt : Tout ce qui est chemise, donc proche du corps, normalement le niveau le plus bas.</li>
+<li>InnerTorso : Niveau juste au dessus de la chemise.</li>
+<li>MiddleTorso : Par pure logique, le niveau au dessus de InnerTorso.</li>
+<li>OuterTorso : Le niveau le plus haut sur le torse. <strong>A noter que ce dernier cache certains niveaux inférieurs !</strong></li>
+</ul>
+<p><img src="http://www.europe2tv.info/hilawen/ChangeLayer_Torso.JPG" alt=""></p>
+<p>Une fois validé, le script vérifie que le vêtement n’a pas été supprimé.<br>
+Il vérifie également que le vêtement est toujours dans votre sac.</p>
+<p>« Le vêtement doit rester dans votre sac ! »</p>
+<p>Ensuite il détermine simplement si vous avez changé le layer ou non.</p>
+<p>« Vous changez le Layer en :  »<br>
+« Vous gardez le même Layer. »\t</p>
+<p>Si on ne valide rien dans le gump…</p>
+<p>« Vous décidez de ne pas changer le Layer. »</p>
+<p><strong>Note(s) supplémentaire(s) :</strong></p>
+<ul>
+<li>Le script est aisément modifiable et modulable pour la création de nouveaux groupes et ou le changement des conditions.</li>
+</ul>
+<p>/*****************************************************</p>
+<ul>
+<li>ce script a été crée par Namorcen.</li>
+<li></li>
+<li>Merci de laisser ce copyright si vous l'utilisez.</li>
+<li></li>
+<li>pour tout renseignement:</li>
+<li>commandercore@hotmail.com<br>
+*****************************************************/</li>
+</ul>
+<p>using System;<br>
+using System.Reflection;<br>
+using Server.Gumps;<br>
+using Server.Items;<br>
+using Server.Network;<br>
+using Server.Targeting;</p>
+<p>namespace Server.Scripts.Commands<br>
+{<br>
+\tpublic class ChangeLayer<br>
+\t{<br>
+\t\tpublic static void Initialize()<br>
+\t\t{<br>
+\t\t\tServer.Commands.Register( &quot;ChangeLayer&quot;, AccessLevel.Player, new CommandEventHandler( ChangeLayer_OnCommand ) );<br>
+\t\t}</p>
+<p>\t\t[Usage( &quot;ChangeLayer&quot; )]<br>
+\t\t[Description( &quot;Change le layer d'un objet sous conditions.&quot; )]<br>
+\t\tprivate static void ChangeLayer_OnCommand( CommandEventArgs e )<br>
+\t\t{<br>
+\t\t\te.Mobile.Target = new ChangeLayerTarget();<br>
+\t\t\te.Mobile.SendMessage( &quot;De quel vêtement voulez-vous changer le layer ?&quot; );<br>
+\t\t}<br>
+\t\t<br>
+\t\tprivate class ChangeLayerTarget : Target<br>
+\t\t{<br>
+\t\t\tpublic ChangeLayerTarget() : base( -1, false, TargetFlags.None )<br>
+\t\t\t{<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tprotected override void OnTarget( Mobile from, object target )<br>
+\t\t\t{<br>
+\t\t\t\t// Vérifie que la cible est bien un vêtement ( non une armure ou quoique ce soit d'autre ).<br>
+\t\t\t\t<br>
+\t\t\t\tif ( !(target is BaseClothing) || target is BaseHat )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas changer le layer de cela.&quot; );<br>
+\t\t\t\t\treturn;<br>
+\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t\tBaseClothing targ = (BaseClothing) target;<br>
+\t\t\t\t<br>
+\t\t\t\t// Vérifie que l'objet est dans le sac.<br>
+\t\t\t\t<br>
+\t\t\t\tif ( !targ.IsChildOf( from.Backpack ) )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Cela doit être dans votre sac pour changer le layer.&quot; );<br>
+\t\t\t\t\treturn;<br>
+\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t\tif ( targ.Layer == Layer.Helm || targ.Layer == Layer.Neck || targ.Layer == Layer.Earrings ||<br>
+\t\t\t\t     targ.Layer == Layer.Pants || targ.Layer == Layer.OuterLegs || /<em>targ.Layer == Layer.InnerLegs ||</em>/<br>
+\t\t\t\t     targ.Layer == Layer.Shirt || targ.Layer == Layer.OuterTorso || targ.Layer == Layer.MiddleTorso || targ.Layer == Layer.InnerTorso )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfrom.CloseGump( typeof( ChangeLayerGump ) );<br>
+\t\t\t\t\tfrom.SendGump( new ChangeLayerGump( targ ) );<br>
+\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t\telse<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas changer le layer de ce vêtement.&quot; );<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tpublic class ChangeLayerGump : Gump<br>
+\t\t\t{<br>
+\t\t\t\tprivate BaseClothing m_Cloth;<br>
+\t\t\t\tprivate ChangeLayerEntry[] m_Entry;</p>
+<p>\t\t\t\tprivate class ChangeLayerEntry<br>
+\t\t\t\t{<br>
+\t\t\t\t\tprivate Layer m_Layer;</p>
+<p>\t\t\t\t\tpublic Layer getLayer<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tget<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\treturn m_Layer;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t}</p>
+<p>\t\t\t\t\tpublic ChangeLayerEntry( Layer layer )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tm_Layer = layer;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}</p>
+<p>\t\t\t\tprivate static ChangeLayerEntry[] m_Head = new ChangeLayerEntry[]<br>
+\t\t\t\t{<br>
+\t\t\t\t\tnew ChangeLayerEntry( Layer.Neck ),<br>
+\t\t\t\t\tnew ChangeLayerEntry( Layer.Helm ),<br>
+\t\t\t\t\tnew ChangeLayerEntry( Layer.Earrings )<br>
+\t\t\t\t};<br>
+\t\t\t\t<br>
+\t\t\t\tprivate static ChangeLayerEntry[] m_Legs = new ChangeLayerEntry[]<br>
+\t\t\t\t{<br>
+\t\t\t\t\tnew ChangeLayerEntry( Layer.Pants ),<br>
+\t\t\t\t\tnew ChangeLayerEntry( Layer.OuterLegs )/<em>,<br>
+\t\t\t\t\tnew ChangeLayerEntry( Layer.InnerLegs )</em>/<br>
+\t\t\t\t};<br>
+\t\t\t\t<br>
+\t\t\t\tprivate static ChangeLayerEntry[] m_Torso = new ChangeLayerEntry[]<br>
+\t\t\t\t{<br>
+\t\t\t\t\tnew ChangeLayerEntry( Layer.Shirt ),<br>
+\t\t\t\t\tnew ChangeLayerEntry( Layer.OuterTorso ),<br>
+\t\t\t\t\tnew ChangeLayerEntry( Layer.MiddleTorso ),<br>
+\t\t\t\t\tnew ChangeLayerEntry( Layer.InnerTorso )<br>
+\t\t\t\t};</p>
+<p>\t\t\t\tpublic ChangeLayerGump( BaseClothing cloth ) : base( 50, 50 )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tm_Cloth = cloth;\t\t\t\t\t<br>
+\t\t\t\t\t<br>
+\t\t\t\t\tif ( m_Cloth.Layer == Layer.Helm || m_Cloth.Layer == Layer.Neck || m_Cloth.Layer == Layer.Earrings )<br>
+\t\t\t\t\t\tm_Entry = m_Head;<br>
+\t\t\t\t\telse if ( m_Cloth.Layer == Layer.Pants || m_Cloth.Layer == Layer.OuterLegs /<em>|| m_Cloth.Layer == Layer.InnerLegs</em>/ )<br>
+\t\t\t\t\t\tm_Entry = m_Legs;<br>
+\t\t\t\t\telse<br>
+\t\t\t\t\t\tm_Entry = m_Torso;<br>
+\t\t\t\t\t<br>
+\t\t\t\t\tAddPage( 0 );</p>
+<p>\t\t\t\t\tAddBackground( 100, 10, 350, 96 + m_Entry.Length * 22, 2600 );<br>
+\t\t\t\t\tAddBackground( 120, 54, 110, 6 + m_Entry.Length * 22, 5100 );</p>
+<p>\t\t\t\t\tAddLabel( 185, 25, 0x00, &quot;Menu de changement de Layer.&quot;);<br>
+\t\t\t\t\t<br>
+\t\t\t\t\tAddLabel( 260, 59 - 22 + m_Entry.Length * 11, 0x00, &quot;Le Layer actuel est :&quot; );<br>
+\t\t\t\t\tAddLabel( 260, 59 + m_Entry.Length * 11, 0x00, &quot;&quot; + m_Cloth.Layer );</p>
+<p>\t\t\t\t\tAddButton( 149, 70 + m_Entry.Length * 22, 4005, 4007, 1, GumpButtonType.Reply, 0 );<br>
+\t\t\t\t\tAddLabel( 185, 71 + m_Entry.Length * 22, 0x00, &quot;Changer le layer ! &quot; );<br>
+\t\t\t\t\t<br>
+\t\t\t\t\tfor ( int i = 0; i &lt; m_Entry.Length; ++i )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tAddLabel( 130, 59 + i * 22, 0x00, &quot;&quot; + m_Entry[i].getLayer );<br>
+\t\t\t\t\t\tAddRadio( 207, 60 + i * 22, 210, 211, false, i );<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}</p>
+<p>\t\t\t\tpublic override void OnResponse( NetState from, RelayInfo info )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tif ( m_Cloth.Deleted )<br>
+\t\t\t\t\t\treturn;</p>
+<p>\t\t\t\t\tMobile m = from.Mobile;<br>
+\t\t\t\t\tint[] switches = info.Switches;</p>
+<p>\t\t\t\t\t// Vérifie que le vêtement est toujours dans le sac<br>
+\t\t\t\t\tif ( !m_Cloth.IsChildOf( m.Backpack ) )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tm.SendMessage( &quot;Le vêtement doit rester dans votre sac !&quot; );<br>
+\t\t\t\t\t\treturn;<br>
+\t\t\t\t\t}</p>
+<p>\t\t\t\t\tif ( info.ButtonID != 0 &amp;&amp; switches.Length &gt; 0 )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tif ( switches[0] &lt; m_Entry.Length )<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tChangeLayerEntry e = m_Entry[switches[0]];<br>
+\t\t\t\t\t\t\tif ( m_Cloth.Layer != e.getLayer )<br>
+\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\tm_Cloth.Layer = e.getLayer;<br>
+\t\t\t\t\t\t\t\tm.SendMessage( &quot;Vous changez le Layer en : &quot; + e.getLayer );<br>
+\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\telse<br>
+\t\t\t\t\t\t\t\tm.SendMessage( &quot;Vous gardez le même Layer.&quot; );<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t}<br>
+\t\t\t\t\telse<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tm.SendMessage( &quot;Vous décidez de ne pas changer le Layer.&quot; );<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}<br>
+\t\t\t}<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<hr>
+<h2 id="post-by-anonymous---march-9-2007-at-244-am">Post by Anonymous - March 9, 2007 at 2:44 AM</h2>
+<p><a id="post-110490"></a></p>
+<p>je trouve sa intéressant.. le problème que je vois apr contre.. c'Est ceux qui n'y connaisse rien au layer.. qui font disparaitre des trucs sur eux et page a tout bout de champ parce qu'i n'y arrive pas... faudrais faire une charte de layer 101^^</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-9-2007-at-249-am">Post by Feydanith, dit la Carpe - March 9, 2007 at 2:49 AM</h2>
+<p><a id="post-110493"></a></p>
+<p>Normallement y'a aucun layer qui fait disparaitre et il est prévenu dans le texte explicatif que certains niveaux supérieurs cachent les inférieurs.</p>
+<p>De plus, ça ne fonctionne que pour les tissus, roh je suis fier de moi  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-vent-dhiver---march-9-2007-at-1058-am">Post by Vent d'Hiver - March 9, 2007 at 10:58 AM</h2>
+<p><a id="post-110547"></a></p>
+<p>Il y aura toujours des boulets pour ne rien comprendre. Mais si on ne devait rien faire parcequ'ils ne comprennent rien on ne ferait jamais rien.</p>
+<p>Donc pour ma part je suis totalement pour. Il est classe ton script.</p>
+<p>Ps : Il existe apparemment un bug : il semblerait que cela permettrait de faire plusieurs couches de vêtements voir d'armure. Voici ce que m'explique un copain :</p>
+<p>Exemple : tu as un tabar (je ne sais pas comment ça s'écrit) tu le mets par dessus ton armure. Donc tu changes le layer de l'armure. Tu peux donc mettre une seconde armure par dessus la première.</p>
+<p>Lorsque se script sera mis en place je suggère de faire un petit post-it expliquant que nous punirons l'abus de bug. Cela dans le but de se prémunir au cas ou.</p>
+<hr>
+<h2 id="post-by-anonymous---march-9-2007-at-1116-am">Post by Anonymous - March 9, 2007 at 11:16 AM</h2>
+<p><a id="post-110550"></a></p>
+<p>c'Est ce qu'elle explique juste au dessus.. sa ne marche que pour les tissus.. donc sa ne marche pas pour les métaux... et les cuir?</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-9-2007-at-442-pm">Post by Feydanith, dit la Carpe - March 9, 2007 at 4:42 PM</h2>
+<p><a id="post-110562"></a></p>
+<p>Exact, j'ai mis uniquement &quot;BaseClothing&quot;, et les armures c'est des &quot;BaseArmor&quot;, donc impossible de mettre un item qui offre des bonus de protection en plus ou en moins <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-anonymous---march-9-2007-at-605-pm">Post by Anonymous - March 9, 2007 at 6:05 PM</h2>
+<p><a id="post-110563"></a></p>
+<p>t'es une pro on t'Adore^^ maudit que je vais aimer cette commande:D</p>
+<hr>
+<h2 id="post-by-ex-ariel---march-9-2007-at-1034-pm">Post by Ex-Ariel - March 9, 2007 at 10:34 PM</h2>
+<p><a id="post-110580"></a></p>
+<p>J'aaaaaccepte.</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---march-10-2007-at-202-am">Post by Scripteur Artemis - March 10, 2007 at 2:02 AM</h2>
+<p><a id="post-110624"></a></p>
+<p>umrae, tu a vérifier si les chapeau de mage / bandeau et truc du genre sont bien sous basearmor sur crep? je croit que les bandeau sont dans le clothing et cest se genre ditem que lamis de shaar parlais...</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-10-2007-at-546-am">Post by Feydanith, dit la Carpe - March 10, 2007 at 5:46 AM</h2>
+<p><a id="post-110644"></a></p>
+<p>Ouais, les chapeaux sont sous BaseClothings, donc ça pose problème.</p>
+<p>PS : désolé, je peux pas écrire plus, je suis complètement saoul.</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---march-10-2007-at-213-pm">Post by Scripteur Artemis - March 10, 2007 at 2:13 PM</h2>
+<p><a id="post-110689"></a></p>
+<p>si sa ne serait pas des chapeaux et bijoux, je croit que sa irait coté abus, parcontre c'est dure a garantir, il y a peut-etre d'autre item qui donne de la resistance qui ne me vienne pas en tete pour le moment.</p>
+<p>C'est plutot bien fait d'après ce que j'ai lu, tu la fait entièrement seule ou bien tu a prit des parties existante? C'est asser prometeur.</p>
+<p>Dernière question, pourquoi tu parle de telia (pas que cest important dans cette partie du forum)... tu est scripteur labas aussi?</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-10-2007-at-715-pm">Post by Feydanith, dit la Carpe - March 10, 2007 at 7:15 PM</h2>
+<p><a id="post-110716"></a></p>
+<p>En fait, j'ai scripté ça en deux heures, gump compris...<br>
+Pour le gump, je me suis insipiré de celui du hairdye ( je hais gumper ).</p>
+<p>Dans les habits, le seul qui donne des résistance est le chapeau, mais à la limite on peut bidouiller un if qui exclus les BaseHat  <img src="/assets/smilies/diablo.gif" alt=""></p>
+<p>Je parle de Teilia car je me suis fait un pj là-bas et que j'ai été frustré que le foulard utilise le layer &quot;earrings&quot; et donc passe par dessus les cheveux... Je trouvais ça laid et après recherche sur le forum, les gm peuvent pas changer les layers pour les joueurs, donc j'ai proposé cette commande sur un coup de tête  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-artemis---march-10-2007-at-1144-pm">Post by Scripteur Artemis - March 10, 2007 at 11:44 PM</h2>
+<p><a id="post-110757"></a></p>
+<p>je ne suis pas trop adepte des layer (moi et la déco, beurk), mais si tu modifie les layer des bijoux, n'est-il pas possible d'avoir plusieurs bonus (comme les hats) ? Ou bien tu parle d'autre chose lorsque tu dit earring/ring  <img src="/assets/smilies/wacko.gif" alt=""></p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-11-2007-at-1212-am">Post by Feydanith, dit la Carpe - March 11, 2007 at 12:12 AM</h2>
+<p><a id="post-110758"></a></p>
+<p>Bijoux = BaseJewel.<br>
+Habits = BaseClothing.</p>
+<p>Condition : ça doit être un BaseClothing.</p>
+<p>=&gt; On ne saura pas changer le layer des bijoux.</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---march-11-2007-at-1228-am">Post by Scripteur Artemis - March 11, 2007 at 12:28 AM</h2>
+<p><a id="post-110759"></a></p>
+<p>pourquoi a tu inclue neck et earring dans ta description? il y a des clothings qui utilise se layer?</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-11-2007-at-1229-am">Post by Feydanith, dit la Carpe - March 11, 2007 at 12:29 AM</h2>
+<p><a id="post-110760"></a></p>
+<p>Neck =&gt; foulard<br>
+Earrings =&gt; aucun, mais ça permettrait de porter un foulard &quot;normal&quot; avec un col</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-12-2007-at-819-pm">Post by Feydanith, dit la Carpe - March 12, 2007 at 8:19 PM</h2>
+<p><a id="post-110940"></a></p>
+<p>Correction :<br>
+\t\t\t\tif ( !(target is BaseClothing) || target is BaseHat )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas changer le layer de cela.&quot; );<br>
+\t\t\t\t\treturn;<br>
+\t\t\t\t}</p>
+<p>Plus d'abus possible avec les chapeaux.</p>
+<hr>
+<h2 id="post-by-loopseen---march-14-2007-at-937-pm">Post by Loopseen - March 14, 2007 at 9:37 PM</h2>
+<p><a id="post-111134"></a></p>
+<p>Tu peux etre fier de toi oui !<br>
+bravo</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-29-2007-at-1137-pm">Post by Feydanith, dit la Carpe - March 29, 2007 at 11:37 PM</h2>
+<p><a id="post-113018"></a></p>
+<p>Nouvelle version avec gestion automatique des groupes :</p>
+<p>La vérification du Layer est nettement simplifiée.</p>
+<p>if ( targ.Layer == Layer.Helm || targ.Layer == Layer.Neck || targ.Layer == Layer.Earrings ||<br>
+targ.Layer == Layer.Pants || targ.Layer == Layer.OuterLegs ||<br>
+targ.Layer == Layer.Shirt || targ.Layer == Layer.OuterTorso || targ.Layer == Layer.MiddleTorso || targ.Layer == Layer.InnerTorso )</p>
+<p>Devient :</p>
+<pre><code>if &amp;#40; m_Layer&amp;#46;contains&amp;#40; targ&amp;#46;Layer &amp;#41; &amp;#41;  
+</code></pre>
+<p>Le switch des groupes a aussi été amélioré.</p>
+<p>if ( m_Cloth.Layer == Layer.Helm || m_Cloth.Layer == Layer.Neck || m_Cloth.Layer == Layer.Earrings )<br>
+m_Entry = m_Head;<br>
+else if ( m_Cloth.Layer == Layer.Pants || m_Cloth.Layer == Layer.OuterLegs )<br>
+m_Entry = m_Legs;<br>
+else<br>
+m_Entry = m_Torso;</p>
+<p>Devient :</p>
+<pre><code>m_Entry = m_Layer&amp;#46;getGroup&amp;#40; cloth&amp;#46;Layer &amp;#41;;  
+</code></pre>
+<p>L'ajout de groupe est légèrement plus lourd en synthax, mais quand on ajoute un groupe, on ne doit plus gérer les if précédement cités.</p>
+<p>private static ChangeLayerEntry[] m_Head = new ChangeLayerEntry[]<br>
+{<br>
+new ChangeLayerEntry( Layer.Neck ),<br>
+new ChangeLayerEntry( Layer.Helm ),<br>
+new ChangeLayerEntry( Layer.Earrings )<br>
+};</p>
+<p>private static ChangeLayerEntry[] m_Legs = new ChangeLayerEntry[]<br>
+{<br>
+new ChangeLayerEntry( Layer.Pants ),<br>
+new ChangeLayerEntry( Layer.OuterLegs )<br>
+};</p>
+<p>private static ChangeLayerEntry[] m_Torso = new ChangeLayerEntry[]<br>
+{<br>
+new ChangeLayerEntry( Layer.Shirt ),<br>
+new ChangeLayerEntry( Layer.OuterTorso ),<br>
+new ChangeLayerEntry( Layer.MiddleTorso ),<br>
+new ChangeLayerEntry( Layer.InnerTorso )<br>
+};</p>
+<p>Devient :</p>
+<p>private static LayerTable m_Layer =<br>
+new LayerTable( new LayerGroup[] {<br>
+new LayerGroup( new Layer[] {<br>
+Layer.Neck,<br>
+Layer.Helm,<br>
+Layer.Earrings }<br>
+),<br>
+new LayerGroup( new Layer[] {<br>
+Layer.Pants,<br>
+Layer.OuterLegs }<br>
+),<br>
+new LayerGroup( new Layer[] {<br>
+Layer.Shirt,<br>
+Layer.OuterTorso,<br>
+Layer.MiddleTorso,<br>
+Layer.InnerTorso }<br>
+) }<br>
+);</p>
+<p>Les changements majeurs sont donc l'ajout de la structure de groupes :</p>
+<p>private class LayerTable<br>
+{<br>
+\tprivate LayerGroup[] m_Layers;<br>
+\t<br>
+\tpublic LayerTable( LayerGroup[] layers )<br>
+\t{<br>
+\t\tm_Layers = layers;<br>
+\t}<br>
+\t\t\t\t<br>
+\tpublic bool contains( Layer layer )<br>
+\t{\t\t<br>
+\t\tfor ( int i = 0; i &lt; m_Layers.Length; i++ )<br>
+\t\t{<br>
+\t\t\tif ( m_Layers[i].contains( layer ) )<br>
+\t\t\t\treturn true;<br>
+\t\t}<br>
+\t\treturn false;<br>
+\t}<br>
+\t<br>
+\tpublic Layer[] getGroup( Layer layer )<br>
+\t{<br>
+\t\tfor ( int i = 0; i &lt; m_Layers.Length; i++ )<br>
+\t\t{<br>
+\t\t\tif ( m_Layers[i].contains( layer ) )<br>
+\t\t\t\treturn m_Layers[i].getTable();<br>
+\t\t}<br>
+\t\treturn null;<br>
+\t}<br>
+}<br>
+\t\t\t<br>
+private class LayerGroup<br>
+{<br>
+\tprivate Layer[] m_Layers;</p>
+<p>\tpublic LayerGroup( Layer[] layers )<br>
+\t{<br>
+\t\tm_Layers = layers;<br>
+\t}<br>
+\t\t\t<br>
+\tpublic bool contains( Layer layer )<br>
+\t{<br>
+\t\tfor( int i = 0; i &lt; m_Layers.Length; i++ )<br>
+\t\t{<br>
+\t\t\tif ( layer == m_Layers[i] )<br>
+\t\t\t\treturn true;<br>
+\t\t}<br>
+\t\treturn false;<br>
+\t}<br>
+\t\t\t\t<br>
+\tpublic Layer[] getTable()<br>
+\t{<br>
+\t\treturn m_Layers;<br>
+\t}<br>
+}</p>
+<p>Et donc, le bébé au complet  <img src="/assets/smilies/blush2.gif" alt=""><br>
+/*****************************************************</p>
+<ul>
+<li>ce script a été crée par Namorcen.</li>
+<li></li>
+<li>Merci de laisser ce copyright si vous l'utilisez.</li>
+<li></li>
+<li>pour tout renseignement:</li>
+<li>commandercore@hotmail.com<br>
+*****************************************************/</li>
+</ul>
+<p>using System;<br>
+using System.Reflection;<br>
+using Server.Gumps;<br>
+using Server.Items;<br>
+using Server.Network;<br>
+using Server.Targeting;</p>
+<p>namespace Server.Scripts.Commands<br>
+{<br>
+\tpublic class ChangeLayer<br>
+\t{<br>
+\t\tpublic static void Initialize()<br>
+\t\t{<br>
+\t\t\tServer.Commands.Register( &quot;ChangeLayer&quot;, AccessLevel.Player, new CommandEventHandler( ChangeLayer_OnCommand ) );<br>
+\t\t}</p>
+<p>\t\t[Usage( &quot;ChangeLayer&quot; )]<br>
+\t\t[Description( &quot;Change le layer d'un objet sous conditions.&quot; )]<br>
+\t\tprivate static void ChangeLayer_OnCommand( CommandEventArgs e )<br>
+\t\t{<br>
+\t\t\te.Mobile.Target = new ChangeLayerTarget();<br>
+\t\t\te.Mobile.SendMessage( &quot;De quel vêtement voulez-vous changer le layer ?&quot; );<br>
+\t\t}<br>
+\t\t<br>
+\t\tprivate class ChangeLayerTarget : Target<br>
+\t\t{<br>
+\t\t\tprivate static LayerTable m_Layer =<br>
+\t\t\tnew LayerTable( new LayerGroup[] {<br>
+\t\t\t\tnew LayerGroup( new Layer[] {<br>
+\t\t\t\t\tLayer.Neck,<br>
+\t\t\t\t\tLayer.Helm,<br>
+\t\t\t\t\tLayer.Earrings }<br>
+\t\t\t\t),<br>
+\t\t\t\tnew LayerGroup( new Layer[] {<br>
+\t\t\t\t\tLayer.Pants,<br>
+\t\t\t\t\tLayer.OuterLegs }<br>
+\t\t\t\t),<br>
+\t\t\t\tnew LayerGroup( new Layer[] {<br>
+\t\t\t\t\tLayer.Shirt,<br>
+\t\t\t\t\tLayer.OuterTorso,<br>
+\t\t\t\t\tLayer.MiddleTorso,<br>
+\t\t\t\t\tLayer.InnerTorso }<br>
+\t\t\t\t) }<br>
+\t\t\t);<br>
+\t\t\t<br>
+\t\t\tprivate class LayerTable<br>
+\t\t\t{<br>
+\t\t\t\tprivate LayerGroup[] m_Layers;<br>
+\t\t\t\t<br>
+\t\t\t\tpublic LayerTable( LayerGroup[] layers )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tm_Layers = layers;<br>
+\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t\tpublic bool contains( Layer layer )<br>
+\t\t\t\t{\t\t<br>
+\t\t\t\t\tfor ( int i = 0; i &lt; m_Layers.Length; i++ )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tif ( m_Layers[i].contains( layer ) )<br>
+\t\t\t\t\t\t\treturn true;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t\treturn false;<br>
+\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t\tpublic Layer[] getGroup( Layer layer )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfor ( int i = 0; i &lt; m_Layers.Length; i++ )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tif ( m_Layers[i].contains( layer ) )<br>
+\t\t\t\t\t\t\treturn m_Layers[i].getTable();<br>
+\t\t\t\t\t}<br>
+\t\t\t\t\treturn null;<br>
+\t\t\t\t}<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tprivate class LayerGroup<br>
+\t\t\t{<br>
+\t\t\t\tprivate Layer[] m_Layers;<br>
+\t\t\t<br>
+\t\t\t\tpublic LayerGroup( Layer[] layers )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tm_Layers = layers;<br>
+\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t\tpublic bool contains( Layer layer )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfor( int i = 0; i &lt; m_Layers.Length; i++ )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tif ( layer == m_Layers[i] )<br>
+\t\t\t\t\t\t\treturn true;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t\treturn false;<br>
+\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t\tpublic Layer[] getTable()<br>
+\t\t\t\t{<br>
+\t\t\t\t\treturn m_Layers;<br>
+\t\t\t\t}<br>
+\t\t\t}<br>
+\t\t<br>
+\t\t\tpublic ChangeLayerTarget() : base( -1, false, TargetFlags.None )<br>
+\t\t\t{<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tprotected override void OnTarget( Mobile from, object target )<br>
+\t\t\t{\t\t\t\t<br>
+\t\t\t\tif ( !(target is BaseClothing) || target is BaseHat )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas changer le layer de cela.&quot; );<br>
+\t\t\t\t\treturn;<br>
+\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t\tBaseClothing targ = (BaseClothing) target;<br>
+\t\t\t\t<br>
+\t\t\t\tif ( !targ.IsChildOf( from.Backpack ) )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Cela doit être dans votre sac pour changer le layer.&quot; );<br>
+\t\t\t\t\treturn;<br>
+\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t\telse if ( m_Layer.contains( targ.Layer ) )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tfrom.CloseGump( typeof( ChangeLayerGump ) );<br>
+\t\t\t\t\tfrom.SendGump( new ChangeLayerGump( targ ) );<br>
+\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t\telse<br>
+\t\t\t\t\tfrom.SendMessage( &quot;Vous ne pouvez pas changer le layer de ce vêtement.&quot; );<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\tprivate class ChangeLayerGump : Gump<br>
+\t\t\t{<br>
+\t\t\t\tprivate BaseClothing m_Cloth;<br>
+\t\t\t\tprivate Layer[] m_Entry;</p>
+<p>\t\t\t\tpublic ChangeLayerGump( BaseClothing cloth ) : base( 50, 50 )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tm_Cloth = cloth;\t\t\t\t\t<br>
+\t\t\t\t\t<br>
+\t\t\t\t\tm_Entry = m_Layer.getGroup( cloth.Layer );<br>
+\t\t\t\t\t<br>
+\t\t\t\t\tAddPage( 0 );</p>
+<p>\t\t\t\t\tAddBackground( 100, 10, 350, 96 + m_Entry.Length * 22, 2600 );<br>
+\t\t\t\t\tAddBackground( 120, 54, 110, 6 + m_Entry.Length * 22, 5100 );</p>
+<p>\t\t\t\t\tAddLabel( 185, 25, 0x00, &quot;Menu de changement de Layer.&quot;);<br>
+\t\t\t\t\t<br>
+\t\t\t\t\tAddLabel( 260, 59 - 22 + m_Entry.Length * 11, 0x00, &quot;Le Layer actuel est :&quot; );<br>
+\t\t\t\t\tAddLabel( 260, 59 + m_Entry.Length * 11, 0x00, &quot;&quot; + m_Cloth.Layer );</p>
+<p>\t\t\t\t\tAddButton( 149, 70 + m_Entry.Length * 22, 4005, 4007, 1, GumpButtonType.Reply, 0 );<br>
+\t\t\t\t\tAddLabel( 185, 71 + m_Entry.Length * 22, 0x00, &quot;Changer le layer ! &quot; );<br>
+\t\t\t\t\t<br>
+\t\t\t\t\tfor ( int i = 0; i &lt; m_Entry.Length; ++i )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tAddLabel( 130, 59 + i * 22, 0x00, &quot;&quot; + m_Entry[i] );<br>
+\t\t\t\t\t\tAddRadio( 207, 60 + i * 22, 210, 211, false, i );<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}</p>
+<p>\t\t\t\tpublic override void OnResponse( NetState from, RelayInfo info )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tif ( m_Cloth.Deleted )<br>
+\t\t\t\t\t\treturn;</p>
+<p>\t\t\t\t\tMobile m = from.Mobile;<br>
+\t\t\t\t\tint[] switches = info.Switches;</p>
+<p>\t\t\t\t\tif ( !m_Cloth.IsChildOf( m.Backpack ) )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tm.SendMessage( &quot;Le vêtement doit rester dans votre sac !&quot; );<br>
+\t\t\t\t\t\treturn;<br>
+\t\t\t\t\t}</p>
+<p>\t\t\t\t\tif ( info.ButtonID != 0 &amp;&amp; switches.Length &gt; 0 )<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tif ( switches[0] &lt; m_Entry.Length )<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tLayer e = m_Entry[switches[0]];<br>
+\t\t\t\t\t\t\tif ( m_Cloth.Layer != e )<br>
+\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\tm_Cloth.Layer = e;<br>
+\t\t\t\t\t\t\t\tm.SendMessage( &quot;Vous changez le Layer en : &quot; + e );<br>
+\t\t\t\t\t\t\t}<br>
+\t\t\t\t\t\t\telse<br>
+\t\t\t\t\t\t\t\tm.SendMessage( &quot;Vous gardez le même Layer.&quot; );<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t}<br>
+\t\t\t\t\telse<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tm.SendMessage( &quot;Vous décidez de ne pas changer le Layer.&quot; );<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}<br>
+\t\t\t}<br>
+\t\t}<br>
+\t}<br>
+}</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

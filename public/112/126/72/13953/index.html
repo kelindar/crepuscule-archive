@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idée de scripts pour parrer aux soins par bandage. - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Idée de scripts pour parrer aux soins par bandage.</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Idée de scripts pour parrer aux soins par bandage.</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="ide-de-scripts-pour-parrer-aux-soins-par-bandage">Idée de scripts pour parrer aux soins par bandage.</h1>
+<h2 id="post-by-ex-doku---may-10-2007-at-708-pm">Post by Ex-Doku - May 10, 2007 at 7:08 PM</h2>
+<p><a id="post-118379"></a></p>
+<p>Voilà, je suis la première à râler pour les soins avec les bandages qui me semble totalement hrp.<br>
+De l'autre côté, je comprends que cela puisse gêner au gameplay des guerriers.<br>
+Ainsi, j'ai pensé à deux petits scripts qui pourraient réparer ce désagrément.</p>
+<p>Le premier script serait d'amener une récupération naturelle aux guerriers.</p>
+<p>Cela marcherait comme le hit regen.</p>
+<p>Ce script est tout simple et pourrait être du genre :</p>
+<p>régénération en vie = aptitude (endurance accrue)/5</p>
+<p>Le second script serait lancer à partir d'une commande .soin.<br>
+Cette commande se baserait sur 2 compétences que sont healing et anatomy.<br>
+Elle serait en plus basées sur l'aptitude endurance accrue.<br>
+Lorsqu'on lancerait la commande (.soin), l'organisme du guerrier serait capable de se soigner en échange d'endurance(stamina) et d'énergie spirituelle (mana) (cela pourrait être perçu comme de la volonté de continuer le combat).</p>
+<p>la formule est plus compliquée et se décompose ainsi :</p>
+<p>l'ampleur du soin :<br>
+importance du soin = 10+(endurance accrue/2)+endurance accrue+(healing/3)</p>
+<p>le coup du soin :<br>
+conso en endurance=(importance du soin/t)-endurance accrue-(endurance accrue/2)<br>
+$conso en mana=(importance du soin/t)-conso en endurance</p>
+<p>t=100/(100-endurance accrue)</p>
+<p>Biensur si la consommation en endurance est négative, elle est égale à zéro.<br>
+Si le guerrier n'a plus de mana, cela est imputé entièrement sur sa stamina.</p>
+<p>le temps entre chaque soin :<br>
+J'ai deux propositions, cela fait varrier les temps. Les voici:</p>
+<p>temps1=3600/((endurance accrue/2)+(endurance accrue)+(healing/15)+(anatomie/10))<br>
+temps2=3600/((endurance accrue/2)+(2*endurance accrue)+(healing/20)+(anatomie/15))</p>
+<p>Je vous donne quelques exemples de résultats que tout cela donnerait :</p>
+<p>endurance accrue(niveau) -- regen = résultat<br>
+1ere possibilité de temps<br>
+endurance accrue(niveau), anatomie(niveau en%) &amp; medecine(niveau en %) -- (nombre de points de vie soignés) apporté toutes les (temps en secondes que l'ont doit attendre avant la prochaine utilisation) secondes -- consommation (stam/mana) = stamina/mana)<br>
+2eme possibilité de temps<br>
+endurance accrue(niveau), anatomie(niveau en%) &amp; medecine(niveau en %) -- (nombre de points de vie soignés) apporté toutes les (temps en secondes que l'ont doit attendre avant la prochaine utilisation) secondes -- consommation (stam/mana) = stamina/mana)</p>
+<p>endurance accrue(1) -- regen = 0.2<br>
+endurance accrue(1), anatomie(25) &amp; medecine(25) -- 19.8333333333333 toutes les 635.294117647059 secondes -- conso (stam/mana) = 18.135/1.5)<br>
+endurance accrue(1), anatomie(25) &amp; medecine(25) -- 19.8333333333333 toutes les 664.615384615385 secondes -- conso (stam/mana) = 18.135/1.5)<br>
+endurance accrue(1), anatomie(100) &amp; medecine(100) -- 44.8333333333333 toutes les 198.165137614679 secondes -- conso (stam/mana) = 42.885/1.5)<br>
+endurance accrue(1), anatomie(100) &amp; medecine(100) -- 44.8333333333333 toutes les 254.117647058824 secondes -- conso (stam/mana) = 42.885/1.5)</p>
+<p>endurance accrue(21) -- regen = 4.2<br>
+endurance accrue(21), anatomie(25) &amp; medecine(25) -- 49.8333333333333 toutes les 100.934579439252 secondes -- conso (stam/mana) = 7.86833333333333/31.5)<br>
+endurance accrue(21), anatomie(25) &amp; medecine(25) -- 49.8333333333333 toutes les 64.9624060150376 secondes -- conso (stam/mana) = 7.86833333333333/31.5)<br>
+endurance accrue(21), anatomie(100) &amp; medecine(100) -- 74.8333333333333 toutes les 74.7404844290657 secondes -- conso (stam/mana) = 27.6183333333333/31.5)<br>
+endurance accrue(21), anatomie(100) &amp; medecine(100) -- 74.8333333333333 toutes les 56.1038961038961 secondes -- conso (stam/mana) = 27.6183333333333/31.5)</p>
+<p>endurance accrue(41) -- regen = 8.2<br>
+endurance accrue(41), anatomie(50) &amp; medecine(50) -- 88.1666666666667 toutes les 51.5513126491647 secondes -- conso (stam/mana) = 0/52.0183333333333)<br>
+endurance accrue(41), anatomie(50) &amp; medecine(50) -- 88.1666666666667 toutes les 33.2307692307692 secondes -- conso (stam/mana) = 0/52.0183333333333)<br>
+endurance accrue(41), anatomie(75) &amp; medecine(50) -- 88.1666666666667 toutes les 49.7695852534562 secondes -- conso (stam/mana) = 0/52.0183333333333)<br>
+endurance accrue(41), anatomie(75) &amp; medecine(50) -- 88.1666666666667 toutes les 32.7272727272727 secondes -- conso (stam/mana) = 0/52.0183333333333)<br>
+endurance accrue(41), anatomie(100) &amp; medecine(50) -- 88.1666666666667 toutes les 48.1069042316258 secondes -- conso (stam/mana) = 0/52.0183333333333)<br>
+endurance accrue(41), anatomie(100) &amp; medecine(50) -- 88.1666666666667 toutes les 32.2388059701493 secondes -- conso (stam/mana) = 0/52.0183333333333)<br>
+endurance accrue(41), anatomie(50) &amp; medecine(75) -- 96.5 toutes les 50.3496503496503 secondes -- conso (stam/mana) = 0/56.935)<br>
+endurance accrue(41), anatomie(50) &amp; medecine(75) -- 96.5 toutes les 32.851711026616 secondes -- conso (stam/mana) = 0/56.935)<br>
+endurance accrue(41), anatomie(75) &amp; medecine(75) -- 96.5 toutes les 48.6486486486486 secondes -- conso (stam/mana) = 0/56.935)<br>
+endurance accrue(41), anatomie(75) &amp; medecine(75) -- 96.5 toutes les 32.3595505617978 secondes -- conso (stam/mana) = 0/56.935)<br>
+endurance accrue(41), anatomie(100) &amp; medecine(75) -- 96.5 toutes les 47.0588235294118 secondes -- conso (stam/mana) = 0/56.935)<br>
+endurance accrue(41), anatomie(100) &amp; medecine(75) -- 96.5 toutes les 31.8819188191882 secondes -- conso (stam/mana) = 0/56.935)<br>
+endurance accrue(41), anatomie(50) &amp; medecine(100) -- 104.833333333333 toutes les 49.2027334851936 secondes -- conso (stam/mana) = 0.351666666666674/61.5)<br>
+endurance accrue(41), anatomie(50) &amp; medecine(100) -- 104.833333333333 toutes les 32.4812030075188 secondes -- conso (stam/mana) = 0.351666666666674/61.5)<br>
+endurance accrue(41), anatomie(75) &amp; medecine(100) -- 104.833333333333 toutes les 47.5770925110132 secondes -- conso (stam/mana) = 0.351666666666674/61.5)<br>
+endurance accrue(41), anatomie(75) &amp; medecine(100) -- 104.833333333333 toutes les 32 secondes -- conso (stam/mana) = 0.351666666666674/61.5)<br>
+endurance accrue(41), anatomie(100) &amp; medecine(100) -- 104.833333333333 toutes les 46.0554371002132 secondes -- conso (stam/mana) = 0.351666666666674/61.5)<br>
+endurance accrue(41), anatomie(100) &amp; medecine(100) -- 104.833333333333 toutes les 31.5328467153285 secondes -- conso (stam/mana) = 0.351666666666674/61.5)</p>
+<p>Le code de test en perl pour les scripteurs, ils sauront peut être mieux comprendre l'idée avec.</p>
+<p>#!/usr/bin/perl</p>
+<p>foreach ($i=1;$i&lt;42;$i=$i+10){<br>
+\t$regen=($i)/5;<br>
+\tprint &quot;endurance accrue($i) -- regen = $regen/seconde\<br>
+&quot;;<br>
+\tforeach ($j=25;$j&lt;101;$j=$j+25){<br>
+\t\tforeach ($k=25;$k&lt;101;$k=$k+25){<br>
+\t\t\t$soin=(10+($i/2)+$i+($j/3));<br>
+\t\t\t$temps1=3600/(($i/2)+($i)+($j/15)+($k/10));<br>
+\t\t\t$temps2=3600/(($i/2)+(2*$i)+($j/20)+($k/15));<br>
+\t\t\t$t=100/(100-$i);<br>
+\t\t\t$consostam=(($soin/$t)-$i-($i/2));<br>
+\t\t\tif ($consostam &lt; 0){ $consostam=0;}<br>
+\t\t\t$consomana=(($soin/$t)-$consostam);<br>
+\t\t\tprint &quot;endurance accrue($i), anatomie($k) &amp; medecine($j) -- $soin toutes les $temps1 secondes -- conso (stam/mana) = $consostam/$consomana)\<br>
+&quot;;<br>
+\t\t\tprint &quot;endurance accrue($i), anatomie($k) &amp; medecine($j) -- $soin toutes les $temps2 secondes -- conso (stam/mana) = $consostam/$consomana)\<br>
+&quot;;<br>
+\t\t}<br>
+\t}<br>
+}</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---may-10-2007-at-723-pm">Post by Scripteur Artemis - May 10, 2007 at 7:23 PM</h2>
+<p><a id="post-118382"></a></p>
+<p>Donc si je comprend bien l'idée, sa serait de modifier la guérrison, par une régénération plus rapide... en quelques sorte tenter d'arreter le sang et aider une guérrison.</p>
+<p>Un petit problème que j'y voie, c'est que d'un coté l'idée me semble très bonne lorsque une personne se guérrit elle même (l'idée de sa volonté de continuer le combat me semble plutot bonne, jusqu'a un certain point ceci pourait être similaire a la compétence spirit speak). Parcontre (désolé j'ai lu vite, corrige moi si je me trompe), c'est que le système ne couvre pas ceux qui tentent d'aider un autre joueur (exemple un guérisseur) , est-ce encore l'énergie du guerrier qui est drainer ou celle de celui qui applique le soin?</p>
+<p>Finalement, pourquoi l'ajout d'endurence accrue? Est-ce que le but est que les guérriers sont meilleur pour ce guerrir et ce faire guerrir que les autres classes?</p>
+<p>Aussi est-on bien sure que l'on veux que ceci ce produise sous forme de regénération ou bien de guérison (exemple drain % stam/mana = % health retrouvé, a la spirit speak), parce que c'est certain que d'un point de vue gameplay, la regénération sera toujours moins efficace qu'une guérison immédiate, la régénération force parcontre le guerrier a quitter le combat, si c'était l'intention voulu.</p>
+<p>Sinon a part ces quelques détails a paufiner, je croit que c'est probablement la meilleur suggestion sur le sujet jusqu'a présente si vous voulez modifier le skill pour le roleplay que vous rechercher.</p>
+<hr>
+<h2 id="post-by-ex-doku---may-10-2007-at-734-pm">Post by Ex-Doku - May 10, 2007 at 7:34 PM</h2>
+<p><a id="post-118384"></a></p>
+<p>Ceci serait plutôt une parade, n'empèchant en rien les autres manières de soigner.</p>
+<p>En roleplay, je pousse l'idée de la volonté combattive du guerrier.</p>
+<p>D'ailleurs, si l'on regarde bien, elle est couteuse. Un guerrier dont la stamina baisse perds en rapidité. Un guerrier sans mana ne peut plus utiliser les compétences spéciales.<br>
+J'ai fait un balancement instinctif, et les formules et nombres proposées peuvent largement être améliorés, dans un sens ou l'autre.</p>
+<p>De plus, j'avais pensé que si le .soin est trop utilisé, il serait possible de limiter l'utilisation d'une manière supplémentaire.<br>
+En plus de limiter le temps entre chaque utilisation (comme je le propose... ça monte quand même à plus de dix minutes au max), on pourrait limiter à un nombre donné d'utilisations pour une période donnée selon l'endurance et/ou la médecine et/ou l'anatomie du guerrier (exemple: base de 1h qui diminue en fonction de l'aptitude et/ou des compétences).</p>
+<hr>
+<h2 id="post-by-meliandre---may-10-2007-at-736-pm">Post by Meliandre - May 10, 2007 at 7:36 PM</h2>
+<p><a id="post-118385"></a></p>
+<p>Dans le même ordre d'idée...</p>
+<p>La frénésié (compétence Rage) pourrait être appliquée mais j'avoue que je pense qu'il faudra rechipoter à tout les scriptes.</p>
+<p>Donc en en gros, faire un cours instant d'un barbare un combattant immortel (qu&quot;il puisse par exemple gagner des pv's en plus pendant qu'il est porté par sa rage, ou descendre plus bas que 0 pv, mais lorsque ca s'arrête, on retirrait en premier les pvs supplémentaire, ou, avec le système de -0 pv, de tomber inconscient voir directement mort.</p>
+<p>Pour le reste, je trouve cela très interressant Doku, et je suis assé d'accord avec l'idée générale, même si pour le deuxième script, je ne comprend pas très bien moi non plus comment ce se passera avec les guérrisseurs...</p>
+<p>Et enfin, est-ce que les guérisseurs seront encore utile?</p>
+<p>Merci d'avance.</p>
+<hr>
+<h2 id="post-by-ex-doku---may-10-2007-at-759-pm">Post by Ex-Doku - May 10, 2007 at 7:59 PM</h2>
+<p><a id="post-118389"></a></p>
+<p>Je pense que même sans la limitation temporelle que je propose de rajouter dans mon second post, je pense que les soigneurs seront encore utile.</p>
+<p>raison 1 : Si l'on met de coté les guerriers parfaits avec une endurance accrue au dela du raisonnable (&gt;30), il faut au minimum 60 secondes avant de pouvoir se ressoigner (et au dela de dix minutes si on a 0% en anatomy, healing et 0 en endurance accrue).<br>
+Cela est en plus des résultats avec mes formules et chiffres qui ne sont pas optimal, mais juste assez illustrateur pour vous montrer des exemples.</p>
+<p>raison 2 : En plus de la période durant laquelle on ne peut se soigner (et donc durant laquelle les supports sont important), il y a le fait que j'ai souligné dans mon second post: la perte en mana et stamina sont des facteurs assez important dans les combats. --&gt; stamina influence la vitesse de frappe et le mana, la possibilité de faire des coups spéciaux.</p>
+<p>Après, si l'on rajoute l'option que je propose dans mon second post, les multiples soigneurs auront toujours un rôle vital (déjà qu'ils l'ont dans tout les cas).</p>
+<p>Après d'autres options sont applicable comme obliger que ce ne soit que les classes guerrier et barbare qui possède cette commande <strong>.soin</strong>, qu'ils doivent possèder au moins un minimum en endurance accrue, ...</p>
+<p>Pour l'anecdote du choix d'endurance accrue, c'est que c'est l'aptitude qui me semblait le mieux reflêter l'idée de la volonté intrinsec d'un être. L'endurance est tout aussi bien physique que mentale chez un guerrier.</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---may-10-2007-at-812-pm">Post by Scripteur Artemis - May 10, 2007 at 8:12 PM</h2>
+<p><a id="post-118390"></a></p>
+<p>Je doit avouer que l'idée est bonne, mais personellement je la verrais class-only (peut-etre guerrier et barbare), comme l'assassinat chez les assassins. La raison est asser simple, l'abus possible. Puisque divine favor remplit automatiquement la bar de stamina, pour 20 mana, il est asser facile d'imaginer cette classe en tirer profit, avec exemple une arme qui draine du mana (pas rare dutout).</p>
+<p>Donc, je croit que c'est une très bonne idée pour le rebalancement des classes, pour donner au classe pure-combatant un aspect unique que les auters ne possède pas. Je n'avait pas d'idée concrète a donner au guerrier dans le rebalancement, mis a part de nouvelles armes, et ceci est de loin meilleur puisqu'il donne une raison de jouer un guerrier pure plutot que tous des paladins.</p>
+<p>Sinon, si on désire le donner a toute les classes, je croit que l'on devrait ajouter le fait qu'il est impossible de caster durant cette régénération.</p>
+<hr>
+<h2 id="post-by-meliandre---may-10-2007-at-820-pm">Post by Meliandre - May 10, 2007 at 8:20 PM</h2>
+<p><a id="post-118392"></a></p>
+<p>Et pour la rage?</p>
+<p>Pour Doku, merci d'avoir éclairé ma chandelle, c'est bien aimable <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-anonymous---may-10-2007-at-918-pm">Post by Anonymous - May 10, 2007 at 9:18 PM</h2>
+<p><a id="post-118396"></a></p>
+<p>oui je suis d'accord, avec tout les modifications approté, entre autre de la maintenir aux classe barbares et guerrier seulement, je trouve que c'Est une bonne idée. De l'étendre a toute les classes... non sa va rapidement se transformer en abus pure.<br>
+Bel initiative Doku... j'aime votre manière de travailler. Ma essayer de lire plus souvent la section scripts ^^ héhé</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---may-10-2007-at-931-pm">Post by Feydanith, dit la Carpe - May 10, 2007 at 9:31 PM</h2>
+<p><a id="post-118402"></a></p>
+<p>j'ai pas tout lu, mais de ce que j'ai compris :</p>
+<p>World of Warcarft : don des naaru<br>
+=&gt; Soin en fonction du lvl<br>
+=&gt; Timer fixe de 3 minutes entre chaque utilisation</p>
+<p>Crepuscule : regénération<br>
+=&gt; Soin en fonction de healing ?<br>
+=&gt; Timer fixe de x minutes entre chaque utilisation ?</p>
+<p>=&gt; Niveau minimum en healing pour l'utiliser (± 75% ) ?<br>
+=&gt; 100% de réussite ?</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

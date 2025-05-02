@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les chèques - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Les chèques</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <span class="current-page">Les chèques</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="les-chques">Les chèques</h1>
+<h2 id="post-by-systran-clador---february-10-2007-at-755-pm">Post by Systran Éclador - February 10, 2007 at 7:55 PM</h2>
+<p><a id="post-107974"></a></p>
+<p>Serait-il possible de faire que l,on puisse faire des chèques même s'ils ne sont pas de 3k?</p>
+<p>Et ça serait possible de pouvoir envoyer des chèques IG?</p>
+<p>Des fois, ça faciliterait le paiement de certaines choses, par exemple.</p>
+<p>Merci</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---february-11-2007-at-201-am">Post by Scripteur Artemis - February 11, 2007 at 2:01 AM</h2>
+<p><a id="post-108054"></a></p>
+<p>pour la partie de les envoyer a d'autre joueurs... sa enleverais un peu d'intéraction, et le but principale de crepuscule est l'intéraction non?  <img src="/assets/smilies/Wink.gif" alt=""></p>
+<p>Pour faire des cheques de divers montant, tu m'apprend la nouvelle je croyais que le système était en place, je vais vérifier le système actuelle et on planchera a voir ce qu'on en fait, merci de la suggestion <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-argon-zombalze-banni---february-11-2007-at-257-am">Post by Argon Zombalèze, Banni - February 11, 2007 at 2:57 AM</h2>
+<p><a id="post-108060"></a></p>
+<p>tu arrive devant le banquier check x ou x est le chiffre</p>
+<hr>
+<h2 id="post-by-systran-clador---february-11-2007-at-327-am">Post by Systran Éclador - February 11, 2007 at 3:27 AM</h2>
+<p><a id="post-108066"></a></p>
+<p>Je sais, mais ça marque qu'on peut pas faire des cheques de si peu d'argent (enfin je pense.)</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---february-11-2007-at-327-am">Post by Scripteur Artemis - February 11, 2007 at 3:27 AM</h2>
+<p><a id="post-108067"></a></p>
+<p>bon merci sylv, je trouvais étrange qu'on ai pas un script de base de runUO, sa va m'éviter d'avoir a fouiller les fichiers <img src="/assets/smilies/man_in_love.gif" alt="">.</p>
+<p>Aller, bonne journée</p>
+<hr>
+<h2 id="post-by-systran-clador---february-11-2007-at-328-am">Post by Systran Éclador - February 11, 2007 at 3:28 AM</h2>
+<p><a id="post-108068"></a></p>
+<p>Ensuite, l'intéraction c,est bien, mais si on veut payer quelqu'un qui n'a pas les mêmes dispos que nous, ça laisse à désirer.</p>
+<p>NOTE: On peut pas faire de chèque en dessous de 5k, voilà ce que je veux dire...<br>
+ça doit être une simple valeur à changer dans un script, perso je mettrais la limite à 100.</p>
+<p>Je pense que ça doit être quelque part dans Banker.cs,</p>
+<p>if ( amount &lt; 5000 )<br>
+\t\t\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\t\t\tthis.Say( 1010006 ); // We cannot create checks for such a paltry amount of gold!<br>
+\t\t\t\t\t\t\t\t}</p>
+<p>Cette ligne, on change le &lt; 5000 pour un &lt; 100 ,  par exemple.</p>
+<p><em>Fin du Je sais tout-isme</em></p>
+<p>Les chèques devraient marcher comme les lettres, mais avec un outil et des &quot;adresses&quot; (noms de personnes que l'on Add) par exemple.</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---february-11-2007-at-617-am">Post by Scripteur Artemis - February 11, 2007 at 6:17 AM</h2>
+<p><a id="post-108075"></a></p>
+<p>hmm , personellement je croit que pour le systeme de cheques il devrait y avoir un certain pourcentage a payer au banquier ... autour de 5 a 10% du montant total, pour qu'il effectu se genre de service... la raison de disponibilité est plus ou moins valide, si vous ne voyez un joueur que sur les forums, vous ne seriez pas senser le connaitre dutout.</p>
+<p>On va voir ce l'équipe peut trouver comme idée pour un tel système.</p>
+<p>PS: ne le prend pas mal systran, je sais que tu veux aider et c'est apprécié, mais de poster les lignes de script est un peu futile, nous connaissons très bien les scripts ne t'inquiette pas, et nous n'utiliseront jamais des choses poster sur des forums... nous savons tous comment corriger le problème de façon simple comme tu la poster, mais la simplicité n'est pas vraiment se que moi je recherche personellement, et je croit que les autres scripteurs pensent ainsi. Continu de poster des idées elle sont très apprécié, mais s'il te plait ne perd pas ton temps a poster des lignes de scripts, elle ne seront pas utilisé si elle sont a la vue du publique de tout façon. (j'ai m'y ceci a la vue de tous et non pas en PM car systran n'est pas le seul a poster des scripts au travers des suggestions).</p>
+<hr>
+<h2 id="post-by-systran-clador---february-11-2007-at-623-am">Post by Systran Éclador - February 11, 2007 at 6:23 AM</h2>
+<p><a id="post-108077"></a></p>
+<p>hmm , personellement je croit que pour le systeme de cheques il devrait y avoir un certain pourcentage a payer au banquier ... autour de 5 a 10% du montant total, pour qu'il effectu se genre de service... la raison de disponibilité est plus ou moins valide, si vous ne voyez un joueur que sur les forums, vous ne seriez pas senser le connaitre dutout.</p>
+<p>Bonne idée pour le %.</p>
+<p>Et oui, disons qu'on la vue 2-3 fois IG mais que ses dispos ont changé et qu'il se connecte quand on dort ( QC - FR ) c'est pas pratique.</p>
+<p>Désolé pour le code. Je suis fanatique de code. <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-scripteur-artemis---february-11-2007-at-1126-am">Post by Scripteur Artemis - February 11, 2007 at 11:26 AM</h2>
+<p><a id="post-108089"></a></p>
+<p>mouais c'est seulement pas l'endroit pour poster des lignes de scripts, et sa peut etre interpreté comme si tu croyait qu'on ai demeurer tu sais <img src="/assets/smilies/man_in_love.gif" alt=""> .</p>
+<p>Prend en conte que c'est très très ''low priority'' comme suggestion parcontre, on ai submergé présentement et donc les idées du publique vont devoir attendre quelques semaines, mais ont les gardes en notes, donc si vous en donner des bonnes, elle seront un jour live, suffit de pas trop avoir d'attente rapide <img src="/assets/smilies/man_in_love.gif" alt="">.</p>
+<p>Mieux vaux 100 têtes a idées que seulement quelques unes  <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-gabriella-grossmich-ind---february-11-2007-at-253-pm">Post by Gabriella Grossmich, Ind - February 11, 2007 at 2:53 PM</h2>
+<p><a id="post-108096"></a></p>
+<p>le problème d'un 5 à 10% est que pour des grandes sommes, c'est énorme.</p>
+<p>Le même pourcentage que le gain d'argent en banque, ça ne serait déjà pas plus souple? Ou donner une somme fixe de 30 pièces d'or?</p>
+<p>Imaginez que 10 % pour 10000 pièces est de 1000 pièces d'or. Beaucoup de personne on que cette somme comme salaire. Donc pour faire un simple chèque, si ça coute tout un mois de salaire, ça me semble bien cher comme cheque.</p>
+<hr>
+<h2 id="post-by-systran-clador---february-11-2007-at-332-pm">Post by Systran Éclador - February 11, 2007 at 3:32 PM</h2>
+<p><a id="post-108097"></a></p>
+<p>MOi j'ai une autre suggestion:</p>
+<p>Les chèques devraient être des papiers au début sans valeur, que tu achètes du genre 5 pièces au banquier.</p>
+<p>Puis si tu en as pas dans ton sac il ne peut pas faire de chèque.</p>
+<p>Mais ça serait gratuit.</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---february-11-2007-at-434-pm">Post by Scripteur Artemis - February 11, 2007 at 4:34 PM</h2>
+<p><a id="post-108108"></a></p>
+<p>ambraz ne t'inquiette pas, en effet 10% de 10,000 serait énorme, c'était des paroles a l'aveuglette pour dire que si le système est modifier pour donner les cheques par l'entremise des banquier, il y aura des frais. En effet se sera sans doute plutot un système similaire a celui du stable pour les dresseurs a 30gp la semaine jusqua réclamation, un truc du genre mais pour les cheques d'une personne a l'autre.</p>
+<p>La suggestion est bonne, mais nous vous fier a rien qui est dit ici, l'équipe planchera sur l'idée et décidera du final, donc pour ce qui est des vrai données, se sera révélé plutard si l'idée est accepter a l'unanimité et lorsque les scripts seront pret <img src="/assets/smilies/smile.gif" alt=""> .</p>
+<p>Présentement les scripts sont en attentes, donc inutile de trop lancer de débats, mieux vaux se lancer dans les grande discutions lorsque les idées seront prête a être lancé sur le serveur, présentement on ai au mode off, mais sa va bientot commencer a rouler, garder espoir  <img src="/assets/smilies/Wink.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

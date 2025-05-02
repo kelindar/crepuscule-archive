@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet: &amp;quot;Random&amp;quot; Encounter System - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Projet: &amp;quot;Random&amp;quot; Encounter System</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Projet: &amp;quot;Random&amp;quot; Encounter System</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="projet-quotrandomquot-encounter-system">Projet: &quot;Random&quot; Encounter System</h1>
+<h2 id="post-by-coordinateur-apoc---march-6-2010-at-1159-pm">Post by Coordinateur Apoc - March 6, 2010 at 11:59 PM</h2>
+<p><a id="post-248063"></a></p>
+<p>Kel m'a demandé de m'occuper de ce projet. C'est assez gros et je vais devoir utiliser des trucs auquel j'ai jamais touché donc ca me prendra un moment mais ce sera intéressant une fois terminé.</p>
+<p>Résumé: Ce sera un système qui permettra de placer des spawner mais qui s'activeront que sous certaines conditions. Cela pourra être utilisé pour tout ce qui peut être mis dans un spawner, monstres comme items.</p>
+<p>Donc possibilité de mettre une troupe de voleur attendant les passant sur la route dans la fôret ou bien un tas d'or bien caché dans un coin de dongeon. Il y a toujours possibilité de scripter de nouveaux personnages ou items customs une fois que le script sera terminé. Donc je pourrais par exemple scripté un coffre au trésor spécial avec les propriétés déjà prête qui peut être utilisé avec un spawner.</p>
+<p>Pour le fonctionnement, il y aura un flag avec des conditions dans les props. Ensuite on met les spawner inactif ou l'on veut puis on double clique sur le flag. Là arrive la partie difficille car je n'ai jamais vraiment travaillé avec les gumps. Un gump s'ouvrira et vous devrez lier le flag avec les spawner à partir de ce gump. Le gump permettrait de mettre autant de spawner que vous voulez et de facilement les enlever contrairement à un .props.</p>
+<p>Ensuite quand un joueur passe et qu'il remplit toutes les conditions, le flag active les spawner et pouf un Random Encounter comme un bon vieux rpg!</p>
+<p>Je vous expliquerez plus en détail une fois le script fini.</p>
+<p>Maintenant j'ai besoin de vous pour me donnez les conditions que vous désirez. À la base elle seront tous à &quot;null&quot; sauf probability et range et vous pourrez mettre une variable à ceux que vous désirez utilisé.</p>
+<p>Voici quelques unes que j'ai déjà en tête.</p>
+<p>Probability - Probabilité que le spawner s'active, c'est la base quoi.<br>
+Range - La distance à laquelle le joueur doit passer pour activer. Question de ne pas avoir à marcher directement dessus.<br>
+Delay - Le nombres de minutes avant que les spawner se désactives et que le flag puissent être réactivé.<br>
+Text -  Cela permettra d'expliquer au joueur ce qui lui arrive avec une phrase sur sa tête. &quot;<em>Vous tombez sur une troupes de brigands!</em>&quot;<br>
+Players - Le nombre de joueurs requis, si un joueur seul passe par la, il est sauf, mais s'ils sont 4, bam!<br>
+Guilde - Si jamais vous voulez faire du trouble mais seulement à une certaine guilde.<br>
+Classe -  Peut-être un peu HRP mais il ne le sauront pas. Question qu'un forgeron ne se retrouve pas avec un truc de guerrier.<br>
+Niveau -  Pour éviter de massacrer les noob avec un méga monstre.<br>
+Start / End - Deux variables utilisant le temps en jeu. Si vous voulez un truc seulement la nuit ou le jour par exemple.<br>
+Alignement - Encore HRP un peu mais ca donnerait une autre rare raison d'utiliser les alignements.</p>
+<p>J'en oubli mais c'est là que vous entrez en jeu!  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conteur-centaure---march-7-2010-at-1255-am">Post by Conteur Centaure - March 7, 2010 at 12:55 AM</h2>
+<p><a id="post-248066"></a></p>
+<p>Ça va être malade, ça! ^^</p>
+<hr>
+<h2 id="post-by-conan---march-7-2010-at-600-pm">Post by Conan - March 7, 2010 at 6:00 PM</h2>
+<p><a id="post-248104"></a></p>
+<p>Est ce qu'il serait possible de faire réagir ce type de spawner aux variables suivantes ?</p>
+<ul>
+<li>
+<p>Possession/utilisation d'un objet dans l'inventaire ou sur un personnage-joueur.<br>
+Exemple : utiliser l'item &quot;ouvre-boite&quot; quand on se trouve sur l'autel de William Saurin (zone spawner) fait apparaitre &quot;Choucroute Garnie&quot; (mob patibulaire et accessoirement rare.)</p>
+</li>
+<li>
+<p>Utilisation d'un objet dans le décor.<br>
+Exemple : Activer le levier dans l'arène maudite -&gt; la herse du fond se lève et un gros mob aléatoire apparait.</p>
+</li>
+</ul>
+<p>En outre, serait-il possible de proposer plusieurs résultats possible pour une même rencontre.<br>
+Exemple : activer le levier de l'arène maudite a une chance sur deux de faire apparaitre Jean-luc la saucisse ou Gaston le lardon.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-7-2010-at-955-pm">Post by Coordinateur Apoc - March 7, 2010 at 9:55 PM</h2>
+<p><a id="post-248109"></a></p>
+<p>Les trois situations seraient probablement possible mais ca commence à faire pas mal pour un même truc.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Pour les deux premières propositions ce serait probablement plus simple de scripter un autre système pour un truc du genre.</p>
+<p>Pour la dernière proposition, alternativement, il suffisait de mettre deux flags avec 2 spawners respectifs, chacun avec les même conditions et 50% chaque de s'activer. Donc quatres résultats possible: Rien, MonstreA, MonstreB, Monstres A et B.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---october-29-2010-at-1209-am">Post by Coordinateur Apoc - October 29, 2010 at 12:09 AM</h2>
+<p><a id="post-268268"></a></p>
+<p>Je remontes le sujet car il devenait bas et je comptes toujours faire cela.</p>
+<p>Par contre Conan avait apporté une bonne idée, je vais voir en premier pour scripter un levier sur lequel on peut mettre plusieurs options avec un pourcentage de chance. Donc si le joueur ouvre le levier, il a x chance de soit ouvrir un passage comme prévu, x chance d'activer un spawner à la place, etc.</p>
+<p>Ensuite je pourrai reprendre une partie de ce code pour mon système donc ca ne retardera pas encore plus le système au moins.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

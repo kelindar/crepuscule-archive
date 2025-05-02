@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Crep2] Test sys de nom - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">[Crep2] Test sys de nom</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">[Crep2] Test sys de nom</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="crep2-test-sys-de-nom">[Crep2] Test sys de nom</h1>
+<h2 id="post-by-dev-sancoki---january-30-2009-at-209-am">Post by Dev Sancoki - January 30, 2009 at 2:09 AM</h2>
+<p><a id="post-202834"></a></p>
+<p>Voilà j'ai tester le système de nom ce qui demande l'utilisation de 2 pc et prend pas mal de temps. je vais tenter d'expliquer toute les possibilité de ce système simplement.</p>
+<p>Imaginons 2 personnage :</p>
+<ul>
+<li>Martin un Gnome de 130ans (robe orange)</li>
+<li>Leon un Elfe de 80ans (robe rose)</li>
+</ul>
+<p>(oui je sais pas très rp les nom)</p>
+<p>quant martin vera leon sans le connaitre, ca donnera ceci :<br>
+<img src="http://natemia.free.fr/crepuscule/vuemartin.png" alt=""></p>
+<p>du coté de leon ça sera ça :<br>
+<img src="http://natemia.free.fr/crepuscule/vueleon.png" alt=""></p>
+<p>Vous remarquerez qu'on met directement le qualificatif ça permet au joueur de ne plus rater un enfant par exemple.</p>
+<p>Bien entendu le nom est aussi implémenté au niveau du statut<br>
+<img src="http://natemia.free.fr/crepuscule/satuts.png" alt=""></p>
+<p>Ou du paperdoll<br>
+<img src="http://natemia.free.fr/crepuscule/paperdoll.png" alt=""></p>
+<p>Je précise que si on utilise que .note ça marche comme l'ancien système<br>
+par exemple si Martin renomme l'elfe &quot;oreilles pointues&quot; ca donne ça :<br>
+<img src="http://natemia.free.fr/crepuscule/note.png" alt=""></p>
+<p>Le .pres est différent, c'est l'autre qui décide du nom, ainsi on a plus rien a taper. Par défaut le .pres utilise le vrai nom. Mais on peu utiliser une fausse identité de son choix. Ainsi si Leon se presente Martin vera Leon a la place de jeune elfe.<br>
+<img src="http://natemia.free.fr/crepuscule/removenote.png" alt=""></p>
+<p>On peu aussi prendre une fausse identité comme par exemple si notre gnome se fait passer pour kelindar ça donne ceci :<br>
+<img src="http://natemia.free.fr/crepuscule/fauxnom.png" alt=""></p>
+<p>Si leon se présente, la note n'est pas perdue<br>
+<img src="http://natemia.free.fr/crepuscule/presplusnote.png" alt=""></p>
+<p>Le systeme marche pour les échanges<br>
+<img src="http://natemia.free.fr/crepuscule/trademartin.png" alt=""><img src="http://natemia.free.fr/crepuscule/tradeleon.png" alt=""></p>
+<p>Il est possible aussi d'enlever la note<br>
+<img src="http://natemia.free.fr/crepuscule/removenote.png" alt=""></p>
+<p>Le système prend aussi en compte le party<br>
+<img src="http://natemia.free.fr/crepuscule/partymartin.png" alt=""><img src="http://natemia.free.fr/crepuscule/partyleon.png" alt=""><img src="http://natemia.free.fr/crepuscule/partymanifest.png" alt=""></p>
+<p>On peu bien entendu reprendre sa vrai identité a tout moment. bien entendu ce qui est memoriser c'est le nom avec le quel on s'est présenté.<br>
+<img src="http://natemia.free.fr/crepuscule/leonrecident.png" alt=""></p>
+<p>Et Attention si on se représente avec un nom différent<br>
+<img src="http://natemia.free.fr/crepuscule/aie.png" alt=""></p>
+<hr>
+<h2 id="post-by-ex-lumina---january-30-2009-at-213-am">Post by Ex-Lumina - January 30, 2009 at 2:13 AM</h2>
+<p><a id="post-202836"></a></p>
+<p>Tu as vraiment pensé à tout de long en large ! Wow !</p>
+<p>Tout passe par une panoplie de commandes ou somme toute c'est assez simple à ce niveau-là ?</p>
+<hr>
+<h2 id="post-by-conteur-wolf---january-30-2009-at-304-am">Post by Conteur Wolf - January 30, 2009 at 3:04 AM</h2>
+<p><a id="post-202854"></a></p>
+<p>Hmm.. Il y a des phrases clés qui détecte quand une personne se présente? Je ne comprends pas trop <img src="/assets/smilies/man_in_love.gif" alt="">?</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-30-2009-at-306-am">Post by Ex-Lumina - January 30, 2009 at 3:06 AM</h2>
+<p><a id="post-202855"></a></p>
+<p>Bien le .note devient l'ancien .renom, donc ce système-là ne change pas.</p>
+<p>Mais maintenant la personne peut officialiser son nom en se présentant à toi (sous un faux non ou un vrai) avec une commande qui changera pour toi tous ses tags de noms (sauf le .note qu'elle conserve contre elle).</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-30-2009-at-314-am">Post by Coordinateur Apoc - January 30, 2009 at 3:14 AM</h2>
+<p><a id="post-202858"></a></p>
+<p><img src="/assets/smilies/hi.gif" alt=""><br>
+Si j'ai bien compris:<br>
+.pres permet de se présenter à l'autre joueur avec le nom qu'on veut.<br>
+.note permet de mettre un nom/surnom sur le joueur ciblé et on peut l'enlever.</p>
+<p>-Les deux sont actifs en même temps, le .note va après le .pres entre parenthèses.<br>
+-Si le joueur refait un .pres sur un autre, le second joueur en est bien informé.<br>
+-Tout semble avoir été prit en compte, super!</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-30-2009-at-407-am">Post by Fondateur Kel - January 30, 2009 at 4:07 AM</h2>
+<p><a id="post-202874"></a></p>
+<p>.ident pour changer d'identité aussi</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-30-2009-at-434-am">Post by Ex-Bolero - January 30, 2009 at 4:34 AM</h2>
+<p><a id="post-202878"></a></p>
+<p>Je vais faire simple: je n'aime pas beaucoup.</p>
+<p>Je te l'ai dit longuement sur MSN, Hepta. Je ne voix pas l'utilité de faire de Crépuscule un arc-en-ciel ou un pot de peinture: les noms de races doivent rester bleu, le jeu n'est pas un show de mode. Personnellement, quand je vois quelqu'un dans mon journal ou dans mon écran, c'est en bleu que je veux le voir, pour savoir que c'est un PJ: pas en rose ou en mauve ou en jaune ou en rouge, whatever.</p>
+<p>Je n'aime pas beaucoup non plus qu'on inclue l'âge dans le nom. Une façon de plus d'identifier des personnes par des moyens HRP. Si on veut savoir leur âge, on n'aura qu'à faire comme avant, c'est-à-dire regarder leur tag.</p>
+<p>Je ne suis pas trop trop opposé au principe que ce soit la personne qui se présente qui choisisse le nom donné, côté système en soit ça m'a l'air bien. Les choses qui m'énervent, je les ai dites plus haut. C'est sûr que je trouvais le .renom était mieux en une seule commande qu'en deux, mais voilà. Ça règle également le problème de .masque à utilité unique, je crois. Donc super job sur le fond, mais la finition ne me plaît pas... <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-lumina---january-30-2009-at-502-am">Post by Ex-Lumina - January 30, 2009 at 5:02 AM</h2>
+<p><a id="post-202881"></a></p>
+<p>Je n'ai pas d'avis pour la couleur. Je pense qu'on s'en fiche, sommes toutes.. sauf Bolero.</p>
+<p>Je trouve que l'âge dans le tag est une bonne idée (qualificatif qui disparaît, de toutes manières, dès lors qu'il y a présentation).</p>
+<p>C'est un bon travail Heptaeon.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-30-2009-at-504-am">Post by Ex-Bolero - January 30, 2009 at 5:04 AM</h2>
+<p><a id="post-202882"></a></p>
+<p>Attention, ça ne disparaît pas en renommant, je crois.</p>
+<p>Puisque tu vois encore &quot;Jeune elfe&quot; au-dessus de sa tête, tu verras pas &quot;oreilles pointues&quot; quand même.</p>
+<p>Je prends le Sauf Bolero comme une pointe, mais tant mieux, il faut des chieurs pour faire un monde. Et les couleurs n'ont pas leur place. Pas plus que le tag de nom.</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-30-2009-at-536-am">Post by Ex-Lumina - January 30, 2009 at 5:36 AM</h2>
+<p><a id="post-202889"></a></p>
+<p>S'il fallait que je prenne tout ce que tu dis comme une pointe, je chercherais à te faire du mal.</p>
+<p>Malgré la manière catégorique dont Bolero rappelle son avis, mon point de vu demeure. Je tenais seulement à le souligner après son intervention impérative.</p>
+<hr>
+<h2 id="post-by-anonymous---january-30-2009-at-551-am">Post by Anonymous - January 30, 2009 at 5:51 AM</h2>
+<p><a id="post-202890"></a></p>
+<p>Je n'aime pas beaucoup non plus qu'on inclue l'âge dans le nom. Une façon de plus d'identifier des personnes par des moyens HRP. Si on veut savoir leur âge, on n'aura qu'à faire comme avant, c'est-à-dire regarder leur tag.</p>
+<p>Euh là par contre, j'ai de la misère à te suivre. En quoi qu'un âge apparaisse dans le tag ou dans le nom peut influencer le HRP?<br>
+Même si elle n'apparaît pas dans le nom, elle apparaît dans le tag; ça n'a pas de sens ce que tu as dit.</p>
+<p>Et pour les couleurs, je m'en moque, limite je trouverais ça jolie lol. Mais ce n'est pas nécéssaire.</p>
+<p>Sinon inutile de rappeler l'Art du débat : De faire attention aux positions trop extrêmes et catégoriques.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-30-2009-at-555-am">Post by Ex-Bolero - January 30, 2009 at 5:55 AM</h2>
+<p><a id="post-202891"></a></p>
+<p>En fait c'est que si tu vois un type s'approcher avec le tag &quot;Vieil elfe noir&quot; et que tu sais que c'est un croche, c'est différent de si tu vois &quot;Elfe noir&quot; (il y en a plus que des vieils elfes noirs) et que tu dois passer ton curseur sur son personnage (et non sur son nom) pour voir son tag.</p>
+<p>Ça fait un peu identification automatique, car avouons-le-nous, les genre &quot;Enfant humain&quot; ou &quot;Jeune demi-orque&quot; seront systématiquement identifiables. <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Je sais, j'ai de drôles de considérations.</p>
+<p>Et finalement, les couleurs c'est pas si grave, mais ça m'agresse quand même (pour des raisons obscures!). Je préfère encore l'uniformité réconfortante du bleu <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-dev-sancoki---january-30-2009-at-814-am">Post by Dev Sancoki - January 30, 2009 at 8:14 AM</h2>
+<p><a id="post-202902"></a></p>
+<p>pour bolero : si tu n'aime pas ident et pres utilise que .note ça te changera pas. De plus l'apparence est aussi dans le label. ne lis qu'une partie et lis le reste dans le label comme avant XD. A et derniere précision, dans ton journal (quant la personne parle) c'est toujours le speech hue <img src="/assets/smilies/Wink.gif" alt="">.</p>
+<p>Pour l'age direct parfois tu tombes sur un groupe de 3 ou 4 joueur qui te salue directement. je ne prend pas forcement le temps de regarder les 4 label mon curseur étant occupé à la marche, tu dit bonjours messire, et bang dedans un enfant... les description sont des choses très visible ce n'est pas comme si on mettait l'age. en faite etre a 2 mètres d'un enfant de 5ans et le prendre pour un adulte, c'est plutôt hrp...</p>
+<p>en faite les 3 commandes ont été faite vite pour test. On parlais avec Kel de p-e intégré ça de manière plus sympa (gump etc).<br>
+Le .pres est une commande que j'ai connu sur ashworld. ça facilite vraiment la vie sur une macro. On peu aussi facilement changer &quot;.note&quot; en &quot;.renom&quot; pour ne pas perturber les joueurs.</p>
+<hr>
+<h2 id="post-by-anonymous---january-30-2009-at-815-am">Post by Anonymous - January 30, 2009 at 8:15 AM</h2>
+<p><a id="post-202903"></a></p>
+<p>Bolero, je reste d'avis que c'est du têtage un peu (excuse-moi l'expression)...</p>
+<p>Car comme on voit quand même le tag &quot;vieil elfe&quot; ou &quot;enfant demi-orque&quot; en mettant le curseur sur le personnage, ça ne change rien qu'on puisse le voir<br>
+dans le nom ou dans le tag... Ça revient au même un comme l'autre : On a accès à l'âge.</p>
+<p>C'est comme si on prend Halik - Adulte par exemple.</p>
+<p>Donc on a deux situations :</p>
+<p>La première, on est assis dans notre maison et on voit le tag &quot;Elfe noir&quot; passer. Le joueur met son curseur dessus et voit &quot;Elfe noir, adulte&quot;</p>
+<p>Dans la deuxième, on est assis dans la maison et on voit le nom &quot;Elfe noir adulte&quot; passer.</p>
+<p>En quoi la différence est grande entre les deux? Si on a peur à ce point d'une identification automatique par l'âge... Aussi bien la retirer tout court du tag, car qu'on la voit dans le nom ou par le tag, si un joueur peut identifier un personnage par son âge, il y arrivera des deux façons.</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-30-2009-at-822-am">Post by Ex-Lumina - January 30, 2009 at 8:22 AM</h2>
+<p><a id="post-202904"></a></p>
+<blockquote>
+<p><strong>&quot;Heptaeon&quot; wrote:</strong>
+On peu aussi facilement changer &quot;.note&quot; en &quot;.renom&quot; pour ne pas perturber les joueurs.</p>
+<p>Ça serait une modification pertinente, je trouve.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-ex-bolero---january-30-2009-at-426-pm">Post by Ex-Bolero - January 30, 2009 at 4:26 PM</h2>
+<p><a id="post-202932"></a></p>
+<p>+1 Lumina là-dessus <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Des petites modifications qui font la différence!</p>
+<p>Zak, je vais essayer de trouver des screens pour expliquer mon point de vue. Je sais que c'est un irritant mineur, mais si on a tant gueulé pour préserver l'anonymat des gens, je pense qu'on pourrait au moins faire ça, puisque de votre propre aveu vous vous en foutez. Heptaeon, si tu ne regardes pas le tag des gens que tu rencontres, c'est un peu bizarre O_o. Mais c'est pas de ces situations-là dont je parle, sérieusement. Je m'explique avec un screen, même si ça ne vous aidera pas à trouver ça pertinent je suppose:</p>
+<p><img src="http://img264.imageshack.us/img264/8669/noms2rs1.jpg" alt=""></p>
+<p>On se plaint assez du metagaming qu'on a mis le .montrernom. Alors imaginez un peu qu'Ellara se trouve dans le bâtiment et moi, dehors. Disons qu'à la place d'Ellara, je vois &quot;Elfe noir, enfant&quot;. Je pense automatiquement à Mirage (mettons) alors que je n'ai même pas aperçu le personnage...</p>
+<p>Alors que quand on doit passer par le tag, il faut passer le curseur par-dessus le perso, donc normalement être dans la même pièce que lui ou plus proche. C'est un petit désagrément, mais voilà.</p>
+<p>J'aurais une question: Si je fais .renom &quot;Bisou&quot; sur quelqu'un qui s'est .pres &quot;Martin&quot; à moi, quand il marche dans la rue et que j'aperçois son nom, verrai-je:</p>
+<p>a) Humain<br>
+b) Martin<br>
+c) Bisou</p>
+<p>Merci de m'éclairer!</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-30-2009-at-945-pm">Post by Ex-Lumina - January 30, 2009 at 9:45 PM</h2>
+<p><a id="post-202979"></a></p>
+<p>Tu verras : &quot;Martin (Bisou)&quot; s'il y a combinaison du .renom et du .pres.</p>
+<p>Pour l'âge, je rappelle que ceux qui veulent être discret peuvent empêcher leur nom de s'afficher pour autrui (l'actuel .montrernom). Ce qui règle le problème de l'éventuel métagaming, non ?</p>
+<p>D'un simple coup d'œil en croisant quelqu'un dans la rue, pour le reste, il m'apparaît normal d'immédiatement avoir une idée qualifiée de son âge (vieux, jeune, adulte, enfant).</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-31-2009-at-338-am">Post by Fondateur Kel - January 31, 2009 at 3:38 AM</h2>
+<p><a id="post-203036"></a></p>
+<p>Au fait une idée géniale, c'est de permettre aussi un skill de télépathie qui mélange les noms ou permet d'oublier le nom de télépathe (pour X temps ou permanent lol), donc les télépathes pourront jouer avec la mémoire des personnes (dans certaines limites) ^^</p>
+<hr>
+<h2 id="post-by-anonymous---january-31-2009-at-348-am">Post by Anonymous - January 31, 2009 at 3:48 AM</h2>
+<p><a id="post-203037"></a></p>
+<blockquote>
+<p>Alors que quand on doit passer par le tag, il faut passer le curseur par-dessus le perso, <u>donc normalement être dans la même pièce que lui ou plus proche</u>. C'est un petit désagrément, mais voilà.</p>
+<p>Euh non. Tu peux voir le tag du perso partout, que tu sois dans la même pièce ou loin, du moment que tu peux glisser la souris dessus, tu peux accéder au tag et voir : &quot;Humain, Enfant, Indépendant&quot; disons.</p>
+<p>C'est pour ça que je ne comprenais pas ta position; qu'on puisse le voir par le tag ou par le nom, la seule différence se relève être de glisser le curseur dessus. Ça ne change pas grand chose.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-ex-bolero---january-31-2009-at-431-am">Post by Ex-Bolero - January 31, 2009 at 4:31 AM</h2>
+<p><a id="post-203045"></a></p>
+<p>Ouais mais la seule différence en fait, c'est que tu peux pas pointer le nom en bleu qui s,affiche quand t'approches de quelqu'un pour voir son tag, faut absolument passer par son tag.</p>
+<p>Ça limite de moitié le problème, simplement.</p>
+<p>Maintenant je ne vais pas m'acharner puisque mon avis n'est partagé par personne.</p>
+<blockquote>
+<p>Tu verras : &quot;Martin (Bisou)&quot; s'il y a combinaison du .renom et du .pres.</p>
+<p>Cependant ça, je suis contre. On laisse les races, je sais qu'il y a le .montrernom mais c'est n'importe quoi de savoir le nom de quelqu'un qui s'en vient. Imaginons que je suis au coin chaud et que je vois 3 personnes s'en venir, ben j'ai pas envie de voir Martin (Bisou), je veux voir &quot;Humain&quot; moi O_O</p>
+<p>Ça c'est ridicule comme changement, vraiment. Ça fait UO de base, où tu vois les noms de tout le monde dans la rue joyeusement et où ça fait un flood monstre. Je n'imagine même pas si c'est combiné à des couleurs <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-ex-lumina---january-31-2009-at-847-am">Post by Ex-Lumina - January 31, 2009 at 8:47 AM</h2>
+<p><a id="post-203066"></a></p>
+<p>...</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-31-2009-at-418-pm">Post by Ex-Bolero - January 31, 2009 at 4:18 PM</h2>
+<p><a id="post-203094"></a></p>
+<p>Un post très constructif, Lumina, j'adore, merci beaucoup, ça fait avancer le débat.<br>
+Si tu n'as rien à dire, ne dis rien. &quot;...&quot;, c'est rien, dans mon esprit.</p>
+<p><img src="http://img101.imageshack.us/img101/3674/ex3nomsuv2.jpg" alt=""></p>
+<p>Un cas qui prouve que voir &quot;Esmeralda (Machin)&quot; serait HRP dans ce cas-là, puisque je suis dans la rue et eux dans la maison... Bref, le tag de race est préférable...</p>
+<p><img src="http://img292.imageshack.us/img292/3448/ex4nomsru3.jpg" alt=""></p>
+<p>C'est ça que je ne voudrais pas que ça donne, car je trouve ça aussi HRP. Mieux vaut continuer de voir &quot;Humain&quot;, c'est tout ce que je veux dire.</p>
+<p>Côté couleur, c'est peut-être mon esprit très (ou pas du tout) cartésien qui aime reconnaître les &quot;types&quot; de mob dans le journal (gris = mob, bleu = PJ, jaune = PNJ, ce qui est simplissime). Bref c'est qu'esthétique.</p>
+<p>Quant à l'âge dans les noms, bah c'est pareil que mes explications pour le nom de race.</p>
+<blockquote>
+<p>Au fait une idée géniale, c'est de permettre aussi un skill de télépathie qui mélange les noms ou permet d'oublier le nom de télépathe (pour X temps ou permanent lol), donc les télépathes pourront jouer avec la mémoire des personnes (dans certaines limites) ^^</p>
+<p>Et ça c'est une excellente idée, dans la mesure où il y a une sérieuse limite anti-abus (c'est quand même très chiant, on s'entend <img src="/assets/smilies/man_in_love.gif" alt="">)</p>
+</blockquote>
+<hr>
+<h2 id="post-by-ex-lumina---january-31-2009-at-825-pm">Post by Ex-Lumina - January 31, 2009 at 8:25 PM</h2>
+<p><a id="post-203114"></a></p>
+<p>Je ne peux pas t'en dire plus parce que les règlements m'interdisent de t'écraser et de te dire à quel point tu m'enquiquines à travers &quot;un texte hyper long qui te fait rager&quot;, comme tu appelles toi-même tout ce qu'on peut développer comme argumentaire construit contre toi.</p>
+<p>Aussi à l'avenir je vais juste t'ignorer, toi et tes refus globaux ainsi que tes positions butées et peu rationnelles. <img src="/assets/smilies/smile.gif" alt="">.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-31-2009-at-827-pm">Post by Ex-Bolero - January 31, 2009 at 8:27 PM</h2>
+<p><a id="post-203115"></a></p>
+<p><img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-bolero---january-31-2009-at-853-pm">Post by Ex-Bolero - January 31, 2009 at 8:53 PM</h2>
+<p><a id="post-203124"></a></p>
+<p>En gros:</p>
+<p>-Couleurs c'est pas grave, mais bon question d'uniformité ça serait encore mieux en bleu (mais on s'en fiche au final, je vais pas m'attacher à un pont pour ça)<br>
+-Les tags d'âge j'ai un peu plus de misère, mais au final ça ne change pas grand-chose.<br>
+-Le fait de voir le .pres que t'as donné quelqu'un en s'approchant de lui, je sais que tu peux faire pareil en double cliquant sur le nom &quot;Humain&quot; et en regardant le paperdoll, mais comme simple sécurité supplémentaire, je préférerais encore qu'on garde les noms de race.  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-nimue---february-1-2009-at-323-am">Post by Nimue - February 1, 2009 at 3:23 AM</h2>
+<p><a id="post-203163"></a></p>
+<p>Je suis pour...</p>
+<ul>
+<li>Le tag d'âge dans le nom, bref qu'en jeune au lieu de humain on voit &quot;Enfant humain&quot; &quot; Jeune demi elfe&quot; etc. Les couleurs différentes ou pas m'importe peu, même si je préférerais que ça soit tous de la même couleur, mais c'est une pacotille comme détail.</li>
+</ul>
+<p>Bref pas mal tout le reste est semblable à ce qu'il y a déja, je trouve ça juste mieux de voir rapidement si c'est un enfant ou pas.</p>
+<p>Enfin avec le .montrernom etc... Les gens ont juste à l'utiliser s'ils sont dans leur maison. Je n'ai donc aucun problème avec cette suggestion.</p>
+<hr>
+<h2 id="post-by-anonymous---february-4-2009-at-734-am">Post by Anonymous - February 4, 2009 at 7:34 AM</h2>
+<p><a id="post-203790"></a></p>
+<p>Demande qui touche surtout le GMing.</p>
+<p>Possible que dans le journal nous ne voyions pas &quot;Inconnu&quot; mais que par défaut, les GMs voient les vrainoms des personnages? Ce serait utile, surtout lors de cotations ou de surveillance... Associer quelqu'un à sa couleur ce n'est pas évident et penser à .renom tout le monde c'est insensé aussi ^^&quot;</p>
+<hr>
+<h2 id="post-by-dev-sancoki---february-7-2009-at-604-am">Post by Dev Sancoki - February 7, 2009 at 6:04 AM</h2>
+<p><a id="post-204239"></a></p>
+<p>Les GM voient le vrai nom oui et les joueur voient automatiquement le vrai nom des gm désolé de ne pas l'avoir précisé.</p>
+<p>Aussi les GM voient si le personnage utilise une autre identité. histoire de ne pas griller celui qui se fait passer pour un autre.</p>
+<p>PS: Je peu mettre un &quot;Si visible&quot; pour envoyer le nom. Ainsi on voient plus rien dans les maisons. Un peu comme on ne vois pas parler quelqu'un à l'intérieur. (bien entendu je le mettrais que pour les joueur les GMs verrais tout)</p>
+<hr>
+<h2 id="post-by-conteur-wolf---february-7-2009-at-812-am">Post by Conteur Wolf - February 7, 2009 at 8:12 AM</h2>
+<p><a id="post-204254"></a></p>
+<p>Gardons la commande du &quot;.montrernom&quot; qui est aux choix du joueur au fait, s'il désire s'exposer ou non. Comme ça les joueurs se plaindront pas qu'ils ne voient pas si un joueur est dans un endroit publique ou non.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-7-2009-at-746-pm">Post by Fondateur Kel - February 7, 2009 at 7:46 PM</h2>
+<p><a id="post-204283"></a></p>
+<blockquote>
+<p><strong>&quot;Heptaeon&quot; wrote:</strong>
+PS: Je peu mettre un &quot;Si visible&quot; pour envoyer le nom. Ainsi on voient plus rien dans les maisons. Un peu comme on ne vois pas parler quelqu'un à l'intérieur. (bien entendu je le mettrais que pour les joueur les GMs verrais tout)</p>
+<p>J'avais déjà mis ça, c'est la commande .MontrerNom ^^</p>
+</blockquote>
+<hr>
+<h2 id="post-by-dev-sancoki---february-8-2009-at-1131-am">Post by Dev Sancoki - February 8, 2009 at 11:31 AM</h2>
+<p><a id="post-204350"></a></p>
+<p>Je parlais du &quot;this.CanSee(from)&quot; (désolé des termes techniques XD)</p>
+<p>Pour ce qui est de l'affichage du nom on pourrait mettre ça par les items, j'avais discuté de ça avec Trouvère.</p>
+<p>Au lieu d'utiliser une commande, ça n'afficherais suivant qu'on porte ou pas un item distinctif de la guilde.<br>
+Par exemple, si tu porte le chapeau ou la cape de la confrérie pourpre il n'afficherais confrérie pourpre. sinon il ne l'affiche pas.</p>
+<p>Avec ça, on peu même se faire passé pour quelqu'un d'une guilde. (je pense au guilde caché entre autre). Et pas de &quot;Ah tu es de tel guilde&quot; si la personne n'a aucun signe distinctif.</p>
+<hr>
+<h2 id="post-by-ex-bolero---february-8-2009-at-421-pm">Post by Ex-Bolero - February 8, 2009 at 4:21 PM</h2>
+<p><a id="post-204358"></a></p>
+<p>Vous êtes vraiment en train de concocter quelque chose de trop compliqué pour un système tout bête...</p>
+<p>Si la personne ne porte pas de tag distinctif à sa guilde, le pauvre bougre n'a qu'à faire .guilde pour cacher son tag...</p>
+<p>Et le .montrernom est là pour les gens qui souhaitent qu'on ne les aperçoive pas dans les maisons. Si on ajoute trop de réalisme aux shownames, ça devient vraiment énervant... La preuve, quand Kel les a tous enlevés, on a eu une vague de protestation sur le forum. Et avec le nombre de restrictions que tu veux ajouter, ça va à peu près revenir au même.</p>
+<p>Si on pouvait se contenter de toucher à ce qui était prévu initialement sans chercher 37 façons de cacher/afficher des paramètres ou de camoufler les PJ dans une situation X, ça serait apprécié par ici.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-8-2009-at-432-pm">Post by Fondateur Kel - February 8, 2009 at 4:32 PM</h2>
+<p><a id="post-204360"></a></p>
+<p>J'aime bien l'idée de mettre ça sur les items distinctifs de la guilde ^^</p>
+<hr>
+<h2 id="post-by-ex-bolero---february-8-2009-at-456-pm">Post by Ex-Bolero - February 8, 2009 at 4:56 PM</h2>
+<p><a id="post-204361"></a></p>
+<p>Mais pourquoi? Quand bien même que Monsieur XYZ ne porte pas son foulard de l'AdM, si tu le connais, tu peux facilement dire qu'il en fait partie. C'est <u>sa</u> responsabilité de cacher son tag avec .guilde, pas à un système scripté qui vérifie les chapeaux...</p>
+<p>Oh et puis laissez donc tomber, je sais que vous allez encore ignorer ce que j'écris et scripter ce à quoi vous avez pensé, donc pourquoi je me donne même la peine d'écrire...</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-8-2009-at-619-pm">Post by Coordinateur Apoc - February 8, 2009 at 6:19 PM</h2>
+<p><a id="post-204364"></a></p>
+<p>J'aimes bien l'idée de ne pas avoir de tag de guilde. Pour l'age on ne peut pas le savoir en regardant le personnage mais pour la guilde on peut voir l'uniforme. Ca permettrait plus facilement d'avoir des voleurs ou espions, suffirait de voler un uniforme.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---february-8-2009-at-704-pm">Post by Conteur Wolf - February 8, 2009 at 7:04 PM</h2>
+<p><a id="post-204366"></a></p>
+<p>Bah voilà apoc résume bien le fond de ma pensé. Il y aura beaucoup de possibilité pour un joueur maintenant de commettre un méfait dans l'uniforme d'une guilde adverse sans avoir le tag de sa propre guilde qui trahit. Faudrait néanmoins laissé un tag qui affiche le &quot;rang&quot; du personnage par contre.</p>
+<hr>
+<h2 id="post-by-anonymous---february-8-2009-at-800-pm">Post by Anonymous - February 8, 2009 at 8:00 PM</h2>
+<p><a id="post-204372"></a></p>
+<p>Je ne suis pas chaud à l'idée, aussi alléchante peut-elle parraître. En plus, il y aurait des abus j'en suis sûr.</p>
+<p>Pourquoi mettez-vous toute votre énergie dans un système de nom alors qu'il y a plus important à faire d'ailleurs?</p>
+<hr>
+<h2 id="post-by-ex-lumina---february-8-2009-at-1036-pm">Post by Ex-Lumina - February 8, 2009 at 10:36 PM</h2>
+<p><a id="post-204394"></a></p>
+<p>Pour la partie du nom à travers les murs, restons-en au .montrernom pour que ça soit à la volonté des joueurs.</p>
+<p>Pour la partie du titre de guilde sur les objets de la guilde, je suis mitigée. Ça implique quand même des objets pour tous les grades de la guilde, objets et grades qui deviendront &quot;rigides&quot;, donc difficiles à modifier sur le simple effet de notre volonté et de celle des joueurs.</p>
+<p>De l'autre côté, ça permet d'établir de manière pratique le principe &quot;d'insigne&quot; et ça aide les mauvais de ce monde à tricher sur leur identité et à infiltrer les autres groupes. C'est bon pour le chaos entre les guildes.</p>
+<p>Bref je vote blanc.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

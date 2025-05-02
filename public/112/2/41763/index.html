@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faux Deed (Shinigami?) - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Faux Deed (Shinigami?)</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <span class="current-page">Faux Deed (Shinigami?)</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="faux-deed-shinigami">Faux Deed (Shinigami?)</h1>
+<h2 id="post-by-coordinateur-apoc---march-28-2012-at-722-am">Post by Coordinateur Apoc - March 28, 2012 at 7:22 AM</h2>
+<p><a id="post-306585"></a></p>
+<p>Un joueur a pagé ce soir pour faire placer un deed qui ne fonctionnait pas.</p>
+<p>1- Moi et Lumina on avait aucune idée de quel item cela aurait pu s'agir.<br>
+2- S'il existe un Addon pour un certains objet mais pas de Deed, ca me prend 5 minutes a créer le deed par les scripts.</p>
+<p>Qui est-ce qui ajoute ca? Shinigami?</p>
+<p>Dites-moi simplement quel Addon (Le nom du .add, pas le nom de l'objet) n'a pas de deed et je peux corriger cela et nous éviter bien des ennuis/temps et plus besoin de se faire pager pour cela vu qu'il pourront placer et déplacer comme tout les autres deed.  <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-28-2012-at-733-am">Post by Coordinateur Apoc - March 28, 2012 at 7:33 AM</h2>
+<p><a id="post-306589"></a></p>
+<p>En fait, même si vous voudriez par exemple ajouter des Addon comme des tapis ou des choses comme ca, je pourrais le faire mais ca ne serait pas une priorité. Puis il faudrait me donner bien clairement les itemid et positions x et y de chaque morceaux.</p>
+<p>Donc vous placez tout les morceaux par terre, prenez le plus petit x / y comme si ce serait 0 / 0 puis vous soustrayez tout les autres  x / y par ce premier x / y donc ca donnerait 0 / 0, 1 / 0, 2 /0, 0 / 1, 0 / 2, etc pour que le Deed connaisse où placer les morceaux. (Possible d'ajouter un z aussi aux coordonnées si jamais c'est utile.)</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-28-2012-at-833-am">Post by Seigneur Bélial - March 28, 2012 at 8:33 AM</h2>
+<p><a id="post-306606"></a></p>
+<p>C'est moi ouais. J'ai tout expliquer ça dans un autre poste mais en faite certain trucs que j'ai adder au craft ne son pas de vrai deed. Il faut un gm pour l’installer. J'ai juste mis le gumps du deed pour faire semblant. Si tu veux je te dirai quoi.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-28-2012-at-838-am">Post by Coordinateur Apoc - March 28, 2012 at 8:38 AM</h2>
+<p><a id="post-306608"></a></p>
+<p>C'est ce que je demande oui, une liste de ces items.</p>
+<p>On a tellement de sections forums que je n'ai pas trouvé un post ou tu en parlerais.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-28-2012-at-844-am">Post by Seigneur Bélial - March 28, 2012 at 8:44 AM</h2>
+<p><a id="post-306611"></a></p>
+<p>Donc tu as la vanité dans le menu de charpenterie, tu as la ankh dans le menu maçon, les deux grandes fontaines (une en marbre l'autre en sable) <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-28-2012-at-907-am">Post by Coordinateur Apoc - March 28, 2012 at 9:07 AM</h2>
+<p><a id="post-306620"></a></p>
+<p>Pour les fontaines ce sera réglé à la prochaine mise à jour, il restera qu'a mettre les nouveaux deed dans le crafting et enlever les deed qui ne fonctionnent pas.</p>
+<p>Pour les Ankh, ce ne sont pas des Addon et vu qu'elles permettent de resurrecter et de donner du tithe, je vais devoir scripter un Addon au complet que je vais appeller genre DecoAnkh ou quelque chose comme ca pour les différencier. Peut-être fait pour la prochaine mise à jour.</p>
+<p>Puis pour la vanité j'ai aucune idée de quel item car je trouves rien qui s'appelle vanité. Tu fais .add quoi pour en ajouter une quand un joueur te page?</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-28-2012-at-911-am">Post by Seigneur Bélial - March 28, 2012 at 9:11 AM</h2>
+<p><a id="post-306622"></a></p>
+<p>Oui normalement le gm faisant les ankh donnera pas celle qui donne des tithes mais juste le itemid</p>
+<p>Pour la vanité c'est un gumps 2 pièces non deed et se nomme vanity dans Pando</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-28-2012-at-1031-am">Post by Coordinateur Apoc - March 28, 2012 at 10:31 AM</h2>
+<p><a id="post-306628"></a></p>
+<p>C'est fait, je te laisse les mettre dans le crafting et y enlever les vieux ensuite.</p>
+<p>StoneFountainDeed<br>
+SandstoneFountainDeed<br>
+DecoAnkhSouthDeed<br>
+DecoAnkhEastDeed<br>
+VanityEastDeed<br>
+VanitySouthDeed</p>
+<p>Il y a une limitation qui fait que certains Deed ont le même nom. (Les deux fontaines s'appellent Fountain, etc) Mais vu qu'il est facile de les placer pour vérifier c'est laquelle, pour l'instant on va vivre avec.</p>
+<hr>
+<h2 id="post-by-seigneur-blial---march-28-2012-at-859-pm">Post by Seigneur Bélial - March 28, 2012 at 8:59 PM</h2>
+<p><a id="post-306714"></a></p>
+<p>Merci <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-lumina---april-2-2012-at-225-am">Post by Ex-Lumina - April 2, 2012 at 2:25 AM</h2>
+<p><a id="post-307347"></a></p>
+<p>Ça se fait Shini, même si CrepManager est mort, vu que c'est juste de modifier des trucs existants?</p>
+<hr>
+<h2 id="post-by-seigneur-blial---april-8-2012-at-359-am">Post by Seigneur Bélial - April 8, 2012 at 3:59 AM</h2>
+<p><a id="post-308540"></a></p>
+<p>Je n'arrive pas à changer les deeds, désolé :S je sais pas comment.</p>
+<hr>
+<h2 id="post-by-ex-lumina---april-8-2012-at-401-am">Post by Ex-Lumina - April 8, 2012 at 4:01 AM</h2>
+<p><a id="post-308541"></a></p>
+<p>Faudrait supprimer les anciens items et créé de nouveaux craft avec les nouveaux deeds..</p>
+<p>Pour ça il faut que CrepManager soit réparé.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---april-8-2012-at-414-am">Post by Coordinateur Apoc - April 8, 2012 at 4:14 AM</h2>
+<p><a id="post-308544"></a></p>
+<p>Pas besoin de créer de nouveaux items... Je les ai déjà fait manuellement les Deed, il faut que les ajouter dans la liste de craft. (Mettre les ressources nécessaires, etc) Par contre je crois bien que CrepManager ne permet pas d'effacer les items donc on reste prit avec les vieux. S'il y a vraiment aucune facon de les enlever du crafting, à la limite faudrait mettre une ressource introuvable ou quelque chose comme ca pour pas que quelqu'un craft un faux deed.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---april-8-2012-at-440-am">Post by Coordinateur Apoc - April 8, 2012 at 4:40 AM</h2>
+<p><a id="post-308550"></a></p>
+<p>Les listes de craft semblent pas vouloir se mettre à jour... Ostie de CrepManager... Je vais voir si ca fonctionne en redémarrant le serveur plus tard quand il y aura moins ou pas de joueurs...</p>
+<hr>
+<h2 id="post-by-seigneur-blial---april-8-2012-at-451-am">Post by Seigneur Bélial - April 8, 2012 at 4:51 AM</h2>
+<p><a id="post-308554"></a></p>
+<p>J'ai remarquer que les joueurs eux ne le voyait plus, mais le GM lui voit, donc faut juste attendre un relance de serveur, je vais adder les nouveau <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---april-8-2012-at-452-am">Post by Coordinateur Apoc - April 8, 2012 at 4:52 AM</h2>
+<p><a id="post-308555"></a></p>
+<blockquote>
+<p><strong>&quot;Conteur Shinigami&quot; wrote:</strong>
+J'ai remarquer que les joueurs eux ne le voyait plus, mais le GM lui voit, donc faut juste attendre un relance de serveur, je vais adder les nouveau <img src="/assets/smilies/smile.gif" alt=""></p>
+<p>EDIT: En fait n'a pas de sens mais je vais le prendre vu que ca fonctionne pour ceux qui vont l'utiliser...</p>
+<p>J'ai fait pour les vanités donc, il reste les autres à enlever et mettre les nouveaux.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-seigneur-blial---april-8-2012-at-529-am">Post by Seigneur Bélial - April 8, 2012 at 5:29 AM</h2>
+<p><a id="post-308559"></a></p>
+<p>C'est fais <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-lumina---april-17-2012-at-622-am">Post by Ex-Lumina - April 17, 2012 at 6:22 AM</h2>
+<p><a id="post-309250"></a></p>
+<p>Navrée j'étais absente pas mal dernièrement, mais good job Shini :-)</p>
+<hr>
+<h2 id="post-by-conteuse-hermine---april-17-2012-at-709-am">Post by Conteuse Hermine - April 17, 2012 at 7:09 AM</h2>
+<p><a id="post-309258"></a></p>
+<p>Wow je me trouve super intelligente, pour une fois que je trouve un vrai bug!</p>
+<p>Concernant la vanité, il y en a trois de craftable. Seulement deux sont bien, le troisième est buggé. D'abord il apparait comme un vase dans notre sac, puis quand on le déplace et qu'il prend la forme d'un deed, il ne s'applique pas et rien ne se passe lorsqu'on double clique dessus. Peut-être juste le virer de la liste du craft? ^^</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---april-17-2012-at-713-am">Post by Coordinateur Apoc - April 17, 2012 at 7:13 AM</h2>
+<p><a id="post-309260"></a></p>
+<p>Il est enlevé de la liste normelement, tu parles en gm ou joueur? Car en gm il semblerait qu'on soit obligé de les voir s'ils ont déjà été dans une liste.</p>
+<hr>
+<h2 id="post-by-conteuse-hermine---april-17-2012-at-715-am">Post by Conteuse Hermine - April 17, 2012 at 7:15 AM</h2>
+<p><a id="post-309262"></a></p>
+<p><span style="color:#001000">En GM. ^^ Ceci explique cela.</span></p>
+<hr>
+<h2 id="post-by-seigneur-blial---april-17-2012-at-719-am">Post by Seigneur Bélial - April 17, 2012 at 7:19 AM</h2>
+<p><a id="post-309263"></a></p>
+<p>Je trouve ça dommage aussi mais on a pas le choix semblerait. Heureusement que les PJs on pas ce prob <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---april-17-2012-at-723-am">Post by Coordinateur Apoc - April 17, 2012 at 7:23 AM</h2>
+<p><a id="post-309265"></a></p>
+<p>Je vais essayer de voir avec Kel pour permettre de les enlever complètement si c'est possible, ce sera moins mélangeant pour nous.</p>
+<hr>
+<h2 id="post-by-ex-lumina---april-17-2012-at-749-am">Post by Ex-Lumina - April 17, 2012 at 7:49 AM</h2>
+<p><a id="post-309273"></a></p>
+<p>Si tu arrives à attirer l'attention de Kel... rappelle lui qu'il doit permettre les patch graphique et réparer CrepManager.</p>
+<p>...Et après rappelle lui encore. Moi il ne m'écoute plus!</p>
+<hr>
+<h2 id="post-by-seigneur-blial---april-17-2012-at-921-am">Post by Seigneur Bélial - April 17, 2012 at 9:21 AM</h2>
+<p><a id="post-309300"></a></p>
+<p>Je le comprend un peu, à force de se faire solliciter il ses mis en mode coupe-feu contre ses GMs <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

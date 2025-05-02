@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script de bateaux? - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Script de bateaux?</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Script de bateaux?</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="script-de-bateaux">Script de bateaux?</h1>
+<h2 id="post-by-ex-raven---march-27-2007-at-420-am">Post by Ex-Raven - March 27, 2007 at 4:20 AM</h2>
+<p><a id="post-112597"></a></p>
+<p>Bon sa fait un moment que se bug existe.. En fait je l'avais poster en tant que PJ il y a environ 5-6 mois et peut-être plus..</p>
+<p>Le fait est : Peut-ont modifier le script des bateaux pour pouvoir les laissez sur place car en se moment.. Les bateaux reste sur place 1 semaine et disparaissent.. Je connais deux PJ's plus moi à qui c'est déjà<br>
+arrivés et ses vraiment triste.. Après tout ses des bateaux de 12 500 avant qu'ils implantent les nouveaux de 14 500 et 15 500..</p>
+<p>Donc j'aimerais savoir si nos gentil petit scripteur pourrais nous corrigez le problème une fois pour toute sa éviterais les pertes futurs!</p>
+<p>Merci de prendre en note ma demande et si un autre membre du staff est contre.. Alors oublier l'idée!</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---march-27-2007-at-446-am">Post by Scripteur Artemis - March 27, 2007 at 4:46 AM</h2>
+<p><a id="post-112602"></a></p>
+<p>mouarf, regle numéro 1 , ne parle pas en bébé, je mord  <img src="/assets/smilies/Wink.gif" alt=""> .</p>
+<p>Pour les bateaux, bon et bien pour ton information, moi et umrae somme devenu scripteur ici il y a environ 3 mois je croit, un peu avant le départ d'apoc. Donc si c'était il y a 5-6 mois, comprenable que sa n'est pas été changé .</p>
+<p>Je n'était pas au courant du bug personellement et sa me semble plutot étrange... est tu bien sure qu'il n'y avait pas eu un rollback du serveur ou bien simplement un update ?</p>
+<p>Je ne croit pas que les bateaux disparaisse comme par magie ainsi, puisque même les items mis part terre a lheure actuelle ne decay pas... donc c'est étrange. Je vais y jeter un oeil si umrae ne le trouve pas avant.</p>
+<hr>
+<h2 id="post-by-anonymous---march-27-2007-at-538-am">Post by Anonymous - March 27, 2007 at 5:38 AM</h2>
+<p><a id="post-112607"></a></p>
+<p>je crois que c'Est aprè qu'une semaine qu'il est en drop anchor, il se décay... et disparait... mais on l'a juste jamais signaler je crois.. c'Est peut-être pour sa que tu le savais pas!</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---march-27-2007-at-918-am">Post by Feydanith, dit la Carpe - March 27, 2007 at 9:18 AM</h2>
+<p><a id="post-112613"></a></p>
+<p>9 jours, dans le runuo de base :</p>
+<pre><code>private static TimeSpan BoatDecayDelay = TimeSpan&amp;#46;FromDays&amp;#40; 9&amp;#46;0 &amp;#41;;  
+</code></pre>
+<p>Dites moi juste quoi mettre.</p>
+<hr>
+<h2 id="post-by-ex-doku---march-27-2007-at-522-pm">Post by Ex-Doku - March 27, 2007 at 5:22 PM</h2>
+<p><a id="post-112644"></a></p>
+<p>je sais pas, mais 1 mois de délai, se serait pas bien?</p>
+<p>Car il faut penser que ça surcharge la map aussi. Donc les laisser en jeu indéfiniment n'est pas une bonne solution selon moi.</p>
+<hr>
+<h2 id="post-by-anonymous---march-27-2007-at-550-pm">Post by Anonymous - March 27, 2007 at 5:50 PM</h2>
+<p><a id="post-112646"></a></p>
+<p>oui 30 jours c'Est parfait je penses aussi.</p>
+<hr>
+<h2 id="post-by-scripteur-artemis---march-27-2007-at-559-pm">Post by Scripteur Artemis - March 27, 2007 at 5:59 PM</h2>
+<p><a id="post-112648"></a></p>
+<p>pffft, c'était au début de tout du baseboat et moi qui cherchait au milieu... il faut vraiment que je fasse ajuster mes lunettes. Mais bon je vous l'avait dit, elle les trouves plus vite que moi alors a quoi bon combattre  <img src="/assets/smilies/sorry.gif" alt=""> . <em>retourne créer des monstres</em></p>
+<hr>
+<h2 id="post-by-scripteur-artemis---march-27-2007-at-834-pm">Post by Scripteur Artemis - March 27, 2007 at 8:34 PM</h2>
+<p><a id="post-112666"></a></p>
+<p>donc c'est updater (merci Kel). Dorénavant se sera 28 jours (exactement 4 semaines).</p>
+<p>Donc on peut fermer se sujet je croit  <img src="/assets/smilies/Wink.gif" alt=""> . Next</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

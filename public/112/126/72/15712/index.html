@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de bugs et modifications nécessaires répertoriés. - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Liste de bugs et modifications nécessaires répertoriés.</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Liste de bugs et modifications nécessaires répertoriés.</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="liste-de-bugs-et-modifications-ncessaires-rpertoris">Liste de bugs et modifications nécessaires répertoriés.</h1>
+<h2 id="post-by-azmal-mort---august-3-2007-at-640-pm">Post by Azmaïl, Mort - August 3, 2007 at 6:40 PM</h2>
+<p><a id="post-127980"></a></p>
+<p>Bug: Cheval invisible.<br>
+Explication: Une certaine couleur de cheval est invisible lorsqu'on monte sur celui-ci.</p>
+<p>Bug : Noms des contacts télépathique<br>
+Explication : Lorsqu'on entre dans le menu de télépathie, les noms des contacts affichés sont celui du personnage en train d'être joué plutôt que ceux des personnages ajoutés.</p>
+<p>Bug: Ressources vérouillées entassées<br>
+Explication : Lorsque des ressources sont vérouillées à l'aide de la commande &quot;.verrou&quot;, si on ajoute quelque chose, il faut un maître de jeu pour les déplacer.</p>
+<p>Bug: Nombre d'animaux<br>
+Explication: Même sans animaux, Zarthax a 3/5 control slot de prises. (Mort sur cheval plusieurs fois)</p>
+<p>Bug: Affiches de maisons<br>
+Explication: Le nom est celui de la personne qui ajoute et non de la personne ajoutée.</p>
+<h2 id="explication-mme-en-prenant-loyal-bon-on-peut-tre-voleur">Bug: Choix des classes<br>
+Explication: Même en prenant loyal bon, on peut être voleur.</h2>
+<p>Modification: Remplir les pichets<br>
+Explications: Les pichets d'eau ne peuvent pas être remplis dans la plupart des fontaines, des points d'eau, des lacs ou des rivières. Néanmoins, on peut les remplir dans les écuries en prenant l'eau qui est réservée aux chevaux. Il y a une incohérence.</p>
+<p>Modification: Baguettes<br>
+Explication: Les baguettes affichent une demande de point en magie arcanique alors que c'est de la sorcellerie (vice-versa)</p>
+<p>Modification: Confection de four et autre<br>
+Explication: Sans GM, il est impossible de porter les matériaux nécessaires pour la confection de gros instruments.</p>
+<p>Modification: Sort éruption<br>
+Explication: Le sort attaque aussi le caster. (Je serais d'avis de le laisser comme cela)</p>
+<p>Modification: Controle animal<br>
+Explication: Retirer l'algorithme de controle animal afin de les rendre controlables par tous.<br>
+<strong>Solution:</strong> ligne 636 BaseCreature.cs : return true</p>
+<hr>
+<h2 id="post-by-azmal-mort---august-3-2007-at-647-pm">Post by Azmaïl, Mort - August 3, 2007 at 6:47 PM</h2>
+<p><a id="post-127981"></a></p>
+<p>Bon, j'ai pris tout ce qui avait de l'allure dans le post public. Les raisons qui m'ont poussées à faire un tri étaient que certaines ressemblaient davantage à des ajouts qu'à des modifications ou que la portée de la modification s'arrêtait pratiquement à la personne seule. J'ai aussi refusé de jeter un coup d'oeil sur la modification relative au système d'assassinat par principe. Je refuse de savoir comment fonctionne le système clé d'Azmaïl.</p>
+<p>Sinon, j'ai ajouté celui du sort irruption qui attaque même son caster, mais je doute de l'utilité de cette modification. Je trouve, au contraire, que cela rajoute un peu de piquant à l'utilisation de ce sort au même titre qu'un mage utilise avec précaution le blade spirit. Mais bon, vous pouvez juger que la modification est nécessaire, c'est comme il vous semble.</p>
+<p>Enfin, puisque je n'ai pas de compte spécial, ni les scripts en ma possession, je ne peux pas tester la véracité de ces bugs ou l'utilité des modifications. Si quelqu'un pouvait se sacrifier à la tâche, ce serait bien!</p>
+<hr>
+<h2 id="post-by-tiamat---august-4-2007-at-123-am">Post by Tiamat - August 4, 2007 at 1:23 AM</h2>
+<p><a id="post-128016"></a></p>
+<p>J'ai remarquer que dans le système de craft, il y a un problème chez les menuisiers. En effet, dans le menu addon, les fours et les foyers sont inversé, quand on veux faire un foyer, c'est un four qui est crafter.</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---august-4-2007-at-529-am">Post by Conteuse Seshat - August 4, 2007 at 5:29 AM</h2>
+<p><a id="post-128043"></a></p>
+<p>Modification : Scie<br>
+Explication : La scie ne fait que des jouets.... rien d'autre. Plutôt étrange alors qu'avec un autre type de scie, on peut tout faire  <img src="/assets/smilies/wacko.gif" alt=""><br>
+Bug : Babillards des menuisiers<br>
+Explication : Les babillards des menusiers sont des objets tout à fait inutilisables, seulement une image sans aucune fonctionnalité.</p>
+<p>L'histoire de Tiamat m'a fait penser à ses deux là, si je me rappelle de d'autres, je ferai signe ^^</p>
+<hr>
+<h2 id="post-by-azmal-mort---august-6-2007-at-855-pm">Post by Azmaïl, Mort - August 6, 2007 at 8:55 PM</h2>
+<p><a id="post-128240"></a></p>
+<p>Bon, j'ai réécrit à Kel pour avoir les scripts avant qu'il parte (il ne reste pas beaucoup de temps), mais ça ne semble pas porter fruit. Je vais voir, en attendant, si je peux commencer les .muls.</p>
+<p>C'est dommage parce que j'avais une semaine complète de libre :'(</p>
+<hr>
+<h2 id="post-by-vent-dhiver---august-6-2007-at-954-pm">Post by Vent d'Hiver - August 6, 2007 at 9:54 PM</h2>
+<p><a id="post-128251"></a></p>
+<p>Moi j'ai une demande pour le menu couturier :</p>
+<p>Voila je me suis dit que bien que cela ne soit pas d'une grande importance. Il serait quand même enrichissant par la suite d'arranger certains menu d'artisanat et d'ajouter de nouveaux items craftable.</p>
+<p>Voici mes propositions :<br>
+Voir aussi, si on pouvait rajouter les items en rouge:</p>
+<p><strong>Kit Couture</strong> :</p>
+<p><u>Chapeaux</u> (inchangée sauf un rajout)<br>
+Capuche (item 12334)</p>
+<ul>
+<li>Coiffe fleurie (item 12322)</li>
+</ul>
+<p><u> Chemise</u></p>
+<ul>
+<li>Pourpoint.</li>
+<li>Houppelande.</li>
+<li>Chemise.</li>
+<li>chemise d'apparat.</li>
+<li>Tunique.</li>
+<li>Habit de bouffon.</li>
+<li>Doublet.</li>
+<li>Tunique légére.</li>
+<li>Chemise large.</li>
+<li>Gilet.</li>
+<li>Tunique (que je rebatiserais simplement Tunique beige)</li>
+<li>Kimono léger.</li>
+<li>Tunique Large.</li>
+<li>Chemise fine.</li>
+<li>Chemise bourgeoise.</li>
+<li>Chemise noble.<br>
+<span style="color:red">- Drapé (item 12332)</span></li>
+</ul>
+<p><u> Cape </u>[nouvelle section]</p>
+<ul>
+<li>Cape.</li>
+<li>Cape noble.</li>
+<li>Haute Cape.</li>
+<li>Cape de fourrure.</li>
+<li>Manteau.</li>
+<li>Pardessus.<br>
+<span style="color:red">- Cape Capuche (item 12319)</span></li>
+</ul>
+<p><u>Robes</u> (nouvelle section)</p>
+<ul>
+<li>Robe sombre.</li>
+<li>Robe de prêtre.</li>
+<li>Robe simple.</li>
+<li>Robe Gitane.</li>
+<li>Robe élegante.</li>
+<li>Robe D'apparat.</li>
+<li>Robe Amusante.</li>
+<li>Robe Araignée.</li>
+<li>Robe Séduisante.</li>
+<li>Bas (que je renomerais Robe Ouverte en restant polie)</li>
+<li>Robe noble (qui bug chez moi)</li>
+<li>Sous vêtement (Celui qui vient en 4eme position mais qui ressemble plus à une robe qu'à un dessous que je nommerais Robe Du soir)</li>
+<li>Kimono<br>
+<span style="color:red">- Robe Fendue (item 12335)</span></li>
+</ul>
+<p><u> Toges </u> (pas nécessaire vraiment mais ça fait classe ;p, les toges pouvant aller avec les robes)</p>
+<ul>
+<li>Toge.</li>
+<li>Toge de magicien. (que je renomerais toge d'apprenti)</li>
+<li>Toge de moine.</li>
+<li>Toge eflique.</li>
+<li>Toge de mage.</li>
+<li>Robe noire (que je renommerais Toge Sombre)</li>
+</ul>
+<p><u> Dessous</u></p>
+<ul>
+<li>Bas.</li>
+<li>Bas transparent.</li>
+<li>Sous vêtement (renommé Tunique Moulante)</li>
+<li>Sous vêtement.</li>
+<li>Sous vêtement (renommé Bandeau).</li>
+<li>Haut féminin.</li>
+<li>Jarretelles.</li>
+</ul>
+<p><u> Pantalon </u></p>
+<ul>
+<li>Pantalon large.</li>
+<li>Pantalon ninja.</li>
+<li>Pantalon élégant.</li>
+<li>Culotte.</li>
+<li>Pantalon.</li>
+</ul>
+<p><u> Jupe </u></p>
+<ul>
+<li>Jupe.</li>
+<li>Hakama.</li>
+<li>Kilt.</li>
+<li>Jupe (renommé Jupe Longue)</li>
+</ul>
+<p><u> Foulard </u></p>
+<ul>
+<li>Foulard (renommé foulard léger)</li>
+<li>Foulard (renommé Echarpe)</li>
+<li>Foulard (renommé Foulard Protecteur)</li>
+<li>Foulard sombre.</li>
+</ul>
+<p><u> Divers</u> ( avec ce qui reste sans les foulards + rajouts)</p>
+<ul>
+<li>Bandage jambe (item 12552)</li>
+<li>Bandage Torse (item 12553)</li>
+<li>Manche en voile (item 12532)</li>
+<li>Ceinture tissu (item 12546)</li>
+</ul>
+<p><u> Chaussures</u>(juste un rajout)<br>
+<span style="color:red">- Sandales T'Sen (item 12530)</span></p>
+<p>Etc.. les armures ne changeant pas.</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---august-6-2007-at-1001-pm">Post by Feydanith, dit la Carpe - August 6, 2007 at 10:01 PM</h2>
+<p><a id="post-128253"></a></p>
+<p>Je fais rapidement ça ( pour couture )</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---august-7-2007-at-426-am">Post by Feydanith, dit la Carpe - August 7, 2007 at 4:26 AM</h2>
+<p><a id="post-128279"></a></p>
+<p>Fringues finies :</p>
+<ul>
+<li>Une dizaine de nouvelles, comme demandé.</li>
+<li>Classé en catégories par ordre alphabétique, pas contre, j'ai pas respecté les catégories donénes, sinon ça dépassait du gump, j'ai donc du en coupler certaines.</li>
+<li>Renommé tous les vêtements ( nom unique ) dans le menu + correspondance dans les scripts pour qu'il ait ce nom ig.</li>
+</ul>
+<p>Les anciens vêtements garderont leur nom, les nouveaux auront le nouveau nom.</p>
+<p>Reste à envoyer ça demain à sha ^^</p>
+<hr>
+<h2 id="post-by-loopseen---august-7-2007-at-700-am">Post by Loopseen - August 7, 2007 at 7:00 AM</h2>
+<p><a id="post-128289"></a></p>
+<p>tres bonne idee et bon travail, mais Shaa en a oublier</p>
+<p>il y a la brassiere: 13769<br>
+le sous vetement feminin: 12292<br>
+le foulard ninja: 12535<br>
+le pantalon bouffant: 9936<br>
+La plume: 12550<br>
+les bracelets: 12529</p>
+<p>corrigez moi si j'en oublie</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---august-7-2007-at-352-pm">Post by Feydanith, dit la Carpe - August 7, 2007 at 3:52 PM</h2>
+<p><a id="post-128325"></a></p>
+<p>ben suffit de dire les matériaux requis et le skill minimum pour faire et ça sera scripté  <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-azmal-mort---august-7-2007-at-1047-pm">Post by Azmaïl, Mort - August 7, 2007 at 10:47 PM</h2>
+<p><a id="post-128364"></a></p>
+<p>Corrections:<br>
+Ce n'est plus Voleur qui apparait par défaut à l'affichage du gump de choix de classe, mais Bricoleur. Ainsi, un personnage loyal bon ne pourra être Voleur. <br>
+(Note pour Umrae: ClasseChoixGump.cs)</p>
+<p>Lorsqu'on meurt ou est assomé sur un cheval, on débarque de ce dernier. Cela évite le joli navire... Petit hic, l'animal continue d'être attaqué à notre place. C'est là quelque chose de normal, autant pour une monture que pour un vulgaire animal dressé.<br>
+(Note pour Umrae: RacePlayerMobile.cs)</p>
+<p>Dorénavant, les animaux nous obéissent peu importe notre niveau en taming ou animal lore.<br>
+(Note pour Umrae: BaseCreature.cs)</p>
+<hr>
+<h2 id="post-by-azmal-mort---august-10-2007-at-519-am">Post by Azmaïl, Mort - August 10, 2007 at 5:19 AM</h2>
+<p><a id="post-128572"></a></p>
+<p>L'âge maximal à la création du personnage est à présent de 400 ans afin de permettre la création d'un Elfe noir ancien (300 ans et plus).<br>
+(Note pour Umrae: AgeChoixGump.cs)</p>
+<p>Les babillards sont craftables et sans bug dans le menu. (merci à Umrae pour les conseils) (Notre pour Umrae: BulletinBoard.cs, DefCarpentry.cs, Cliloc.fra)</p>
+<hr>
+<h2 id="post-by-azmal-mort---august-12-2007-at-647-am">Post by Azmaïl, Mort - August 12, 2007 at 6:47 AM</h2>
+<p><a id="post-128796"></a></p>
+<p>Correction de certaines références sur les gumps féminins. (Merci à Zak)<br>
+0x26D1<br>
+0x26D5<br>
+0x26D6<br>
+0x35AB<br>
+0x35AC<br>
+0x3607<br>
+(note pour Umrae: Verdata.mul)</p>
+<hr>
+<h2 id="post-by-azmal-mort---august-27-2007-at-909-pm">Post by Azmaïl, Mort - August 27, 2007 at 9:09 PM</h2>
+<p><a id="post-129922"></a></p>
+<p>Ajout des Arcs de Zyx:<br>
+<a href="http://img168.imageshack.us/img168/3226/arcscrpusculeus9.jpg">http://img168.imageshack.us/img168/3226/arcscrpusculeus9.jpg</a></p>
+<p>0x13b1: Arc<br>
+0x3670: Cordeclaire<br>
+0x3671: Arc Sombre<br>
+0x3672: Arc de Chasse<br>
+0x3673: Arc Fin<br>
+0x3674: Arc de tournois<br>
+0x3675: Arc d'élite</p>
+<p>Les variables modifiées sont:<br>
+Dextérité requise<br>
+Force requise<br>
+Dégats minimum<br>
+Dégat maximum<br>
+Portée<br>
+Vitesse</p>
+<p>Le tout pourra être balancé plus tard.</p>
+<p>-Les arcs sont dorénavant craftables<br>
+-Retrait du Composite bow qui buggait graphiquement<br>
+(Note à moi-même modification du Cliloc.fra)</p>
+<hr>
+<h2 id="post-by-tiamat---august-27-2007-at-928-pm">Post by Tiamat - August 27, 2007 at 9:28 PM</h2>
+<p><a id="post-129926"></a></p>
+<p>Yéééééééééééééééé des arrrrrrrrccccccsssssss!!!!!! <em>bave</em></p>
+<hr>
+<h2 id="post-by-azmal-mort---august-29-2007-at-648-pm">Post by Azmaïl, Mort - August 29, 2007 at 6:48 PM</h2>
+<p><a id="post-130066"></a></p>
+<p>-Implantation des batons<br>
+-Retrait des armures de dragons.</p>
+<p>(defcarpentry.cs, tous les batons dans Staves, defblacksmithy.cs)</p>
+<hr>
+<h2 id="post-by-azmal-mort---august-29-2007-at-817-pm">Post by Azmaïl, Mort - August 29, 2007 at 8:17 PM</h2>
+<p><a id="post-130084"></a></p>
+<p>Modification de la fonte des métaux:</p>
+<p>-Fondre un métal ne donne maintenant plus le double.<br>
+-Il est maintenant possible d'essayer de faire fondre un métal plus rapidement. Ceci dit, les chances de rater sont ainsi aggrandies.</p>
+<p>(ore.cs)</p>
+<hr>
+<h2 id="post-by-azmal-mort---august-29-2007-at-950-pm">Post by Azmaïl, Mort - August 29, 2007 at 9:50 PM</h2>
+<p><a id="post-130097"></a></p>
+<p>PS. Si il y a des items que vous désirez voir rajoutés aux menus, prière d'inclure l'item ID en hexadécimal (0xABCD) ce sera ainsi plus facile à retrouver.</p>
+<hr>
+<h2 id="post-by-azmal-mort---september-6-2007-at-851-pm">Post by Azmaïl, Mort - September 6, 2007 at 8:51 PM</h2>
+<p><a id="post-131088"></a></p>
+<p>Zak ne peut plus faire crasher le serveur en mettant un foulard d'incognito à un PNJ... tout simplement car ils ne peuvent plus le porter.</p>
+<p>(foulard_assassin.cs)</p>
+<hr>
+<h2 id="post-by-anonymous---september-6-2007-at-901-pm">Post by Anonymous - September 6, 2007 at 9:01 PM</h2>
+<p><a id="post-131090"></a></p>
+<p>Zak ne peut plus faire crasher le serveur en mettant un foulard d'incognito à un PNJ... tout simplement car ils ne peuvent plus le porter.</p>
+<p>(foulard_assassin.cs)</p>
+<p>Gnééé! J'ai jamais fait planté le serveur comme ça moua! Juste un .dupeinbag 9999  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-coordinateur-astuce---september-6-2007-at-1032-pm">Post by Ex-Coordinateur Astuce - September 6, 2007 at 10:32 PM</h2>
+<p><a id="post-131111"></a></p>
+<p>ça aussi c'était moi le dernier foulard sombre sur un PnJ <img src="/assets/smilies/smile.gif" alt=""></p>
+<p><em>honteux</em></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changement de classe. - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Changement de classe.</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/127//" class="nav-item">Les joueurs</a>
+                
+                &rsaquo; <span class="current-page">Changement de classe.</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="changement-de-classe">Changement de classe.</h1>
+<h2 id="post-by-lyi---august-27-2006-at-518-pm">Post by Lyi - August 27, 2006 at 5:18 PM</h2>
+<p><a id="post-82937"></a></p>
+<p>Procédure pour changer de classe:</p>
+<ol>
+<li>mettre &quot;resetaptitude&quot; à true</li>
+<li>mettre &quot;restskillscap&quot; à true</li>
+<li>selectionner la classe souhaitée dans la case &quot;classe&quot;</li>
+</ol>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-24-2006-at-902-pm">Post by Coordinateur Apoc - September 24, 2006 at 9:02 PM</h2>
+<p><a id="post-88136"></a></p>
+<p>Il faudra maintenant aussi mettre AjusterStats à True. Ensuite placer ses stats comme il le veut si vous vous sentez généreux.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---november-22-2006-at-513-am">Post by Coordinateur Apoc - November 22, 2006 at 5:13 AM</h2>
+<p><a id="post-97909"></a></p>
+<p>Dès la mise à jour il y aura une légère modification pour les changement de classes.</p>
+<ol>
+<li>Mettre &quot;ResetAptitude&quot; à True.  (Remet les Aptitudes à Zéro)</li>
+<li>Mettre &quot;ResetSkillsCap&quot; à True.  (Remet les SkillsCaps et les Skills à 20)</li>
+<li>Mettre &quot;AjusterStats&quot; à True.  (Remet les trois Stats à 20 et place leur Caps selon la race.)</li>
+<li>Selectionner la classe souhaitée dans &quot;Classe&quot;.</li>
+</ol>
+<p>Vous me direz si en jeu tout cela fonctionne bien.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>PS: En fait ca devrait déjà fonctionner présentement car l'étape 3 est plutot optionnelle mais j'aimes mieux ne pas prendre de chance.  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-loopseen---may-12-2007-at-302-am">Post by Loopseen - May 12, 2007 at 3:02 AM</h2>
+<p><a id="post-118522"></a></p>
+<p>Étapes:</p>
+<p>1- ResetAptitudes à True (Remet Aptitudes à Zéro)<br>
+2- Le Joueur Place rapidement ses aptitudes (Sachant avant de Pager environ comment il les désire.<br>
+3- RecalculateSkillsCaps à True (Place Skills Caps selon Aptitudes et descend Skills au besoin)<br>
+4- AjusterStats à True(Vu que certaines aptitudes modifient les Stats)<br>
+5- Gm place trois stats à la main: &quot;Str&quot;, &quot;Dex&quot;, &quot;Int&quot;. (Le joueur sachant encore une fois d'avance les trois valeurs.)</p>
+<p>PS: C'est plus rapide de faire * .set x True * que de chercher dans les props.<br>
+PS2: Toujours s'assurer qu'il n'y a pas d'items magiques sur le personnage et que les tiefling sont bien en mode Humain. (C'est chiant mais je ne peux rien y faire...)</p>
+<p>pour les reset de point d'aptitude, je ne le chercherai plus ^^</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---july-14-2007-at-828-pm">Post by Conteuse Seshat - July 14, 2007 at 8:28 PM</h2>
+<p><a id="post-125626"></a></p>
+<p><span style="color:white"><em>Rappel de la procédure :</em></span></p>
+<p>1- .set classe X<br>
+2- .set resetaptitudes true<br>
+3- Le joueur replace ses aptitudes<br>
+4- .set recalculateskillscaps true<br>
+5- .set ajusterstats true<br>
+6- Place manuellement les 3 stats : .set rawstr X, .set rawdex X, .set rawint X</p>
+<p><span style="color:white"><em>Voilà</em></span></p>
+<p><span style="color:white"><u><strong>Si les problèmes suivants surviennent :</strong></u></span></p>
+<p><strong>- Pas les bonnes aptitudes</strong></p>
+<p><em>Vérifiez si vous avez bien changé la classe (c'est bête, mais c'est ça)</em></p>
+<p><strong>- Le joueur n'arrive pas à mettre ses aptitudes (pas de flèche pour)</strong></p>
+<p><em>Faites le .set resetaptitudes, ça devrait réinitialiser le tout</em></p>
+<p><strong>- Les caps sont à 100 dans des skills non-désiré</strong></p>
+<p><em>Faites le .set recalculateskillscaps true, ça devrait tout arranger</em></p>
+<p><strong>- Les stats sont trop hautes pour les possibilités du personnage</strong></p>
+<p><em>Un petit .set ajusterstats true devrait arranger les choses</em></p>
+<p><em><span style="color:white">Voilà, petit rappel</span></em></p>
+<hr>
+<h2 id="post-by-vent-dhiver---august-31-2007-at-350-pm">Post by Vent d'Hiver - August 31, 2007 at 3:50 PM</h2>
+<p><a id="post-130345"></a></p>
+<p>Voici comment cela se passera pour les réponses aux joueurs :</p>
+<p>C'est le membre de l'équipe qui aura reçu le Mp qui se chargera de donner la réponse postive ou négative.</p>
+<p>Le membre de l'Equipe qui aura répondu au page pour le changement de classe devra obligatoirement le signaler afin qu'on puisse fermer le dossier.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

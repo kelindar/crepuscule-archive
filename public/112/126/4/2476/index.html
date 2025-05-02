@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>important kel - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">important kel</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">important kel</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="important-kel">important kel</h1>
+<h2 id="post-by-ex-concepteur-arthan---september-28-2005-at-350-pm">Post by Ex-Concepteur Arthan - September 28, 2005 at 3:50 PM</h2>
+<p><a id="post-23363"></a></p>
+<p>Je me suis bourré dans ton script jai fias une erreur les gms ne voyaient plus le nom du joueur juste remplacer par sa svp (dans le raceplayermobile ligne 1120 environ) :</p>
+<p>if (this.Age != 0)<br>
+{<br>
+if( from is RacePlayerMobile)<br>
+{<br>
+RacePlayerMobile pmf = (RacePlayerMobile)from;<br>
+if (pmf.AccessLevel &gt; AccessLevel.Player)<br>
+{<br>
+if (guilde_title != null)<br>
+{<br>
+opl.Add(1050045, &quot;{0} \t{1}\t {2}&quot;, &quot;&quot;, this.VraiNom.ToString(), &quot;&quot;); // <del>1_PREFIX<del>2_NAME</del>3_SUFFIX</del><br>
+opl.Add(&quot;[&quot; + race_texte + &quot;, &quot; + age_texte + &quot;]\<br>
+[&quot; + guilde_title + &quot;, &quot; + guilde_texte + &quot;]&quot;);<br>
+}<br>
+else<br>
+{<br>
+opl.Add(1050045, &quot;{0} \t{1}\t {2}&quot;, &quot;&quot;, this.VraiNom.ToString(), &quot;&quot;); // <del>1_PREFIX<del>2_NAME</del>3_SUFFIX</del><br>
+opl.Add(&quot;[&quot; + race_texte + &quot;, &quot; + age_texte + &quot;]\<br>
+[&quot; + guilde_texte + &quot;]&quot;);<br>
+}<br>
+}<br>
+else<br>
+{<br>
+name = this.TrouverNom(from.Serial.Value);<br>
+if (name == &quot;-1&quot;)<br>
+{<br>
+if (this.Female)<br>
+name = &quot;Inconnue&quot;;<br>
+else<br>
+name = &quot;Inconnu&quot;;<br>
+}</p>
+<pre><code>                        if &amp;#40;this&amp;#46;AfficheTitre == true&amp;#41;  
+                        &amp;#123;  
+                            if &amp;#40;guilde_title != null&amp;#41;  
+                            &amp;#123;  
+                                opl&amp;#46;Add&amp;#40;1050045, &quot;&amp;#123;0&amp;#125; \\t&amp;#123;1&amp;#125;\\t &amp;#123;2&amp;#125;&quot;, &quot;&quot;, name, &quot;&quot;&amp;#41;; // ~1_PREFIX~~2_NAME~~3_SUFFIX~  
+                                opl&amp;#46;Add&amp;#40;&quot;&amp;#91;&quot; + race_texte + &quot;, &quot; + age_texte + &quot;&amp;#93;\  
+</code></pre>
+<p>[&quot; + guilde_title + &quot;, &quot; + guilde_texte + &quot;]&quot;);<br>
+}<br>
+else<br>
+{<br>
+opl.Add(1050045, &quot;{0} \t{1}\t {2}&quot;, &quot;&quot;, name, &quot;&quot;); // <del>1_PREFIX<del>2_NAME</del>3_SUFFIX</del><br>
+opl.Add(&quot;[&quot; + race_texte + &quot;, &quot; + age_texte + &quot;]\<br>
+[&quot; + guilde_texte + &quot;]&quot;);<br>
+}<br>
+}<br>
+else<br>
+{<br>
+opl.Add(1050045, &quot;{0} \t{1}\t {2}&quot;, &quot;&quot;, name, &quot;&quot;); // <del>1_PREFIX<del>2_NAME</del>3_SUFFIX</del><br>
+opl.Add(&quot;[&quot; + race_texte + &quot;, &quot; + age_texte + &quot;]&quot;);<br>
+}<br>
+}<br>
+}<br>
+}</p>
+<hr>
+<h2 id="post-by-ex---september-28-2005-at-537-pm">Post by Ex - September 28, 2005 at 5:37 PM</h2>
+<p><a id="post-23379"></a></p>
+<p><span style="color:ffccff">Tiens je pensais que c'était moi qui était fatiguée ou je ne sais trop quand hier je ne pouvais plus voir les noms des persos lol </span></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

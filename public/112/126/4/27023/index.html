@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bodycrystal - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Bodycrystal</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Bodycrystal</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="bodycrystal">Bodycrystal</h1>
+<h2 id="post-by-anonymous---january-31-2009-at-939-am">Post by Anonymous - January 31, 2009 at 9:39 AM</h2>
+<p><a id="post-203079"></a></p>
+<p>À ma demande, Kel a intégré un petit item.</p>
+<p>Donc, le nom de l'objet : bodycrystal.</p>
+<p>Il permet, au double-clique, d'avoir un bodyvalue pré-déterminé. Donc l'objet a les props :</p>
+<ul>
+<li>Bodymod</li>
+<li>Female</li>
+<li>Minutes delay</li>
+<li>Newhue</li>
+<li>Oneuse</li>
+</ul>
+<p>Bodymod c'est le bodyvalue que le joueur obtiendra en utilisant l'objet. Female, c'est pour activer le féminin (donc les .emote X, le tag...). Le newhue, le nom le dit, sera le hue obtenu en utilisant l'objet.</p>
+<p>Le minutesdelay par contre, je ne l'ai pas totalement compris. Kel dit que ça marche avec les minutes par tranche de 30 secondes, donc bon à essayer, et il est impératif d'utiliser &quot;oneuse&quot; si vous utilisez le timer. Donc en bref, le &quot;Minutesdelay&quot; détermine le nombre de temps que vous passerez transformé avant de reprendre votre forme originale.</p>
+<p>Oneuse en revanche peut être utilisé sans le timer, <u>mais c'est déconseillé</u>, puisque dans ce cas le joueur sera coincé éternellement sous sa forme.</p>
+<p>Donc l'objet offre nombreuses possiblités :</p>
+<ul>
+<li>
+<p>Potions de métamorphoses qui durent 3 minutes, limités à une seule utilisation par exemple. Ces potions pourraient être distribuées par les animations ou les événements spéciaux (voire même, des récompenses de mon système de compétition).</p>
+</li>
+<li>
+<p>Permet de prendre l'apparence à volonté d'une X chose.</p>
+</li>
+<li>
+<p>Nourriture magique qui transforme en crapaud</p>
+</li>
+<li>
+<p>Etc.</p>
+</li>
+</ul>
+<p>Il est impératif de devoir le noter quelque part si vous mettez en circulation un item qui transforme. Par ailleurs, c'est fortement recommandé de ne pas en mettre un qui transforme à volonté, mais de bien activer le timer.</p>
+<p>Je compte utiliser la transformation à volonté pour mes quêtes Ods comme je vous avais prévenu, mais j'ai peut-être en tête une vente de potions de transformations, je vais vous en reparler.</p>
+<p>En bref, merci Kel, un petit bijou que j'adore ^-^</p>
+<hr>
+<h2 id="post-by-ex-lumina---january-31-2009-at-945-am">Post by Ex-Lumina - January 31, 2009 at 9:45 AM</h2>
+<p><a id="post-203081"></a></p>
+<p>À utiliser avec modération et bon goût.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---january-31-2009-at-649-pm">Post by Fondateur Kel - January 31, 2009 at 6:49 PM</h2>
+<p><a id="post-203103"></a></p>
+<blockquote>
+<p><strong>&quot;Coordinatrice Lumina&quot; wrote:</strong>
+À utiliser avec modération et bon goût.</p>
+<p>+1, l'item est assez dangereux ^^</p>
+</blockquote>
+<hr>
+<h2 id="post-by-ex-bolero---january-31-2009-at-654-pm">Post by Ex-Bolero - January 31, 2009 at 6:54 PM</h2>
+<p><a id="post-203104"></a></p>
+<p>Le problème de &quot;Vous vous transformez...&quot; affiché à répétition dans le bas de l'écran a-t-il été réglé?</p>
+<hr>
+<h2 id="post-by-ex-bolero---february-3-2009-at-319-am">Post by Ex-Bolero - February 3, 2009 at 3:19 AM</h2>
+<p><a id="post-203520"></a></p>
+<p>Il y a un bug vraiment énervant avec le bodycrystal. J'en ai utilisé 3 de suite, et la troisième potion m'a finalement fait revenir au bodyvalue de la 2e...</p>
+<p>Depuis, mon bodyvalue initial est celui d'un ogre, et je dois utiliser un bodycrystal pour chaque foutu changement de bodyvalue. Ainsi, .self set bodyvalue n'a aucun effet, et je ne peux pas clearer la valeur de Bodymod. Quand je possess une créature, je ne prends pas sa bodyvalue, je reste bodyvalue 400 (celle de mon bodycrystal de secours) avec une hue 0. C'est gênant :S</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

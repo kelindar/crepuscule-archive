@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Correction des bugs graphiques dans la ville. - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Correction des bugs graphiques dans la ville.</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Correction des bugs graphiques dans la ville.</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="correction-des-bugs-graphiques-dans-la-ville">Correction des bugs graphiques dans la ville.</h1>
+<h2 id="post-by-mr-trovnre---september-28-2008-at-1143-am">Post by Mr Trovénère - September 28, 2008 at 11:43 AM</h2>
+<p><a id="post-184204"></a></p>
+<p>Salut à tous,</p>
+<p>Vu que Bolero avait rien a faire et trainait sur le serveur je lui ai demandé de partir à la recherche des bugs graphiques en ville, cela nous permettra de corriger cela. Parce que je ne sais pas vous mais RP près d'un horrible bug graphique ca me détruit un peu ma scène. ^^</p>
+<p>Voila ses premiers résultats ( du bon boulot )</p>
+<p><u>Liste des bugs « graphiques » intra-muros</u></p>
+<p><u>Haute-ville / Moyenne-ville de l’Est / Mur / Palais, tout ça…</u></p>
+<p>2832 1940 0 -&gt; Rocher sur la route<br>
+2847 1925 0 -&gt; Champignons sur la route + mauvaises herbes<br>
+2862 1906 0 -&gt; Mauvaise herbe<br>
+2890 1876 0 -&gt; Herbes sur le balcon… + champignon, dans l’endroit<br>
+<span style="color:#FF0000">2743 1830 0 -&gt; Étranges « montagnes » au sol</span><br>
+2694 1827 0 -&gt; Ça continue + mauvaises herbes dans le mur dans cette section<br>
+2666 1827 0 -&gt; La même chose, des affrosités dans le mur, on ne les voit qu’en se téléportant directement sur le mur de gauche<br>
+<span style="color:#FF0000">2674 1835 30 -&gt; Horribles dalles qui n’ont pas lieu d’être</span><br>
+<span style="color:#004000">2655 1829 0 -&gt; Encore une herbe dans le mur</span> <span style="color:#FF0000">et une montagne au sol</span><br>
+<span style="color:#FF0000">2597 1855 0 -&gt; Ici, on a des planches sous les thermes (inutile d’enlever, je sais)</span><br>
+<span style="color:#004000">2610 1869 30 -&gt; Mauvaise herbe dans le couloir</span> <span style="color:#FF0000">et encore des dalles horribles</span><br>
+<span style="color:#004000">2675 1854 30 -&gt; Les fleurs rentrent dans le sol.</span><br>
+<span style="color:#FF0000">2704 1839 30 -&gt; Encore des dalles.</span><br>
+<span style="color:#FFFF00">2718 1852 30 -&gt; un cactus rose à côté de la porte, charmant.</span></p>
+<p>2786 1879 35 -&gt; Faudrait s’arranger que les NPC ne bougent pas dans tous les sens, ce sont des statues… Je ne sais pas comment, mais si on les met .set frozen true, j’ai l’impression que l’effet s’enlève à chaque reboot.</p>
+<p>2621 1899 30 -&gt; Une dalle.</p>
+<p>_______ (Marre de la haute-ville ^^)</p>
+<p><u>Moyenne-ville occidentale / Quartier CP</u></p>
+<p>2350 2047 0 -&gt; Arbre rentré dans le sol, il m’a toujours écoeuré.<br>
+2356 2018 0 -&gt; Arbre rentré dans le sol un peu.<br>
+<span style="color:#FFFF00">2354 1952 0 -&gt; Demi-croix dans le mur</span><br>
+<span style="color:#FF0000">2358 1915 30 -&gt; Les rideaux dépassent du toit, mais c’est inréglable, je crois.</span><br>
+<span style="color:#004000">2394 2035 0 -&gt; Il FAUT freezer les murs, il est arrivé qu’on échappe des objets derrière et je voudrais que ça soit réglable par circle of transparency.</span><br>
+<span style="color:#004000">2437 1974 0 -&gt; Des arbres sans tronc, des cactus, tout ça… O_o</span><br>
+2662 2084 0 -&gt; CP, fleurs au milieu de la route<br>
+2646 2110 0 -&gt; Pareil.<br>
+2572 2205 0 -&gt; Finir le mur<br>
+2574 2145 0 -&gt; Grand segment pas de dalles dans le fond du mur.<span style="color:#8080FF"><em></span><br>
+<span style="color:#004000">2534 2046 0 -&gt; Pareil.</span><span style="color:#8080FF"></em></span></p>
+<p><u>Basse-ville / Quartier FdC / Fermes</u></p>
+<p>2873 1931 1 -&gt; Un joli rocher dans le mur (dont le bout est mal chié, faut avouer)<br>
+3016 1931 0 -&gt; A besoin de plus de dalles sur le sol, assurément.<br>
+3019 1835 0 -&gt; Faudrait rajouter une tile dans le mur.<br>
+<span style="color:#FFFF00">2980 1827 0 -&gt; Trou dans le mur et rocher. C’est voulu?</span><br>
+<span style="color:#004000">3019 1966 0 -&gt; La grosse bande de gazon à côté du mur, à l’intérieur, est affreuse et contraste avec la terre de la basse, et la grosse bande de terre qui arrête sèchement est aussi affreuse.</span><br>
+<span style="color:#FF80FF">3024 2005 0 -&gt; C’est censé être une bande d’eau et il y a des rochers et des champignons dedans, en plus qu’on peut marcher dedans et qu’elle ne se prolonge pas aussi longtemps qu’elle le devrait.</span><br>
+2934 2118 0 -&gt; reste un fragment du mur datant du quartier contaminé.<br>
+2934 2182 0 -&gt; Des patchs de terre dans le mur, c’est pas beau.<br>
+2875 2263 0 -&gt; Des fleurs dans le mur.<br>
+2859 2263 0 -&gt; Encore un fragment de mur du quartier contaminé.</p>
+<p><u><strong>LÉGENDE :</strong></u></p>
+<p><span style="color:#004000">Vert : Complété.</span><br>
+<span style="color:#FFFF00">Jaune : Incompréhension du problème/rien à changer/Normal</span><br>
+<span style="color:#FF0000">Rouge : Impossible à changer, à même la map ou bug naturel.</span><br>
+<span style="color:#8080FF">Étoile lilas &quot;*&quot; : Possibilité de rebug, mais très difficile à changer.</span><br>
+<span style="color:#FF80FF">Rose : Relayé à Tiamat ou un à builder qui aura du temps, c'est une zone bugguée avec une construction incomplète en plein milieu.</span></p>
+<hr>
+<h2 id="post-by-ex-lumina---september-28-2008-at-1146-am">Post by Ex-Lumina - September 28, 2008 at 11:46 AM</h2>
+<p><a id="post-184207"></a></p>
+<p>Woah .. O.o</p>
+<hr>
+<h2 id="post-by-ex-lumina---september-30-2008-at-1206-am">Post by Ex-Lumina - September 30, 2008 at 12:06 AM</h2>
+<p><a id="post-184490"></a></p>
+<p>Voilà. J'ai ajouté une légende et j'ai tout fait.</p>
+<p>À la prochaine mise à jour ce devrait être tout réglé.</p>
+<p>J'attire l'attention de Tiamat ou d'un autre builder sur le passage en rose.</p>
+<hr>
+<h2 id="post-by-tiamat---september-30-2008-at-1235-am">Post by Tiamat - September 30, 2008 at 12:35 AM</h2>
+<p><a id="post-184496"></a></p>
+<p>Je m'en charge.</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---september-30-2008-at-212-am">Post by Conteuse Seshat - September 30, 2008 at 2:12 AM</h2>
+<p><a id="post-184522"></a></p>
+<p><em>Wow... super efficace ^^</em></p>
+<hr>
+<h2 id="post-by-tiamat---september-30-2008-at-829-am">Post by Tiamat - September 30, 2008 at 8:29 AM</h2>
+<p><a id="post-184607"></a></p>
+<p>Au moins on sais quoi demander au nouveaux maintenent. C'est dans leurs capacités et sa les occupe une coupe d'heure <img src="/assets/smilies/spiteful.gif" alt=""></p>
+<hr>
+<h2 id="post-by-mr-trovnre---september-30-2008-at-1028-am">Post by Mr Trovénère - September 30, 2008 at 10:28 AM</h2>
+<p><a id="post-184618"></a></p>
+<p>Oui en effet. Il faut simplement bien organiser cela. Tia quand tu auras un peu de temps après ton projet on pourrait discuter un peu de builder des trucs un peu partout pour donner une impression de &quot;peuple&quot; en dehors proche des murs ?</p>
+<p>On essayera de faire un unfreeze / Freeze à un moment bien déterminé pour modifier cela et nous verrons pour corriger cela.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---september-30-2008-at-513-pm">Post by Mr Trovénère - September 30, 2008 at 5:13 PM</h2>
+<p><a id="post-184648"></a></p>
+<p>Toujours de BOBO. Il fait des supers trucs quand il veut. ^^</p>
+<p>Vous savez vérifier si il y a pas de redondance ?</p>
+<p>Bugs graphiques et étrangetés extra-Systéria</p>
+<p>Du port jusqu’à l’auberge de l’Indépendance</p>
+<p>2459 2151 0 -&gt; À proprement parler, pas un bug graphique, mais je ne comprends pas pourquoi le mur se prolonge jusqu’à l’eau, tout comme le comptoir, d’ailleurs.<br>
+2435 2142 0 -&gt; Pourquoi n’y a-t-il pas de porte?<br>
+2409 2125 20 -&gt; Lorsqu’on se téléporte sur la tile, ça nous ramène en bas, ce qui m’amène à croire qu’il manque une tile sur le toit.<br>
+2414 2134 0 -&gt; Pourquoi 4 piliers s’il n’y a rien par-dessus?<br>
+2419 2152 1 -&gt; Pourquoi les débris au sol?<br>
+2535 2105 1 -&gt; Deux tiles et un mur sans raison d’être.<br>
+2546 2154 0 -&gt; Les tiles à l’entrée sont étranges…<br>
+2429 2130 0 -&gt; Encore une fois, pourquoi 2 murs s’il n’y a rien par-dessus?</p>
+<p>Région de l’ancien camp gitan jusqu’à la ville-arène</p>
+<p>2310 2059 -5 -&gt; Le gros rocher et les deux fougères dans l’eau, quelle justification?<br>
+2288 2041 -5 -&gt; Encore une fois pas fan des fougères dans l’eau.<br>
+5061 956 5 -&gt; Le bois qui dépasse des tiles, la surcharge de l’endroit en général.<br>
+2336 2033 1 -&gt; Fougère enfouie dans le sol<br>
+2292 2019 1 -&gt; Est-ce voulu que le plancher soit incomplet?<br>
+2328 2012 2 -&gt; Problème récurrent dans toutes forêts, je ne le dis qu’une fois : les arbres rentrent dans le sol<br>
+2248 1962 -5 -&gt; Le lac est parsemé de plantes et de rochers qui n’ont aucune beauté! ^^<br>
+2286 1946 0 -&gt; Pourquoi des arbres sur la plage?<br>
+2261 2037 -5 -&gt; Je ne sais pas si ça s’enlève, mais les lignes dans l’eau, c’est vraiment très frustrant quand on ne peut pas passer par-dessus en bateau (c’est le cas de celle-là, si je ne m’abuse)<br>
+2215 2008 0 -&gt; Des restes de route plutôt moches.<br>
+2166 2038 1 -&gt; Pas un bug à proprement parler, mais le spawn de dauphins est haïssable lorsqu’on se balade en bateau. Ils se bloquent sur le pont et il faut les tuer et attendre qu’ils decay pour pouvoir ranger le bateau.<br>
+2162 1928 0 -&gt; Des restes de bières gitanes, c’est voulu?<br>
+2171 1894 0 -&gt; Pareil.<br>
+2978 1507 -5 -&gt; Les lignes d’eau.<br>
+2302 1824 20 -&gt; Arbres DANS la montagne ^^</p>
+<p>La ville arène en général : Pourquoi ne pas la peupler?</p>
+<p>En vrac</p>
+<p>2948 1653 0 -&gt; Cette partie de la map aurait vraiment besoin d’être décorée ^^<br>
+3188 1554 -15 -&gt; Heuh…<br>
+3388 1463 -5 -&gt; Pareil.</p>
+<p>Je ne sais pas si le reste de ce coin-là vaut la peine, étant donné la véritable absence de build.</p>
+<p>2838 525 0 -&gt; Sans commentaire sur la forme de l’île (je sais, c’est plus vraiment des bugs graphiques… ^^)<br>
+2229 1188 0 -&gt; Le toit flotte dans les airs et le sol n’a pas vraiment de rapport.<br>
+2344 1151 0 -&gt; De la neige sans rapport.<br>
+2743 1408 -5 -&gt; Sérieux problème avec des objets dans l’eau (et ça se poursuit tout au long de la rivière)<br>
+3775 2266 0 -&gt; Un build qui semble surélevé, sans réelle extrapolation et buggé à fond.<br>
+1221 478 -5 -&gt; Sans commentaire ^^<br>
+1210 1390 0 -&gt; Cette partie du Nord est bourrée de bugs</p>
+<p>Voilà, j’avoue avoir la flemme de me taper la map au complet puisque de toute façon il y a véritablement que Systéria qui soit exploitée.</p>
+<p>Bolero</p>
+<hr>
+<h2 id="post-by-tiamat---october-1-2008-at-849-pm">Post by Tiamat - October 1, 2008 at 8:49 PM</h2>
+<p><a id="post-184796"></a></p>
+<p>Moi je veux bien builder tout ce que tu veux <img src="/assets/smilies/smile.gif" alt=""> J'achève mon projet il reste les ombres et les écoliers à finir donc c'est une question de jour.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---october-1-2008-at-911-pm">Post by Mr Trovénère - October 1, 2008 at 9:11 PM</h2>
+<p><a id="post-184802"></a></p>
+<p>*Merci Tia, prends ton temps, ton projet est important. *</p>
+<hr>
+<h2 id="post-by-mr-trovnre---october-3-2008-at-452-pm">Post by Mr Trovénère - October 3, 2008 at 4:52 PM</h2>
+<p><a id="post-185022"></a></p>
+<p>On peut patcher la ? parce que franchement c'est moche de chez moche.</p>
+<ul>
+<li>freezé la guillotine dans la caserne.</li>
+<li>Freezé l'ancienne fontaine.</li>
+</ul>
+<hr>
+<h2 id="post-by-anonymous---october-3-2008-at-509-pm">Post by Anonymous - October 3, 2008 at 5:09 PM</h2>
+<p><a id="post-185023"></a></p>
+<p>On peut patcher la ? parce que franchement c'est moche de chez moche.</p>
+<ul>
+<li>freezé la guillotine dans la caserne.</li>
+<li>Freezé l'ancienne fontaine.</li>
+</ul>
+<p>J'ai encore des trucs non-freezés à finir; trop patcher c'est désaggréable pour les 56k. Je préfère qu'on soit sûr qu'il n'y ait rien d'autre à freezer avant de faire la .patch</p>
+<hr>
+<h2 id="post-by-ex-lumina---october-3-2008-at-726-pm">Post by Ex-Lumina - October 3, 2008 at 7:26 PM</h2>
+<p><a id="post-185039"></a></p>
+<p>Il faudrait bien que je finisse la salle du trône du palais, aussi..</p>
+<hr>
+<h2 id="post-by-tiamat---october-5-2008-at-309-am">Post by Tiamat - October 5, 2008 at 3:09 AM</h2>
+<p><a id="post-185206"></a></p>
+<p>A la prochaine patch le cour d'eau au 3024 2005 0 sera ok.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---october-5-2008-at-1133-am">Post by Mr Trovénère - October 5, 2008 at 11:33 AM</h2>
+<p><a id="post-185242"></a></p>
+<p>*Ok tenez informé comme ca on va pouvoir faire quelque chose. *</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

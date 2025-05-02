@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorts de Druide: Mes Suggestions (FAIT) - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Sorts de Druide: Mes Suggestions (FAIT)</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Sorts de Druide: Mes Suggestions (FAIT)</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="sorts-de-druide-mes-suggestions-fait">Sorts de Druide: Mes Suggestions (FAIT)</h1>
+<h2 id="post-by-coordinateur-apoc---december-26-2009-at-1137-am">Post by Coordinateur Apoc - December 26, 2009 at 11:37 AM</h2>
+<p><a id="post-239419"></a></p>
+<p>Premièrement je touches pas aux regs donc je ne vais pas les écrires.  <img src="/assets/smilies/man_in_love.gif" alt=""> Je vais faire un message par sort pour rendre cela moins compliqué à lire.</p>
+<p>J'apporterai les modification de skill et PA requis seulement une fois que tout les sorts auront été modifié.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-26-2009-at-1140-am">Post by Coordinateur Apoc - December 26, 2009 at 11:40 AM</h2>
+<p><a id="post-239420"></a></p>
+<p><u>RÉSUMÉ: Rien d'obligatoire à changer, deux modifications optionnelles, un bug d'une source introuvable.</u></p>
+<p>Luciole (Sort) (FireFly)<br>
+CastDelay 1.0 - Temps de cast, donc ici 1 seconde a branler les bras<br>
+Skill 1.0 - Skill minimum requis pour caster, ajouter 29-30 pour savoir quand le skill ne monte plus et le sort ne rate plus.<br>
+Mana 40 - Mana Requis<br>
+PA 1 - Points d'aptitudes Requis</p>
+<p>Luciole (Pet)<br>
+Durée 4 sec fois AnimalLore. Donc entre 4 et 400 secondes<br>
+Control Slot 0. Donc tant qu'il y a de la mana, le druide peut en caster autant qu'il veut, pas que ce soit utile.<br>
+SetStr( 1 );<br>
+SetDex( 200 );<br>
+SetInt( 10 );<br>
+SetHits( 1 );<br>
+SetStam( 60 );<br>
+SetMana( 0 );<br>
+SetDamage( 1, 2 );<br>
+<strong>SetDamageType( ResistanceType.Fire, 100 );</strong><br>
+SetResistance( ResistanceType.Physical, 10, 15 );<br>
+<strong>SetResistance( ResistanceType.Fire, 99 );</strong><br>
+SetResistance( ResistanceType.Cold, 10, 15 );<br>
+SetResistance( ResistanceType.Poison, 10, 15 );<br>
+SetResistance( ResistanceType.Energy, 10,15 );<br>
+SetSkill( SkillName.Wrestling, 10.0 );<br>
+SetSkill( SkillName.Tactics, 10.0 );</p>
+<p>La luciole a des stats médiocre et donc pas fait pour le combat. Elle attaque vite et donc ce pourrait être abusable par un druide de haut niveau avec un tank pour manger les coups, des potions de mana et la duration de 400 secondes. Est-ce une tactique profitable, aucunement donc rien à changer de ce côté</p>
+<p>La Luciole fait des dommages de feu donc passe à travers plusieurs armures ainsi que certains monstres mais encore là je ne crois pas que ca change grand chose avec des dommages de 1 à 2. Il y a seulement Astria qui a noté les Luciole comme bon au combat donc je crois pas que ce soit couramment utilisé.</p>
+<p>La Luciole est aussi très résistante au feu mais avec 1 point de vie, je ne crois pas que cela change grand chose. Je ne m'y connais pas vraiment en résistance mais avec 99 j'en déduie qu'il y aura toujours au moins 1 dommage qui touchera.</p>
+<p>Premier Problème(Optionnel): Magie Naturelle ne donne pas d'Animal Lore mais leur seconde aptitude principale, Empathie Animale en donne. Donc soit on met une duration fixe pour tous ou bien on change pour Mediation ou EvalIntel comme les mages. Ce n'est pas requis mais le sort serait inutile pour un Druide bas niveau qui veux avoir le plus de sorts possible. Sinon on peut toujours laisser comme ca mais le sort ne servirait à rien pour un nouveau druide à part monter Necromancy.</p>
+<p>Deuxième Problème(Optionnel): Elle ne prend aucun espace de familier donc on peu en faire à l'infini. Est-ce vraiment un problème? Pas vraiment. Est-ce que mettre à 1 changerait quelque chose? Pas vraiment non plus, sa n'empêcherait pas d'avoir une monture ou autre animal. Est-ce que ca vaut la peine de changer? Aucun abus n'a été rapporté donc non mais je note quand même ici.</p>
+<p>Troisième Problème(Impossible à régler): La Luciole fait parfois planter certains joueurs (J'en ai déjà été la cible) sans aucune raison visible. J'ai regardé le script et il n'y a rien de spécial qui pourrait causer cela. Donc j'y peux rien vu que c'est un bug inconstant, peut être relié à n'importe quelle combinaison de lieu d'items ou d'actions.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-26-2009-at-1243-pm">Post by Coordinateur Apoc - December 26, 2009 at 12:43 PM</h2>
+<p><a id="post-239426"></a></p>
+<p><u>RÉSUMÉ: Semble finalement fonctionner comme prévu, rien à corriger. Peut-être ajouter un bonus d'Intel?</u></p>
+<p>Creux (HollowReed)<br>
+CastDelay 1.0<br>
+Skill 5.0<br>
+Mana 10<br>
+PA 2</p>
+<p>Augmente la Str et la Dex</p>
+<p>Problème: Après avoir cherché, j'ai finalement trouvé la source du problème. Le script en réfère à un autre pour ajouté les stats, le même que celui des mages et sorciers.</p>
+<p>Ce script utilise Magery<br>
+return 1 + (int)(caster.Skills[SkillName.Magery].Value * 0.1);<br>
+Donc il donnera toujours au moins 1 (Ce qui est le cas avec les druides) et y ajoute magery fois 0.1. Donc de 1 à 11 selon le magery.</p>
+<p>Solution Simple et Rapide: Modifier le script pour utiliser EvalIntel qui est compris pour tout les classes utilisant de la magie au même taux que leur skill de magie. Selon leur aptitudes secondaires certains pourraient avoir plus haut d'evalintel que leur skill respectif mais est-ce abusable avec un maximum de 11 dans une stats? Je ne crois pas.</p>
+<p>Problème #2: La durée ne semble pas suivre le script. Si je me fit au script, la durée utiliserait aussi magery. Mais pourquoi deux druides m'auraient rapporté une bonne durée (2 minutes ou 4 minutes) tandis que ce ne devrait pas être le cas? La durée ne devrait pas être plus que 2 minutes même en utilisant Magery... Astria a mal calculé? Possible mais reste que ca n'a quand même pas de sens.</p>
+<p>J'ai fait des test et avec 0 dans tout mes skills la durée est encore très variable. Même avec 100 en Magery ca ne donne que 1 de dex tandis que rien en str. Un coup il a durée un gros 2 seconde et ensuite un bon 2 minutes... Je vais en rester sur ce sort pour un bout je crois.</p>
+<p><u>À SUIVRE</u></p>
+<p>EDIT1: Il semble que le problème n'est pas ou je croyais, avec 0 en magery et 100 en EvalIntel Cunning (Sort Arcanique qui ajoute de l'int) Me donne 9 d'intel pendant une éternité. Donc il doit y avoir un autre script qui modifie tout ca...  <img src="/assets/smilies/sorry.gif" alt=""><br>
+Avec 100 en eval intel, Creux semble suivre la même logique que les sorts de mages maintenant, à y rien comprendre...</p>
+<p>EDIT2: Toujours aucun sens, mais je sais que le sort fonctionne comme prévu pour ce qui est du bonus de stats. Il utilise bien EvalIntel ainsi qu'une formule qui a la fin utilise la stat de base pour savoir de combien sera l'ajout. Donc c'est normal pour les druides qui auraient surement un maximum d'intel si la str et la dex ne monte pas beaucoup. Astria n'a que 19 d'EvalIntel ainsi que 80 en str et dex, donc c'est normal si ca ne lui donne que 1.</p>
+<p>Reste maintenant à savoir pourquoi la duration est si invariable...</p>
+<p>J'aimerais aussi changer le nom, peut-être un truc comme Infusion ou autre chose qui a plus de sens avec un bonus de stats.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+EDIT3: Il semble aussi que la duration des sorts comme agility, bless et autre soit aussi autant aléatoire. Donc Creux fonctionne peut-être vraiment comme prévu... EvalIntel ne semble pas affecté la duration malgré ce que le script me dit, seulement le bonus et encore là, ca ne suit pas le script. Il doit vraiment y avoir un autre script qui passe par dessus celui là...  <img src="/assets/smilies/wacko.gif" alt=""><br>
+Chose qui est sure, EvalIntel Joue sur les bonus, ceux-ci étant fixe basé sur un pourcentage de la stat de base, ainsi que sur la duration, celle ci qui semble toujours très variable.</p>
+<p>EDIT4: Avant de commetre un meutre, je vais au moins proposer une solution qui me permettrait de rendre le skill un peu plus utile aux druides tout en apportant qu'une modification mineure.</p>
+<p>Problème: Le skill ne sert à rien<br>
+Solution: Ajouté aussi un bonus d'intelligence, qui serait le bonus le plus utile dans le cas des druides de Crépuscule qui sont plutot mages que guerriers. En gros, Creux (Brr j'aimes vraiment pas le nom) serait l'équivalent de Bless des Sorcier.</p>
+<p>EDIT5: Fonctionne finalement comme prévu sauf sur Astria. Rien à corriger sur le sort lui-même sauf peut-être ajouter un bonus d'intel en plus de str et dex.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---december-26-2009-at-920-pm">Post by Conteur Wolf - December 26, 2009 at 9:20 PM</h2>
+<p><a id="post-239437"></a></p>
+<p>Jusqu'à maintenant ça me va, il est vrai que ces sorts font dur. Pour ce qui est de la Luciole, il s'agit avant tout d'une simple &quot;lanterne&quot; pour éclairer les joueurs. Enfin cela à toujours été sa première utilité..</p>
+<hr>
+<h2 id="post-by-conteur-centaure---december-26-2009-at-954-pm">Post by Conteur Centaure - December 26, 2009 at 9:54 PM</h2>
+<p><a id="post-239444"></a></p>
+<p>Comme Wolf.</p>
+<hr>
+<h2 id="post-by-nimue---december-27-2009-at-259-am">Post by Nimue - December 27, 2009 at 2:59 AM</h2>
+<p><a id="post-239458"></a></p>
+<p>Je pense que Wolf résume bien.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-27-2009-at-1138-pm">Post by Coordinateur Apoc - December 27, 2009 at 11:38 PM</h2>
+<p><a id="post-239506"></a></p>
+<p>Nathaniel<br>
+-Vos Stats,<br>
+Str : 114<br>
+Dex : 120<br>
+Int : 80<br>
+magie : 56<br>
+EvalIntel : 45.8<br>
+Creux : +5 dex et str</p>
+<p>essais 1 : 65 secondes<br>
+essais 2 :65 secondes<br>
+essais 3 :66 secondes</p>
+<p>Il m'a dit ne pas être druide et donc on voit que dans sont cas, creux pourrait être utile. Car même avec une armure creux ne devrait pas rater rendu à un certains niveau et la durée est quand même pas si mal.</p>
+<p>Il me faudra voir les test d'un mage ou sorcier pour comparer et voir si tout fonctionne de la même facon. Malgré que la duration toujours aussi longue est étrange quand Astria avait une duration vraiment variable, autant 5 seconde que deux minutes.</p>
+<p>Peut-être relié a un bug causé par autre chose comme un item magique car même moi sur mon gm parfois les bonus étaient permanent tant que je ne modifiais rien dans mes props ou .hide...</p>
+<hr>
+<h2 id="post-by-conteur-wolf---december-28-2009-at-812-am">Post by Conteur Wolf - December 28, 2009 at 8:12 AM</h2>
+<p><a id="post-239560"></a></p>
+<p>En même temps le fait de caster en armure plus haute que le cuir(pas clouté) je suis pas trop pour... En necro il est pratiquement impossible de caster contrairement aux mages. Je crois d'ailleurs que tous les mages exceptés paladin ne devraient réussir à caster...</p>
+<p>Sinon il faudrait rendre cela équitable pour tous, possibilité de cast avec armure pour tout le monde, mais je trouve ça vraiment bourrin.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-28-2009-at-1144-am">Post by Coordinateur Apoc - December 28, 2009 at 11:44 AM</h2>
+<p><a id="post-239575"></a></p>
+<p>Toutes les classes peuvent caster en armure mais avec un gros malus. Donc un mage même avec une armure pourrait caster magic arrow dissons mais pas chai lightning.</p>
+<p>Les paladin ne peuvent pas caster en armure? Necro, Paladin et Druide sont trois classes qui normalement peuvent aussi combattre au corps à corps, pas ici par contre.</p>
+<p>Cela dit, je ne touches rien de ce côté donc pas besoin d'en parler.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Maintenant, Domilixia m'a rapporté ses test et sa coincide avec Nathaniel, environ le double d'eval intel, environ le double de duration. Donc je ne crois pas devoir retoucher à creux sauf si quelqu'un me donne un rapport différent. Seulement leur faire savoir qu'Eval Intel est important pour ce sort.</p>
+<hr>
+<h2 id="post-by-lancelot---december-28-2009-at-1246-pm">Post by Lancelot - December 28, 2009 at 12:46 PM</h2>
+<p><a id="post-239576"></a></p>
+<blockquote>
+<p><strong>&quot;Apoc&quot; wrote:</strong>
+Les paladin ne peuvent pas caster en armure?</p>
+<p>Je spécifie que les paladins peuvent caster en armure.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-conteur-centaure---december-29-2009-at-856-pm">Post by Conteur Centaure - December 29, 2009 at 8:56 PM</h2>
+<p><a id="post-239671"></a></p>
+<p>Et je confirme qu'un mage avec 100 magery ne peut caster Lighning (4eme cercle) à environ 50% du temps avec une simple armure cloutée. Aussi bien dire qu'il ne peut pas caster en armure.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---december-29-2009-at-917-pm">Post by Conteur Wolf - December 29, 2009 at 9:17 PM</h2>
+<p><a id="post-239674"></a></p>
+<p>Déjà mieux que necro qui manque tout à partir de clouté ;p. Pourtant il y a des sortilèges de support combat comme pour le paladin. Soit curse weapon, evil omen et blood oath. À moins d'être guerrier ces sorts ne servent à rien car ce sont des sortilèges au corps à corps et sans armure le guerrier se fait défoncer, possibilité de modifier un peu?</p>
+<hr>
+<h2 id="post-by-lancelot---december-29-2009-at-1046-pm">Post by Lancelot - December 29, 2009 at 10:46 PM</h2>
+<p><a id="post-239691"></a></p>
+<p>Ça serait bien que les sorts de &quot;corps à corps&quot; de nécro puissent être fait à 100% même avec une armure. Déjà que ces sorts ne durent vraiment pas longtemps, ça serait au moins ça.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-30-2009-at-1217-am">Post by Coordinateur Apoc - December 30, 2009 at 12:17 AM</h2>
+<p><a id="post-239698"></a></p>
+<p>Je vais voir ce que je peux faire.</p>
+<p>Garibald m'a envoyé un rapport lui aussi et sa coincide avec Domilixia et Nathaniel, donc rien à modifier sur Creux. Le problème c'est sur Astria on dirait.</p>
+<p>Avec 100 en Eval intel et des stats dans les 100-120, ca donne pas loin de 10 str et dex pendant environ deux minutes. Pas très utile sur crépuscule mais pour 10 mana c'est pas mal.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---december-30-2009-at-1237-am">Post by Conteur Wolf - December 30, 2009 at 12:37 AM</h2>
+<p><a id="post-239702"></a></p>
+<p>Les sortilèges de soins nous devions les revoir à la baisse? Surtout Terrain enchanté je crois, le gros cercle d'arbres, tu as eu le temps d'y jeter un oeil aussi?</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-30-2009-at-1255-am">Post by Coordinateur Apoc - December 30, 2009 at 12:55 AM</h2>
+<p><a id="post-239703"></a></p>
+<blockquote>
+<p><strong>&quot;Conteur Wolf&quot; wrote:</strong>
+Les sortilèges de soins nous devions les revoir à la baisse? Surtout Terrain enchanté je crois, le gros cercle d'arbres, tu as eu le temps d'y jeter un oeil aussi?</p>
+<p>Non je suis pas rendu là encore.  <img src="/assets/smilies/man_in_love.gif" alt="">
+Je suis plus occupé que je croyais pendant le temps des fêtes.  <img src="/assets/smilies/ohmy.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-949-am">Post by Coordinateur Apoc - January 10, 2010 at 9:49 AM</h2>
+<p><a id="post-240689"></a></p>
+<p><u>RÉSUMÉ: Rien à modifier. Un sort bien balancé qui représente bien le druide et donc doit demeurer accessible rapidement.</u></p>
+<p>Pack of Beast (Animaux Sauvages)<br>
+CastDelay 6.0<br>
+Skill 5.0<br>
+Mana 25<br>
+PA 4</p>
+<p>Chance de summonner des animaux dans ceux-ci:</p>
+<p>BrownBear<br>
+TimberWolf<br>
+Panther<br>
+GreatHart<br>
+Hind<br>
+Alligator<br>
+Boar<br>
+GiantRat</p>
+<p>Chances égales pour chaque type, les 4 animaux sont du même type.</p>
+<p>Minimum 2 animal avec une chance d'en avoir 3 ou 4 basé sur nécromancie et un chiffre aléatoire<br>
+Necromancy 0 - Aucune chance.<br>
+Necromancy 50 - environ 40% de chance d'en avoir 3, Aucune d'en avoir 4<br>
+Necromancy 80 - environ 70% de chance d'en avoir 3 et environ 10% d'en avoir 4.<br>
+Necromancy 100 - environ 90% de chance d'en avoir 3 et environ 30% d'en avoir 4.</p>
+<p>Durée 4 X Necromancy secondes = de 0 à 400 secondes (Fait pour chaque animal)</p>
+<p>Tout semble beau pour ce sort. C'est un sort assez fort pour avoir besoin que de 4 PA et 5% de skill mais ca ne donne que 2 animaux donc il est balancé pour devenir de plus en plus fort. 25 de Mana c'est un peu bas mais ce n'est pas un sort qu'on peut spammer de toute facon. Le 6 secondes de cast le rend inutile en plein combat sauf s'il y a déjà des animaux.</p>
+<p>On pourrait ajouter des types d'animaux mais je crois que ca ne vaut pas la peine.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-1036-am">Post by Coordinateur Apoc - January 10, 2010 at 10:36 AM</h2>
+<p><a id="post-240698"></a></p>
+<p><u>RÉSUMÉ: Mettre un délais fixe avant de pouvoir recaster le sort, augmenter la mana requise et le rendre moins puissant à haut niveau.</u></p>
+<p>Spring of Life (Source de Vie)<br>
+CastDelay 1.0<br>
+Skill 5.0<br>
+Mana 10<br>
+PA 8</p>
+<p>Sort de guérison de zone<br>
+Distance de 3 cases de la cible dans toutes les directions. Peut-être casté sur le sol.<br>
+? = Necromancy / 20 + 5 - De 5 à 10 ? (Cette formule est dans le script mais je ne trouves pas dans quoi elle serait utilisé.)<br>
+Guérison = Meditation X 0.8 + 1 à 15 - De (1 - 15) à (81 à 95) Pdv!!!<br>
+Délais avant que le sort puisse refonctionner = AnimalLore X 1.2 - De 0 à 120 (On peut toujours caster le sort mais rien ne se passe si la cible a déjà été guérie.)</p>
+<p>Premier Problème: Pourquoi est-ce qu'avec 0 d'Animal Lore(Skill généralement pas utilisé par les druides pure) le skill pourrait être spammé?  <img src="/assets/smilies/man_in_love.gif" alt=""> Solution: Mettre un délais fixe d'environ 1 minute?</p>
+<p>Deuxième Problème: Beaucoup trop puissant à haut niveau<br>
+Solution: Baisser le pourcentage de 0.8 à 0.5 disons? Ca ne pénalise pas trop à bas niveau et à haut niveau le maximum tombe à 65 au lieu de 95 de vie. Il faudrait voir les autres heal mais celui la étant de zone, 65 se serait encore pas mal fort.</p>
+<p>Troisème Problème: Seulement 10 de mana pour autant de guérison?<br>
+Solution: Monter au moins à 25 de mana, on ne peut pas le spammer mais il devrait quand même demander plus.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-1057-am">Post by Coordinateur Apoc - January 10, 2010 at 10:57 AM</h2>
+<p><a id="post-240699"></a></p>
+<p><u>RÉSUMÉ: Augmenter la durée pour être similaire au sort Paralyse du mage</u></p>
+<p>Grasping Roots (Racine)<br>
+CastDelay 3.0<br>
+Skill 30.0<br>
+Mana 25<br>
+PA 24</p>
+<p>Sort de paralysation singulier<br>
+Durée = 7 + Meditation X 0.2 - De 7 à 27 secondes<br>
+Chance de résister = Cible (Str + Dex) / 2 plus grand que Necromancy du druide = Durée / 2<br>
+<u>Durée Maximale Fixé à 9 secondes peut importe le chiffre plus haut.</u></p>
+<p>Premier Problème: Durée maximale de 9 seconde? Le sort similaire du mage arcanique peut durer jusqu'à 30 secondes mais MagicResist peut le rendre couper de moitié aussi je crois tandis que paralyse field peut être totalement résister. Mais il est pas mal plus facile de monter Str et Dex que MagicResist donc la durée simplement coupé de moitié convient.<br>
+Solution: Enlever la durée fixe de 9 secondes et je crois que le reste irait.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-1114-am">Post by Coordinateur Apoc - January 10, 2010 at 11:14 AM</h2>
+<p><a id="post-240701"></a></p>
+<p><u>RÉSUMÉ: Sort fonctionnel et efficace quoi que pas super utile.</u></p>
+<p>Blend With Forest (Lien avec la foret)<br>
+CastDelay 2.0<br>
+Skill 10.0<br>
+Mana 20<br>
+PA 10</p>
+<p>Transforme la cible en un arbre invincible mais qui ne peut pas bouger, parler ou faire quoi que ce soit pendant 20 secondes. Sort considéré offensif (Donc les animaux deviennent aggressif)<br>
+En gros c'est un sort de paralysation mais qui empêche la cible d'être attaqué. Peut être utilisé pour bloquer un monstre le temps de se guérit ou de protéger un allié le temps d'achever un monstre par exemple.</p>
+<p>Aucun problème pour ce sort, il fait ce qu'il doit et la durée est bonne. Surement possible de le caster à répétition mais cela ne servirait à rien sauf peut-être enmmerder un joueur.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-1135-am">Post by Coordinateur Apoc - January 10, 2010 at 11:35 AM</h2>
+<p><a id="post-240702"></a></p>
+<p><u>RÉSUMÉ: Modifier le sort pour faire des dommages périodiques au lieu de faire une fois des dommages puis redonner une partie des vie ensuite</u></p>
+<p>Swarm Of Insects (Insectes)<br>
+CastDelay 2.0<br>
+Skill 5.0<br>
+Mana 10<br>
+PA 6</p>
+<p>Sort d'attaque qui fait des dommages et redonne la moitié des vies perdu après 20 secondes.</p>
+<p>Dommages = (Druide Necromancy - Cible AnimalLore) / 10 + 30 - Donc de 30 à 40</p>
+<p>Il n'y a pas vraiment de problème avec ce sort mais je verrais une modification à y apporter. Au lieu de faire des dommages et ensuite redonner des vie, je ferais des dommages périodiques. Disons de 5 à 10 à chaque 3 secondes pendant 12 secondes? (C'est environ la durée de l'animation des abeilles) Donc de 20 à 40 de dommages mais sur 12 secondes.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-1152-am">Post by Coordinateur Apoc - January 10, 2010 at 11:52 AM</h2>
+<p><a id="post-240703"></a></p>
+<p><u>RÉSUMÉ: Rendre un peu plus long à caster et avec une durée plus courte</u></p>
+<p>Stone Circle (Cercle de Pierre)<br>
+CastDelay 2.0<br>
+Skill 10.0<br>
+Mana 25<br>
+PA 12</p>
+<p>Comme le nom l'indique, fait apparaitre un cercle de pierre d'environ 5 cases de diamètre. On ne peut pas y entrer ou sortir mais permet de tirer ou faire des sorts à l'extérieur.</p>
+<p>Durée = fixe de 30 secondes</p>
+<p>Problème: Court à caster, longue durée, possible de lancer des sort à travers le mur. Un peu trop fort comparé au sorts des autres mages.<br>
+Solution: Augmenter à 3 secondes le temps de cast et abaisser la durée à 20 secondes. Le fait que ce soit un cercle complet comparé à simplement un mur rend déjà le sort assez utile.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-1211-pm">Post by Coordinateur Apoc - January 10, 2010 at 12:11 PM</h2>
+<p><a id="post-240705"></a></p>
+<p><u>RÉSUMÉ: Augmenté de beaucoup la durée sinon le sort perd toute sont utilité</u></p>
+<p>Lure Stone (Pierre Attirante)<br>
+CastDelay 1.0<br>
+Skill 20.0<br>
+Mana 20<br>
+PA 15</p>
+<p>Fait apparaitre pendant 30 secondes un rocher qui fait approcher les animaux. (semble fonctionner sur tout qui est tamable.)</p>
+<p>Je comprend pourquoi ca ne fonctionne pas en général. Animal Lore doit être plus haut que le taming requis pour l'animal. Mais la distance est énorme, 600 cases. Mais avec une durée que de 30 secondes et la vitesse des monstres sur Crépuscule...</p>
+<p>Problème: Durée trop courte pour que l'effet désiré soit utile<br>
+Solution: J'augmenterais la durée au moins à 2 minutes, voir même 5. Il y a peu d'abus possible, si attaqué, ils vont lacher la pierre et se défendre.</p>
+<p>J'irais même jusqu'à abaisser le nombre de PA car c'est un sort surtout utile pour les rodeur qui veulent apprivoiser un animal. Mais les modifications de PA auront lieu seulement quand tout les sorts auront été corrigés.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-1219-pm">Post by Coordinateur Apoc - January 10, 2010 at 12:19 PM</h2>
+<p><a id="post-240706"></a></p>
+<p><u>RÉSUMÉ: Rien à modifier</u></p>
+<p>Shield Of Earth (Protection Terrestre)<br>
+CastDelay 1.0<br>
+Skill 30.0<br>
+Mana 15<br>
+PA 20</p>
+<p>En gros c'est un mur de pierre qui dure 30 secondes.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Je laisserais la durée à 30 secondes car comparé aux sorcier avec mur de pierre, les druides n'ont pas autant de sort d'attaques et donc le mur est peu abusable.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-1241-pm">Post by Coordinateur Apoc - January 10, 2010 at 12:41 PM</h2>
+<p><a id="post-240709"></a></p>
+<p><u>RÉSUMÉ: Moins large, tuer les joueurs</u></p>
+<p>Volcanic Eruption (Eruption)<br>
+CastDelay 2.0<br>
+Skill 60.0<br>
+Mana 60<br>
+PA 37</p>
+<p>BOOM! Explosion dans une zone assez large à haut niveau.</p>
+<p>Durée = 1 + Meditation /10 = Jusqu'à 11 carré à 100?!<br>
+Dommage 50% physique et 100% de feu = Ca veut dire 150% de dommages avec 0 résistance ou bien simplement que même avec 100% de résistance en feu, on aurait 50% des dommages?</p>
+<p>Premier Problème: Le sort affecte une zone beaucoup trop large.<br>
+Solution: Je dirais d'abaisser de moitié la distance donc de 1 à 6 cases, c'est déjà assez large et ca donnerais une chance au druide de ne pas s'auto-détruire.</p>
+<p>Deuximème Problème: Le sort n'affecte pas les joueurs<br>
+Solution: Le sort affecte les joueurs. Si on laisse une chance au druide de ne pas se tuer, il faut lui donner une chance de tuer ses amis au moins.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-1250-pm">Post by Coordinateur Apoc - January 10, 2010 at 12:50 PM</h2>
+<p><a id="post-240710"></a></p>
+<p><u>RÉSUMÉ: La durée utilise AnimalLore, modifier pour Meditation ou EvalIntel</u></p>
+<p>Tree Fellow (Ami d'Arbre) (Sort)<br>
+CastDelay 5.0<br>
+Skill 50.0<br>
+Mana 30<br>
+PA 28</p>
+<p>Tree Fellow (Ami d'Arbre) (Summon)<br>
+SetStr( 196, 250 );<br>
+SetDex( 71, 120 );<br>
+SetInt( 66, 90 );</p>
+<p>SetHits( 196, 250 );</p>
+<p>SetDamage( 12, 16 );<br>
+SetDamageType( ResistanceType.Physical, 100 );</p>
+<p>SetResistance( ResistanceType.Physical, 20, 25 );<br>
+SetResistance( ResistanceType.Cold, 50, 60 );<br>
+SetResistance( ResistanceType.Poison, 30, 35 );<br>
+SetResistance( ResistanceType.Energy, 20, 30 );</p>
+<p>SetSkill( SkillName.MagicResist, 65.0 );<br>
+SetSkill( SkillName.Tactics, 100.0 );<br>
+SetSkill( SkillName.Wrestling, 90.0 );</p>
+<p>VirtualArmor = 34;<br>
+ControlSlots = 2;</p>
+<p>Durée = 4X AnimalLore - Donc de 0 à 400 secondes</p>
+<p>Problème: Animal Lore n'est pas un skill de Druide sur Crépuscule.<br>
+Solution: Modifier pour Meditation ou Eval Intel.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-107-pm">Post by Coordinateur Apoc - January 10, 2010 at 1:07 PM</h2>
+<p><a id="post-240712"></a></p>
+<p><u>RÉSUMÉ: Utiliser Meditation au lieu d'Animal Lore et en profiter pour le rendre beaucoup moins fort.</u></p>
+<p>Enchanted Grove (Pierre Enchantée)<br>
+CastDelay 4.0<br>
+Skill 30.0<br>
+Mana 20<br>
+PA 43</p>
+<p>Fait apparaitre une roche entourée d'arbres pendant 30 secondes. Redonne rapidement beaucoup de vie et mana avec un haut karma.</p>
+<p>Problème: La quantité de vie et mana semble relié au Karma et ce n'est pas utilisé sur Crépuscule.<br>
+Solution: Prendre Meditation et s'assurer que le sort est beaucoup moins fort si on ne touche pas à la durée. En gros, s'assurer une regénération sans que cela permette de survivre indéfiniment en plein combat. Je dirais quelque chose comme (Meditaiton/20 + 1) de vie/mana par secondes. Donc ca ne donnerait que 6 à 100 de meditation. Mais pendant 30 secondes ce serait assez pour tout remplir. En gros un sort pratique en dongeon entre deux combats.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-112-pm">Post by Coordinateur Apoc - January 10, 2010 at 1:12 PM</h2>
+<p><a id="post-240714"></a></p>
+<p><u>RÉSUMÉ: Rien qu'on peut vraiment modifier.</u></p>
+<p>Nature Passage (Passage Naturel)<br>
+CastDelay 5.0<br>
+Skill 40.0<br>
+Mana 30<br>
+PA 31</p>
+<p>L'Équivalent de Recall mais pour les Druide.</p>
+<p>Le seul problème que je vois c'est que les Druide n'ont pas Mark mais ils n'ont qu'a s'approprier des runes. Ca rend le sort dépendant d'une autre classe mais ont ne peut pas rien y faire.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-114-pm">Post by Coordinateur Apoc - January 10, 2010 at 1:14 PM</h2>
+<p><a id="post-240715"></a></p>
+<p><u>RÉSUMÉ: Rien qu'on peut vraiment modifier.</u></p>
+<p>Mushroom Gateway (Portail Naturel)<br>
+CastDelay 5.0<br>
+Skill 60.0<br>
+Mana 40<br>
+PA 40</p>
+<p>L'Équivalent de Gate Travel mais pour druide. Même commentaires que le sort précédent.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-124-pm">Post by Coordinateur Apoc - January 10, 2010 at 1:24 PM</h2>
+<p><a id="post-240716"></a></p>
+<p><u>RÉSUMÉ: Modifier pour aussi faire revivre les animaux.</u></p>
+<p>Restorative Soil (Sol Fortifiant)<br>
+CastDelay 2.0<br>
+Skill 40.0<br>
+Mana 40<br>
+PA 34</p>
+<p>Fait un petit tas de boue pendant 30 secondes.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+En gros c'est un sort de ressurection, une croix portable. Suffit qu'un fantome y marche et il revit. C'est assez situationnel</p>
+<p>Problème: Fonctionne avec les joueurs mais pas leur animaux.<br>
+Solution: Je crois pouvoir modifier cela sans trop de problèmes.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-126-pm">Post by Coordinateur Apoc - January 10, 2010 at 1:26 PM</h2>
+<p><a id="post-240717"></a></p>
+<p>Enfin fini, J'ai abrégé car après avoir prit une éternité seulement pour faire les deux premier, je voulais finir un jour.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+J'attend vos avis puis permission de commencer à tout modifier cela. Ensuite il restera à modifier un peu les PA et peut-être les couts en mana mais une chose à la fois.</p>
+<p>Bonne Nuit.  <img src="/assets/smilies/lazy2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---january-10-2010-at-1026-pm">Post by Lancelot - January 10, 2010 at 10:26 PM</h2>
+<p><a id="post-240738"></a></p>
+<p>Ne pas oublier que druidisme est un complément. À ce que je vois c'est salement overpower, en possédant un excellent &quot;crowd control&quot; pour UO, en plus de sorts très offensifs/défensifs en plus des soins et utilités.</p>
+<p>2 druides VS 6 joueurs = 2 joueurs se font transformer en arbre, 2 autres se font mettre dans le cercle de roche. S'ils sont chanceux ils peuvent même lancer le sort de racine sur les 2 derniers. Et ne reste plus qu'à tout exploser avec éruption, ou bien celui dans le cercle de pierre avec essaim d'abeilles.</p>
+<p>De plus, les druides ne sont pas &quot;pure druide only&quot;, souvent ça peut se mettre qu'en points bonus, et être une autre classe comme guerrier ou archer.</p>
+<p>S'il est pure druide, il a également accès à une étonnante palette de sorts de bardes overpower, et au taming des animaux. Domilixia et Astria, par exemple, avec leurs dragons. Mais en plus ils ont des points bonus pouvant être investit ailleurs.</p>
+<p>C'est bien de modifier tout ça, mais j'espère seulement que ça ne devienne pas le &quot;couteau suisse ultime, pour seulement 40 PA&quot;.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-10-2010-at-1131-pm">Post by Coordinateur Apoc - January 10, 2010 at 11:31 PM</h2>
+<p><a id="post-240741"></a></p>
+<p>40 PA Bonus c'est beaucoup quand même.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Il faut aussi regarder le temps de cast et le mana requis. Un druide contre un autre mage ou un archer se ferait probablement massacrer tandis qu'il aurait surement le dessus sur les guerriers corps à corps. Le druide est surtout une classe de support si on regarde les sorts qu'ils possèdent. 3 Heal, 2 Paralysations, 2 Crowd control 3 Summon, 1 buff, 2 teleport, un ressurection et seulement 2 sorts d'attaque.</p>
+<p>Si on regarde côté monstres, la moitié des sorts du druide peuvent être dispell donc il serait inutile contre un truc fort comme une liche ou un dragon. Les couts en mana rendent aussi inutile leur sorts d'attaque contre les autres monstres forts qui ont souvent beaucoup trop de vie comparé aux joueurs.</p>
+<p>Mes modifications pénalise certains sorts et en corriges d'autres. Ils seront surement moins fort après mes modifications qu'avant mais au moins ils seront plus utile et plus amusant à jouer. Ils seront probablement moins fort qu'un mage pure. Dans le cas de druidisme en bonus, ce n'est pas différent d'un mage ou sorcier en bonus ou d'un guerrier necro.</p>
+<p>Si vous trouvez cela trop fort, proposé d'autres modifications. Puis si jamais quelque chose ne va pas ensuite, rien m'empêche d'apporter encore quelques corrections plus tard dans une autre mise à jour.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---january-11-2010-at-1122-pm">Post by Lancelot - January 11, 2010 at 11:22 PM</h2>
+<p><a id="post-240848"></a></p>
+<blockquote>
+<p><strong>&quot;Apoc&quot; wrote:</strong>
+Puis si jamais quelque chose ne va pas ensuite, rien m'empêche d'apporter encore quelques corrections plus tard dans une autre mise à jour.</p>
+<p>Tient tu viens de me convaincre. <img src="/assets/smilies/smile.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-conteur-centaure---january-12-2010-at-1202-am">Post by Conteur Centaure - January 12, 2010 at 12:02 AM</h2>
+<p><a id="post-240851"></a></p>
+<p>^^</p>
+<p>J'ai parcouru les sorts, et les propositions que tu avances me semblent correctes, Apoc. On balancera le tout après coup.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-17-2010-at-939-am">Post by Coordinateur Apoc - January 17, 2010 at 9:39 AM</h2>
+<p><a id="post-241515"></a></p>
+<p>Bon j'ai tout modifié et testé sauf Eruption et Insectes ainsi que Pierre Enchantée qui bug. Sauf si Xenon ou Kel peuvent me donner une solution, Pierre enchanté devra donner une valeur fixe de 15 de vie et mana seconde. Par contre je l'ai modifié pour qu'il puissent tout guérir. (Autant les animaux que monstres) Donc il ne pourrais pas servir pour tuer un monstre sauf si évidemment on se met à la limite... Grr... Je devrai rendre la durée vraiment courte si le problème ne peut pas être réglé. Quelque chose comme 10 secondes. C'est assez pour guérir au complet mais pas si on se fait attaquer en même temps.</p>
+<p>En fait, je crois qu'il est fait pour ne pas guérir si on est en combat ou attaqué, je devrai vérifier, ca reglerait un gros problème d'abus.</p>
+<p>Si tout va bien, je devrais avoir fini les sorts ou courant de la semaine ou fin de semaine prochaine.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-19-2010-at-941-am">Post by Coordinateur Apoc - January 19, 2010 at 9:41 AM</h2>
+<p><a id="post-241691"></a></p>
+<p>Comme tout à fonctionné comme prévu et que je ne crois pas avoir trop de problèmes avec les deux sorts qu'il me reste à modifier, je vais vous sugérer le nouvel ordre des sorts.</p>
+<p>Il faut tenir compte que les sorts les plus fort devraient être accessible seulement aux druides et donc je vais les mettre un peu plus haut. Je veux surtout parler des sorts de guérisons et de summon.</p>
+<p>Ancienne Liste<br>
+01- Invoquer la Luciole<br>
+02- Creux<br>
+04- Animaux sauvages<br>
+06- Insectes<br>
+08- Source de vie<br>
+10- Lien avec la foret<br>
+12- Cercle de pierres<br>
+15- Pierre Attirante<br>
+20- Protection terrestre<br>
+24- Racines<br>
+28- Ami d'arbres<br>
+31- Passage naturel<br>
+34- Sol fortifiant<br>
+37- Eruption<br>
+40- Portail Naturel<br>
+43- Pierre Enchantée</p>
+<p>Nouvelle Liste<br>
+01- Invoquer la Luciole<br>
+02- Creux<br>
+04- Pierre Attirante<br>
+06- Racines <br>
+08- Protection terrestre<br>
+10- Insectes<br>
+13- Lien avec la foret<br>
+16- Animaux sauvages<br>
+19- Source de vie<br>
+22- Cercle de pierres<br>
+25- Ami d'arbres<br>
+28- Passage naturel<br>
+31- Sol fortifiant<br>
+34- Eruption<br>
+37- Portail Naturel<br>
+40- Pierre enchantée</p>
+<p>Par contre j'ai des doutes maintenant. Je me demandes ce qu'est la vrai tâche des druides. Comme cela, je leur donnerai leur premier heal à 20 PA et leur second à 40. Leur heal sont fort mais avec les modifications, Source de vie ne peut pas être utilisé à répitition et Pierre enchantée en combat.</p>
+<p>Seulement deux sorts d'attaques et qui ne font pas le poids contre sonicus ou tout les nombreux sorts des sorciers. Le problème est que le druide de Crépuscule est plutot un mage qu'un guerrier mais il n'a pas les sorts pour.</p>
+<p>Tandis qu'ils ne manque pas de murs, prisons ou truc pour paralyser. C'est assez difficille de les placer sans qu'ils soient tous un après l'autre. D'après moi c'est la tâche du druide, le &quot;crowd control&quot;. S'assurer que le combattant au corps à corps n'a pas trop de monstres sur lui ou que les archers puissent rester en sécurité.</p>
+<p>Donc je crois que le Druide est une classe mage de support. Il peut faire un peu de dommage pour aider ou guérir un peu mais il a surtout des sorts pour controler les mouvements. J'ai essayé de placer les sorts en conséquence. J'ai aussi légèrement modifié les PA pour donner des nouveaux sorts sur une base plus stable.</p>
+<p>Vous en pensez-quoi?</p>
+<hr>
+<h2 id="post-by-conteur-centaure---january-19-2010-at-743-pm">Post by Conteur Centaure - January 19, 2010 at 7:43 PM</h2>
+<p><a id="post-241730"></a></p>
+<p>Ce qui est difficile avec druide, c'est que c'est une classe de support, comme disait l'autre. Donc les gens développent des skills d'arme, et viennent se backer avec du druidisme. Donc en gros, on a des gens qui castent et qui buchent. Ça ne devrait pas. Où alors, on leur donne des buffs de nature, pas ou peu de skill d'attaque, du crowd control et de la buche. Là ça nous donne une classe balancée.</p>
+<p>Cela dit, j'ai hâte de voir la totalité des classes balancée. Parce que j'ai eu l'occasion d'essayer Gal au PvP...</p>
+<p><img src="/assets/smilies/blink.gif" alt=""><br>
+Je ne vous croyais pas quand vous disiez que les mages sont trop forts. Là je vous croit! J'ai couché William, Kazak et Rimostra.. <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-lancelot---january-19-2010-at-809-pm">Post by Lancelot - January 19, 2010 at 8:09 PM</h2>
+<p><a id="post-241734"></a></p>
+<blockquote>
+<p><strong>&quot;Animateur Centaure&quot; wrote:</strong>
+Je ne vous croyais pas quand vous disiez que les mages sont trop forts. Là je vous croit! J'ai couché William, Kazak et Rimostra.. <img src="/assets/smilies/blush2.gif" alt=""></p>
+<p>Ce ne sont pas vraiment de bons exemples, car Kazzak est forgeron en primaire, guerrier second et druide en bonus, et il doit être dans les niveaux 18. Rimostra est enchanteur/sorcier/mage et William est moine, et se bat sans armure pour esquiver plus... sauf il à 0 de résistance partout quand il fait ça ^^ alors la magie l'éclate.</p>
+</blockquote>
+<hr>
+<h2 id="post-by-conteur-wolf---january-19-2010-at-1054-pm">Post by Conteur Wolf - January 19, 2010 at 10:54 PM</h2>
+<p><a id="post-241754"></a></p>
+<p>Premièrement restreindre la magie druidique au port d'armure de cuir et moins seulement si ce n'est pas déjà le cas donnerait plus de sens. Mais il est clair que les soins de druide, si l'on compare à ceux du paladin lorsque combiné avec une classe de combattant c'est très fort. Cela dit, si on ne peut pas utiliser de plaque pour la magie naturelle cela rééquilibre.</p>
+<hr>
+<p>Petite parenthèse :</p>
+<p>Selon moi, certains styles de magie devraient être restreints à certains alignements. J'en avais déjà parlé mais ca avait été déclaré comme trop grosse restreintes et pourtant l'équipe intervient toujours quand elle voit ces incohérences. Cela éviterait à un personnage good fait de la necro et un mauvais de la magie divine ou druidique. La magie druidique prône l'équilibre alors il serait naturel que ce soit d'alignement neutre.</p>
+<p>Donc en gros :</p>
+<p>Magie Divine : Loyal/Neutre : Bon (Pas Chaotique car cela en vient de briser les lois par des moyens déloyaux que n'approuve pas toujours la divinité)</p>
+<p>Magie Naturelle : Neutre : bon/Strique/Mauvais</p>
+<p>Nécromancie : Neutre/Loyal/Chaotique : Mauvais</p>
+<hr>
+<h2 id="post-by-conteur-centaure---january-20-2010-at-126-am">Post by Conteur Centaure - January 20, 2010 at 1:26 AM</h2>
+<p><a id="post-241772"></a></p>
+<p>Bonne idée, Wolf. Ça donnerais une utilité aux alignements..</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-21-2010-at-835-am">Post by Coordinateur Apoc - January 21, 2010 at 8:35 AM</h2>
+<p><a id="post-241877"></a></p>
+<p>Ca donnerait une utilité aux alignement mais je ne crois pas que ce soit utile de modifier un script pour les obliger à avoir tel ou tel alignement.</p>
+<p>Il Suffirait de surveiller cela en jeu. Si jamais un joueur est chaotique mauvais et fait de la magie divine, il peut bien avoir une très bonne expliquation rp et il utilise la magie divine car il est &quot;béni&quot; (Maudit mais par le bien disons) et c'est une punition pour lui. Bon Chaotique mauvais c'est un peu tiré par les cheveux mais l'important est qu'ils suivent leur alignement.</p>
+<p>Je n'aimes pas trop limiter des trucs à caractère principalement rp avec un script.</p>
+<p>Ah et Magie Naturelle serait plutot Loyal Neutre/Neutre ou Chaotique Neutre. Ca utilise l'essence naturelle qui par elle même contient autant de mal que de bien. C'est la loi de la nature disons, le bien ou le mal ca n'existe pas, la loi du plus fort, prédateur et proie, la mère qui tue pour protéger ses petits, etc.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-27-2010-at-741-am">Post by Coordinateur Apoc - January 27, 2010 at 7:41 AM</h2>
+<p><a id="post-242603"></a></p>
+<p>Bon, Le maitre Kel fait beaucoup de modifications et mon serveur test ne fonctionne plus donc je dois attendre pour l'instant. Ceci-dit, je vais en profiter pour faire une liste simple de modifications:</p>
+<p>Invoquer la Luciole - Utilise maintenant Meditation comme la plupart des sorts de Druide pour la durée. Renommé simplement &quot;Luciole&quot;<br>
+Creux - Donne maintenant aussi un bonus d'intelligence. Renommé &quot;Infusion&quot;.<br>
+Pierre Attirante - Durée grandement augmentée.<br>
+Racines - Durée de paralysation augmentée de beaucoup.<br>
+Protection terrestre - RIEN<br>
+<span style="color:#800000">Insectes - Dommages légers réguliers pendant quelques secondes au lieu de faire une fois des dommages et d'en redonner à partie ensuite. (À FAIRE)</span><br>
+Lien avec la foret - RIEN<br>
+Animaux sauvages - RIEN<br>
+Source de vie - Délais, avant que le sort puisse être efficace de nouveau, modifié à 30 secondes fixe. Guérison légèrement abaissée tandis que le cout en mana est légèrement augmenté.<br>
+Cercle de pierres - Temps de cast à peine augmenté et durée légèrement écourtée.<br>
+Ami d'arbres - Utilise maintenant Meditation pour la durée.<br>
+Passage naturel - RIEN<br>
+Sol fortifiant - Donne maintenant la possibilité de faire revivre les animaux &quot;fantomes&quot;. (Bonded)<br>
+<span style="color:#800000">Eruption - Zone légèrement moins large. Affecte toutes les créatures, même les joueurs. (À FAIRE)</span><br>
+Portail Naturel - RIEN<br>
+<span style="color:#000080">Pierre enchantée - Utilise maintenant Meditation pour la vitesse de guérison/regénération. (BUG À CORRIGER)</span></p>
+<p>Ensuite il restera peut-être à trouver un meilleur nom pour d'autres sorts comme Lien avec la foret et Protection Terrestre. Ami d'Arbres aussi c'est pas super. Quelque chose de simple un mot ou deux max.</p>
+<p>Il me restera à modifier les PAs requis comme proposé plus haut et ajuster les skills requis en conséquences et m'assurer que Necromancy ne sera plus prit à 90% .</p>
+<p>Finalement tout mettre à jour le livre de druide qui n'avait déjà même pas les bonnes valeurs dans certains cas. (À but purement informatif, seulement du texte, ca ne changait rien dans les scripts.)</p>
+<p>Ah et vu l'activité de Kel dans les scripts, je vais surement attendre Crépu 2 ensuite pour le totem des Druides au-cas-ou il aurait quelque chose de prévu déjà pour les classes. En fait je ne sais vraiment plus ce qu'il y avait de prévu pour Crépu 2, ca fait si longtemps.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conteur-centaure---january-27-2010-at-716-pm">Post by Conteur Centaure - January 27, 2010 at 7:16 PM</h2>
+<p><a id="post-242644"></a></p>
+<p>Parfait.</p>
+<ul>
+<li>Compagnon végétal?</li>
+<li>Allié végétal?</li>
+<li>Créature végétale?</li>
+<li>Saule vengeur?</li>
+</ul>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-28-2010-at-117-am">Post by Coordinateur Apoc - January 28, 2010 at 1:17 AM</h2>
+<p><a id="post-242681"></a></p>
+<p>Parfait.</p>
+<ul>
+<li>Compagnon végétal?</li>
+<li>Allié végétal?</li>
+<li>Créature végétale?</li>
+<li>Saule vengeur?</li>
+</ul>
+<p>Esprit d'Écorce?<br>
+Gardien?<br>
+Esprit Gardien?<br>
+Gardien d'Écorce?</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-8-2010-at-1011-am">Post by Coordinateur Apoc - February 8, 2010 at 10:11 AM</h2>
+<p><a id="post-244683"></a></p>
+<p>Insectes - Dommages progressifs pendant quelques secondes au lieu de faire une fois des dommages et d'en redonner une partie ensuite.</p>
+<p>0-39 = (1,2,3,4,5) 15 Dommages en 20 secondes<br>
+40-59 = (2,4,6,8,10) 30 Dommages en 20 secondes<br>
+60-79 = (3,6,9,12,15) 45 Dommages en 20 secondes<br>
+80-99 = (4,8,12,16,20) 60 Dommages en 20 secondes<br>
+100 = (5,10,15,20,25) 75 Dommages en 20 secondes</p>
+<p>Eruption - Zone légèrement moins large. Affecte toutes les créatures, même les joueurs.</p>
+<p>Zone d'environ un demi-écran et devrait tout affecter. Utile si on utilise les autres sorts de druide comme le cercle de pierre. Pas très utile en groupe sauf si on veut massacrer nos alliés. Possibilité de modifier pour ne pas affecter les alliés mais ca ne serait pas très rp.</p>
+<p>Pierre enchantée - Utilise maintenant Meditation pour la vitesse de guérison/regénération.</p>
+<p>Bug finalement corrigé, donne entre 1 à 5 Vie/Mana par seconde dépendament de Meditation. Dure minimum 15 seconde, maximum 30, aléatoire. Il faudra peut-être modifier et permettre d'aller jusqu'a 10 par seconde mais sa reste à voir.</p>
+<p>Il ne me reste plus qu'a modifier les PA/skills et puis mettre le livre de druide à jour!</p>
+<hr>
+<h2 id="post-by-lancelot---february-8-2010-at-1127-am">Post by Lancelot - February 8, 2010 at 11:27 AM</h2>
+<p><a id="post-244696"></a></p>
+<p>Insecte me semble beaucoup trop fort, surtout à 100%.</p>
+<p>Pour un sortilège qui prend 2 secondes à invoquer, un total de 75 dommages sur 20 secondes, je trouve ça énorme.</p>
+<p>Un pansement, prend environ 10 secondes à appliquer. Si on reçoit plus de 20 ou 30 dégâts, notre soin est réduit de moitié et plus, je crois.</p>
+<p>Donc, en plus du 75 de dégâts que ça fera sur les 20 prochaines secondes, il lui est possible de faire d'autres sorts / attaques en même temps, ce qui fait un gros nombre de dégâts en bout de ligne. Il faudrait que les dégâts soit mitigées par la protection physique, sinon en lançant &quot;insecte&quot;, en faisant attaquer les Treants, et en lançant un sonicus de 90 dégâts sur la cible, c'est un total &quot;nuke feast&quot;.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---february-8-2010-at-738-pm">Post by Conteur Centaure - February 8, 2010 at 7:38 PM</h2>
+<p><a id="post-244722"></a></p>
+<p>Tu pourrais p-e te baser sur la formule de poisonning pour insecte? Ou si c'est trop fort, revoir ça à la baisse. Parce que le gros avantage d'insecte, c'est que ça ne se &quot;cure&quot; pas.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-9-2010-at-211-am">Post by Coordinateur Apoc - February 9, 2010 at 2:11 AM</h2>
+<p><a id="post-244813"></a></p>
+<p>En fait je sais plus trop à ce que je pensais quand j'ai fais les calculs. <img src="/assets/smilies/man_in_love.gif" alt=""> Le total donnait quelque chose de gros mais sur 18 secondes les autres classes peuvent lancer pas mal de sorts et faire beaucoup plus de dommages. Par contre je n'avais pas penser au fait qu'il ne peut pas être dispel/cured.</p>
+<p>Je veux aussi qu'Insecte soit un sort de support comme les autres sorts de druide. Dans ce cas-ci, un sort anti-mage, impossible de lancer un gros sort qui prend plus que 2-3 secondes de cast à cause des dommages périodiques.</p>
+<p>Donc...<br>
+6 fois par intervale de 3 secondes pour un totel de 18 secondes</p>
+<p>1-49 = (1,1,1,1,1,1) = 6<br>
+50-99 = (2,3,4,5,6,7) = 27<br>
+100 = (3,5,7,9,11,13) = 48</p>
+<p>C'est mieux? Un magic arrow peut faire quelque chose comme 10 de dommages et en 18 secondes on peut en lancer un bon paquet. En bas de 100% de Necromancy il suffit de boire une potion et le 18 secondes n'a été que du temps perdu.</p>
+<p>EDIT: J'ai aussi augmenté la mana à 25 car en laissant à 10 la le sort aurait été vraiment trop fort contre les mages.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-9-2010-at-307-am">Post by Coordinateur Apoc - February 9, 2010 at 3:07 AM</h2>
+<p><a id="post-244831"></a></p>
+<p>Modifications des noms jusqu'à maintenant:<br>
+EnchantedGrove - Pierre enchantée - Bois enchanté.<br>
+SummonFirefly - Invoquer la Luciole - Luciole.<br>
+HollowReed - Creux - Infusion.<br>
+TreeFellow - Ami d'Arbres - Gardien Végétal.</p>
+<p>Je vais aussi demander l'avis des joueurs pour de nouveaux noms.</p>
+<p>Modifications des PA et skills requis faite.<br>
+Mise à jour du livre de magie naturelle faite.</p>
+<p>Phase 1 Terminée.<br>
+Phase 2: Mettre sur le serveur puis demander les commentaires et suggestions de la part des joueurs pour finaliser le balancement.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---february-9-2010-at-655-am">Post by Conteur Wolf - February 9, 2010 at 6:55 AM</h2>
+<p><a id="post-244954"></a></p>
+<p>Beaucoup mieux insecte oui. Le reste me va.</p>
+<hr>
+<h2 id="post-by-lancelot---february-9-2010-at-659-am">Post by Lancelot - February 9, 2010 at 6:59 AM</h2>
+<p><a id="post-244957"></a></p>
+<p>Parfait. Ça me va aussi.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---february-11-2010-at-307-am">Post by Coordinateur Apoc - February 11, 2010 at 3:07 AM</h2>
+<p><a id="post-245284"></a></p>
+<p>FAIT</p>
+<p>Maintenant j'attend des commentaires et je passes en mode Balancement.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

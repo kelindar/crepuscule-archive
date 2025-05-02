@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset PA - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Reset PA</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <span class="current-page">Reset PA</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="reset-pa">Reset PA</h1>
+<h2 id="post-by-conteuse-seshat---december-21-2008-at-104-am">Post by Conteuse Seshat - December 21, 2008 at 1:04 AM</h2>
+<p><a id="post-196064"></a></p>
+<p>Afin de normaliser la procédure :</p>
+<p>Les titres devront prendre le format : , Personnage (nombre de reset), Second Personnage (nombre de reset), Troisième personnage (nombre de reset)</p>
+<p>Un index comportant ces mêmes informations, classées en ordre alphabétique du compte, sera constitué et devra être mis à jour, de même que les titres devront constamment être mis à jour, pour assurer le suivi facilement. Ainsi, les dossiers pourront être suivis plus facilement.</p>
+<hr>
+<h2 id="post-by-anonymous---december-21-2008-at-313-am">Post by Anonymous - December 21, 2008 at 3:13 AM</h2>
+<p><a id="post-196079"></a></p>
+<p>Je propose plutôt un truc plus simple.</p>
+<p>Titre du topic :</p>
+<p>Premier post du topic du compte X :</p>
+<p>Personnage 1 - Nombre de Reset<br>
+Personnage 2 - Nombre de reset<br>
+Personnage 3 - Nombre de reset</p>
+<p>C'est beaucoup plus simple, le titre est moins long et porte moins à confusion et ainsi, nous ne luterons pas à se retrouver dans une sorte d'index par ordre alphabétique.</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---december-21-2008-at-319-am">Post by Conteuse Seshat - December 21, 2008 at 3:19 AM</h2>
+<p><a id="post-196080"></a></p>
+<p><em>Oui, probablement plus pratique comme ça.</em></p>
+<hr>
+<h2 id="post-by-conteur-wolf---december-21-2008-at-724-am">Post by Conteur Wolf - December 21, 2008 at 7:24 AM</h2>
+<p><a id="post-196104"></a></p>
+<p>Va pour l'idée de Zak également.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---december-21-2008-at-118-pm">Post by Mr Trovénère - December 21, 2008 at 1:18 PM</h2>
+<p><a id="post-196164"></a></p>
+<p>Pour l'idée de Zak, néanmoins j'aurais plutôt demandé à kel une modification automatique. Je m'explique, un personnage non joueur qui permet au joueur trois fois par personnage de replacer ses PA. Mais l'idée de Zak si on reste dans des manipulations manuelles pourrait être parfaite.</p>
+<p>Que pensez vous de la solution automatisée ? cela est plutôt simple à mettre en place je pense.</p>
+<hr>
+<h2 id="post-by-ex-bolero---december-21-2008-at-630-pm">Post by Ex-Bolero - December 21, 2008 at 6:30 PM</h2>
+<p><a id="post-196201"></a></p>
+<p>Je préfère aussi que ça se fasse par page, sérieusement...</p>
+<p>Mais pour éviter ce genre de notice, j'aurais très sincèrement insérer une props dans PlayerMobile qui s'appellerait &quot;ResetPA&quot;, et qui n'aurait plus qu'à être incrémentée par les MJ lors des changements. Ensuite, un simple .get resetpa permettrait de savoir combien le personnage en a déjà eu.</p>
+<p>Ça me semblerait beaucoup plus simple que le système actuel et c'est réellement une peanut à scripter <img src="/assets/smilies/Wink.gif" alt=""></p>
+<hr>
+<h2 id="post-by-conteuse-seshat---december-21-2008-at-731-pm">Post by Conteuse Seshat - December 21, 2008 at 7:31 PM</h2>
+<p><a id="post-196232"></a></p>
+<p><em>Si un de nos scripteurs peut faire cela dans le temps de le dire, pourquoi pas? Ça permettrait d'éliminer complètement le forum Reset PA.</em></p>
+<hr>
+<h2 id="post-by-conteuse-seshat---december-29-2008-at-730-pm">Post by Conteuse Seshat - December 29, 2008 at 7:30 PM</h2>
+<p><a id="post-197121"></a></p>
+<p>Version finale :</p>
+<p>Afin de normaliser la procédure :</p>
+<p>Les titres devront prendre le format :</p>
+<p>Les messages devront prendre le format :</p>
+<p>Premier personnage - Nombre de Reset<br>
+Second personnage - Nombre de Reset<br>
+Troisième personnage - Nombre de Reset</p>
+<p>Un index par nom de compte, classées en ordre alphabétique du compte, sera constitué et devra être mis à jour, pour assurer le suivi facilement.</p>
+<p>Le forum Reset PA deviendra, conséquemment, modéré par l'Équipe entière, pour permettre la modification des dossiers.</p>
+<p>Si pas de nouvelles discussions, adopté pour le 31 décembre.</p>
+<hr>
+<h2 id="post-by-ex-bolero---december-29-2008-at-737-pm">Post by Ex-Bolero - December 29, 2008 at 7:37 PM</h2>
+<p><a id="post-197125"></a></p>
+<p>à voir si Apoc peut rajouter vite fait une props &quot;ResetPA&quot; sur le playermobile.</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---december-30-2008-at-746-am">Post by Conteuse Seshat - December 30, 2008 at 7:46 AM</h2>
+<p><a id="post-197232"></a></p>
+<p><em>Oui, c'est relatif à ça. En attendant un script, ceci sera appliqué.</em></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

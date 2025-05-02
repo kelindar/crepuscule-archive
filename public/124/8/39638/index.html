@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de pendu - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Jeu de pendu</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/124//" class="nav-item">Hors Crépuscule</a>
+                
+                &rsaquo; <span class="current-page">Jeu de pendu</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="jeu-de-pendu">Jeu de pendu</h1>
+<h2 id="post-by-adalard-dranem-ak-ods---november-2-2011-at-846-pm">Post by Adalard Dranem A.K, OdS - November 2, 2011 at 8:46 PM</h2>
+<p><a id="post-293345"></a></p>
+<p>Tiens parce que je n'ai rien à faire actuellement. Je vais vous montrer le premier programme que j'ai fais alors que je ne connaissais pas encore la programmation par objet ! Je regarde la prog de ça et sa me fait rire, mais bon.. (Oui, chacun son humour !)</p>
+<p>Je vous enverrais l'exécutable quand je saurai comment le rendre téléchargeable sur le net, c'est amusant comme jeu de bonhomme pendu quand même.</p>
+<p>Option Strict On<br>
+Option Explicit On<br>
+Imports System.Console</p>
+<p>Public Class Form1<br>
+Private alphabet() As String = {&quot;hello&quot;, &quot;palindrome&quot;, &quot;tiroir&quot;, &quot;valise&quot;, &quot;marathon&quot;, &quot;habitation&quot;, &quot;corbeille&quot;}<br>
+Private secret, motConstruit As String<br>
+Private Sub lettres(ByVal lettre As String) 'Fonction qui permet de remplacer la lettre à la bonne position dans les tirets.<br>
+Dim string1 As String = &quot;&quot;              'Elle permet aussi de le faire plusieurs fois, s'il y a lieu qu'une lettre y soit plus qu'une fois.<br>
+Dim string2 As String = &quot;&quot;<br>
+Dim vraifaux As Boolean<br>
+If secret = &quot;&quot; Then 'Si il tente une lettre avant de commencer une partie = erreur.<br>
+MsgBox(&quot;Erreur, vous devez commencer une partie.&quot;, , &quot;Erreur&quot;)<br>
+Else<br>
+If Not TxtMotConstruit.Text.Contains(lettre) Then 'Si le mot ne contient pas déjà la lettre, il effectue la fonction.<br>
+For bahaha = 0 To secret.Length - 1<br>
+If motConstruit(bahaha) = &quot;-&quot; Then 'La fonction enlèvera tout, puis pour chaque position vérifiera si c'est la lettre..<br>
+If secret(bahaha) = lettre Then 'Si ce ne l'est pas, elle mettra un tiret.<br>
+string1 = string1 + lettre 'Si ce l'est, elle mettra ladite lettre.<br>
+vraifaux = True<br>
+Else<br>
+string1 = string1 + &quot;-&quot;<br>
+End If<br>
+Else<br>
+string1 = string1 + motConstruit(bahaha)<br>
+End If<br>
+TxtMotConstruit.Text = string1<br>
+Next<br>
+End If<br>
+If vraifaux = False Then 'Si la fonction voulu ne s'est pas executé, c'est qu'il y avait une erreur, toutes les options d'erreurs sont là.<br>
+If TxtNonContenu.Text.Contains(lettre) Then 'Si la lettre fut déjà essayé et n'est pas dans le mot.<br>
+MsgBox(&quot;Vous avez déjà essayé la lettre &quot; &amp; lettre, , &quot;Erreur&quot;)<br>
+Else<br>
+If TxtMotConstruit.Text.Contains(lettre) Then 'Si la lettre fut déjà essayé et est dans le mot.<br>
+MsgBox(&quot;Vous avez déjà essayé la lettre &quot; &amp; lettre &amp; &quot;, elle est dans le mot.&quot;, , &quot;Erreur&quot;)<br>
+Else<br>
+TxtNonContenu.Text = TxtNonContenu.Text + lettre 'Si aucune erreur n'avait lieu, mais que la fonction a mi vraifaux à False.. alors..<br>
+End If                                                'C'est que la lettre n'avait jamais été choisie, mais n'est pas dans le mot, donc on la met en bas.<br>
+End If</p>
+<pre><code>        End If  
+        'Cette partie permet d'informer l'utilisateur qu'il a réussit, lorsque tout le mot fut finalement construit.   
+        string2 = TxtMotConstruit.Text  
+        motConstruit = string2
+
+        If motConstruit = secret Then  
+            MsgBox(&quot;Bravo, vous avez réussi !&quot;, , &quot;Victoire&quot;)  
+        End If  
+    End If  
+End Sub  
+Function containslol(ByVal one As String) As Boolean 'Fonction qui permet de savoir si le mot ne contient que des lettres.   
+    Dim bravo As Integer  
+    Dim alphabetDeux() As String = {&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;g&quot;, &quot;h&quot;, &quot;i&quot;, &quot;j&quot;, &quot;k&quot;, &quot;l&quot;, &quot;m&quot;, &quot;n&quot;, &quot;o&quot;, &quot;p&quot;, &quot;q&quot;, &quot;r&quot;, &quot;s&quot;, &quot;t&quot;, &quot;u&quot;, &quot;v&quot;, &quot;w&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot;}  
+    For lolDeux = 0 To one.Length - 1  
+        For lolUn = 0 To 25  
+            If one.ToLower.Substring(lolDeux, 1) = alphabetDeux(lolUn) Then  
+                bravo = bravo + 1  
+            End If  
+        Next  
+    Next  
+    If bravo = one.Length Then  
+        Return True  
+    Else  
+        Return False  
+    End If  
+End Function
+
+Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load  
+    Randomize()  
+    secret = &quot;&quot;
+
+End Sub
+
+
+Private Sub TxtMotConstruit_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TxtMotConstruit.TextChanged
+
+End Sub
+
+Private Sub BtnCommence_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCommence.Click  
+    TxtNonContenu.Text = &quot;&quot; 'Afin que le texte en bas disparaisse à chaque nouvelle partie. 
+
+    'Partie à deux:   
+    TxtMotConstruit.Text = &quot;&quot;  
+    Dim a As Integer  
+    Dim s As String = &quot;&quot;  
+    Dim erreur2 As Integer = 1  
+    For erreur2 = 0 To 10  
+        If optDeux.Checked Then  
+            secret = InputBox(&quot;Entrez le mot secret avec lequel vous jouerez: &quot;, , &quot;Mot secret&quot;)  
+            If (containslol(secret)) = False Then 'Si il entre des chiffres, ou autres caractères ascii  
+                MsgBox(&quot;Votre mot doit contenir que des lettres, entrez un autre mot&quot;, , &quot;Erreur&quot;)  
+                erreur2 = erreur2 - 1 'Pour que la boucle, boucle tant qu'il y a une erreur.   
+            Else  
+                erreur2 = erreur2 + 10 'Pour sortir de la boucle, quand il n'y a pas d'erreur.   
+            End If  
+            For i = 1 To secret.Length  
+                TxtMotConstruit.Text = TxtMotConstruit.Text + (&quot;-&quot;) 'Pour afficher les tirets selon le nombre de lettre.   
+            Next  
+        End If
+
+    Next
+
+    '-------------------------------------------------------------------------------------------------------------------------------  
+    'Pour partie solo:   
+    If OptUn.Checked Then  
+        a = CInt(Math.Floor(((alphabet.Length - 1) - 0 + 1) * Rnd())) + 0 'Définit une valeur aléatoire, selon le nombre d'indice dans le tableau.   
+        secret = alphabet(a) 'Appel cette valeur aléatoire la correspondance de la position du tableau.   
+        For i = 1 To secret.Length  
+            TxtMotConstruit.Text = TxtMotConstruit.Text + (&quot;-&quot;) 'Pour les tirets.   
+        Next  
+    End If  
+    motConstruit = TxtMotConstruit.Text  
+    secret = secret.ToLower  
+End Sub
+
+
+Private Sub optA_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optA.CheckedChanged  
+    If optA.Checked Then  
+        lettres(&quot;a&quot;)  
+    End If  
+End Sub  
+Private Sub optB_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optB.CheckedChanged  
+    If optB.Checked Then  
+        lettres(&quot;b&quot;)  
+    End If  
+End Sub  
+Private Sub optC_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optC.CheckedChanged  
+    If optC.Checked Then  
+        lettres(&quot;c&quot;)  
+    End If  
+End Sub
+
+Private Sub optD_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optD.CheckedChanged  
+    If optD.Checked Then  
+        lettres(&quot;d&quot;)  
+    End If  
+End Sub
+
+Private Sub optE_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optE.CheckedChanged  
+    If optE.Checked Then  
+        lettres(&quot;e&quot;)  
+    End If  
+End Sub
+
+Private Sub optF_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optF.CheckedChanged  
+    If optF.Checked Then  
+        lettres(&quot;f&quot;)  
+    End If  
+End Sub
+
+Private Sub optG_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optG.CheckedChanged  
+    If optG.Checked Then  
+        lettres(&quot;g&quot;)  
+    End If  
+End Sub
+
+Private Sub optH_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optH.CheckedChanged  
+    If optH.Checked Then  
+        lettres(&quot;h&quot;)  
+    End If  
+End Sub
+
+Private Sub optI_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optI.CheckedChanged  
+    If optI.Checked Then  
+        lettres(&quot;i&quot;)  
+    End If  
+End Sub
+
+Private Sub optJ_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optJ.CheckedChanged  
+    If optJ.Checked Then  
+        lettres(&quot;j&quot;)  
+    End If  
+End Sub
+
+Private Sub optK_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optK.CheckedChanged  
+    If optK.Checked Then  
+        lettres(&quot;k&quot;)  
+    End If  
+End Sub
+
+Private Sub optL_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optL.CheckedChanged  
+    If optL.Checked Then  
+        lettres(&quot;l&quot;)  
+    End If  
+End Sub
+
+Private Sub optM_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optM.CheckedChanged  
+    If optM.Checked Then  
+        lettres(&quot;m&quot;)  
+    End If  
+End Sub
+
+Private Sub optN_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optN.CheckedChanged  
+    If optN.Checked Then  
+        lettres(&quot;n&quot;)  
+    End If  
+End Sub
+
+Private Sub optO_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optO.CheckedChanged  
+    If optO.Checked Then  
+        lettres(&quot;o&quot;)  
+    End If  
+End Sub
+
+Private Sub optP_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optP.CheckedChanged  
+    If optP.Checked Then  
+        lettres(&quot;p&quot;)  
+    End If  
+End Sub
+
+Private Sub optQ_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optQ.CheckedChanged  
+    If optQ.Checked Then  
+        lettres(&quot;q&quot;)  
+    End If  
+End Sub
+
+Private Sub optR_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optR.CheckedChanged  
+    If optR.Checked Then  
+        lettres(&quot;r&quot;)  
+    End If  
+End Sub
+
+Private Sub optS_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optS.CheckedChanged  
+    If optS.Checked Then  
+        lettres(&quot;s&quot;)  
+    End If  
+End Sub
+
+Private Sub optT_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optT.CheckedChanged  
+    If optT.Checked Then  
+        lettres(&quot;t&quot;)  
+    End If  
+End Sub
+
+Private Sub optU_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optU.CheckedChanged  
+    If optU.Checked Then  
+        lettres(&quot;u&quot;)  
+    End If  
+End Sub
+
+Private Sub optV_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optV.CheckedChanged  
+    If optV.Checked Then  
+        lettres(&quot;v&quot;)  
+    End If  
+End Sub
+
+Private Sub optW_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optW.CheckedChanged  
+    If optW.Checked Then  
+        lettres(&quot;w&quot;)  
+    End If  
+End Sub
+
+Private Sub optX_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optX.CheckedChanged  
+    If optX.Checked Then  
+        lettres(&quot;x&quot;)  
+    End If  
+End Sub
+
+Private Sub optY_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optY.CheckedChanged  
+    If optY.Checked Then  
+        lettres(&quot;y&quot;)  
+    End If  
+End Sub
+
+Private Sub optZ_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles optZ.CheckedChanged  
+    If optZ.Checked Then  
+        lettres(&quot;z&quot;)  
+    End If  
+End Sub
+</code></pre>
+<p>End Class</p>
+<hr>
+<h2 id="post-by-phydias-shaytan-cp---november-3-2011-at-1228-am">Post by Phydias Shaytan, CP - November 3, 2011 at 12:28 AM</h2>
+<p><a id="post-293369"></a></p>
+<p>VB.Net  <img src="/assets/smilies/paladin.gif" alt=""></p>
+<hr>
+<h2 id="post-by-asphaar-meliamne-adm---november-3-2011-at-1253-am">Post by Asphaar Meliamne, AdM - November 3, 2011 at 12:53 AM</h2>
+<p><a id="post-293370"></a></p>
+<p>Ça l'air génial Adalard Dranem!  <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---november-3-2011-at-102-am">Post by Coordinateur Apoc - November 3, 2011 at 1:02 AM</h2>
+<p><a id="post-293371"></a></p>
+<p>Ah VB, ca me rend nostalgique, sauf que moi c'était sur VB6 avant que le .net existe...  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-adalard-dranem-ak-ods---november-3-2011-at-620-am">Post by Adalard Dranem A.K, OdS - November 3, 2011 at 6:20 AM</h2>
+<p><a id="post-293383"></a></p>
+<p>Ouais depuis que j'ai découvert C# et Java, j'ai développé un certain mépris pour VB.Net moi ! Mais avec VB6 tu avais aussi les ressources de la plateforme windows Apoc ? C'était du langage machine, dans ce temps là...! =P</p>
+<p>Et merci Asphaar !</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---november-3-2011-at-631-am">Post by Coordinateur Apoc - November 3, 2011 at 6:31 AM</h2>
+<p><a id="post-293384"></a></p>
+<p>Pour rendre des truc téléchargable, j'avais trouvé ce site, c'est un peu compliqué au début mais une fois bien comprit c'est facile et rapide.</p>
+<!-- m --><a class="postlink" href="http://www.mediafire.com/">http://www.mediafire.com/</a><!-- m -->   
+<p>Puis de ce que je vois, Vb6 et Vb.net sont pratiquement pareil. Les quelques différences sont dans le compilateur surement car côté code c'est pas mal pareil.</p>
+<hr>
+<h2 id="post-by-sar-tauramandil-ods---november-3-2011-at-636-am">Post by Sarä Taur'Amandil, OdS - November 3, 2011 at 6:36 AM</h2>
+<p><a id="post-293385"></a></p>
+<p>Le C#...</p>
+<p>Je pensais jamais trouver un jour un truc dans lequel je serais aussi mauvaise et pathétique. Deux cours de ça au cégep et je me demande encore comment j'ai pu les réussir.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

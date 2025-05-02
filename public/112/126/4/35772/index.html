@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bug] 1_NAME ou l&#39;Ogre invisible - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">[Bug] 1_NAME ou l&#39;Ogre invisible</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">[Bug] 1_NAME ou l&#39;Ogre invisible</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="bug-1-name-ou-logre-invisible">[Bug] 1_NAME ou l'Ogre invisible</h1>
+<h2 id="post-by-conteuse-hermine---september-30-2010-at-845-am">Post by Conteuse Hermine - September 30, 2010 at 8:45 AM</h2>
+<p><a id="post-266814"></a></p>
+<p>Coucou, le bug du jour, découvert par Saralondë :</p>
+<p>Un ogre invisible sur le toît du temple la tuait à répétition. Elle a du invoquer un elementale et se défendre ainsi, jusqu'à ce que la créature morte apparaisse. Deux minutes plus tard, même chose devant son laboratoire.</p>
+<p>J'ai un tas de screen :</p>
+<p><img src="http://img14.imageshack.us/img14/3627/eurkg.jpg" alt=""></p>
+<p><span style="color:#001000">Et grand format : </span></p>
+<!-- m --><a class="postlink" href="http://img822.imageshack.us/img822/3466/tyha.jpg">http://img822.imageshack.us/img822/3466/tyha.jpg</a><!-- m -->   
+<p><span style="color:#001000">Quelqu'un sait d'où ça peut venir?</span></p>
+<hr>
+<h2 id="post-by-phooka---september-30-2010-at-946-pm">Post by Phooka - September 30, 2010 at 9:46 PM</h2>
+<p><a id="post-266835"></a></p>
+<p>Après réflexion ça me fait penser à une bestiole (similaire) qui s'appelle &quot;moi&quot; et quand tu le crée il court partout sans jamais pouvoir l'arrêter ou le .kill. J'ai pas vérifié s'il y était dans notre bestiaire, si j'ai le temps ce soir, je regarderait ça sur green (du moins si quelqu'un ne l'a pas déjà fait <img src="/assets/smilies/man_in_love.gif" alt="">)</p>
+<p>Du moins je ne vois pas d'ou vient cet ogre, pas un mj qui aurait testé une créature par hasard dans le coin en ne voyant rien apparaitre? (ça pourrait arriver).</p>
+<hr>
+<h2 id="post-by-seigneur-blial---october-2-2010-at-710-pm">Post by Seigneur Bélial - October 2, 2010 at 7:10 PM</h2>
+<p><a id="post-266901"></a></p>
+<p>Il n'y est pas, et je ne conseille pas de le mettre non plus dans un donjon. Et ce bug est vraiment étrange... Je ne saurais dire o_O un oubli de gm? Vraiment bizarre.</p>
+<hr>
+<h2 id="post-by-phooka---october-2-2010-at-736-pm">Post by Phooka - October 2, 2010 at 7:36 PM</h2>
+<p><a id="post-266903"></a></p>
+<p>Aucune trace non plus du bug 1_Name, dit l'ogre invisible sur le bestiaire. J'ai regardé aujourd'hui dans nos bestioles.</p>
+<hr>
+<h2 id="post-by-conan---october-2-2010-at-737-pm">Post by Conan - October 2, 2010 at 7:37 PM</h2>
+<p><a id="post-266904"></a></p>
+<p>Vue qu'il s'agit d'un cas isolé et qu'il semble avoir survenu bien après la mise en place de crep2, c'est quasiment sur qu'il s'agit d'une mauvaise manip.</p>
+<p>On verra bien si ça se reproduit <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-phooka---october-16-2010-at-1146-pm">Post by Phooka - October 16, 2010 at 11:46 PM</h2>
+<p><a id="post-267486"></a></p>
+<p>Je sais d'où vient le problème!!!</p>
+<p><a href="http://img692.imageshack.us/i/bugogre.jpg/"><img src="http://img692.imageshack.us/img692/5729/bugogre.jpg" alt=""></a></p>
+<p>J'en ai eu un aussi chez moi, dans mon antre. En fait j'avais .add un orderguard, et ça me mettait rien qui apparaissait, je trouvais ça bizarre. Et en fait, mes pièges dans mon coin en haut à gauche l'ont tué car il passait toujours devant en invisible, et moi je me demandais pourquoi ils s'enclenchaient ces cons de pièges. (du coup je me suis aperçu que j'avais pas réussit à les rendre inoffensifs).</p>
+<p>Donc à mon avis le bug de Sarä à du être un pnj add par un mj, le mj a du se dire que rien n'était apparu, et Sarä a réussit à le tuer en invisible. En le tuant on voit un corps d'ogre.</p>
+<p>Donc certains pnj que l'on .add à partir de crepmanager sont buggé en fait.</p>
+<p>Voilou!!</p>
+<hr>
+<h2 id="post-by-seigneur-blial---october-17-2010-at-436-am">Post by Seigneur Bélial - October 17, 2010 at 4:36 AM</h2>
+<p><a id="post-267493"></a></p>
+<p>Excelent, mystère résolue <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-phooka---october-17-2010-at-103-pm">Post by Phooka - October 17, 2010 at 1:03 PM</h2>
+<p><a id="post-267524"></a></p>
+<p>Comme quoi a sert de foutre des pièges dans son petit coin de test.  <img src="/assets/smilies/hysterical.gif" alt=""></p>
+<hr>
+<h2 id="post-by-seigneur-blial---october-17-2010-at-756-pm">Post by Seigneur Bélial - October 17, 2010 at 7:56 PM</h2>
+<p><a id="post-267541"></a></p>
+<p>Je prend note je le ferai aussi <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mur en mouvement - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Mur en mouvement</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Mur en mouvement</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="mur-en-mouvement">Mur en mouvement</h1>
+<h2 id="post-by-ex-concepteur-arthan---august-29-2005-at-1249-am">Post by Ex-Concepteur Arthan - August 29, 2005 at 12:49 AM</h2>
+<p><a id="post-12303"></a></p>
+<p>Bon voila j'ai terminer le systeme de mur en mouvement... Il pourra vous servir a créer des labyrintes avec des murs en mouvement par exemple. J'ai tenter de le faire le plus simple que je le pouvais et je vais aissayer de l'expliquer le plus simplement possible.</p>
+<p>Et bien pour expliquer un peu comment je l'ai créer j'ai utiliser le script de spawner et de le script de la porte. J'ai pris le systeme de mouvement de la porte plus précisément le offset pour faire déplacer le mur et pour le temps et bien le systeme de temps du spawner(quelque peu modifier) il y a le premierdelay(FirstDelay) et le 2emedelay (SecondDelay) le premier est biensur le temps avant le premier mouvement et le second pour le deuxiemes... pour ce qui est de &quot;MouvementDans&quot; cest simplement le temps avant le prochain mouvement.</p>
+<p>Pour ajouter un mur en mouvement vous devez tapper la commande ainsi que la direction du mur (.Add movingwall + la direction) et voila les directions du mur ainsi que le mouvement qu'il va effectuer:</p>
+<pre><code>  WestCW            x&amp;#58;-1, y&amp;#58; 1, z&amp;#58; 0   
+  EastCCW         \tx&amp;#58; 1, y&amp;#58; 1, z&amp;#58; 0   
+  WestCCW\t        x&amp;#58;-1, y&amp;#58; 0, z&amp;#58; 0   
+  EastCW  \t\tx&amp;#58; 1, y&amp;#58;-1, z&amp;#58; 0   
+  SouthCW \t\tx&amp;#58; 1, y&amp;#58; 1, z&amp;#58; 0   
+  NorthCCW\t\tx&amp;#58; 1, y&amp;#58;-1, z&amp;#58; 0   
+  SouthCCW\t\tx&amp;#58; 0, y&amp;#58; 0, z&amp;#58; 0   
+  NorthCW   \tx&amp;#58; 0, y&amp;#58;-1, z&amp;#58; 0   
+</code></pre>
+<p>(Exemple: .add movingwall westcw)</p>
+<p>Pour ajuster le temps tappé la commande .props et selectionner le mur, ecrivez le premier temps et le second temps (FirstDelay et SecondDelay). et si vous voulez modifier la direction du mouvement vous modifier le Offset (X, Y, Z) X pour les mouvements horizontaux, Y pour les mouvement de haut en bas (toujours en restant au sol) et le Z pour la direction de haut en bas mais cette fois si en montant et decendant du sol.</p>
+<p>J'espere que vous comprennez un peu je vais tenter de le simplifier.</p>
+<hr>
+<h2 id="post-by-ex-ariakan---august-30-2005-at-523-pm">Post by Ex-Ariakan - August 30, 2005 at 5:23 PM</h2>
+<p><a id="post-13298"></a></p>
+<p>C'est réellement génial comme système Arthan <img src="/assets/smilies/smile.gif" alt=""><br>
+Je sens que je vais m'amuser à créer un labyrinthe pour se rendre dans les sous-terrains de la GdO <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

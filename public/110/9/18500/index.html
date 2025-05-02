@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petites questions. - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Petites questions.</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/110//" class="nav-item">Général</a>
+                
+                &rsaquo; <span class="current-page">Petites questions.</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="petites-questions">Petites questions.</h1>
+<h2 id="post-by-hazkall-alrikson-adc---december-21-2007-at-423-pm">Post by Hazkall Alrikson, AdC - December 21, 2007 at 4:23 PM</h2>
+<p><a id="post-143238"></a></p>
+<p>Salut à tous, j'ai là trois petites questions auxquelles je n'arrive pas à trouver de réponse depuis un bout de temps, et ce n'est pas faute de chercher.</p>
+<p>Je me demandais,</p>
+<p>si pour les objets que l'on trouve, les bonus sont tout de suite afficher ou si il faut faire un ItemID ? J'ai déja trouvé certains objets dont les bonus étaient affichés directement, et d'autre pas alors que je pouvais voir leur bonus en les équipant, bref je me demande comment tout ca marche.</p>
+<p>est-ce que quelqu'un sait comment fonctionne les objets que l'on peut acheter chez les scribes, objets appelés &quot; outil de marquage de coffre&quot; et &quot; outil de marquage d'objets &quot; ?<br>
+Ca sert bien a renommer un coffret non ? Le fait est que j'aimerais bien pouvoir renommer mes coffrets parce que c'est un peu le souk dans mon inventaire.</p>
+<p>Et pour terminer, est que le .coderlivre marche uniquement sur des &quot; ancien grimoire de... &quot; qui sont assez lourd a utiliser étant donné leur interface zarbi ou bien aussi sur les grimoires normaux ?</p>
+<p>Voila, je serais très reconnaissant à celui qui, si il a la réponse a ces questions, accepterait de m'éclairer.</p>
+<hr>
+<h2 id="post-by-argon-zombalze-banni---december-21-2007-at-833-pm">Post by Argon Zombalèze, Banni - December 21, 2007 at 8:33 PM</h2>
+<p><a id="post-143249"></a></p>
+<blockquote>
+<p>si pour les objets que l'on trouve, les bonus sont tout de suite afficher ou si il faut faire un ItemID ?</p>
+<p>En gros, cela affiche que les resistance et les bonus de skills que les bijoux donne rien de plus. Sur les armes rien ne s'affiche et sur les bracelet la dex/forc/int qu'il donne parfois non plus n'est pas afficher.</p>
+<p>ItemID n'est pas scripter correctement selon moi, car même avec 100 (se que j'avai), je ne pouvais pas identifier les enchantements.</p>
+<p>est-ce que quelqu'un sait comment fonctionne les objets que l'on peut acheter chez les scribes, objets appelés &quot; outil de marquage de coffre&quot; et &quot; outil de marquage d'objets &quot; ?</p>
+<p>À ma connaissance, il ne fonctionne pas tout simplement. Depuis la béta la question était poser et jamais les outils on fonctionnés.</p>
+<p>Et pour terminer, est que le .coderlivre marche uniquement sur des &quot; ancien grimoire de... &quot; qui sont assez lourd a utiliser étant donné leur interface zarbi ou bien aussi sur les grimoires normaux ?</p>
+<p>Pour cette question, je ne sais pas.. J'aurais pus t'aider si on m'avait pas fait changer de classe et que je serais pas en prison car j'aurais pus le tester. Mais vue que ses nouveaux, je ne pourrais te le dire n'ayant plus mes points dans la compétence requis et étant en tole.</p>
+<p>Donc voilà, se que je peux faire pour t'aider !</p>
+<p>Au plaisir,  <img src="/assets/smilies/smile.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-21-2007-at-1102-pm">Post by Coordinateur Apoc - December 21, 2007 at 11:02 PM</h2>
+<p><a id="post-143261"></a></p>
+<p>Les items magiques viennent d'un gros script que Kel avait trouvé à quelque part je crois. J'ai remarqué que parfois seulement le premier bonus s'affiche et qu'il en a deux ou trois qui se s'affichent pas. Je ne sais même pas si ItemID fait quoi que ce soit.</p>
+<p>Pour les outils le .decrire fait la même chose et en plus ne coute rien donc vous en avez pas vraiment besoin, je les enleverai des marchands quand je le pourrai.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Le .coderlivre est un skill qui fonctionne avec Érudition et qui est suposé empêcher qui que ce soit d'ouvrir n'importe quel livre à moins d'avoir autant d'Érudition que celui qui a fait Érudition. Normalement ca ne devrait pas fonctionner avec les grimoires mais les anciens grimoires sont spéciaux, buggé et en voix d'extinction donc possible que sa fonctionne sur ceux la aussi.</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-22-2007-at-1208-am">Post by Feydanith, dit la Carpe - December 22, 2007 at 12:08 AM</h2>
+<p><a id="post-143268"></a></p>
+<p>pour afficher les propriétés : BaseArmor et BaseWeapon, suffit de virer les commentaires dans la fonction :</p>
+<pre><code>public override void GetProperties&amp;#40; ObjectPropertyList list &amp;#41;  
+</code></pre>
+<hr>
+<h2 id="post-by-hazkall-alrikson-adc---december-22-2007-at-104-am">Post by Hazkall Alrikson, AdC - December 22, 2007 at 1:04 AM</h2>
+<p><a id="post-143270"></a></p>
+<p>pour afficher les propriétés : BaseArmor et BaseWeapon, suffit de virer les commentaires dans la fonction :</p>
+<pre><code>public override void GetProperties&amp;#40; ObjectPropertyList list &amp;#41;  
+</code></pre>
+<p>Ha ouais ? Ben j'ai rien compris <img src="/assets/smilies/hysterical.gif" alt=""></p>
+<p>Merci pour vos réponses, et dommage pour le ItemID, c'est un skill qui peut bien prêter a rp, surtout pour un chercheur de la confrérie comme moi.</p>
+<hr>
+<h2 id="post-by-feydanith-dit-la-carpe---december-22-2007-at-139-am">Post by Feydanith, dit la Carpe - December 22, 2007 at 1:39 AM</h2>
+<p><a id="post-143272"></a></p>
+<p>C'était la réponse pour Apoc.</p>
+<hr>
+<h2 id="post-by-amlia-desbois-adm---december-22-2007-at-146-am">Post by Amélia Desbois, AdM - December 22, 2007 at 1:46 AM</h2>
+<p><a id="post-143273"></a></p>
+<p>En fait, Apoc, les attributs magique,ses toujours les même qui apparaissent comme je l'ai dit avec mon autre account forum Argon.</p>
+<p>Seul les resistance qu'il donne et les skills apparaisse, le reste il faut le .decrire...</p>
+<p>Concernant les coffres, avec .decrire sa ne fonctionne pas..</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

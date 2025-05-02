@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste d&#39;affaires à vérifier sur mes scripts pour Apoc - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Liste d&#39;affaires à vérifier sur mes scripts pour Apoc</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/111//" class="nav-item">Technique</a>
+                
+                &rsaquo; <a href="/111/5//" class="nav-item">Suggestion ajouts</a>
+                
+                &rsaquo; <span class="current-page">Liste d&#39;affaires à vérifier sur mes scripts pour Apoc</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="liste-daffaires--vrifier-sur-mes-scripts-pour-apoc">Liste d'affaires à vérifier sur mes scripts pour Apoc</h1>
+<h2 id="post-by-thodore-de-lagarde-adm---september-19-2008-at-609-pm">Post by Théodore de Lagarde, AdM - September 19, 2008 at 6:09 PM</h2>
+<p><a id="post-182826"></a></p>
+<p>Bon, voilà. J'ai décidé de te faire une liste de ce qu'il faudrait que tu regarde dans mes scripts, pour s'assurer que tout marche bien et qu'il y ait le moins de bugs possible. Je fais ça pour t'aider et que ça aille plus vite  <img src="/assets/smilies/Wink.gif" alt=""> Ça c'est pour mes scripts. Je ne sais pas pour ceux à Kertan. Bien sur, je vais surement oublier quelques affaires, mais si ça peut t'aider à gaspiller moins de temps sur ça...</p>
+<p>Ce que tu sais déjà:</p>
+<p>-Faire des backups (au cas où)</p>
+<p>-Installer tous nos scripts <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+-Suivre les instruction dans mon fichier bloc note. C'est TRÈS important.</p>
+<p>-Arranger ce qu'il faut pour que ça marche sur Crépuscule (Genre CrepusculeItem, etc)</p>
+<p>-S'arranger pour que ça compile <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+-Nous dire s'il y a un problème avec nos scripts.</p>
+<p>Bon à savoir:</p>
+<p>-Vérifier que les 5 menus de Craft modifiés (tinkering, carpentry, tailoring, advance tailoring (la trousse de Willy là), massonery(je sais pas comment écrire ça <img src="/assets/smilies/man_in_love.gif" alt="">))</p>
+<p>-S'assurer que les Items soient tous bien craftable</p>
+<p>-S'assurer que les Items n'aient pas de bugs du genre mauvais ItemID, nom, etc.</p>
+<p>-Voir comment réagit les nouveaux meubles lockable (armoires) avec le script de crep qui fait ouvrir un contenant barré au double clique.</p>
+<p>-s'assurer que tous les Addons2 soient correctes, flippe bien et que le petit menu au double-clique soit correcte.</p>
+<p>-même chose pour les cercueil, sauf que le menu est différent.</p>
+<p>-Vérifier que les GrosPackHorse et GrosPackLlama sont correcte.</p>
+<p>-Vérifier les 3 arbres à fruits</p>
+<p>-Tester le script de Capuchon que je t'ai donner sur l'autre sujet. Si ça marche, ajoute cette ligne là dans la catégorie &quot;Hats&quot; du script DefTailoring</p>
+<pre><code>            AddCraft(typeof(Capuchon), 1011375, &quot;Capuchon&quot;, 35, 50, typeof(Cloth), &quot;Tissus&quot;, 15, &quot;Vous n'avez pas assez de matériel&quot;);  
+</code></pre>
+<p>-Ajouter la ligne sur les keyring que je t'avais donné dans l'autre sujet, et voir si ça marche an essayant de le crafter.</p>
+<p>-Tester la commande .verrou sur mes nouveaux addons2. Si ça marche YOUPPI! Mais va surement falloir le faire à toutes les parties. Si a marche pas, va falloir modifier la commande pour que ça marche, mais demande moi pas comment, je sais même pas à quoi le script ressemble <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+-Voir si les addons2 ne se delete pas après 1 heure quand toutes les parties sont verrouillées. (Si ils se delete, va falloir que je modifie quelque chose, tu me le dira)</p>
+<p>-C'est tout ce que je pense pour le moment. J'en rajouterai si je pense à autre chose.</p>
+<hr>
+<h2 id="post-by-myrddin-emrys-cp---september-20-2008-at-1208-am">Post by Myrddin Emrys, CP - September 20, 2008 at 12:08 AM</h2>
+<p><a id="post-182859"></a></p>
+<p>dans lumberjack.cs</p>
+<p>inverser les &quot;0x543&quot;  de m_polairetiles avec ceux de m_aqualienstiles</p>
+<p>c'est tout à la fin du document</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---september-22-2008-at-841-am">Post by Coordinateur Apoc - September 22, 2008 at 8:41 AM</h2>
+<p><a id="post-183257"></a></p>
+<p>J'ai commencé à regarder ca un peu mais évidemment j'ai manqué de temps.  <img src="/assets/smilies/blush2.gif" alt=""><br>
+Mais de ce que j'ai vu, je n'ai pas les arbres à fruits, tu avais fais ca après que j'ai recu les scripts je crois. Possible que tu me renvoie tout ce que tu as fais Christian? (Je crois qu'il m anque que les arbres à fruits et le capuchon si tu as le temps de me le faire, sinon je regarderai plus tard.)</p>
+<!-- e --><a href="mailto:warlord_14@hotmail.com">warlord_14@hotmail.com</a><!-- e -->
+<hr>
+<h2 id="post-by-thodore-de-lagarde-adm---september-22-2008-at-418-pm">Post by Théodore de Lagarde, AdM - September 22, 2008 at 4:18 PM</h2>
+<p><a id="post-183293"></a></p>
+<p>évidemment qu'ils sont pas là, je te les ai tous donné dans un autre topic APRÈS que Kertan y ai ajouter ces trucs.</p>
+<p>Les revoilà. MAIS assure toi qu'ils fonctionnent!</p>
+<p>Capuchon:</p>
+<p>using System;</p>
+<p>namespace Server.Items<br>
+{
+public class Capuchon : BaseHat</p>
+<pre><code>{  
+    public override int BasePhysicalResistance { get { return 0; } }  
+    public override int BaseFireResistance { get { return 0; } }  
+    public override int BaseColdResistance { get { return 0; } }  
+    public override int BasePoisonResistance { get { return 0; } }  
+    public override int BaseEnergyResistance { get { return 0; } }
+
+    &amp;#91;Constructable&amp;#93;  
+    public Capuchon()  
+        &amp;#58; this(0)  
+    {  
+    }
+
+    &amp;#91;Constructable&amp;#93;  
+    public Capuchon(int hue)  
+        &amp;#58; base(0x302E, hue)  
+    {  
+        Weight = 1&amp;#46;0;  
+    }
+
+    public Capuchon(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }
+
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);
+
+        writer&amp;#46;Write((int)0); // version  
+    }
+
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);
+
+        int version = reader&amp;#46;ReadInt();  
+    }  
+}  
+</code></pre>
+<p>}</p>
+<p>Pour crafter le capuchon: ajoute cette ligne là dans la catégorie &quot;Hats&quot; du script DefTailoring</p>
+<pre><code>            AddCraft(typeof(Capuchon), 1011375, &quot;Capuchon&quot;, 35, 50, typeof(Cloth), &quot;Tissus&quot;, 15, &quot;Vous n'avez pas assez de matériel&quot;);  
+</code></pre>
+<p>Pour crafter le keyring: Tu ajoute ces lignes (en bas) dans la catégorie misc du fichier DefTinkering que Kertan t'a envoyé. Il sera maintenant craftable!</p>
+<pre><code>            AddCraft(typeof(DwsKeyRing), 1044050, &quot;Porte-clefs&quot;, 15, 30, typeof(IronIngot), &quot;Lingots de métal&quot;, 2, &quot;Vous n'avez pas assez de matériel&quot;);  
+</code></pre>
+<p>Arbres à fruits: Ajoute ces lignes dans un nouveau fichier que tu appellera ArbresProductifs.</p>
+<p>using System;<br>
+using Server;<br>
+using Server.Items;</p>
+<p>namespace Server.Items<br>
+{
+public class TroncPomme : Item<br>
+{<br>
+private bool Attend = false;<br>
+private Item i;<br>
+new private Point3D X;<br>
+new private Map Y;</p>
+<pre><code>    &amp;#91;Constructable&amp;#93;  
+    public TroncPomme(Item I, Point3D x, Map y)&amp;#58; base(0xd94)  
+    {  
+        Weight = 1&amp;#46;0;  
+        Movable = false;  
+        Name = &quot;Tronc de pommier&quot;;  
+        i = I;  
+        X = x;  
+        Y = y;  
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMilliseconds(500&amp;#46;0), new TimerCallback(AttendUnPeu));
+
+        this&amp;#46;Location = X;  
+        this&amp;#46;Map = y;  
+    }
+
+    public TroncPomme(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }
+
+    public override void OnLocationChange(Point3D oldLocation)  
+    {  
+        if (i == null || (i&amp;#46;Location == this&amp;#46;Location &amp;&amp; i&amp;#46;Map == this&amp;#46;Map))  
+            return;
+
+        if (Attend == false)  
+            return;
+
+        else  
+        i&amp;#46;MoveToWorld(Location, Map);  
+    }
+
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);  
+        writer&amp;#46;Write((int)0);  
+        writer&amp;#46;Write((Item)i);  
+        writer&amp;#46;Write((Point3D)X);  
+        writer&amp;#46;Write((Map)Y);  
+        writer&amp;#46;Write((bool)Attend);  
+    }
+
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);  
+        int version = reader&amp;#46;ReadInt();  
+        i = reader&amp;#46;ReadItem();  
+        X = reader&amp;#46;ReadPoint3D();  
+        Y = reader&amp;#46;ReadMap();  
+        Attend = reader&amp;#46;ReadBool();  
+    }
+
+    public void AttendUnPeu()  
+    {  
+        Attend = true;  
+    }  
+}
+
+public class TroncPêche &amp;#58; Item  
+{  
+    private bool Attend = false;  
+    private Item i;  
+    new private Point3D X;  
+    new private Map Y;
+
+    &amp;#91;Constructable&amp;#93;  
+    public TroncPêche(Item I, Point3D x, Map y)  
+        &amp;#58; base(0xd9c)  
+    {  
+        Weight = 1&amp;#46;0;  
+        Movable = false;  
+        Name = &quot;Tronc de pêcher&quot;;  
+        i = I;  
+        X = x;  
+        Y = y;  
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMilliseconds(500&amp;#46;0), new TimerCallback(AttendUnPeu));
+
+        this&amp;#46;Location = X;  
+        this&amp;#46;Map = y;  
+    }
+
+    public TroncPêche(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }
+
+    public override void OnLocationChange(Point3D oldLocation)  
+    {  
+        if (i == null || (i&amp;#46;Location == this&amp;#46;Location &amp;&amp; i&amp;#46;Map == this&amp;#46;Map))  
+            return;
+
+        if (Attend == false)  
+            return;
+
+        else  
+            i&amp;#46;MoveToWorld(Location, Map);  
+    }
+
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);  
+        writer&amp;#46;Write((int)0);  
+        writer&amp;#46;Write((Item)i);  
+        writer&amp;#46;Write((Point3D)X);  
+        writer&amp;#46;Write((Map)Y);  
+        writer&amp;#46;Write((bool)Attend);  
+    }
+
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);  
+        int version = reader&amp;#46;ReadInt();  
+        i = reader&amp;#46;ReadItem();  
+        X = reader&amp;#46;ReadPoint3D();  
+        Y = reader&amp;#46;ReadMap();  
+        Attend = reader&amp;#46;ReadBool();  
+    }
+
+    public void AttendUnPeu()  
+    {  
+        Attend = true;  
+    }  
+}
+
+public class TroncPoire &amp;#58; Item  
+{  
+    private bool Attend = false;  
+    private Item i;  
+    new private Point3D X;  
+    new private Map Y;
+
+    &amp;#91;Constructable&amp;#93;  
+    public TroncPoire(Item I, Point3D x, Map y)  
+        &amp;#58; base(0xda4)  
+    {  
+        Weight = 1&amp;#46;0;  
+        Movable = false;  
+        Name = &quot;Tronc de poirier&quot;;  
+        i = I;  
+        X = x;  
+        Y = y;  
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMilliseconds(500&amp;#46;0), new TimerCallback(AttendUnPeu));
+
+        this&amp;#46;Location = X;  
+        this&amp;#46;Map = y;  
+    }
+
+    public TroncPoire(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }
+
+    public override void OnLocationChange(Point3D oldLocation)  
+    {  
+        if (i == null || (i&amp;#46;Location == this&amp;#46;Location &amp;&amp; i&amp;#46;Map == this&amp;#46;Map))  
+            return;
+
+        if (Attend == false)  
+            return;
+
+        else  
+            i&amp;#46;MoveToWorld(Location, Map);  
+    }
+
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);  
+        writer&amp;#46;Write((int)0);  
+        writer&amp;#46;Write((Item)i);  
+        writer&amp;#46;Write((Point3D)X);  
+        writer&amp;#46;Write((Map)Y);  
+        writer&amp;#46;Write((bool)Attend);  
+    }
+
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);  
+        int version = reader&amp;#46;ReadInt();  
+        i = reader&amp;#46;ReadItem();  
+        X = reader&amp;#46;ReadPoint3D();  
+        Y = reader&amp;#46;ReadMap();  
+        Attend = reader&amp;#46;ReadBool();  
+    }
+
+    public void AttendUnPeu()  
+    {  
+        Attend = true;  
+    }  
+}
+
+
+public class Pommier &amp;#58; Item  
+{  
+    private int m_Apples;  
+    private Item item;
+
+    &amp;#91;Constructable&amp;#93;  
+    public Pommier()&amp;#58; base(0xD95)  
+    {  
+        Weight = 10&amp;#46;0;  
+        Name = &quot;Pommier&quot;;  
+        Movable = false;
+
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMilliseconds(500&amp;#46;0), new TimerCallback(Tronc));
+
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMinutes(60&amp;#46;0), new TimerCallback( AddApple ));  
+    }
+
+    public Pommier(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }  
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);  
+        writer&amp;#46;Write((int)0); // version  
+        writer&amp;#46;Write((int)m_Apples);  
+        writer&amp;#46;Write((Item)item);
+
+    }  
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);  
+        int version = reader&amp;#46;ReadInt();  
+        m_Apples = reader&amp;#46;ReadInt();  
+        item = reader&amp;#46;ReadItem();  
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMinutes(60&amp;#46;0), new TimerCallback(AddApple));  
+    }
+
+    public override void OnDoubleClick(Mobile from)\t\t  
+</code></pre>
+<p>\t\t{<br>
+\t\t\tif ( from.InRange( this, 2 ) &amp;&amp; from.CanSee( this ) )<br>
+\t\t\t{<br>
+if (m_Apples &gt; 0)<br>
+{<br>
+from.SendMessage(&quot;Vous ceuillez des pommes et les mettez dans votre sac&quot;);<br>
+from.AddToBackpack(new Apple(m_Apples));<br>
+m_Apples = 0;<br>
+this.ItemID = 0xD95;<br>
+}</p>
+<pre><code>            else  
+</code></pre>
+<p>\t\t\t\t {<br>
+from.SendMessage(&quot;Il n'y a aucune pomme à ceuillir pour le moment&quot;);<br>
+}<br>
+\t\t<br>
+}<br>
+else<br>
+from.SendMessage(&quot;Vous êtes trop loin de l'arbre&quot;);<br>
+\t\t }</p>
+<pre><code>    public override void OnLocationChange(Point3D oldLocation)  
+    {  
+        if (item == null || (item&amp;#46;Location == Location &amp;&amp; item&amp;#46;Map == Map))  
+            return;
+
+        item&amp;#46;MoveToWorld(Location, Map);  
+    }
+
+    private void AddApple()  
+    {  
+        this&amp;#46;ItemID = 0xD96;  
+        if (m_Apples &lt; 50)  
+</code></pre>
+<p>\t        m_Apples += 1;<br>
+\t        Timer.DelayCall(TimeSpan.FromMinutes(60.0), new TimerCallback( AddApple ));<br>
+}<br>
+private void Tronc()<br>
+{<br>
+Item I;<br>
+I = this;</p>
+<pre><code>        Point3D x;  
+        x = this&amp;#46;Location;
+
+        Map y;  
+        y = this&amp;#46;Map;
+
+        item = new TroncPomme(I, x, y);  
+        //item&amp;#46;MoveToWorld(this&amp;#46;Location, this&amp;#46;Map);   
+    }  
+}  
+public class Pêcher &amp;#58; Item  
+{  
+    private int m_Apples;  
+    private Item item;
+
+    &amp;#91;Constructable&amp;#93;  
+    public Pêcher()  
+        &amp;#58; base(0xD9d)  
+    {  
+        Weight = 10&amp;#46;0;  
+        Name = &quot;Pêcher&quot;;  
+        Movable = false;
+
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMilliseconds(500&amp;#46;0), new TimerCallback(Tronc));
+
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMinutes(60&amp;#46;0), new TimerCallback(AddApple));  
+    }
+
+    public Pêcher(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }  
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);  
+        writer&amp;#46;Write((int)0); // version  
+        writer&amp;#46;Write((int)m_Apples);  
+        writer&amp;#46;Write((Item)item);
+
+    }  
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);  
+        int version = reader&amp;#46;ReadInt();  
+        m_Apples = reader&amp;#46;ReadInt();  
+        item = reader&amp;#46;ReadItem();  
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMinutes(60&amp;#46;0), new TimerCallback(AddApple));  
+    }
+
+    public override void OnDoubleClick(Mobile from)  
+    {  
+        if (from&amp;#46;InRange(this, 2) &amp;&amp; from&amp;#46;CanSee(this))  
+        {  
+            if (m_Apples &gt; 0)  
+            {  
+                from&amp;#46;SendMessage(&quot;Vous ceuillez des pêches et les mettez dans votre sac&quot;);  
+                from&amp;#46;AddToBackpack(new Peach(m_Apples));  
+                m_Apples = 0;  
+                this&amp;#46;ItemID = 0xD9d;  
+            }
+
+            else  
+            {  
+                from&amp;#46;SendMessage(&quot;Il n'y a aucune pêche à ceuillir pour le moment&quot;);  
+            }
+
+        }  
+        else  
+            from&amp;#46;SendMessage(&quot;Vous êtes trop loin de l'arbre&quot;);  
+    }
+
+    public override void OnLocationChange(Point3D oldLocation)  
+    {  
+        if (item == null || (item&amp;#46;Location == Location &amp;&amp; item&amp;#46;Map == Map))  
+            return;
+
+        item&amp;#46;MoveToWorld(Location, Map);  
+    }
+
+    private void AddApple()  
+    {  
+        this&amp;#46;ItemID = 0xD9e;  
+        if (m_Apples &lt; 50)  
+            m_Apples += 1;  
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMinutes(60&amp;#46;0), new TimerCallback(AddApple));  
+    }  
+    private void Tronc()  
+    {  
+        Item I;  
+        I = this;
+
+        Point3D x;  
+        x = this&amp;#46;Location;
+
+        Map y;  
+        y = this&amp;#46;Map;
+
+        item = new TroncPêche(I, x, y);  
+        //item&amp;#46;MoveToWorld(this&amp;#46;Location, this&amp;#46;Map);   
+    }  
+}  
+public class Poirier &amp;#58; Item  
+{  
+    private int m_Apples;  
+    private Item item;
+
+    &amp;#91;Constructable&amp;#93;  
+    public Poirier()  
+        &amp;#58; base(0xDa5)  
+    {  
+        Weight = 10&amp;#46;0;  
+        Name = &quot;Poirier&quot;;  
+        Movable = false;
+
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMilliseconds(500&amp;#46;0), new TimerCallback(Tronc));
+
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMinutes(60&amp;#46;0), new TimerCallback(AddApple));  
+    }
+
+    public Poirier(Serial serial)  
+        &amp;#58; base(serial)  
+    {  
+    }  
+    public override void Serialize(GenericWriter writer)  
+    {  
+        base&amp;#46;Serialize(writer);  
+        writer&amp;#46;Write((int)0); // version  
+        writer&amp;#46;Write((int)m_Apples);  
+        writer&amp;#46;Write((Item)item);
+
+    }  
+    public override void Deserialize(GenericReader reader)  
+    {  
+        base&amp;#46;Deserialize(reader);  
+        int version = reader&amp;#46;ReadInt();  
+        m_Apples = reader&amp;#46;ReadInt();  
+        item = reader&amp;#46;ReadItem();  
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMinutes(60&amp;#46;0), new TimerCallback(AddApple));  
+    }
+
+    public override void OnDoubleClick(Mobile from)  
+    {  
+        if (from&amp;#46;InRange(this, 2) &amp;&amp; from&amp;#46;CanSee(this))  
+        {  
+            if (m_Apples &gt; 0)  
+            {  
+                from&amp;#46;SendMessage(&quot;Vous ceuillez des poires et les mettez dans votre sac&quot;);  
+                from&amp;#46;AddToBackpack(new Pear(m_Apples));  
+                m_Apples = 0;  
+                this&amp;#46;ItemID = 0xDa5;  
+            }
+
+            else  
+            {  
+                from&amp;#46;SendMessage(&quot;Il n'y a aucune poire à ceuillir pour le moment&quot;);  
+            }
+
+        }  
+        else  
+            from&amp;#46;SendMessage(&quot;Vous êtes trop loin de l'arbre&quot;);  
+    }
+
+    public override void OnLocationChange(Point3D oldLocation)  
+    {  
+        if (item == null || (item&amp;#46;Location == Location &amp;&amp; item&amp;#46;Map == Map))  
+            return;
+
+        item&amp;#46;MoveToWorld(Location, Map);  
+    }
+
+    private void AddApple()  
+    {  
+        this&amp;#46;ItemID = 0xDa6;  
+        if (m_Apples &lt; 50)  
+            m_Apples += 1;  
+        Timer&amp;#46;DelayCall(TimeSpan&amp;#46;FromMinutes(60&amp;#46;0), new TimerCallback(AddApple));  
+    }  
+    private void Tronc()  
+    {  
+        Item I;  
+        I = this;
+
+        Point3D x;  
+        x = this&amp;#46;Location;
+
+        Map y;  
+        y = this&amp;#46;Map;
+
+        item = new TroncPoire(I, x, y);  
+        //item&amp;#46;MoveToWorld(this&amp;#46;Location, this&amp;#46;Map);   
+    }  
+}  
+</code></pre>
+<p>}</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>*tousse* - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">*tousse*</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">*tousse*</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="tousse"><em>tousse</em></h1>
+<h2 id="post-by-coordinateur-apoc---december-28-2008-at-1013-am">Post by Coordinateur Apoc - December 28, 2008 at 10:13 AM</h2>
+<p><a id="post-196958"></a></p>
+<p><em>Passe époussetter un peu l'endroit.</em></p>
+<p>Kel, Willy, toujours en vie vous deux? Des truc en vu?</p>
+<p>Les autres, quelque chose d'urgent côté script?</p>
+<p>Je pensais peut-être faire un truc ou deux pour le jour de l'an comme d'habitude si j'ai le temps et l'envie d'ici la fin de mes vacances (Voir une semaine.)  <img src="/assets/smilies/blush2.gif" alt=""></p>
+<hr>
+<h2 id="post-by-anonymous---december-28-2008-at-1001-pm">Post by Anonymous - December 28, 2008 at 10:01 PM</h2>
+<p><a id="post-197018"></a></p>
+<p>Moi j'ai une petite demande.</p>
+<p>Voilà avec mes activités de balle de neige, disons que j'ai passé un bon moment à régler manuellement les .props de mes 40 paires de gants.</p>
+<p>Ce serait donc bien de faire une commande .dupeprop, qui dupe non seulement l'objet, mais aussi toutes ses props (incluant Attributes, Weaponattributes, bonusskills, hitsound, misssound, etc). Car le .dupe normal ne copie seulement l'objet extérieur (son item ID, son hue, son name entre autre), ce qui est agaçant quand tu veux duper une arme magique ou un objet magique qui a des bonus.</p>
+<p>Ça ne urge pas, mais ce serait bien d'y penser ^-^</p>
+<p>Autre demande, facultative bien sûr.</p>
+<p>Voilà, encore pour mon tournoi de balle de neige, j'ai créé une arme.<br>
+Spelldamage -95 dans attributes,<br>
+Fireball 100 dans Weaponattributes.</p>
+<p>L'arme lance donc des boules de feu, mais en ne faisant en principe que 4 de dommages. Mais certains joueurs ont eu des problèmes, foirant un peu le tournoi : Ils rataient toujours leur cible et faisaient toujours 0 de dommages s'ils l'atteignaient, ce qui est un peu dommage car ça arrive à presque tout le monde. On a pensé que c'était dû à la skill Anatomy qui était basse pour eux (car un Couturier faisait plus de dommage qu'un paladin).</p>
+<p>J'ai donc voulu créer un bracelet qui boost Anatomy à 100 durant le tournoi, mais avec leur cap, ça ne montait pas plus haut que 20 pour certains, ce qui était très... Dommage.</p>
+<p>Serait-il possible de penser à une arme avec les mêmes propriétés (Spelldamage -95, fireball 100, donc qui lance des projectiles de feu en faisant un bruit de glace, soit le son 466) qui ne base pas la réussite à atteindre la cible sur Anatomy?</p>
+<p>C'est vraiment facultatif, mais ça pourrait être intéressant. Le .dupeprop me paraît plus important <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-bolero---december-28-2008-at-1008-pm">Post by Ex-Bolero - December 28, 2008 at 10:08 PM</h2>
+<p><a id="post-197020"></a></p>
+<p>Et accessoirement, un .dupenpc pourrait être sympa...</p>
+<p><em>Vieux rêve</em></p>
+<p>Mais loin, alors là loin d'être urgent, la commande proposée par Zak l'est cent fois plus ^^</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-29-2008-at-118-am">Post by Coordinateur Apoc - December 29, 2008 at 1:18 AM</h2>
+<p><a id="post-197047"></a></p>
+<p>Deux commandes qui pourrait pas être trop dur, dépendamment de comment fonctionne le Dupe normal. Par contre Kel serait mieux placé que moi pour ca.</p>
+<p>Pour les boules de neiges, je croyais simplement scripter des boules de neiges. Ou a la limite une paire de gants spéciaux comme tu as fais. Je me demandais ce qui serait le mieux par contre, des dommages ou bien paralyser pendant 2-3 secondes? (Le temps d'enlever la neige de son visage quoi  <img src="/assets/smilies/man_in_love.gif" alt=""> )</p>
+<hr>
+<h2 id="post-by-anonymous---december-29-2008-at-148-am">Post by Anonymous - December 29, 2008 at 1:48 AM</h2>
+<p><a id="post-197057"></a></p>
+<p>Le tournoi actuel va sur l'élimination.</p>
+<p>Quand un joueur tombe inconscient, il devient prisonnier etc.</p>
+<p>Donc c'est mieux des dommages. Avec 4 dommages maximum causé par les gants, ça donne beaucoup de temps avant qu'un joueur soit K.O.</p>
+<hr>
+<h2 id="post-by-ex-bolero---december-29-2008-at-803-pm">Post by Ex-Bolero - December 29, 2008 at 8:03 PM</h2>
+<p><a id="post-197142"></a></p>
+<p>Si possible:</p>
+<p>Ajouter une props sans impact sur les persos -&gt; &quot;ResetPA&quot; dans le playermobile afin qu'on puisse comptabiliser ça directement IG.</p>
+<p>Donc en gros une props qui ne change rien au perso et qu'on peut incrémenter.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---december-29-2008-at-936-pm">Post by Fondateur Kel - December 29, 2008 at 9:36 PM</h2>
+<p><a id="post-197151"></a></p>
+<p>Hey, toujours en vie oui ^^<br>
+Mais pour l'instant je me repose un peu avant de recommencer et je travaille en même temps sur un autre truc. Je surveille les forums comme d'habitude ^^</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-14-2009-at-520-am">Post by Ex-Bolero - January 14, 2009 at 5:20 AM</h2>
+<p><a id="post-199380"></a></p>
+<p>Tiens je up un peu, Zak avait des propositions intéressantes ici (à moins qu'Apoc ne l'ait déjà fait ^^)</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---january-14-2009-at-650-am">Post by Coordinateur Apoc - January 14, 2009 at 6:50 AM</h2>
+<p><a id="post-199409"></a></p>
+<blockquote>
+<p><strong>&quot;Conteur Bolero&quot; wrote:</strong>
+Tiens je up un peu, Zak avait des propositions intéressantes ici (à moins qu'Apoc ne l'ait déjà fait ^^)</p>
+<p>Nah j'ai rien fait. Je suis pas trop motivé coté script dernièrement et j'ai pas énormément de temps non plus.  <img src="/assets/smilies/blush2.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-anonymous---january-14-2009-at-700-am">Post by Anonymous - January 14, 2009 at 7:00 AM</h2>
+<p><a id="post-199412"></a></p>
+<p>Prends ton temps 'poc.</p>
+<hr>
+<h2 id="post-by-ex-bolero---january-14-2009-at-710-am">Post by Ex-Bolero - January 14, 2009 at 7:10 AM</h2>
+<p><a id="post-199416"></a></p>
+<p>Pas de souci!</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

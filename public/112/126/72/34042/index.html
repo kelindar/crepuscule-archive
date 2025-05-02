@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mise à Jour Deeds (FAIT) - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Mise à Jour Deeds (FAIT)</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Mise à Jour Deeds (FAIT)</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="mise--jour-deeds-fait">Mise à Jour Deeds (FAIT)</h1>
+<h2 id="post-by-coordinateur-apoc---april-29-2010-at-422-am">Post by Coordinateur Apoc - April 29, 2010 at 4:22 AM</h2>
+<p><a id="post-254256"></a></p>
+<p>Bon, après avoir passé 30 minutes (ou plus) l'autre jour pour déménager Williams, je ne voulais pas devoir me retapper ca.  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Maintenant il n'auront plus à nous déranger pour ca.</p>
+<p>Par contre! Crépuscule n'a pas de système de housing comme Uo de base donc ca amène un problème. Tout objet étant considéré Addon peut être remis en Deed par n'importe qui tant qu'il est à une case de l'objet.</p>
+<p>Pas de problème pour les joueurs, pas moyen de voler à travers les murs ainsi. Mais, si vous avez mis certains objet à partir d'un deed et qu'il n'est pas static, un joueur pourrait partir avec s'il essai par hazard. Je ne l'ai pas précisé sinon il y en aurait qui irait double-cliquer partout.</p>
+<p>Donc autant que possible, si vous avez une table à mettre, allez y avec pandora un morceau à la fois. Si voulez vérifier, faites .props sur l'objet. S'il est considéré AddonComponent il devrait pouvoir être remis en Deed. Donc n'ajoutez rien avec le .add qui a Addon ou Deed à la fin.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Je crois que c'est un faible prix à payer pour tout les pages que sa nous sauvera. Si jamais cela cause trop de problème, j'annulerai la mise à jour.</p>
+<p>Il Faudrait qu'un Admin update le serveur pour mettre en effet.</p>
+<hr>
+<h2 id="post-by-conteur-centaure---april-29-2010-at-600-pm">Post by Conteur Centaure - April 29, 2010 at 6:00 PM</h2>
+<p><a id="post-254316"></a></p>
+<p>Gneh..</p>
+<p>On fait des pari sur quand sortira le premier scandale de vol?</p>
+<hr>
+<h2 id="post-by-ex-lumina---april-29-2010-at-713-pm">Post by Ex-Lumina - April 29, 2010 at 7:13 PM</h2>
+<p><a id="post-254318"></a></p>
+<p>On en utilise beaucoup des deeds, quand on build. En tout cas tout ce que j'ai créé.</p>
+<p>Toutes les &quot;stonefountains&quot; du serveur en sont...</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---april-29-2010-at-950-pm">Post by Coordinateur Apoc - April 29, 2010 at 9:50 PM</h2>
+<p><a id="post-254326"></a></p>
+<p>Lumina, une fois freezé l'objet devient static donc pas de problème de ce côté. Puis il n'y aura pas plus de problèmes de Vol qu'avec le .verrou.</p>
+<hr>
+<h2 id="post-by-lancelot---may-17-2010-at-438-am">Post by Lancelot - May 17, 2010 at 4:38 AM</h2>
+<p><a id="post-255591"></a></p>
+<p>C'est buggé.</p>
+<p>Quand on double clic sur n'importe quel objet qui a été placé à partir d'un deed, il apparaît dans notre sac.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---may-17-2010-at-600-am">Post by Coordinateur Apoc - May 17, 2010 at 6:00 AM</h2>
+<p><a id="post-255600"></a></p>
+<p>C'est buggé.</p>
+<p>Quand on double clic sur n'importe quel objet qui a été placé à partir d'un deed, il apparaît dans notre sac.</p>
+<p>C'est ca le but non? C'est pour retourner les objets en Deed et ne pas se faire pager 3 fois par jour pour déplacer un lit.</p>
+<hr>
+<h2 id="post-by-conteur-wolf---may-17-2010-at-608-am">Post by Conteur Wolf - May 17, 2010 at 6:08 AM</h2>
+<p><a id="post-255601"></a></p>
+<p>Il y a moyen de faire en sorte que seul la personne qui place le deed puisse reprendre l'objet? Car sinon il y aura du vol effectivement.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---may-17-2010-at-649-am">Post by Coordinateur Apoc - May 17, 2010 at 6:49 AM</h2>
+<p><a id="post-255607"></a></p>
+<blockquote>
+<p><strong>&quot;Coordinateur Wolf&quot; wrote:</strong>
+Il y a moyen de faire en sorte que seul la personne qui place le deed puisse reprendre l'objet? Car sinon il y aura du vol effectivement.</p>
+<p>Surement mais ca tombe dans des trucs que je ne connais pas. J'ai mis la distance à une case pour empêcher le vol.</p>
+<p>Puis vous êtes un peu tard, ca fait un mois que c'est fait.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-lancelot---may-18-2010-at-206-am">Post by Lancelot - May 18, 2010 at 2:06 AM</h2>
+<p><a id="post-255659"></a></p>
+<p>Tard ou pas, c'est hier qu'on a découvert la problématique.<br>
+Avant hier, même. Quand qu'avec mon personnage j'ai fais disparaître des objets par un simple double clic (par erreur) dans un donjon. Comme des gros piédestal, et ils ne sont pas apparu dans mon sac.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---may-18-2010-at-332-am">Post by Coordinateur Apoc - May 18, 2010 at 3:32 AM</h2>
+<p><a id="post-255662"></a></p>
+<p>Hmm, Peut-être le nouveau système de Kel qui a modifié quelque chose... Je vais bloquer le double-clique pour l'instant et je verrai pour refaire tout ca d'une autre facon.</p>
+<p>Ah et en me relisant, désolé si j'ai eu l'air sec, ce n'était pas mon intention.</p>
+<p>EDIT: Il semblerait que Kel est été plus rapide que moi. Quelqu'un me dit que le double-clique lui dit que son lit ne lui appartient pas.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---may-18-2010-at-355-am">Post by Fondateur Kel - May 18, 2010 at 3:55 AM</h2>
+<p><a id="post-255664"></a></p>
+<p>*Ouaip, j'ai ajouté une propriété &quot;Owner&quot;, qui est mise automatiquement à celui qui place le deed. Et pour les trucs déjà placés, suffit de setter ça (ou donner un nouveau deed) ^^ *</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

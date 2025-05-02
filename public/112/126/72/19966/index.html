@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Si la tendance se maintient... - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Si la tendance se maintient...</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Si la tendance se maintient...</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="si-la-tendance-se-maintient">Si la tendance se maintient...</h1>
+<h2 id="post-by-coordinateur-apoc---march-4-2008-at-212-am">Post by Coordinateur Apoc - March 4, 2008 at 2:12 AM</h2>
+<p><a id="post-152884"></a></p>
+<p>Voici ce que je risque de faire &quot;bientot&quot;.</p>
+<p>Kel m'a redonné un peu de motivation avec l'ajout du SVN donc remercié le.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Par contre je ne me donne pas d'échéance, si j'aimes pas trop scripter la semaine, ca ne sera que la fin de semaine, je ne me forcerai pas à scripter sinon je vais reperdre ma motivation.</p>
+<p>Je vais aussi continuer de travailler proche des joueurs comme je l'ai toujours fait mais avec un peu plus de distance. Si on en dit trop aux joueurs, souvent leur attentes sont trop hautes ou bien ils sont décu quand on n'utilise par leur suggestions.</p>
+<p>Enfin disons que Équipe + Joueurs = Chialage dans plusieurs cas.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>-Une commande .chut (Ou autre) qui permettra de parler/emoter tout en étant hider.</p>
+<p>Je ne sais pas encore à 100% comment cela aboutiera mais voici ce que j'ai en tête.</p>
+<p>Une fois hider, il suffit de faire .chut texte et de cliquer sur une personne. Cette personne recevra un truc du genre dans le coin gauche (comme télépathie) <em>Vous ressentez une présence</em> suivi du texte.</p>
+<p>Évidemment ce n'est pas aussi simple! Pour savoir la distance possible de la commande je dirais 0-20 hiding = 1 tile (donc collé sur la personne), 21-40 = 2 tiles, 41-60 = 3 tiles, 61-80 = 4 tiles, 81-100 = 5 tiles.</p>
+<p>Comme cela on ne verra pas d'abus de quelqu'un qui chuchotte de l'autre bout du monde et puis sa permettra de faire des emotes <em>une ombre semble vous suivre</em> sans devoir être derrière.</p>
+<p>Donc quelqu'un avec detect hiding aura une chance de trouver le joueur autant que celui-ci aura le temps de s'échapper s'il a un bon niveau de stealth.</p>
+<p>Mais encore la! Dépendament du hiding, il y aurait une chance à ce que le joueur apparaisse en utilisant .chut. Je dirais que la chance d'apparaitre devrait être contraire au hiding, donc à 100% de hiding il ne rate jamais mais à 50% il a 50% de chance d'apparaitre. C'est peut-être un peu trop de chance d'apparaitre mais il faudra voir.</p>
+<p>SI jamais ce n'est pas trop complexe j'aimerais aussi permettre aux autres joueurs autour d'entendre ce que le joueur à envoyé à l'autre dépendament de leur detect hiding. Ca ne permet pas de faire apparaitre l'autre joueurs donc je mettrais les chances assez haute. À 100% de detect hiding on entend tout les .chut à 5 cases autour de nous.</p>
+<p>-Rendre télépathie plus attrayant, utile et empêcher qu'on l'utilise comme msn call rp avec qu'un point dans l'aptitude.</p>
+<p>Bon celui la c'est un peu complexe... Il y a eu beaucoup de suggestions à ce sujet mais j'aimerais ne pas en tenir compte. Pas qu'elle ne sont pas bonnes mais souvant ca me donne des frissons seulement à y penser coté script.</p>
+<p>.telepath: Probablement pas de changement ici, corriger le bugs des noms si possible mais tester une commande qui demande deux joueurs seul euh...  <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+.tel: Grosse modification ici! Maintenant le .tel servirait à lancer un message autour de nous à TOUT les joueurs selon ses points en telepathie. Donc à 10 de telepathie, tout les joueurs à 5 tiles autour de lui entendrait le message. (telepathie / 2 pour savoir la distance, ca reste à voir si ce n'est pas un peu trop/peu à haut niveau.) Mais il faut que la distance reste basse au départ pour ne pas qu'on en abuse trop en énervant tout les joueurs comme certains ont déja fait avec qu'un point en telepathie.</p>
+<p>.tel1-2-3-4-5 Maintenant pour empêcher le msn call rp telepathique, il faudrait avoir 10 en telepathie pour un contact, 20 pour le deuxième, etc. Ainsi qu'on ne pourrait envoyer le message qu'à une personne à la fois même avec 4 contacts. Ce n'est pas très logique de parler à 2 personnes en même temps à deux bouts du continent sans que personne d'autre n'entende. Je laisserait la limite à 5 contacts.</p>
+<p>.telcoupe (me faudra un meilleur non tout en restant court  <img src="/assets/smilies/man_in_love.gif" alt=""> ) Celui la est intéressant et j'espère arriver à le faire. Avec cette commande, il sera possible de couper les contacts d'un autre joueur. MAIS la réussite sera relié à l'aptitude télépathie, tu as plus haut que lui, il perd ses contacts (il peut les reprendre mais si son contact est devant lui ca ne lui sert pas vraiment de toute facon.) Je pensais devoir être collé sur le joueur mais peut-être permettre 1 tile ou 2, ou encore la baser comme pour le nombre de contacts.</p>
+<p>Je pourrais toujours faire un petit menu au lieu de toutes les commandes mais ca ne serait peut-être pas aussi pratique vu qu'il faut entrer du texte de toute facon pour les .tel.</p>
+<p>-Aider un peu les nouveau avec quelques items à la création de perso</p>
+<p>Voir ici: <!-- m --><a class="postlink" href="http://www.au-crepuscule.com/forum/viewtopic.php?t=19119"><a href="http://www.au-crepuscule.com/forum/view">http://www.au-crepuscule.com/forum/view</a> ... hp?t=19119</a><!-- m --></p>
+<p>C'est tout pour l'instant, je prend toujours les suggestions si jamais c'est des trucs que Willy aime pas.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-lumina---march-4-2008-at-516-am">Post by Ex-Lumina - March 4, 2008 at 5:16 AM</h2>
+<p><a id="post-152898"></a></p>
+<p>Wouhou ! Un jour peut-être que 40 PAs en télépathie ne sera plus inutile !</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-9-2008-at-147-pm">Post by Coordinateur Apoc - March 9, 2008 at 1:47 PM</h2>
+<p><a id="post-153939"></a></p>
+<p>Après environ 5h sur ce script, mon .chut semble fini. Il me restera a tout tester avec des joueurs mais je croise les doigts... Tout ce que j'ai dis plus haut a été fait et est fonctionnel je l'espère.</p>
+<p>J'ai aussi fait un premier script dans ce qui pourrait etre un futur système d'agriculture si jamais j'en ai le courage.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-mr-trovnre---march-9-2008-at-152-pm">Post by Mr Trovénère - March 9, 2008 at 1:52 PM</h2>
+<p><a id="post-153940"></a></p>
+<p><em>Hé ben, je remercie Kel une fois encore en plus de t'avoir donné la motivation  <img src="/assets/smilies/smile.gif" alt=""></em></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

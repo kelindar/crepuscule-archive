@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stealth - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Stealth</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Stealth</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="stealth">Stealth</h1>
+<h2 id="post-by-zig---march-4-2012-at-404-am">Post by Zig - March 4, 2012 at 4:04 AM</h2>
+<p><a id="post-303575"></a></p>
+<p>ALLO!</p>
+<p>Y a-t-il moyen de faire en sorte que si on est en stealth et qu'on entre dans un regioncontrol qui... bloque la skill... de décacher le joueur? Par exemple:<br>
+A- Il y a un region control du point A au point B avec la skill STEALTH de bloqué. Le joueur se hide avant d'entrer dans la zone et une fois à l'intérieur, il continue de marcher librement en étant invisible.</p>
+<p>Il faudrait donc plutôt:</p>
+<p>B- Il y a un regioncontrol du point A au point B avec la skill STEALTH de bloqué. Le joueur se hide avant d'entrer dans la zone et entre, il se retrouve décaché.</p>
+<p>Ça nous donnerait un peu plus de contrôle.</p>
+<p>Michi :3</p>
+<hr>
+<h2 id="post-by-animateur-misanthrope---march-4-2012-at-559-am">Post by Animateur Misanthrope - March 4, 2012 at 5:59 AM</h2>
+<p><a id="post-303585"></a></p>
+<p>Je redirige par là: <!-- l --><a class="postlink-local" href="http://au-crepuscule.com/forum/viewtopic.php?f=72&t=41370">viewtopic.php?f=72&amp;t=41370</a><!-- l --><br>
+A mon avis la solution n'est pas au niveau des régions, mais plutôt de la skill elle-même (et surtout parce que je ne connais encore rien aux régions <img src="/assets/smilies/man_in_love.gif" alt="">)</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-4-2012-at-613-am">Post by Coordinateur Apoc - March 4, 2012 at 6:13 AM</h2>
+<p><a id="post-303587"></a></p>
+<p>J'aurais cru que ce l'aurait déjà été ainsi.</p>
+<p>Ca ne doit pas être trop difficille, je sais qu'il y a une fonction pour déhider un joueur. (Je l'avais utilisé avec le .chut)</p>
+<p>Suffirait de regarder comment les région fonctionnes, il doit déjà y avoir une fonction qui est appeller quand un joueur entre dans une région, (vu qu'il recoit un message en bas a gauche parfois) suffirait de vérifier si le flag anti-hide est on et si oui, on unhide le joueur.</p>
+<p>Je peux bien aller voir si ce n'est pas dans le Core, peut-être que ce serait réglable rapidement.</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-4-2012-at-744-am">Post by Coordinateur Apoc - March 4, 2012 at 7:44 AM</h2>
+<p><a id="post-303591"></a></p>
+<p>C'est fait.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

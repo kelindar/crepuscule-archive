@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[?] Le .ligoter - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">[?] Le .ligoter</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">[?] Le .ligoter</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="-le-ligoter">[?] Le .ligoter</h1>
+<h2 id="post-by-vent-dhiver---october-8-2006-at-743-pm">Post by Vent d'Hiver - October 8, 2006 at 7:43 PM</h2>
+<p><a id="post-90444"></a></p>
+<p>On lit souvent des plaintes au sujets des arrestations impossibles, des vols infaisables. La raison principale de ce fait reste que l'on ne peut entraver la personne en face. Donc elle part en courant.</p>
+<p>Alors je serais pour proposer un .ligoter. Il faudrait que la personne soit muni d'une cordre, qu'elle st un certain % en force et dext si on % est plus important que celui de lapersonne qu'elle veut attacher c'est fait sinon ça rate.</p>
+<p>Vous en pensez quoi ? et surtout c'est faisable ?</p>
+<hr>
+<h2 id="post-by-conan---october-8-2006-at-750-pm">Post by Conan - October 8, 2006 at 7:50 PM</h2>
+<p><a id="post-90446"></a></p>
+<p>faisable, oui, mais on aurait probablement autant de plaintes d'abus de cette commande que de plaintes de fuites hrp actuellement.</p>
+<hr>
+<h2 id="post-by-otogashi-niwakari---october-8-2006-at-1022-pm">Post by Otogashi Niwakari - October 8, 2006 at 10:22 PM</h2>
+<p><a id="post-90478"></a></p>
+<p>une corde , ou des menottes pourrait etre plus approprié</p>
+<p>Ensuite , c'est une action complexe , je proposerais cela :</p>
+<h2 id="-test-de-force-contre-force--on-peut-demander-de-laide-pour-arrter-une-personne-durant-5secondes">-double click sur la corde<br>
+-on cible qui on veut , on doit etre au c.a.c.<br>
+-un gump s'ouvre sur la cible , elle a deux choix , se debattre , se laisser faire , si elle fait rien pendant 10 seconde , alors on considere qu'elle se laisse faire , fermeture automatique du gump.<br>
+----Si la cible se debat -----<br>
+-Test de force contre force , on peut demander de l'aide pour arréter une personne durant 5secondes</h2>
+<p>-en cas de ligotage réussi la cible ne peux plus bouger que d'une case par 15seconde (si difficulté = facile) , la personne qui l'a ligoté peut choisir de sérré fort(difficulté=3), normalement(difficulté=2) , faible(difficulté=1)  , une personne externe peux lui enlever ces liens avec un .libérer (par exemple) / la cible peut tenter de se liberer , elle réussit automatiquement au bout d'un temps calculer de la maniere suivante (par exemple :</p>
+<p>##########################################<br>
+#temp (secondes) : difficulté<em>1200 - (agiliter acru</em>2+sqrt(dext+force))<em>12 -snoop</em>20<br>
+##########################################</p>
+<p>Possibilité de resserer un lien serrai un plus.</p>
+<p>implique de rajouter une variable Ligoter m_ligoter; sur le playerMobile</p>
+<p>public class Ligoter{<br>
+private timer TempsRestant;<br>
+private int diff;<br>
+private boolean ligoter;</p>
+<p>public Ligoter(){<br>
+//constructeur , initialisation des variables<br>
+}<br>
+/*<br>
+*get<br>
+*set<br>
+*/</p>
+<p>public void demande(mobile[] ligoteur){<br>
+//gestion des gumps<br>
+//tableau de mobile , le premier et celui qui a fait la demande<br>
+}</p>
+<p>private int calcdiftotal(){<br>
+//formule pour le calcule ici ^^<br>
+}</p>
+<p>}</p>
+<p>je la vois bien grosso modo comme sa <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-baphomet---october-8-2006-at-1050-pm">Post by Baphomet - October 8, 2006 at 10:50 PM</h2>
+<p><a id="post-90479"></a></p>
+<p>J'adore l'idee de Otiwachi machin la (désolé pour le massacre de ton nom <img src="/assets/smilies/man_in_love.gif" alt="">) j'trouve que c'est un système super, qui évite quand meme les abus.</p>
+<hr>
+<h2 id="post-by-vent-dhiver---october-8-2006-at-1054-pm">Post by Vent d'Hiver - October 8, 2006 at 10:54 PM</h2>
+<p><a id="post-90482"></a></p>
+<p>Je suis totalment pour aussi.</p>
+<hr>
+<h2 id="post-by-ex-mlodie---october-8-2006-at-1121-pm">Post by Ex-Mélodie - October 8, 2006 at 11:21 PM</h2>
+<p><a id="post-90487"></a></p>
+<p>+1 pour ca !</p>
+<hr>
+<h2 id="post-by-lyi---october-8-2006-at-1142-pm">Post by Lyi - October 8, 2006 at 11:42 PM</h2>
+<p><a id="post-90492"></a></p>
+<p>+1</p>
+<hr>
+<h2 id="post-by-baphomet---october-9-2006-at-1209-am">Post by Baphomet - October 9, 2006 at 12:09 AM</h2>
+<p><a id="post-90498"></a></p>
+<p>Dernier petit truc à ajouter avant si possible, mais de creer un délais avant chaques ligotage, ça fera chier si toutes les 2 secondes un message apparait avec la question: Voulez-vous etre le sujet d'un bondage? à cause d'un joueur qui voudra absolument ligoter quelqu'un.</p>
+<p>Aussi les 15 secondes j'trouve que c'est pas assez pour se faire ligoter automatiquement, j'dirai 45 secondes minimum, et 45 secondes pareillement pour le délai d'un ligotage pour en faire un autre.<br>
+Toujours à débattre lol.</p>
+<hr>
+<h2 id="post-by-picotine---october-9-2006-at-502-am">Post by Picotine - October 9, 2006 at 5:02 AM</h2>
+<p><a id="post-90532"></a></p>
+<p>C'est long 45 secondes... je dirais 30!  question de couper la poire en deux.!  <img src="/assets/smilies/Wink.gif" alt=""></p>
+<p>C'est une bonne idée!</p>
+<p><span style="font-size:75%">**voit déjà un joueur s'en servir à fond! **</span></p>
+<hr>
+<h2 id="post-by-conan---october-9-2006-at-156-pm">Post by Conan - October 9, 2006 at 1:56 PM</h2>
+<p><a id="post-90561"></a></p>
+<p>scripté comme ça, +1 aussi, y'aurait-il une possibilité pour que le test de force soit influencé par le nombre de personnes autour de la cible ? voir que la tentative réussi automatiquement si deux personnes ou plus tentent de ligoter la même cible, pour éviter les cas de demi orque qui se dépetre de tout les liens alors qu'une demi douzaine de garde sont en train d'essayer de le mettre a genoux.</p>
+<hr>
+<h2 id="post-by-otogashi-niwakari---october-9-2006-at-341-pm">Post by Otogashi Niwakari - October 9, 2006 at 3:41 PM</h2>
+<p><a id="post-90566"></a></p>
+<blockquote>
+<p><strong>&quot;Conteur Conan&quot; wrote:</strong>
+scripté comme ça, +1 aussi, y'aurait-il une possibilité pour que le test de force soit influencé par le nombre de personnes autour de la cible ? voir que la tentative réussi automatiquement si deux personnes ou plus tentent de ligoter la même cible, pour éviter les cas de demi orque qui se dépetre de tout les liens alors qu'une demi douzaine de garde sont en train d'essayer de le mettre a genoux.</p>
+<p>Oui , tout est possible et relativement simple à codé sur runuo <img src="/assets/smilies/smile.gif" alt=""></p>
+<p>(sauf ce qui est géré coté client :'(, alala la 3d temps réel dans uo pour les sorts serait tellement sexyyy <img src="/assets/smilies/sad.gif" alt=""> )</p>
+<p>Bref , pour ce qui est du nombre de personne qui ligote en lui meme c'est la force total des 'ligoteurs' contre celle du ligoté. je crois l'avoir énoncé plus haut <img src="/assets/smilies/blush2.gif" alt=""></p>
+<p>Un gump qui s'ouvre a toute les personne à 3 tiles de la 'cible' leur demandant s'il veulent y prendre part , pourquoi pas ?  <img src="/assets/smilies/smile.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-anonymous---october-10-2006-at-445-pm">Post by Anonymous - October 10, 2006 at 4:45 PM</h2>
+<p><a id="post-90721"></a></p>
+<p>woua mais il est géniale ce mec!! <img src="/assets/smilies/spiteful.gif" alt=""></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---october-14-2006-at-1258-am">Post by Coordinateur Apoc - October 14, 2006 at 12:58 AM</h2>
+<p><a id="post-91218"></a></p>
+<p>Je croyais avoir déjà répondu...</p>
+<p>Enfin, évidemment tu as le champ libre Oto. On regardera ensuite pour apporter des modifications au besoin.  <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-vent-dhiver---october-21-2006-at-507-pm">Post by Vent d'Hiver - October 21, 2006 at 5:07 PM</h2>
+<p><a id="post-92191"></a></p>
+<p>C'est quand que je v pouvoir ligoter un beau pj avec mon pj ? C'est vrai quoi marre du célibat virutel !!!!</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

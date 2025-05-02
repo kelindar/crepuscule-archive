@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdM - Salle des supérieurs - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">AdM - Salle des supérieurs</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">AdM - Salle des supérieurs</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="adm---salle-des-suprieurs">AdM - Salle des supérieurs</h1>
+<h2 id="post-by-ex-bolero---october-18-2008-at-941-pm">Post by Ex-Bolero - October 18, 2008 at 9:41 PM</h2>
+<p><a id="post-187261"></a></p>
+<p>Après en avoir discuté un peu avec Mr, je me suis lancé dans un build pour une &quot;Salle des Supérieurs&quot;, une salle accessible que pour les hauts-gradés de l'AdM.</p>
+<p>Donc voilà les coord:</p>
+<p>2362 2047 -110.</p>
+<p>C'est en fait la continuation d'un début de build freeze sous la caserne des Mercenaires, accessible via un teleporter inactif dans la cour arrière sur une trappe.</p>
+<p>Les deux pantins de la salle d'entraînement peuvent booster le skill jusqu'à 75 mais il faut minimum 50% pour les utiliser.</p>
+<p>Est-ce que ça a de l'allure?^^</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-19-2008-at-527-am">Post by Ex-Bolero - October 19, 2008 at 5:27 AM</h2>
+<p><a id="post-187307"></a></p>
+<p>Update: Il y a un (sérieux?) bug. À partir de la mine mercenaire, on voit tout le build, et je ne peux pas vraiment mettre visible false vu qu'un .area incluera les z supérieurs.</p>
+<p>Que faire? ^^</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---october-19-2008-at-614-am">Post by Conteuse Seshat - October 19, 2008 at 6:14 AM</h2>
+<p><a id="post-187316"></a></p>
+<p>C'est embêtant de laisser comme ça... je te suggérerais probablement de faire tourner ton couloir vers le sud plutôt que vers le nord, et de déplacer l'ensemble de ta pièce, soit en .area move, soit d'une autre manière, en prenant soin d'éviter de déplacer les trucs de la mine (ou de les replacer par la suite). Ou bien de faire un plafond avec l'artwork 15748, qui est noir. Mais je ne sais pas si on entendra d'une à l'autre ce qui se dit dans l'une ou l'autre...</p>
+<p>Malgré mes suggestions, je recommende Tia en premier lieu, c'est plus sûr.</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-19-2008-at-234-pm">Post by Ex-Bolero - October 19, 2008 at 2:34 PM</h2>
+<p><a id="post-187335"></a></p>
+<p>Voui, j'attendes les conseils de notre conceptrice ^^</p>
+<p>Dans le pire je crois que je vais tout bêtement bien screené l'endroit, le del et le refaire dans un endroit de néant <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-anonymous---october-19-2008-at-622-pm">Post by Anonymous - October 19, 2008 at 6:22 PM</h2>
+<p><a id="post-187355"></a></p>
+<p>J'AI UNE SOLUTION!</p>
+<p>Un gigantesque plancher en hue complètement noir (hue 1) qui recouvre le build entre la mine et ton build. Ça va tout cacher sans que tu doives le déplacer.</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-19-2008-at-623-pm">Post by Ex-Bolero - October 19, 2008 at 6:23 PM</h2>
+<p><a id="post-187356"></a></p>
+<p>Je peux essayer mais il me faut de la supervision <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Edit je suis en train de placer un plancher de static 1311 avec une hue super flashy à z = -50 pour pas les perdre. J'espère que ça fera pas trop lagger... :O</p>
+<p>Re edit: Les balises du plafond sont en hue 1109 set visible false afin qu'on puisse le retracer en cas de pépin. Le plafond est installé, ça va faire &quot;pavés&quot; quand on clique j'avais la flemme de faire .m set name &quot;vide&quot; ^^</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---october-19-2008-at-1116-pm">Post by Conteuse Seshat - October 19, 2008 at 11:16 PM</h2>
+<p><a id="post-187419"></a></p>
+<p>Zak... le static 15748, c'est le plancher noir <img src="/assets/smilies/man_in_love.gif" alt="">. J'en avais déjà parlé dans mon précédent message  <img src="/assets/smilies/Wink.gif" alt=""><br>
+Néanmoins, avec Pando, c'est probablement plus facile de mettre le plancher au hue 1 que d'ajouter le static 15748... m'enfin. Mis le static 15748 n'a pas de nom, au contraire des pavés ^^.</p>
+<hr>
+<h2 id="post-by-ex-bolero---october-20-2008-at-533-am">Post by Ex-Bolero - October 20, 2008 at 5:33 AM</h2>
+<p><a id="post-187473"></a></p>
+<p>En effet: si les joueurs pointent, ils verront &quot;pavés&quot;... J'ai fait plus de 1700 clics pour mettre leur hue noire, étant donné que j'ai été trop CON pour le faire dès le début <img src="/assets/smilies/man_in_love.gif" alt=""><br>
+Alors j'allais pas me taper autant de .set name &quot;&quot; désolé ^^</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

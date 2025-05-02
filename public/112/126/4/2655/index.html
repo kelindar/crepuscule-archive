@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systeme d&#39;XP - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Systeme d&#39;XP</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Systeme d&#39;XP</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="systeme-dxp">Systeme d'XP</h1>
+<h2 id="post-by-ex-concepteur-arthan---october-4-2005-at-427-am">Post by Ex-Concepteur Arthan - October 4, 2005 at 4:27 AM</h2>
+<p><a id="post-24981"></a></p>
+<p>Bon  le systeme de XP bloque pour je ne sais quel raison cest surment un autre script qui le fait bug..</p>
+<p>Mais pour regler un peu le probelme je peux faire en sorte qu'un message apparait lors d'un save pour avertir un joueur que son timer ne fonctionne plus et alors de redemarer son client...</p>
+<p>Vous en pensez quoi?</p>
+<p>La je me lance dans l'invisibilité total lorsqu'un joueur est hidder et assis (parait que meme l'admin de Zyx n'avait pas réussis mais cest une rumeur <img src="/assets/smilies/man_in_love.gif" alt="">)</p>
+<hr>
+<h2 id="post-by-ex---october-4-2005-at-429-am">Post by Ex - October 4, 2005 at 4:29 AM</h2>
+<p><a id="post-24982"></a></p>
+<p>C'est vrai... on voyait pas les gens assis hidés <img src="/assets/smilies/sad.gif" alt=""><br>
+Pour le xp y'a un joueur qui a parlé du .xp, que ce serait ça qui fait geler le timer. Moi je l'utilise jamais (je fais .fiche) alors peut être?</p>
+<hr>
+<h2 id="post-by-ex-valco---october-4-2005-at-432-am">Post by Ex-Valco - October 4, 2005 at 4:32 AM</h2>
+<p><a id="post-24986"></a></p>
+<p>J'utilisais .xp et ça n'a jamais gelé.</p>
+<p>Je ne crois pas que c'est le problème.</p>
+<hr>
+<h2 id="post-by-ex-ariakan---october-4-2005-at-548-am">Post by Ex-Ariakan - October 4, 2005 at 5:48 AM</h2>
+<p><a id="post-25010"></a></p>
+<p>En fait, si possible il faudrait que dès que le compteur stop, ça affiche le message au joueur que son Xp est buggé. Si ça c'est possible, on pourrait trouver quel est l'Action, puisque les joueurs pourraient dire ce qu'ils ont fait exactement juste avant que le compteur ait gelé.</p>
+<p>Je sais pas si c'est possible réellement un genre de &quot;If cnt = cnt après 1 seconde ingame, message : Votre compteur d'Xp vient de geler&quot;.</p>
+<hr>
+<h2 id="post-by-fondateur-aenima---october-4-2005-at-1240-pm">Post by Fondateur Aenima - October 4, 2005 at 12:40 PM</h2>
+<p><a id="post-25044"></a></p>
+<p>c'est ce qu on pensait aussi ariakan, mais je crois qu'il y a un probleme de timer du jeu pour que le message s'affiche instatanément... sinon ça règlerai assez vite notre problème...</p>
+<hr>
+<h2 id="post-by-anonymous---october-4-2005-at-522-pm">Post by Anonymous - October 4, 2005 at 5:22 PM</h2>
+<p><a id="post-25089"></a></p>
+<p>On pourrait avoir un copier/coller du script en question, avec rapidement les fonctions qu'il appelle?</p>
+<p>Histoire de jetter un coup d'oeil et d'en parler autour <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---november-10-2005-at-340-am">Post by Fondateur Kel - November 10, 2005 at 3:40 AM</h2>
+<p><a id="post-32899"></a></p>
+<p>public class Timer_EXP : Timer<br>
+\t\t{<br>
+\t\t\tprivate  RacePlayerMobile m_mobile_exp;<br>
+\t\t\tprivate static Hashtable m_Timer_EXP = new Hashtable();<br>
+\t\t\tprivate Mobile who;<br>
+\t\t\tprivate Point3D where;<br>
+\t\t\tprivate DateTime when;<br>
+\t\t\tpublic string what=&quot;&quot;;<br>
+\t\t<br>
+\t\t\tpublic static void Initialize()<br>
+\t\t\t{<br>
+\t\t\t\tEventSink.Logout += new LogoutEventHandler( OnLogout );<br>
+\t\t\t\tEventSink.Login += new LoginEventHandler( OnLogin );<br>
+\t\t\t\tEventSink.Disconnected += new DisconnectedEventHandler( EventSink_Disconnected );<br>
+\t\t\t}</p>
+<p>\t\t\tpublic void Arreter()<br>
+\t\t\t{<br>
+\t\t\t\tm_Timer_EXP.Remove( who.Serial.Value );<br>
+\t\t\t\t//((RacePlayerMobile)e.Mobile).Timers_Started = (bool)true;<br>
+\t\t\t\tthis.Stop();<br>
+\t\t\t}<br>
+\t\t\t<br>
+\t\t\t// Apres 2.5 secondes, le timer sera declanché tout les secondes. apres 5 ticks, ça s'arretera<br>
+\t\t\tpublic Timer_EXP( RacePlayerMobile from ) : base( TimeSpan.Zero, TimeSpan.FromSeconds( 60.0 ) )<br>
+\t\t\t{<br>
+\t\t\t\tm_mobile_exp = (RacePlayerMobile)from;<br>
+\t\t\t\twho=(RacePlayerMobile)from;<br>
+\t\t\t\tthis.Start();<br>
+\t\t\t}</p>
+<p>\t\t\tpublic static void Disconnect( object state )<br>
+\t\t\t{<br>
+\t\t\t\tif ( m_Timer_EXP.Contains( ((RacePlayerMobile)state).Serial.Value ) )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tTimer_EXP timer_exp=(Timer_EXP)m_Timer_EXP[((RacePlayerMobile)state).Serial.Value];<br>
+\t\t\t\t\tif (timer_exp==null)<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\t((RacePlayerMobile)state).SendMessage(&quot;Erreur, objet timer inexistant ! &quot;);<br>
+\t\t\t\t\t\treturn;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t\ttimer_exp.Arreter();<br>
+\t\t\t\t}<br>
+\t\t\t}</p>
+<p>\t\t\tpublic static void OnLogin( LoginEventArgs e )<br>
+\t\t\t{<br>
+\t\t\t\tif ( m_Timer_EXP.Contains( e.Mobile.Serial.Value ) )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tTimer_EXP timer_exp=(Timer_EXP)m_Timer_EXP[e.Mobile.Serial.Value];<br>
+\t\t\t\t\tif (timer_exp==null)<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\te.Mobile.SendMessage(&quot;Objet Timer inexistant!&quot;);<br>
+\t\t\t\t\t\treturn;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t\ttimer_exp.Arreter();<br>
+\t\t\t\t}<br>
+\t\t\t\telse<br>
+\t\t\t\t{<br>
+\t\t\t\t\tm_Timer_EXP.Add( e.Mobile.Serial.Value,new Timer_EXP((RacePlayerMobile)(e.Mobile) ));<br>
+\t\t\t\t\t((RacePlayerMobile)e.Mobile).Timers_Started = true;<br>
+\t\t\t\t\t//Timer timer_exp = new Timer_EXP((RacePlayerMobile)e.Mobile);<br>
+\t\t\t\t\t//timer_exp.Start();<br>
+\t\t\t\t\t//this.Start();<br>
+\t\t\t\t\t//((RacePlayerMobile)from).Timers_Started = (bool)true;<br>
+\t\t\t\t}<br>
+\t\t\t}</p>
+<p>\t\t\tpublic static void OnLogout( LogoutEventArgs e )<br>
+\t\t\t{<br>
+\t\t\t\tif ( m_Timer_EXP.Contains( e.Mobile.Serial.Value ) )<br>
+\t\t\t\t{<br>
+\t\t\t\t\tTimer_EXP timer_exp=(Timer_EXP)m_Timer_EXP[e.Mobile.Serial.Value];<br>
+\t\t\t\t\tif (timer_exp==null)<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\te.Mobile.SendMessage(&quot;Erreur, objet timer inexistant ! &quot;);<br>
+\t\t\t\t\t\treturn;<br>
+\t\t\t\t\t}<br>
+\t\t\t\t\ttimer_exp.Arreter();<br>
+\t\t\t\t}<br>
+\t\t\t}</p>
+<p>\t\t\tprotected override void OnTick()<br>
+\t\t\t{<br>
+\t\t\t\tif (m_mobile_exp.TicksXP &lt;= 0)<br>
+\t\t\t\t{<br>
+\t\t\t\t\tm_mobile_exp.SendMessage(&quot;Vous avez acquis de l'experience.&quot;);<br>
+\t\t\t\t\tm_mobile_exp.Experience += 1;<br>
+\t\t\t\t\tif (m_mobile_exp.CoteMoyenne==0){m_mobile_exp.CoteMoyenne=1;}<br>
+\t\t\t\t\tm_mobile_exp.TicksXP = (double)(320 / m_mobile_exp.CoteMoyenne);<br>
+\t\t\t\t\tif (m_mobile_exp.Experience == m_mobile_exp.ExperienceBesoin)<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tm_mobile_exp.ExperienceBesoin += (m_mobile_exp.Niveau*2);<br>
+\t\t\t\t\t\tm_mobile_exp.Niveau += 1;<br>
+\t\t\t\t\t\tm_mobile_exp.SendMessage(&quot;Félicitations! Vous avez atteint le niveau &quot; + m_mobile_exp.Niveau);<br>
+if (m_mobile_exp.Niveau % 10 == 0)<br>
+{<br>
+m_mobile_exp.LCP += 1;<br>
+m_mobile_exp.LCS += 1;<br>
+m_mobile_exp.LCB += 2;<br>
+m_mobile_exp.SkillsCap += 1400;<br>
+}<br>
+\t\t\t\t\t\telse if(m_mobile_exp.Niveau % 5  == 0)<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tm_mobile_exp.LCP += 1;<br>
+\t\t\t\t\t\t\tm_mobile_exp.LCB += 2;<br>
+\t\t\t\t\t\t\tm_mobile_exp.SkillsCap += 1400;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\telse if(m_mobile_exp.Niveau % 2  == 0)<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tm_mobile_exp.LCP += 1;<br>
+\t\t\t\t\t\t\tm_mobile_exp.LCS += 1;<br>
+\t\t\t\t\t\t\tm_mobile_exp.SkillsCap += 1400;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t\telse<br>
+\t\t\t\t\t\t{<br>
+\t\t\t\t\t\t\tm_mobile_exp.LCP += 1;<br>
+\t\t\t\t\t\t\tm_mobile_exp.SkillsCap += 1400;<br>
+\t\t\t\t\t\t}<br>
+\t\t\t\t\t}<br>
+\t\t\t\t}<br>
+\t\t\t\telse<br>
+\t\t\t\t{<br>
+\t\t\t\t\tif (m_mobile_exp.Timers_Started == true)<br>
+\t\t\t\t\t{<br>
+\t\t\t\t\t\tm_mobile_exp.TicksXP -= 1;<br>
+\t\t\t\t\t}</p>
+<p>\t\t\t\t}<br>
+\t\t\t\t<br>
+\t\t\t}<br>
+\t\t}</p>
+<p>\t\t#region Fonction Propertiés de NOM<br>
+\t\tpublic override void AddNameProperties( ObjectPropertyList list )<br>
+\t\t{<br>
+\t\t\tbase.AddNameProperties( list );<br>
+\t\t}</p>
+<p>\t\tpublic override void GetProperties( ObjectPropertyList list )<br>
+\t\t{<br>
+\t\t\tbase.GetProperties( list );<br>
+\t\t}<br>
+\t\t#endregion</p>
+<p>\t\tpublic virtual void StartTimers( RacePlayerMobile m, bool position )<br>
+\t\t{<br>
+\t\t\tif ((bool)position == true)<br>
+\t\t\t{<br>
+\t\t\t\t<br>
+\t\t\t\t//timer_exp.Start();<br>
+\t\t\t}</p>
+<p>\t\t}</p>
+<p>\t\tprivate bool m_Timers_Started;</p>
+<p>\t\t[CommandProperty( AccessLevel.Administrator )]<br>
+\t\tpublic bool Timers_Started<br>
+\t\t{<br>
+\t\t\tget{ return m_Timers_Started; }<br>
+\t\t\tset{<br>
+\t\t\t\tStartTimers((RacePlayerMobile)this,value);<br>
+\t\t\t\tm_Timers_Started = value;<br>
+\t\t\t}<br>
+\t\t}</p>
+<hr>
+<h2 id="post-by-ex-conteur-seven---november-10-2005-at-442-am">Post by Ex-Conteur Seven - November 10, 2005 at 4:42 AM</h2>
+<p><a id="post-32912"></a></p>
+<p>J'ai vraiment tout saisi Kel  <img src="/assets/smilies/ohmy.gif" alt=""> <img src="/assets/smilies/blush2.gif" alt=""></p>
+<p>En vous souhaitant la meilleure des chances pour regler le tout !  <img src="/assets/smilies/smile.gif" alt=""></p>
+<hr>
+<h2 id="post-by-ex-vidar---november-10-2005-at-909-am">Post by Ex-Vidar - November 10, 2005 at 9:09 AM</h2>
+<p><a id="post-32939"></a></p>
+<p><img src="/assets/smilies/Vieux.gif" alt=""><br>
+Pffff ! Remplit de faute de Grammaire et Ponctuation. Tu echouerais un examen de Francais assuré.</p>
+<p>J'ai vraiment tout saisi Kel</p>
+<hr>
+<h2 id="post-by-fondateur-kel---november-10-2005-at-440-pm">Post by Fondateur Kel - November 10, 2005 at 4:40 PM</h2>
+<p><a id="post-32948"></a></p>
+<p>ce n'est qu'une toute petite partie ^^</p>
+<hr>
+<h2 id="post-by-ex-concepteur-arthan---november-11-2005-at-1250-am">Post by Ex-Concepteur Arthan - November 11, 2005 at 12:50 AM</h2>
+<p><a id="post-32994"></a></p>
+<p>ahh moi j'ai tout compris   <img src="/assets/smilies/spiteful.gif" alt=""></p>
+<hr>
+<h2 id="post-by-taras---november-11-2005-at-628-pm">Post by Taras - November 11, 2005 at 6:28 PM</h2>
+<p><a id="post-33087"></a></p>
+<p>Et ca veux dire que ca avance c'est cela? !</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

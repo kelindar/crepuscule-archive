@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changements de classe - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Changements de classe</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <span class="current-page">Changements de classe</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="changements-de-classe">Changements de classe</h1>
+<h2 id="post-by-conteuse-seshat---december-21-2008-at-1250-am">Post by Conteuse Seshat - December 21, 2008 at 12:50 AM</h2>
+<p><a id="post-196048"></a></p>
+<p>Afin d’uniformiser les réponses et demandes au sujet des changements de classe, plusieurs critères seront considérés :</p>
+<p>-\tLe texte de la demande devra faire au minimum 400 mots, et spécifier le nom du personnage, la classe de départ et la classe d’arrivée<br>
+-\tLe texte doit valoir, au niveau de la charte de cotation, une cote minimale de 4<br>
+-\tSi le texte présente déjà l’évolution du personnage vers son nouveau métier au travers d’un texte valant une cote de 5 ou de 6 et comportant un minimum de 750 mots, le changement de classe est accordé sur le champ ; dans le cas contraire, un suivi forum est demandé systématiquement, même si les classes sont similaires.</p>
+<p>Les dossiers de changement de classe seront classés dans un index alphabétique selon ceux qui sont effectués, ceux qui sont acceptés et à faire, ceux qui sont en suivi forum, et ceux qui sont refusés. Les dossiers seront du format :</p>
+<p>– Personnage –</p>
+<p>Où le verdict peut être : Fait, Accepté, Suivi, Refusé</p>
+<p>Procédure générale :</p>
+<p>1- Faire enlever tous les bijoux et armes du personnage (vérifier avec .viewequip)<br>
+2- .set classe X<br>
+3- .set resetaptitudes true<br>
+4- Le joueur replace ses aptitudes, profitez en pour faire des .get rawstr, .get rawdex et .get rawint (ou .get str, .get dex, .get int)<br>
+5- .set recalculateskillscaps true<br>
+6- .set ajusterstats true<br>
+7- Place manuellement les 3 stats : .set rawstr X, .set rawdex X, .set rawint X (ou .set str X, .set dex X, .set int X)</p>
+<p>Si les problèmes suivants surviennent :</p>
+<ul>
+<li>
+<p>Pas les bonnes aptitudes<br>
+Vérifiez si vous avez bien changé la classe (c'est bête, mais c'est ça)</p>
+</li>
+<li>
+<p>Le joueur n'arrive pas à mettre ses aptitudes (pas de flèche pour)<br>
+Faites le .set resetaptitudes, ça devrait réinitialiser le tout</p>
+</li>
+<li>
+<p>Les caps sont à 100 dans des skills non-désiré<br>
+Faites le .set recalculateskillscaps true, ça devrait tout arranger</p>
+</li>
+<li>
+<p>Les stats sont trop hautes pour les possibilités du personnage<br>
+Un petit .set ajusterstats true devrait arranger les choses</p>
+</li>
+</ul>
+<hr>
+<h2 id="post-by-simba---december-21-2008-at-740-am">Post by Simba - December 21, 2008 at 7:40 AM</h2>
+<p><a id="post-196115"></a></p>
+<p>Ca me ravit de voir qu'avec la cote 5 et un bon texte on puisse s'épargner le suivit forum. En accord avec toi.</p>
+<hr>
+<h2 id="post-by-mr-trovnre---december-21-2008-at-123-pm">Post by Mr Trovénère - December 21, 2008 at 1:23 PM</h2>
+<p><a id="post-196167"></a></p>
+<p>*Ca me va. *</p>
+<hr>
+<h2 id="post-by-ex-bolero---december-21-2008-at-634-pm">Post by Ex-Bolero - December 21, 2008 at 6:34 PM</h2>
+<p><a id="post-196204"></a></p>
+<p>Oui!</p>
+<p>Un tout petit ajustement: que vous fassiez .set str ou .set rawstr, ça ne change strictement rien ^^</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---december-21-2008-at-743-pm">Post by Conteuse Seshat - December 21, 2008 at 7:43 PM</h2>
+<p><a id="post-196247"></a></p>
+<p><em>Je ne sais plus... je sais que quand je faisais .set str à l'époque, ça ne fonctionnait pas (à l'époque, j'entends alors de la MàJ qui a accéléré l'évolution et qu'il fallait faire un Reset PA à tout le monde... manuellement). Mais si tu dis que ça fonctionne maintenant... bah, je vais revoir mes commandes <img src="/assets/smilies/man_in_love.gif" alt=""></em></p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---december-21-2008-at-1143-pm">Post by Coordinateur Apoc - December 21, 2008 at 11:43 PM</h2>
+<p><a id="post-196292"></a></p>
+<p>Les objets magique peuvent causer des problème donc il faut demander à les enlever avant le reset. (Quand j'avais scripté les commandes en tout cas, peut-être quelqu'un a corrigé depuis) Peut-être pour ca ton problème avec .set str direct au lieu de rawstr.</p>
+<p>+1</p>
+<hr>
+<h2 id="post-by-conteur-wolf---december-22-2008-at-722-am">Post by Conteur Wolf - December 22, 2008 at 7:22 AM</h2>
+<p><a id="post-196379"></a></p>
+<p>Parfait pour moi</p>
+<hr>
+<h2 id="post-by-anonymous---december-22-2008-at-932-pm">Post by Anonymous - December 22, 2008 at 9:32 PM</h2>
+<p><a id="post-196437"></a></p>
+<p>Okidoki.</p>
+<hr>
+<h2 id="post-by-conteuse-seshat---december-29-2008-at-751-pm">Post by Conteuse Seshat - December 29, 2008 at 7:51 PM</h2>
+<p><a id="post-197135"></a></p>
+<p>Adopté à l'unanimité si pas plus de discussions, pour le 31 décembre</p>
+<p>Modification : le .set str etc. Mais veillez à ce qu'il fonctionne.</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

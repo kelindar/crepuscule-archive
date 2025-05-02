@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RunUo 1.0 RC0 - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">RunUo 1.0 RC0</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">RunUo 1.0 RC0</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="runuo-10-rc0">RunUo 1.0 RC0</h1>
+<h2 id="post-by-fondateur-kel---march-5-2008-at-114-pm">Post by Fondateur Kel - March 5, 2008 at 1:14 PM</h2>
+<p><a id="post-153127"></a></p>
+<p>(se post s'adresse aux scripteurs)</p>
+<p>Le serveur étant vieux, basé sur RunUO 1.0 RC0 d'il y a 3 ans, a été décompilé par mes soins, corrigé les diverses erreurs du à la décompilation. Les codes sources sont dans le SVN, j'ai recompilé une version sous .Net framework 2.0 pour qu'on puisse utiliser le c# 2.0.<br>
+Par la suite on pourrait même le recompiler sous le framework 3.5 pour pouvoir utiliser le c# 3.0.</p>
+<p>Donc 2 choses principales possibles maintenant:</p>
+<ol>
+<li>Modification des sources de base de RunUo (donc les classes genre Mobile, Item... peuvent être modifiés maintenant)</li>
+<li>Utilisation du c# 2.0 et bientôt 3.0 avec toute leur puissance.</li>
+</ol>
+<p>Ce sont des petits trucs, mais concrètement, dans le c# 2.0 on a les génériques. Une petite explication ici:</p>
+<p>Nouveau dans .NET 2.0 : présentation des « Generics »</p>
+<p>Une des principales nouveautés du framework 2.0 de .NET est l’arrivé des « Generics » (Générique en français) qui fait partie de la catégorie des « Collection ». Dans les versions 1.1 et 1.0, pour créer une collection, on pouvait utiliser, entre autre, un ArrayList. Les éléments ajoutés dans un ArrayList sont sauvegardés sous forme d’objet. Les problèmes arrivent quand on ne sait pas exactement ce qui a été ajouté dans cet ArrayList.</p>
+<p>Prenons un exemple :</p>
+<p>int total = 0;<br>
+ArrayList monArrayList = new ArrayList();</p>
+<p>monArrayList.Add(25);<br>
+monArrayList.Add(5);<br>
+foreach (int item in monArrayList)<br>
+{<br>
+total = total + item;<br>
+}</p>
+<p>Ce code ne va pas poser de problème, le résultat sera bien de 30.<br>
+Maintenant, on va utiliser le code ci-dessous :</p>
+<p>int total = 0;<br>
+ArrayList monArrayList = new ArrayList();</p>
+<p>monArrayList.Add(25);<br>
+monArrayList.Add(5);<br>
+monArrayList.Add(&quot;Bonjour&quot;);<br>
+foreach (int item in monArrayList)<br>
+{<br>
+total = total + item;<br>
+}</p>
+<p>C# étant un language fortement typé, le développeur s’attend en cas d’erreur à un message du compilateur. Or ici, le compilateur ne va rien signaler. En effet, on ajoute dans la liste un objet, 2 int et un string, jusque la rien à signaler. Le problème va se poser à l’éxécution.<br>
+Lors de l’ajout des éléments, le compilateur fait un « boxing » d’un int, même chose pour le second, pour le 3ème il fait un « boxing » de string. Lorsque l’on parcourt la liste, un « unboxing » est réalisé qui, dans notre cas sera int, donc les éléments sont transformés en int et donc une exception sera générée lors du passage sur le dernier élément.<br>
+Nous allons créer une classe générique qui pourre être utilisée pour n’importe quel type (int, string, float, …)</p>
+<p>public class MaClasseGenerique<br>
+{<br>
+private List _element;</p>
+<pre><code>public MyGeneric&amp;#40;&amp;#41;  &amp;#123; this&amp;#46;_element = new List&amp;#40;&amp;#41;; &amp;#125;
+
+public int Count  
+&amp;#123;  
+    get &amp;#123; return _element&amp;#46;Count; &amp;#125;  
+&amp;#125;
+
+public void Add&amp;#40;T nouveau&amp;#41; &amp;#123; this&amp;#46;_element&amp;#46;Add&amp;#40;nouveau&amp;#41;; &amp;#125;
+
+public T GetElement&amp;#40;int i&amp;#41; &amp;#123; return _element&amp;#91;i&amp;#93;; &amp;#125;  
+</code></pre>
+<p>}</p>
+<p>Que trouve-t-on dans cette classe :</p>
+<pre><code>* un nom bien evidemment mais un &lt;T&gt;, qui sera remplacé par le type voulu lors de la création de l’instance  
+* un constructeur, qui va créer une list de type &lt;T&gt;  
+* une propriété Count qui retournera le nombre d’éléments que compte la liste  
+* une méthode d’ajout qui va permettre d’alimenter cette liste  
+* une méthode que retourne un élément spécifique de la liste
+</code></pre>
+<p>Utilisation de cette classe :</p>
+<p>int i = 0;<br>
+int total = 0;<br>
+MaClasseGenerique  list = new MaClasseGenerique ();</p>
+<p>for (int x = 0; x &lt; 10; x++){<br>
+list.Add(x);<br>
+}</p>
+<p>for (i = 0; i &lt; list.Count; i++){<br>
+total = total + list.GetElement(i);<br>
+}</p>
+<p>On va créer une instance de la classe, ici nous allons utiliser des int. Vous constaterez que le <T> a été remplacé par <int>. La première boucle permet d’ajouter quelques éléments à la liste. Dans la classe vous pouvez voir que la méthode Add fait simplement un ajout d’un élément dans une liste mais un élément de type T donc pour nous un int. La seconde boucle permet de parcourir les différents éléments de la liste. Si maintenant, vous utilisez notre classe générique avec des string comme ceci :</p>
+<p>int i = 0;<br>
+string total = &quot;&quot;;<br>
+MaClasseGenerique  list = new MaClasseGenerique ();</p>
+<p>for (int x = 0; x &lt; 10; x++)<br>
+{<br>
+list.Add(x.ToString());<br>
+}</p>
+<p>for (i = 0; i &lt; list.Count; i++)<br>
+{<br>
+total = total + list.GetElement(i);<br>
+}</p>
+<p>Vous constaterez que le fonctionnement est semblable, c'est-à-dire que notre classe générique fonctionne avec le int, les string mais aussi avec toutes les autres primitives et n’importe quelle class de votre cru.<br>
+Voila un très bref descriptif de la puissance des génériques.</p>
+<p>Dans le cadre du serveur RunUo par exemple, vous pouvez directement créer des listes fortement typées, grâce aux classe préfaites par microsoft:</p>
+<p>List<RacePlayerMobile> listeJoueurs = new List<RacePlayerMobile>();<br>
+listeJoueurs.Add( ... ); //on ajoute des objets dans la liste comme on faisait avant</p>
+<p>foreach(RacePlayerMobile mobile in listeJoueurs)<br>
+{<br>
+mobile.Frozen = true;<br>
+}</p>
+<hr>
+<h2 id="post-by-willy-scripteur---march-5-2008-at-643-pm">Post by Willy, Scripteur - March 5, 2008 at 6:43 PM</h2>
+<p><a id="post-153153"></a></p>
+<p>Donc si je comprend bien...le serveur est maintenant Runuo 2.0???</p>
+<p>ou bien il faut faire en sorte que le serveur le devienne?</p>
+<hr>
+<h2 id="post-by-mr-trovnre---march-5-2008-at-709-pm">Post by Mr Trovénère - March 5, 2008 at 7:09 PM</h2>
+<p><a id="post-153155"></a></p>
+<p>il va faire ce qu'il faut pour le faire, ca bugge pour l'instant.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---march-5-2008-at-933-pm">Post by Fondateur Kel - March 5, 2008 at 9:33 PM</h2>
+<p><a id="post-153178"></a></p>
+<p>Non, pour ce qui est de RunUO 2.0, ça va pas trop être possible. Crépuscule est maintenant très (trop?) customisé niveaux scripts, donc ça serait un travail très complexe et long, faut repasser en vue quasi tous les scripts (et y en a beaucoup...).</p>
+<p>Par contre on peut faire des choses plus avancées au niveau de scripts.</p>
+<blockquote>
+<p><strong>&quot;Coordinateur Mr Trovénère&quot; wrote:</strong>
+il va faire ce qu'il faut pour le faire, ca bugge pour l'instant.</p>
+<p>J'ai débogué hein, c'était bien du TCP, c'est moi, faut que j'arrête de fumer <img src="/assets/smilies/smile.gif" alt=""></p>
+</blockquote>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-6-2008-at-148-am">Post by Coordinateur Apoc - March 6, 2008 at 1:48 AM</h2>
+<p><a id="post-153207"></a></p>
+<p>Dans le passé vu que Crépuscule est vraiment trop modifié, ont avait décidé qu'il serait trop difficille de passer à RunUo 2.0.</p>
+<p>Mais merci Kel de cet ajout, garde toi un peu de temps libre aussi!  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<hr>
+<h2 id="post-by-fondateur-kel---march-6-2008-at-1211-pm">Post by Fondateur Kel - March 6, 2008 at 12:11 PM</h2>
+<p><a id="post-153322"></a></p>
+<p>Au fait, hier y a eu un stress donc ça n'a pas marché. Je dois voir quelle coille j'ai fait et la corriger!</p>
+<hr>
+<h2 id="post-by-fondateur-kel---march-28-2008-at-801-pm">Post by Fondateur Kel - March 28, 2008 at 8:01 PM</h2>
+<p><a id="post-157061"></a></p>
+<p>Bon OK. Après 5h de déboguage et de tests, je pense que j'ai réussi!</p>
+<p><img src="http://img177.imageshack.us/img177/7561/screenshotum0.png" alt=""></p>
+<p>Je vais le mettre sur le serveur maintenant (ne vous en faites pas, j'ai fait les backups nécessaires si cette version contient encore d'autres bugs!)</p>
+<hr>
+<h2 id="post-by-fondateur-kel---march-28-2008-at-802-pm">Post by Fondateur Kel - March 28, 2008 at 8:02 PM</h2>
+<p><a id="post-157062"></a></p>
+<p>Ah aussi elle est compilée sous framework 3.5 donc vous pouvez utiliser du LINQ maintenant dans vos scripts (quoi que faut encore que je teste si ça marche).</p>
+<p>Vous devez installer le Framework 3.5 aussi si vous ne l'avez pas:</p>
+<!-- m --><a class="postlink" href="http://www.microsoft.com/downloads/details.aspx?FamilyID=333325fd-ae52-4e35-b531-508d977d32a6&displaylang=en">http://www.microsoft.com/downloads/deta ... laylang=en</a><!-- m -->   
+<hr>
+<h2 id="post-by-fondateur-kel---march-28-2008-at-1011-pm">Post by Fondateur Kel - March 28, 2008 at 10:11 PM</h2>
+<p><a id="post-157092"></a></p>
+<p>Et donc comme exemple j'ai fait un script LinqTest.cs</p>
+<p>Le code :</p>
+<p>using System;<br>
+using System.Collections;<br>
+using Server;<br>
+using Server.Network;<br>
+using Server.Mobiles;<br>
+using System.Collections.Generic;<br>
+using System.Linq;</p>
+<p>namespace Server.Misc<br>
+{<br>
+public class LinqTestCommand<br>
+{</p>
+<pre><code>    public static void Initialize&amp;#40;&amp;#41;  
+    &amp;#123;  
+        Commands&amp;#46;Register&amp;#40;&quot;LinqTest&quot;, AccessLevel&amp;#46;GameMaster, new CommandEventHandler&amp;#40;LinqTestCommand_OnCommand&amp;#41;&amp;#41;;  
+    &amp;#125;
+
+    private static void LinqTestCommand_OnCommand&amp;#40;CommandEventArgs args&amp;#41;  
+    &amp;#123;  
+        // créer et remplir la liste  
+        List&lt;Mobile&gt; Mobiles = new List&lt;Mobile&gt;&amp;#40;&amp;#41;;  
+        foreach&amp;#40;Mobile m in World&amp;#46;Mobiles&amp;#46;Values&amp;#41;  
+            Mobiles&amp;#46;Add&amp;#40;m&amp;#41;;
+
+        // linq query pour retrouver les GMs  
+        var GMs = from m in Mobiles  
+                  where m&amp;#46;AccessLevel &gt;= AccessLevel&amp;#46;GameMaster  
+                  select m;  
+          
+        World&amp;#46;Broadcast&amp;#40;2, true, String&amp;#46;Format&amp;#40;&quot;Il y'a &amp;#123;0&amp;#125; GMs!&quot;, GMs&amp;#46;Count&amp;#40;&amp;#41;&amp;#46;ToString&amp;#40;&amp;#41;&amp;#41;&amp;#41;;  
+      
+    &amp;#125;
+
+&amp;#125;  
+</code></pre>
+<p>}</p>
+<p>Pour utiliser Linq dans vos scripts, n'oubliez pas d'inclure</p>
+<pre><code>using System&amp;#46;Linq;  
+</code></pre>
+<hr>
+<h2 id="post-by-fondateur-kel---march-29-2008-at-1228-pm">Post by Fondateur Kel - March 29, 2008 at 12:28 PM</h2>
+<p><a id="post-157168"></a></p>
+<p>1 crash ce matin:</p>
+<h1 id="server-crash-report">Server Crash Report</h1>
+<p>Operating System: Microsoft Windows NT 5.2.3790 Service Pack 2<br>
+.NET Framework: 2.0.50727.1433<br>
+Time: 29/03/2008 8:14:26<br>
+Mobiles: 8008<br>
+Items: 489568<br>
+Clients:</p>
+<ul>
+<li>Count: 5</li>
+</ul>
+<ul>
+<li>70.82.199.196: (account = Blood) (mobile = 0x6081 'Humain')</li>
+<li>142.217.171.175: (account = jean17) (mobile = 0x26E 'Demi elfe')</li>
+<li>66.131.168.227: (account = schala) (mobile = 0xBF2 'Humaine')</li>
+<li>24.37.49.18: (account = Peter_love666) (mobile = 0x489 'Humain')</li>
+<li>205.205.142.28: (account = Instink) (mobile = 0x66B 'Elfe')</li>
+</ul>
+<p>Exception:<br>
+System.Exception: World Save event threw an exception.  Save failed! ---&gt; System.InvalidOperationException: La collection a été modifiée ; l'opération d'énumération peut ne pas s'exécuter.<br>
+à System.Collections.ArrayList.ArrayListEnumeratorSimple.MoveNext()<br>
+à Server.BountySystem.BountyBoard.saveGlobalList(WorldSaveEventArgs e)<br>
+à Server.WorldSaveEventHandler.Invoke(WorldSaveEventArgs e)<br>
+à Server.EventSink.InvokeWorldSave(WorldSaveEventArgs e)<br>
+à Server.World.Save(Boolean message)<br>
+--- Fin de la trace de la pile d'exception interne ---<br>
+à Server.World.Save(Boolean message)<br>
+à Server.World.Save()<br>
+à Server.Misc.AutoSave.Save()<br>
+à Server.Misc.AutoSave.OnTick()<br>
+à Server.Timer.Slice()<br>
+à Server.Core.Main(String[] args)</p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>

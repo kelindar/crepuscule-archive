@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teintures - Crepuscule Forum</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body class="fu-theme-dark">
+    <header>
+        <div class="header-container">
+            <h1 class="fu-heading-1">Teintures</h1>
+            <nav class="fu-tabs">
+                <a href="/" class="nav-item">Home</a>
+                
+                &rsaquo; <a href="/112//" class="nav-item">Team</a>
+                
+                &rsaquo; <a href="/112/126//" class="nav-item">Discussion sur le technique et le build</a>
+                
+                &rsaquo; <span class="current-page">Teintures</span>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="parchment thread-content fu-card fu-card-body">
+            <h1 id="teintures">Teintures</h1>
+<h2 id="post-by-anonymous---february-20-2008-at-140-am">Post by Anonymous - February 20, 2008 at 1:40 AM</h2>
+<p><a id="post-151013"></a></p>
+<p>Salut Willy ^^,</p>
+<p>Le bug des teintures (permettant de teintre tout objet ciblé) est désormais connu des joueurs. Heylaine l'a rapporté. Tu peux me dire ce qui en est de la correction? Si tu as trouvé où ça clochait?</p>
+<p>Merci ^^</p>
+<hr>
+<h2 id="post-by-willy-scripteur---february-20-2008-at-216-am">Post by Willy, Scripteur - February 20, 2008 at 2:16 AM</h2>
+<p><a id="post-151030"></a></p>
+<p>oui, j'ai trouvé d'où sa clochais...par contre pour l'arranger je suis pas sur...j'va verifier a sa ce soir le plus vite possible...</p>
+<hr>
+<h2 id="post-by-anonymous---february-20-2008-at-231-am">Post by Anonymous - February 20, 2008 at 2:31 AM</h2>
+<p><a id="post-151038"></a></p>
+<p>Merci, lâche pas ^^</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-21-2008-at-633-pm">Post by Fondateur Kel - February 21, 2008 at 6:33 PM</h2>
+<p><a id="post-151291"></a></p>
+<p>essaye ça:</p>
+<p>changer ce code:</p>
+<p>if( targeted is Item )<br>
+{<br>
+Item item = (Item)targeted;<br>
+if ( item is IDyable &amp;&amp; m_Tub.AllowDyables )</p>
+<p>....</p>
+<p>par:</p>
+<p>if( targeted is BaseClothing )<br>
+{<br>
+Item item = (Item)targeted;<br>
+if ( item is IDyable &amp;&amp; m_Tub.AllowDyables )</p>
+<p>....</p>
+<p>dans les fichiers :</p>
+<p>CendreDyeTub.cs<br>
+ChrysanthemeDyeTub.cs<br>
+CorailDyeTub.cs<br>
+CrystalTDyeTub.cs<br>
+FishDyeTub.cs<br>
+FruitDyeTub.cs<br>
+FungusPDyeTub.cs<br>
+IrisDyeTub.cs<br>
+LychnisDyeTub.cs<br>
+MoussonDyeTub.cs<br>
+NeigeDyeTub.cs<br>
+ODBDyeTub.cs<br>
+RocheVolcaniqueDyeTub.cs<br>
+SunDyeTub.cs<br>
+TalcDyeTub.cs<br>
+TerreDyeTub.cs<br>
+TradescantiaDyeTub.cs</p>
+<hr>
+<h2 id="post-by-willy-scripteur---february-21-2008-at-907-pm">Post by Willy, Scripteur - February 21, 2008 at 9:07 PM</h2>
+<p><a id="post-151300"></a></p>
+<p>Bon, c'est le script qui fallais mettre exactement, sa ne fais que colorer les vetements, la j'Essaye d'incorporer le fais qu'on puisse seulement colorer nos vetements..je trouve pas ce que j'ai mal mis dans le OnTarget  mais je vais trouver j'Espere.,.  j'vais changer les scripts ce soir.</p>
+<hr>
+<h2 id="post-by-fondateur-kel---february-22-2008-at-453-pm">Post by Fondateur Kel - February 22, 2008 at 4:53 PM</h2>
+<p><a id="post-151380"></a></p>
+<p>Tu vérifies si le vetement en question se trouve dans le PlayerMobile.Backpack ?</p>
+<hr>
+<h2 id="post-by-willy-scripteur---february-23-2008-at-140-am">Post by Willy, Scripteur - February 23, 2008 at 1:40 AM</h2>
+<p><a id="post-151429"></a></p>
+<p>il cherche en effet le backpack car quand on teint un vetement PNJ le broadcast message dit: this has to be in your backpack...mais il le teint quand meme...il fais le backpack check, mais pas le dyr check...c'Est sa que je trouve louche</p>
+<hr>
+<h2 id="post-by-coordinateur-apoc---march-2-2008-at-343-am">Post by Coordinateur Apoc - March 2, 2008 at 3:43 AM</h2>
+<p><a id="post-152436"></a></p>
+<p>Finalement c'est règlé finalement ton problème Willy? Sinon tu peux toujours me contacter sur MSN pour qu'on regarde ensemble.  <img src="/assets/smilies/man_in_love.gif" alt=""></p>
+<p>Si on arrive a se croiser avec nos horaires.  <img src="/assets/smilies/sad.gif" alt=""></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Crepuscule - Forum Archive</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/franken-ui.min.js"></script>
+</body>
+
+</html>
